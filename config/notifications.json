@@ -1,0 +1,31 @@
+{
+  "enabled": true,
+  "tiers": {
+    "email": true,
+    "sms": false,
+    "push": false,
+    "templateEditor": false,
+    "deliveryTracking": false,
+    "piiScrubbing": false,
+    "auditTrail": true,
+    "webhookDelivery": false
+  },
+  "limits": {
+    "emailPerHour": 100,
+    "smsPerHour": 0,
+    "pushPerHour": 0,
+    "templateCount": 5
+  },
+  "email": {
+    "provider": "sendgrid",
+    "fromAddress": "no-reply@ruthless-platform.local",
+    "fromName": "Ruthless System"
+  },
+  "sms": {
+    "provider": "twilio",
+    "fromNumber": "+15555550199"
+  },
+  "push": {
+    "provider": "fcm"
+  }
+}

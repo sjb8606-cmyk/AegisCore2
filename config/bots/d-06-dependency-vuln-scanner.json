@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "proposedBotId": "D-06",
+  "role": "Scans project dependencies for known vulnerabilities using npm audit, converts findings into the swarm's standard severity scale, and alerts on critical/high findings without making any changes itself.",
+  "triggerConditions": ["scheduled:daily", "manual", "pre-deploy"],
+  "behaviorDescription": "Runs npm audit --json against a target directory, parses reported vulnerabilities, maps npm's five-tier severity to the swarm's four-tier scale, computes a Perfection Index, and records a decision. Never modifies package.json or installs anything itself; fixing is a separate bot's responsibility, gated by human approval.",
+  "permissionScope": ["exec:npm-audit", "read:package-manifests"],
+  "hitlClassification": "Alert",
+  "ancestry": {
+    "sourceSignals": ["crystalforge-guardian-d06", "aegisswarm-base-build"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never runs npm audit fix or any write operation — detection only",
+    "Never modifies package.json, package-lock.json, or node_modules"
+  ]
+}

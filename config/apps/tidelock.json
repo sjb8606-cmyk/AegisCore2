@@ -1,0 +1,64 @@
+{
+  "app_id": "tidelock",
+  "name": "TIDELOCK",
+  "version": "1.0.0",
+  "description": "Seafood processing operations platform — yield tracking, compliance export, scheduling, and traceability.",
+  "tenant_id": "660f9500-f30c-52e5-b827-557766550001",
+  "status": "active",
+  "cores": [
+    "inventory",
+    "logistics",
+    "compliance",
+    "audit",
+    "analytics",
+    "scheduling",
+    "metering",
+    "ai-reports"
+  ],
+  "config": {
+    "inventory": {
+      "enabled": true,
+      "unit": "kg",
+      "species_tracking": true,
+      "lot_numbers": true,
+      "worm_audit": true
+    },
+    "compliance": {
+      "enabled": true,
+      "frameworks": ["HACCP", "DFO_Canada", "CFIA"],
+      "auto_export_format": "csv",
+      "retention_days": 2555
+    },
+    "logistics": {
+      "enabled": true,
+      "temperature_logging": true,
+      "chain_of_custody": true
+    },
+    "analytics": {
+      "enabled": true,
+      "yield_variance_alerts": true,
+      "shift_reporting": true
+    },
+    "ai-reports": {
+      "enabled": true,
+      "report_types": ["daily_yield", "compliance_summary", "traceability_report"],
+      "model": "claude-sonnet-4-20250514"
+    },
+    "scheduling": {
+      "enabled": true,
+      "shift_types": ["processing", "QC", "maintenance", "cleaning"]
+    }
+  },
+  "api_keys_required": ["ANTHROPIC_API_KEY"],
+  "routes": [
+    { "path": "/api/inventory", "method": "GET|POST", "auth": true },
+    { "path": "/api/logistics", "method": "GET|POST", "auth": true },
+    { "path": "/api/compliance", "method": "GET|POST", "auth": true },
+    { "path": "/api/analytics", "method": "GET", "auth": true },
+    { "path": "/api/ai-reports", "method": "POST", "auth": true },
+    { "path": "/api/scheduling", "method": "GET|POST|PATCH", "auth": true }
+  ],
+  "created_at": "2026-06-25T00:00:00Z",
+  "owner": "Ruthless Technologies",
+  "pilot_contact": "Sylvio Léger"
+}

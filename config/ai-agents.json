@@ -1,0 +1,31 @@
+{
+  "enabled": true,
+  "tiers": {
+    "webSearch": true,
+    "fileAccess": true,
+    "externalApiCalls": true,
+    "codeExecution": false,
+    "hitlGating": true,
+    "parallelAgents": false,
+    "agentChaining": false,
+    "auditTrail": true,
+    "customTools": false,
+    "scheduledAgents": false
+  },
+  "limits": {
+    "maxStepsPerRun": 10,
+    "maxRunTimeSeconds": 300,
+    "maxConcurrentAgents": 2,
+    "requestsPerMinute": 5,
+    "maxOutputTokens": 2000
+  },
+  "hitl": {
+    "requireApprovalForExternalActions": true,
+    "requireApprovalForDataModification": true,
+    "approvalTimeoutMinutes": 60
+  },
+  "models": {
+    "default": "claude-sonnet-4-20250514",
+    "allowed": ["claude-sonnet-4-20250514"]
+  }
+}

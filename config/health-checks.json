@@ -1,0 +1,23 @@
+{
+  "enabled": true,
+  "tiers": {
+    "livenessEndpoint": true,
+    "readinessEndpoint": true,
+    "dependencyChecks": true,
+    "serviceAggregation": true,
+    "tenantHealthSurface": true,
+    "degradedStateReporting": true,
+    "alertHooks": true,
+    "healthHistory": true
+  },
+  "limits": {
+    "healthHistoryRetentionDays": 90,
+    "dependenciesPerService": 50
+  },
+  "thresholds": {
+    "livenessTimeoutMs": 2000,
+    "readinessTimeoutMs": 5000,
+    "degradedThresholdMs": 1000,
+    "healthPollIntervalMs": 30000
+  }
+}

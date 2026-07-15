@@ -1,0 +1,59 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build outputs
+dist/
+build/
+*.js.map
+*.d.ts.map
+
+# Environment
+.env
+.env.local
+.env.*.local
+.env.test
+!.env.example
+
+# Secrets (never commit)
+*.key
+*.pem
+*.pfx
+cosign.key
+cosign.pub
+cosign.crt
+vault-token
+
+# SBOM (generated in CI)
+sbom.spdx.json
+sbom.cyclonedx.json
+
+# Test coverage
+coverage/
+.nyc_output/
+jest-results.xml
+
+# Terraform
+infra/terraform/.terraform/
+infra/terraform/*.tfplan
+infra/terraform/terraform.tfstate
+infra/terraform/terraform.tfstate.backup
+infra/terraform/.terraform.lock.hcl
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Logs
+*.log
+logs/
+
+# Docker
+.docker/
+
+# Flyway
+.flyway/

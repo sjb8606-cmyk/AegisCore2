@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "proposedBotId": "D-20",
+  "role": "Detects unauthorized or unexpected configuration changes by comparing current config file hashes against a recorded baseline.",
+  "triggerConditions": ["scheduled:daily", "manual", "pre-deploy"],
+  "behaviorDescription": "Hashes every file in a config directory and compares against a stored baseline JSON file of known-good hashes. Reports missing files, modified files, and new files not yet in the baseline. Also supports recording a new baseline, but that action is intended for manual, human-initiated use only.",
+  "permissionScope": ["read:filesystem", "read:config-baseline", "write:config-baseline"],
+  "hitlClassification": "Alert",
+  "ancestry": {
+    "sourceSignals": ["crystalforge-guardian-d20", "aegisswarm-base-build"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "detectDrift never modifies any file — comparison and reporting only",
+    "recordBaseline WRITES a baseline file and must only be invoked manually by a human deliberately accepting the current state as known-good — never wire it to a scheduled trigger"
+  ]
+}

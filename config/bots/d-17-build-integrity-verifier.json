@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "proposedBotId": "D-17",
+  "role": "Verifies that build output matches the manifest recorded at build time, confirming both file integrity and commit provenance before a build can be trusted for deployment.",
+  "triggerConditions": ["pre-deploy", "manual"],
+  "behaviorDescription": "Hashes every file in a build output directory and compares against a manifest recorded immediately after compilation by the trusted build pipeline. The manifest carries the commit SHA and build timestamp alongside file hashes, so a mismatch signals either tampering after build or a stale/incorrect manifest. Detection only for verifyBuildIntegrity; recordBuildManifest writes a new manifest and must only be invoked by the build pipeline itself.",
+  "permissionScope": ["read:filesystem", "read:build-manifest", "write:build-manifest"],
+  "hitlClassification": "Synchronous Gate",
+  "ancestry": {
+    "sourceSignals": ["crystalforge-guardian-d17", "aegisswarm-base-build"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "verifyBuildIntegrity never modifies any file — comparison and reporting only",
+    "recordBuildManifest must only be invoked by the trusted build pipeline immediately after compilation — never manually, never on a schedule",
+    "A block-severity finding must halt deployment; this bot's HITL classification is Synchronous Gate, not Alert, because a failed build integrity check should stop the pipeline, not just notify someone"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "name": "aegiscore",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Foundational infrastructure layer for secure SaaS/AI applications",
+  "workspaces": [
+    "platform/*",
+    "apps/*"
+    , "platform/collaboration"
+    , "features/*"
+  ],
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "test:coverage": "npm run test:coverage --workspaces --if-present",
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:fix": "eslint . --ext .ts,.tsx --fix",
+    "typecheck": "tsc --noEmit --project tsconfig.json",
+    "migrate:up": "flyway migrate",
+    "migrate:down": "flyway undo",
+    "migrate:info": "flyway info",
+    "docker:up": "docker compose -f infra/docker/docker-compose.yml up -d",
+    "docker:down": "docker compose -f infra/docker/docker-compose.yml down",
+    "docker:logs": "docker compose -f infra/docker/docker-compose.yml logs -f",
+    "sbom:generate": "syft packages . -o spdx-json=sbom.spdx.json",
+    "sign:image": "cosign sign --key cosign.key",
+    "openapi:export": "node scripts/export-openapi.js",
+    "health:check": "node scripts/health-check.js",
+    "checklist": "node scripts/generation-checklist.js"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "eslint": "^8.57.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.0",
+    "typescript": "^5.4.0"
+  },
+  "jest": {
+    "projects": [
+      "<rootDir>/platform/*/jest.config.js",
+      "<rootDir>/apps/*/jest.config.js"
+    ]
+  },
+  "dependencies": {
+    "@socket.io/redis-adapter": "8.3.0",
+    "redis": "6.0.0",
+    "socket.io": "4.8.3"
+  }
+}

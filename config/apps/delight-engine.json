@@ -1,0 +1,51 @@
+{
+  "app_id": "delight-engine",
+  "name": "Delight Engine",
+  "version": "1.0.0",
+  "description": "AI persona platform — multi-persona chat with humanity levels, blending, and Veridact safety receipts.",
+  "tenant_id": "550e8400-e29b-41d4-a716-446655440000",
+  "status": "active",
+  "cores": [
+    "delight",
+    "ai-safety",
+    "audit",
+    "subscriptions",
+    "metering"
+  ],
+  "config": {
+    "delight": {
+      "enabled": true,
+      "persona_directories": ["business", "culinary", "education", "odyssey", "trades", "travel"],
+      "blend_mode": true,
+      "humanity_levels": [0, 10, 25, 50],
+      "default_humanity_level": 25,
+      "session_memory": "thread-harvester",
+      "voice_enabled": true
+    },
+    "ai-safety": {
+      "pii_filter": true,
+      "adversarial_detection": true,
+      "hard_boundaries": ["medical", "financial_advice", "therapy"],
+      "veridact_receipts_on_boundary": true
+    },
+    "subscriptions": {
+      "tiers": {
+        "scout": { "label": "Scout (Free)", "max_personas": 3, "blend": false, "voice": false },
+        "explorer": { "label": "Explorer ($7.99/mo)", "max_personas": 20, "blend": true, "voice": false, "price_monthly": 7.99 },
+        "strategist": { "label": "Strategist ($24.99/mo)", "max_personas": -1, "blend": true, "voice": true, "agent_mode": true, "price_monthly": 24.99 }
+      }
+    },
+    "routing": {
+      "hub_persona": "lumen",
+      "verticals": ["war-council", "symposium", "business", "culinary", "trades", "odyssey", "travel", "education"]
+    }
+  },
+  "api_keys_required": ["ANTHROPIC_API_KEY"],
+  "routes": [
+    { "path": "/api/delight/chat", "method": "POST", "auth": true },
+    { "path": "/api/delight/personas", "method": "GET", "auth": true },
+    { "path": "/api/delight/blend", "method": "POST", "auth": true }
+  ],
+  "created_at": "2026-06-25T00:00:00Z",
+  "owner": "Ruthless Technologies"
+}
