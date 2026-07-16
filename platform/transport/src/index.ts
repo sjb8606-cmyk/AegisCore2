@@ -51,8 +51,8 @@ export function parseUserId(userId: any): string {
 }
 
 function loadConfig(): { transport: TransportConfig } {
+  const configPath = path.join(process.cwd(), 'config', 'transport.json');
   try {
-    const configPath = path.join(process.cwd(), 'config', 'transport.json');
     if (fs.existsSync(configPath)) {
       const raw = JSON.parse(fs.readFileSync(configPath, 'utf8'));
       return { transport: TransportConfigSchema.parse(raw) };

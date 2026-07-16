@@ -59,8 +59,8 @@ export function parseUserId(userId: any): string {
 }
 
 function loadConfig(): ProcurementConfig {
+  const configPath = path.join(process.cwd(), 'config', 'procurement.json');
   try {
-    const configPath = path.join(process.cwd(), 'config', 'procurement.json');
     if (fs.existsSync(configPath)) {
       const raw = JSON.parse(fs.readFileSync(configPath, 'utf8'));
       return ProcurementConfigSchema.parse(raw);

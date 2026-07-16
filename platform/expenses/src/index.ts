@@ -60,8 +60,8 @@ export function parseUserId(userId: any): string {
 }
 
 function loadConfig(): ExpensesConfig {
+  const configPath = path.join(process.cwd(), 'config', 'expenses.json');
   try {
-    const configPath = path.join(process.cwd(), 'config', 'expenses.json');
     if (fs.existsSync(configPath)) {
       const raw = JSON.parse(fs.readFileSync(configPath, 'utf8'));
       return ExpensesConfigSchema.parse(raw);

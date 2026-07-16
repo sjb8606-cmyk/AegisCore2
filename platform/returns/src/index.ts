@@ -58,8 +58,8 @@ export function parseUserId(userId: any): string {
 }
 
 function loadConfig(): ReturnsConfig {
+  const configPath = path.join(process.cwd(), 'config', 'returns.json');
   try {
-    const configPath = path.join(process.cwd(), 'config', 'returns.json');
     if (fs.existsSync(configPath)) {
       const raw = JSON.parse(fs.readFileSync(configPath, 'utf8'));
       return ReturnsConfigSchema.parse(raw);

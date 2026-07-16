@@ -56,8 +56,8 @@ export function parseUserId(userId: any): string {
 }
 
 function loadConfig(): SalonConfig {
+  const configPath = path.join(process.cwd(), 'config', 'salon.json');
   try {
-    const configPath = path.join(process.cwd(), 'config', 'salon.json');
     if (fs.existsSync(configPath)) {
       const raw = JSON.parse(fs.readFileSync(configPath, 'utf8'));
       return SalonConfigSchema.parse(raw);

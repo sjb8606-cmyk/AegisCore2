@@ -56,8 +56,8 @@ export function parseUserId(userId: any): string {
 }
 
 function loadConfig(): VeterinaryConfig {
+  const configPath = path.join(process.cwd(), 'config', 'veterinary.json');
   try {
-    const configPath = path.join(process.cwd(), 'config', 'veterinary.json');
     if (fs.existsSync(configPath)) {
       const raw = JSON.parse(fs.readFileSync(configPath, 'utf8'));
       return VeterinaryConfigSchema.parse(raw);

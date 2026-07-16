@@ -59,8 +59,8 @@ export function parseUserId(userId: any): string {
 }
 
 function loadConfig(): FitnessConfig {
+  const configPath = path.join(process.cwd(), 'config', 'fitness.json');
   try {
-    const configPath = path.join(process.cwd(), 'config', 'fitness.json');
     if (fs.existsSync(configPath)) {
       const raw = JSON.parse(fs.readFileSync(configPath, 'utf8'));
       return FitnessConfigSchema.parse(raw);

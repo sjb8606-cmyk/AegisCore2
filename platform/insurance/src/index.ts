@@ -41,8 +41,8 @@ export function parseUserId(userId: any): string {
 }
 
 function loadConfig(): InsuranceConfig {
+  const configPath = path.join(process.cwd(), 'config', 'insurance.json');
   try {
-    const configPath = path.join(process.cwd(), 'config', 'insurance.json');
     if (fs.existsSync(configPath)) {
       return InsuranceConfigSchema.parse(JSON.parse(fs.readFileSync(configPath, 'utf8')));
     }

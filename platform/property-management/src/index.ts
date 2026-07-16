@@ -37,8 +37,8 @@ export function parseUserId(userId: any): string {
 }
 
 function loadConfig(): PropertyManagementConfig {
+  const configPath = path.join(process.cwd(), 'config', 'property-management.json');
   try {
-    const configPath = path.join(process.cwd(), 'config', 'property-management.json');
     if (fs.existsSync(configPath)) {
       return PropertyManagementConfigSchema.parse(JSON.parse(fs.readFileSync(configPath, 'utf8')));
     }

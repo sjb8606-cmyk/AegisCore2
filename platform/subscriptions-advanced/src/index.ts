@@ -23,8 +23,8 @@ export function parseUserId(userId: any): string {
 }
 
 function loadConfig() {
+  const configPath = path.join(process.cwd(), 'config', 'subscriptions-advanced.json');
   try {
-    const configPath = path.join(process.cwd(), 'config', 'subscriptions-advanced.json');
     if (fs.existsSync(configPath)) return JSON.parse(fs.readFileSync(configPath, 'utf8'));
   } catch (err) { console.warn(`Config file at ${configPath} failed to load or parse, falling back to defaults:`, err); }
   return { enabled: true, tiers: { usageMetering: true, featureEntitlements: true } };

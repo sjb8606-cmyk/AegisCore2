@@ -10,8 +10,8 @@ export function parseUserId(userId: any): string {
 }
 
 function loadConfig() {
+  const configPath = path.join(process.cwd(), 'config', 'ai-moderation.json');
   try {
-    const configPath = path.join(process.cwd(), 'config', 'ai-moderation.json');
     if (fs.existsSync(configPath)) return JSON.parse(fs.readFileSync(configPath, 'utf8'));
   } catch (err) { console.warn(`Config file at ${configPath} failed to load or parse, falling back to defaults:`, err); }
   return {

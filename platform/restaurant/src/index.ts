@@ -57,8 +57,8 @@ export function parseUserId(userId: any): string {
 }
 
 function loadConfig(): RestaurantConfig {
+  const configPath = path.join(process.cwd(), 'config', 'restaurant.json');
   try {
-    const configPath = path.join(process.cwd(), 'config', 'restaurant.json');
     if (fs.existsSync(configPath)) {
       const raw = JSON.parse(fs.readFileSync(configPath, 'utf8'));
       return RestaurantConfigSchema.parse(raw);

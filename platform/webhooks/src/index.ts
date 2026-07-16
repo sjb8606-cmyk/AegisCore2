@@ -11,8 +11,8 @@ export function parseUserId(userId: any): string {
 }
 
 function loadConfig() {
+  const configPath = path.join(process.cwd(), 'config', 'webhooks.json');
   try {
-    const configPath = path.join(process.cwd(), 'config', 'webhooks.json');
     if (fs.existsSync(configPath)) return JSON.parse(fs.readFileSync(configPath, 'utf8'));
   } catch (err) { console.warn(`Config file at ${configPath} failed to load or parse, falling back to defaults:`, err); }
   return { enabled: true, limits: { endpointCount: 5, timeoutSeconds: 5, retryAttempts: 5 } };

@@ -61,8 +61,8 @@ export function parseUserId(userId: any): string {
 }
 
 function loadConfig(): BudgetingConfig {
+  const configPath = path.join(process.cwd(), 'config', 'budgeting.json');
   try {
-    const configPath = path.join(process.cwd(), 'config', 'budgeting.json');
     if (fs.existsSync(configPath)) {
       const raw = JSON.parse(fs.readFileSync(configPath, 'utf8'));
       return BudgetingConfigSchema.parse(raw);

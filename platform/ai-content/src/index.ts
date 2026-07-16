@@ -37,8 +37,8 @@ export function parseUserId(userId: any): string {
 }
 
 function loadConfig() {
+  const configPath = path.join(process.cwd(), 'config', 'ai-content.json');
   try {
-    const configPath = path.join(process.cwd(), 'config', 'ai-content.json');
     if (fs.existsSync(configPath)) {
       return JSON.parse(fs.readFileSync(configPath, 'utf8'));
     }

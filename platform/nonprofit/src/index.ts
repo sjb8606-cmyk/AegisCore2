@@ -10,8 +10,8 @@ export function parseUserId(userId: any): string {
 }
 
 function loadConfig() {
+  const configPath = path.join(process.cwd(), 'config', 'nonprofit.json');
   try {
-    const configPath = path.join(process.cwd(), 'config', 'nonprofit.json');
     if (fs.existsSync(configPath)) return JSON.parse(fs.readFileSync(configPath, 'utf8'));
   } catch (err) { console.warn(`Config file at ${configPath} failed to load or parse, falling back to defaults:`, err); }
   return { enabled: true, tiers: { taxReceiptGeneration: true }, limits: { donorCount: 5000 }, organization: { name: 'Local Charity', registrationNumber: '0001' } };

@@ -52,8 +52,8 @@ export function parseUserId(userId: any): string {
 }
 
 function loadConfig(): TimesheetsConfig {
+  const configPath = path.join(process.cwd(), 'config', 'timesheets.json');
   try {
-    const configPath = path.join(process.cwd(), 'config', 'timesheets.json');
     if (fs.existsSync(configPath)) {
       const raw = JSON.parse(fs.readFileSync(configPath, 'utf8'));
       return TimesheetsConfigSchema.parse(raw);
