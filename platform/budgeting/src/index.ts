@@ -4,6 +4,7 @@ import * as path from 'path';
 import * as crypto from 'crypto';
 import { z } from 'zod';
 import { AppError, ErrorCode } from '@platform/utils';
+export { AppError, ErrorCode };
 
 export const BudgetingConfigSchema = z.object({
   enabled: z.boolean(),
@@ -135,16 +136,8 @@ export async function submitBudget(tenantId: string, budgetId: string, submitted
   // Atomically transition status to submitted
   await withTenantQuery('UPDATE budgets SET status = \'submitted\', updated_at = CURRENT_TIMESTAMP WHERE id = $1 AND tenant_id = $2', [budgetId, tenantId], tenantId);
 
-  // Spawns pending approval task
-  const approvalId = crypto.randomUUID();
-  const approverId = '00000000-0000-0000-0000-000000000001'; // designated financial controller
-  
-  await withTenantQuery(`
-    INSERT INTO budget_approvals (id, tenant_id, budget_id, approver_id, status)
-    VALUES ($1, $2, $3, $4, 'pending');
-  `, [approvalId, tenantId, budgetId, approverId], tenantId);
-
-  return { success: true, status: 'submitted', approval_id: approvalId };
+  // NOTE: no approval row is pre-created here — see approveBudget() below.
+  return { success: true, status: 'submitted' };
 }
 
 export async function lockBudget(tenantId: string, budgetId: string, adminId: string) {

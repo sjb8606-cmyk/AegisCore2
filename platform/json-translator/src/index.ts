@@ -1,6 +1,7 @@
 import { z } from 'zod';
 import { createHash } from 'crypto';
 import { loadConfig, AppError, ErrorCode } from '../../utils/src/index';
+export { AppError, ErrorCode };
 import { withTenantQuery } from '../../tenancy/src/index';
 import { recordUsage } from '../../metering/src/index';
 

@@ -1,6 +1,8 @@
 import { Router, Request, Response } from 'express';
 import { z } from 'zod';
 import { withTenantQuery } from '@platform/tenancy';
+import { AppError, ErrorCode } from '@platform/utils';
+import { AuthenticatedRequest } from '@platform/auth';
 
 export const UpdateUserPreferencesSchema = z.object({
   high_contrast: z.boolean().optional(),
@@ -23,13 +25,14 @@ export function isValidUuid(id: any): boolean {
   return typeof id === 'string' && /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id);
 }
 export function parseUserId(userId: any): string {
-  return isValidUuid(userId) ? userId : '00000000-0000-0000-0000-000000000001';
+  if (isValidUuid(userId)) return userId;
+  throw new AppError(`Invalid or missing user id: ${JSON.stringify(userId)}`, ErrorCode.BAD_REQUEST);
 }
 
 function extractContext(req: Request) {
-  const tenantId = req.header('x-tenant-id');
-  if (!tenantId || !isValidUuid(tenantId)) throw new Error('Valid x-tenant-id required');
-  return { tenantId, userId: parseUserId(req.header('x-user-id')) };
+  const auth = (req as AuthenticatedRequest).auth;
+  if (!auth) throw new AppError('Missing authenticated context', ErrorCode.UNAUTHORIZED);
+  return { tenantId: auth.tenantId, userId: parseUserId(auth.sub) };
 }
 
 const router = Router();

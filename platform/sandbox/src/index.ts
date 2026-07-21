@@ -1,5 +1,6 @@
 import { z } from 'zod';
 import { loadConfig, AppError, ErrorCode } from '../../utils/src/index';
+export { AppError, ErrorCode };
 import { withTenantQuery } from '../../tenancy/src/index';
 import { emit as auditEmit } from '../../audit/src/index';
 import { randomUUID } from 'crypto';

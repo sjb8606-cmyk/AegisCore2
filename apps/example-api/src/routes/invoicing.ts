@@ -8,7 +8,7 @@ const router = Router();
 
 router.post('/invoices', requireAuth(), tenantResolver(), async (req: any, res: any, next: any) => {
   try {
-    const userId = req.auth?.userId || req.auth?.sub || req.auth?.id || 'founder';
+    const userId = req.auth.sub;
     const result = await InvoicingService.createInvoice(req.auth.tenantId, userId, req.body);
     return ok(res, result);
   } catch (err) {
@@ -18,7 +18,7 @@ router.post('/invoices', requireAuth(), tenantResolver(), async (req: any, res: 
 
 router.post('/invoices/:id/pay', requireAuth(), tenantResolver(), async (req: any, res: any, next: any) => {
   try {
-    const userId = req.auth?.userId || req.auth?.sub || req.auth?.id || 'founder';
+    const userId = req.auth.sub;
     const result = await InvoicingService.recordPayment(req.auth.tenantId, req.params.id, req.body, userId);
     return ok(res, result);
   } catch (err) {
@@ -37,7 +37,7 @@ router.get('/invoices/:id', requireAuth(), tenantResolver(), async (req: any, re
 
 router.delete('/invoices/:id', requireAuth(), tenantResolver(), async (req: any, res: any, next: any) => {
   try {
-    const userId = req.auth?.userId || req.auth?.sub || req.auth?.id || 'founder';
+    const userId = req.auth.sub;
     await InvoicingService.voidInvoice(req.auth.tenantId, req.params.id, userId);
     return ok(res, { success: true });
   } catch (err) {

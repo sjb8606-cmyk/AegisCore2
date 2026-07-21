@@ -1,4 +1,6 @@
 import { Router, Request, Response } from 'express';
+import { AuthenticatedRequest } from '../../../../platform/auth/src/index';
+
 import { 
   createSurvey, 
   submitSurveyResponse, 
@@ -9,12 +11,11 @@ import {
 const router = Router();
 
 function extractTenantAndUser(req: Request) {
-  const tenantId = req.header('x-tenant-id');
-  const userId = req.header('x-user-id') || 'founder';
-  if (!tenantId) {
-    throw { message: 'Missing x-tenant-id header required for operation', code: (ErrorCode as any).BAD_REQUEST };
+  const auth = (req as AuthenticatedRequest).auth;
+  if (!auth) {
+    throw { message: 'Missing authenticated context', code: (ErrorCode as any).UNAUTHORIZED };
   }
-  return { tenantId, userId };
+  return { tenantId: auth.tenantId, userId: auth.sub };
 }
 
 const paths = {

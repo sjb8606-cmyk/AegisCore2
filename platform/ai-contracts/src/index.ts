@@ -3,6 +3,7 @@ import * as path from 'path';
 import { z } from 'zod';
 import { withTenantQuery } from '../../tenancy/src/index';
 import { AppError, ErrorCode } from '../../utils/src/index';
+export { AppError, ErrorCode };
 
 export const ContractIngestionSchema = z.object({
   title: z.string().optional(),

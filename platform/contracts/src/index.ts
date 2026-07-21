@@ -2,7 +2,11 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { z } from 'zod';
 import { withTenantQuery } from '../../tenancy/src/index';
+import { getPool } from '../../tenancy/src/rls';
 import { AppError, ErrorCode } from '../../utils/src/index';
+export { AppError, ErrorCode };
+
+const SIGN_TOKEN_TTL_DAYS = 30;
 
 export const SignatoryInputSchema = z.object({
   name: z.string().min(1),
@@ -128,26 +132,60 @@ export class ContractsService {
         RETURNING id, name, email, role, sign_token
       `;
       const sigRows = await withTenantQuery(sigSql, [tenantId, contract.id, sig.name, sig.email, sig.role || 'signer'], tenantId);
-      signatories.push(sigRows[0]);
+      const signatory = sigRows[0];
+      signatories.push(signatory);
+
+      // Populate the (deliberately non-RLS) signature_tokens lookup table
+      // right here, in the same real tenant context, so it can never drift
+      // out of sync with esign_contract_signatories. This is what lets
+      // recordSignature() below resolve a bare token to its real tenant
+      // before any tenant context exists, without a hardcoded bypass value.
+      await getPool().query(
+        `INSERT INTO signature_tokens (token, tenant_id, contract_id, signatory_id, expires_at)
+         VALUES ($1, $2, $3, $4, NOW() + INTERVAL '${SIGN_TOKEN_TTL_DAYS} days')`,
+        [signatory.sign_token, tenantId, contract.id, signatory.id]
+      );
     }
 
     return { contract, signatories };
   }
 
   static async recordSignature(token: string, signatureData: string, meta: { ip: string; userAgent: string }) {
-    // Locate the signatory and contract context
+    // Resolve the token to its real tenant/contract/signatory via the
+    // deliberately non-RLS signature_tokens table — this is the one query
+    // in this whole flow that legitimately has no tenant context yet, since
+    // the caller here is an unauthenticated external signatory who only
+    // possesses a secret link, not a login. expires_at is checked here,
+    // not just stored: an expired token must be rejected exactly like one
+    // that never existed.
+    const tokenRows = await getPool().query(
+      `SELECT tenant_id, contract_id, signatory_id
+       FROM signature_tokens
+       WHERE token = $1 AND expires_at > NOW()`,
+      [token]
+    );
+    const tokenRow = tokenRows.rows[0];
+    if (!tokenRow) {
+      throw new AppError('Invalid or expired signature token', ErrorCode.NOT_FOUND);
+    }
+
+    const { tenant_id: tenantId, contract_id: contractId, signatory_id: signatoryId } = tokenRow;
+
+    // Defense in depth: re-verify against the real tenant-scoped tables too
+    // (covers e.g. the contract having since been deleted, or the
+    // signatory somehow already signed via another path).
     const sql = `
-      SELECT s.id, s.contract_id, s.tenant_id, c.status
+      SELECT s.id, c.status
       FROM esign_contract_signatories s
       JOIN esign_contracts c ON s.contract_id = c.id
-      WHERE s.sign_token = $1::uuid AND s.signed_at IS NULL AND c.deleted_at IS NULL
+      WHERE s.id = $1::uuid AND s.contract_id = $2::uuid AND s.signed_at IS NULL AND c.deleted_at IS NULL
     `;
-    const rows = await withTenantQuery(sql, [token], '00000000-0000-0000-0000-000000000001'); // Safe system/founder tenant bypass
+    const rows = await withTenantQuery(sql, [signatoryId, contractId], tenantId);
     if (!rows || rows.length === 0) {
       throw new AppError('Invalid or already used signature token', ErrorCode.NOT_FOUND);
     }
 
-    const { id, contract_id, tenant_id } = rows[0];
+    const { id } = rows[0];
 
     // Atomically execute signature update
     const updateSql = `
@@ -156,7 +194,11 @@ export class ContractsService {
       WHERE id = $4::uuid AND tenant_id = $5::uuid
       RETURNING *
     `;
-    await withTenantQuery(updateSql, [signatureData, meta.ip, meta.userAgent, id, tenant_id], tenant_id);
+    await withTenantQuery(updateSql, [signatureData, meta.ip, meta.userAgent, id, tenantId], tenantId);
+
+    // Single-use: invalidate the token immediately now that it's been
+    // consumed, rather than waiting for the expiry-based cleanup sweep.
+    await getPool().query(`DELETE FROM signature_tokens WHERE token = $1`, [token]);
 
     // If all signatories have signed, mark contract status as executed
     const checkSql = `
@@ -164,7 +206,7 @@ export class ContractsService {
       FROM esign_contract_signatories
       WHERE contract_id = $1::uuid AND signed_at IS NULL
     `;
-    const checkRows = await withTenantQuery(checkSql, [contract_id], tenant_id);
+    const checkRows = await withTenantQuery(checkSql, [contractId], tenantId);
     const unsignedCount = checkRows[0]?.unsigned_count || 0;
 
     if (unsignedCount === 0) {
@@ -173,10 +215,22 @@ export class ContractsService {
         SET status = 'executed', updated_at = NOW()
         WHERE id = $1::uuid AND tenant_id = $2::uuid
       `;
-      await withTenantQuery(execSql, [contract_id, tenant_id], tenant_id);
+      await withTenantQuery(execSql, [contractId, tenantId], tenantId);
     }
 
-    return { success: true, contractId: contract_id };
+    return { success: true, contractId };
+  }
+
+  /**
+   * Delete expired-but-never-used signature tokens so this table doesn't
+   * grow indefinitely. Not wired to a scheduler here — no cron/scheduled-
+   * job infrastructure exists elsewhere in this codebase yet, so this is
+   * exposed for whatever periodic job mechanism gets added, rather than
+   * inventing one unprompted.
+   */
+  static async cleanupExpiredSignatureTokens(): Promise<number> {
+    const result = await getPool().query(`DELETE FROM signature_tokens WHERE expires_at <= NOW()`);
+    return result.rowCount ?? 0;
   }
 
   static async fetchContracts(tenantId: string): Promise<any[]> {

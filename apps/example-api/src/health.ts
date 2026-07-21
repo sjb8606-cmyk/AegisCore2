@@ -5,7 +5,7 @@
  * Readiness: /ready  — readiness probe (checks deps)
  */
 
-import { Router, Request, Response } from 'express';
+import { Router, Request, Response as ExpressResponse } from 'express';
 import { Pool } from 'pg';
 import Redis from 'ioredis';
 import { getLogger } from '@platform/observability';
@@ -16,7 +16,7 @@ const TIMEOUT = parseInt(process.env.HEALTH_CHECK_TIMEOUT_MS || '5000', 10);
 
 // ── Liveness ───────────────────────────────────────────────────
 
-router.get('/health', (_req: Request, res: Response) => {
+router.get('/health', (_req: Request, res: ExpressResponse) => {
   res.status(200).json({
     status:    'ok',
     service:   process.env.SERVICE_NAME    || 'example-api',
@@ -27,7 +27,7 @@ router.get('/health', (_req: Request, res: Response) => {
 
 // ── Readiness ──────────────────────────────────────────────────
 
-router.get('/ready', async (_req: Request, res: Response) => {
+router.get('/ready', async (_req: Request, res: ExpressResponse) => {
   const checks: Record<string, CheckResult> = {};
   let allHealthy = true;
 
@@ -106,7 +106,7 @@ async function checkVault(): Promise<CheckResult> {
     const resp = await Promise.race([
       fetch(`${process.env.VAULT_ADDR}/v1/sys/health`),
       timeout(TIMEOUT),
-    ]) as Response;
+    ]) as globalThis.Response;
     const healthy = resp.status < 300 || resp.status === 429; // 429 = standby
     return { healthy, latencyMs: Date.now() - start };
   } catch (err) {

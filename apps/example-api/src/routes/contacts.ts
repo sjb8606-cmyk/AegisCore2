@@ -1,13 +1,14 @@
 import { Router, Request, Response } from 'express';
+import { AuthenticatedRequest } from '../../../../platform/auth/src/index';
+
 import { createContact, addTag, mergeContacts, getContactLedger, AppError, isValidUuid } from '../../../../platform/contacts/src/index';
 
 const router = Router();
 
 function extractContext(req: Request) {
-  const tenantId = req.header('x-tenant-id');
-  const userId = req.header('x-user-id') || 'founder';
-  if (!tenantId) throw new AppError('Missing x-tenant-id', 'BAD_REQUEST');
-  return { tenantId, userId };
+  const auth = (req as AuthenticatedRequest).auth;
+  if (!auth) throw new AppError('Missing authenticated context', 'UNAUTHORIZED');
+  return { tenantId: auth.tenantId, userId: auth.sub };
 }
 
 function handleError(res: Response, error: any) {
@@ -50,12 +51,12 @@ router.post(paths.tag, async (req: Request, res: Response) => {
 
 router.post(paths.merge, async (req: Request, res: Response) => {
   try {
-    const { tenantId } = extractContext(req);
+    const { tenantId, userId } = extractContext(req);
     const targetId = req.params.id;
     if (!isValidUuid(targetId)) {
       throw new AppError(`Invalid Contact ID format: '${targetId}'`, 'BAD_REQUEST');
     }
-    const result = await mergeContacts(tenantId, req.body.source_id, targetId);
+    const result = await mergeContacts(tenantId, req.body.source_id, targetId, userId);
     res.status(200).json(result);
   } catch (error: any) { handleError(res, error); }
 });
@@ -72,4 +73,4 @@ router.get(paths.ledger, async (req: Request, res: Response) => {
   } catch (error: any) { handleError(res, error); }
 });
 
-export { router as contactsRouter, router as 'contactsRouter' };
+export { router as contactsRouter };

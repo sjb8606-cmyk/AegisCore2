@@ -90,7 +90,8 @@ export async function addTag(tenantId: string, contactId: string, data: any) {
 }
 
 // Atomic Merge Engine: Transfer tags and log activities from source to target
-export async function mergeContacts(tenantId: string, sourceId: string, targetId: string) {
+export async function mergeContacts(tenantId: string, sourceId: string, targetId: string, userId: string) {
+  const actorId = parseUserId(userId);
   const cfg = loadConfig();
   if (!cfg.enabled || !cfg.tiers.contactMerging) {
     throw new AppError('Contacts merging tier is disabled', 'FORBIDDEN');
@@ -138,7 +139,7 @@ export async function mergeContacts(tenantId: string, sourceId: string, targetId
   await withTenantQuery(`
     INSERT INTO contact_activity (id, tenant_id, contact_id, activity_type, summary, actor_ref)
     VALUES ($1, $2, $3, 'status_change', $4, $5);
-  `, [activityId, tenantId, targetId, `Contact '${source.first_name} ${source.last_name}' merged into this profile.`, '00000000-0000-0000-0000-000000000001'], tenantId);
+  `, [activityId, tenantId, targetId, `Contact '${source.first_name} ${source.last_name}' merged into this profile.`, actorId], tenantId);
 
   return {
     success: true,

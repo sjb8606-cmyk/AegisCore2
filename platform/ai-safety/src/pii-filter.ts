@@ -13,6 +13,15 @@ const PII_PATTERNS = [
   { type: 'dob', pattern: /\b(0?[1-9]|1[0-2])\/(0?[1-9]|[12][0-9]|3[01])\/\d{4}\b|\b\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])\b/g, replacement: '[DATE REDACTED]' }
 ];
 
+/** Quick boolean check — does this text contain any recognizable PII at all? */
+export function containsPii(text: string): boolean {
+  return PII_PATTERNS.some(({ pattern }) => {
+    const matched = pattern.test(text);
+    pattern.lastIndex = 0;
+    return matched;
+  });
+}
+
 export function filterPii(text: string): PiiFilterResult {
   let sanitized = text;
   const found = new Set<string>();

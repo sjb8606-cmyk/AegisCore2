@@ -1,5 +1,6 @@
 import { z } from 'zod';
 import { AppError, ErrorCode } from '../../utils/src/index';
+export { AppError, ErrorCode };
 
 // ── Rule schema (Universal Spec v3.6 rule-authoring format) ────
 

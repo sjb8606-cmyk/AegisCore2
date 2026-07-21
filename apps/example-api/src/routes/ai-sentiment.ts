@@ -1,13 +1,14 @@
 import { Router, Request, Response } from 'express';
+import { AuthenticatedRequest } from '../../../../platform/auth/src/index';
+
 import { analyzeSentiment, updateHealthScore, getCustomerSentimentLedger, AppError, isValidUuid } from '../../../../platform/ai-sentiment/src/index';
 
 const router = Router();
 
 function extractContext(req: Request) {
-  const tenantId = req.header('x-tenant-id');
-  const userId = req.header('x-user-id') || 'founder';
-  if (!tenantId) throw new AppError('Missing x-tenant-id', 'BAD_REQUEST');
-  return { tenantId, userId };
+  const auth = (req as AuthenticatedRequest).auth;
+  if (!auth) throw new AppError('Missing authenticated context', 'UNAUTHORIZED');
+  return { tenantId: auth.tenantId, userId: auth.sub };
 }
 
 function handleError(res: Response, error: any) {
@@ -55,4 +56,4 @@ router.get(paths.ledger, async (req: Request, res: Response) => {
   } catch (error: any) { handleError(res, error); }
 });
 
-export { router as aiSentimentRouter, router as 'ai-sentimentRouter' };
+export { router as aiSentimentRouter };

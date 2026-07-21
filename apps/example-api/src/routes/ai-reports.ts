@@ -1,13 +1,14 @@
 import { Router, Request, Response } from 'express';
+import { AuthenticatedRequest } from '../../../../platform/auth/src/index';
+
 import { createTemplate, generateReport, getReportRun, ErrorCode } from '../../../../platform/ai-reports/src/index';
 
 const router = Router();
 
 function extractContext(req: Request) {
-  const tenantId = req.header('x-tenant-id');
-  const userId = req.header('x-user-id') || 'founder';
-  if (!tenantId) throw { message: 'Missing x-tenant-id', code: (ErrorCode as any).BAD_REQUEST };
-  return { tenantId, userId };
+  const auth = (req as AuthenticatedRequest).auth;
+  if (!auth) throw { message: 'Missing authenticated context', code: (ErrorCode as any).UNAUTHORIZED };
+  return { tenantId: auth.tenantId, userId: auth.sub };
 }
 
 const paths = {

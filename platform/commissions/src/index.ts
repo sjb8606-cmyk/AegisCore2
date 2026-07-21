@@ -4,6 +4,7 @@ import * as path from 'path';
 import * as crypto from 'crypto';
 import { z } from 'zod';
 import { AppError, ErrorCode } from '@platform/utils';
+export { AppError, ErrorCode };
 
 export const CommissionsConfigSchema = z.object({
   enabled: z.boolean(),

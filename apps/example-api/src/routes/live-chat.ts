@@ -8,7 +8,7 @@ const router = Router();
 
 router.post('/conversations', requireAuth(), tenantResolver(), async (req: any, res: any, next: any) => {
   try {
-    const userId = req.auth?.userId || req.auth?.sub || req.auth?.id || 'founder';
+    const userId = req.auth.sub;
     const result = await LiveChatService.createConversation(req.auth.tenantId, req.body, userId);
     return ok(res, result);
   } catch (err) {
@@ -18,7 +18,7 @@ router.post('/conversations', requireAuth(), tenantResolver(), async (req: any, 
 
 router.post('/messages', requireAuth(), tenantResolver(), async (req: any, res: any, next: any) => {
   try {
-    const userId = req.auth?.userId || req.auth?.sub || req.auth?.id || 'founder';
+    const userId = req.auth.sub;
     const result = await LiveChatService.sendMessage(req.auth.tenantId, req.body, userId, 'user');
     return ok(res, result);
   } catch (err) {

@@ -5,6 +5,7 @@ import { z } from 'zod';
 import { createRemoteJWKSet, jwtVerify } from 'jose';
 import { withTenantQuery } from '../../tenancy/src/index';
 import { AppError, ErrorCode } from '../../utils/src/index';
+export { AppError, ErrorCode };
 
 export const IdpConfigSchema = z.object({
   name: z.string().min(1),

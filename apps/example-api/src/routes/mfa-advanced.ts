@@ -8,7 +8,7 @@ const router = Router();
 
 router.post('/enroll/totp', requireAuth(), tenantResolver(), async (req: any, res: any, next: any) => {
   try {
-    const userId = req.auth?.userId || req.auth?.sub || req.auth?.id || 'founder';
+    const userId = req.auth.sub;
     const result = await MfaAdvancedService.enrollTotp(req.auth.tenantId, userId, req.body);
     return ok(res, result);
   } catch (err) {
@@ -18,7 +18,7 @@ router.post('/enroll/totp', requireAuth(), tenantResolver(), async (req: any, re
 
 router.post('/verify', requireAuth(), tenantResolver(), async (req: any, res: any, next: any) => {
   try {
-    const userId = req.auth?.userId || req.auth?.sub || req.auth?.id || 'founder';
+    const userId = req.auth.sub;
     const result = await MfaAdvancedService.verifyChallenge(req.auth.tenantId, userId, req.body);
     return ok(res, result);
   } catch (err) {
@@ -28,7 +28,7 @@ router.post('/verify', requireAuth(), tenantResolver(), async (req: any, res: an
 
 router.post('/recovery', requireAuth(), tenantResolver(), async (req: any, res: any, next: any) => {
   try {
-    const userId = req.auth?.userId || req.auth?.sub || req.auth?.id || 'founder';
+    const userId = req.auth.sub;
     const result = await MfaAdvancedService.generateRecoveryCodes(req.auth.tenantId, userId);
     return ok(res, result);
   } catch (err) {
@@ -38,7 +38,7 @@ router.post('/recovery', requireAuth(), tenantResolver(), async (req: any, res: 
 
 router.get('/methods', requireAuth(), tenantResolver(), async (req: any, res: any, next: any) => {
   try {
-    const userId = req.auth?.userId || req.auth?.sub || req.auth?.id || 'founder';
+    const userId = req.auth.sub;
     const result = await MfaAdvancedService.fetchMethods(req.auth.tenantId, userId);
     return ok(res, { methods: result });
   } catch (err) {

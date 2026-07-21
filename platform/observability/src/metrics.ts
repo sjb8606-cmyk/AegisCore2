@@ -17,7 +17,11 @@ const meter = metrics.getMeter(
 export const httpRequestDuration: Histogram = meter.createHistogram('http_request_duration_ms', {
   description: 'HTTP request duration in milliseconds',
   unit:        'ms',
-  boundaries:  [5, 10, 25, 50, 100, 250, 500, 1000, 2500, 5000],
+  // Note: bucket boundaries aren't a per-histogram option in the real
+  // OpenTelemetry API — they're configured via a View registered on the
+  // MeterProvider (e.g. new ExplicitBucketHistogramAggregation([5, 10, ...])
+  // matched to this instrument name). Suggested boundaries for this metric:
+  // [5, 10, 25, 50, 100, 250, 500, 1000, 2500, 5000]
 });
 
 export const httpRequestsTotal: Counter = meter.createCounter('http_requests_total', {
@@ -76,7 +80,7 @@ export const auditShipperErrors: Counter = meter.createCounter('audit_shipper_er
 export const dbQueryDuration: Histogram = meter.createHistogram('db_query_duration_ms', {
   description: 'Database query duration',
   unit:        'ms',
-  boundaries:  [1, 5, 10, 25, 50, 100, 250, 500, 1000],
+  // See note above — suggested boundaries: [1, 5, 10, 25, 50, 100, 250, 500, 1000]
 });
 
 export const dbConnectionsActive: UpDownCounter = meter.createUpDownCounter('db_connections_active', {

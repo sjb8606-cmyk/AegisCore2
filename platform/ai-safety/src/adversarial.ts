@@ -12,6 +12,11 @@ const ADVERSARIAL_PATTERNS = [
   { name: 'output_injection', pattern: /<\/?script|javascript:|onerror=|onload=|\{\{.*?\}\}|<%.*?%>/i, weight: 60 }
 ];
 
+/** Quick boolean check — is this prompt adversarial at all? */
+export function scanPrompt(text: string): boolean {
+  return detectAdversarial(text).detected;
+}
+
 export function detectAdversarial(text: string): AdversarialResult {
   const matchedPatterns: string[] = [];
   let totalScore = 0;

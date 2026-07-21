@@ -8,7 +8,7 @@ const router = Router();
 
 router.post('/', requireAuth(), tenantResolver(), async (req: any, res: any, next: any) => {
   try {
-    const userId = req.auth?.userId || req.auth?.sub || req.auth?.id || 'founder';
+    const userId = req.auth.sub;
     const result = await FeedbackService.submitFeedback(req.auth.tenantId, userId, req.body);
     return ok(res, result);
   } catch (err) {
@@ -18,7 +18,7 @@ router.post('/', requireAuth(), tenantResolver(), async (req: any, res: any, nex
 
 router.post('/:id/vote', requireAuth(), tenantResolver(), async (req: any, res: any, next: any) => {
   try {
-    const userId = req.auth?.userId || req.auth?.sub || req.auth?.id || 'founder';
+    const userId = req.auth.sub;
     const result = await FeedbackService.voteFeedback(req.auth.tenantId, userId, {
       feedback_id: req.params.id,
       vote: 1

@@ -1,5 +1,6 @@
 import { z } from 'zod';
 import { loadConfig, AppError, ErrorCode } from '../../utils/src/index';
+export { AppError, ErrorCode };
 import { withTenantQuery, withTenantTransaction } from '../../tenancy/src/index';
 import { recordUsage } from '../../metering/src/index';
 import { validateLlmOutput } from '../../ai-safety/src/index';

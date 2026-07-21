@@ -8,7 +8,7 @@ const router = Router();
 
 router.post('/', requireAuth(), tenantResolver(), async (req: any, res: any, next: any) => {
   try {
-    const userId = req.auth?.userId || req.auth?.sub || req.auth?.id || 'founder';
+    const userId = req.auth.sub;
     const result = await ContractsService.createContract(req.auth.tenantId, userId, req.body);
     return ok(res, result);
   } catch (err) {

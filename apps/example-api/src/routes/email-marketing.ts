@@ -26,7 +26,7 @@ router.post('/campaigns/:id/send', requireAuth(), tenantResolver(), async (req: 
 
 router.post('/unsubscribe', requireAuth(), tenantResolver(), async (req: any, res: any, next: any) => {
   try {
-    const tenantId = req.body.tenantId || req.auth.tenantId;
+    const tenantId = req.auth.tenantId;
     const result = await EmailMarketingService.registerUnsubscribe(tenantId, req.body.email, req.body.reason);
     return ok(res, result);
   } catch (err) {

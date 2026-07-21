@@ -4,6 +4,7 @@ import * as path from 'path';
 import * as crypto from 'crypto';
 import { z } from 'zod';
 import { AppError, ErrorCode } from '@platform/utils';
+export { AppError, ErrorCode };
 
 export const ExpensesConfigSchema = z.object({
   enabled: z.boolean(),
@@ -137,16 +138,8 @@ export async function submitExpenseReport(tenantId: string, reportId: string, us
   // Atomically transition status to submitted
   await withTenantQuery('UPDATE expense_reports SET status = \'submitted\', updated_at = CURRENT_TIMESTAMP WHERE id = $1 AND tenant_id = $2', [reportId, tenantId], tenantId);
 
-  // Spawns pending approval task
-  const approvalId = crypto.randomUUID();
-  const approverId = '00000000-0000-0000-0000-000000000001'; // designated financial controller
-  
-  await withTenantQuery(`
-    INSERT INTO expense_approvals (id, tenant_id, report_id, approver_id, status)
-    VALUES ($1, $2, $3, $4, 'pending');
-  `, [approvalId, tenantId, reportId, approverId], tenantId);
-
-  return { success: true, status: 'submitted', approval_id: approvalId };
+  // NOTE: no approval row is pre-created here — see approveExpenseReport() below.
+  return { success: true, status: 'submitted' };
 }
 
 export async function approveExpenseReport(tenantId: string, reportId: string, approverId: string, reason: string) {
@@ -157,11 +150,11 @@ export async function approveExpenseReport(tenantId: string, reportId: string, a
   if (!reportRes[0]) throw new AppError('Expense report not found', ErrorCode.NOT_FOUND);
   if (reportRes[0].status !== 'submitted') throw new AppError('Report is not pending review', ErrorCode.BAD_REQUEST);
 
+  const approvalId = crypto.randomUUID();
   await withTenantQuery(`
-    UPDATE expense_approvals 
-    SET status = 'approved', resolved_at = CURRENT_TIMESTAMP, reason = $1
-    WHERE report_id = $2 AND approver_id = $3 AND tenant_id = $4;
-  `, [reason, reportId, cleanApproverId, tenantId], tenantId);
+    INSERT INTO expense_approvals (id, tenant_id, report_id, approver_id, status, reason, resolved_at)
+    VALUES ($1, $2, $3, $4, 'approved', $5, CURRENT_TIMESTAMP);
+  `, [approvalId, tenantId, reportId, cleanApproverId, reason], tenantId);
 
   await withTenantQuery(`
     UPDATE expense_reports 

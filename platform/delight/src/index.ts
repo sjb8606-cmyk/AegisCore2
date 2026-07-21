@@ -3,6 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import { randomUUID } from 'crypto';
 import { loadConfig, AppError, ErrorCode } from '../../utils/src/index';
+export { AppError, ErrorCode };
 import { withTenantQuery } from '../../tenancy/src/index';
 import { emit as auditEmit } from '../../audit/src/index';
 

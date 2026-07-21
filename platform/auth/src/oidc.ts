@@ -57,9 +57,15 @@ export function requireAuth() {
         ...(issuer ? { issuer } : {}),
       });
 
-      const tenantId = (payload['tenant_id'] as string) || (req.headers['x-tenant-id'] as string);
+      const tenantId = payload['tenant_id'] as string | undefined;
       if (!tenantId) {
-        return res.status(401).json({ error: 'UNAUTHORIZED', message: 'tenant_id claim missing.' });
+        // No fallback to req.headers['x-tenant-id'] here on purpose: that
+        // header is caller-supplied and unverified. Falling back to it
+        // would let anyone with ANY valid token (regardless of which
+        // tenant it actually belongs to) impersonate any other tenant by
+        // simply setting a header — exactly the bypass this function
+        // exists to prevent.
+        return res.status(401).json({ error: 'UNAUTHORIZED', message: 'tenant_id claim missing from token.' });
       }
 
       req.auth = {

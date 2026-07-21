@@ -1,13 +1,14 @@
 import { Router, Request, Response } from 'express';
+import { AuthenticatedRequest } from '../../../../platform/auth/src/index';
+
 import { publishApiSpec, getPublishedSpec, createChangelogEntry, createSandboxKey, ErrorCode } from '../../../../platform/developer-portal/src/index';
 
 const router = Router();
 
 function extractContext(req: Request) {
-  const tenantId = req.header('x-tenant-id');
-  const userId = req.header('x-user-id') || 'founder';
-  if (!tenantId) throw { message: 'Missing x-tenant-id', code: (ErrorCode as any).BAD_REQUEST };
-  return { tenantId, userId };
+  const auth = (req as AuthenticatedRequest).auth;
+  if (!auth) throw { message: 'Missing authenticated context', code: (ErrorCode as any).UNAUTHORIZED };
+  return { tenantId: auth.tenantId, userId: auth.sub };
 }
 
 const paths = {
@@ -27,8 +28,9 @@ router.post(paths.publish, async (req: Request, res: Response) => {
 
 router.get(paths.getLatest, async (req: Request, res: Response) => {
   try {
-    const tenantId = req.header('x-tenant-id') || req.query.tenantId as string;
-    if (!tenantId) throw { message: 'Missing tenantId', code: (ErrorCode as any).BAD_REQUEST };
+    const auth = (req as AuthenticatedRequest).auth;
+    if (!auth) throw { message: 'Missing authenticated context', code: (ErrorCode as any).UNAUTHORIZED };
+    const tenantId = auth.tenantId;
     const spec = await getPublishedSpec(tenantId);
     res.status(200).json(spec);
   } catch (error: any) { res.status(404).json({ error: error.message }); }

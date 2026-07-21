@@ -4,6 +4,7 @@ import * as crypto from 'crypto';
 import * as fs from 'fs';
 import * as path from 'path';
 import { withTenantQuery } from '@platform/tenancy';
+import { AuthenticatedRequest } from '@platform/auth';
 
 export class AppError extends Error {
   code: string;
@@ -37,13 +38,12 @@ export function parseUserId(userId: any): string {
 }
 
 function extractContext(req: Request) {
-  const tenantId = req.header('x-tenant-id');
-  const rawUserId = req.header('x-user-id');
-  if (!tenantId || !isValidUuid(tenantId)) {
-    throw new AppError('Valid x-tenant-id header is required', 'BAD_REQUEST');
+  const auth = (req as AuthenticatedRequest).auth;
+  if (!auth) {
+    throw new AppError('Missing authenticated context', 'UNAUTHORIZED');
   }
-  const userId = parseUserId(rawUserId);
-  return { tenantId, userId };
+  const userId = parseUserId(auth.sub);
+  return { tenantId: auth.tenantId, userId };
 }
 
 // Core Operations Services
@@ -143,4 +143,4 @@ router.get('/resolve', async (req: Request, res: Response) => {
   } catch (err: any) { handleError(res, err); }
 });
 
-export { router as darkModeRouter, router as 'darkModeRouter' };
+export { router as darkModeRouter };

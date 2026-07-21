@@ -26,7 +26,7 @@ router.post('/campaigns/:id/send', requireAuth(), tenantResolver(), async (req: 
 
 router.post('/opt-out', requireAuth(), tenantResolver(), async (req: any, res: any, next: any) => {
   try {
-    const tenantId = req.body.tenantId || req.auth.tenantId;
+    const tenantId = req.auth.tenantId;
     const result = await SmsCampaignsService.registerOptOut(tenantId, req.body.phone_number, req.body.reason);
     return ok(res, result);
   } catch (err) {

@@ -3,6 +3,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { encryptField, decryptField } from '../../security/src/kms';
 import { AppError, ErrorCode } from '@platform/utils';
+export { AppError, ErrorCode };
 
 export function parseUserId(userId: any): string {
   const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;

@@ -97,6 +97,6 @@ function isRetryable(err: unknown): boolean {
   if (retryableCodes.has(code)) return true;
 
   // HTTP 429, 503, 504
-  const status = Number(e.$metadata?.httpStatusCode || e.statusCode || e.status || 0);
+  const status = Number((e.$metadata as any)?.httpStatusCode || e.statusCode || e.status || 0);
   return status === 429 || status === 503 || status === 504;
 }

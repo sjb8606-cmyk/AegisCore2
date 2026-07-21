@@ -30,7 +30,8 @@ export async function submitForm(tenantId: string, formId: string, data: any) {
   // 1. Save to Database
   await withTenantQuery(
     'INSERT INTO form_submissions (form_id, tenant_id, payload) VALUES ($1, $2, $3)',
-    [formId, tenantId, finalPayload]
+    [formId, tenantId, finalPayload],
+    tenantId,
   );
 
   // 2. Audit

@@ -2,6 +2,7 @@ import { withTenantQuery } from '@platform/tenancy';
 import * as fs from 'fs';
 import * as path from 'path';
 import { AppError, ErrorCode } from '@platform/utils';
+export { AppError, ErrorCode };
 
 export interface SurveyInput {
   title: string;

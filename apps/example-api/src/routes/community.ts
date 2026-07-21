@@ -16,7 +16,7 @@ const ensureForumBootstrap = async (tenantId: string) => {
 
 router.post('/threads', requireAuth(), tenantResolver(), async (req: any, res: any, next: any) => {
   try {
-    const userId = req.auth?.userId || req.auth?.sub || req.auth?.id || 'founder';
+    const userId = req.auth.sub;
     const forum = await ensureForumBootstrap(req.auth.tenantId);
     
     const payload = {
@@ -33,7 +33,7 @@ router.post('/threads', requireAuth(), tenantResolver(), async (req: any, res: a
 
 router.post('/comments', requireAuth(), tenantResolver(), async (req: any, res: any, next: any) => {
   try {
-    const userId = req.auth?.userId || req.auth?.sub || req.auth?.id || 'founder';
+    const userId = req.auth.sub;
     const result = await CommunityService.createComment(req.auth.tenantId, userId, req.body);
     return ok(res, result);
   } catch (err) {
@@ -43,7 +43,7 @@ router.post('/comments', requireAuth(), tenantResolver(), async (req: any, res: 
 
 router.post('/vote', requireAuth(), tenantResolver(), async (req: any, res: any, next: any) => {
   try {
-    const userId = req.auth?.userId || req.auth?.sub || req.auth?.id || 'founder';
+    const userId = req.auth.sub;
     const result = await CommunityService.voteContent(
       req.auth.tenantId, 
       userId, 

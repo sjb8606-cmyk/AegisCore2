@@ -4,6 +4,7 @@ import * as crypto from 'crypto';
 import { z } from 'zod';
 import { withTenantQuery } from '../../tenancy/src/index';
 import { AppError, ErrorCode } from '../../utils/src/index';
+export { AppError, ErrorCode };
 import { encryptField, decryptField } from '../../security/src/kms';
 
 export const TotpEnrollSchema = z.object({

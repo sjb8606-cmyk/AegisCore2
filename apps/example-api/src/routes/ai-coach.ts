@@ -8,7 +8,7 @@ const router = Router();
 
 router.post('/analyze', requireAuth(), tenantResolver(), async (req: any, res: any, next: any) => {
   try {
-    const userId = req.auth?.userId || req.auth?.sub || req.auth?.id || 'founder';
+    const userId = req.auth.sub;
     const result = await AiCoachService.analyzeUserPerformance(req.auth.tenantId, userId, req.body);
     return ok(res, result);
   } catch (err) {
@@ -18,7 +18,7 @@ router.post('/analyze', requireAuth(), tenantResolver(), async (req: any, res: a
 
 router.post('/goals', requireAuth(), tenantResolver(), async (req: any, res: any, next: any) => {
   try {
-    const userId = req.auth?.userId || req.auth?.sub || req.auth?.id || 'founder';
+    const userId = req.auth.sub;
     const result = await AiCoachService.createCoachingGoal(req.auth.tenantId, userId, req.body);
     return ok(res, result);
   } catch (err) {
@@ -28,7 +28,7 @@ router.post('/goals', requireAuth(), tenantResolver(), async (req: any, res: any
 
 router.post('/recommendations', requireAuth(), tenantResolver(), async (req: any, res: any, next: any) => {
   try {
-    const userId = req.auth?.userId || req.auth?.sub || req.auth?.id || 'founder';
+    const userId = req.auth.sub;
     const result = await AiCoachService.generateRecommendations(req.auth.tenantId, userId);
     return ok(res, result);
   } catch (err) {
@@ -38,7 +38,7 @@ router.post('/recommendations', requireAuth(), tenantResolver(), async (req: any
 
 router.get('/goals', requireAuth(), tenantResolver(), async (req: any, res: any, next: any) => {
   try {
-    const userId = req.auth?.userId || req.auth?.sub || req.auth?.id || 'founder';
+    const userId = req.auth.sub;
     const result = await AiCoachService.fetchGoals(req.auth.tenantId, userId);
     return ok(res, { goals: result });
   } catch (err) {

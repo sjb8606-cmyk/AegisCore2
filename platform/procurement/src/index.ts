@@ -4,6 +4,7 @@ import * as path from 'path';
 import * as crypto from 'crypto';
 import { z } from 'zod';
 import { AppError, ErrorCode } from '@platform/utils';
+export { AppError, ErrorCode };
 
 export const ProcurementConfigSchema = z.object({
   enabled: z.boolean(),
@@ -136,16 +137,14 @@ export async function submitPurchaseRequest(tenantId: string, requestId: string,
   // Atomically transition status to submitted
   await withTenantQuery('UPDATE purchase_requests SET status = \'submitted\', updated_at = CURRENT_TIMESTAMP WHERE id = $1 AND tenant_id = $2', [requestId, tenantId], tenantId);
 
-  // Spawns pending approval task
-  const approvalId = crypto.randomUUID();
-  const approverId = '00000000-0000-0000-0000-000000000001'; // designated financial controller
-  
-  await withTenantQuery(`
-    INSERT INTO purchase_approvals (id, tenant_id, request_id, approver_id, status)
-    VALUES ($1, $2, $3, $4, 'pending');
-  `, [approvalId, tenantId, requestId, approverId], tenantId);
-
-  return { success: true, status: 'submitted', approval_id: approvalId };
+  // NOTE: no approval row is pre-created here. There's no real
+  // designated-approver/roles concept in this schema yet, so a prior
+  // version pre-assigned every submission to a hardcoded placeholder
+  // approver — meaning approvePurchaseRequest() below could never
+  // actually succeed for anyone (see that function for how approval
+  // rows are now created for real, at the moment someone with the
+  // authority to approve actually does so).
+  return { success: true, status: 'submitted' };
 }
 
 export async function approvePurchaseRequest(tenantId: string, requestId: string, approverId: string, reason: string) {
@@ -156,11 +155,11 @@ export async function approvePurchaseRequest(tenantId: string, requestId: string
   if (!reportRes[0]) throw new AppError('Purchase request not found', ErrorCode.NOT_FOUND);
   if (reportRes[0].status !== 'submitted') throw new AppError('Request is not pending review', ErrorCode.BAD_REQUEST);
 
+  const approvalId = crypto.randomUUID();
   await withTenantQuery(`
-    UPDATE purchase_approvals 
-    SET status = 'approved', resolved_at = CURRENT_TIMESTAMP, reason = $1
-    WHERE request_id = $2 AND approver_id = $3 AND tenant_id = $4;
-  `, [reason, requestId, cleanApproverId, tenantId], tenantId);
+    INSERT INTO purchase_approvals (id, tenant_id, request_id, approver_id, status, reason, resolved_at)
+    VALUES ($1, $2, $3, $4, 'approved', $5, CURRENT_TIMESTAMP);
+  `, [approvalId, tenantId, requestId, cleanApproverId, reason], tenantId);
 
   await withTenantQuery(`
     UPDATE purchase_requests 

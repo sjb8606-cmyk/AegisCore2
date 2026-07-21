@@ -1,13 +1,14 @@
 import { Router, Request, Response } from 'express';
+import { AuthenticatedRequest } from '../../../../platform/auth/src/index';
+
 import { runLivenessCheck, runReadinessCheck, registerHealthCheck, getAggregatedHealth, getHealthLedger, AppError, isValidUuid } from '../../../../platform/health-checks/src/index';
 
 const router = Router();
 
 function extractContext(req: Request) {
-  const tenantId = req.header('x-tenant-id');
-  const userId = req.header('x-user-id') || 'founder';
-  if (!tenantId) throw new AppError('Missing x-tenant-id', 'BAD_REQUEST');
-  return { tenantId, userId };
+  const auth = (req as AuthenticatedRequest).auth;
+  if (!auth) throw new AppError('Missing authenticated context', 'UNAUTHORIZED');
+  return { tenantId: auth.tenantId, userId: auth.sub };
 }
 
 function handleError(res: Response, error: any) {
@@ -39,7 +40,9 @@ router.get(paths.live, async (req: Request, res: Response) => {
 
 router.get(paths.ready, async (req: Request, res: Response) => {
   try {
-    const tenantId = req.header('x-tenant-id') || 'd3b07384-d113-4956-a5e2-4c2de7910001';
+    const auth = (req as AuthenticatedRequest).auth;
+    if (!auth) throw new AppError('Missing authenticated context', 'UNAUTHORIZED');
+    const tenantId = auth.tenantId;
     const result = await runReadinessCheck(tenantId);
     res.status(200).json(result);
   } catch (error: any) { handleError(res, error); }
@@ -74,4 +77,4 @@ router.get(paths.ledger, async (req: Request, res: Response) => {
   } catch (error: any) { handleError(res, error); }
 });
 
-export { router as healthChecksRouter, router as 'health-checksRouter' };
+export { router as healthChecksRouter };

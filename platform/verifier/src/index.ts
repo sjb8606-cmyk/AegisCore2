@@ -1,5 +1,6 @@
 import { z } from 'zod';
 import { loadConfig, AppError, ErrorCode } from '../../utils/src/index';
+export { AppError, ErrorCode };
 import { withTenantQuery } from '../../tenancy/src/index';
 import { verifyChainIntegrity } from '../../audit-log/src/index';
 

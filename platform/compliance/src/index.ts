@@ -8,7 +8,14 @@ const ConfigSchema = z.object({
   limits: z.object({ requestResponseDays: z.number() })
 });
 
-export async function submitDataRequest(tenantId: string, userId: string, requestType: string) {
+export type DataRequestType = 'gdpr_export' | 'gdpr_deletion';
+
+const REQUEST_TYPE_TO_AUDIT_ACTION: Record<DataRequestType, 'compliance.gdpr_export' | 'compliance.gdpr_deletion'> = {
+  gdpr_export:   'compliance.gdpr_export',
+  gdpr_deletion: 'compliance.gdpr_deletion',
+};
+
+export async function submitDataRequest(tenantId: string, userId: string, requestType: DataRequestType) {
   const config = loadConfig('compliance', ConfigSchema);
   if (!config.enabled) throw new Error('Compliance feature disabled');
 
@@ -26,7 +33,7 @@ export async function submitDataRequest(tenantId: string, userId: string, reques
   // Audit (Mandatory for Compliance)
   await auditEmit({
     tenantId,
-    action: `compliance.request.${requestType}`,
+    action: REQUEST_TYPE_TO_AUDIT_ACTION[requestType],
     outcome: 'success',
     actorId: userId,
     actorType: 'user',
