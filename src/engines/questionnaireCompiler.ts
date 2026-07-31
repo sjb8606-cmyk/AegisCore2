@@ -1,10 +1,16 @@
 /**
  * Veridact — Questionnaire → Skin Compiler
  *
- * compileQuestionnaire() is now async — compilePolicyBundle awaits
- * registerBundle(tenantId, bundle), which is now DB-backed. coverageBoundary/
- * intake/intent/routing compilers remain synchronous — boundaryStore is
- * still in-memory (its DB conversion is next).
+ * Deterministically compiles a QuestionnaireResponse into the five objects
+ * every other core consumes: PolicyBundle, CoverageBoundary, IntakeSchema,
+ * IntentSchema, and RoutingTable.
+ *
+ * PolicyBundle and CoverageBoundary are also REGISTERED into their existing
+ * DB-backed stores (policyBundleStore, boundaryStore) as part of compilation,
+ * so they are immediately usable by the MCP Interceptor / Receipt Engine.
+ *
+ * IntakeSchema, IntentSchema, and RoutingTable are returned directly — no
+ * store exists for these yet.
  */
 
 import type {
@@ -158,7 +164,7 @@ async function compilePolicyBundle(response: QuestionnaireResponse): Promise<Pol
   return registerBundle(response.tenant_id, unregistered);
 }
 
-function compileCoverageBoundary(response: QuestionnaireResponse): CoverageBoundary {
+async function compileCoverageBoundary(response: QuestionnaireResponse): Promise<CoverageBoundary> {
   const allowedActions = Array.from(new Set(['transfer_to_human', ...response.allowed_actions]));
 
   const boundary: CoverageBoundary = {
@@ -203,7 +209,7 @@ export async function compileQuestionnaire(response: QuestionnaireResponse): Pro
 
   return {
     policyBundle: await compilePolicyBundle(response),
-    coverageBoundary: compileCoverageBoundary(response),
+    coverageBoundary: await compileCoverageBoundary(response),
     intakeSchema: compileIntakeSchema(response),
     intentSchema: compileIntentSchema(response),
     routingTable: compileRoutingTable(response),

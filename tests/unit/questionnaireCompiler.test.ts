@@ -1,5 +1,5 @@
 /**
- * Veridact — Unit Tests: Questionnaire → Skin Compiler (async, DB-backed policy)
+ * Veridact — Unit Tests: Questionnaire → Skin Compiler (DB-backed)
  */
 
 import { describe, it, expect } from 'vitest';
@@ -15,12 +15,21 @@ import { classifyIntent } from '../../src/engines/intentEngine';
 import { route } from '../../src/engines/routingEngine';
 import type { QuestionnaireResponse } from '../../src/types/questionnaire';
 
+const TENANT_MAIN = '33333333-3333-3333-3333-333333333333';
+const TENANT_INVALID_1 = '44444444-4444-4444-4444-444444444444';
+const TENANT_INVALID_2 = '55555555-5555-5555-5555-555555555555';
+const TENANT_INVALID_3 = '66666666-6666-6666-6666-666666666666';
+
 const clinicResponse: QuestionnaireResponse = {
-  tenant_id: '33333333-3333-3333-3333-333333333333',
+  tenant_id: TENANT_MAIN,
   business_name: 'Riverbend Clinic',
   requires_existing_customer_check: true,
   topics: [
-    { topic_id: 'appointment', label: 'Appointment scheduling', ai_permission: 'ALLOW' },
+    {
+      topic_id: 'appointment',
+      label: 'Appointment scheduling',
+      ai_permission: 'ALLOW',
+    },
     {
       topic_id: 'billing',
       label: 'Billing questions',
@@ -46,12 +55,15 @@ const clinicResponse: QuestionnaireResponse = {
   allowed_resource_patterns: ['customer:*'],
 };
 
-describe('compileQuestionnaire (async)', () => {
+describe('compileQuestionnaire (async, DB-backed)', () => {
   it('produces all five compiled artifacts', async () => {
     const skin = await compileQuestionnaire(clinicResponse);
     expect(skin.policyBundle.rules).toHaveLength(3);
     expect(skin.coverageBoundary.allowed_actions).toContain('transfer_to_human');
-    expect(skin.intakeSchema.slots.map((s) => s.slot_id)).toEqual(['topic', 'is_existing_customer']);
+    expect(skin.intakeSchema.slots.map((s) => s.slot_id)).toEqual([
+      'topic',
+      'is_existing_customer',
+    ]);
     expect(skin.intentSchema.intents).toHaveLength(3);
     expect(skin.routingTable.targets).toHaveLength(3);
   });
@@ -59,7 +71,7 @@ describe('compileQuestionnaire (async)', () => {
   it('registers the compiled PolicyBundle in the DB, retrievable by hash', async () => {
     const skin = await compileQuestionnaire(clinicResponse);
     const fetched = await getPolicyBundle(
-      clinicResponse.tenant_id,
+      TENANT_MAIN,
       skin.policyBundle.rules_version,
       skin.policyBundle.rules_hash
     );
@@ -68,7 +80,7 @@ describe('compileQuestionnaire (async)', () => {
 
   it('registers the compiled CoverageBoundary so it is retrievable by tenant', async () => {
     const skin = await compileQuestionnaire(clinicResponse);
-    const fetched = getBoundary(skin.coverageBoundary.boundary_id, clinicResponse.tenant_id);
+    const fetched = await getBoundary(skin.coverageBoundary.boundary_id, TENANT_MAIN);
     expect(fetched.boundary_id).toBe(skin.coverageBoundary.boundary_id);
   });
 
@@ -97,7 +109,10 @@ describe('compileQuestionnaire (async)', () => {
 
   it('compiled intent schema classifies free text using derived keywords', async () => {
     const skin = await compileQuestionnaire(clinicResponse);
-    const classification = classifyIntent('I have a question about my billing charge', skin.intentSchema);
+    const classification = classifyIntent(
+      'I have a question about my billing charge',
+      skin.intentSchema
+    );
     expect(classification.intent).toBe('billing');
   });
 
@@ -111,8 +126,10 @@ describe('compileQuestionnaire (async)', () => {
   it('throws QuestionnaireValidationError when a DENY topic has no denial_reason', async () => {
     const invalid: QuestionnaireResponse = {
       ...clinicResponse,
-      tenant_id: '44444444-4444-4444-4444-444444444444',
-      topics: [{ topic_id: 'legal_advice', label: 'Legal advice', ai_permission: 'DENY' }],
+      tenant_id: TENANT_INVALID_1,
+      topics: [
+        { topic_id: 'legal_advice', label: 'Legal advice', ai_permission: 'DENY' },
+      ],
     };
     await expect(compileQuestionnaire(invalid)).rejects.toThrow(QuestionnaireValidationError);
   });
@@ -120,7 +137,7 @@ describe('compileQuestionnaire (async)', () => {
   it('throws QuestionnaireValidationError when routing to an undefined target_id', async () => {
     const invalid: QuestionnaireResponse = {
       ...clinicResponse,
-      tenant_id: '55555555-5555-5555-5555-555555555555',
+      tenant_id: TENANT_INVALID_2,
       topics: [
         {
           topic_id: 'billing',
@@ -136,7 +153,7 @@ describe('compileQuestionnaire (async)', () => {
   it('throws QuestionnaireValidationError with zero topics', async () => {
     const invalid: QuestionnaireResponse = {
       ...clinicResponse,
-      tenant_id: '66666666-6666-6666-6666-666666666666',
+      tenant_id: TENANT_INVALID_3,
       topics: [],
     };
     await expect(compileQuestionnaire(invalid)).rejects.toThrow(QuestionnaireValidationError);
