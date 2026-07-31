@@ -11,6 +11,7 @@ import { replayRouter } from './routes/replay';
 import { readRouter } from './routes/read';
 import { healthRouter } from './routes/health';
 import { actionsRouter } from './routes/actions';
+import { conversationRouter } from './routes/conversation';
 import { logger } from './db/logger';
 
 export function createApp(): express.Application {
@@ -45,6 +46,7 @@ export function createApp(): express.Application {
   app.use('/v1/replay', replayRouter);
   app.use('/v1', readRouter);
   app.use('/v1', actionsRouter);
+  app.use('/v1', conversationRouter);
 
   app.use(notFoundHandler);
   app.use(errorHandler);
