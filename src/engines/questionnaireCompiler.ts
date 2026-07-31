@@ -1,18 +1,10 @@
 /**
  * Veridact — Questionnaire → Skin Compiler
  *
- * Deterministically compiles a QuestionnaireResponse into the five objects
- * every other core consumes: PolicyBundle, CoverageBoundary, IntakeSchema,
- * IntentSchema, and RoutingTable.
- *
- * PolicyBundle and CoverageBoundary are also REGISTERED into their existing
- * stores (policyBundleStore, boundaryStore) as part of compilation, so they
- * are immediately usable by the MCP Interceptor / Receipt Engine — reusing
- * those stores' existing hashing/registration logic rather than duplicating it.
- *
- * IntakeSchema, IntentSchema, and RoutingTable are returned directly (no
- * store exists for these — the Front Door Orchestrator receives them as
- * plain params, not a store lookup).
+ * compileQuestionnaire() is now async — compilePolicyBundle awaits
+ * registerBundle(tenantId, bundle), which is now DB-backed. coverageBoundary/
+ * intake/intent/routing compilers remain synchronous — boundaryStore is
+ * still in-memory (its DB conversion is next).
  */
 
 import type {
@@ -131,7 +123,7 @@ function compileIntentSchema(response: QuestionnaireResponse): IntentSchema {
   };
 }
 
-function compilePolicyBundle(response: QuestionnaireResponse): PolicyBundle {
+async function compilePolicyBundle(response: QuestionnaireResponse): Promise<PolicyBundle> {
   const rules: PolicyRule[] = response.topics.map((topic, index) => {
     if (topic.ai_permission === 'DENY') {
       return {
@@ -163,7 +155,7 @@ function compilePolicyBundle(response: QuestionnaireResponse): PolicyBundle {
     rules,
   };
 
-  return registerBundle(unregistered);
+  return registerBundle(response.tenant_id, unregistered);
 }
 
 function compileCoverageBoundary(response: QuestionnaireResponse): CoverageBoundary {
@@ -206,11 +198,11 @@ function compileRoutingTable(response: QuestionnaireResponse): RoutingTable {
   };
 }
 
-export function compileQuestionnaire(response: QuestionnaireResponse): CompiledSkin {
+export async function compileQuestionnaire(response: QuestionnaireResponse): Promise<CompiledSkin> {
   validate(response);
 
   return {
-    policyBundle: compilePolicyBundle(response),
+    policyBundle: await compilePolicyBundle(response),
     coverageBoundary: compileCoverageBoundary(response),
     intakeSchema: compileIntakeSchema(response),
     intentSchema: compileIntentSchema(response),

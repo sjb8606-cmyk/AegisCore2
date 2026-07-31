@@ -1,19 +1,10 @@
 /**
  * Veridact v1.0 — Receipt Engine
  *
- * Responsibilities:
- *  1. Accept a ContextEnvelope + Actor, produce a deterministic Receipt.
- *  2. Enforce idempotency — same idempotency_key returns the existing receipt.
- *  3. Chain hash to previous receipt via @platform/audit Merkle helpers.
- *  4. Persist to receipts table via RLS-aware DB client.
- *  5. Trigger change log entry on every new write.
- *
- * Hash construction (deterministic):
- *   SHA-256( receipt_id + rules_hash + JSON.stringify(sortedInput) + previous_hash )
- *
- * SWAP: replace merkleChain() stub with @platform/audit.appendToChain() before production
- * computeDecision() now runs the real Policy Rule Evaluator (Core 1) —
- * see src/engines/policyEngine.ts and src/engines/policyBundleStore.ts
+ * computeDecision() is now DB-backed: it looks up the tenant's registered
+ * PolicyBundle from Postgres (policyBundleStore) instead of an in-memory
+ * default. Requires tenantId and is now async — both new as of the
+ * policyBundleStore DB conversion.
  */
 
 import crypto from 'crypto';
@@ -24,16 +15,12 @@ import type {
   Actor,
   ContextEnvelope,
   Receipt,
-  VerifyResponse,
 } from '../types';
 import { ReceiptSchema } from '../schemas';
-import { translate } from './translator';
 import { writeChangeEntry } from './changeLog';
 import { triggerAlert } from './alertEngine';
 import { evaluatePolicy } from './policyEngine';
 import { getPolicyBundle } from './policyBundleStore';
-
-// ─── Hash Utilities ───────────────────────────────────────────────────────────
 
 function computeReceiptHash(
   receiptId: string,
@@ -64,17 +51,13 @@ async function getPreviousHash(tenantId: string, client: import('pg').PoolClient
   return res.rows[0].hash;
 }
 
-/**
- * Compute the decision output from the input + rules.
- * Real implementation — runs evaluatePolicy() against the PolicyBundle
- * registered for the given rules_version, after verifying rules_hash matches.
- */
-function computeDecision(
+async function computeDecision(
+  tenantId: string,
   input: Record<string, unknown>,
   rulesVersion: string,
   rulesHash: string
-): { decision: string; output: Record<string, unknown> } {
-  const bundle = getPolicyBundle(rulesVersion, rulesHash);
+): Promise<{ decision: string; output: Record<string, unknown> }> {
+  const bundle = await getPolicyBundle(tenantId, rulesVersion, rulesHash);
   const result = evaluatePolicy(input, bundle);
 
   return {
@@ -89,8 +72,6 @@ function computeDecision(
     },
   };
 }
-
-// ─── Idempotency Check ────────────────────────────────────────────────────────
 
 async function findExistingReceipt(
   tenantId: string,
@@ -111,8 +92,6 @@ async function findExistingReceipt(
   return rowToReceipt(res.rows[0]);
 }
 
-// ─── Row Mapper ───────────────────────────────────────────────────────────────
-
 function rowToReceipt(row: Record<string, unknown>): Receipt {
   return {
     receipt_id: row.receipt_id as string,
@@ -131,8 +110,6 @@ function rowToReceipt(row: Record<string, unknown>): Receipt {
     context: row.context as Receipt['context'],
   };
 }
-
-// ─── Core: Create Receipt ─────────────────────────────────────────────────────
 
 export interface CreateReceiptParams {
   tenantId: string;
@@ -162,7 +139,7 @@ export async function createReceipt(
     const receiptId = uuidv4();
     const hash = computeReceiptHash(receiptId, rules_hash, input, previousHash);
 
-    const { decision, output } = computeDecision(input, rules_version, rules_hash);
+    const { decision, output } = await computeDecision(tenantId, input, rules_version, rules_hash);
 
     const now = new Date().toISOString();
     const receipt: Receipt = {

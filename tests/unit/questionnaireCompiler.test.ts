@@ -1,5 +1,5 @@
 /**
- * Veridact — Unit Tests: Questionnaire → Skin Compiler
+ * Veridact — Unit Tests: Questionnaire → Skin Compiler (async, DB-backed policy)
  */
 
 import { describe, it, expect } from 'vitest';
@@ -16,15 +16,11 @@ import { route } from '../../src/engines/routingEngine';
 import type { QuestionnaireResponse } from '../../src/types/questionnaire';
 
 const clinicResponse: QuestionnaireResponse = {
-  tenant_id: 'clinic-compiler-test',
+  tenant_id: '33333333-3333-3333-3333-333333333333',
   business_name: 'Riverbend Clinic',
   requires_existing_customer_check: true,
   topics: [
-    {
-      topic_id: 'appointment',
-      label: 'Appointment scheduling',
-      ai_permission: 'ALLOW',
-    },
+    { topic_id: 'appointment', label: 'Appointment scheduling', ai_permission: 'ALLOW' },
     {
       topic_id: 'billing',
       label: 'Billing questions',
@@ -50,47 +46,48 @@ const clinicResponse: QuestionnaireResponse = {
   allowed_resource_patterns: ['customer:*'],
 };
 
-describe('compileQuestionnaire', () => {
-  it('produces all five compiled artifacts', () => {
-    const skin = compileQuestionnaire(clinicResponse);
+describe('compileQuestionnaire (async)', () => {
+  it('produces all five compiled artifacts', async () => {
+    const skin = await compileQuestionnaire(clinicResponse);
     expect(skin.policyBundle.rules).toHaveLength(3);
     expect(skin.coverageBoundary.allowed_actions).toContain('transfer_to_human');
-    expect(skin.intakeSchema.slots.map((s) => s.slot_id)).toEqual([
-      'topic',
-      'is_existing_customer',
-    ]);
+    expect(skin.intakeSchema.slots.map((s) => s.slot_id)).toEqual(['topic', 'is_existing_customer']);
     expect(skin.intentSchema.intents).toHaveLength(3);
     expect(skin.routingTable.targets).toHaveLength(3);
   });
 
-  it('registers the compiled PolicyBundle so it is retrievable by hash', () => {
-    const skin = compileQuestionnaire(clinicResponse);
-    const fetched = getPolicyBundle(skin.policyBundle.rules_version, skin.policyBundle.rules_hash);
+  it('registers the compiled PolicyBundle in the DB, retrievable by hash', async () => {
+    const skin = await compileQuestionnaire(clinicResponse);
+    const fetched = await getPolicyBundle(
+      clinicResponse.tenant_id,
+      skin.policyBundle.rules_version,
+      skin.policyBundle.rules_hash
+    );
     expect(fetched.rules_version).toBe(skin.policyBundle.rules_version);
   });
 
-  it('registers the compiled CoverageBoundary so it is retrievable by tenant', () => {
-    const skin = compileQuestionnaire(clinicResponse);
+  it('registers the compiled CoverageBoundary so it is retrievable by tenant', async () => {
+    const skin = await compileQuestionnaire(clinicResponse);
     const fetched = getBoundary(skin.coverageBoundary.boundary_id, clinicResponse.tenant_id);
     expect(fetched.boundary_id).toBe(skin.coverageBoundary.boundary_id);
   });
 
-  it('compiled policy DENIES medical_advice with the given denial_reason', () => {
-    const skin = compileQuestionnaire(clinicResponse);
+  it('compiled policy DENIES medical_advice with the given denial_reason', async () => {
+    const skin = await compileQuestionnaire(clinicResponse);
     const decision = evaluatePolicy({ topic: 'medical_advice' }, skin.policyBundle);
     expect(decision.decision).toBe('DENY');
     expect(decision.reason).toBe('AI is not authorized to give medical advice.');
   });
 
-  it('compiled policy ALLOWS billing but flags requires_hitl', () => {
-    const skin = compileQuestionnaire(clinicResponse);
+  it('compiled policy ALLOWS billing but flags requires_hitl', async () => {
+    const skin = await compileQuestionnaire(clinicResponse);
     const decision = evaluatePolicy({ topic: 'billing' }, skin.policyBundle);
     expect(decision.decision).toBe('ALLOW');
     expect(decision.requires_hitl).toBe(true);
   });
 
-  it('compiled boundary allows the always-included transfer_to_human action', () => {
-    const skin = compileQuestionnaire(clinicResponse);
+  it('compiled boundary allows the always-included transfer_to_human action', async () => {
+    const skin = await compileQuestionnaire(clinicResponse);
     const decision = checkBoundary(
       { action: 'transfer_to_human', resource_id: 'customer:1', params: {} },
       skin.coverageBoundary
@@ -98,34 +95,32 @@ describe('compileQuestionnaire', () => {
     expect(decision.decision).toBe('ALLOW');
   });
 
-  it('compiled intent schema classifies free text using derived keywords', () => {
-    const skin = compileQuestionnaire(clinicResponse);
+  it('compiled intent schema classifies free text using derived keywords', async () => {
+    const skin = await compileQuestionnaire(clinicResponse);
     const classification = classifyIntent('I have a question about my billing charge', skin.intentSchema);
     expect(classification.intent).toBe('billing');
   });
 
-  it('compiled routing table routes billing to billing-team when available', () => {
-    const skin = compileQuestionnaire(clinicResponse);
+  it('compiled routing table routes billing to billing-team when available', async () => {
+    const skin = await compileQuestionnaire(clinicResponse);
     const decision = route({ intent: 'billing' }, skin.routingTable, { 'billing-team': true });
     expect(decision.decision).toBe('ROUTED');
     expect(decision.target_id).toBe('billing-team');
   });
 
-  it('throws QuestionnaireValidationError when a DENY topic has no denial_reason', () => {
+  it('throws QuestionnaireValidationError when a DENY topic has no denial_reason', async () => {
     const invalid: QuestionnaireResponse = {
       ...clinicResponse,
-      tenant_id: 'clinic-invalid-1',
-      topics: [
-        { topic_id: 'legal_advice', label: 'Legal advice', ai_permission: 'DENY' },
-      ],
+      tenant_id: '44444444-4444-4444-4444-444444444444',
+      topics: [{ topic_id: 'legal_advice', label: 'Legal advice', ai_permission: 'DENY' }],
     };
-    expect(() => compileQuestionnaire(invalid)).toThrow(QuestionnaireValidationError);
+    await expect(compileQuestionnaire(invalid)).rejects.toThrow(QuestionnaireValidationError);
   });
 
-  it('throws QuestionnaireValidationError when routing to an undefined target_id', () => {
+  it('throws QuestionnaireValidationError when routing to an undefined target_id', async () => {
     const invalid: QuestionnaireResponse = {
       ...clinicResponse,
-      tenant_id: 'clinic-invalid-2',
+      tenant_id: '55555555-5555-5555-5555-555555555555',
       topics: [
         {
           topic_id: 'billing',
@@ -135,11 +130,15 @@ describe('compileQuestionnaire', () => {
         },
       ],
     };
-    expect(() => compileQuestionnaire(invalid)).toThrow(QuestionnaireValidationError);
+    await expect(compileQuestionnaire(invalid)).rejects.toThrow(QuestionnaireValidationError);
   });
 
-  it('throws QuestionnaireValidationError with zero topics', () => {
-    const invalid: QuestionnaireResponse = { ...clinicResponse, tenant_id: 'clinic-invalid-3', topics: [] };
-    expect(() => compileQuestionnaire(invalid)).toThrow(QuestionnaireValidationError);
+  it('throws QuestionnaireValidationError with zero topics', async () => {
+    const invalid: QuestionnaireResponse = {
+      ...clinicResponse,
+      tenant_id: '66666666-6666-6666-6666-666666666666',
+      topics: [],
+    };
+    await expect(compileQuestionnaire(invalid)).rejects.toThrow(QuestionnaireValidationError);
   });
 });
