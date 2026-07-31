@@ -1,9 +1,12 @@
+import 'dotenv/config';
+import 'dotenv/config';
 import '../../../platform/observability/src/tracing';
 import express from 'express';
 import fs from 'fs';
 import path from 'path';
 const { json } = require('body-parser');
 import { requireAuth } from '../../../platform/auth/src/index';
+import { healthRouter } from './health';
 import { tenantResolver } from '../../../platform/tenancy/src/index';
 import { observabilityMiddleware } from '../../../platform/observability/src/index';
 import { globalErrorHandler } from '../../../platform/utils/src/index';
@@ -13,6 +16,7 @@ app.use(json());
 app.use(observabilityMiddleware());
 
 app.get('/health', (req, res) => res.json({ status: 'ok' }));
+app.use('/api/health', healthRouter);
 
 // =============================================================
 // ⚡ THE AUTO-DISCOVERY ENGINE (v3.6.3)

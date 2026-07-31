@@ -12,10 +12,10 @@
  * pipeline immediately. A policy ALLOW with requires_hitl cannot proceed
  * without an assigned approver — omitting one is an error, not a silent skip.
  *
- * This module is intentionally DB-free: it operates on in-memory stores
- * (boundaryStore/policyBundleStore/hitlStore) so it can be tested without a
- * live Postgres connection. Wiring its result into a persisted Receipt is a
- * separate integration step for when the DB is available.
+ * NOW ASYNC: createApproval (hitlStore) is DB-backed, so interceptAction
+ * must be awaited. checkBoundary and evaluatePolicy remain pure/synchronous —
+ * they operate on boundary/bundle objects passed in directly, not looked up
+ * from a store.
  */
 
 import { checkBoundary } from './boundaryEngine';
@@ -43,7 +43,7 @@ function buildPolicyInput(action: InterceptParams['action']): Record<string, unk
   };
 }
 
-export function interceptAction(params: InterceptParams): InterceptResult {
+export async function interceptAction(params: InterceptParams): Promise<InterceptResult> {
   const { tenantId, action, boundary, policyBundle, assignedApproverId, hitlTtlSeconds } = params;
 
   const boundaryDecision = checkBoundary(action, boundary);
@@ -78,7 +78,7 @@ export function interceptAction(params: InterceptParams): InterceptResult {
       throw new MissingApproverError(action.action);
     }
 
-    const approval = createApproval({
+    const approval = await createApproval({
       tenantId,
       proposedAction: action,
       assignedApproverId,

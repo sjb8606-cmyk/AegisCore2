@@ -1,7 +1,5 @@
 /**
- * Veridact — Unit Tests: MCP Interceptor
- *
- * Exercises the full Boundary → Policy → HITL pipeline together.
+ * Veridact — Unit Tests: MCP Interceptor (async, DB-backed HITL)
  */
 
 import { describe, it, expect } from 'vitest';
@@ -10,9 +8,11 @@ import { getApproval } from '../../src/engines/hitlStore';
 import type { CoverageBoundary } from '../../src/types/boundary';
 import type { PolicyBundle } from '../../src/types/policy';
 
+const TENANT_INTERCEPTOR = '77777777-7777-7777-7777-777777777777';
+
 const boundary: CoverageBoundary = {
   boundary_id: 'interceptor-test-boundary',
-  tenant_id: 'tenant-interceptor',
+  tenant_id: TENANT_INTERCEPTOR,
   description: 'Support agent boundary',
   allowed_actions: ['revoke_api_key', 'transfer_to_human'],
   allowed_resource_patterns: ['customer:*'],
@@ -51,10 +51,10 @@ const policyBundle: PolicyBundle = {
   ],
 };
 
-describe('interceptAction', () => {
-  it('denies at the boundary before policy ever runs', () => {
-    const result = interceptAction({
-      tenantId: 'tenant-interceptor',
+describe('interceptAction (async, DB-backed HITL)', () => {
+  it('denies at the boundary before policy ever runs', async () => {
+    const result = await interceptAction({
+      tenantId: TENANT_INTERCEPTOR,
       action: { action: 'delete_account', resource_id: 'customer:1', params: {} },
       boundary,
       policyBundle,
@@ -64,9 +64,9 @@ describe('interceptAction', () => {
     expect(result.policy_decision).toBeNull();
   });
 
-  it('denies via policy when boundary passes but a DENY rule matches', () => {
-    const result = interceptAction({
-      tenantId: 'tenant-interceptor',
+  it('denies via policy when boundary passes but a DENY rule matches', async () => {
+    const result = await interceptAction({
+      tenantId: TENANT_INTERCEPTOR,
       action: {
         action: 'revoke_api_key',
         resource_id: 'customer:1',
@@ -81,9 +81,9 @@ describe('interceptAction', () => {
     expect(result.policy_decision?.matched_rule_id).toBe('deny-high-risk');
   });
 
-  it('goes to PENDING_HITL when policy allows but requires_hitl is set', () => {
-    const result = interceptAction({
-      tenantId: 'tenant-interceptor',
+  it('goes to PENDING_HITL when policy allows but requires_hitl is set, and persists a real approval row', async () => {
+    const result = await interceptAction({
+      tenantId: TENANT_INTERCEPTOR,
       action: { action: 'revoke_api_key', resource_id: 'customer:1', params: {} },
       boundary,
       policyBundle,
@@ -92,25 +92,25 @@ describe('interceptAction', () => {
     expect(result.outcome).toBe('PENDING_HITL');
     expect(result.approval_id).not.toBeNull();
 
-    const approval = getApproval(result.approval_id!, 'tenant-interceptor');
+    const approval = await getApproval(result.approval_id!, TENANT_INTERCEPTOR);
     expect(approval.status).toBe('PENDING');
     expect(approval.assigned_approver_id).toBe('approver-1');
   });
 
-  it('throws MissingApproverError when HITL is required but no approver is given', () => {
-    expect(() =>
+  it('throws MissingApproverError when HITL is required but no approver is given', async () => {
+    await expect(
       interceptAction({
-        tenantId: 'tenant-interceptor',
+        tenantId: TENANT_INTERCEPTOR,
         action: { action: 'revoke_api_key', resource_id: 'customer:1', params: {} },
         boundary,
         policyBundle,
       })
-    ).toThrow(MissingApproverError);
+    ).rejects.toThrow(MissingApproverError);
   });
 
-  it('goes straight to ALLOWED when the matched rule does not require HITL', () => {
-    const result = interceptAction({
-      tenantId: 'tenant-interceptor',
+  it('goes straight to ALLOWED when the matched rule does not require HITL', async () => {
+    const result = await interceptAction({
+      tenantId: TENANT_INTERCEPTOR,
       action: { action: 'transfer_to_human', resource_id: 'customer:1', params: {} },
       boundary,
       policyBundle,
@@ -119,13 +119,13 @@ describe('interceptAction', () => {
     expect(result.approval_id).toBeNull();
   });
 
-  it('denies fail-closed when nothing matches (default_effect)', () => {
+  it('denies fail-closed when nothing matches (default_effect)', async () => {
     const noMatchBundle: PolicyBundle = {
       ...policyBundle,
       rules: [],
     };
-    const result = interceptAction({
-      tenantId: 'tenant-interceptor',
+    const result = await interceptAction({
+      tenantId: TENANT_INTERCEPTOR,
       action: { action: 'transfer_to_human', resource_id: 'customer:1', params: {} },
       boundary,
       policyBundle: noMatchBundle,
