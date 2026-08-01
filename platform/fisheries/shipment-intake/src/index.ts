@@ -8,6 +8,8 @@ import { loadConfig, AppError, ErrorCode } from '../../../utils/src/index';
 import { SpeciesRegistryService } from '../../species-registry/src/index';
 export { AppError, ErrorCode };
 
+const LB_TO_KG = 0.45359237;
+
 const ConfigSchema = z.object({
   enabled: z.boolean(),
   limits: z.object({
@@ -19,7 +21,8 @@ export const LogShipmentInputSchema = z.object({
   speciesId: z.string().uuid(),
   vesselName: z.string().min(1),
   catchDate: z.string().datetime(),
-  weightKg: z.number().positive(),
+  weight: z.number().positive(),
+  weightUnit: z.enum(['kg', 'lb']).default('kg'),
   qualityGrade: z.enum(['premium', 'standard', 'processing']),
   catchZone: z.string().optional(),
   notes: z.string().optional(),
@@ -33,6 +36,10 @@ function parseUserId(userId: any): string {
 
 function getConfig() {
   return loadConfig('fisheries-shipment-intake', ConfigSchema);
+}
+
+function round2(n: number): number {
+  return Math.round(n * 100) / 100;
 }
 
 export class ShipmentIntakeService {
@@ -52,18 +59,24 @@ export class ShipmentIntakeService {
       );
     }
 
+    const weightKg = input.weightUnit === 'lb'
+      ? round2(input.weight * LB_TO_KG)
+      : input.weight;
+
     const res = await withTenantQuery(
       `INSERT INTO fisheries_shipments (
         tenant_id, species_id, vessel_name, catch_date, weight_kg,
-        quality_grade, catch_zone, notes, logged_by
-      ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
+        original_weight, original_unit, quality_grade, catch_zone, notes, logged_by
+      ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
       RETURNING *`,
       [
         tenantId,
         input.speciesId,
         input.vesselName,
         input.catchDate,
-        input.weightKg,
+        weightKg,
+        input.weight,
+        input.weightUnit,
         input.qualityGrade,
         input.catchZone ?? null,
         input.notes ?? null,
