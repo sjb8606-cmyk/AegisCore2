@@ -13,14 +13,12 @@ export async function trackEvent(tenantId: string, eventName: string, properties
   const config = loadConfig('analytics', ConfigSchema);
   if (!config.enabled) throw new AppError('Analytics disabled', ErrorCode.FORBIDDEN);
 
-  // 1. Persist to Time-Series Log
   const result = await withTenantQuery(
     'INSERT INTO analytics_events (tenant_id, event_name, properties) VALUES ($1, $2, $3) RETURNING *',
     [tenantId, eventName, JSON.stringify(properties || {})],
     tenantId
   );
 
-  // 2. Meter Usage (Revenue)
   await recordUsage({
     tenantId,
     eventType: 'api_call',
@@ -35,9 +33,33 @@ export async function getFunnel(tenantId: string, steps: string[]) {
   const config = loadConfig('analytics', ConfigSchema);
   if (!config.tiers.funnels) throw new AppError('Funnels tier required', ErrorCode.FORBIDDEN);
 
-  // Simulated High-Speed Funnel Calculation
-  return {
-    steps: steps.map((s, i) => ({ step: s, conversionRate: (100 - i * 20) + '%' })),
-    status: 'calculated'
-  };
+  if (!steps || steps.length === 0) {
+    throw new AppError('At least one funnel step is required', ErrorCode.BAD_REQUEST);
+  }
+
+  const rows = await withTenantQuery(
+    `SELECT event_name, COUNT(*)::int as count
+     FROM analytics_events
+     WHERE tenant_id = $1 AND event_name = ANY($2::text[])
+     GROUP BY event_name`,
+    [tenantId, steps],
+    tenantId
+  );
+
+  const countByStep = new Map<string, number>();
+  for (const row of rows || []) {
+    countByStep.set(row.event_name, row.count);
+  }
+
+  const firstStepCount = countByStep.get(steps[0]) || 0;
+
+  const funnelSteps = steps.map((step) => {
+    const count = countByStep.get(step) || 0;
+    const conversionRate = firstStepCount === 0
+      ? 0
+      : Math.round((count / firstStepCount) * 1000) / 10;
+    return { step, count, conversionRate: `${conversionRate}%` };
+  });
+
+  return { steps: funnelSteps, status: 'calculated' };
 }
