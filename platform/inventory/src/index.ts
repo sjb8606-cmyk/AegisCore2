@@ -6,11 +6,16 @@ import { AppError, ErrorCode } from '../../utils/src/index';
 export { AppError, ErrorCode };
 
 export const MovementInputSchema = z.object({
-  itemId: z.string().uuid().optional(),
+  itemId: z.string().uuid(),
   locationId: z.string().uuid().optional(),
   type: z.enum(['receive', 'ship', 'adjust', 'transfer', 'return', 'write_off']),
   quantity: z.number().int().min(1),
   notes: z.string().optional(),
+});
+
+export const CreateItemInputSchema = z.object({
+  name: z.string().min(1),
+  sku: z.string().min(1),
 });
 
 export const InventoryConfigSchema = z.object({
@@ -83,6 +88,23 @@ function parseUserId(userId: any): string {
 }
 
 export class InventoryService {
+  static async createItem(tenantId: string, userId: string, data: any) {
+    const config = loadConfig();
+    if (!config.enabled) {
+      throw new AppError('Inventory globally disabled', ErrorCode.FORBIDDEN);
+    }
+    parseUserId(userId);
+    const input = CreateItemInputSchema.parse(data);
+
+    const sql = `
+      INSERT INTO inventory_items (tenant_id, name, sku)
+      VALUES ($1::uuid, $2, $3)
+      RETURNING *
+    `;
+    const rows = await withTenantQuery(sql, [tenantId, input.name, input.sku], tenantId);
+    return rows[0];
+  }
+
   static async recordMovement(tenantId: string, userId: string, data: any) {
     const config = loadConfig();
     if (!config.enabled) {
@@ -94,9 +116,16 @@ export class InventoryService {
 
     const defaultLocation = '00000000-0000-0000-0000-000000000001';
     const locationId = input.locationId || defaultLocation;
+    const itemId = input.itemId;
 
-    const item = await this.setupMockItem(tenantId);
-    const itemId = input.itemId || item.id;
+    const itemCheckSql = `SELECT id FROM inventory_items WHERE tenant_id = $1::uuid AND id = $2::uuid LIMIT 1`;
+    const itemCheckRows = await withTenantQuery(itemCheckSql, [tenantId, itemId], tenantId);
+    if (!itemCheckRows || itemCheckRows.length === 0) {
+      throw new AppError(
+        `Item ${itemId} does not exist for this tenant. Create it first via InventoryService.createItem().`,
+        ErrorCode.NOT_FOUND
+      );
+    }
 
     const levelSql = `
       SELECT quantity FROM stock_levels 
@@ -151,21 +180,5 @@ export class InventoryService {
       LIMIT 100
     `;
     return await withTenantQuery(sql, [tenantId], tenantId);
-  }
-
-  static async setupMockItem(tenantId: string): Promise<any> {
-    const checkSql = `SELECT id FROM inventory_items WHERE tenant_id = $1::uuid LIMIT 1`;
-    const checkRows = await withTenantQuery(checkSql, [tenantId], tenantId);
-    if (checkRows && checkRows.length > 0) {
-      return checkRows[0];
-    }
-
-    const sql = `
-      INSERT INTO inventory_items (tenant_id, name, sku)
-      VALUES ($1::uuid, 'ACME Security Node', 'SKU-ACME-SEC-99')
-      RETURNING *
-    `;
-    const rows = await withTenantQuery(sql, [tenantId], tenantId);
-    return rows[0];
   }
 }
