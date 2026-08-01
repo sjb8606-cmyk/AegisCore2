@@ -2,10 +2,12 @@ import { z } from 'zod';
 import { loadConfig } from '../../utils/src/index';
 import { withTenantQuery } from '../../tenancy/src/index';
 import { emit as auditEmit } from '../../audit/src/index';
+import { enqueue } from '../../queues/src/index';
 
 const ConfigSchema = z.object({
   enabled: z.boolean(),
-  limits: z.object({ requestResponseDays: z.number() })
+  limits: z.object({ requestResponseDays: z.number() }),
+  queueUrl: z.string(),
 });
 
 export type DataRequestType = 'gdpr_export' | 'gdpr_deletion';
@@ -19,18 +21,21 @@ export async function submitDataRequest(tenantId: string, userId: string, reques
   const config = loadConfig('compliance', ConfigSchema);
   if (!config.enabled) throw new Error('Compliance feature disabled');
 
-  // Calculate Legal Due Date
   const dueDate = new Date();
   dueDate.setDate(dueDate.getDate() + config.limits.requestResponseDays);
 
-  // Record Request
   const result = await withTenantQuery(
     'INSERT INTO data_requests (tenant_id, user_id, request_type, due_date) VALUES ($1, $2, $3, $4) RETURNING *',
     [tenantId, userId, requestType, dueDate.toISOString()],
     tenantId
   );
 
-  // Audit (Mandatory for Compliance)
+  if (!result || result.length === 0) {
+    throw new Error('Failed to record data request');
+  }
+
+  const dataRequest = result[0];
+
   await auditEmit({
     tenantId,
     action: REQUEST_TYPE_TO_AUDIT_ACTION[requestType],
@@ -40,8 +45,21 @@ export async function submitDataRequest(tenantId: string, userId: string, reques
     resource: 'data_request'
   });
 
-  // Simulated Async Queue Drop
-  console.log(`⚖️  [COMPLIANCE] Queued ${requestType} job for User: ${userId}. Due by: ${dueDate.toISOString().split('T')[0]}`);
+  await enqueue({
+    queueUrl: config.queueUrl,
+    body: JSON.stringify({
+      dataRequestId: dataRequest.id,
+      tenantId,
+      userId,
+      requestType,
+      dueDate: dueDate.toISOString(),
+    }),
+    deduplicationId: dataRequest.id,
+    attributes: {
+      requestType,
+      tenantId,
+    },
+  });
 
-  return result[0];
+  return dataRequest;
 }
