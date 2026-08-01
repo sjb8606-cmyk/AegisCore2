@@ -6,12 +6,17 @@ import { AppError, ErrorCode } from '../../utils/src/index';
 export { AppError, ErrorCode };
 
 export const AppointmentInputSchema = z.object({
-  serviceId: z.string().uuid().optional(),
+  serviceId: z.string().uuid(),
   staffId: z.string().uuid().optional(),
   clientName: z.string().min(1),
   clientEmail: z.string().email(),
   clientPhone: z.string().optional(),
   startAt: z.string().datetime(),
+});
+
+export const CreateServiceInputSchema = z.object({
+  name: z.string().min(1),
+  durationMinutes: z.number().int().min(1),
 });
 
 export const SchedulingConfigSchema = z.object({
@@ -96,6 +101,23 @@ function parseUserId(userId: any): string {
 }
 
 export class SchedulingService {
+  static async createService(tenantId: string, userId: string, data: any) {
+    const config = loadConfig();
+    if (!config.enabled) {
+      throw new AppError('Scheduling platform globally disabled', ErrorCode.FORBIDDEN);
+    }
+    parseUserId(userId);
+    const input = CreateServiceInputSchema.parse(data);
+
+    const sql = `
+      INSERT INTO scheduling_services (tenant_id, name, duration_minutes)
+      VALUES ($1::uuid, $2, $3)
+      RETURNING *
+    `;
+    const rows = await withTenantQuery(sql, [tenantId, input.name, input.durationMinutes], tenantId);
+    return rows[0];
+  }
+
   static async createAppointment(tenantId: string, userId: string, data: any) {
     const config = loadConfig();
     if (!config.enabled) {
@@ -104,9 +126,16 @@ export class SchedulingService {
 
     const input = AppointmentInputSchema.parse(data);
     const cleanUserId = parseUserId(userId);
+    const serviceId = input.serviceId;
 
-    const service = await this.setupMockService(tenantId);
-    const serviceId = input.serviceId || service.id;
+    const serviceCheckSql = `SELECT id FROM scheduling_services WHERE tenant_id = $1::uuid AND id = $2::uuid LIMIT 1`;
+    const serviceCheckRows = await withTenantQuery(serviceCheckSql, [tenantId, serviceId], tenantId);
+    if (!serviceCheckRows || serviceCheckRows.length === 0) {
+      throw new AppError(
+        `Service ${serviceId} does not exist for this tenant. Create it first via SchedulingService.createService().`,
+        ErrorCode.NOT_FOUND
+      );
+    }
 
     const checkSql = `
       SELECT COUNT(*)::int as count 
@@ -150,21 +179,5 @@ export class SchedulingService {
       LIMIT 100
     `;
     return await withTenantQuery(sql, [tenantId], tenantId);
-  }
-
-  static async setupMockService(tenantId: string): Promise<any> {
-    const checkSql = `SELECT id FROM scheduling_services WHERE tenant_id = $1::uuid LIMIT 1`;
-    const checkRows = await withTenantQuery(checkSql, [tenantId], tenantId);
-    if (checkRows && checkRows.length > 0) {
-      return checkRows[0];
-    }
-
-    const sql = `
-      INSERT INTO scheduling_services (tenant_id, name, duration_minutes)
-      VALUES ($1::uuid, 'General Consultation', 30)
-      RETURNING *
-    `;
-    const rows = await withTenantQuery(sql, [tenantId], tenantId);
-    return rows[0];
   }
 }
