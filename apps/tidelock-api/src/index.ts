@@ -7,11 +7,14 @@ import { requireAuth } from '../../../platform/auth/src/index';
 import { tenantResolver } from '../../../platform/tenancy/src/index';
 import { globalErrorHandler } from '../../../platform/utils/src/index';
 import { healthRouter } from './health';
+import { onboardingRouter } from './onboarding';
 
 const app = express();
 app.use(helmet());
 app.use(json());
 app.use(healthRouter);
+
+app.use('/api/onboarding', requireAuth(), onboardingRouter);
 
 const routesDir = path.join(__dirname, 'routes');
 if (fs.existsSync(routesDir)) {
