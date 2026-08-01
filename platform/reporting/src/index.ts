@@ -1,7 +1,8 @@
-import { withTenantQuery } from '@platform/tenancy';
+import { withTenantQuery } from '../../tenancy/src/index';
 import * as fs from 'fs';
 import * as path from 'path';
-import { AppError, ErrorCode } from '@platform/utils';
+import * as crypto from 'crypto';
+import { AppError, ErrorCode } from '../../utils/src/index';
 export { AppError, ErrorCode };
 
 export function parseUserId(userId: any): string {
@@ -18,7 +19,6 @@ function loadConfig() {
   return { enabled: true, tiers: { executiveDashboard: true }, limits: { reportCount: 20 } };
 }
 
-// Resilient native RFC-4180 CSV serializer bypasses papaparse/pdfkit native module dependency blocks
 export function generateNativeCsv(data: any[]): Buffer {
   if (!data || data.length === 0) return Buffer.from('No records found');
   const headers = Object.keys(data[0]).join(',');
@@ -54,30 +54,50 @@ export async function createReport(tenantId: string, createdBy: string, data: an
   return result[0];
 }
 
+type ReportTypeHandler = (tenantId: string, config: Record<string, unknown>) => Promise<any[]>;
+
+const REPORT_TYPE_HANDLERS: Record<string, ReportTypeHandler> = {
+  // e.g. 'catch_summary': async (tenantId, config) => { ...real query... },
+};
+
 export async function runReport(tenantId: string, reportId: string, triggeredBy: string) {
   const cleanUserId = parseUserId(triggeredBy);
   const runId = crypto.randomUUID();
-  
-  // Create pending run record
+
+  const defRes = await withTenantQuery(
+    'SELECT * FROM report_definitions WHERE id = $1 AND tenant_id = $2 AND deleted_at IS NULL',
+    [reportId, tenantId],
+    tenantId
+  );
+  const definition = defRes[0];
+  if (!definition) {
+    throw new AppError(`Report definition ${reportId} not found`, ErrorCode.NOT_FOUND);
+  }
+
   await withTenantQuery(`
     INSERT INTO report_runs (id, tenant_id, report_id, status, triggered_by)
     VALUES ($1, $2, $3, 'running', $4) RETURNING id;
   `, [runId, tenantId, reportId, cleanUserId], tenantId);
 
-  // Trigger immediate mock compilation & aggregation loop
-  const start = Date.now();
-  
-  // Aggregate metadata to return inside CSV
-  const reportData = [
-    { metric: "Aggregate Transactions", total_records: 128, value_cents: 5493000 },
-    { metric: "Active Operational Leases", total_records: 14, value_cents: 290000 },
-    { metric: "Total Invoiced Revenue", total_records: 82, value_cents: 18451000 }
-  ];
+  const handler = REPORT_TYPE_HANDLERS[definition.type];
+  if (!handler) {
+    await withTenantQuery(`
+      UPDATE report_runs
+      SET status = 'failed', completed_at = CURRENT_TIMESTAMP
+      WHERE id = $1 AND tenant_id = $2;
+    `, [runId, tenantId], tenantId);
 
+    throw new AppError(
+      `Report type "${definition.type}" has no real data handler wired up yet.`,
+      ErrorCode.NOT_IMPLEMENTED
+    );
+  }
+
+  const start = Date.now();
+  const reportData = await handler(tenantId, definition.config || {});
   const csvBuffer = generateNativeCsv(reportData);
   const duration = Date.now() - start;
 
-  // Complete the run atomically
   await withTenantQuery(`
     UPDATE report_runs 
     SET status = 'completed', file_url = $1, row_count = $2, duration_ms = $3, completed_at = CURRENT_TIMESTAMP
@@ -96,15 +116,8 @@ export async function getExecutiveDashboard(tenantId: string) {
   const cfg = loadConfig();
   if (!cfg.tiers.executiveDashboard) throw new AppError('Dashboard is premium tier only', ErrorCode.FORBIDDEN);
 
-  return {
-    kpis: {
-      activeTenants: 14,
-      aggregateGrosProfitCents: 94820300,
-      systemUptimePercent: 99.98
-    },
-    recentActivity: [
-      { event: "payment.succeeded", detail: "USD 120.00", at: "2026-06-08T12:00:00Z" },
-      { event: "contract.signed", detail: "Project #2026-003", at: "2026-06-08T10:45:00Z" }
-    ]
-  };
+  throw new AppError(
+    'Executive dashboard has no real KPI data source wired up yet.',
+    ErrorCode.NOT_IMPLEMENTED
+  );
 }
