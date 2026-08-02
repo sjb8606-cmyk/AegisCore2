@@ -1,7 +1,3 @@
-/**
- * platform/fisheries/shipment-intake/src/index.ts
- */
-
 import { z } from 'zod';
 import { withTenantQuery } from '../../../tenancy/src/index';
 import { loadConfig, AppError, ErrorCode } from '../../../utils/src/index';
@@ -17,12 +13,16 @@ const ConfigSchema = z.object({
   }),
 });
 
+export const ConditionCodeSchema = z.enum(['whole', 'dressed', 'headed_gutted', 'gutted', 'other']);
+
 export const LogShipmentInputSchema = z.object({
   speciesId: z.string().uuid(),
   vesselName: z.string().min(1),
   catchDate: z.string().datetime(),
   weight: z.number().positive(),
   weightUnit: z.enum(['kg', 'lb']).default('kg'),
+  conditionCode: ConditionCodeSchema.default('whole'),
+  conversionFactor: z.number().positive().optional(),
   qualityGrade: z.enum(['premium', 'standard', 'processing']),
   catchZone: z.string().optional(),
   notes: z.string().optional(),
@@ -63,11 +63,16 @@ export class ShipmentIntakeService {
       ? round2(input.weight * LB_TO_KG)
       : input.weight;
 
+    const roundWeightKg = input.conversionFactor
+      ? round2(weightKg * input.conversionFactor)
+      : null;
+
     const res = await withTenantQuery(
       `INSERT INTO fisheries_shipments (
         tenant_id, species_id, vessel_name, catch_date, weight_kg,
-        original_weight, original_unit, quality_grade, catch_zone, notes, logged_by
-      ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
+        original_weight, original_unit, condition_code, round_weight_kg,
+        conversion_factor, quality_grade, catch_zone, notes, logged_by
+      ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14)
       RETURNING *`,
       [
         tenantId,
@@ -77,6 +82,9 @@ export class ShipmentIntakeService {
         weightKg,
         input.weight,
         input.weightUnit,
+        input.conditionCode,
+        roundWeightKg,
+        input.conversionFactor ?? null,
         input.qualityGrade,
         input.catchZone ?? null,
         input.notes ?? null,

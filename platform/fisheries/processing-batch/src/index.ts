@@ -1,7 +1,3 @@
-/**
- * platform/fisheries/processing-batch/src/index.ts
- */
-
 import { z } from 'zod';
 import { withTenantQuery } from '../../../tenancy/src/index';
 import { loadConfig, AppError, ErrorCode } from '../../../utils/src/index';
@@ -16,6 +12,8 @@ const ConfigSchema = z.object({
   }),
 });
 
+export const ConditionCodeSchema = z.enum(['whole', 'dressed', 'headed_gutted', 'gutted', 'other']);
+
 export const CreateBatchInputSchema = z.object({
   speciesId: z.string().uuid(),
   shipmentIds: z.array(z.string().uuid()).min(1),
@@ -26,6 +24,8 @@ export const CreateBatchInputSchema = z.object({
 export const CompleteBatchInputSchema = z.object({
   finishedWeightKg: z.number().positive(),
   completedAt: z.string().datetime(),
+  finishedConditionCode: ConditionCodeSchema.default('whole'),
+  finishedConversionFactor: z.number().positive().optional(),
 });
 
 function parseUserId(userId: any): string {
@@ -36,6 +36,10 @@ function parseUserId(userId: any): string {
 
 function getConfig() {
   return loadConfig('fisheries-processing-batch', ConfigSchema);
+}
+
+function round2(n: number): number {
+  return Math.round(n * 100) / 100;
 }
 
 export class ProcessingBatchService {
@@ -122,12 +126,25 @@ export class ProcessingBatchService {
       );
     }
 
+    const finishedRoundWeightKg = input.finishedConversionFactor
+      ? round2(input.finishedWeightKg * input.finishedConversionFactor)
+      : null;
+
     const res = await withTenantQuery(
       `UPDATE fisheries_processing_batches
-       SET status = 'completed', finished_weight_kg = $1, completed_at = $2
-       WHERE tenant_id = $3 AND id = $4
+       SET status = 'completed', finished_weight_kg = $1, completed_at = $2,
+           finished_condition_code = $3, finished_round_weight_kg = $4, finished_conversion_factor = $5
+       WHERE tenant_id = $6 AND id = $7
        RETURNING *`,
-      [input.finishedWeightKg, input.completedAt, tenantId, batchId],
+      [
+        input.finishedWeightKg,
+        input.completedAt,
+        input.finishedConditionCode,
+        finishedRoundWeightKg,
+        input.finishedConversionFactor ?? null,
+        tenantId,
+        batchId,
+      ],
       tenantId
     );
 

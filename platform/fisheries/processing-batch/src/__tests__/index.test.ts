@@ -65,7 +65,6 @@ describe('ProcessingBatchService.createBatch', () => {
     (ShipmentIntakeService.getShipment as any).mockResolvedValueOnce({
       id: SHIPMENT_1, species_id: 'some-other-species-id', weight_kg: 500,
     });
-
     await expect(
       ProcessingBatchService.createBatch(TENANT_ID, USER_ID, { ...validInput, shipmentIds: [SHIPMENT_1] })
     ).rejects.toMatchObject({ code: ErrorCode.BAD_REQUEST });
@@ -76,7 +75,6 @@ describe('ProcessingBatchService.createBatch', () => {
       id: SHIPMENT_1, species_id: SPECIES_ID, weight_kg: 500,
     });
     (withTenantQuery as any).mockResolvedValueOnce([{ batch_id: 'other-batch-id' }]);
-
     await expect(
       ProcessingBatchService.createBatch(TENANT_ID, USER_ID, { ...validInput, shipmentIds: [SHIPMENT_1] })
     ).rejects.toMatchObject({ code: ErrorCode.CONFLICT });
@@ -86,7 +84,6 @@ describe('ProcessingBatchService.createBatch', () => {
     (SpeciesRegistryService.getSpecies as any).mockResolvedValue({
       id: SPECIES_ID, common_name: 'Atlantic Salmon', is_active: false,
     });
-
     await expect(
       ProcessingBatchService.createBatch(TENANT_ID, USER_ID, validInput)
     ).rejects.toMatchObject({ code: ErrorCode.FORBIDDEN });
@@ -98,7 +95,6 @@ describe('ProcessingBatchService.completeBatch', () => {
     (withTenantQuery as any).mockResolvedValueOnce([
       { id: BATCH_ID, status: 'open', raw_input_weight_kg: 800 },
     ]);
-
     await expect(
       ProcessingBatchService.completeBatch(TENANT_ID, BATCH_ID, USER_ID, {
         finishedWeightKg: 900,
@@ -111,7 +107,6 @@ describe('ProcessingBatchService.completeBatch', () => {
     (withTenantQuery as any).mockResolvedValueOnce([
       { id: BATCH_ID, status: 'completed', raw_input_weight_kg: 800 },
     ]);
-
     await expect(
       ProcessingBatchService.completeBatch(TENANT_ID, BATCH_ID, USER_ID, {
         finishedWeightKg: 500,
@@ -120,7 +115,7 @@ describe('ProcessingBatchService.completeBatch', () => {
     ).rejects.toMatchObject({ code: ErrorCode.CONFLICT });
   });
 
-  it('completes successfully with a valid finished weight', async () => {
+  it('completes successfully with a valid finished weight, defaulting condition code to "whole" with no fabricated round weight', async () => {
     (withTenantQuery as any)
       .mockResolvedValueOnce([{ id: BATCH_ID, status: 'open', raw_input_weight_kg: 800 }])
       .mockResolvedValueOnce([{ id: BATCH_ID, status: 'completed', finished_weight_kg: 500 }]);
@@ -132,6 +127,28 @@ describe('ProcessingBatchService.completeBatch', () => {
 
     expect(result.status).toBe('completed');
     expect(result.finished_weight_kg).toBe(500);
+
+    const updateCall = (withTenantQuery as any).mock.calls[1];
+    expect(updateCall[1]).toContain('whole');
+    expect(updateCall[1][3]).toBeNull();
+  });
+
+  it('computes a real finished round weight only when a caller-supplied conversion factor is given', async () => {
+    (withTenantQuery as any)
+      .mockResolvedValueOnce([{ id: BATCH_ID, status: 'open', raw_input_weight_kg: 800 }])
+      .mockResolvedValueOnce([{ id: BATCH_ID, status: 'completed' }]);
+
+    await ProcessingBatchService.completeBatch(TENANT_ID, BATCH_ID, USER_ID, {
+      finishedWeightKg: 500,
+      completedAt: '2026-07-15T14:00:00.000Z',
+      finishedConditionCode: 'headed_gutted',
+      finishedConversionFactor: 1.45,
+    });
+
+    const updateCall = (withTenantQuery as any).mock.calls[1];
+    expect(updateCall[1]).toContain('headed_gutted');
+    expect(updateCall[1]).toContain(725);
+    expect(updateCall[1]).toContain(1.45);
   });
 });
 
@@ -140,14 +157,12 @@ describe('ProcessingBatchService.cancelBatch', () => {
     (withTenantQuery as any)
       .mockResolvedValueOnce([{ id: BATCH_ID, status: 'open' }])
       .mockResolvedValueOnce([{ id: BATCH_ID, status: 'cancelled' }]);
-
     const result = await ProcessingBatchService.cancelBatch(TENANT_ID, BATCH_ID, USER_ID);
     expect(result.status).toBe('cancelled');
   });
 
   it('throws CONFLICT when trying to cancel a non-open batch', async () => {
     (withTenantQuery as any).mockResolvedValueOnce([{ id: BATCH_ID, status: 'completed' }]);
-
     await expect(
       ProcessingBatchService.cancelBatch(TENANT_ID, BATCH_ID, USER_ID)
     ).rejects.toMatchObject({ code: ErrorCode.CONFLICT });
@@ -157,7 +172,6 @@ describe('ProcessingBatchService.cancelBatch', () => {
 describe('ProcessingBatchService.getBatch', () => {
   it('throws NOT_FOUND for a nonexistent batch', async () => {
     (withTenantQuery as any).mockResolvedValueOnce([]);
-
     await expect(
       ProcessingBatchService.getBatch(TENANT_ID, BATCH_ID)
     ).rejects.toMatchObject({ code: ErrorCode.NOT_FOUND });
@@ -167,9 +181,7 @@ describe('ProcessingBatchService.getBatch', () => {
 describe('ProcessingBatchService.listBatches', () => {
   it('applies speciesId and status filters', async () => {
     (withTenantQuery as any).mockResolvedValueOnce([]);
-
     await ProcessingBatchService.listBatches(TENANT_ID, { speciesId: SPECIES_ID, status: 'open' });
-
     const call = (withTenantQuery as any).mock.calls[0];
     expect(call[0]).toContain('species_id = $2');
     expect(call[0]).toContain('status = $3');
