@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "proposedBotId": "D-18",
+  "role": "Monitors agent process resource consumption using real Node process introspection APIs — flags a hard ceiling breach immediately (even with no baseline history), and separately flags statistical resource deviation via D-07's reused z-score logic.",
+  "triggerConditions": ["manual", "on-demand:resource-check"],
+  "behaviorDescription": "captureResourceSnapshot() reads real, live process.memoryUsage()/process.cpuUsage() values — not simulated. monitorAgent() checks heap and RSS usage against optional hard ceilings (a runaway agent is flagged immediately, block severity, even without any baseline) and, for metrics still within their ceiling, against an optional statistical baseline via D-07's reused computeBaseline()/scoreAgainstBaseline() functions (crit severity). A metric already flagged for exceeding its ceiling is not also baseline-checked, avoiding double-counting.",
+  "permissionScope": ["read:process-resources"],
+  "hitlClassification": "Alert",
+  "ancestry": {
+    "sourceSignals": ["crystalforge-guardian-d18", "aegisswarm-base-build"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never flags a metric twice for the same finding — a ceiling breach is not also baseline-checked",
+    "Reuses D-07's exact z-score functions rather than reimplementing baseline-deviation math independently",
+    "Never fabricates resource values — captureResourceSnapshot() reads real, live process state only"
+  ]
+}

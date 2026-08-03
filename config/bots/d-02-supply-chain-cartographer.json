@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "proposedBotId": "D-02",
+  "role": "Maps the repository's dependency graph across all workspace packages and exports it as an SBOM. Also flags external dependencies pinned to an unbounded version range, a real dependency-confusion attack surface.",
+  "triggerConditions": ["scheduled:daily", "manual", "pre-deploy"],
+  "behaviorDescription": "Walks the repo for all package.json files (skipping node_modules/.git/build artifacts), builds a dependency graph of every declared dependency/devDependency edge, and flags any *external* (non-workspace) dependency pinned to '*' or 'latest' as a warn-severity finding — internal @platform/@features workspace packages using '*' are correctly excluded, since that is this repo's normal npm-workspaces linking convention, not a risk. generateSbom() produces a real, usable, unsigned SBOM today. signSbom() is an honest stub: it throws a clear error rather than faking a signature, because SBOM signing requires @platform/pqcrypto, which has not been built in this repo yet (CrystalForge Guardian AppSpec Phase 1 prerequisite).",
+  "permissionScope": ["read:filesystem"],
+  "hitlClassification": "Alert",
+  "ancestry": {
+    "sourceSignals": ["crystalforge-guardian-d02", "aegisswarm-base-build"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never writes to, deletes, or modifies any file — detection and export only",
+    "Never flags internal workspace packages (@platform/*, @features/*) pinned to '*' — only external dependencies",
+    "signSbom() never fakes or silently skips a signature — it throws a clear error until @platform/pqcrypto exists"
+  ]
+}

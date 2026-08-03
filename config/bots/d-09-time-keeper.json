@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "proposedBotId": "D-09",
+  "role": "Dual-source time verification — compares local system time against an external time source and recommends Fortress Mode (default-deny lockdown posture) when drift exceeds a threshold or the external source is unreachable at all.",
+  "triggerConditions": ["scheduled:frequent", "manual", "pre-signing"],
+  "behaviorDescription": "verifyTemporalIntegrity() compares a local timestamp against an external one (or null if unreachable) and flags a recommendation for Fortress Mode if drift exceeds a configurable threshold (default 500ms) OR the external source could not be reached at all — an unreachable source is treated exactly as seriously as detected drift, per the default-deny principle. Deliberately does not flip any global process-wide switch itself, since nothing in this repo currently reads such a switch — this bot detects and recommends, it does not unilaterally enact a lockdown. Classified Synchronous Gate: a genuine temporal integrity failure requires an explicit human verdict (via the Policy Arbitrator's recordVerdict()) before anything depending on trusted time proceeds. fetchExternalTime() is an honest stub: it throws a clear error, because this environment has no network access to verify a real HTTPS call to an external time source.",
+  "permissionScope": ["read:system-clock"],
+  "hitlClassification": "Synchronous Gate",
+  "ancestry": {
+    "sourceSignals": ["crystalforge-guardian-d09", "aegisswarm-base-build"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never flips a global Fortress Mode switch itself — detects and recommends only, a human decides via the Synchronous Gate",
+    "Treats an unreachable external time source exactly as seriously as detected drift — never treats 'could not check' as 'assume fine'",
+    "fetchExternalTime() never fakes a network response — it throws until a real, verifiable network call exists"
+  ]
+}

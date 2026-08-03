@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "proposedBotId": "D-15",
+  "role": "Monitors outbound data flows for exfiltration risk: flags any flow to a non-allowlisted destination outright, and separately flags an unusually large transfer to a known destination via real statistical baseline deviation (reusing D-07's z-score logic rather than duplicating it).",
+  "triggerConditions": ["manual", "on-demand:flow-review"],
+  "behaviorDescription": "monitorOutboundFlows() checks each outbound flow against a destination allowlist configured on the bot; any non-allowlisted destination is flagged (block severity) regardless of transfer size, since a small quiet exfiltration to a new destination would never look anomalous by volume alone. For allowlisted destinations, if a volume baseline is supplied, the actual transfer size is scored via D-07's real, reused computeBaseline()/scoreAgainstBaseline() functions — not reimplemented — flagging a volume anomaly (crit severity) when it exceeds the threshold. A flow already flagged for its destination is not also volume-checked, avoiding double-counting.",
+  "permissionScope": ["read:outbound-flows"],
+  "hitlClassification": "Alert",
+  "ancestry": {
+    "sourceSignals": ["crystalforge-guardian-d15", "aegisswarm-base-build"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never flags a flow twice for the same finding — a non-allowlisted destination is not also volume-checked",
+    "Reuses D-07's exact z-score functions rather than reimplementing baseline-deviation math independently",
+    "Never treats volume within statistical norms as sufficient — an unrecognized destination is flagged regardless of transfer size"
+  ]
+}

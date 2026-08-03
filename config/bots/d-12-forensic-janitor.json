@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "proposedBotId": "D-12",
+  "role": "Manages HITL-authorized data purges through a real 24-hour time-lock: a purge is requested by an authorized human, can be cancelled during the lock window, and can only actually execute once the lock has genuinely expired.",
+  "triggerConditions": ["manual", "on-demand:purge-request"],
+  "behaviorDescription": "requestPurge() opens a new 24-hour time-locked purge for real tenant data (RLS-protected — this is genuine customer data, not system-level bookkeeping). cancelPurge() is guarded at the SQL level to only succeed while the purge is still pending and still within its lock window. executePurge() is guarded to only succeed once the lock has genuinely expired (unlocks_at <= now) and the purge is still pending — requiring a separate, narrower execute:purge permission scope from the write:purge-requests scope used to request/cancel, enforcing separation of duties. The human authorization happens once, up front, at request time; the 24-hour window is a cancellation safety valve, not a second approval gate, which is why this bot is classified Alert rather than Synchronous Gate — the real gate is the time-lock itself, enforced in the database, not a status flag.",
+  "permissionScope": ["write:purge-requests", "execute:purge", "read:purge-requests"],
+  "hitlClassification": "Alert",
+  "ancestry": {
+    "sourceSignals": ["crystalforge-guardian-d12", "aegisswarm-base-build"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never cancels a purge that has already executed or whose lock window has already passed — guarded at the SQL level, not just application logic",
+    "Never executes a purge before its 24-hour lock window has genuinely expired — guarded at the SQL level",
+    "Never fabricates a Veridact receipt — receipt_id is a nullable placeholder until @features/veridact is actually built",
+    "Execution requires a separate, narrower permission scope than requesting/cancelling — separation of duties"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "proposedBotId": "D-22",
+  "role": "Records every declined bot action immutably, in a real tenant-scoped, RLS-protected ledger — closing the loop on every permission-boundary refusal that occurs across the swarm, previously audited but never persisted to a queryable ledger.",
+  "triggerConditions": ["on-signal:permission-boundary-refusal", "manual"],
+  "behaviorDescription": "recordRefusal() persists a declined action to the proof_of_restraint table — insert-only, since restraint-store.ts provides no update or delete function at all, matching this bot's own 'immutably' requirement. Every recorded refusal unconditionally signals the swarm, since a declined action is always worth knowing about — this feeds the same intent as the AppSpec's public transparency endpoint (GET /api/safety/restraint-ledger), even though that HTTP endpoint itself is not built here. listRefusals() reads back a tenant's restraint history, read-only.",
+  "permissionScope": ["write:restraint-ledger", "read:restraint-ledger"],
+  "hitlClassification": "Logging",
+  "ancestry": {
+    "sourceSignals": ["crystalforge-guardian-d22", "aegisswarm-base-build"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never provides any way to alter or delete a recorded refusal — insert-only, matching 'immutably' in this bot's own role",
+    "Never fabricates a Veridact receipt — receipt_id is a nullable placeholder until @features/veridact is actually built",
+    "Never silently skips signaling the swarm on a recorded refusal — every declined action is unconditionally surfaced"
+  ]
+}

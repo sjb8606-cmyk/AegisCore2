@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "proposedBotId": "D-03",
+  "role": "Validates Merkle chain integrity for shipped audit events — confirms hash linkage, sequence continuity, and detects tampering, by wrapping the real verification logic already implemented in @platform/audit rather than reimplementing it.",
+  "triggerConditions": ["scheduled:hourly", "manual", "on-demand:audit-review"],
+  "behaviorDescription": "Given an ordered array of chained audit events, calls @platform/audit's verifyChain() (hash recomputation, prevHash linkage, sequence-gap detection) and turns any reported break into a block-severity Finding, since a verified chain break means either tampering or out-of-order shipping — both require human investigation. Records a Decision and signals the swarm whenever a break is found. fetchAndVerifyTenantChain() is an honest stub: it throws a clear error, because @platform/audit currently has no function to list/fetch a tenant's shipped S3 WORM events back out in sequence (shipper.ts only writes forward and exposes the current chain-tip hash).",
+  "permissionScope": ["read:audit-chain"],
+  "hitlClassification": "Alert",
+  "ancestry": {
+    "sourceSignals": ["crystalforge-guardian-d03", "aegisswarm-base-build"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never modifies, re-links, or re-hashes any audit event — verification only",
+    "Never fabricates a passing result when it cannot actually fetch a chain to verify — fetchAndVerifyTenantChain() throws rather than returning a fake or empty pass",
+    "Reuses @platform/audit's own verifyChain() rather than reimplementing Merkle verification logic independently"
+  ]
+}

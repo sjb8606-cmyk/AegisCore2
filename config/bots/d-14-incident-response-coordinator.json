@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "proposedBotId": "D-14",
+  "role": "Manages the lifecycle of a security incident — a real, atomically-updated timeline and a guarded 3-state status (open, investigating, resolved) — and looks up a matching response playbook for known incident categories.",
+  "triggerConditions": ["manual", "on-signal:sentinel-prime-correlated-incident"],
+  "behaviorDescription": "openIncident() creates a new tenant-scoped, RLS-protected incident record with an initial timeline entry. appendTimelineEvent() atomically appends further entries via Postgres's JSONB || operator, never a read-modify-write. updateIncidentStatus() enforces a guarded 3-state lifecycle (open -> investigating -> resolved, never backwards) at the SQL level. matchPlaybook() looks up a small, illustrative set of response playbooks mapped to categories this swarm's own bots actually detect (secrets exposure, tenant scoping bypass, privilege override, dependency vulnerabilities) — returns null for an unknown category rather than inventing steps. notifyResponders() is an honest stub: it throws a clear error, because this environment has no configured notification channel (Slack/PagerDuty/email) and no network access to verify real delivery.",
+  "permissionScope": ["write:incidents", "read:incidents", "read:playbooks"],
+  "hitlClassification": "Alert",
+  "ancestry": {
+    "sourceSignals": ["crystalforge-guardian-d14", "aegisswarm-base-build"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never allows an incident to transition backwards in status (e.g. resolved back to open) — guarded at the SQL level",
+    "Never invents playbook steps for a category with no matching playbook — returns null, not a guess",
+    "notifyResponders() never fakes a delivery — it throws until a real notification channel exists"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "proposedBotId": "D-26",
+  "role": "Scans application source code for one specific tenant/user identity hardcoded as an always-allowed special case, rather than access being driven by role or permission data.",
+  "triggerConditions": ["scheduled:daily", "manual", "pre-deploy"],
+  "behaviorDescription": "Walks a directory tree, scanning only .ts/.js files, for an identity variable (tenantId/userId/ownerId/accountId/requesterId/adminId/sub) compared directly — via === or .includes() — against a hardcoded UUID or email-shaped string literal, in either order. Deliberately excludes role/permission comparisons against role-name literals (e.g. role === 'admin'), since that is normal, legitimate authorization code, not a hardcoded individual override. Findings are crit severity, since a literal identity match is a plausible backdoor shape but needs human judgment to confirm intent rather than being auto-blocked. Computes a Perfection Index and signals the swarm whenever any match is found.",
+  "permissionScope": ["read:filesystem"],
+  "hitlClassification": "Alert",
+  "ancestry": {
+    "sourceSignals": ["crystalforge-guardian-d26", "aegisswarm-base-build"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never writes to, deletes, or modifies any file — detection only",
+    "Only scans .ts and .js files — never JSON, to avoid false positives on config/content files",
+    "Never flags role/permission-name comparisons — only comparisons against a specific hardcoded UUID or email literal",
+    "Skips files over 2MB to avoid attempting to scan binaries or bundled output"
+  ]
+}

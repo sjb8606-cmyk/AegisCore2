@@ -55,7 +55,55 @@ export async function getDecision(decisionId: string): Promise<Decision | null> 
   };
 }
 
-/** Most recent decisions for a specific bot — for future "walk me through last time" use. */
+/**
+ * Guarded state transition — only ever moves a decision FROM
+ * 'pending_approval' TO 'approved'/'rejected', enforced at the SQL
+ * level (WHERE status = 'pending_approval'), not just in application
+ * code. Returns whether a row was actually updated, so a caller can
+ * tell the difference between "recorded" and "nothing to record"
+ * (decision doesn't exist, was never gated, or was already decided).
+ */
+export async function updateDecisionStatus(
+  decisionId: string,
+  newStatus: 'approved' | 'rejected',
+): Promise<boolean> {
+  const result = await getPool().query(
+    `UPDATE bot_decisions
+     SET status = $1
+     WHERE decision_id = $2 AND status = 'pending_approval'`,
+    [newStatus, decisionId],
+  );
+  return (result.rowCount ?? 0) > 0;
+}
+
+/**
+ * Decisions previously given an actual human verdict (approved or
+ * rejected) for a specific rulesHash — the raw material for a
+ * precedent catalog. Deliberately excludes 'logged'/'pending_approval'
+ * rows, since no human judgment has been recorded on those yet.
+ */
+export async function listDecisionsByRulesHash(rulesHash: string, limit = 20): Promise<Decision[]> {
+  const result = await getPool().query(
+    `SELECT decision_id, bot_id, status, input, output, rules_hash, created_at
+     FROM bot_decisions
+     WHERE rules_hash = $1 AND status IN ('approved', 'rejected')
+     ORDER BY created_at DESC
+     LIMIT $2`,
+    [rulesHash, limit],
+  );
+
+  return result.rows.map((row: any) => ({
+    id: row.decision_id,
+    botId: row.bot_id,
+    status: row.status,
+    input: row.input,
+    output: row.output,
+    rulesHash: row.rules_hash,
+    timestamp: new Date(row.created_at).toISOString(),
+  }));
+}
+
+/** Most recent decisions for a specific bot — used by explainDecision()-adjacent lookups. */
 export async function listDecisions(botId: string, limit = 20): Promise<Decision[]> {
   const result = await getPool().query(
     `SELECT decision_id, bot_id, status, input, output, rules_hash, created_at

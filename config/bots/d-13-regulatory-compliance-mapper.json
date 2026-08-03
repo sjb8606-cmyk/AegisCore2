@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "proposedBotId": "D-13",
+  "role": "Maps a small, illustrative set of SOC2/ISO27001/GDPR/HIPAA controls to real, verifiable technical evidence already established in this repo, flagging controls that currently lack that evidence. This is NOT a certified or complete compliance audit — that requires a qualified auditor.",
+  "triggerConditions": ["manual", "on-demand:posture-review"],
+  "behaviorDescription": "mapPosture() takes a SystemFacts object supplied by the caller (rlsEnabled, permissionBoundaryEnforced, auditTrailExists, encryptionAtRest, gdprDeletionWorkflowExists) and checks each against a small, named set of controls across the four frameworks, each control mapped to real technical evidence rather than an invented catalogue. Reports which specific controls are satisfied and which are gaps. Records a Decision and signals the swarm when any gap is found. Deliberately does not attempt to auto-discover system state on its own — it maps facts the caller explicitly provides, transparently, rather than claiming omniscient introspection it doesn't have.",
+  "permissionScope": ["read:compliance-facts"],
+  "hitlClassification": "Logging",
+  "ancestry": {
+    "sourceSignals": ["crystalforge-guardian-d13", "aegisswarm-base-build"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never claims to be a certified or complete compliance audit — surfaces evidence for a small, named, illustrative control set only",
+    "Never auto-discovers or guesses at system facts — only maps facts explicitly supplied by the caller",
+    "Never silently treats a missing fact as satisfied — an unset/false fact always means the control is reported as a gap"
+  ]
+}

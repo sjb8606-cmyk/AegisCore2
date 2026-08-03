@@ -53,6 +53,7 @@ export const AuditAction = z.enum([
   'bot.decision_recorded',
   'bot.action_blocked',
   'bot.decision_explained',
+  'bot.decision_verdict_recorded',
 ]);
 
 export type AuditAction = z.infer<typeof AuditAction>;

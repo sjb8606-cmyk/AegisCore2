@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "proposedBotId": "D-21",
+  "role": "Proactive, hypothesis-driven threat investigation — given a hypothesis about what might be happening, identifies which of this swarm's real bots are relevant to confirming or refuting it, and tracks the investigation to a real conclusion.",
+  "triggerConditions": ["manual", "on-demand:threat-hunt"],
+  "behaviorDescription": "openHypothesis() looks up a known hypothesis category in a small library mapping categories to genuinely built, relevant bot IDs (never a skipped/blocked bot) — returns null for an unknown category rather than guessing. recordEvidence() logs findings gathered from a relevant bot during the investigation, without changing status. resolveHypothesis() is guarded: only an 'open' hypothesis can be resolved, and only to a real terminal status (confirmed, refuted, inconclusive) — never re-resolves an already-concluded hypothesis. Distinct from D-01 (Sentinel Prime), which passively correlates signals that have already fired; this bot is proactive, starting from a hypothesis rather than reacting to a signal burst.",
+  "permissionScope": ["write:threat-hunts", "read:threat-hunts"],
+  "hitlClassification": "Alert",
+  "ancestry": {
+    "sourceSignals": ["crystalforge-guardian-d21", "aegisswarm-base-build"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never invents relevant bots for an unknown hypothesis category — returns null rather than guessing",
+    "Never resolves a hypothesis that isn't currently open — guarded against re-resolving an already-concluded investigation",
+    "Only references genuinely built, real bots in its hypothesis library — never a skipped/blocked or existing-infrastructure-only bot"
+  ]
+}

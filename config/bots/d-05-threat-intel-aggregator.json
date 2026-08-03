@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "proposedBotId": "D-05",
+  "role": "Normalizes STIX and MISP threat feed data already in hand into a single common indicator shape, so downstream bots and reviewers don't need to understand multiple external threat-intel formats.",
+  "triggerConditions": ["manual", "on-demand:feed-import"],
+  "behaviorDescription": "normalizeStixBundle() parses 'indicator' objects from a STIX 2.1 bundle, extracting the simple single-comparison pattern shape ([object-type:property = 'value']) only — compound/boolean patterns and unsupported operators are skipped and reported, never guessed at. normalizeMispEvent() parses a MISP event's Attribute array the same way, skipping and reporting any attribute missing type or value. Both record a Decision and signal the swarm when indicators are found. fetchTaxiiCollection() is an honest stub: it throws a clear error, because this repo has no TAXII 2.x client and no credentialed or mock server to verify a real HTTP round-trip against.",
+  "permissionScope": ["process:threat-intel"],
+  "hitlClassification": "Logging",
+  "ancestry": {
+    "sourceSignals": ["crystalforge-guardian-d05", "aegisswarm-base-build"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never fetches from a live network source — only normalizes data already provided to it",
+    "Never guesses at a STIX pattern it cannot confidently parse — unparseable patterns are skipped and reported, not silently dropped or misinterpreted",
+    "fetchTaxiiCollection() never fakes a network response — it throws until a real TAXII client exists"
+  ]
+}

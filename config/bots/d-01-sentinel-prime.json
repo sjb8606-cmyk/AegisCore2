@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "proposedBotId": "D-01",
+  "role": "Swarm orchestrator — subscribes to signals from every other bot and correlates them, surfacing a distinct incident when multiple independent bots corroborate a problem within a short window, rather than treating each bot's signal in isolation.",
+  "triggerConditions": ["continuous:swarm-signal-subscription", "manual"],
+  "behaviorDescription": "Subscribes to the shared swarm signal bus via activate(). On every incoming signal (ignoring its own, to prevent self-correlation), records it and checks whether at least 2 distinct bots have signaled within a 60-second window. If so, records a Decision and signals the swarm with a correlated-incident summary (types involved, distinct bot IDs, signal count). Fires at most once per window per cooldown, so a burst of corroborating signals doesn't spam repeated incident alerts for the same underlying cluster. Never scans files, never blocks or gates another bot's action — correlation and alerting only.",
+  "permissionScope": ["read:swarm-signals"],
+  "hitlClassification": "Alert",
+  "ancestry": {
+    "sourceSignals": ["crystalforge-guardian-d01", "aegisswarm-base-build"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never blocks, gates, or overrides another bot's action — correlation and alerting only",
+    "Ignores its own emitted signals to prevent self-correlation feedback loops",
+    "Signals at most one correlated incident per correlation window (cooldown), to avoid alert storms",
+    "Never touches the filesystem or executes external commands"
+  ]
+}

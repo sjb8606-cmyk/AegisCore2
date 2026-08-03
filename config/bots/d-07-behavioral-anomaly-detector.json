@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "proposedBotId": "D-07",
+  "role": "Detects when a current metric value deviates significantly from its established baseline, using real statistical z-score analysis rather than an ML model (no training infrastructure exists in this repo — this is the honest, verifiable version of the same underlying capability).",
+  "triggerConditions": ["manual", "on-demand:metric-review"],
+  "behaviorDescription": "detectDeviation() computes a baseline's mean and sample standard deviation (Bessel's correction) from historical numeric observations already in hand, then scores a current value via z-score, flagging an anomaly when the deviation exceeds a configurable sigma threshold (default 3). Handles a zero-variance (perfectly flat) baseline explicitly rather than dividing by zero, and refuses to compute a baseline from fewer than 2 samples rather than producing a meaningless standard deviation. monitorLiveMetric() is an honest stub: it throws a clear error, because @platform/observability only exposes write-side OTel instruments with no query capability, and no metrics-backend connection exists in this repo to pull real historical values from.",
+  "permissionScope": ["process:behavioral-metrics"],
+  "hitlClassification": "Alert",
+  "ancestry": {
+    "sourceSignals": ["crystalforge-guardian-d07", "aegisswarm-base-build"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never fabricates a baseline from fewer than 2 samples — refuses rather than producing a meaningless or divide-by-zero result",
+    "Never silently treats a zero-variance baseline as 'no anomaly possible' — any different value against a perfectly flat baseline is correctly flagged",
+    "monitorLiveMetric() never fakes a metrics-backend query — it throws until a real query capability exists"
+  ]
+}

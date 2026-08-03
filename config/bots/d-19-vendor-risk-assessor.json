@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "proposedBotId": "D-19",
+  "role": "Scores a third-party vendor's risk by checking their known infrastructure against already-normalized threat indicators (D-05's output), rather than parsing threat feeds or reinventing matching itself.",
+  "triggerConditions": ["manual", "on-demand:vendor-review"],
+  "behaviorDescription": "assessVendor() checks a vendor's known domains/IPs against a supplied list of ThreatIndicator objects (D-05's normalized output) via case-insensitive exact match. Each matched indicator adds a fixed weight to a transparent, explainable risk score capped at 100 — not a black-box model. Records a Decision and signals the swarm when any match is found. Exact matching only — this bot does not attempt fuzzy or related-domain matching, and only reports what it can actually confirm.",
+  "permissionScope": ["read:vendor-risk-data"],
+  "hitlClassification": "Alert",
+  "ancestry": {
+    "sourceSignals": ["crystalforge-guardian-d19", "aegisswarm-base-build"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never invents a risk score component beyond the transparent per-match weight — no hidden or unexplainable scoring factors",
+    "Reuses D-05's ThreatIndicator type directly rather than reimplementing threat-indicator normalization",
+    "Never claims a fuzzy or inferred match — only exact, confirmed infrastructure matches are reported"
+  ]
+}

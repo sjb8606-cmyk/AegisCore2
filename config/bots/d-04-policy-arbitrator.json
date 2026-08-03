@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "proposedBotId": "D-04",
+  "role": "Records real human verdicts on gated (Synchronous Gate) decisions, and maintains a precedent catalog so a human reviewing a new pending decision can see how the same underlying rule has been decided historically — including surfacing genuine inconsistency (the same rule both approved and rejected over time) as an unresolved policy conflict.",
+  "triggerConditions": ["on-demand:hitl-review", "manual"],
+  "behaviorDescription": "recordVerdict() persists a human's actual approve/reject decision on a pending_approval Decision, guarded so it can only transition a decision that is genuinely awaiting approval — it refuses rather than silently ignoring an invalid request (decision missing, or already decided). findPrecedent() looks up prior human verdicts for the same rulesHash and reports counts, most recent verdict, and whether both approvals and rejections exist historically (a genuine policy conflict worth a human resolving formally). Never auto-applies a precedent or changes any decision's status on its own initiative — every status change traces back to an explicit human verdict recorded through recordVerdict().",
+  "permissionScope": ["read:decision-history", "write:decision-verdicts"],
+  "hitlClassification": "Alert",
+  "ancestry": {
+    "sourceSignals": ["crystalforge-guardian-d04", "aegisswarm-base-build"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never records a verdict a human did not actually make — recordVerdict() only persists an explicit approve/reject decidedBy call, it never decides on its own",
+    "Never transitions a decision that isn't currently pending_approval — refuses rather than silently ignoring an invalid transition",
+    "Never auto-applies historical precedent to a new decision — precedent is surfaced as context only, a human still decides every time"
+  ]
+}
