@@ -45,6 +45,19 @@ export const BotOutputContractSchema = z.object({
   humanReport: z.string().optional(),
 }).partial();
 
+// ── Persona (conversational layer) ──────────────────────────────
+// Optional — same conceptual pattern as Delight Engine personas, but
+// attached to a bot spec instead of a chat character. A bot with no
+// persona still works exactly as before; this only enables
+// CrystalBot.explainDecision() to speak in a consistent voice.
+
+export const BotPersonaSchema = z.object({
+  name: z.string().min(1),
+  voice: z.string().min(1),
+  tone: z.string().min(1),
+});
+export type BotPersona = z.infer<typeof BotPersonaSchema>;
+
 export const BotSpecificationSchema = z.object({
   version: z.literal('1.0'),
   proposedBotId: z.string().regex(/^[DR]-\d{2}$/, 'Bot ID must be format D-XX or R-XX'),
@@ -56,6 +69,7 @@ export const BotSpecificationSchema = z.object({
   ancestry: BotAncestrySchema,
   outputContract: BotOutputContractSchema.optional(),
   hardStops: z.array(z.string()).optional(),
+  persona: BotPersonaSchema.optional(),
 });
 
 export type BotSpecification = z.infer<typeof BotSpecificationSchema>;

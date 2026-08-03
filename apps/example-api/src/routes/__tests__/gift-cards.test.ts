@@ -1,15 +1,14 @@
-import { describe, it, expect, vi, beforeEach } from 'vitest';
 import express from 'express';
 import request from 'supertest';
 
-vi.mock('../../../../../platform/tenancy/src/index', () => ({
-  withTenantQuery: vi.fn(),
+jest.mock('../../../../../platform/tenancy/src/index', () => ({
+  withTenantQuery: jest.fn(),
 }));
-vi.mock('../../../../../platform/audit/src/index', () => ({
-  emit: vi.fn(),
+jest.mock('../../../../../platform/audit/src/index', () => ({
+  emit: jest.fn(),
 }));
-vi.mock('../../../../../platform/metering/src/index', () => ({
-  recordUsage: vi.fn(),
+jest.mock('../../../../../platform/metering/src/index', () => ({
+  recordUsage: jest.fn(),
 }));
 
 import { giftCardsRouter } from '../gift-cards';
@@ -34,7 +33,7 @@ function buildTestApp(roles: string[] = ['viewer']) {
 }
 
 beforeEach(() => {
-  vi.clearAllMocks();
+  jest.clearAllMocks();
 });
 
 describe('POST /gift-cards/items', () => {

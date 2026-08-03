@@ -38,7 +38,7 @@ export async function generateDidAvatarVideo(
     throw new AppError(`D-ID request failed (${res.status}): ${body}`, ErrorCode.SERVICE_UNAVAILABLE);
   }
 
-  const data = await res.json();
+  const data = await res.json() as any;
 
   return {
     provider: 'did',

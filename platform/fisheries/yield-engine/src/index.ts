@@ -71,7 +71,7 @@ export class YieldEngineService {
       : null;
 
     const isUnderperforming = deviationPoints !== null
-      && deviationPoints < -config.limits.underperformanceThresholdPoints;
+      && deviationPoints < -(config.limits.underperformanceThresholdPoints ?? 5);
 
     const res = await withTenantQuery(
       `INSERT INTO fisheries_yield_records (

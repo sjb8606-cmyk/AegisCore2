@@ -1,13 +1,13 @@
 import { Router, Request, Response } from 'express';
 import { AuthenticatedRequest } from '../../../../platform/auth/src/index';
 
-import { createForecastSeries, runForecast, simulateScenario, detectAnomalies, getForecastLedger, AppError, isValidUuid } from '../../../../platform/ai-forecasting/src/index';
+import { createForecastSeries, runForecast, simulateScenario, detectAnomalies, getForecastLedger, AppError, ErrorCode, isValidUuid } from '../../../../platform/ai-forecasting/src/index';
 
 const router = Router();
 
 function extractContext(req: Request) {
   const auth = (req as AuthenticatedRequest).auth;
-  if (!auth) throw new AppError('Missing authenticated context', 'UNAUTHORIZED');
+  if (!auth) throw new AppError('Missing authenticated context', ErrorCode.UNAUTHORIZED);
   return { tenantId: auth.tenantId, userId: auth.sub };
 }
 
@@ -69,7 +69,7 @@ router.get(paths.ledger, async (req: Request, res: Response) => {
     const { tenantId } = extractContext(req);
     const seriesId = req.params.id;
     if (!isValidUuid(seriesId)) {
-      throw new AppError(`Invalid Series ID format: '${seriesId}'`, 'BAD_REQUEST');
+      throw new AppError(`Invalid Series ID format: '${seriesId}'`, ErrorCode.BAD_REQUEST);
     }
     const result = await getForecastLedger(tenantId, seriesId);
     res.status(200).json(result);

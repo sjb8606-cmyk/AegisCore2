@@ -1,15 +1,14 @@
 import express from 'express';
 import request from 'supertest';
-import { describe, it, expect, vi, beforeEach } from 'vitest';
 
-vi.mock('../../../../../platform/tenancy/src/index', () => ({
-  withTenantQuery: vi.fn(),
+jest.mock('../../../../../platform/tenancy/src/index', () => ({
+  withTenantQuery: jest.fn(),
 }));
-vi.mock('../../../../../platform/audit/src/index', () => ({
-  emit: vi.fn().mockResolvedValue(undefined),
+jest.mock('../../../../../platform/audit/src/index', () => ({
+  emit: jest.fn().mockResolvedValue(undefined),
 }));
-vi.mock('../../../../../platform/metering/src/index', () => ({
-  recordUsage: vi.fn().mockResolvedValue(undefined),
+jest.mock('../../../../../platform/metering/src/index', () => ({
+  recordUsage: jest.fn().mockResolvedValue(undefined),
 }));
 
 import { withTenantQuery } from '../../../../../platform/tenancy/src/index';
@@ -34,7 +33,7 @@ function buildApp() {
 }
 
 describe('cron-jobs routes', () => {
-  beforeEach(() => vi.clearAllMocks());
+  beforeEach(() => jest.clearAllMocks());
 
   it('POST /items creates a job with a valid cron expression and wraps response in data envelope', async () => {
     (withTenantQuery as any).mockResolvedValueOnce([

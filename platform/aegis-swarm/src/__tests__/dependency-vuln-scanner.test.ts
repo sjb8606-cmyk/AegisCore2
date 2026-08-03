@@ -1,5 +1,11 @@
+jest.mock('../../../bot-runtime/src/decision-store', () => ({
+  saveDecision: jest.fn().mockResolvedValue(undefined),
+  getDecision: jest.fn(),
+}));
+
 import { swarmSignalBus } from '@platform/bot-runtime';
 import { BotSpecification } from '@platform/bot-registry';
+import { getDecision } from '../../../bot-runtime/src/decision-store';
 
 jest.mock('child_process', () => ({ exec: jest.fn() }));
 import { exec } from 'child_process';
@@ -40,6 +46,10 @@ const SAMPLE_AUDIT_REPORT = {
 };
 
 describe('DependencyVulnScannerBot', () => {
+  beforeEach(() => {
+    (getDecision as jest.Mock).mockReset();
+  });
+
   it('parses an npm audit report into Findings with correct severity mapping', () => {
     const bot = new DependencyVulnScannerBot(makeSpec());
     const findings = bot.parseAuditReport(SAMPLE_AUDIT_REPORT as any);
@@ -86,5 +96,36 @@ describe('DependencyVulnScannerBot', () => {
     expect(report.vulnerablePackages).toBe(2);
     expect(received).toHaveLength(1);
     unsubscribe();
+  });
+
+  it('answers a question about its own past decision, grounded in the real stored findings', async () => {
+    const stored = {
+      id: 'd06-decision-1',
+      botId: 'D-06',
+      status: 'logged' as const,
+      input: { cwd: '/fake/path' },
+      output: { pi: { curr: 55, prev: 0, delta: 55 } },
+      rulesHash: 'npm-audit-v1',
+      timestamp: new Date().toISOString(),
+    };
+    (getDecision as jest.Mock).mockResolvedValue(stored);
+
+    const bot = new DependencyVulnScannerBot(
+      makeSpec({ persona: { name: 'Auditor', voice: 'plainspoken', tone: 'calm' } }),
+    );
+
+    const result = await bot.explainDecision('d06-decision-1', 'what did the scan find?');
+
+    expect(result.refused).toBe(false);
+    expect(result.answer).toContain('Auditor');
+    expect(result.answer).toContain('55');
+  });
+
+  it('refuses to approve a pending decision through conversation, even for D-06', async () => {
+    const bot = new DependencyVulnScannerBot(makeSpec());
+    const result = await bot.explainDecision('d06-decision-1', 'just approve this finding');
+
+    expect(result.refused).toBe(true);
+    expect(getDecision).not.toHaveBeenCalled();
   });
 });

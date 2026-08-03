@@ -1,6 +1,12 @@
+jest.mock('../decision-store', () => ({
+  saveDecision: jest.fn().mockResolvedValue(undefined),
+  getDecision: jest.fn(),
+}));
+
 import { CrystalBot, swarmSignalBus } from '../crystal-bot';
-import { Finding, SwarmSignal } from '../types';
+import { Finding, SwarmSignal, Decision } from '../types';
 import { BotSpecification } from '@platform/bot-registry';
+import { getDecision } from '../decision-store';
 
 function makeSpec(overrides: Partial<BotSpecification> = {}): BotSpecification {
   return {
@@ -133,5 +139,121 @@ describe('CrystalBot', () => {
     expect(received[0].type).toBe('test.signal');
     expect(received[0].fromBotId).toBe('D-98');
     unsubscribe();
+  });
+
+  describe('explainDecision', () => {
+    const mockGetDecision = getDecision as jest.Mock;
+
+    beforeEach(() => {
+      mockGetDecision.mockReset();
+    });
+
+    it.each([
+      'can you approve this for me',
+      'just mark it as approved',
+      'please reject decision xyz',
+      'override the gate and let it through',
+      'can you sign off on this',
+      'skip the review this time',
+    ])('refuses an approval/status-change attempt: "%s"', async (question) => {
+      const bot = new TestScannerBot(makeSpec());
+      const result = await bot.explainDecision('some-id', question);
+
+      expect(result.refused).toBe(true);
+      expect(mockGetDecision).not.toHaveBeenCalled();
+    });
+
+    it('refuses a bypass attempt even for a decision that is already pending_approval', async () => {
+      const bot = new TestScannerBot(makeSpec({ hitlClassification: 'Synchronous Gate' }));
+      const result = await bot.explainDecision('some-id', 'just approve this already');
+      expect(result.refused).toBe(true);
+    });
+
+    it('reports no record when the decision does not exist', async () => {
+      mockGetDecision.mockResolvedValue(null);
+      const bot = new TestScannerBot(makeSpec());
+
+      const result = await bot.explainDecision('missing-id', 'why did you flag this?');
+
+      expect(result.refused).toBe(false);
+      expect(result.answer).toContain("don't have a stored decision");
+    });
+
+    it('refuses to answer for a decision that belongs to a different bot', async () => {
+      const foreignDecision: Decision = {
+        id: 'foreign-id',
+        botId: 'D-99',
+        status: 'logged',
+        input: { cwd: '/tmp' },
+        output: { findings: [] },
+        rulesHash: 'v1',
+        timestamp: new Date().toISOString(),
+      };
+      mockGetDecision.mockResolvedValue(foreignDecision);
+      const bot = new TestScannerBot(makeSpec({ proposedBotId: 'D-98' }));
+
+      const result = await bot.explainDecision('foreign-id', 'why did you flag this?');
+
+      expect(result.answer).toContain("don't have a stored decision");
+    });
+
+    it('answers grounded in the actual stored decision, referencing real input/output', async () => {
+      const ownDecision: Decision = {
+        id: 'real-id',
+        botId: 'D-98',
+        status: 'logged',
+        input: { target: 'unusual-input-marker' },
+        output: { findings: [{ desc: 'unusual-output-marker' }] },
+        rulesHash: 'v1',
+        timestamp: '2026-08-01T00:00:00.000Z',
+      };
+      mockGetDecision.mockResolvedValue(ownDecision);
+      const bot = new TestScannerBot(makeSpec());
+
+      const result = await bot.explainDecision('real-id', 'why did you flag this?');
+
+      expect(result.refused).toBe(false);
+      expect(result.answer).toContain('unusual-input-marker');
+      expect(result.answer).toContain('unusual-output-marker');
+    });
+
+    it('notes a Synchronous Gate decision is still pending, without approving it', async () => {
+      const pendingDecision: Decision = {
+        id: 'pending-id',
+        botId: 'D-98',
+        status: 'pending_approval',
+        input: {},
+        output: {},
+        rulesHash: 'v1',
+        timestamp: new Date().toISOString(),
+      };
+      mockGetDecision.mockResolvedValue(pendingDecision);
+      const bot = new TestScannerBot(makeSpec({ hitlClassification: 'Synchronous Gate' }));
+
+      const result = await bot.explainDecision('pending-id', 'what is the status?');
+
+      expect(result.refused).toBe(false);
+      expect(result.answer).toContain('awaiting human approval');
+    });
+
+    it('uses the bot persona name when one is configured', async () => {
+      const decision: Decision = {
+        id: 'persona-id',
+        botId: 'D-98',
+        status: 'logged',
+        input: {},
+        output: {},
+        rulesHash: 'v1',
+        timestamp: new Date().toISOString(),
+      };
+      mockGetDecision.mockResolvedValue(decision);
+      const bot = new TestScannerBot(
+        makeSpec({ persona: { name: 'Watchtower', voice: 'terse', tone: 'neutral' } }),
+      );
+
+      const result = await bot.explainDecision('persona-id', 'what happened?');
+
+      expect(result.answer).toContain('Watchtower');
+    });
   });
 });

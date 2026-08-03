@@ -49,7 +49,7 @@ export class SpeciesRegistryService {
       [tenantId],
       tenantId
     );
-    if ((countRes[0]?.count ?? 0) >= config.limits.speciesCount) {
+    if ((countRes[0]?.count ?? 0) >= (config.limits.speciesCount ?? 200)) {
       throw new AppError('Species registry limit reached', ErrorCode.FORBIDDEN);
     }
 

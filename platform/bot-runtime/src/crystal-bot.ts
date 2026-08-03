@@ -13,6 +13,7 @@ import { emit as auditEmit } from '@platform/audit';
 import { getLogger } from '@platform/observability';
 import { BotSpecification } from '@platform/bot-registry';
 import { enforcePermissionBoundary } from './permission-boundary';
+import { saveDecision, getDecision } from './decision-store';
 import {
   Decision,
   DecisionStatus,
@@ -24,6 +25,27 @@ import {
   StopReason,
   SwarmSignal,
 } from './types';
+
+// Conversational layer must never become a way around HITL approval.
+// Matched against every question before anything else runs — this is
+// deliberately a hard, unconditional refusal, not a status-dependent
+// check, so it can't be reasoned around by rephrasing.
+const APPROVAL_BYPASS_PATTERNS: RegExp[] = [
+  /\bapprove\b/i,
+  /\breject\b/i,
+  /\bmark\s+(it\s+)?(as\s+)?(approved|passed|rejected|failed)\b/i,
+  /\boverrid(e|ing)\b/i,
+  /\bforce\s+(pass|approve|it)\b/i,
+  /\bskip\s+(the\s+)?(review|approval|gate)\b/i,
+  /\bjust\s+(approve|pass|allow|let\s+it\s+through)\b/i,
+  /\bsign\s*off\b/i,
+];
+
+export interface ExplainResult {
+  decisionId: string;
+  answer: string;
+  refused: boolean;
+}
 
 const SYSTEM_TENANT_ID = process.env.AEGIS_SYSTEM_TENANT_ID || 'system';
 
@@ -104,7 +126,96 @@ export abstract class CrystalBot {
       this.logger.warn({ decisionId: decision.id }, 'Decision requires human approval before acting');
     }
 
+    // Persist so a later explainDecision() call — in this process or a
+    // fresh one — can answer grounded in what actually happened. Never
+    // let a storage hiccup break the bot's real work; log and move on,
+    // same never-throw philosophy as the audit emitter.
+    try {
+      await saveDecision(decision);
+    } catch (err) {
+      this.logger.error({ err, decisionId: decision.id }, 'Failed to persist decision for later explainDecision() lookup');
+    }
+
     return decision;
+  }
+
+  /**
+   * Answers a question about one of this bot's own past decisions,
+   * grounded strictly in what was actually stored — never invents an
+   * answer disconnected from real findings. Read-only: cannot change a
+   * decision's status, and can never be used to approve, reject, or
+   * otherwise bypass a Synchronous Gate. That refusal is unconditional
+   * and checked before anything else, regardless of the decision's
+   * current status.
+   */
+  async explainDecision(decisionId: string, question: string): Promise<ExplainResult> {
+    const isBypassAttempt = APPROVAL_BYPASS_PATTERNS.some((pattern) => pattern.test(question));
+
+    if (isBypassAttempt) {
+      await auditEmit({
+        tenantId: SYSTEM_TENANT_ID,
+        actorId: this.botId,
+        actorType: 'service',
+        action: 'bot.decision_explained',
+        outcome: 'failure',
+        resource: 'bot_decision',
+        resourceId: decisionId,
+        description: `${this.botId} refused a conversational request that looked like an approval/status-change attempt`,
+        metadata: { refused: true },
+      });
+      return {
+        decisionId,
+        refused: true,
+        answer:
+          "I can explain what I found, but I can't approve, reject, or otherwise change a decision's status through conversation — that has to go through the actual human approval step.",
+      };
+    }
+
+    const decision = await getDecision(decisionId);
+
+    if (!decision || decision.botId !== this.botId) {
+      return {
+        decisionId,
+        refused: false,
+        answer: `I don't have a stored decision with id "${decisionId}" for ${this.botId}.`,
+      };
+    }
+
+    const answer = this.formatDecisionAnswer(decision, question);
+
+    await auditEmit({
+      tenantId: SYSTEM_TENANT_ID,
+      actorId: this.botId,
+      actorType: 'service',
+      action: 'bot.decision_explained',
+      outcome: 'success',
+      resource: 'bot_decision',
+      resourceId: decisionId,
+      description: `${this.botId} answered a question about decision ${decisionId}`,
+    });
+
+    return { decisionId, refused: false, answer };
+  }
+
+  /**
+   * Deterministic, template-based formatting over the decision's real
+   * stored input/output — no free-text generation, so there's nothing
+   * for the bot to invent or hallucinate. Subclasses may override for
+   * bot-specific phrasing, but must keep grounding in `decision.output`.
+   */
+  protected formatDecisionAnswer(decision: Decision, _question: string): string {
+    const persona = this.spec.persona;
+    const speaker = persona ? `${persona.name}` : this.botId;
+    const statusLine =
+      decision.status === 'pending_approval'
+        ? "This decision is still awaiting human approval — I haven't acted on it."
+        : `Status: ${decision.status}.`;
+
+    return [
+      `${speaker} here. On ${decision.timestamp}, I recorded this based on: ${JSON.stringify(decision.input)}.`,
+      `What I found: ${JSON.stringify(decision.output)}.`,
+      statusLine,
+    ].join(' ');
   }
 
   protected async signalSwarm(type: string, payload: unknown): Promise<void> {

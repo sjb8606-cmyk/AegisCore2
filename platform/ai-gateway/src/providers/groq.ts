@@ -35,7 +35,7 @@ export async function generateGroqText(
     throw new AppError(`Groq request failed (${res.status}): ${body}`, ErrorCode.SERVICE_UNAVAILABLE);
   }
 
-  const data = await res.json();
+  const data = await res.json() as any;
   const choice = data.choices?.[0];
 
   if (!choice) {
