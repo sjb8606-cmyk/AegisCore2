@@ -45,17 +45,40 @@ export interface PrecedentSummary {
   precedents: Decision[];
 }
 
+/**
+ * Pure — summarizes an already-fetched array of precedent Decisions.
+ * Exported at module level so other code (e.g. R-16) can reuse this
+ * exact logic directly against fabricated records without needing a
+ * live database connection. Same reasoning as D-07/D-09/D-01/D-14's
+ * exports.
+ *
+ * Has no way to distinguish a genuine human verdict from a fabricated
+ * one — it only counts what's in the array it's given. That's the
+ * real finding R-16 surfaces: nothing verifies who actually submitted
+ * each verdict (recordVerdict's decidedBy parameter, same trust gap
+ * as R-11's fromBotId).
+ */
+export function summarizePrecedents(rulesHash: string, precedents: Decision[]): PrecedentSummary {
+  const approvedCount = precedents.filter((d) => d.status === 'approved').length;
+  const rejectedCount = precedents.filter((d) => d.status === 'rejected').length;
+  const hasConflict = approvedCount > 0 && rejectedCount > 0;
+
+  return {
+    rulesHash,
+    hasPrecedent: precedents.length > 0,
+    approvedCount,
+    rejectedCount,
+    hasConflict,
+    mostRecentVerdict: (precedents[0]?.status as 'approved' | 'rejected' | undefined) ?? null,
+    precedents,
+  };
+}
+
 export class PolicyArbitratorBot extends CrystalBot {
   constructor(spec: BotSpecification) {
     super(spec);
   }
 
-  /**
-   * Records a human's actual verdict on a pending Synchronous Gate
-   * decision. Refuses (rather than silently no-opping) if the
-   * decision doesn't exist or isn't currently awaiting approval, so a
-   * caller can never mistake "nothing happened" for "recorded."
-   */
   async recordVerdict(
     decisionId: string,
     verdict: 'approved' | 'rejected',
@@ -85,40 +108,29 @@ export class PolicyArbitratorBot extends CrystalBot {
     return { decisionId, recorded, verdict };
   }
 
-  /**
-   * Surfaces prior human verdicts for the same rulesHash. Pure
-   * decision-support context — never an automatic resolution.
-   */
   async findPrecedent(rulesHash: string, limit = 20): Promise<PrecedentSummary> {
     await this.enforcePermission('read:decision-history');
 
     const precedents = await listDecisionsByRulesHash(rulesHash, limit);
-    const approvedCount = precedents.filter((d) => d.status === 'approved').length;
-    const rejectedCount = precedents.filter((d) => d.status === 'rejected').length;
-    const hasConflict = approvedCount > 0 && rejectedCount > 0;
-
-    const summary: PrecedentSummary = {
-      rulesHash,
-      hasPrecedent: precedents.length > 0,
-      approvedCount,
-      rejectedCount,
-      hasConflict,
-      mostRecentVerdict: (precedents[0]?.status as 'approved' | 'rejected' | undefined) ?? null,
-      precedents,
-    };
+    const summary = summarizePrecedents(rulesHash, precedents);
 
     await this.createDecision(
       { rulesHash },
-      { hasPrecedent: summary.hasPrecedent, approvedCount, rejectedCount, hasConflict },
+      {
+        hasPrecedent: summary.hasPrecedent,
+        approvedCount: summary.approvedCount,
+        rejectedCount: summary.rejectedCount,
+        hasConflict: summary.hasConflict,
+      },
       'policy-arbitrator-precedent-v1',
     );
 
-    if (hasConflict) {
+    if (summary.hasConflict) {
       await this.signalSwarm('policy_arbitrator.precedent_conflict', {
         botId: this.botId,
         rulesHash,
-        approvedCount,
-        rejectedCount,
+        approvedCount: summary.approvedCount,
+        rejectedCount: summary.rejectedCount,
       });
     }
 

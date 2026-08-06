@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "proposedBotId": "R-17",
+  "role": "Tests whether the shared swarm signal infrastructure (SwarmSignalBus, createDecision) has any built-in rate-limiting or backpressure, surfacing that it does not — pure, unthrottled volume can flood a human reviewer's alert stream without any single alert being individually wrong.",
+  "triggerConditions": ["manual", "on-demand:redteam-exercise"],
+  "behaviorDescription": "attemptAlertFlood() fires a requested number of signals in a tight loop through the real SwarmSignalBus class (via the isolated instance — same class, same publish()/subscribe() mechanics as production) and counts how many were actually delivered. Confirmed: every single one arrives, at any volume tested, with zero throttling. Since createDecision() has the identical lack of throttling, the real implication is that an attacker or a buggy/compromised legitimate bot with normal write access could flood the real audit trail and bot_decisions table with unlimited volume — alert fatigue doesn't require any individual alert to be wrong, just enough volume to degrade real scrutiny.",
+  "permissionScope": ["redteam:attack-alert-volume"],
+  "hitlClassification": "Alert",
+  "ancestry": {
+    "sourceSignals": ["crystalforge-guardian-r17", "aegisswarm-redteam-isolation"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never signals or persists through the production swarmSignalBus or bot_decisions table — isolated via RedTeamBot, even at high flood volume",
+    "Tests the real SwarmSignalBus class's actual behavior rather than asserting an unverified claim about rate-limiting",
+    "Never claims a specific numeric volume is required to cause real human alert fatigue — that threshold depends on human factors this bot cannot measure, only that no technical throttle exists at all"
+  ]
+}

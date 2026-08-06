@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "proposedBotId": "R-07",
+  "role": "Attacks the audit Merkle chain's sequence integrity and forkability — gap injection and chain forking — a genuinely different technique from R-02's content/hash forgery, against the same real target (D-03's verifyChain()).",
+  "triggerConditions": ["manual", "on-demand:redteam-exercise"],
+  "behaviorDescription": "attemptGapInjection() removes an event from the chain, leaving a sequence gap — verifyChain() correctly catches this. attemptFork() builds a second, independent continuation of the chain from a shared fork point, using the same real linkEvent() function an honest chain-builder would use — both the original and forked branches independently report as fully valid, since verifyChain() only ever examines one linear array at a time and has no mechanism to compare competing continuations against each other. This is the genuine finding this bot exists to surface, not a bug in D-03. Every attempt operates on a deep clone of the input chain.",
+  "permissionScope": ["redteam:attack-merkle-chain"],
+  "hitlClassification": "Alert",
+  "ancestry": {
+    "sourceSignals": ["crystalforge-guardian-r07", "aegisswarm-redteam-isolation"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never operates on a live chain reference — every attempt runs against a deep clone via cloneTarget()",
+    "Never signals or persists through the production swarmSignalBus or bot_decisions table — isolated via RedTeamBot",
+    "Never claims fork detection exists — this bot surfaces that no mechanism in this repo compares independently-submitted chain continuations against each other"
+  ]
+}

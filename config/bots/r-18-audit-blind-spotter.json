@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "proposedBotId": "R-18",
+  "role": "Statically scans every real defense bot's source file for public async methods that never call enforcePermission(), surfacing genuine audit-trail coverage gaps rather than attacking any one bot's runtime logic.",
+  "triggerConditions": ["manual", "on-demand:redteam-exercise"],
+  "behaviorDescription": "scanBotDirectory() reads every .ts file in the given bots directory and extracts each public async method's real body via paren-depth-then-brace-depth matching (fixed after an initial bug where a default parameter value like `= {}` confused a naive brace counter). Any method whose body lacks enforcePermission() is flagged and classified: 'informational' if it throws immediately before any real action (an honest stub), or 'needs_review' if real logic executes (a Decision is created or the swarm is signaled) with no permission gate at all. Confirmed 7 real findings across this repo's 21 defense bot files: 5 informational stubs, and 2 needs_review — D-01's ingest()/checkCorrelation(), both callable directly, bypassing activate()'s permission check entirely. Read-only — never modifies anything on disk.",
+  "permissionScope": ["redteam:scan-audit-coverage"],
+  "hitlClassification": "Alert",
+  "ancestry": {
+    "sourceSignals": ["crystalforge-guardian-r18", "aegisswarm-redteam-isolation"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never modifies any file on disk — strictly read-only static analysis",
+    "Never treats every finding as equally severe — classifies honest stubs separately from real logic executing without a permission gate",
+    "Never signals or persists through the production swarmSignalBus or bot_decisions table — isolated via RedTeamBot"
+  ]
+}

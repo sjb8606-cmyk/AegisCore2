@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "proposedBotId": "R-08",
+  "role": "Probes D-09's drift threshold — confirms an exact-boundary evasion (strict > comparison) and that the threshold value itself, being a plain parameter, can be trivially inflated to defeat detection of any actual drift.",
+  "triggerConditions": ["manual", "on-demand:redteam-exercise"],
+  "behaviorDescription": "attemptBoundaryProbe() confirms drift exactly equal to the threshold evades detection while one millisecond more triggers it, a precise, real boundary condition. attemptThresholdInflation() confirms a massive, wildly anomalous drift (verified at 500 seconds) evades detection entirely if the threshold parameter itself is inflated by whatever calls checkDrift() — a caller-responsibility gap, not a D-09 bug, but a real integration risk worth surfacing. Both reuse D-09's exact, real checkDrift() function (refactored to a standalone export for this purpose) rather than instantiating a real TimeKeeperBot, which would have written real decisions/signals into production.",
+  "permissionScope": ["redteam:attack-time-verification"],
+  "hitlClassification": "Alert",
+  "ancestry": {
+    "sourceSignals": ["crystalforge-guardian-r08", "aegisswarm-redteam-isolation"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never instantiates a real production bot to attack it — reuses D-09's exported pure function, avoiding any production side effect",
+    "Never signals or persists through the production swarmSignalBus or bot_decisions table — isolated via RedTeamBot",
+    "Never claims the threshold-inflation finding is a bug in D-09 itself — it's a caller-responsibility gap in whatever integration lets the threshold parameter be influenced"
+  ]
+}

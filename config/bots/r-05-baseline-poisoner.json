@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "proposedBotId": "R-05",
+  "role": "Attacks D-07's real baseline-deviation detection by poisoning the baseline samples themselves, rather than the value being scored, surfacing the genuine gap that z-score detection has no built-in defense against a poisoned training set.",
+  "triggerConditions": ["manual", "on-demand:redteam-exercise"],
+  "behaviorDescription": "attemptGradualDrift() injects samples that gradually shift a cloned baseline's mean upward, so a value that scored as a massive statistical outlier under the clean baseline becomes unremarkable once the baseline has drifted to include it as normal. attemptVarianceInflation() mixes extreme outlier values into a cloned baseline, inflating standard deviation and raising the absolute threshold for what counts as anomalous. Both reuse D-07's exact computeBaseline()/scoreAgainstBaseline() functions rather than reimplementing the target's math, and both were verified against the real functions before this bot was built — confirmed to genuinely hide a 16-sigma anomaly down to under the 3-sigma detection threshold.",
+  "permissionScope": ["redteam:attack-behavioral-baseline"],
+  "hitlClassification": "Alert",
+  "ancestry": {
+    "sourceSignals": ["crystalforge-guardian-r05", "aegisswarm-redteam-isolation"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never operates on a live baseline reference — every attempt runs against a deep clone via cloneTarget()",
+    "Never signals or persists through the production swarmSignalBus or bot_decisions table — isolated via RedTeamBot",
+    "Reuses D-07's exact z-score functions rather than reimplementing baseline-deviation math independently"
+  ]
+}

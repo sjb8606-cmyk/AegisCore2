@@ -41,14 +41,43 @@ export interface TemporalIntegrityResult {
   decisionId: string;
 }
 
-/** Internal — the assessment itself, before a Decision (and its id) exists yet. */
-interface DriftAssessment {
+/** The assessment itself, before a Decision (and its id) exists yet. */
+export interface DriftAssessment {
   recommendFortressMode: boolean;
   reason: 'drift exceeds threshold' | 'external time source unreachable' | null;
   driftMs: number | null;
 }
 
 const DEFAULT_DRIFT_THRESHOLD_MS = 500;
+
+/**
+ * Pure drift-check logic, exported at module level — not just a
+ * private class method — so other bots (e.g. R-08) can reuse this
+ * exact, verified logic directly instead of duplicating it. Same
+ * reasoning as D-07's computeBaseline()/scoreAgainstBaseline() export.
+ *
+ * Note the comparison is strict `>`, not `>=` — drift exactly equal
+ * to the threshold is NOT flagged. That's an intentional, testable
+ * fact about this function's boundary behavior, not an oversight.
+ */
+export function checkDrift(
+  localTimeMs: number,
+  externalTimeMs: number | null,
+  driftThresholdMs: number = DEFAULT_DRIFT_THRESHOLD_MS,
+): DriftAssessment {
+  if (externalTimeMs === null) {
+    return { recommendFortressMode: true, reason: 'external time source unreachable', driftMs: null };
+  }
+
+  const driftMs = Math.abs(localTimeMs - externalTimeMs);
+  const recommendFortressMode = driftMs > driftThresholdMs;
+
+  return {
+    recommendFortressMode,
+    reason: recommendFortressMode ? 'drift exceeds threshold' : null,
+    driftMs,
+  };
+}
 
 export class TimeKeeperBot extends CrystalBot {
   constructor(spec: BotSpecification) {
@@ -62,7 +91,7 @@ export class TimeKeeperBot extends CrystalBot {
   ): Promise<TemporalIntegrityResult> {
     await this.enforcePermission('read:system-clock');
 
-    const result = this.computeIntegrity(localTimeMs, externalTimeMs, driftThresholdMs);
+    const result = checkDrift(localTimeMs, externalTimeMs, driftThresholdMs);
 
     const decision = await this.createDecision(
       { localTimeMs, externalTimeMs, driftThresholdMs },
@@ -88,24 +117,5 @@ export class TimeKeeperBot extends CrystalBot {
         'verifyTemporalIntegrity() works today if you already have both timestamps in hand — e.g. ' +
         'obtained via curl or a scheduled job with real network access.',
     );
-  }
-
-  private computeIntegrity(
-    localTimeMs: number,
-    externalTimeMs: number | null,
-    driftThresholdMs: number,
-  ): DriftAssessment {
-    if (externalTimeMs === null) {
-      return { recommendFortressMode: true, reason: 'external time source unreachable', driftMs: null };
-    }
-
-    const driftMs = Math.abs(localTimeMs - externalTimeMs);
-    const recommendFortressMode = driftMs > driftThresholdMs;
-
-    return {
-      recommendFortressMode,
-      reason: recommendFortressMode ? 'drift exceeds threshold' : null,
-      driftMs,
-    };
   }
 }

@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "proposedBotId": "R-13",
+  "role": "Analyzes D-14's incident status transition map for logic-loop deadlocks via a real graph cycle-detection algorithm — confirms no cycle exists, a legitimate negative finding, not a lesser result than an attack that succeeds.",
+  "triggerConditions": ["manual", "on-demand:redteam-exercise"],
+  "behaviorDescription": "analyzeStateGraph() runs a real DFS-based cycle-detection algorithm against D-14's actual, live ALLOWED_FROM transition map (open/investigating/resolved) — confirmed to be a genuine DAG with 'resolved' as a true terminal state, no logic-loop deadlock possible. This has ongoing regression value: if the transition map is ever edited to accidentally introduce a cycle, this same analysis catches it. attemptConcurrentRace() is an honest stub: it throws a clear error, because verifying real concurrent-transaction race behavior against D-14's SQL-level guard requires a live Postgres connection under genuine concurrent load, which this sandbox does not have.",
+  "permissionScope": ["redteam:attack-coordination-logic"],
+  "hitlClassification": "Alert",
+  "ancestry": {
+    "sourceSignals": ["crystalforge-guardian-r13", "aegisswarm-redteam-isolation"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never signals or persists through the production swarmSignalBus or bot_decisions table — isolated via RedTeamBot",
+    "Never claims to have tested concurrent-transaction race safety — attemptConcurrentRace() throws until a live Postgres connection is available to verify against",
+    "Analyzes D-14's real, live ALLOWED_FROM transition map rather than a duplicated copy that could drift out of sync"
+  ]
+}

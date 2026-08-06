@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "proposedBotId": "R-23",
+  "role": "Statically scans this repo's RLS-table store modules for functions accepting tenantId as a bare, unverified parameter, and honestly stubs the live cross-tenant RLS read test that would require a real Postgres connection.",
+  "triggerConditions": ["manual", "on-demand:redteam-exercise"],
+  "behaviorDescription": "scanForUnverifiedTenantId() reads every .ts file in a given lib directory and flags exported functions accepting a bare `tenantId: string` parameter with no internal verification against a trusted auth source. Confirmed all 10 functions across purge-store.ts, incident-store.ts, and restraint-store.ts fit this pattern — the same class of gap already found and fixed elsewhere in this repo (89 files trusting a raw client header instead of JWT-verified context). Not yet exploitable, since nothing currently calls these functions from a live untrusted route, but a real contract obligation for whatever eventually does. attemptCrossTenantRead() is an honest stub: proving RLS enforcement itself holds requires a live Postgres connection this sandbox doesn't have.",
+  "permissionScope": ["redteam:scan-database-boundary"],
+  "hitlClassification": "Alert",
+  "ancestry": {
+    "sourceSignals": ["crystalforge-guardian-r23", "aegisswarm-redteam-isolation"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never modifies any file on disk — strictly read-only static analysis",
+    "Never claims RLS enforcement itself is broken — the finding is specifically about the caller-responsibility gap in how tenantId reaches these functions",
+    "Never claims to have tested real cross-tenant reads — attemptCrossTenantRead() throws until a live Postgres connection is available to verify against"
+  ]
+}

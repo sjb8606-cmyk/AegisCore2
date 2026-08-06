@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "proposedBotId": "R-11",
+  "role": "Attacks D-01's signal correlation by fabricating multiple signals that each claim a different fromBotId, surfacing that D-01's correlation logic trusts claimed bot identity completely, with no authentication anywhere in this codebase.",
+  "triggerConditions": ["manual", "on-demand:redteam-exercise"],
+  "behaviorDescription": "attemptSpoofedInjection() fabricates one SwarmSignal per claimed bot ID, all within the correlation window, and checks whether D-01's real, reused pruneSignals()/evaluateCorrelation() functions accept them as genuine independent corroboration — confirmed they do, since fromBotId is trusted at face value. attemptSingleBotRepeat() is a control case, confirming a single real bot signaling repeatedly correctly does NOT trigger correlation — proving the distinctBotIds check itself works, and the actual gap is specifically the missing identity verification, not the correlation counting logic.",
+  "permissionScope": ["redteam:attack-swarm-correlation"],
+  "hitlClassification": "Alert",
+  "ancestry": {
+    "sourceSignals": ["crystalforge-guardian-r11", "aegisswarm-redteam-isolation"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never instantiates a real SentinelPrimeBot to attack it — reuses D-01's exported pure functions, avoiding any production side effect",
+    "Never signals or persists through the production swarmSignalBus or bot_decisions table — isolated via RedTeamBot",
+    "Includes a real control case (attemptSingleBotRepeat) proving the correlation-counting logic itself is sound — the finding is specifically about missing identity authentication"
+  ]
+}

@@ -70,6 +70,39 @@ export interface SbomDocument {
   signingStatus: 'unsigned-pqcrypto-not-yet-available';
 }
 
+/**
+ * Pure — evaluates a single dependency entry against D-02's real
+ * detection criteria. Exported at module level so other code (e.g.
+ * R-25) can test against this exact logic directly. Same reasoning as
+ * every other pure export tonight.
+ *
+ * Trusts `internalNames` completely: any depName matching a name in
+ * that set is treated as internal and skipped, with no verification
+ * that it actually resolves to the workspace rather than a same-named
+ * public registry package. That's the real dependency-confusion
+ * bypass R-25 surfaces — not a bug in this function's own logic, but
+ * an inherent limitation of name-based trust with no resolution check.
+ */
+export function evaluateDependencyRisk(
+  packageName: string,
+  packageFilePath: string,
+  depName: string,
+  versionRange: string,
+  internalNames: Set<string>,
+): Finding | null {
+  const isInternal = internalNames.has(depName);
+  if (!isInternal && UNBOUNDED_VERSION_PATTERNS.has(versionRange)) {
+    return {
+      cat: 'sec',
+      sev: 'warn',
+      loc: `${path.relative(process.cwd(), packageFilePath)} -> ${depName}`,
+      desc: `External dependency "${depName}" is pinned to an unbounded version ("${versionRange}") — a future malicious or breaking publish would be silently accepted.`,
+      rec: `Pin "${depName}" to a specific version or a scoped range (e.g. "^x.y.z"), not "*"/"latest".`,
+    };
+  }
+  return null;
+}
+
 export class SupplyChainCartographerBot extends CrystalBot {
   constructor(spec: BotSpecification) {
     super(spec);
@@ -114,9 +147,6 @@ export class SupplyChainCartographerBot extends CrystalBot {
     };
   }
 
-  /**
-   * Produces a real, usable SBOM today. Unsigned — see signSbom().
-   */
   async generateSbom(rootDir: string): Promise<SbomDocument> {
     await this.enforcePermission('read:filesystem');
 
@@ -147,12 +177,6 @@ export class SupplyChainCartographerBot extends CrystalBot {
     };
   }
 
-  /**
-   * Honest stub. @platform/pqcrypto does not exist in this repo yet
-   * (CrystalForge Guardian AppSpec Phase 1, not built). This throws
-   * rather than returning a fake or empty signature, so a caller can
-   * never mistake an unsigned SBOM for a signed one.
-   */
   signSbom(_sbom: SbomDocument): never {
     throw new Error(
       'SBOM signing is not available yet: @platform/pqcrypto has not been built in this repo ' +
@@ -175,15 +199,8 @@ export class SupplyChainCartographerBot extends CrystalBot {
       const isInternal = internalNames.has(depName);
       graph.push({ from: pkg.name, to: depName, versionRange, depType, isInternal });
 
-      if (!isInternal && UNBOUNDED_VERSION_PATTERNS.has(versionRange)) {
-        findings.push({
-          cat: 'sec',
-          sev: 'warn',
-          loc: `${path.relative(process.cwd(), pkg.filePath)} -> ${depName}`,
-          desc: `External dependency "${depName}" is pinned to an unbounded version ("${versionRange}") — a future malicious or breaking publish would be silently accepted.`,
-          rec: `Pin "${depName}" to a specific version or a scoped range (e.g. "^x.y.z"), not "*"/"latest".`,
-        });
-      }
+      const finding = evaluateDependencyRisk(pkg.name, pkg.filePath, depName, versionRange, internalNames);
+      if (finding) findings.push(finding);
     }
   }
 

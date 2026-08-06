@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "proposedBotId": "R-25",
+  "role": "Attacks D-02's supply-chain scanner via dependency-confusion: a dependency claiming an internal package's exact name evades the unbounded-version check entirely, since D-02 has zero verification that the name match actually resolves to the internal workspace package rather than a same-named public registry package.",
+  "triggerConditions": ["manual", "on-demand:redteam-exercise"],
+  "behaviorDescription": "attemptDependencyConfusion() calls D-02's real, reused evaluateDependencyRisk() function with a dependency name that exactly matches a known internal package, paired with an unbounded version range that would normally be flagged. Confirmed: the finding is null — completely bypassed, purely by name collision, the real-world dependency-confusion attack class (Alex Birsan's 2021 research). attemptWithGenuinelyExternalPackage() is a control case, confirming a genuinely external package with the same unbounded version IS correctly flagged — the version-check logic itself is sound, the gap is specifically the unverified trust behind the name match.",
+  "permissionScope": ["redteam:attack-supply-chain"],
+  "hitlClassification": "Alert",
+  "ancestry": {
+    "sourceSignals": ["crystalforge-guardian-r25", "aegisswarm-redteam-isolation"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never instantiates a real SupplyChainCartographerBot to attack it — reuses D-02's exported pure function, avoiding any production side effect",
+    "Never signals or persists through the production swarmSignalBus or bot_decisions table — isolated via RedTeamBot",
+    "Includes a real control case (attemptWithGenuinelyExternalPackage) proving the version-check logic itself is sound — the finding is specifically about unverified trust behind the internal-name match"
+  ]
+}

@@ -38,7 +38,13 @@ export interface SecurityIncident {
   updatedAt: string;
 }
 
-const ALLOWED_FROM: Record<IncidentStatus, IncidentStatus[]> = {
+// Which "from" statuses are allowed to reach each target status.
+// Nothing ever transitions back to 'open' — an incident is either
+// still open, actively being investigated, or resolved. Exported so
+// other code (e.g. R-13) can analyze this exact, live transition map
+// directly, rather than duplicating a copy that could drift out of
+// sync with the real one.
+export const ALLOWED_FROM: Record<IncidentStatus, IncidentStatus[]> = {
   open: [],
   investigating: ['open'],
   resolved: ['open', 'investigating'],

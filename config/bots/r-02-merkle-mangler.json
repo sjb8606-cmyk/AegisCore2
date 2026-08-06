@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "proposedBotId": "R-02",
+  "role": "Attempts real forgery attacks against the audit Merkle chain mechanism D-03 verifies, surfacing the genuine limitation that pure hash-chain self-consistency is not tamper-evident without an externally-anchored chain tip.",
+  "triggerConditions": ["manual", "on-demand:redteam-exercise"],
+  "behaviorDescription": "attemptNaiveTamper() changes one event's content without recomputing anything downstream — verifyChain() correctly catches this. attemptConsistentReforge() changes one event's content AND correctly re-links every subsequent event using the real linkEvent() function, the same function an honest chain-builder uses — verifyChain() reports this as fully valid, which is the genuine finding this bot exists to surface, not a bug in D-03. Every attempt operates on a deep clone of the input chain (the caller's original is never mutated) and is recorded/signaled through the isolated red-team bus and decision store, never the production ones.",
+  "permissionScope": ["redteam:attack-merkle-chain"],
+  "hitlClassification": "Alert",
+  "ancestry": {
+    "sourceSignals": ["crystalforge-guardian-r02", "aegisswarm-redteam-isolation"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never operates on a live chain reference — every attempt runs against a deep clone via cloneTarget()",
+    "Never signals or persists through the production swarmSignalBus or bot_decisions table — isolated via RedTeamBot",
+    "Never claims to attack SLH-DSA specifically — @platform/pqcrypto doesn't exist; this attacks the real SHA-256 chain mechanism that does exist"
+  ]
+}

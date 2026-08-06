@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "proposedBotId": "R-16",
+  "role": "Attacks D-04's precedent catalog by fabricating multiple 'approved' verdicts, each claiming a different decidedBy identity, surfacing that recordVerdict()'s decidedBy parameter is never verified against any authentication system — the same trust gap as R-11's fromBotId spoofing on D-01, applied here to D-04's precedent consensus.",
+  "triggerConditions": ["manual", "on-demand:redteam-exercise"],
+  "behaviorDescription": "attemptPrecedentPoisoning() fabricates one 'approved' Decision-shaped record per claimed identity, all sharing the target rulesHash, and checks whether D-04's real, reused summarizePrecedents() function reports them as genuine independent consensus — confirmed it does, since nothing in the function (or anywhere else in this codebase) verifies that each claimed decidedBy identity is real or distinct. attemptWithDissent() is a control case, confirming a single genuine dissenting record correctly flips hasConflict to true — proving the counting logic itself is sound and the actual gap is specifically the missing identity verification on each verdict.",
+  "permissionScope": ["redteam:attack-precedent-catalog"],
+  "hitlClassification": "Alert",
+  "ancestry": {
+    "sourceSignals": ["crystalforge-guardian-r16", "aegisswarm-redteam-isolation"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never instantiates a real PolicyArbitratorBot to attack it — reuses D-04's exported pure function, avoiding both a real database call and any production side effect",
+    "Never signals or persists through the production swarmSignalBus or bot_decisions table — isolated via RedTeamBot",
+    "Includes a real control case (attemptWithDissent) proving the summarization logic itself is sound — the finding is specifically about missing identity authentication on recordVerdict()'s decidedBy parameter"
+  ]
+}

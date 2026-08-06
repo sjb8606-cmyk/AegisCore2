@@ -26,10 +26,6 @@ import {
   SwarmSignal,
 } from './types';
 
-// Conversational layer must never become a way around HITL approval.
-// Matched against every question before anything else runs — this is
-// deliberately a hard, unconditional refusal, not a status-dependent
-// check, so it can't be reasoned around by rephrasing.
 const APPROVAL_BYPASS_PATTERNS: RegExp[] = [
   /\bapprove\b/i,
   /\breject\b/i,
@@ -56,7 +52,7 @@ const SEVERITY_WEIGHT: Record<Finding['sev'], number> = {
   block: 40,
 };
 
-class SwarmSignalBus {
+export class SwarmSignalBus {
   private listeners: Array<(signal: SwarmSignal) => void> = [];
 
   subscribe(fn: (signal: SwarmSignal) => void): () => void {
@@ -126,10 +122,6 @@ export abstract class CrystalBot {
       this.logger.warn({ decisionId: decision.id }, 'Decision requires human approval before acting');
     }
 
-    // Persist so a later explainDecision() call — in this process or a
-    // fresh one — can answer grounded in what actually happened. Never
-    // let a storage hiccup break the bot's real work; log and move on,
-    // same never-throw philosophy as the audit emitter.
     try {
       await saveDecision(decision);
     } catch (err) {
@@ -139,15 +131,6 @@ export abstract class CrystalBot {
     return decision;
   }
 
-  /**
-   * Answers a question about one of this bot's own past decisions,
-   * grounded strictly in what was actually stored — never invents an
-   * answer disconnected from real findings. Read-only: cannot change a
-   * decision's status, and can never be used to approve, reject, or
-   * otherwise bypass a Synchronous Gate. That refusal is unconditional
-   * and checked before anything else, regardless of the decision's
-   * current status.
-   */
   async explainDecision(decisionId: string, question: string): Promise<ExplainResult> {
     const isBypassAttempt = APPROVAL_BYPASS_PATTERNS.some((pattern) => pattern.test(question));
 
@@ -197,12 +180,6 @@ export abstract class CrystalBot {
     return { decisionId, refused: false, answer };
   }
 
-  /**
-   * Deterministic, template-based formatting over the decision's real
-   * stored input/output — no free-text generation, so there's nothing
-   * for the bot to invent or hallucinate. Subclasses may override for
-   * bot-specific phrasing, but must keep grounding in `decision.output`.
-   */
   protected formatDecisionAnswer(decision: Decision, _question: string): string {
     const persona = this.spec.persona;
     const speaker = persona ? `${persona.name}` : this.botId;

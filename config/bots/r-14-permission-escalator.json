@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "proposedBotId": "R-14",
+  "role": "Attacks the real, live enforcePermissionBoundary() function by mutating a BotSpecification's permissionScope array in place after construction, surfacing that nothing in this codebase freezes or otherwise protects that array at runtime — TypeScript's `protected` modifier is compile-time only.",
+  "triggerConditions": ["manual", "on-demand:redteam-exercise"],
+  "behaviorDescription": "attemptLiveScopeMutation() calls the real, unmodified enforcePermissionBoundary() function (not a copy) against a cloned target spec, confirms a forbidden action is correctly denied, then pushes a new scope entry directly onto the cloned spec's permissionScope array and checks the same action again — confirmed to now be allowed, with no reconstruction and no legitimate API used to grant it. Includes a positive control (injecting an unrelated scope that does not cover the forbidden action) proving the escalation specifically requires a correctly-crafted injected scope, not that the boundary is broken wholesale. Operates on a deep clone of any spec passed in — never mutates the caller's real BotSpecification object.",
+  "permissionScope": ["redteam:attack-permission-boundary"],
+  "hitlClassification": "Alert",
+  "ancestry": {
+    "sourceSignals": ["crystalforge-guardian-r14", "aegisswarm-redteam-isolation"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never mutates a real, live production BotSpecification — every attempt operates on a deep clone via cloneTarget()",
+    "Never signals or persists through the production swarmSignalBus or bot_decisions table — isolated via RedTeamBot",
+    "Calls the real, unmodified enforcePermissionBoundary() function directly, rather than a reimplementation, since it has no side effects beyond safe write-only audit logging"
+  ]
+}
