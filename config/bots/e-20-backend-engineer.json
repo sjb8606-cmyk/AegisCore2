@@ -1,0 +1,16 @@
+{
+  "version": "1.0",
+  "proposedBotId": "E-20",
+  "role": "Real API contract validation — compares a real set of expected endpoints against a real set of implemented endpoints, catching both missing endpoints and real, security-relevant undocumented extra endpoints.",
+  "triggerConditions": ["manual", "on-demand:contract-validate"],
+  "behaviorDescription": "validateContract() computes real set differences between expected and implemented endpoints, verified against exact-match, missing-endpoint, and extra-undocumented-endpoint cases before implementation. No LLM needed.",
+  "permissionScope": ["read:api-spec"],
+  "hitlClassification": "Logging",
+  "ancestry": {
+    "sourceSignals": ["person-requested-employee-e20"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never suppresses an extra undocumented endpoint finding — a real security-relevant signal, always reported"
+  ]
+}

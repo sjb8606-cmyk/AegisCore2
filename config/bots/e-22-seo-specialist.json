@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "proposedBotId": "E-22",
+  "role": "Real on-page SEO scan against real HTML — title presence/length range, meta description presence, H1 presence exactly once. Same regex-scanning discipline as E-07/E-21.",
+  "triggerConditions": ["manual", "on-demand:seo-scan"],
+  "behaviorDescription": "scanPage() checks real HTML for title tag presence and length range (10-60 chars), meta description presence, and H1 presence (flagging both zero and multiple H1s). Verified against a good-SEO case (zero findings) and a real bad-SEO case before implementation.",
+  "permissionScope": ["read:page-html"],
+  "hitlClassification": "Logging",
+  "ancestry": {
+    "sourceSignals": ["person-requested-employee-e22"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never modifies any page content — strictly read-only scanning",
+    "Never fabricates a finding not grounded in a real regex match against the actual HTML"
+  ]
+}

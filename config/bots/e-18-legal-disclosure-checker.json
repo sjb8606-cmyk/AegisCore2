@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "proposedBotId": "E-18",
+  "role": "Real disclosure-presence checking against real page/app text — same discipline as E-13's contract clause checker, applied to legal disclosures (privacy policy, terms of service, cookie/data collection notices). Factual presence check only, never legal advice.",
+  "triggerConditions": ["manual", "on-demand:disclosure-check"],
+  "behaviorDescription": "checkPage() checks real text against a real list of required disclosures, reporting exactly which are present or missing. Never interprets legal meaning or gives legal advice beyond the factual presence check.",
+  "permissionScope": ["read:page-text"],
+  "hitlClassification": "Logging",
+  "ancestry": {
+    "sourceSignals": ["person-requested-employee-e18"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never provides legal advice or interprets legal meaning — reports disclosure presence/absence only",
+    "Never claims a disclosure is present without a real pattern match in the actual text"
+  ]
+}

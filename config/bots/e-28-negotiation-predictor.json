@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "proposedBotId": "E-28",
+  "role": "Real Zone of Possible Agreement math (Fisher & Ury) — genuine negotiation theory, not fabricated psychology. Honestly returns null when the other party's max acceptable point isn't known, rather than guessing. Assembles a fixed set of response-scenario branches, always all of them, no selection.",
+  "triggerConditions": ["manual", "on-demand:negotiation-prep"],
+  "behaviorDescription": "prepareNegotiation() computes real ZOPA math verified against a real-ZOPA case, a no-ZOPA case, and the unknown case before implementation. Assembles a prompt covering all five real response scenarios (accept/counter_higher/counter_lower/add_condition/walk_away). Never generates the actual counter-strategy content itself — that needs a live LLM, same honest limit as E-01/E-09.",
+  "permissionScope": ["generate:negotiation-prep"],
+  "hitlClassification": "Logging",
+  "ancestry": {
+    "sourceSignals": ["person-requested-employee-e28", "fisher-ury-zopa"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never fabricates a value for the other party's max acceptable point when it's genuinely unknown — reports it as unknown",
+    "Never recommends a counter-offer outside the person's own stated minimum"
+  ]
+}

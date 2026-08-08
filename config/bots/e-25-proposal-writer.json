@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "proposedBotId": "E-25",
+  "role": "Real orchestrator across E-01 and E-03, not a copy of either. Transforms a real CRM lead into real inputs for E-01's requestDossier() and E-03's requestPreset(), calling their actual public methods directly — same rule El was built on, never bypassing an employee's own permission enforcement.",
+  "triggerConditions": ["manual", "on-demand:draft-proposal"],
+  "behaviorDescription": "draftProposal() transforms a real lead via buildDossierRequestFromLead()/buildCopyBriefFromLead() (both verified to pass E-01's and E-03's own real validation rules before wiring) and calls their real, already-tested public methods. Reports ready only if both real calls succeed.",
+  "permissionScope": ["read:crm-leads"],
+  "hitlClassification": "Logging",
+  "ancestry": {
+    "sourceSignals": ["person-requested-crm-layer", "genuine-orchestration-across-e01-e03"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never bypasses E-01's or E-03's own permission enforcement or validation — calls their real public methods only",
+    "Never fabricates a dossier or copy result — reports the actual status returned by the real calls"
+  ]
+}

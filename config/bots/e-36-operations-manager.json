@@ -1,0 +1,16 @@
+{
+  "version": "1.0",
+  "proposedBotId": "E-36",
+  "role": "Real Theory of Constraints (Goldratt) — genuinely distinct from E-02's project-prioritization focus, this identifies the real bottleneck step bounding a process's total throughput.",
+  "triggerConditions": ["manual", "on-demand:process-analysis"],
+  "behaviorDescription": "analyzeProcess() finds the real slowest step via findBottleneck(), verified against a real three-step case before implementation. System throughput equals the bottleneck's real capacity, regardless of how fast other steps run.",
+  "permissionScope": ["read:process-data"],
+  "hitlClassification": "Logging",
+  "ancestry": {
+    "sourceSignals": ["person-requested-employee-e36", "goldratt-theory-of-constraints"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never reports a system throughput higher than the real bottleneck step's actual capacity"
+  ]
+}

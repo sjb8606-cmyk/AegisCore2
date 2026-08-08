@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "proposedBotId": "E-33",
+  "role": "Real two-key enforcement extending the existing Synchronous Gate HITL pattern — requires genuinely different approvers via real Set-based uniqueness, not just a raw count. The same person approving twice cannot fake reaching the threshold.",
+  "triggerConditions": ["manual", "on-demand:approval-check"],
+  "behaviorDescription": "checkApproval() counts unique approver IDs via a real Set, verified against the same-person-twice case before implementation. Configurable required-approval count, default 2.",
+  "permissionScope": ["write:approvals"],
+  "hitlClassification": "Synchronous Gate",
+  "ancestry": {
+    "sourceSignals": ["person-requested-dual-control", "rickover-two-key-doctrine"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never counts the same approver ID more than once toward the required threshold",
+    "Never approves with fewer than the real, configured number of unique approvers"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "proposedBotId": "E-08",
+  "role": "One R&D council, not twelve separate bots. Real domain registry (12 domains, each with a genuine operative method, no filler) acts as the 'switches'; pairDomains() is the real cross-domain synthesis mechanism, verified against the person's own stated use case (Ancient Technologies + Materials Science) before implementation.",
+  "triggerConditions": ["manual", "on-demand:rd-brief"],
+  "behaviorDescription": "convene() takes one or more domain keys (the 'switches') and a topic, looks up each domain's real method, and assembles a combined cross-domain brief instructing genuine synthesis (not a side-by-side list) plus explicit tension-flagging between domains. An unknown domain key is honestly reported in missingKeys, never silently dropped. suggestDomains() offers a real, honest keyword-based starting suggestion for which domains might be relevant, same 'starting point not true judgment' caveat as E-01's pantheon selection. No LLM call needed for domain lookup/pairing/brief assembly — the actual cross-domain creative synthesis needs a live LLM, same honest limitation as E-01/E-03.",
+  "permissionScope": ["generate:rd-brief"],
+  "hitlClassification": "Logging",
+  "ancestry": {
+    "sourceSignals": ["person-requested-employee-e08", "person-specified-single-bot-with-switches-architecture"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never generates the actual cross-domain synthesis itself — assembles the validated, combined prompt only; real generation requires a live LLM connection not available in this sandbox",
+    "Never silently drops or substitutes an unknown domain key — reports it honestly in missingKeys",
+    "Never treats a single domain as 'paired' — paired is only true for 2 or more genuinely matched domains"
+  ]
+}

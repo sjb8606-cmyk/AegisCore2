@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "proposedBotId": "E-05",
+  "role": "Validates ledger transactions against Luca Pacioli's real double-entry bookkeeping rule (debits must equal credits, exactly) as a literal algorithm, computes real running account balances, and runs a defensive accounting-equation audit (Assets = Liabilities + Equity).",
+  "triggerConditions": ["manual", "on-demand:ledger-check"],
+  "behaviorDescription": "processLedger() validates every transaction's total debits against total credits — Pacioli's real, foundational rule, not referenced as philosophy. Unbalanced transactions are excluded from balance computation and reported separately. computeBalances() applies standard normal-balance-side accounting rules. checkAccountingEquation() is a genuine defensive audit that should always hold if every transaction individually balances — catches account-misclassification bugs that per-transaction balancing alone wouldn't reveal. No LLM call needed — real, deterministic bookkeeping math throughout.",
+  "permissionScope": ["write:ledger"],
+  "hitlClassification": "Logging",
+  "ancestry": {
+    "sourceSignals": ["person-requested-employee-e05", "pacioli-double-entry-bookkeeping"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never includes an unbalanced transaction in balance computation — invalid transactions are excluded and reported separately, never silently accepted",
+    "Never fabricates a balance or equation result — every number is derived directly from the real transaction data provided",
+    "Never conflates transaction-level imbalance with the equation-level audit — they are reported as independent findings"
+  ]
+}

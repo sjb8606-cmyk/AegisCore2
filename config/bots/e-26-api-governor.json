@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "proposedBotId": "E-26",
+  "role": "Real usage-budget enforcement — turn count, token count, session duration checked against real, configurable limits. The exact 'no runaway philosophical discussion' governor requested; a real hard stop, not a suggestion.",
+  "triggerConditions": ["manual", "on-demand:usage-check"],
+  "behaviorDescription": "checkSession() checks real usage state against real limits, verified against within-limit and over-limit cases before implementation. No LLM needed — fully deterministic threshold enforcement.",
+  "permissionScope": ["read:session-usage"],
+  "hitlClassification": "Alert",
+  "ancestry": {
+    "sourceSignals": ["person-requested-employee-e26"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never allows a session past a real, exceeded limit",
+    "Never fabricates a usage number not derived from real session state"
+  ]
+}

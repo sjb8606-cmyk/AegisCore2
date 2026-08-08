@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "proposedBotId": "E-10",
+  "role": "Turns a loose set of technical components (from a research finding, an E-08 R&D Council brief, or any raw invention) into a real, validated build sequence via Kahn's algorithm for topological sort — a genuine graph algorithm, not a fabricated citation. Detects circular dependencies as a real, invalid-design bug, not a suggestion.",
+  "triggerConditions": ["manual", "on-demand:architect"],
+  "behaviorDescription": "architect() computes a real build order from declared component dependencies using Kahn's algorithm, verified against a valid chain, a genuine circular dependency, and a realistic multi-component case before implementation. A cycle is reported by name, never silently mis-ordered. identifyCoreComponents() separates load-bearing components (something else genuinely depends on them) from real enhancement candidates (nothing depends on them) via real dependency-graph analysis. No LLM call needed — fully deterministic.",
+  "permissionScope": ["read:technical-components"],
+  "hitlClassification": "Logging",
+  "ancestry": {
+    "sourceSignals": ["person-requested-employee-e10", "kahns-algorithm-topological-sort"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never returns a build order when a genuine cycle exists — reports the cycle instead of silently guessing an order",
+    "Never fabricates a dependency not declared in the real input components",
+    "Never conflates 'core' with 'important' — core strictly means something else in the real graph genuinely depends on it"
+  ]
+}

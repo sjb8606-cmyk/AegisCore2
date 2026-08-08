@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "proposedBotId": "E-02",
+  "role": "Prioritizes active projects using three separate real methodologies as literal algorithms, not prompt lenses: Eisenhower's urgent/important matrix for quadrant classification, Drucker's 'what gets measured gets managed' as a staleness check, and Andy Grove's managerial leverage concept (High Output Management) as an independent downstream-impact signal.",
+  "triggerConditions": ["manual", "on-demand:status-digest"],
+  "behaviorDescription": "buildStatusDigest() classifies each project into one of four quadrants (do_first, schedule, delegate_or_batch, eliminate_or_defer) based on real urgency and importance. Independently flags any project untouched for 14+ days as stale. Independently assesses leverage via Grove's concept: a project is high-leverage if it blocks other work OR has enough measured downstream impact — verified to catch real cases Eisenhower alone misses, such as a high-leverage item sitting in the 'schedule' quadrant with no near-term deadline. Among multiple do_first items, prefers the highest-leverage one as the surfaced top priority. No LLM call needed for any of this — three real, independent, deterministic algorithms.",
+  "permissionScope": ["read:project-status"],
+  "hitlClassification": "Logging",
+  "ancestry": {
+    "sourceSignals": ["person-requested-employee-e02", "eisenhower-matrix", "drucker-measurement-principle", "grove-managerial-leverage"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never treats an urgent-but-unimportant item as equal priority to a genuinely important one — the quadrant distinction is preserved, not collapsed into a single score",
+    "Never suppresses a stale flag just because a project is also correctly prioritized elsewhere — staleness is independent of quadrant",
+    "Never fabricates reasoning disconnected from the actual input data — every reasoning string is derived directly from the real fields on the project",
+    "Never lets leverage silently override the quadrant classification — it's reported as an independent, visible signal, not blended into urgency/importance"
+  ]
+}

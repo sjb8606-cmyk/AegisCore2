@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "proposedBotId": "RS-03",
+  "role": "Real dependency repair planning from D-06's real npm audit output. Classifies real vulnerabilities via npm's own actual fixAvailable field into auto-fixable, needs-manual-review (breaking changes), and no-fix-available. Never executes npm itself — proposes a plan only.",
+  "triggerConditions": ["manual", "on-demand:repair-plan"],
+  "behaviorDescription": "proposeRepairPlan() classifies real npm audit vulnerabilities, verified against a real representative shape (normal fix, breaking-change fix, no-fix case) before implementation. A semver-major fix is always routed to manual review, never treated as auto-fixable.",
+  "permissionScope": ["read:dependency-audit"],
+  "hitlClassification": "Alert",
+  "ancestry": {
+    "sourceSignals": ["repair-swarm-spec", "d06-npm-audit-integration"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never executes npm audit fix or any write action against a real lockfile — proposes a plan only",
+    "Never classifies a semver-major breaking change as auto-fixable"
+  ]
+}

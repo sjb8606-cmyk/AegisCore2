@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "proposedBotId": "E-12",
+  "role": "Real progressive/marginal tax calculation. Bracket data is always a real input, never hardcoded — actual tax rates vary by jurisdiction and change over time, and this bot never pretends to know current real numbers.",
+  "triggerConditions": ["manual", "on-demand:tax-calc"],
+  "behaviorDescription": "calculateTax() computes real marginal tax owed against supplied bracket data, verified against three real cases (single bracket, two-bracket span, three-bracket span) before implementation. Only income above each bracket's threshold is taxed at that bracket's rate, standard progressive tax math. No LLM call needed.",
+  "permissionScope": ["read:tax-data"],
+  "hitlClassification": "Logging",
+  "ancestry": {
+    "sourceSignals": ["person-requested-employee-e12"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never hardcodes or assumes real current tax bracket rates — always requires them as real input data",
+    "Never provides tax advice beyond the real arithmetic calculation itself"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "proposedBotId": "E-14",
+  "role": "Checks for real circular dependencies between the actual AegisCore2 npm workspace packages by reading real package.json files off disk. Verified against the real repo itself (correctly found zero cycles) and a real synthetic cycle case before implementation. Read-only.",
+  "triggerConditions": ["manual", "on-demand:architecture-audit"],
+  "behaviorDescription": "auditArchitecture() builds a real @platform/* dependency graph from actual package.json files, then runs real DFS-based cycle detection with a recursion stack — returns the actual cycle path when found, not just a boolean. No LLM call needed, fully deterministic against real filesystem data.",
+  "permissionScope": ["read:filesystem"],
+  "hitlClassification": "Logging",
+  "ancestry": {
+    "sourceSignals": ["person-requested-employee-e14"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never modifies any file on disk — strictly read-only static analysis",
+    "Never fabricates a dependency not present in a real package.json",
+    "Never reports a false cycle — a cycle is only reported when a real recursion-stack revisit genuinely occurs"
+  ]
+}

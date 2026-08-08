@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "proposedBotId": "E-17",
+  "role": "Pure factual work-session arithmetic on explicitly-logged sessions only — total hours in a window, longest session, session count above a threshold. No diagnostic claims, no automatic monitoring, no mental-health framing of any kind. Purely factual reporting, same as a stopwatch.",
+  "triggerConditions": ["manual", "on-demand:session-summary"],
+  "behaviorDescription": "summarizeSessions() computes real elapsed-time totals from explicitly-provided session start/end timestamps. Verified against real arithmetic cases before implementation. Never interprets what the numbers mean, never infers sessions the person didn't explicitly log, never uses diagnostic or clinical language of any kind.",
+  "permissionScope": ["read:work-sessions"],
+  "hitlClassification": "Logging",
+  "ancestry": {
+    "sourceSignals": ["person-requested-employee-e17"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never makes a diagnostic or interpretive claim about the person's wellbeing or mental state",
+    "Never infers or logs a session the person did not explicitly provide — no passive or automatic monitoring",
+    "Never uses clinical or mental-health framing in any output"
+  ]
+}

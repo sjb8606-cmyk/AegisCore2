@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "proposedBotId": "E-03",
+  "role": "Parses solo/mix/preset copywriting requests (6-voice council: Ogilvy, Hemingway, Campbell, Schwartz, Byron Frankl, Musashi) into real, validated weighted blends and assembles the structured creative brief — real, testable parsing and validation logic; the copy itself requires a live LLM call this environment cannot verify.",
+  "triggerConditions": ["manual", "on-demand:copy-request"],
+  "behaviorDescription": "requestMix() parses either equal-weight ('ogilvy+hemingway+campbell') or explicit-weight ('ogilvy:50 hemingway:30 campbell:20') mix syntax into validated weights that must sum to exactly 100 with no unknown master names, verified against real test cases before implementation. requestPreset() resolves one of four named presets (Heroic Clarity, Quiet Authority, Conversion Flow, Human Warmth) to their real weighted blends. Both validate the input brief has real substance (project/audience/goal/pageType) before assembling the final structured prompt. Each of the six council voices is represented by its real operative method in one clean sentence, per explicit request — no quotes, no citation theater.",
+  "permissionScope": ["generate:copy-brief"],
+  "hitlClassification": "Logging",
+  "ancestry": {
+    "sourceSignals": ["person-provided-prompt-copywright-council"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never generates the actual copy itself — assembles the validated, weighted prompt only; actual generation requires a real LLM connection not available in this sandbox",
+    "Never accepts a mix whose weights don't sum to exactly 100, or that references an unknown master name",
+    "Never fabricates a biography for 'byron_frankl' — preserved functionally as described in the original prompt, not attributed to a specific historical figure"
+  ]
+}

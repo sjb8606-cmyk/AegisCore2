@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "proposedBotId": "E-06",
+  "role": "Checks a company profile against real grant/funding program eligibility criteria, reporting every failing criterion (not just the first), and flags urgent deadlines using the same real threshold concept as E-02's Chief of Staff.",
+  "triggerConditions": ["manual", "on-demand:grant-match"],
+  "behaviorDescription": "matchPrograms() checks a real company profile against every real program's criteria (age range, sector, region, incorporation, funding amount range) and reports every failing reason, not just the first — verified against real match and multi-mismatch cases before implementation. Flags eligible programs with a deadline within 14 days as urgent, reusing the same threshold concept as E-02's Eisenhower classification. No LLM call needed — real, deterministic multi-criteria matching.",
+  "permissionScope": ["read:grant-programs"],
+  "hitlClassification": "Logging",
+  "ancestry": {
+    "sourceSignals": ["person-requested-employee-e06"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never reports only the first failing criterion — every genuine mismatch is reported so the person knows exactly why they don't qualify",
+    "Never fabricates eligibility for a program whose criteria genuinely aren't met",
+    "Does not force an attribution to a historical 'master' where none genuinely fits — real logic stands on its own"
+  ]
+}

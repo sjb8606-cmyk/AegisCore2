@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "proposedBotId": "E-30",
+  "role": "Real, structural enforcement of two rules from the person's own Harvester spec: never emits a confidence judgment (no such field exists in the type), and a real search log is required for any 'not found' conclusion, or it's treated as an incomplete search and rejected.",
+  "triggerConditions": ["manual", "on-demand:harvest-claim"],
+  "behaviorDescription": "submitClaim() rejects a null-value claim with fewer than 2 real search strategies logged, verified against both accept and reject cases before implementation. Aimed at building a verified PQC (NIST ML-KEM/ML-DSA/SLH-DSA) fact base for future hires — harvests and structures claims only, never generates cryptographic implementations.",
+  "permissionScope": ["write:harvested-claims"],
+  "hitlClassification": "Logging",
+  "ancestry": {
+    "sourceSignals": ["person-provided-harvester-factchecker-spec", "pqc-fact-base-use-case"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never accepts a 'not found' conclusion without a real, multi-strategy search log",
+    "Never generates or claims cryptographic implementation details — harvests structured facts only",
+    "Never includes a confidence field — that judgment belongs to the independent Fact-Checker only"
+  ]
+}

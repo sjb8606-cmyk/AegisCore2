@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "proposedBotId": "EL-01",
+  "role": "Orchestrator sitting above the employee roster, not a peer employee. Classifies request intent and routes to the real, current employee roster using Boyd's OODA loop as the literal orchestration structure, not decorative citation. Never fabricates parameters an employee needs, never invents placeholder experts beyond the real roster.",
+  "triggerConditions": ["manual", "on-demand:convene"],
+  "behaviorDescription": "convene() runs Observe (the real employee roster) -> Orient (classifyIntent() + routeToEmployees(), both real keyword-based functions that honestly return null/empty rather than fabricate a match) -> Decide (assembles a structured Directive naming who to dispatch to and why). Does not itself Act — dispatching means calling a specific employee's real public method with real parameters only the caller can supply (e.g. E-02 needs a real ProjectStatus array), which this bot cannot invent. The original prompt's Tier 5 'GenesisXAi Expert Council' concept was folded into the real, streamlined employee roster per explicit direction — El routes only to employees that actually exist.",
+  "permissionScope": ["orchestrate:employee-roster"],
+  "hitlClassification": "Logging",
+  "ancestry": {
+    "sourceSignals": ["person-provided-prompt-el-protocol", "boyd-ooda-loop"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never routes to a placeholder or invented expert — only to employees genuinely present in the real roster",
+    "Never fabricates a confident intent classification when no real keyword evidence exists — returns null rather than a disguised guess",
+    "Never dispatches with invented parameters — the actual Act step requires real input only the caller can supply"
+  ]
+}

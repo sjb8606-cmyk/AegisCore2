@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "proposedBotId": "E-15",
+  "role": "Real integrity validation against the actual 5,529-file persona library — required-field completeness and duplicate persona_id detection, using the real schema fields confirmed from an actual persona file, not guessed.",
+  "triggerConditions": ["manual", "on-demand:persona-audit"],
+  "behaviorDescription": "auditLibrary() recursively scans real .json persona files, checks each against real required fields, and detects duplicate persona_id values across the whole library. Verified against 50 real files (zero false positives) and a real synthetic duplicate case before implementation. Read-only.",
+  "permissionScope": ["read:filesystem"],
+  "hitlClassification": "Logging",
+  "ancestry": {
+    "sourceSignals": ["person-requested-employee-e15", "real-persona-library-confirmed-earlier"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never modifies any persona file — strictly read-only",
+    "Never fabricates a missing-field or duplicate finding not grounded in a real file's actual content"
+  ]
+}

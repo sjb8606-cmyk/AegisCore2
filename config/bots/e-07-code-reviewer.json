@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "proposedBotId": "E-07",
+  "role": "Real second-pass code reviewer: statically scans real .ts files for TODO/FIXME markers, leftover console.log calls, and overly long functions — genuine checkable signals, not a fabricated LLM judgment call, same discipline as R-18's audit blind-spot scanner applied constructively.",
+  "triggerConditions": ["manual", "on-demand:code-review"],
+  "behaviorDescription": "reviewDirectory() reads every real .ts file in a directory and scans for three real, checkable signals: unfinished markers (TODO/FIXME/XXX), leftover console.log/console.debug calls, and functions over 60 lines (via the same brace-depth extraction technique as R-18). Verified against a real, already-clean file from tonight's build (zero false positives) and a synthetic fixture with planted issues (all three caught) before implementation. Read-only — never modifies any file.",
+  "permissionScope": ["read:filesystem"],
+  "hitlClassification": "Logging",
+  "ancestry": {
+    "sourceSignals": ["person-requested-employee-e07", "r18-audit-blind-spotter-pattern"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never modifies any file on disk — strictly read-only static analysis",
+    "Never claims to replace real code-review judgment — flags concrete, checkable signals only",
+    "Never fabricates a finding not directly grounded in real file content"
+  ]
+}

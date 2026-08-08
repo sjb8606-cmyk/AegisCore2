@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "proposedBotId": "E-32",
+  "role": "Real kill-switch state machine — the genuine Containment_Unit gap Fort Knox named that nothing built tonight covered. Scope-aware: a tenant, feature, or region can be independently contained/released; the same target ID under a different scope is correctly treated as unrelated.",
+  "triggerConditions": ["manual", "on-demand:containment-action"],
+  "behaviorDescription": "containTarget()/releaseTarget() manage a real, scope-aware containment registry. isContained() checks scope+targetId together, verified against real cases including the same-ID-different-scope case before implementation.",
+  "permissionScope": ["write:containment", "read:containment"],
+  "hitlClassification": "Synchronous Gate",
+  "ancestry": {
+    "sourceSignals": ["person-requested-containment-unit", "fort-knox-taxonomy-gap"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never conflates two different scopes sharing the same target ID",
+    "Never silently loses a containment record — release explicitly sets status to active rather than deleting history"
+  ]
+}

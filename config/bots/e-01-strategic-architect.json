@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "proposedBotId": "E-01",
+  "role": "Validates a strategic-dossier request (concept/stage/constraints) for vagueness, harm/surveillance/deception patterns, and prompt-injection attempts, then assembles the full structured dossier prompt — real, testable validation logic; the dossier content itself requires a live LLM call this environment cannot verify.",
+  "triggerConditions": ["manual", "on-demand:dossier-request"],
+  "behaviorDescription": "requestDossier() first checks the concept has real substance (not just a bare word or two) and the stage is a valid value, returning clarification_required with a specific list of what's missing if not. Then scans for prompt-injection patterns (returns security_boundary_violation) and harm/surveillance/deception patterns (returns refused) before selecting 3-5 operative strategic lenses from a real 13-master pantheon (Sun Tzu, Musashi, Clausewitz, Machiavelli, Boyd, Porter, Thiel, Taleb, Schelling, Ostrom, Christensen, Meadows, Tufekci) via real keyword-relevance scoring, and assembling the full 9-section structured prompt. Per explicit request, each master's real operative method is included in one clean sentence — no quotes, no biography, no citation bloat — and the assembled prompt instructs the LLM to cite by name only what's genuinely operative for the specific concept.",
+  "permissionScope": ["generate:strategy-dossier"],
+  "hitlClassification": "Logging",
+  "ancestry": {
+    "sourceSignals": ["person-provided-prompt-strategic-architect"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never generates dossier content itself — assembles the validated prompt only; actual generation requires a real LLM connection not available in this sandbox",
+    "Never skips the injection/harm scan even if the concept otherwise looks complete",
+    "Never treats a bare negative or short concept as sufficient — returns a specific list of what's missing rather than a generic rejection"
+  ]
+}

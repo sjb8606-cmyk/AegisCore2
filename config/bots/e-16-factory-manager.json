@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "proposedBotId": "E-16",
+  "role": "Real completeness gate for a proposed new employee spec before it enters the real roster — same discipline as Reality Anchor, checks required fields are genuinely filled and the proposed ID doesn't collide with the real, live roster in config/bots/.",
+  "triggerConditions": ["manual", "on-demand:spec-review"],
+  "behaviorDescription": "reviewProposedSpec() validates real completeness (role, permissionScope, valid hitlClassification, hardStops, behaviorDescription) and checks for a real ID collision against the actual config/bots/ directory. Approved only if both pass. Verified against a complete spec, an incomplete spec, and a real collision case before implementation.",
+  "permissionScope": ["read:bot-registry"],
+  "hitlClassification": "Logging",
+  "ancestry": {
+    "sourceSignals": ["person-requested-employee-e16"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never approves a spec with a real ID collision against the actual live roster",
+    "Never approves an incomplete spec, regardless of how minor the missing field seems"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "version": "1.0",
+  "proposedBotId": "E-34",
+  "role": "Real markup-vs-margin math — genuinely, commonly confused in business practice. Markup is calculated against cost, margin against price; verified directly that a 40% markup only nets a 28.6% margin, not 40%.",
+  "triggerConditions": ["manual", "on-demand:pricing-recommendation"],
+  "behaviorDescription": "recommendPrice() computes the real price needed to hit an actual target margin via priceForTargetMargin(), verified against a real case before implementation. computeMarkupAndMargin() reports both real numbers so the two are never conflated.",
+  "permissionScope": ["read:pricing-data"],
+  "hitlClassification": "Logging",
+  "ancestry": {
+    "sourceSignals": ["person-requested-employee-e34"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never conflates markup and margin — they are always reported as two distinct real numbers"
+  ]
+}

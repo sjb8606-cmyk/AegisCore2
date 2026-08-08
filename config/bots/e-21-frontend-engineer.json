@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "proposedBotId": "E-21",
+  "role": "Real accessibility scanner against real HTML — missing alt attributes, form inputs with no real label association. Same regex-scanning discipline as E-07/E-13. Read-only.",
+  "triggerConditions": ["manual", "on-demand:a11y-scan"],
+  "behaviorDescription": "scanPage() checks real HTML for missing alt attributes on img tags and inputs with no id or aria-label, verified against a clean case (zero findings) and a real broken case before implementation.",
+  "permissionScope": ["read:page-html"],
+  "hitlClassification": "Logging",
+  "ancestry": {
+    "sourceSignals": ["person-requested-employee-e21"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never modifies any page content — strictly read-only scanning",
+    "Never fabricates a finding not grounded in a real regex match against the actual HTML"
+  ]
+}

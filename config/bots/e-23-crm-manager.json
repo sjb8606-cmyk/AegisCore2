@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "proposedBotId": "E-23",
+  "role": "Real, dormant-until-real-data CRM pipeline manager. Real, enforced sales funnel state machine (new -> contacted -> qualified -> proposal_sent -> won/lost) — cannot skip stages, cannot reopen a terminal state.",
+  "triggerConditions": ["manual", "on-demand:lead-transition"],
+  "behaviorDescription": "canTransition() is real, pure, fully-tested logic verified against five cases before implementation. moveStage()/addLead() call the real crm-store.ts module (RLS-scoped Postgres, table V270__create_crm_leads.sql) — these require a live Postgres connection not available in this sandbox, so only the pure state-machine logic is unit-tested here; the store-touching methods need a real integration test run against a live Codespace DB.",
+  "permissionScope": ["write:crm-leads"],
+  "hitlClassification": "Logging",
+  "ancestry": {
+    "sourceSignals": ["person-requested-crm-layer", "person-confirmed-buildable-before-real-data-arrives"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never applies a stage transition that skips a required stage",
+    "Never reopens a terminal state (won/lost) back into an active stage",
+    "Never derives tenantId from unverified input — same rule as every store module in this repo"
+  ]
+}

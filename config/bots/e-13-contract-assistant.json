@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "proposedBotId": "E-13",
+  "role": "Real clause-presence checking against real contract text — same discipline as E-04's reference verification, genuine pattern matching, never fabricated legal advice or legal interpretation.",
+  "triggerConditions": ["manual", "on-demand:contract-review"],
+  "behaviorDescription": "reviewContract() checks real contract text against a real list of required clauses, verified against a full-coverage case and a missing-clause case before implementation. Reports exactly which clauses are present or missing — a factual presence check only, never legal interpretation.",
+  "permissionScope": ["read:contract-text"],
+  "hitlClassification": "Logging",
+  "ancestry": {
+    "sourceSignals": ["person-requested-employee-e13"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never provides legal advice or interprets legal meaning — reports clause presence/absence only",
+    "Never claims a clause is present without a real pattern match in the actual text"
+  ]
+}

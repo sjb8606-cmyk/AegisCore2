@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "proposedBotId": "E-24",
+  "role": "Real lead-completeness scoring against real, objective CRM fields — no fabricated 'which source converts better' assumptions, since that would need real historical conversion data this system doesn't have yet. Every point scored maps to a real, verifiable field on the actual lead record.",
+  "triggerConditions": ["manual", "on-demand:lead-scoring"],
+  "behaviorDescription": "scoreLead() scores 0-100 based on real completeness signals: contact email present, estimated value provided, notes recorded, source tracked. Verified against a complete lead and a bare-minimum lead before implementation. No LLM needed.",
+  "permissionScope": ["read:crm-leads"],
+  "hitlClassification": "Logging",
+  "ancestry": {
+    "sourceSignals": ["person-requested-crm-layer"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never scores based on an assumption not grounded in a real, verifiable field on the actual lead record",
+    "Never fabricates a conversion-likelihood claim without real historical data backing it"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "proposedBotId": "E-37",
+  "role": "Real completeness gate over the 12 mandatory validation gates from the SaaS-generator spec reviewed tonight — real enforcement of that spec's own stated rule: 'Generation must fail if any missing.' Distinguishes a gate never declared from one declared but failing.",
+  "triggerConditions": ["manual", "on-demand:launch-readiness-check"],
+  "behaviorDescription": "checkLaunchReadiness() checks real gate declarations against all 12 required gates, verified against all-satisfied, genuinely-missing, and declared-but-failing cases before implementation. Checks real declarations supplied to it — does not itself inspect a live system to determine actual configuration state.",
+  "permissionScope": ["read:validation-gates"],
+  "hitlClassification": "Alert",
+  "ancestry": {
+    "sourceSignals": ["saas-generator-spec-mandatory-gates"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never marks launch-ready when any real required gate is missing or unsatisfied",
+    "Never conflates a genuinely undeclared gate with a declared-but-failing one — reported separately"
+  ]
+}

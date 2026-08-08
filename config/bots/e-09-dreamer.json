@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "proposedBotId": "E-09",
+  "role": "Deliberately induces creative divergence via a fixed 7-chamber sequence (Pantheon, Beast, Mythic, Trickster, Mirror, Temporal, Ethos Core) — real, intentional use of LLM hallucination for ideation, never for facts. Same harm/injection safety checks as E-01 still apply; 'go wild creatively' is never license to skip them. Output feeds directly into E-01's real groundConcept() mode.",
+  "triggerConditions": ["manual", "on-demand:dream"],
+  "behaviorDescription": "dream() runs the same real harm/injection scans as E-01, then always assembles the full fixed 7-chamber prompt in order — no selection logic, unlike E-01's pantheon (every chamber runs every time, by design). checkOutput() validates a completed DreamerOutput's real structure: mutation paths must genuinely number 3-5, danger score must genuinely be 1-10, every chamber field must have real content. No LLM call needed for validation or prompt assembly — the actual hallucinated content itself needs a live LLM, same honest limitation as every generation-shaped employee.",
+  "permissionScope": ["generate:dreamer-vision"],
+  "hitlClassification": "Logging",
+  "ancestry": {
+    "sourceSignals": ["person-provided-prompt-dreamer-protocol", "person-clarified-intentional-hallucination-for-ideation"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never skips the harm/injection safety scan — deliberate creative divergence is not license to bypass safety",
+    "Never generates the actual hallucinated content itself — assembles the validated 7-chamber prompt only",
+    "Never treats an out-of-range danger score or wrong mutation-path count as valid — real structural validation, not a formality"
+  ]
+}

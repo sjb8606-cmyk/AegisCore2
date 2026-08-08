@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "proposedBotId": "E-31",
+  "role": "Real, structural isolation from E-30's reasoning — FactCheckInput has no confidence or reasoning field, same isolation principle as RedTeamBot's separate signal bus. Real safety-escalation rule: a plausible/unconfirmed finding on a safety-critical claim always escalates to disputed.",
+  "triggerConditions": ["manual", "on-demand:fact-check"],
+  "behaviorDescription": "checkClaim() applies escalateForSafety(), verified against all three real cases (auto-escalation, non-critical stays as-is, verified stays verified even when safety-critical) before implementation. Anything not tagged verified routes to human review, never auto-approved — the real rule from the person's own spec.",
+  "permissionScope": ["write:fact-check-results"],
+  "hitlClassification": "Logging",
+  "ancestry": {
+    "sourceSignals": ["person-provided-harvester-factchecker-spec"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never accepts a Harvester confidence/reasoning field — the input type structurally has none",
+    "Never auto-approves a plausible_unconfirmed or disputed finding — always routes to human review",
+    "Never suppresses the safety-critical auto-escalation rule"
+  ]
+}

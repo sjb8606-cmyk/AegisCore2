@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "proposedBotId": "E-04",
+  "role": "Checks a documentation file's claimed references against the real filesystem and assesses staleness against the real code it documents — grounded in two of S.R. Ranganathan's actual Five Laws of Library Science (Save the Time of the Reader; A Library is a Growing Organism) as literal, testable checks, not historical framing.",
+  "triggerConditions": ["manual", "on-demand:doc-health-check"],
+  "behaviorDescription": "checkDocHealth() verifies each claim a doc makes (a file it says exists, a function/term it says is present) against the real filesystem — verifyFileReference() and verifyContentReference() were confirmed against this repo's own real files before implementation. Independently assesses staleness: a doc is flagged if the code it documents changed more recently than the doc itself. Produces a real 0-100 health score based on the actual proportion of verified claims. No LLM call needed — both checks are real, deterministic filesystem operations.",
+  "permissionScope": ["read:filesystem"],
+  "hitlClassification": "Logging",
+  "ancestry": {
+    "sourceSignals": ["person-requested-employee-e04", "ranganathan-five-laws-of-library-science"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never modifies any file on disk — strictly read-only checking",
+    "Never claims a reference is verified without actually checking the real filesystem or file contents",
+    "Never conflates staleness with broken references — each is reported independently, since a doc can be current but still reference something that moved, or vice versa"
+  ]
+}

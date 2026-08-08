@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "proposedBotId": "E-29",
+  "role": "Real structural completeness check for academic/non-fiction documents — required sections present, real abstract word-count range (100-150), same pattern as E-22's title-length check.",
+  "triggerConditions": ["manual", "on-demand:document-review"],
+  "behaviorDescription": "reviewDocument() checks a real document against six required sections and a real abstract word-count range, verified against a complete doc, a doc missing sections, and an out-of-range abstract before implementation.",
+  "permissionScope": ["read:document-text"],
+  "hitlClassification": "Logging",
+  "ancestry": {
+    "sourceSignals": ["person-requested-employee-e29"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never marks a document complete when a real required section is genuinely empty",
+    "Never fabricates a word count not derived from the real abstract text"
+  ]
+}

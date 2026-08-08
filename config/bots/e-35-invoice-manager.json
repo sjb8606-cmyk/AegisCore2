@@ -1,0 +1,16 @@
+{
+  "version": "1.0",
+  "proposedBotId": "E-35",
+  "role": "Real, standard invoice aging classification (0-30/31-60/61-90/90+ days overdue) — pairs naturally with E-05's Bookkeeper.",
+  "triggerConditions": ["manual", "on-demand:aging-report"],
+  "behaviorDescription": "runAgingReport() classifies real invoices via classifyAging(), verified against real cases (not yet due, 15/45/120 days overdue) before implementation. Flags severe overdue (90+) as a real signal.",
+  "permissionScope": ["read:invoices"],
+  "hitlClassification": "Logging",
+  "ancestry": {
+    "sourceSignals": ["person-requested-employee-e35"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never fabricates a due date or amount not present in the real invoice data"
+  ]
+}

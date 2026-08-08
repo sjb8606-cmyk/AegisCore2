@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "proposedBotId": "E-11",
+  "role": "Real MoSCoW release-scoping (Must/Should/Could/Won't-this-time) as literal classification logic — deliberately distinct from E-02's time-urgency classification, this is about whether a feature belongs in this release at all.",
+  "triggerConditions": ["manual", "on-demand:scope-release"],
+  "behaviorDescription": "scopeRelease() classifies each feature via classifyMoscow(): explicit out-of-scope wins over everything else, then core-blocking or legal/compliance requirements are Must, no-workaround-exists is Should, a real workaround existing is Could. Verified against five real cases including the priority order before implementation. No LLM call needed — real, deterministic classification.",
+  "permissionScope": ["read:feature-requests"],
+  "hitlClassification": "Logging",
+  "ancestry": {
+    "sourceSignals": ["person-requested-employee-e11", "moscow-prioritization-dsdm"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never overrides an explicit out-of-scope declaration, even for a feature that would otherwise be a Must",
+    "Never fabricates reasoning disconnected from the real input flags"
+  ]
+}

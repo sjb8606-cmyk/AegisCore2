@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "proposedBotId": "E-19",
+  "role": "Real, standard likelihood x impact risk matrix — genuine deterministic scoring banded into low/medium/high/critical, verified against real cases including the exact boundary before implementation.",
+  "triggerConditions": ["manual", "on-demand:risk-assessment"],
+  "behaviorDescription": "assessRisks() computes score = likelihood x impact for each real item and bands it (critical >= 20, high >= 12, medium >= 6, low otherwise). Surfaces the real highest-scoring risk and a real critical count. No LLM needed — fully deterministic.",
+  "permissionScope": ["read:risk-items"],
+  "hitlClassification": "Logging",
+  "ancestry": {
+    "sourceSignals": ["person-requested-employee-e19"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never fabricates a likelihood or impact value — always computed from real input data",
+    "Never suppresses a critical finding — a genuine score of 20+ is always reported as critical"
+  ]
+}

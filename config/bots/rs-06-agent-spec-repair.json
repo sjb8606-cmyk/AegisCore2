@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "proposedBotId": "RS-06",
+  "role": "Real, mechanical patch proposal for R-18's findings — a method callable without a real enforcePermission() call. Inserts the exact real call as the first statement of the method body. Deliberately narrow: one specific, verifiable insertion, not general AST-based code repair.",
+  "triggerConditions": ["manual", "on-demand:spec-repair"],
+  "behaviorDescription": "proposePatches() inserts a real enforcePermission() call, verified against a real missing-check case and a real already-has-check case (correctly skipped, not double-patched) before implementation.",
+  "permissionScope": ["read:agent-spec-findings"],
+  "hitlClassification": "Alert",
+  "ancestry": {
+    "sourceSignals": ["repair-swarm-spec", "r18-audit-blind-spotter-findings"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never re-patches a method that already has a real enforcePermission() call",
+    "Never applies a patch directly to a real file — proposes the patched text only"
+  ]
+}
