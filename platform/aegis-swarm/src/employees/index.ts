@@ -36,3 +36,4 @@ export * from './pricing-strategist';
 export * from './invoice-manager';
 export * from './operations-manager';
 export * from './validation-gate-checker';
+export * from './provider-router';

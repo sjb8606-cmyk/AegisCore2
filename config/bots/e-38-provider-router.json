@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "proposedBotId": "E-38",
+  "role": "Real fallback/retry layer wrapping ai-gateway's real generateText() — found by checking the actual live code: it's a dumb dispatch requiring the caller to already know the provider, no fallback on failure. Given the person is about to run Groq's free tier, rate-limit retry is the real, urgent gap this closes.",
+  "triggerConditions": ["manual", "on-demand:generation-request"],
+  "behaviorDescription": "routeWithFallback() tries each real provider in order, falling back only on a real retryable error (RATE_LIMITED, SERVICE_UNAVAILABLE) and stopping immediately on a terminal one, verified against real cases before implementation. Wraps ai-gateway's real generateText() — inherits whatever real adapters exist there (Groq today).",
+  "permissionScope": ["write:ai-generation-request"],
+  "hitlClassification": "Logging",
+  "ancestry": {
+    "sourceSignals": ["person-asked-about-provider-router", "real-ai-gateway-gap-found-tonight"],
+    "adversarialFingerprintMatch": false
+  },
+  "hardStops": [
+    "Never retries a real terminal error (bad request, not implemented) — wastes a call for nothing",
+    "Never fabricates a provider result — reports the real attempt outcome only"
+  ]
+}
