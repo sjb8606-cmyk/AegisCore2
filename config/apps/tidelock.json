@@ -17,7 +17,8 @@
     "recall-engine",
     "temperature-engine",
     "hold-release",
-    "live-holding"
+    "live-holding",
+    "labelling-engine"
   ],
   "config": {
     "shipment-intake": {
@@ -176,6 +177,31 @@
     {
       "path": "/api/live-holding/records/:recordId/remove",
       "method": "POST",
+      "auth": true
+    },
+    {
+      "path": "/api/labelling-engine/rules",
+      "method": "POST",
+      "auth": true
+    },
+    {
+      "path": "/api/labelling-engine/rules/:market",
+      "method": "GET",
+      "auth": true
+    },
+    {
+      "path": "/api/labelling-engine/:lotId/generate",
+      "method": "POST",
+      "auth": true
+    },
+    {
+      "path": "/api/labelling-engine/:lotId/labels",
+      "method": "GET",
+      "auth": true
+    },
+    {
+      "path": "/api/labelling-engine/labels/:labelId",
+      "method": "GET",
       "auth": true
     }
   ],
