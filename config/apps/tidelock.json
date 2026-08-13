@@ -15,7 +15,8 @@
     "shift-huddle",
     "production-verifier",
     "recall-engine",
-    "temperature-engine"
+    "temperature-engine",
+    "hold-release"
   ],
   "config": {
     "shipment-intake": {
@@ -113,6 +114,26 @@
     },
     {
       "path": "/api/temperature-engine/:lotId/readings",
+      "method": "GET",
+      "auth": true
+    },
+    {
+      "path": "/api/hold-release/:lotId/investigate",
+      "method": "POST",
+      "auth": true
+    },
+    {
+      "path": "/api/hold-release/investigations/:investigationId/resolve",
+      "method": "POST",
+      "auth": true
+    },
+    {
+      "path": "/api/hold-release/investigations/:investigationId",
+      "method": "GET",
+      "auth": true
+    },
+    {
+      "path": "/api/hold-release/investigations",
       "method": "GET",
       "auth": true
     }
