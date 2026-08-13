@@ -14,7 +14,8 @@
     "compliance-reporter",
     "shift-huddle",
     "production-verifier",
-    "recall-engine"
+    "recall-engine",
+    "temperature-engine"
   ],
   "config": {
     "shipment-intake": {
@@ -98,6 +99,21 @@
     {
       "path": "/api/recall-engine/:lotId/hold",
       "method": "POST",
+      "auth": true
+    },
+    {
+      "path": "/api/temperature-engine/threshold",
+      "method": "POST",
+      "auth": true
+    },
+    {
+      "path": "/api/temperature-engine/:lotId/reading",
+      "method": "POST",
+      "auth": true
+    },
+    {
+      "path": "/api/temperature-engine/:lotId/readings",
+      "method": "GET",
       "auth": true
     }
   ],
