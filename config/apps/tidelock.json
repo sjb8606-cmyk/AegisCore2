@@ -6,57 +6,31 @@
   "tenant_id": "660f9500-f30c-52e5-b827-557766550001",
   "status": "active",
   "cores": [
-    "inventory",
-    "logistics",
-    "compliance",
-    "audit",
-    "analytics",
-    "scheduling",
-    "metering",
-    "ai-reports"
+    "species-registry",
+    "shipment-intake",
+    "processing-batch",
+    "yield-engine",
+    "loss-alert",
+    "compliance-reporter",
+    "shift-huddle",
+    "production-verifier"
   ],
   "config": {
-    "inventory": {
-      "enabled": true,
-      "unit": "kg",
-      "species_tracking": true,
-      "lot_numbers": true,
-      "worm_audit": true
-    },
-    "compliance": {
-      "enabled": true,
-      "frameworks": ["HACCP", "DFO_Canada", "CFIA"],
-      "auto_export_format": "csv",
-      "retention_days": 2555
-    },
-    "logistics": {
-      "enabled": true,
-      "temperature_logging": true,
-      "chain_of_custody": true
-    },
-    "analytics": {
-      "enabled": true,
-      "yield_variance_alerts": true,
-      "shift_reporting": true
-    },
-    "ai-reports": {
-      "enabled": true,
-      "report_types": ["daily_yield", "compliance_summary", "traceability_report"],
-      "model": "claude-sonnet-4-20250514"
-    },
-    "scheduling": {
-      "enabled": true,
-      "shift_types": ["processing", "QC", "maintenance", "cleaning"]
-    }
+    "shipment-intake": { "enabled": true, "unit": "kg", "species_tracking": true },
+    "compliance-reporter": { "enabled": true, "frameworks": ["HACCP", "DFO_Canada", "CFIA"], "auto_export_format": "csv", "retention_days": 2555 },
+    "yield-engine": { "enabled": true, "yield_variance_alerts": true },
+    "shift-huddle": { "enabled": true, "shift_types": ["processing", "QC", "maintenance", "cleaning"] }
   },
   "api_keys_required": ["ANTHROPIC_API_KEY"],
   "routes": [
-    { "path": "/api/inventory", "method": "GET|POST", "auth": true },
-    { "path": "/api/logistics", "method": "GET|POST", "auth": true },
-    { "path": "/api/compliance", "method": "GET|POST", "auth": true },
-    { "path": "/api/analytics", "method": "GET", "auth": true },
-    { "path": "/api/ai-reports", "method": "POST", "auth": true },
-    { "path": "/api/scheduling", "method": "GET|POST|PATCH", "auth": true }
+    { "path": "/api/species-registry", "method": "GET|POST", "auth": true },
+    { "path": "/api/shipment-intake", "method": "GET|POST", "auth": true },
+    { "path": "/api/processing-batch", "method": "GET|POST", "auth": true },
+    { "path": "/api/yield-engine", "method": "GET|POST", "auth": true },
+    { "path": "/api/loss-alert", "method": "GET", "auth": true },
+    { "path": "/api/compliance-reporter", "method": "GET|POST", "auth": true },
+    { "path": "/api/shift-huddle", "method": "GET|POST|PATCH", "auth": true },
+    { "path": "/api/production-verifier", "method": "GET|POST", "auth": true }
   ],
   "created_at": "2026-06-25T00:00:00Z",
   "owner": "Ruthless Technologies",
