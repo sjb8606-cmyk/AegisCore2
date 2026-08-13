@@ -1,7 +1,10 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 
+const mockClient = { query: vi.fn() };
+
 vi.mock('../../../../tenancy/src/index', () => ({
   withTenantQuery: vi.fn(),
+  withTenant: vi.fn(async (_tenantId: string, fn: (client: any) => Promise<any>) => fn(mockClient)),
 }));
 vi.mock('../../../../utils/src/index', async (importOriginal) => {
   const actual = await importOriginal<typeof import('../../../../utils/src/index')>();
@@ -10,11 +13,15 @@ vi.mock('../../../../utils/src/index', async (importOriginal) => {
 vi.mock('../../../species-registry/src/index', () => ({
   SpeciesRegistryService: { getSpecies: vi.fn() },
 }));
+vi.mock('../../../../lot-traceability/src/index', () => ({
+  createLotWithClient: vi.fn(),
+}));
 
 import { ShipmentIntakeService, ErrorCode } from '../index';
 import { withTenantQuery } from '../../../../tenancy/src/index';
 import { loadConfig } from '../../../../utils/src/index';
 import { SpeciesRegistryService } from '../../../species-registry/src/index';
+import { createLotWithClient } from '../../../../lot-traceability/src/index';
 
 const TENANT_ID = '11111111-1111-1111-1111-111111111111';
 const USER_ID = '22222222-2222-2222-2222-222222222222';
@@ -31,25 +38,28 @@ const baseInput = {
 
 beforeEach(() => {
   vi.clearAllMocks();
+  mockClient.query.mockReset();
+  mockClient.query.mockResolvedValue({ rows: [] });
+
   (loadConfig as any).mockReturnValue({ enabled: true, limits: { shipmentListPageSize: 100 } });
   (SpeciesRegistryService.getSpecies as any).mockResolvedValue({
     id: SPECIES_ID, common_name: 'Atlantic Salmon', is_active: true,
   });
+  (createLotWithClient as any).mockResolvedValue({ id: 'lot-placeholder', lot_code: 'LOT-PLACEHOLDER' });
 });
 
 describe('ShipmentIntakeService.logShipment — unit handling', () => {
   it('defaults to kg and stores weight_kg unchanged, original_unit "kg"', async () => {
-    (withTenantQuery as any).mockResolvedValue([{ id: SHIPMENT_ID, weight_kg: 500 }]);
+    mockClient.query.mockResolvedValueOnce({ rows: [{ id: SHIPMENT_ID, weight_kg: 500 }] });
     await ShipmentIntakeService.logShipment(TENANT_ID, USER_ID, { ...baseInput, weight: 500 });
-    const insertCall = (withTenantQuery as any).mock.calls[0];
+    const insertCall = mockClient.query.mock.calls[0];
     expect(insertCall[1]).toEqual(expect.arrayContaining([500, 500, 'kg']));
   });
 
   it('converts pounds to kg exactly, using the real conversion factor, and preserves the original pounds value', async () => {
-    (withTenantQuery as any).mockResolvedValue([{ id: SHIPMENT_ID }]);
+    mockClient.query.mockResolvedValueOnce({ rows: [{ id: SHIPMENT_ID }] });
     await ShipmentIntakeService.logShipment(TENANT_ID, USER_ID, { ...baseInput, weight: 1200, weightUnit: 'lb' });
-    const insertCall = (withTenantQuery as any).mock.calls[0];
-    const params = insertCall[1];
+    const params = mockClient.query.mock.calls[0][1];
     expect(params).toContain(544.31);
     expect(params).toContain(1200);
     expect(params).toContain('lb');
@@ -58,36 +68,63 @@ describe('ShipmentIntakeService.logShipment — unit handling', () => {
 
 describe('ShipmentIntakeService.logShipment — condition code and round weight', () => {
   it('defaults conditionCode to "whole" and leaves round_weight_kg NULL when no factor is given', async () => {
-    (withTenantQuery as any).mockResolvedValue([{ id: SHIPMENT_ID }]);
+    mockClient.query.mockResolvedValueOnce({ rows: [{ id: SHIPMENT_ID }] });
     await ShipmentIntakeService.logShipment(TENANT_ID, USER_ID, { ...baseInput, weight: 500 });
-    const insertCall = (withTenantQuery as any).mock.calls[0];
-    const params = insertCall[1];
+    const params = mockClient.query.mock.calls[0][1];
     expect(params).toContain('whole');
     expect(params[8]).toBeNull();
   });
 
   it('computes a real round weight ONLY when a caller-supplied conversion factor is given', async () => {
-    (withTenantQuery as any).mockResolvedValue([{ id: SHIPMENT_ID }]);
+    mockClient.query.mockResolvedValueOnce({ rows: [{ id: SHIPMENT_ID }] });
     await ShipmentIntakeService.logShipment(TENANT_ID, USER_ID, {
       ...baseInput, weight: 1000, conditionCode: 'dressed', conversionFactor: 1.33,
     });
-    const insertCall = (withTenantQuery as any).mock.calls[0];
-    const params = insertCall[1];
+    const params = mockClient.query.mock.calls[0][1];
     expect(params).toContain('dressed');
     expect(params).toContain(1330);
     expect(params).toContain(1.33);
   });
 
   it('never fabricates a conversion factor when the caller does not supply one, even for a non-whole condition code', async () => {
-    (withTenantQuery as any).mockResolvedValue([{ id: SHIPMENT_ID }]);
+    mockClient.query.mockResolvedValueOnce({ rows: [{ id: SHIPMENT_ID }] });
     await ShipmentIntakeService.logShipment(TENANT_ID, USER_ID, {
       ...baseInput, weight: 1000, conditionCode: 'headed_gutted',
     });
-    const insertCall = (withTenantQuery as any).mock.calls[0];
-    const params = insertCall[1];
+    const params = mockClient.query.mock.calls[0][1];
     expect(params).toContain('headed_gutted');
     expect(params[8]).toBeNull();
     expect(params[9]).toBeNull();
+  });
+});
+
+describe('ShipmentIntakeService.logShipment — lot creation (new)', () => {
+  it('creates a lot atomically alongside the shipment, sourced from the shipment itself', async () => {
+    mockClient.query.mockResolvedValueOnce({ rows: [{ id: SHIPMENT_ID, weight_kg: 500 }] });
+
+    await ShipmentIntakeService.logShipment(TENANT_ID, USER_ID, { ...baseInput, weight: 500 });
+
+    expect(createLotWithClient).toHaveBeenCalledWith(
+      mockClient,
+      TENANT_ID,
+      USER_ID,
+      expect.objectContaining({
+        sourceType: 'shipment',
+        sourceRefTable: 'fisheries_shipments',
+        sourceRefId: SHIPMENT_ID,
+        quantity: 500,
+        unit: 'kg',
+      }),
+    );
+  });
+
+  it('propagates a lot-creation failure as a logShipment failure (same transaction, no orphaned shipment)', async () => {
+    mockClient.query.mockResolvedValueOnce({ rows: [{ id: SHIPMENT_ID, weight_kg: 500 }] });
+    (createLotWithClient as any).mockRejectedValueOnce(new Error('lot insert failed'));
+
+    await expect(
+      ShipmentIntakeService.logShipment(TENANT_ID, USER_ID, { ...baseInput, weight: 500 }),
+    ).rejects.toThrow('lot insert failed');
   });
 });
 

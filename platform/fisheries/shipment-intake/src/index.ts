@@ -1,7 +1,8 @@
 import { z } from 'zod';
-import { withTenantQuery } from '../../../tenancy/src/index';
+import { withTenantQuery, withTenant } from '../../../tenancy/src/index';
 import { loadConfig, AppError, ErrorCode } from '../../../utils/src/index';
 import { SpeciesRegistryService } from '../../species-registry/src/index';
+import { createLotWithClient } from '../../../lot-traceability/src/index';
 export { AppError, ErrorCode };
 
 const LB_TO_KG = 0.45359237;
@@ -67,33 +68,50 @@ export class ShipmentIntakeService {
       ? round2(weightKg * input.conversionFactor)
       : null;
 
-    const res = await withTenantQuery(
-      `INSERT INTO fisheries_shipments (
-        tenant_id, species_id, vessel_name, catch_date, weight_kg,
-        original_weight, original_unit, condition_code, round_weight_kg,
-        conversion_factor, quality_grade, catch_zone, notes, logged_by
-      ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14)
-      RETURNING *`,
-      [
-        tenantId,
-        input.speciesId,
-        input.vesselName,
-        input.catchDate,
-        weightKg,
-        input.weight,
-        input.weightUnit,
-        input.conditionCode,
-        roundWeightKg,
-        input.conversionFactor ?? null,
-        input.qualityGrade,
-        input.catchZone ?? null,
-        input.notes ?? null,
-        cleanUserId,
-      ],
-      tenantId
-    );
+    return withTenant(tenantId, async (client: any) => {
+      const res = await client.query(
+        `INSERT INTO fisheries_shipments (
+          tenant_id, species_id, vessel_name, catch_date, weight_kg,
+          original_weight, original_unit, condition_code, round_weight_kg,
+          conversion_factor, quality_grade, catch_zone, notes, logged_by
+        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14)
+        RETURNING *`,
+        [
+          tenantId,
+          input.speciesId,
+          input.vesselName,
+          input.catchDate,
+          weightKg,
+          input.weight,
+          input.weightUnit,
+          input.conditionCode,
+          roundWeightKg,
+          input.conversionFactor ?? null,
+          input.qualityGrade,
+          input.catchZone ?? null,
+          input.notes ?? null,
+          cleanUserId,
+        ],
+      );
+      const shipment = res.rows[0];
 
-    return res[0];
+      await createLotWithClient(client, tenantId, cleanUserId, {
+        sourceType: 'shipment',
+        sourceRefTable: 'fisheries_shipments',
+        sourceRefId: shipment.id,
+        quantity: weightKg,
+        unit: 'kg',
+        metadata: {
+          vesselName: input.vesselName,
+          catchDate: input.catchDate,
+          speciesId: input.speciesId,
+          qualityGrade: input.qualityGrade,
+          conditionCode: input.conditionCode,
+        },
+      });
+
+      return shipment;
+    });
   }
 
   static async getShipment(tenantId: string, shipmentId: string) {

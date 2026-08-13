@@ -5,12 +5,6 @@ const mockClient = {
   release: vi.fn(),
 };
 
-// Mocking getPool() alone doesn't work here: withTenant/withTenantQuery call
-// getPool() as an internal same-file call inside rls.ts, not via an import,
-// so no external mock can intercept it. Instead we reimplement the same
-// BEGIN/set_config/fn/COMMIT-or-ROLLBACK shape directly against our own
-// mockClient, so LotTraceabilityService's real logic still drives the
-// exact same call sequence we can assert against.
 vi.mock('../../../tenancy/src/rls', () => {
   async function withTenantTransaction(fn: (client: any) => Promise<any>, tenantId: string) {
     if (!tenantId) throw new Error('Tenant ID Mandatory');
@@ -48,7 +42,12 @@ beforeEach(() => {
 });
 
 describe('LotTraceabilityService.createLot', () => {
-  it('rejects invalid input before touching the database', async () => {
+  it('rejects invalid input and rolls back cleanly', async () => {
+    mockClient.query
+      .mockResolvedValueOnce(undefined)
+      .mockResolvedValueOnce(undefined)
+      .mockResolvedValueOnce(undefined);
+
     await expect(
       LotTraceabilityService.createLot(TENANT_ID, USER_ID, {
         sourceType: 'harvest',
@@ -57,19 +56,19 @@ describe('LotTraceabilityService.createLot', () => {
       }),
     ).rejects.toThrow();
 
-    expect(mockClient.query).not.toHaveBeenCalled();
+    expect(mockClient.query).toHaveBeenCalledWith('ROLLBACK');
   });
 
   it('creates a lot and appends a genesis-chained "created" event', async () => {
     mockClient.query
-      .mockResolvedValueOnce(undefined) // BEGIN
-      .mockResolvedValueOnce(undefined) // set_config
+      .mockResolvedValueOnce(undefined)
+      .mockResolvedValueOnce(undefined)
       .mockResolvedValueOnce({
         rows: [{ id: LOT_ID, lot_code: 'LOT-TEST01', status: 'open', quantity: '100.000', unit: 'kg' }],
-      }) // INSERT lots
-      .mockResolvedValueOnce({ rows: [] }) // SELECT hash — no prior event
-      .mockResolvedValueOnce(undefined) // INSERT lot_events
-      .mockResolvedValueOnce(undefined); // COMMIT
+      })
+      .mockResolvedValueOnce({ rows: [] })
+      .mockResolvedValueOnce(undefined)
+      .mockResolvedValueOnce(undefined);
 
     const lot = await LotTraceabilityService.createLot(TENANT_ID, USER_ID, {
       lotCode: 'LOT-TEST01',
@@ -100,10 +99,10 @@ describe('LotTraceabilityService.createLot', () => {
 describe('LotTraceabilityService.getLot', () => {
   it('throws NOT_FOUND when the lot does not exist', async () => {
     mockClient.query
-      .mockResolvedValueOnce(undefined) // BEGIN
-      .mockResolvedValueOnce(undefined) // set_config
-      .mockResolvedValueOnce({ rows: [] }) // SELECT — nothing found
-      .mockResolvedValueOnce(undefined); // COMMIT
+      .mockResolvedValueOnce(undefined)
+      .mockResolvedValueOnce(undefined)
+      .mockResolvedValueOnce({ rows: [] })
+      .mockResolvedValueOnce(undefined);
 
     await expect(LotTraceabilityService.getLot(TENANT_ID, LOT_ID)).rejects.toMatchObject({
       code: ErrorCode.NOT_FOUND,
@@ -114,8 +113,8 @@ describe('LotTraceabilityService.getLot', () => {
 describe('LotTraceabilityService.splitLot', () => {
   it('throws UNPROCESSABLE and rolls back when split quantities exceed the parent quantity', async () => {
     mockClient.query
-      .mockResolvedValueOnce(undefined) // BEGIN
-      .mockResolvedValueOnce(undefined) // set_config
+      .mockResolvedValueOnce(undefined)
+      .mockResolvedValueOnce(undefined)
       .mockResolvedValueOnce({
         rows: [
           {
@@ -128,15 +127,12 @@ describe('LotTraceabilityService.splitLot', () => {
             source_ref_id: null,
           },
         ],
-      }) // SELECT parent FOR UPDATE
-      .mockResolvedValueOnce(undefined); // ROLLBACK
+      })
+      .mockResolvedValueOnce(undefined);
 
     await expect(
       LotTraceabilityService.splitLot(TENANT_ID, USER_ID, PARENT_ID, {
-        splits: [
-          { quantity: 60 },
-          { quantity: 60 }, // 120 total > 100 available
-        ],
+        splits: [{ quantity: 60 }, { quantity: 60 }],
       }),
     ).rejects.toMatchObject({ code: ErrorCode.UNPROCESSABLE });
 
@@ -145,10 +141,10 @@ describe('LotTraceabilityService.splitLot', () => {
 
   it('throws CONFLICT and rolls back when the parent lot is already held', async () => {
     mockClient.query
-      .mockResolvedValueOnce(undefined) // BEGIN
-      .mockResolvedValueOnce(undefined) // set_config
+      .mockResolvedValueOnce(undefined)
+      .mockResolvedValueOnce(undefined)
       .mockResolvedValueOnce({ rows: [{ id: PARENT_ID, quantity: '100.000', status: 'held', unit: 'kg' }] })
-      .mockResolvedValueOnce(undefined); // ROLLBACK
+      .mockResolvedValueOnce(undefined);
 
     await expect(
       LotTraceabilityService.splitLot(TENANT_ID, USER_ID, PARENT_ID, {
@@ -163,10 +159,10 @@ describe('LotTraceabilityService.splitLot', () => {
 describe('LotTraceabilityService.holdLot', () => {
   it('throws CONFLICT when the lot is already on hold', async () => {
     mockClient.query
-      .mockResolvedValueOnce(undefined) // BEGIN
-      .mockResolvedValueOnce(undefined) // set_config
+      .mockResolvedValueOnce(undefined)
+      .mockResolvedValueOnce(undefined)
       .mockResolvedValueOnce({ rows: [{ id: LOT_ID, status: 'held' }] })
-      .mockResolvedValueOnce(undefined); // ROLLBACK
+      .mockResolvedValueOnce(undefined);
 
     await expect(
       LotTraceabilityService.holdLot(TENANT_ID, USER_ID, LOT_ID, { reason: 'QC failure' }),
@@ -179,10 +175,10 @@ describe('LotTraceabilityService.holdLot', () => {
 describe('LotTraceabilityService.releaseLot', () => {
   it('throws CONFLICT when the lot is not currently on hold', async () => {
     mockClient.query
-      .mockResolvedValueOnce(undefined) // BEGIN
-      .mockResolvedValueOnce(undefined) // set_config
+      .mockResolvedValueOnce(undefined)
+      .mockResolvedValueOnce(undefined)
       .mockResolvedValueOnce({ rows: [{ id: LOT_ID, status: 'open' }] })
-      .mockResolvedValueOnce(undefined); // ROLLBACK
+      .mockResolvedValueOnce(undefined);
 
     await expect(LotTraceabilityService.releaseLot(TENANT_ID, USER_ID, LOT_ID)).rejects.toMatchObject({
       code: ErrorCode.CONFLICT,
@@ -193,13 +189,13 @@ describe('LotTraceabilityService.releaseLot', () => {
 
   it('releases a held lot and appends a "released" event', async () => {
     mockClient.query
-      .mockResolvedValueOnce(undefined) // BEGIN
-      .mockResolvedValueOnce(undefined) // set_config
-      .mockResolvedValueOnce({ rows: [{ id: LOT_ID, status: 'held' }] }) // SELECT lot FOR UPDATE
-      .mockResolvedValueOnce({ rows: [{ id: LOT_ID, status: 'released' }] }) // UPDATE ... RETURNING *
-      .mockResolvedValueOnce({ rows: [] }) // SELECT hash for appendEvent
-      .mockResolvedValueOnce(undefined) // INSERT lot_events
-      .mockResolvedValueOnce(undefined); // COMMIT
+      .mockResolvedValueOnce(undefined)
+      .mockResolvedValueOnce(undefined)
+      .mockResolvedValueOnce({ rows: [{ id: LOT_ID, status: 'held' }] })
+      .mockResolvedValueOnce({ rows: [{ id: LOT_ID, status: 'released' }] })
+      .mockResolvedValueOnce({ rows: [] })
+      .mockResolvedValueOnce(undefined)
+      .mockResolvedValueOnce(undefined);
 
     const released = await LotTraceabilityService.releaseLot(TENANT_ID, USER_ID, LOT_ID);
     expect(released.status).toBe('released');

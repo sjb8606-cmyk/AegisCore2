@@ -24,8 +24,6 @@ export { AppError, ErrorCode };
 import { computeEventHash, GENESIS_HASH } from './hash';
 export { computeEventHash, GENESIS_HASH };
 
-// ── Schemas ──────────────────────────────────────────────────────
-
 const SourceTypeSchema = z.enum(['harvest', 'shipment', 'purchase', 'batch', 'other']);
 
 export const CreateLotInputSchema = z.object({
@@ -59,8 +57,6 @@ export const MergeLotsInputSchema = z.object({
 export const HoldLotInputSchema = z.object({
   reason: z.string().min(1),
 });
-
-// ── Helpers ──────────────────────────────────────────────────────
 
 function parseUserId(userId: any): string {
   const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
@@ -101,46 +97,58 @@ async function appendEvent(
 const NON_SPLITTABLE_STATUSES = ['held', 'consumed', 'closed'];
 const NON_MERGEABLE_STATUSES = ['held', 'consumed', 'closed'];
 
-// ── Service ──────────────────────────────────────────────────────
+/**
+ * Create a lot using a caller-supplied client, inside a transaction the
+ * caller already owns. This is what makes lot creation composable with
+ * other services' own inserts — e.g. shipment-intake calling this from
+ * inside its own withTenant() block, so "shipment saved" and "lot created"
+ * either both happen or neither does, instead of being two independent
+ * transactions that could succeed/fail independently and leave a shipment
+ * with no corresponding lot (or vice versa).
+ *
+ * LotTraceabilityService.createLot (below) is a thin wrapper around this
+ * for standalone callers that don't already have a transaction open.
+ */
+export async function createLotWithClient(client: any, tenantId: string, userId: string, data: any) {
+  const cleanUserId = parseUserId(userId);
+  const input = CreateLotInputSchema.parse(data);
+  const lotCode = input.lotCode ?? generateLotCode();
+
+  const res = await client.query(
+    `INSERT INTO lots (
+      tenant_id, lot_code, status, source_type, source_ref_table, source_ref_id,
+      quantity, unit, metadata, created_by
+    ) VALUES ($1, $2, 'open', $3, $4, $5, $6, $7, $8, $9)
+    RETURNING *`,
+    [
+      tenantId,
+      lotCode,
+      input.sourceType,
+      input.sourceRefTable ?? null,
+      input.sourceRefId ?? null,
+      input.quantity,
+      input.unit,
+      JSON.stringify(input.metadata ?? {}),
+      cleanUserId,
+    ],
+  );
+  const lot = res.rows[0];
+
+  await appendEvent(
+    client,
+    tenantId,
+    lot.id,
+    'created',
+    { lotCode, quantity: input.quantity, unit: input.unit, sourceType: input.sourceType },
+    cleanUserId,
+  );
+
+  return lot;
+}
 
 export class LotTraceabilityService {
   static async createLot(tenantId: string, userId: string, data: any) {
-    const cleanUserId = parseUserId(userId);
-    const input = CreateLotInputSchema.parse(data);
-    const lotCode = input.lotCode ?? generateLotCode();
-
-    return withTenant(tenantId, async (client: any) => {
-      const res = await client.query(
-        `INSERT INTO lots (
-          tenant_id, lot_code, status, source_type, source_ref_table, source_ref_id,
-          quantity, unit, metadata, created_by
-        ) VALUES ($1, $2, 'open', $3, $4, $5, $6, $7, $8, $9)
-        RETURNING *`,
-        [
-          tenantId,
-          lotCode,
-          input.sourceType,
-          input.sourceRefTable ?? null,
-          input.sourceRefId ?? null,
-          input.quantity,
-          input.unit,
-          JSON.stringify(input.metadata ?? {}),
-          cleanUserId,
-        ],
-      );
-      const lot = res.rows[0];
-
-      await appendEvent(
-        client,
-        tenantId,
-        lot.id,
-        'created',
-        { lotCode, quantity: input.quantity, unit: input.unit, sourceType: input.sourceType },
-        cleanUserId,
-      );
-
-      return lot;
-    });
+    return withTenant(tenantId, (client: any) => createLotWithClient(client, tenantId, userId, data));
   }
 
   static async getLot(tenantId: string, lotId: string) {
@@ -344,11 +352,6 @@ export class LotTraceabilityService {
     });
   }
 
-  /**
-   * Walk lot_relationships upward: everything this lot was derived from
-   * (its supplying lots, and theirs, recursively). This is the "given a
-   * lot, show me everything upstream" half of what the Recall Engine needs.
-   */
   static async traceUpstream(tenantId: string, lotId: string) {
     return withTenantQuery(
       `WITH RECURSIVE upstream AS (
@@ -370,11 +373,6 @@ export class LotTraceabilityService {
     );
   }
 
-  /**
-   * Walk lot_relationships downward: everything derived from this lot
-   * (batches, shipments, further splits, recursively). The "show me
-   * everything downstream" half of a recall query.
-   */
   static async traceDownstream(tenantId: string, lotId: string) {
     return withTenantQuery(
       `WITH RECURSIVE downstream AS (
