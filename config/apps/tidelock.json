@@ -16,7 +16,8 @@
     "production-verifier",
     "recall-engine",
     "temperature-engine",
-    "hold-release"
+    "hold-release",
+    "live-holding"
   ],
   "config": {
     "shipment-intake": {
@@ -135,6 +136,46 @@
     {
       "path": "/api/hold-release/investigations",
       "method": "GET",
+      "auth": true
+    },
+    {
+      "path": "/api/live-holding/tanks",
+      "method": "GET|POST",
+      "auth": true
+    },
+    {
+      "path": "/api/live-holding/lots/:lotId/place",
+      "method": "POST",
+      "auth": true
+    },
+    {
+      "path": "/api/live-holding/records",
+      "method": "GET",
+      "auth": true
+    },
+    {
+      "path": "/api/live-holding/records/:recordId",
+      "method": "GET",
+      "auth": true
+    },
+    {
+      "path": "/api/live-holding/records/:recordId/history",
+      "method": "GET",
+      "auth": true
+    },
+    {
+      "path": "/api/live-holding/records/:recordId/mortality",
+      "method": "POST",
+      "auth": true
+    },
+    {
+      "path": "/api/live-holding/records/:recordId/transfer",
+      "method": "POST",
+      "auth": true
+    },
+    {
+      "path": "/api/live-holding/records/:recordId/remove",
+      "method": "POST",
       "auth": true
     }
   ],
