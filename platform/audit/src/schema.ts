@@ -57,6 +57,17 @@ export const AuditAction = z.enum([
   'bot.action_blocked',
   'bot.decision_explained',
   'bot.decision_verdict_recorded',
+  // Identity / Trust Tier
+  'identity.tier_submission_created',
+  'identity.tier_advanced',
+  'identity.tier_rejected',
+  // Escrow
+  'escrow.opened',
+  'escrow.funded',
+  'escrow.released',
+  'escrow.refunded',
+  'escrow.disputed',
+  'escrow.dispute_resolved',
 ]);
 
 export type AuditAction = z.infer<typeof AuditAction>;
@@ -72,29 +83,29 @@ export const AuditEventSchema = z.object({
   // Identity
   id:          z.string().uuid(),
   tenantId:    z.string().min(1),
-  actorId:     z.string().min(1),           // sub from JWT
+  actorId:     z.string().min(1),
   actorType:   z.enum(['user', 'service', 'system']),
   actorIp:     z.string().optional(),
 
   // Event
   action:      AuditAction,
   outcome:     AuditOutcome,
-  resource:    z.string().optional(),       // resource type (e.g. 'user', 'secret')
-  resourceId:  z.string().optional(),       // resource identifier
+  resource:    z.string().optional(),
+  resourceId:  z.string().optional(),
   description: z.string().optional(),
 
   // Metadata
-  timestamp:   z.string().datetime(),       // ISO 8601
-  traceId:     z.string().optional(),       // OTel trace ID
+  timestamp:   z.string().datetime(),
+  traceId:     z.string().optional(),
   sessionId:   z.string().optional(),
 
   // Context (sanitised, no PII)
   metadata:    z.record(z.unknown()).optional(),
 
   // Merkle chain (set by shipper)
-  _prevHash:   z.string().optional(),       // SHA-256 of previous event
-  _hash:       z.string().optional(),       // SHA-256 of this event (set after signing)
-  _sequence:   z.number().int().optional(), // monotonically increasing per tenant
+  _prevHash:   z.string().optional(),
+  _hash:       z.string().optional(),
+  _sequence:   z.number().int().optional(),
 });
 
 export type AuditEvent = z.infer<typeof AuditEventSchema>;
