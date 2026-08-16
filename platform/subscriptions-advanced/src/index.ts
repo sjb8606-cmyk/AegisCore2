@@ -1,16 +1,9 @@
 import { withTenantQuery } from '@platform/tenancy';
+import { AppError, ErrorCode } from '@platform/utils';
+export { AppError, ErrorCode };
 import * as crypto from 'crypto';
 import * as fs from 'fs';
 import * as path from 'path';
-
-export class AppError extends Error {
-  code: string;
-  constructor(message: string, code: string) {
-    super(message);
-    this.code = code;
-    Object.setPrototypeOf(this, AppError.prototype);
-  }
-}
 
 export function isValidUuid(id: any): boolean {
   const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;

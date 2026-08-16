@@ -5,15 +5,8 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { detectAdversarial } from '@platform/ai-safety';
 
-export class AppError extends Error {
-  code: string;
-  constructor(message: string, code: string) {
-    super(message);
-    this.code = code;
-    Object.setPrototypeOf(this, AppError.prototype);
-  }
-}
-
+import { AppError, ErrorCode } from '@platform/utils';
+export { AppError, ErrorCode };
 export const EmailClassificationSchema = z.object({
   category: z.string(),
   priority: z.number().int().min(1).max(5),

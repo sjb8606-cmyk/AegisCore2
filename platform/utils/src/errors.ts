@@ -14,6 +14,7 @@ export enum ErrorCode {
   FORBIDDEN          = 'FORBIDDEN',
   NOT_FOUND          = 'NOT_FOUND',
   CONFLICT           = 'CONFLICT',
+  PAYMENT_REQUIRED   = 'PAYMENT_REQUIRED',
   UNPROCESSABLE      = 'UNPROCESSABLE',
   RATE_LIMITED       = 'RATE_LIMITED',
   // 5xx
@@ -29,6 +30,7 @@ export const HTTP_STATUS: Record<ErrorCode, number> = {
   [ErrorCode.FORBIDDEN]:           403,
   [ErrorCode.NOT_FOUND]:           404,
   [ErrorCode.CONFLICT]:            409,
+  [ErrorCode.PAYMENT_REQUIRED]:    402,
   [ErrorCode.UNPROCESSABLE]:       422,
   [ErrorCode.RATE_LIMITED]:        429,
   [ErrorCode.INTERNAL]:            500,

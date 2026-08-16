@@ -1,17 +1,10 @@
 import { withTenantQuery } from '@platform/tenancy';
+import { AppError, ErrorCode } from '@platform/utils';
+export { AppError, ErrorCode };
 import { z } from 'zod';
 import * as crypto from 'crypto';
 import * as fs from 'fs';
 import * as path from 'path';
-
-export class AppError extends Error {
-  code: string;
-  constructor(message: string, code: string) {
-    super(message);
-    this.code = code;
-    Object.setPrototypeOf(this, AppError.prototype);
-  }
-}
 
 export const PriceComputationSchema = z.object({
   entity_id: z.string().uuid(),

@@ -6,15 +6,8 @@ import * as path from 'path';
 import { withTenantQuery } from '@platform/tenancy';
 import { AuthenticatedRequest } from '@platform/auth';
 
-export class AppError extends Error {
-  code: string;
-  constructor(message: string, code: string) {
-    super(message);
-    this.code = code;
-    Object.setPrototypeOf(this, AppError.prototype);
-  }
-}
-
+import { AppError, ErrorCode } from '@platform/utils';
+export { AppError, ErrorCode };
 // Data Validation Schemas
 export const SetPreferenceSchema = z.object({
   preference: z.enum(['light', 'dark', 'system']),
