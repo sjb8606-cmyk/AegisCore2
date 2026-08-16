@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS employees (
   UNIQUE(tenant_id, email)
 );
 
-CREATE TABLE IF NOT EXISTS time_entries (
+CREATE TABLE IF NOT EXISTS hr_time_entries (
   id                UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   tenant_id         UUID NOT NULL,
   employee_id       UUID NOT NULL REFERENCES employees(id) ON DELETE CASCADE,
@@ -31,8 +31,8 @@ CREATE TABLE IF NOT EXISTS time_entries (
 ALTER TABLE employees ENABLE ROW LEVEL SECURITY;
 ALTER TABLE employees FORCE ROW LEVEL SECURITY;
 
-ALTER TABLE time_entries ENABLE ROW LEVEL SECURITY;
-ALTER TABLE time_entries FORCE ROW LEVEL SECURITY;
+ALTER TABLE hr_time_entries ENABLE ROW LEVEL SECURITY;
+ALTER TABLE hr_time_entries FORCE ROW LEVEL SECURITY;
 
 -- Dynamic Tenant Isolation Policies
 CREATE POLICY tenant_isolation_employees ON employees 
@@ -40,7 +40,7 @@ CREATE POLICY tenant_isolation_employees ON employees
     USING (tenant_id = current_setting('app.current_tenant_id', true)::uuid) 
     WITH CHECK (tenant_id = current_setting('app.current_tenant_id', true)::uuid);
 
-CREATE POLICY tenant_isolation_time_entries ON time_entries 
+CREATE POLICY tenant_isolation_time_entries ON hr_time_entries 
     FOR ALL 
     USING (tenant_id = current_setting('app.current_tenant_id', true)::uuid) 
     WITH CHECK (tenant_id = current_setting('app.current_tenant_id', true)::uuid);
@@ -48,4 +48,4 @@ CREATE POLICY tenant_isolation_time_entries ON time_entries
 -- Core Query Optimization Indices
 CREATE INDEX IF NOT EXISTS idx_employees_tenant ON employees(tenant_id, deleted_at);
 CREATE INDEX IF NOT EXISTS idx_employees_lookup ON employees(tenant_id, email);
-CREATE INDEX IF NOT EXISTS idx_time_entries_employee ON time_entries(employee_id, clock_out);
+CREATE INDEX IF NOT EXISTS idx_time_entries_employee ON hr_time_entries(employee_id, clock_out);

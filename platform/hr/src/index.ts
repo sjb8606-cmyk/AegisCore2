@@ -1,10 +1,9 @@
-import { parseUserId } from '@platform/utils';
+import { parseUserId, AppError, ErrorCode } from '@platform/utils';
+export { AppError, ErrorCode };
 import * as fs from 'fs';
 import * as path from 'path';
 import { z } from 'zod';
-import { withTenantQuery } from '../../tenancy/src/index';
-import { AppError, ErrorCode } from '../../utils/src/index';
-export { AppError, ErrorCode };
+import { withTenantQuery } from '@platform/tenancy';
 
 export const EmployeeInputSchema = z.object({
   firstName: z.string().min(1),
@@ -136,7 +135,7 @@ export class HrService {
 
     const checkSql = `
       SELECT COUNT(*)::int as count 
-      FROM time_entries 
+      FROM hr_time_entries 
       WHERE tenant_id = $1::uuid AND employee_id = $2::uuid AND clock_out IS NULL
     `;
     const checkRows = await withTenantQuery(checkSql, [tenantId, resolvedEmployeeId], tenantId);
@@ -145,7 +144,7 @@ export class HrService {
     }
 
     const sql = `
-      INSERT INTO time_entries (tenant_id, employee_id, clock_in, notes)
+      INSERT INTO hr_time_entries (tenant_id, employee_id, clock_in, notes)
       VALUES ($1::uuid, $2::uuid, $3::timestamptz, $4)
       RETURNING *
     `;
