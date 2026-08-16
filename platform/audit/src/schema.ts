@@ -47,6 +47,9 @@ export const AuditAction = z.enum([
   // Compliance
   'compliance.gdpr_export',
   'compliance.gdpr_deletion',
+  'compliance.investigation_opened',
+  'compliance.investigation_resolved',
+  'compliance.rule_version_created',
   // Swarm / Bots (AegisSwarm)
   'bot.spec_loaded',
   'bot.spec_rejected',

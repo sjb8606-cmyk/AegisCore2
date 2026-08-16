@@ -8,6 +8,7 @@
  * - Sequence ordering
  */
 
+import { describe, test, expect } from 'vitest';
 import { hashEvent, linkEvent, verifyChain, GENESIS_HASH, canonicalize } from '../merkle';
 import { AuditEventSchema, AuditEventInputSchema } from '../schema';
 import { randomUUID } from 'crypto';
@@ -65,9 +66,7 @@ describe('Merkle chain', () => {
       prevHash = c._hash;
     }
 
-    // First event's prevHash is GENESIS
     expect(chained[0]._prevHash).toBe(GENESIS_HASH);
-    // Each subsequent event links to previous
     expect(chained[1]._prevHash).toBe(chained[0]._hash);
     expect(chained[2]._prevHash).toBe(chained[1]._hash);
   });
@@ -96,7 +95,6 @@ describe('Merkle chain', () => {
       prevHash = c._hash;
     }
 
-    // Tamper with middle event
     events[1] = { ...events[1], outcome: 'failure' as const };
 
     const result = verifyChain(events);
@@ -113,7 +111,6 @@ describe('Merkle chain', () => {
       prevHash = c._hash;
     }
 
-    // Remove middle event to create gap
     events.splice(1, 1);
 
     const result = verifyChain(events);
