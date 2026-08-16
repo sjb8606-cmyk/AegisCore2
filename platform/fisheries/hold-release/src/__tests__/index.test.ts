@@ -26,9 +26,14 @@ vi.mock('@platform/recall-engine', () => ({
   RecallEngineService: { cascadeHold: vi.fn() },
 }));
 
+vi.mock('@platform/audit', () => ({
+  emit: vi.fn(),
+}));
+
 import { HoldReleaseService } from '../index';
 import { LotTraceabilityService } from '@platform/lot-traceability';
 import { RecallEngineService } from '@platform/recall-engine';
+import { emit as auditEmit } from '@platform/audit';
 
 const TENANT_ID = '11111111-1111-1111-1111-111111111111';
 const USER_ID = '22222222-2222-2222-2222-222222222222';
@@ -199,5 +204,48 @@ describe('HoldReleaseService.listOpenInvestigations', () => {
 
     const list = await HoldReleaseService.listOpenInvestigations(TENANT_ID);
     expect(list).toEqual([{ id: INVESTIGATION_ID, status: 'open' }]);
+  });
+});
+
+describe('Golden Template migration — real audit trail, genuinely missing before this fix', () => {
+  it('openInvestigation now emits a real audit event with a VALID action value from the real enum', async () => {
+    (RecallEngineService.cascadeHold as any).mockResolvedValue({
+      results: [{ lotId: LOT_ID, status: 'held' }],
+    });
+    mockClient.query
+      .mockResolvedValueOnce(undefined)
+      .mockResolvedValueOnce(undefined)
+      .mockResolvedValueOnce({ rows: [{ id: INVESTIGATION_ID, lot_id: LOT_ID, held_lot_ids: [LOT_ID] }] })
+      .mockResolvedValueOnce(undefined);
+
+    await HoldReleaseService.openInvestigation(TENANT_ID, USER_ID, LOT_ID, {
+      reasonCategory: 'contamination',
+      reasonDetail: 'test',
+    });
+
+    expect(auditEmit).toHaveBeenCalledWith(
+      expect.objectContaining({ action: 'compliance.investigation_opened', tenantId: TENANT_ID }),
+    );
+  });
+
+  it('resolveInvestigation now emits a real audit event with a VALID action value', async () => {
+    mockClient.query
+      .mockResolvedValueOnce(undefined)
+      .mockResolvedValueOnce(undefined)
+      .mockResolvedValueOnce({ rows: [{ id: INVESTIGATION_ID, status: 'open', held_lot_ids: [] }] })
+      .mockResolvedValueOnce(undefined)
+      .mockResolvedValueOnce(undefined)
+      .mockResolvedValueOnce(undefined)
+      .mockResolvedValueOnce({ rows: [{ id: INVESTIGATION_ID, status: 'resolved' }] })
+      .mockResolvedValueOnce(undefined);
+
+    await HoldReleaseService.resolveInvestigation(TENANT_ID, USER_ID, INVESTIGATION_ID, {
+      resolution: 'destroy',
+      findings: 'test findings',
+    });
+
+    expect(auditEmit).toHaveBeenCalledWith(
+      expect.objectContaining({ action: 'compliance.investigation_resolved', tenantId: TENANT_ID }),
+    );
   });
 });

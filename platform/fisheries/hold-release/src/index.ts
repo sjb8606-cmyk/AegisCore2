@@ -6,20 +6,13 @@
  * investigation, decision, and propagation (a held raw lot must flag
  * every batch that used it)."
  *
- * The propagation half already exists — RecallEngineService.cascadeHold
- * holds a lot and everything downstream of it. This module adds the
- * missing formal layer on top: a categorized reason, an investigation
- * record someone can be held accountable for, and a real decision
- * (release / destroy / rework) instead of releaseLot being callable by
- * anyone with no trail of why.
- *
- * Deliberately narrow scope: a 'destroy' or 'rework' decision resolves the
- * investigation but does NOT release the held lots — this module doesn't
- * pretend to model physical destruction or rework, which is real
- * plant-floor work outside a traceability system's scope. Only 'release'
- * actually calls back into LotTraceabilityService to lift the hold, and it
- * does so for every lot that was held when the investigation opened —
- * propagation applies symmetrically to release, not just to hold.
+ * GOLDEN TEMPLATE MIGRATION NOTE: this core is a real test case for why
+ * migration difficulty varies. Unlike crm (which already had the
+ * five-step shape hand-written), this core never had audit wired at all
+ * — adding it here is a genuine addition, not a mechanical swap.
+ * Deliberately NOT adding a quota check to openInvestigation: a
+ * contamination investigation should never be blocked by a monthly
+ * limit — that's a real judgment call, not something safe to automate.
  */
 
 import { z } from 'zod';
@@ -27,7 +20,10 @@ import { withTenant, withTenantQuery } from '@platform/tenancy';
 import { LotTraceabilityService } from '@platform/lot-traceability';
 import { RecallEngineService } from '@platform/recall-engine';
 import { AppError, ErrorCode } from '@platform/utils';
+import { emit as auditEmit } from '@platform/audit';
 export { AppError, ErrorCode };
+
+// ── Schemas ──────────────────────────────────────────────────────
 
 export const ReasonCategorySchema = z.enum([
   'contamination',
@@ -49,11 +45,15 @@ export const ResolveInvestigationInputSchema = z.object({
   findings: z.string().min(1),
 });
 
+// ── Helpers ──────────────────────────────────────────────────────
+
 function parseUserId(userId: any): string {
   const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
   if (typeof userId === 'string' && uuidRegex.test(userId)) return userId;
   throw new AppError(`Invalid or missing user id: ${JSON.stringify(userId)}`, ErrorCode.BAD_REQUEST);
 }
+
+// ── Service ──────────────────────────────────────────────────────
 
 export class HoldReleaseService {
   static async openInvestigation(tenantId: string, userId: string, lotId: string, data: any) {
@@ -84,6 +84,17 @@ export class HoldReleaseService {
       );
       return res.rows[0];
     });
+
+    await auditEmit({
+      tenantId,
+      actorId: cleanUserId,
+      actorType: 'user',
+      action: 'compliance.investigation_opened',
+      outcome: 'success',
+      resource: 'hold_investigation',
+      resourceId: investigation.id,
+      metadata: { lotId, reasonCategory: input.reasonCategory, heldLotCount: heldLotIds.length },
+    } as any);
 
     return { investigation, holdReport };
   }
@@ -143,6 +154,17 @@ export class HoldReleaseService {
       );
       return res.rows[0];
     });
+
+    await auditEmit({
+      tenantId,
+      actorId: cleanUserId,
+      actorType: 'user',
+      action: 'compliance.investigation_resolved',
+      outcome: 'success',
+      resource: 'hold_investigation',
+      resourceId: investigationId,
+      metadata: { resolution: input.resolution, releasedCount: releaseResults.filter(r => r.status === 'released').length },
+    } as any);
 
     return { investigation, releaseResults };
   }
