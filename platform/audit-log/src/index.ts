@@ -1,6 +1,7 @@
 import { withTenantQuery } from '@platform/tenancy';
 import { AppError, ErrorCode, parseUserId, isValidUuid } from '@platform/utils';
 export { AppError, ErrorCode };
+import { computeChainHash, GENESIS_HASH } from '@platform/hash-chain';
 import { z } from 'zod';
 import * as crypto from 'crypto';
 import * as fs from 'fs';
@@ -30,23 +31,14 @@ function loadConfig() {
   return { enabled: true, tiers: { eventIngestion: true, hashChaining: true, integrityVerification: true } };
 }
 
-export function computeGenesisHash(tenantId: string): string {
-  return crypto.createHash('sha256').update(`GENESIS:${tenantId}`).digest('hex');
-}
-
-export function computeEventHash(event: any, prevHash: string): string {
-  const payload = [
-    event.tenant_id,
-    event.event_type,
-    event.actor_id || '',
-    event.resource_type || '',
-    event.resource_id || '',
-    event.action,
-    event.outcome,
-    prevHash
-  ].join('|');
-
-  return crypto.createHash('sha256').update(payload).digest('hex');
+function eventHashPayload(event: any) {
+  return {
+    actorId: event.actor_id || '',
+    resourceType: event.resource_type || '',
+    resourceId: event.resource_id || '',
+    action: event.action,
+    outcome: event.outcome,
+  };
 }
 
 export async function ingestEvent(tenantId: string, data: any) {
@@ -63,10 +55,10 @@ export async function ingestEvent(tenantId: string, data: any) {
     WHERE tenant_id = $1 ORDER BY sequence DESC LIMIT 1;
   `, [tenantId], tenantId);
 
-  const prevHash = prevResult[0]?.event_hash || computeGenesisHash(tenantId);
+  const prevHash = prevResult[0]?.event_hash || GENESIS_HASH;
 
   const eventWithTenant = { ...parsed, tenant_id: tenantId };
-  const eventHash = computeEventHash(eventWithTenant, prevHash);
+  const eventHash = computeChainHash(tenantId, parsed.event_type, eventHashPayload(eventWithTenant), prevHash);
 
   const res = await withTenantQuery(`
     INSERT INTO audit_events (id, tenant_id, event_type, actor_id, actor_type, actor_ip, actor_ua, resource_type, resource_id, action, outcome, before_state, after_state, metadata, prev_hash, event_hash)
@@ -91,11 +83,11 @@ export async function verifyChainIntegrity(tenantId: string) {
     SELECT * FROM audit_events WHERE tenant_id = $1 ORDER BY sequence ASC;
   `, [tenantId], tenantId);
 
-  let prevHash = computeGenesisHash(tenantId);
+  let prevHash = GENESIS_HASH;
   let verifiedCount = 0;
 
   for (const event of list) {
-    const calcHash = computeEventHash(event, prevHash);
+    const calcHash = computeChainHash(tenantId, event.event_type, eventHashPayload(event), prevHash);
     
     if (calcHash !== event.event_hash) {
       return {
