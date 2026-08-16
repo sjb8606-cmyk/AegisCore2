@@ -3,6 +3,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { AppError, ErrorCode } from '@platform/utils';
 export { AppError, ErrorCode };
+import { filterPii } from '@platform/ai-safety';
 
 export function parseUserId(userId: any): string {
   const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
@@ -16,13 +17,6 @@ function loadConfig() {
     if (fs.existsSync(configPath)) return JSON.parse(fs.readFileSync(configPath, 'utf8'));
   } catch (err) { console.warn(`Config file at ${configPath} failed to load or parse, falling back to defaults:`, err); }
   return { enabled: true, tiers: { piiDetection: true, summarization: true, extraction: true }, limits: { processingsPerMonth: 50 } };
-}
-
-// Local PII Filter Simulator stubs to keep runtime environments 100% self-contained and network-safe
-export function redactPiiText(text: string): string {
-  const emailRegex = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g;
-  const phoneRegex = /\b\d{3}[-.]?\d{3}[-.]?\d{4}\b/g;
-  return text.replace(emailRegex, '[REDACTED_EMAIL]').replace(phoneRegex, '[REDACTED_PHONE]');
 }
 
 export async function submitAnalysis(tenantId: string, userId: string, data: any) {
@@ -39,7 +33,6 @@ export async function submitAnalysis(tenantId: string, userId: string, data: any
   const analysisId = crypto.randomUUID();
   const fileId = data.fileId || crypto.randomUUID();
 
-  // Insert Pending Analysis Job Header
   const insertQuery = `
     INSERT INTO document_analyses (id, tenant_id, file_id, operation, status, created_by)
     VALUES ($1, $2, $3, $4, 'processing', $5) RETURNING *;
@@ -48,13 +41,12 @@ export async function submitAnalysis(tenantId: string, userId: string, data: any
     analysisId, tenantId, fileId, data.operation, cleanUserId
   ], tenantId);
 
-  // Synchronous mock compiler execution loop with safety sanitization
   const start = Date.now();
   const rawText = data.raw_text || "Contact John Doe at john@doe.com or call 555-123-4567 for Q2 report reviews.";
-  
+
   let processedText = rawText;
   if (cfg.tiers.piiDetection) {
-    processedText = redactPiiText(rawText);
+    processedText = filterPii(rawText).sanitized;
   }
 
   let finalPayload: any = {};
@@ -74,7 +66,6 @@ export async function submitAnalysis(tenantId: string, userId: string, data: any
 
   const duration = Date.now() - start;
 
-  // Atomically resolve the analysis state inside the database
   await withTenantQuery(`
     UPDATE document_analyses 
     SET status = 'completed', result = $1, duration_ms = $2, updated_at = CURRENT_TIMESTAMP

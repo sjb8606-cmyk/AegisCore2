@@ -3,6 +3,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { AppError, ErrorCode } from '@platform/utils';
 export { AppError, ErrorCode };
+import { filterPii } from '@platform/ai-safety';
 
 export function parseUserId(userId: any): string {
   const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
@@ -22,11 +23,6 @@ function loadConfig() {
   };
 }
 
-export function redactPiiText(text: string): string {
-  const emailRegex = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g;
-  return text.replace(emailRegex, '[REDACTED_EMAIL]');
-}
-
 export async function moderateContent(tenantId: string, userId: string, data: any) {
   const cfg = loadConfig();
   if (!cfg.enabled) throw new AppError('AI Moderation vertical is disabled', ErrorCode.FORBIDDEN);
@@ -39,18 +35,17 @@ export async function moderateContent(tenantId: string, userId: string, data: an
   }
 
   const rawText = data.contentText || '';
-  const sanitizedText = redactPiiText(rawText);
+  const sanitizedText = filterPii(rawText).sanitized;
 
-  // Threshold Routing Engine: high score means "safe", low score means "unsafe"
-  let score = 0.95; // default safe
+  let score = 0.95;
   let categoriesFailed: string[] = [];
 
   if (sanitizedText.toLowerCase().includes('spam') || sanitizedText.toLowerCase().includes('cash')) {
-    score = 0.45; // Marginal review trigger
+    score = 0.45;
     categoriesFailed.push('spam');
   }
   if (sanitizedText.toLowerCase().includes('hate') || sanitizedText.toLowerCase().includes('violence')) {
-    score = 0.15; // Auto reject trigger
+    score = 0.15;
     categoriesFailed.push('hate');
   }
 
@@ -78,7 +73,6 @@ export async function moderateContent(tenantId: string, userId: string, data: an
 export async function resolveReview(tenantId: string, moderationId: string, action: 'approve' | 'reject', reason: string, adminId: string) {
   const cleanAdminId = parseUserId(adminId);
 
-  // Atomic locked lookup of moderation item
   const itemRes = await withTenantQuery('SELECT status FROM moderation_items WHERE id = $1 AND tenant_id = $2 FOR UPDATE', [moderationId, tenantId], tenantId);
   const item = itemRes[0];
   if (!item) throw new AppError('Content screening ticket not found', ErrorCode.NOT_FOUND);
@@ -86,13 +80,11 @@ export async function resolveReview(tenantId: string, moderationId: string, acti
   const nextStatus = action === 'approve' ? 'approved' : 'rejected';
   const actionId = crypto.randomUUID();
 
-  // Log immutable history action
   await withTenantQuery(`
     INSERT INTO moderation_actions (id, tenant_id, moderation_id, action, reason, processed_by)
     VALUES ($1, $2, $3, $4, $5, $6);
   `, [actionId, tenantId, moderationId, action, reason, cleanAdminId], tenantId);
 
-  // Update original status
   const updatedItem = await withTenantQuery(`
     UPDATE moderation_items 
     SET status = $1, updated_at = CURRENT_TIMESTAMP

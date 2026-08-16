@@ -3,6 +3,7 @@ import { z } from 'zod';
 import * as crypto from 'crypto';
 import * as fs from 'fs';
 import * as path from 'path';
+import { detectAdversarial } from '@platform/ai-safety';
 
 export class AppError extends Error {
   code: string;
@@ -52,31 +53,18 @@ function loadConfig() {
   return { enabled: true, tiers: { classification: true, smartDrafting: true } };
 }
 
-// Integrated Adversarial Linguistic Filter
-export async function detectAdversarial(sourceText: string): Promise<void> {
-  const cleanText = sourceText.toLowerCase();
+// Adversarial detection now imported from @platform/ai-safety (see above) —
+// the real weighted pattern-scoring version, not a 4-keyword substring check.
 
-  // Guard: Prevent prompt-injection overrides in inbox pipelines
-  const bypassKeywords = ['bypass safety restrictions', 'ignore email parameters', 'override draft filters', 'force system command'];
-  for (const keyword of bypassKeywords) {
-    if (cleanText.includes(keyword)) {
-      throw new AppError('AI Safety Guard: Email contents rejected due to adversarial injection instructions.', 'FORBIDDEN');
-    }
-  }
-}
-
-// Integrated Real-Time Email Mock Evaluator
 export async function validateLlmOutput(sourceText: string, options: any): Promise<any> {
   const textLower = sourceText.toLowerCase();
 
-  // Handle Smart replies parsing
   if (options.schema && options.schema.draft) {
     return {
       draft: "Hi Jenkins,\n\nWe have successfully received your support request regarding the membership billing adjustments. Our billing compliance team has flagged this for a priority review, and a technician will execute the refund corrections by Friday.\n\nBest regards,\nCustomer Support Team"
     };
   }
 
-  // Handle Intent classification parsing
   let category = "general";
   let priority = 3;
   let intent = "general_query";
@@ -116,8 +104,10 @@ export async function classifyEmail(tenantId: string, emailId: string, rawConten
 
   if (!isValidUuid(emailId)) throw new AppError('Invalid Email ID format.', 'BAD_REQUEST');
 
-  // Guard prompt injection
-  await detectAdversarial(rawContent);
+  const adversarialCheck = detectAdversarial(rawContent);
+  if (adversarialCheck.detected) {
+    throw new AppError(`AI Safety Guard: Email contents rejected due to adversarial injection instructions (${adversarialCheck.reason}).`, 'FORBIDDEN');
+  }
 
   const evaluation = await validateLlmOutput(rawContent, {});
   const classificationId = crypto.randomUUID();
@@ -144,7 +134,6 @@ export async function generateDraft(tenantId: string, data: any) {
   const email = emailRes[0];
   if (!email) throw new AppError('Email message not found.', 'NOT_FOUND');
 
-  // Trigger contextual smart reply composition
   const draftTextResult = await validateLlmOutput(email.body, { schema: { draft: "string" } });
 
   const draftId = crypto.randomUUID();
