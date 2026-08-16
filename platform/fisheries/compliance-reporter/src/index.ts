@@ -1,3 +1,4 @@
+import { parseUserId } from '@platform/utils';
 /**
  * platform/fisheries/compliance-reporter/src/index.ts
  */
@@ -17,12 +18,6 @@ export const GenerateCatchReportInputSchema = z.object({
 }).refine((data) => new Date(data.fromDate) <= new Date(data.toDate), {
   message: 'fromDate must be before or equal to toDate',
 });
-
-function parseUserId(userId: any): string {
-  const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
-  if (typeof userId === 'string' && uuidRegex.test(userId)) return userId;
-  throw new AppError(`Invalid or missing user id: ${JSON.stringify(userId)}`, ErrorCode.BAD_REQUEST);
-}
 
 function getConfig() {
   return loadConfig('fisheries-compliance-reporter', ConfigSchema);

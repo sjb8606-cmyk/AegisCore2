@@ -18,7 +18,7 @@
 import { z } from 'zod';
 import { withTenant, withTenantQuery } from '@platform/tenancy';
 import { LotTraceabilityService } from '@platform/lot-traceability';
-import { AppError, ErrorCode } from '@platform/utils';
+import { AppError, ErrorCode, parseUserId } from '@platform/utils';
 export { AppError, ErrorCode };
 
 export const RegisterTankInputSchema = z.object({
@@ -47,12 +47,6 @@ export const RemoveInputSchema = z.object({
   reason: z.enum(['shipped_out', 'processed', 'other']),
   notes: z.string().optional(),
 });
-
-function parseUserId(userId: any): string {
-  const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
-  if (typeof userId === 'string' && uuidRegex.test(userId)) return userId;
-  throw new AppError(`Invalid or missing user id: ${JSON.stringify(userId)}`, ErrorCode.BAD_REQUEST);
-}
 
 async function logEvent(
   client: any,

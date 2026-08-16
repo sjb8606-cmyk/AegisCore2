@@ -1,7 +1,7 @@
 import { Router, Request, Response } from 'express';
 import { z } from 'zod';
 import { withTenantQuery } from '@platform/tenancy';
-import { AppError, ErrorCode } from '@platform/utils';
+import { AppError, ErrorCode, parseUserId, isValidUuid } from '@platform/utils';
 import { AuthenticatedRequest } from '@platform/auth';
 
 export const UpdateUserPreferencesSchema = z.object({
@@ -20,14 +20,6 @@ export const UpdateTenantConfigSchema = z.object({
   min_font_scale: z.number().min(0.8).max(2.0).optional(),
   max_font_scale: z.number().min(0.8).max(2.0).optional(),
 });
-
-export function isValidUuid(id: any): boolean {
-  return typeof id === 'string' && /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id);
-}
-export function parseUserId(userId: any): string {
-  if (isValidUuid(userId)) return userId;
-  throw new AppError(`Invalid or missing user id: ${JSON.stringify(userId)}`, ErrorCode.BAD_REQUEST);
-}
 
 function extractContext(req: Request) {
   const auth = (req as AuthenticatedRequest).auth;

@@ -1,3 +1,4 @@
+import { parseUserId, isValidUuid } from '@platform/utils';
 import { withTenantQuery } from '../../tenancy/src/index';
 import { generateText } from '../../ai-gateway/src/index';
 import { AppError, ErrorCode } from '../../utils/src/index';
@@ -25,16 +26,6 @@ export type ForecastValue = {
   predicted_value: number;
   confidence: number;
 };
-
-export function isValidUuid(id: any): boolean {
-  const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
-  return typeof id === 'string' && uuidRegex.test(id);
-}
-
-export function parseUserId(userId: any): string {
-  if (isValidUuid(userId)) return userId;
-  throw new AppError(`Invalid or missing user id: ${JSON.stringify(userId)}`, ErrorCode.BAD_REQUEST);
-}
 
 function loadConfig() {
   const configPath = path.join(process.cwd(), 'config', 'ai-forecasting.json');

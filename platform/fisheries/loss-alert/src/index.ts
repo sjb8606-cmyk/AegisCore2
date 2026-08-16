@@ -1,3 +1,4 @@
+import { parseUserId } from '@platform/utils';
 /**
  * platform/fisheries/loss-alert/src/index.ts
  */
@@ -13,12 +14,6 @@ const ConfigSchema = z.object({
   enabled: z.boolean(),
   alertRecipient: z.string().email(),
 });
-
-function parseUserId(userId: any): string {
-  const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
-  if (typeof userId === 'string' && uuidRegex.test(userId)) return userId;
-  throw new AppError(`Invalid or missing user id: ${JSON.stringify(userId)}`, ErrorCode.BAD_REQUEST);
-}
 
 function getConfig() {
   return loadConfig('fisheries-loss-alert', ConfigSchema);

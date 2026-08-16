@@ -1,3 +1,4 @@
+import { parseUserId } from '@platform/utils';
 /**
  * platform/fisheries/species-registry/src/index.ts
  */
@@ -24,12 +25,6 @@ export const CreateSpeciesInputSchema = z.object({
 });
 
 export const UpdateSpeciesInputSchema = CreateSpeciesInputSchema.partial();
-
-function parseUserId(userId: any): string {
-  const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
-  if (typeof userId === 'string' && uuidRegex.test(userId)) return userId;
-  throw new AppError(`Invalid or missing user id: ${JSON.stringify(userId)}`, ErrorCode.BAD_REQUEST);
-}
 
 function getConfig() {
   return loadConfig('fisheries-species-registry', ConfigSchema);

@@ -19,7 +19,7 @@
 import * as crypto from 'crypto';
 import { z } from 'zod';
 import { withTenantQuery, withTenant } from '@platform/tenancy';
-import { AppError, ErrorCode } from '@platform/utils';
+import { AppError, ErrorCode, parseUserId } from '@platform/utils';
 export { AppError, ErrorCode };
 import { computeEventHash, GENESIS_HASH } from './hash';
 export { computeEventHash, GENESIS_HASH };
@@ -57,12 +57,6 @@ export const MergeLotsInputSchema = z.object({
 export const HoldLotInputSchema = z.object({
   reason: z.string().min(1),
 });
-
-function parseUserId(userId: any): string {
-  const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
-  if (typeof userId === 'string' && uuidRegex.test(userId)) return userId;
-  throw new AppError(`Invalid or missing user id: ${JSON.stringify(userId)}`, ErrorCode.BAD_REQUEST);
-}
 
 function generateLotCode(): string {
   return `LOT-${crypto.randomBytes(5).toString('hex').toUpperCase()}`;

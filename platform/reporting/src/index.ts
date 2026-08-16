@@ -1,15 +1,10 @@
+import { parseUserId } from '@platform/utils';
 import { withTenantQuery } from '../../tenancy/src/index';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as crypto from 'crypto';
 import { AppError, ErrorCode } from '../../utils/src/index';
 export { AppError, ErrorCode };
-
-export function parseUserId(userId: any): string {
-  const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
-  if (typeof userId === 'string' && uuidRegex.test(userId)) return userId;
-  throw new AppError(`Invalid or missing user id: ${JSON.stringify(userId)}`, ErrorCode.BAD_REQUEST);
-}
 
 function loadConfig() {
   const configPath = path.join(process.cwd(), 'config', 'reporting.json');

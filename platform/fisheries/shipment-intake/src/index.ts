@@ -1,3 +1,4 @@
+import { parseUserId } from '@platform/utils';
 import { z } from 'zod';
 import { withTenantQuery, withTenant } from '../../../tenancy/src/index';
 import { loadConfig, AppError, ErrorCode } from '../../../utils/src/index';
@@ -28,12 +29,6 @@ export const LogShipmentInputSchema = z.object({
   catchZone: z.string().optional(),
   notes: z.string().optional(),
 });
-
-function parseUserId(userId: any): string {
-  const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
-  if (typeof userId === 'string' && uuidRegex.test(userId)) return userId;
-  throw new AppError(`Invalid or missing user id: ${JSON.stringify(userId)}`, ErrorCode.BAD_REQUEST);
-}
 
 function getConfig() {
   return loadConfig('fisheries-shipment-intake', ConfigSchema);

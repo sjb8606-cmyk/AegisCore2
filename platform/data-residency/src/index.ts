@@ -1,5 +1,5 @@
 import { withTenantQuery } from '@platform/tenancy';
-import { AppError, ErrorCode } from '@platform/utils';
+import { AppError, ErrorCode, parseUserId, isValidUuid } from '@platform/utils';
 export { AppError, ErrorCode };
 import { z } from 'zod';
 import * as crypto from 'crypto';
@@ -16,16 +16,6 @@ export const GenerateReportSchema = z.object({
   period_start: z.string().datetime(),
   period_end: z.string().datetime(),
 });
-
-export function isValidUuid(id: any): boolean {
-  const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
-  return typeof id === 'string' && uuidRegex.test(id);
-}
-
-export function parseUserId(userId: any): string {
-  if (isValidUuid(userId)) return userId;
-  throw new AppError(`Invalid or missing user id: ${JSON.stringify(userId)}`, 'BAD_REQUEST');
-}
 
 function loadConfig() {
   const configPath = path.join(process.cwd(), 'config', 'data-residency.json');

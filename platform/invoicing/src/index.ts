@@ -1,3 +1,4 @@
+import { parseUserId } from '@platform/utils';
 import * as fs from 'fs';
 import * as path from 'path';
 import { z } from 'zod';
@@ -90,14 +91,6 @@ export function loadConfig(): InvoicingConfig {
     taxRate: 0,
   });
   return cachedConfig;
-}
-
-function parseUserId(userId: any): string {
-  const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
-  if (typeof userId === 'string' && uuidRegex.test(userId)) {
-    return userId;
-  }
-  throw new AppError(`Invalid or missing user id: ${JSON.stringify(userId)}`, ErrorCode.BAD_REQUEST);
 }
 
 export class InvoicingService {

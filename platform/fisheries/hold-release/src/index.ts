@@ -19,7 +19,7 @@ import { z } from 'zod';
 import { withTenant, withTenantQuery } from '@platform/tenancy';
 import { LotTraceabilityService } from '@platform/lot-traceability';
 import { RecallEngineService } from '@platform/recall-engine';
-import { AppError, ErrorCode } from '@platform/utils';
+import { AppError, ErrorCode, parseUserId } from '@platform/utils';
 import { emit as auditEmit } from '@platform/audit';
 export { AppError, ErrorCode };
 
@@ -46,12 +46,6 @@ export const ResolveInvestigationInputSchema = z.object({
 });
 
 // ── Helpers ──────────────────────────────────────────────────────
-
-function parseUserId(userId: any): string {
-  const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
-  if (typeof userId === 'string' && uuidRegex.test(userId)) return userId;
-  throw new AppError(`Invalid or missing user id: ${JSON.stringify(userId)}`, ErrorCode.BAD_REQUEST);
-}
 
 // ── Service ──────────────────────────────────────────────────────
 

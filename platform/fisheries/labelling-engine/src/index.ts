@@ -25,7 +25,7 @@ import { z } from 'zod';
 import { withTenant, withTenantQuery } from '@platform/tenancy';
 import { LotTraceabilityService } from '@platform/lot-traceability';
 import { SpeciesRegistryService } from '@platform/species-registry';
-import { AppError, ErrorCode } from '@platform/utils';
+import { AppError, ErrorCode, parseUserId } from '@platform/utils';
 export { AppError, ErrorCode };
 
 export const MarketSchema = z.enum(['domestic', 'us_export', 'eu_export']);
@@ -41,12 +41,6 @@ export const GenerateLabelInputSchema = z.object({
   speciesNameFr: z.string().optional(),
   additionalFields: z.record(z.string()).optional(),
 });
-
-function parseUserId(userId: any): string {
-  const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
-  if (typeof userId === 'string' && uuidRegex.test(userId)) return userId;
-  throw new AppError(`Invalid or missing user id: ${JSON.stringify(userId)}`, ErrorCode.BAD_REQUEST);
-}
 
 export class LabellingEngineService {
   static async setMarketRules(tenantId: string, userId: string, data: any) {

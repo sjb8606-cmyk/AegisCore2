@@ -1,3 +1,4 @@
+import { parseUserId } from '@platform/utils';
 /**
  * platform/fisheries/production-verifier/src/index.ts
  */
@@ -7,12 +8,6 @@ import { runIntegrityCheck } from '../../../verifier/src/index';
 import { withTenantQuery } from '../../../tenancy/src/index';
 import { AppError, ErrorCode } from '../../../utils/src/index';
 export { AppError, ErrorCode };
-
-function parseUserId(userId: any): string {
-  const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
-  if (typeof userId === 'string' && uuidRegex.test(userId)) return userId;
-  throw new AppError(`Invalid or missing user id: ${JSON.stringify(userId)}`, ErrorCode.BAD_REQUEST);
-}
 
 export class ProductionVerifierService {
   static async recordBatchCompletion(tenantId: string, userId: string, batch: any) {

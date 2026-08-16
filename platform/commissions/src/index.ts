@@ -3,7 +3,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import * as crypto from 'crypto';
 import { z } from 'zod';
-import { AppError, ErrorCode } from '@platform/utils';
+import { AppError, ErrorCode, parseUserId } from '@platform/utils';
 export { AppError, ErrorCode };
 
 export const CommissionsConfigSchema = z.object({
@@ -46,12 +46,6 @@ export interface CommissionCalculationInput {
   agentId: string;
   sourceType: string;
   metadata?: Record<string, any>;
-}
-
-export function parseUserId(userId: any): string {
-  const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
-  if (typeof userId === 'string' && uuidRegex.test(userId)) return userId;
-  throw new AppError(`Invalid or missing user id: ${JSON.stringify(userId)}`, ErrorCode.BAD_REQUEST);
 }
 
 function loadConfig(): CommissionsConfig {

@@ -16,7 +16,7 @@ import { z } from 'zod';
 import { withTenant, withTenantQuery } from '@platform/tenancy';
 import { LotTraceabilityService } from '@platform/lot-traceability';
 import { RecallEngineService } from '@platform/recall-engine';
-import { AppError, ErrorCode } from '@platform/utils';
+import { AppError, ErrorCode, parseUserId } from '@platform/utils';
 export { AppError, ErrorCode };
 
 export const StageSchema = z.enum(['receiving', 'storage', 'processing', 'shipping']);
@@ -36,12 +36,6 @@ export const LogReadingInputSchema = z.object({
   deviceId: z.string().optional(),
   notes: z.string().optional(),
 });
-
-function parseUserId(userId: any): string {
-  const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
-  if (typeof userId === 'string' && uuidRegex.test(userId)) return userId;
-  throw new AppError(`Invalid or missing user id: ${JSON.stringify(userId)}`, ErrorCode.BAD_REQUEST);
-}
 
 export class TemperatureEngineService {
   static async setThreshold(tenantId: string, userId: string, data: any) {

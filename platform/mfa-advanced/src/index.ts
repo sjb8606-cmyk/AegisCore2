@@ -1,3 +1,4 @@
+import { parseUserId } from '@platform/utils';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as crypto from 'crypto';
@@ -93,14 +94,6 @@ export function verifyRecoveryCodeHash(code: string, storedHash: string): boolea
   const stored = Buffer.from(derivedHex, 'hex');
   if (candidate.length !== stored.length) return false;
   return crypto.timingSafeEqual(candidate, stored);
-}
-
-function parseUserId(userId: any): string {
-  const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
-  if (typeof userId === 'string' && uuidRegex.test(userId)) {
-    return userId;
-  }
-  throw new AppError('Invalid or missing user id', ErrorCode.BAD_REQUEST);
 }
 
 export class MfaAdvancedService {
