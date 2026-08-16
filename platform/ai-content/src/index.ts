@@ -1,6 +1,7 @@
 import { withTenantQuery } from '@platform/tenancy';
 import { AppError, ErrorCode, parseUserId, isValidUuid } from '@platform/utils';
 export { AppError, ErrorCode };
+import { filterPii, detectAdversarial } from '@platform/ai-safety';
 import { z } from 'zod';
 import * as crypto from 'crypto';
 import * as fs from 'fs';
@@ -28,20 +29,9 @@ function loadConfig() {
   return { enabled: true, tiers: { blogGeneration: true, aBVariantGeneration: true, contentScoring: true } };
 }
 
-// Integrated AI Safety & Adversarial Input Filter
-export async function detectAdversarial(promptText: string): Promise<void> {
-  const cleanPrompt = promptText.toLowerCase();
-  
-  // Strict prompt injection guard: Block command overrides
-  const bypassKeywords = ['ignore rules', 'bypass rules', 'ignore guidelines', 'system administrative override', 'forget limit'];
-  for (const keyword of bypassKeywords) {
-    if (cleanPrompt.includes(keyword)) {
-      throw new AppError('AI Safety Guard: Generative prompt rejected due to adversarial bypass instructions.', 'FORBIDDEN');
-    }
-  }
-}
+// Adversarial detection now imported from @platform/ai-safety (see above) —
+// the real weighted pattern-scoring version, not a 5-keyword substring check.
 
-// Integrated Generative Text Mock Engine
 export async function validateLlmOutput(promptText: string, options: any): Promise<any> {
   if (options.schema) {
     return {
@@ -63,19 +53,22 @@ export async function generateContent(tenantId: string, userId: string, data: an
   const parsed = ContentGenerationSchema.parse(data);
   const cleanUserId = parseUserId(userId);
 
-  // Run Adversarial Prompt Injection Defense
-  await detectAdversarial(parsed.prompt);
+  const adversarialCheck = detectAdversarial(parsed.prompt);
+  if (adversarialCheck.detected) {
+    throw new AppError(`AI Safety Guard: Generative prompt rejected due to adversarial instructions (${adversarialCheck.reason}).`, 'FORBIDDEN');
+  }
+
+  const sanitizedPrompt = filterPii(parsed.prompt).sanitized;
 
   const assetId = crypto.randomUUID();
   const title = `Generative: ${parsed.type.toUpperCase()}`;
-  const generatedBody = `Generated content for prompt: "${parsed.prompt}". Standard high-velocity marketing copy is fully compiled and formatted for optimization.`;
+  const generatedBody = `Generated content for prompt: "${sanitizedPrompt}". Standard high-velocity marketing copy is fully compiled and formatted for optimization.`;
 
   const res = await withTenantQuery(`
     INSERT INTO content_assets (id, tenant_id, type, title, body, tone, language)
     VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *;
   `, [assetId, tenantId, parsed.type, title, generatedBody, parsed.tone, parsed.language], tenantId);
 
-  // Generate initial scores for content audit and brand voice validation
   if (cfg.tiers.contentScoring) {
     await withTenantQuery(`
       INSERT INTO content_scores (id, tenant_id, content_id, engagement_score, seo_score, brand_score, risk_score)
@@ -101,7 +94,6 @@ export async function generateVariants(tenantId: string, contentId: string, data
   const asset = assetRes[0];
   if (!asset) throw new AppError('Content asset not found.', 'NOT_FOUND');
 
-  // Trigger generative variants simulator
   const results = await validateLlmOutput(asset.body, { schema: { variants: "array" } });
 
   const insertedVariants = [];
@@ -135,9 +127,5 @@ export async function getContentLedger(tenantId: string, contentId: string) {
     SELECT * FROM content_scores WHERE content_id = $1 AND tenant_id = $2;
   `, [contentId, tenantId], tenantId);
 
-  return {
-    ...asset,
-    variants,
-    scores
-  };
+  return { ...asset, variants, scores };
 }

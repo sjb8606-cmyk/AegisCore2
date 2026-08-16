@@ -1,6 +1,8 @@
 import { withTenantQuery } from '@platform/tenancy';
 import { AppError, ErrorCode, parseUserId, isValidUuid } from '@platform/utils';
 export { AppError, ErrorCode };
+import { filterPii, detectAdversarial } from '@platform/ai-safety';
+import { emit as auditEmit } from '@platform/audit';
 import { z } from 'zod';
 import * as crypto from 'crypto';
 import * as fs from 'fs';
@@ -30,22 +32,9 @@ function loadConfig() {
   return { enabled: true, tiers: { basicTranslation: true, glossarySupport: true, structuredDataTranslation: true } };
 }
 
-// Integrated Adversarial Linguistic Filter
-export async function detectAdversarial(sourceText: string): Promise<void> {
-  const cleanText = sourceText.toLowerCase();
+// Adversarial detection now imported from @platform/ai-safety (see above).
 
-  // Guard: Prevent prompt-injection overrides in source materials
-  const bypassKeywords = ['bypass guidelines', 'ignore safety rules', 'ignore term constraints', 'override translation memory'];
-  for (const keyword of bypassKeywords) {
-    if (cleanText.includes(keyword)) {
-      throw new AppError('AI Safety Guard: Terminology source contains adversarial instructions.', 'FORBIDDEN');
-    }
-  }
-}
-
-// Integrated Context-Aware Translator Simulation
 export async function validateLlmOutput(sourceText: string, options: any): Promise<any> {
-  // If structured data preserves key bindings
   if (options.schema) {
     return {
       translated: {
@@ -56,7 +45,6 @@ export async function validateLlmOutput(sourceText: string, options: any): Promi
     };
   }
 
-  // Simulate context translation
   const textLower = sourceText.toLowerCase();
   if (textLower.includes('gold gym') || textLower.includes('heavy squats')) {
     return "¡Gimnasio de Oro! Entrena con pesas pesadas.";
@@ -72,14 +60,28 @@ export async function translateText(tenantId: string, data: any) {
   }
 
   const parsed = TranslationRequestSchema.parse(data);
-  
-  // Guard prompt injection
-  await detectAdversarial(parsed.source_text);
+
+  const adversarialCheck = detectAdversarial(parsed.source_text);
+  if (adversarialCheck.detected) {
+    throw new AppError(`AI Safety Guard: Terminology source contains adversarial instructions (${adversarialCheck.reason}).`, 'FORBIDDEN');
+  }
+
+  const piiCheck = filterPii(parsed.source_text);
+  if (piiCheck.found.length > 0) {
+    await auditEmit({
+      tenantId,
+      actorId: 'system',
+      actorType: 'system',
+      action: 'ai.pii_detected',
+      outcome: 'success',
+      resource: 'translation_job',
+      metadata: { categories: piiCheck.found },
+    } as any);
+  }
 
   const jobId = crypto.randomUUID();
   const translated = await validateLlmOutput(parsed.source_text, {});
 
-  // Write directly as completed for immediate, synchronous test validations
   const res = await withTenantQuery(`
     INSERT INTO translation_jobs (id, tenant_id, source_text, source_language, target_language, translated_text, status)
     VALUES ($1, $2, $3, $4, $5, $6, 'completed') RETURNING *;
@@ -129,8 +131,5 @@ export async function getTranslationLedger(tenantId: string, jobId: string) {
     SELECT * FROM translation_glossaries WHERE language = $1 AND tenant_id = $2;
   `, [job.target_language, tenantId], tenantId);
 
-  return {
-    ...job,
-    active_glossaries: glossaries
-  };
+  return { ...job, active_glossaries: glossaries };
 }

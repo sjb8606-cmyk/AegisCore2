@@ -1,6 +1,7 @@
 import { withTenantQuery } from '@platform/tenancy';
 import { AppError, ErrorCode, parseUserId, isValidUuid } from '@platform/utils';
 export { AppError, ErrorCode };
+import { filterPii } from '@platform/ai-safety';
 import { z } from 'zod';
 import * as crypto from 'crypto';
 import * as fs from 'fs';
@@ -36,11 +37,9 @@ function loadConfig() {
   return { enabled: true, tiers: { transcription: true, meetingSummaries: true, voiceCommands: true } };
 }
 
-// Integrated AI Safety & LLM Parser Simulation
 export async function validateLlmOutput(rawText: string, options: any): Promise<any> {
   const textLower = rawText.toLowerCase();
 
-  // If validation options contain allowedIntents (testing Voice Commands)
   if (options.allowedIntents) {
     const forbiddenPatterns = ['drop table', 'delete from', 'truncate', 'grant admin', 'make superuser'];
     for (const pattern of forbiddenPatterns) {
@@ -56,7 +55,6 @@ export async function validateLlmOutput(rawText: string, options: any): Promise<
     return { intent, approved: true };
   }
 
-  // If validation options contain structured summarization schema
   if (options.schema) {
     return {
       summary: "Executive summary: The project team analyzed active pipeline capacities, reviewed safety protocols, and concluded that standard operational velocity meets current SLA targets.",
@@ -79,7 +77,8 @@ export async function transcribeAudio(tenantId: string, data: any) {
   const parsed = TranscriptionSchema.parse(data);
   const transId = crypto.randomUUID();
 
-  const transcript = parsed.transcript || "Operator: Gold Gym customer support line, how can I help you? Customer: Hi, I need to check in my guest Arnold. Operator: Perfect, I can schedule that. Action item: register and check in guest Arnold on Friday.";
+  const rawTranscript = parsed.transcript || "Operator: Gold Gym customer support line, how can I help you? Customer: Hi, I need to check in my guest Arnold. Operator: Perfect, I can schedule that. Action item: register and check in guest Arnold on Friday.";
+  const transcript = filterPii(rawTranscript).sanitized;
 
   const res = await withTenantQuery(`
     INSERT INTO voice_transcriptions (id, tenant_id, source_type, audio_url, transcript, confidence, language, duration_sec)
@@ -110,7 +109,6 @@ export async function generateSummary(tenantId: string, transcriptionId: string)
 
   const summaryId = crypto.randomUUID();
   
-  // Fixed SQL parameter list to include $5
   const res = await withTenantQuery(`
     INSERT INTO voice_summaries (id, tenant_id, transcription_id, summary, action_items)
     VALUES ($1, $2, $3, $4, $5) RETURNING *;
@@ -132,13 +130,14 @@ export async function processVoiceCommand(tenantId: string, data: any, userId: s
     allowedIntents: ['search', 'create', 'update', 'delete', 'report']
   });
 
+  const sanitizedRawText = filterPii(parsed.raw_text).sanitized;
   const commandId = crypto.randomUUID();
   const executedTime = new Date().toISOString();
 
   const res = await withTenantQuery(`
     INSERT INTO voice_commands (id, tenant_id, raw_text, intent, confidence, executed, executed_at)
     VALUES ($1, $2, $3, $4, $5, true, $6) RETURNING *;
-  `, [commandId, tenantId, parsed.raw_text, validation.intent, parsed.confidence, executedTime], tenantId);
+  `, [commandId, tenantId, sanitizedRawText, validation.intent, parsed.confidence, executedTime], tenantId);
 
   return res[0];
 }
@@ -156,8 +155,5 @@ export async function getVoiceLedger(tenantId: string, transcriptionId: string) 
     SELECT * FROM voice_summaries WHERE transcription_id = $1 AND tenant_id = $2 ORDER BY created_at DESC;
   `, [transcriptionId, tenantId], tenantId);
 
-  return {
-    ...transcription,
-    summaries
-  };
+  return { ...transcription, summaries };
 }
