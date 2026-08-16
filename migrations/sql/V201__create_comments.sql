@@ -1,4 +1,4 @@
-CREATE TABLE comments (
+CREATE TABLE IF NOT EXISTS comments (
   id             UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   tenant_id      UUID NOT NULL,
   user_id        UUID NOT NULL,
@@ -10,12 +10,20 @@ CREATE TABLE comments (
   deleted_at     TIMESTAMP WITH TIME ZONE
 );
 
-CREATE INDEX idx_comments_tenant_resource ON comments(tenant_id, resource_type, resource_id, created_at DESC);
-CREATE INDEX idx_comments_tenant_user ON comments(tenant_id, user_id);
+CREATE INDEX IF NOT EXISTS idx_comments_tenant_resource ON comments(tenant_id, resource_type, resource_id, created_at DESC);
+CREATE INDEX IF NOT EXISTS idx_comments_tenant_user ON comments(tenant_id, user_id);
 
 ALTER TABLE comments ENABLE ROW LEVEL SECURITY;
 ALTER TABLE comments FORCE ROW LEVEL SECURITY;
 
-CREATE POLICY tenant_isolation_comments ON comments
-  USING (tenant_id = NULLIF(current_setting('app.current_tenant_id', true), '')::uuid)
-  WITH CHECK (tenant_id = NULLIF(current_setting('app.current_tenant_id', true), '')::uuid);
+DO $$
+BEGIN
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_policies
+    WHERE tablename = 'comments' AND policyname = 'tenant_isolation_comments'
+  ) THEN
+    CREATE POLICY tenant_isolation_comments ON comments
+      USING (tenant_id = NULLIF(current_setting('app.current_tenant_id', true), '')::uuid)
+      WITH CHECK (tenant_id = NULLIF(current_setting('app.current_tenant_id', true), '')::uuid);
+  END IF;
+END $$;

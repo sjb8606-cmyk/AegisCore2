@@ -1,4 +1,4 @@
-CREATE TABLE tasks (
+CREATE TABLE IF NOT EXISTS tasks (
   id           UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   tenant_id    UUID NOT NULL,
   user_id      UUID NOT NULL,
@@ -11,11 +11,27 @@ CREATE TABLE tasks (
   updated_at   TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE INDEX idx_tasks_tenant_assignee ON tasks(tenant_id, assignee_id, created_at DESC);
+DO $$
+BEGIN
+  IF EXISTS (
+    SELECT 1 FROM information_schema.columns
+    WHERE table_name = 'tasks' AND column_name = 'assignee_id'
+  ) THEN
+    CREATE INDEX IF NOT EXISTS idx_tasks_tenant_assignee ON tasks(tenant_id, assignee_id, created_at DESC);
+  END IF;
+END $$;
 
 ALTER TABLE tasks ENABLE ROW LEVEL SECURITY;
 ALTER TABLE tasks FORCE ROW LEVEL SECURITY;
 
-CREATE POLICY tenant_isolation_tasks ON tasks
-  USING (tenant_id = NULLIF(current_setting('app.current_tenant_id', true), '')::uuid)
-  WITH CHECK (tenant_id = NULLIF(current_setting('app.current_tenant_id', true), '')::uuid);
+DO $$
+BEGIN
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_policies
+    WHERE tablename = 'tasks' AND policyname = 'tenant_isolation_tasks'
+  ) THEN
+    CREATE POLICY tenant_isolation_tasks ON tasks
+      USING (tenant_id = NULLIF(current_setting('app.current_tenant_id', true), '')::uuid)
+      WITH CHECK (tenant_id = NULLIF(current_setting('app.current_tenant_id', true), '')::uuid);
+  END IF;
+END $$;
