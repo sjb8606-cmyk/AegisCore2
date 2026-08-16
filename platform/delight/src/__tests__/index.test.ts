@@ -1,5 +1,15 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 
+vi.mock('fs', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('fs')>();
+  const readdirSyncMock = vi.fn(actual.readdirSync as any);
+  return {
+    ...actual,
+    readdirSync: readdirSyncMock,
+    default: { ...actual, readdirSync: readdirSyncMock },
+  };
+});
+
 vi.mock('@platform/tenancy', () => ({
   withTenantQuery: vi.fn(),
 }));
@@ -12,7 +22,8 @@ vi.mock('@platform/ai-gateway', () => ({
   generateText: vi.fn(),
 }));
 
-import { processChat } from '../index';
+import * as fs from 'fs';
+import { processChat, refreshPersonaIndex, resolvePersonaDir } from '../index';
 import { withTenantQuery } from '@platform/tenancy';
 import { emit as auditEmit } from '@platform/audit';
 import { generateText } from '@platform/ai-gateway';
@@ -22,6 +33,35 @@ const PERSONA_ID = 'orchard_farmer';
 
 beforeEach(() => {
   vi.clearAllMocks();
+});
+
+describe('persona index caching — the real speed fix', () => {
+  it('does NOT re-walk the directory tree on a second call for a different persona', async () => {
+    (withTenantQuery as any).mockResolvedValue([]);
+    (generateText as any).mockResolvedValue({ content: 'ok', provider: 'groq', model: 'x', finishReason: 'stop' });
+
+    await processChat(TENANT_ID, 'first message', { personaId: 'orchard_farmer', sessionId: 'session-cache-1' });
+    const callsAfterFirst = (fs.readdirSync as any).mock.calls.length;
+    expect(callsAfterFirst).toBeGreaterThan(0);
+
+    await processChat(TENANT_ID, 'second message', { personaId: 'flat_roof_specialist', sessionId: 'session-cache-2' });
+    const callsAfterSecond = (fs.readdirSync as any).mock.calls.length;
+
+    expect(callsAfterSecond).toBe(callsAfterFirst);
+  });
+
+  it('refreshPersonaIndex() forces a real rebuild when explicitly called', async () => {
+    (withTenantQuery as any).mockResolvedValue([]);
+    (generateText as any).mockResolvedValue({ content: 'ok', provider: 'groq', model: 'x', finishReason: 'stop' });
+
+    await processChat(TENANT_ID, 'warm the cache', { personaId: PERSONA_ID, sessionId: 'session-cache-3' });
+    const callsBeforeRefresh = (fs.readdirSync as any).mock.calls.length;
+
+    refreshPersonaIndex(resolvePersonaDir());
+    const callsAfterRefresh = (fs.readdirSync as any).mock.calls.length;
+
+    expect(callsAfterRefresh).toBeGreaterThan(callsBeforeRefresh);
+  });
 });
 
 describe('processChat — real LLM wiring', () => {
@@ -73,7 +113,7 @@ describe('processChat — real LLM wiring', () => {
     expect(historyMessages[3].content).toBe('Second reply');
   });
 
-  it('stores BOTH the user message and the assistant reply — the old version only stored the reply', async () => {
+  it('stores BOTH the user message and the assistant reply', async () => {
     (withTenantQuery as any).mockResolvedValue([]);
     (generateText as any).mockResolvedValue({ content: 'a real reply', provider: 'groq', model: 'x', finishReason: 'stop' });
 

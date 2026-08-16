@@ -32,15 +32,10 @@ function buildSystemPrompt(persona: any | null, displayName: string, humanityLev
   return parts.join('\n\n');
 }
 
-/**
- * Personas live nested under config/personas/<category>/<subcategory>/,
- * e.g. config/personas/trades/craftbots/orchard_farmer.json — not flat
- * directly inside config/personas/. Callers pass the short id
- * ('orchard_farmer'), not the internal folder path. This searches the
- * whole tree for a matching filename.
- */
-function findPersonaFile(personaDir: string, personaId: string): string | null {
-  const targetName = `${personaId}.json`;
+let personaIndexCache: Map<string, string> | null = null;
+
+function buildPersonaIndex(personaDir: string): Map<string, string> {
+  const index = new Map<string, string>();
   const stack = [personaDir];
   while (stack.length > 0) {
     const dir = stack.pop()!;
@@ -49,12 +44,33 @@ function findPersonaFile(personaDir: string, personaId: string): string | null {
       const fullPath = path.join(dir, entry.name);
       if (entry.isDirectory()) {
         stack.push(fullPath);
-      } else if (entry.name === targetName) {
-        return fullPath;
+      } else if (entry.name.endsWith('.json')) {
+        index.set(entry.name.slice(0, -'.json'.length), fullPath);
       }
     }
   }
-  return null;
+  return index;
+}
+
+export function refreshPersonaIndex(personaDir: string): void {
+  personaIndexCache = buildPersonaIndex(personaDir);
+}
+
+function findPersonaFile(personaDir: string, personaId: string): string | null {
+  if (!personaIndexCache) {
+    personaIndexCache = buildPersonaIndex(personaDir);
+  }
+  return personaIndexCache.get(personaId) ?? null;
+}
+
+export function resolvePersonaDir(): string {
+  let currentPath = process.cwd();
+  let personaDir = path.join(currentPath, 'config', 'personas');
+  while (!fs.existsSync(personaDir) && currentPath !== path.parse(currentPath).root) {
+    currentPath = path.dirname(currentPath);
+    personaDir = path.join(currentPath, 'config', 'personas');
+  }
+  return personaDir;
 }
 
 export async function processChat(tenantId: string, message: string, options: any) {
@@ -65,12 +81,7 @@ export async function processChat(tenantId: string, message: string, options: an
   const sub = billing.activeSubscriptions.find((s: any) => s.tenantId === tenantId);
   const tier = sub?.status === 'active' ? sub.tier : 'scout';
 
-  let currentPath = process.cwd();
-  let personaDir = path.join(currentPath, 'config', 'personas');
-  while (!fs.existsSync(personaDir) && currentPath !== path.parse(currentPath).root) {
-    currentPath = path.dirname(currentPath);
-    personaDir = path.join(currentPath, 'config', 'personas');
-  }
+  const personaDir = resolvePersonaDir();
 
   let displayName = '';
   let boundaries = null;
