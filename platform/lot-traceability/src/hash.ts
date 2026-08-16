@@ -1,15 +1,17 @@
-import * as crypto from 'crypto';
+import { computeChainHash, GENESIS_HASH } from '@platform/hash-chain';
 
-export const GENESIS_HASH = '0'.repeat(64);
+export { GENESIS_HASH };
 
 /**
- * Computes a hash-chained fingerprint for a lot event, in the same spirit
- * as Veridact's receipt hash chain (src/engines/receiptEngine.ts): each
- * event's hash incorporates the previous event's hash, so a lot's full
- * history is tamper-evident, not just stored. If any past event's payload
- * were altered, every hash after it would fail to recompute — the same
- * replay-verification idea Veridact already uses, applied to lot events
- * instead of AI-decision receipts.
+ * This used to be a standalone sha256 implementation — one of 4
+ * independent reimplementations of the same algorithm across the repo
+ * (Veridact, platform/audit, platform/audit-log, and this file). It was
+ * actually the pattern @platform/hash-chain was modeled on in the first
+ * place, so this delegation changes ZERO hash values: computeChainHash's
+ * algorithm is byte-for-byte identical to what was here before (same
+ * sorted-payload approach, same input format), just with a generic
+ * `scopeId` parameter name instead of `lotId`. Every existing hash
+ * already stored in a real database remains valid and verifiable.
  */
 export function computeEventHash(
   lotId: string,
@@ -17,11 +19,5 @@ export function computeEventHash(
   payload: Record<string, unknown>,
   prevHash: string,
 ): string {
-  const sortedPayload = JSON.stringify(
-    Object.fromEntries(Object.entries(payload).sort(([a], [b]) => a.localeCompare(b))),
-  );
-  return crypto
-    .createHash('sha256')
-    .update(`${lotId}:${eventType}:${sortedPayload}:${prevHash}`)
-    .digest('hex');
+  return computeChainHash(lotId, eventType, payload, prevHash);
 }
