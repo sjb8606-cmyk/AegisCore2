@@ -2,10 +2,11 @@ import { z } from 'zod';
 import fs from 'fs';
 import path from 'path';
 import { randomUUID } from 'crypto';
-import { loadConfig, AppError, ErrorCode } from '../../utils/src/index';
+import { loadConfig, AppError, ErrorCode } from '@platform/utils';
 export { AppError, ErrorCode };
-import { withTenantQuery } from '../../tenancy/src/index';
-import { emit as auditEmit } from '../../audit/src/index';
+import { withTenantQuery } from '@platform/tenancy';
+import { emit as auditEmit } from '@platform/audit';
+import { generateText } from '@platform/ai-gateway';
 
 const BillingSchema = z.object({ activeSubscriptions: z.array(z.any()) });
 const SafetySchema = z.object({ hardBoundaries: z.array(z.string()), layer2Response: z.string() });
@@ -16,11 +17,51 @@ const KEYWORDS: Record<string, string[]> = {
   therapy: ['depressed', 'anxiety']
 };
 
+const DELIGHT_MODEL = 'llama-4-scout-17b-16e-instruct';
+
+function buildSystemPrompt(persona: any | null, displayName: string, humanityLevel: string): string {
+  if (!persona) {
+    return `You are ${displayName}, a synthesis of multiple perspectives blended into one voice. Respond thoughtfully and helpfully, staying consistent with that blended identity.`;
+  }
+  const humanityGuidance = persona.humanity_mode?.[humanityLevel] ?? '';
+  const parts = [
+    `You are ${persona.name}${persona.title ? `, ${persona.title}` : ''}.`,
+    persona.worldview ?? '',
+    humanityGuidance,
+  ].filter(Boolean);
+  return parts.join('\n\n');
+}
+
+/**
+ * Personas live nested under config/personas/<category>/<subcategory>/,
+ * e.g. config/personas/trades/craftbots/orchard_farmer.json — not flat
+ * directly inside config/personas/. Callers pass the short id
+ * ('orchard_farmer'), not the internal folder path. This searches the
+ * whole tree for a matching filename.
+ */
+function findPersonaFile(personaDir: string, personaId: string): string | null {
+  const targetName = `${personaId}.json`;
+  const stack = [personaDir];
+  while (stack.length > 0) {
+    const dir = stack.pop()!;
+    const entries = fs.readdirSync(dir, { withFileTypes: true });
+    for (const entry of entries) {
+      const fullPath = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        stack.push(fullPath);
+      } else if (entry.name === targetName) {
+        return fullPath;
+      }
+    }
+  }
+  return null;
+}
+
 export async function processChat(tenantId: string, message: string, options: any) {
   const sessionId = options.sessionId || randomUUID();
   const billing = loadConfig('billing', BillingSchema);
   const safetyCfg = loadConfig('delight-safety', SafetySchema);
-  
+
   const sub = billing.activeSubscriptions.find((s: any) => s.tenantId === tenantId);
   const tier = sub?.status === 'active' ? sub.tier : 'scout';
 
@@ -34,25 +75,23 @@ export async function processChat(tenantId: string, message: string, options: an
   let displayName = '';
   let boundaries = null;
   let voiceId = 'default';
+  let personaData: any = null;
 
-  // ITEM 5: BLEND LOGIC
   if (options.blend) {
     displayName = "A Unique Synthesis";
     boundaries = { layer_1_response: "As a blended consciousness, I cannot advise on this." };
   } else {
-    const pPath = path.join(personaDir, `${options.personaId}.json`);
-    if (!fs.existsSync(pPath)) throw new AppError('Persona not found', ErrorCode.NOT_FOUND);
-    const persona = JSON.parse(fs.readFileSync(pPath, 'utf-8'));
-    displayName = persona.name;
-    boundaries = persona.boundaries;
-    voiceId = persona.avatar?.elevenlabs_voice_id || 'default';
+    const pPath = findPersonaFile(personaDir, options.personaId);
+    if (!pPath) throw new AppError('Persona not found', ErrorCode.NOT_FOUND);
+    personaData = JSON.parse(fs.readFileSync(pPath, 'utf-8'));
+    displayName = personaData.name;
+    boundaries = personaData.boundaries;
+    voiceId = personaData.avatar?.elevenlabs_voice_id || 'default';
   }
 
-  // ITEM 6: VERIDACT RECEIPT ON BOUNDARY EVENT
   const lowerMsg = message.toLowerCase();
   for (const cat of safetyCfg.hardBoundaries) {
     if ((KEYWORDS[cat] || []).find(w => lowerMsg.includes(w))) {
-      // Fire Veridact Audit Receipt
       await auditEmit({
         tenantId, action: 'ai.safety_violation', outcome: 'failure',
         actorId: 'user', actorType: 'user', resource: 'delight_engine',
@@ -62,16 +101,34 @@ export async function processChat(tenantId: string, message: string, options: an
     }
   }
 
-  // ITEM 3: FETCH MEMORY
-  const history = await withTenantQuery(
+  const historyDesc = await withTenantQuery(
     'SELECT role, content FROM conversations WHERE tenant_id = $1 AND session_id = $2 ORDER BY created_at DESC LIMIT 10',
     [tenantId, sessionId], tenantId
   );
+  const history = [...historyDesc].reverse();
 
-  // SIMULATE AI
-  const responseText = `[${displayName}]: I recall our past ${history.length} messages. Regarding "${message.substring(0, 15)}...", I have strategized.`;
+  const humanityLevel = options.humanityLevel ?? '25_percent';
+  const systemPrompt = buildSystemPrompt(personaData, displayName, humanityLevel);
 
-  // ITEM 4: STORE SESSION_ID
+  const llmResponse = await generateText({
+    provider: 'groq',
+    model: DELIGHT_MODEL,
+    messages: [
+      { role: 'system', content: systemPrompt },
+      ...history.map((h: any) => ({ role: h.role as 'user' | 'assistant', content: h.content })),
+      { role: 'user', content: message },
+    ],
+    temperature: 0.8,
+    maxTokens: 500,
+  });
+
+  const responseText = `[${displayName}]: ${llmResponse.content}`;
+
+  await withTenantQuery(
+    'INSERT INTO conversations (tenant_id, persona_id, session_id, role, content) VALUES ($1::uuid, $2, $3, $4, $5)',
+    [tenantId, options.personaId || 'blend', sessionId, 'user', message],
+    tenantId
+  );
   await withTenantQuery(
     'INSERT INTO conversations (tenant_id, persona_id, session_id, role, content) VALUES ($1::uuid, $2, $3, $4, $5)',
     [tenantId, options.personaId || 'blend', sessionId, 'assistant', responseText],

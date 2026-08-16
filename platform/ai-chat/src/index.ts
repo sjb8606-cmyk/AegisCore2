@@ -1,15 +1,17 @@
 import { z } from 'zod';
-import { loadConfig, AppError, ErrorCode } from '../../utils/src/index';
+import { loadConfig, AppError, ErrorCode } from '@platform/utils';
 export { AppError, ErrorCode };
-import { withTenantQuery, withTenantTransaction } from '../../tenancy/src/index';
-import { recordUsage } from '../../metering/src/index';
-import { validateLlmOutput } from '../../ai-safety/src/index';
+import { withTenantQuery, withTenantTransaction } from '@platform/tenancy';
+import { recordUsage } from '@platform/metering';
+import { validateLlmOutput } from '@platform/ai-safety';
+import { generateText } from '@platform/ai-gateway';
 import { randomUUID } from 'crypto';
 
 const ConfigSchema = z.object({
   enabled: z.boolean(),
   tiers: z.object({ piiScrubbing: z.boolean(), adversarialDetection: z.boolean() }),
-  models: z.object({ default: z.string() })
+  models: z.object({ default: z.string() }),
+  systemPrompt: z.string().optional(),
 });
 
 export async function startConversation(tenantId: string, userId: string) {
@@ -28,16 +30,32 @@ export async function sendMessage(tenantId: string, convoId: string, content: st
   const config = loadConfig('ai-chat', ConfigSchema);
   if (!config.enabled) throw new AppError('AI Chat disabled', ErrorCode.FORBIDDEN);
 
-  // 1. AI Safety Input Check (PII & Adversarial)
   const validation = await validateLlmOutput(content, z.string());
   if (!validation.valid) {
     throw new AppError('Unsafe input blocked by AI Safety Gate', ErrorCode.BAD_REQUEST);
   }
 
-  // 2. Simulate Model Output (In production, this queries Anthropic/OpenAI)
-  const simulatedReply = `[Oracle AI - ${config.models.default}]: I have analyzed your request in the secure tenant bubble. Your input was safe and has been processed.`;
+  const historyDesc = await withTenantQuery(
+    'SELECT role, content FROM ai_messages WHERE tenant_id = $1 AND conversation_id = $2 ORDER BY created_at DESC LIMIT 10',
+    [tenantId, convoId],
+    tenantId
+  );
+  const history = [...historyDesc].reverse();
 
-  // 3. Save Both Messages atomically
+  const llmResponse = await generateText({
+    provider: 'groq',
+    model: config.models.default,
+    messages: [
+      { role: 'system', content: config.systemPrompt ?? 'You are a secure, helpful enterprise assistant.' },
+      ...history.map((h: any) => ({ role: h.role as 'user' | 'assistant', content: h.content })),
+      { role: 'user', content },
+    ],
+    temperature: 0.7,
+    maxTokens: 1024,
+  });
+
+  const replyContent = llmResponse.content;
+
   await withTenantTransaction(async (client) => {
     await client.query(
       'INSERT INTO ai_messages (tenant_id, conversation_id, role, content) VALUES ($1::uuid, $2::uuid, $3, $4)',
@@ -45,11 +63,10 @@ export async function sendMessage(tenantId: string, convoId: string, content: st
     );
     await client.query(
       'INSERT INTO ai_messages (tenant_id, conversation_id, role, content) VALUES ($1::uuid, $2::uuid, $3, $4)',
-      [tenantId, convoId, 'assistant', simulatedReply]
+      [tenantId, convoId, 'assistant', replyContent]
     );
   }, tenantId);
 
-  // 4. Meter usage
   await recordUsage({
     tenantId,
     eventType: 'api_call',
@@ -57,5 +74,5 @@ export async function sendMessage(tenantId: string, convoId: string, content: st
     idempotencyKey: `ai:${convoId}:${Date.now()}`
   });
 
-  return { role: 'assistant', content: simulatedReply };
+  return { role: 'assistant', content: replyContent };
 }
