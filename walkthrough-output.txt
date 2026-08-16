@@ -1,0 +1,19 @@
+/workspaces/AegisCore2/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+scripts/nb-os-live-walkthrough.ts(92,61): error TS2339: Property 'reading_celsius' does not exist on type '{ reading: any; hasThreshold: boolean; isDeviation: boolean; threshold: any; holdReport: CascadeHoldReport | null; }'.
+scripts/nb-os-live-walkthrough.ts(92,97): error TS2551: Property 'is_deviation' does not exist on type '{ reading: any; hasThreshold: boolean; isDeviation: boolean; threshold: any; holdReport: CascadeHoldReport | null; }'. Did you mean 'isDeviation'?
+
+    at createTSError (/workspaces/AegisCore2/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/workspaces/AegisCore2/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/workspaces/AegisCore2/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/workspaces/AegisCore2/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/workspaces/AegisCore2/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1943:10
+    at Object.require.extensions.<computed> [as .ts] (/workspaces/AegisCore2/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1533:32)
+    at Module._load (node:internal/modules/cjs/loader:1335:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19) {
+  diagnosticCodes: [ 2339, 2551 ]
+}
