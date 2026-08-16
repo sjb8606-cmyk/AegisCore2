@@ -6,7 +6,7 @@ import { AppError, ErrorCode } from '@platform/utils';
 export { AppError, ErrorCode };
 
 export function parseUserId(userId: any): string {
-  const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+  const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
   if (typeof userId === 'string' && uuidRegex.test(userId)) return userId;
   throw new AppError(`Invalid or missing user id: ${JSON.stringify(userId)}`, ErrorCode.BAD_REQUEST);
 }
@@ -19,7 +19,6 @@ function loadConfig() {
   return { enabled: true, tiers: { customDomain: true, customCss: true }, limits: { customDomainCount: 1 } };
 }
 
-// Native HTML & CSS Sanitizer to prevent scripting injection attacks on whitelabel assets
 export function sanitizeCssText(css: string): string {
   return css.replace(/<[^>]*>/g, '').replace(/javascript:/gi, '').replace(/expression/gi, '');
 }
@@ -54,7 +53,6 @@ export async function getPublicBrandConfig(tenantId: string) {
   `, [tenantId], tenantId);
 
   if (!res[0]) {
-    // Return empty defaults if not yet provisioned
     return { app_name: "Default Platform", tagline: "B2B SaaS Hub", primary_color: "#1e1e1e" };
   }
   return res[0];
@@ -69,6 +67,19 @@ export async function addCustomDomain(tenantId: string, domain: string, userId: 
   const countRes = await withTenantQuery('SELECT COUNT(*) as count FROM custom_domains WHERE tenant_id = $1 AND status = \'active\'', [tenantId], tenantId);
   if (parseInt(countRes[0]?.count || '0', 10) >= cfg.limits.customDomainCount) {
     throw new AppError('Custom domain quota limits reached', ErrorCode.FORBIDDEN);
+  }
+
+  // Global Uniqueness Check — matches platform/custom-domains' registerDomain
+  // exactly. Without this, a tenant could register a domain another tenant
+  // already owns via this path, since only the per-tenant quota above was
+  // being checked before this fix.
+  const globalCheck = await withTenantQuery(
+    'SELECT id FROM custom_domains WHERE domain = $1;',
+    [domain],
+    tenantId,
+  );
+  if (globalCheck && globalCheck.length > 0) {
+    throw new AppError('This domain is already registered by another tenant.', ErrorCode.CONFLICT);
   }
 
   const domainId = crypto.randomUUID();
@@ -90,12 +101,12 @@ export async function verifyCustomDomain(tenantId: string, domainId: string) {
   const domainRecord = res[0];
   if (!domainRecord) throw new AppError('Domain record not found', ErrorCode.NOT_FOUND);
 
-  // Polling simulation: immediately verify and transition to active
   await withTenantQuery(`
     UPDATE custom_domains 
     SET status = 'active', updated_at = CURRENT_TIMESTAMP
     WHERE id = $1 AND tenant_id = $2;
   `, [domainId, tenantId], tenantId);
 
-  return { verified: true, status: 'active' };
+  const updated = await withTenantQuery('SELECT * FROM custom_domains WHERE id = $1 AND tenant_id = $2', [domainId, tenantId], tenantId);
+  return updated[0];
 }

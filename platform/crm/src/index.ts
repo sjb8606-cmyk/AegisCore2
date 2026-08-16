@@ -1,9 +1,9 @@
 import { z } from 'zod';
-import { loadConfig, AppError, ErrorCode } from '../../utils/src/index';
+import { loadConfig, AppError, ErrorCode } from '@platform/utils';
 export { AppError, ErrorCode };
-import { withTenantQuery } from '../../tenancy/src/index';
-import { recordUsage } from '../../metering/src/index';
-import { emit as auditEmit } from '../../audit/src/index';
+import { withTenantQuery } from '@platform/tenancy';
+import { recordUsage } from '@platform/metering';
+import { emit as auditEmit } from '@platform/audit';
 import { randomUUID } from 'crypto';
 
 const ConfigSchema = z.object({
@@ -27,9 +27,18 @@ export async function createContact(tenantId: string, data: any) {
   }
 
   // 2. Persist
+  //
+  // The real, live "contacts" table is V121's schema, not crm's own
+  // original V25 schema — V121 DROPs and rebuilds the table with a
+  // richer shape, including a required "type" column. Without this,
+  // every call here throws a NOT NULL constraint violation against the
+  // real database. data.type defaults to 'person' (the sensible default
+  // for a CRM "add a contact" flow); 'organization' is the only other
+  // value the real table's CHECK constraint allows.
+  const contactType = data.type === 'organization' ? 'organization' : 'person';
   const result = await withTenantQuery(
-    'INSERT INTO contacts (id, tenant_id, first_name, last_name, email) VALUES ($1, $2, $3, $4, $5) RETURNING *',
-    [randomUUID(), tenantId, data.firstName, data.lastName, data.email],
+    'INSERT INTO contacts (id, tenant_id, type, first_name, last_name, email) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *',
+    [randomUUID(), tenantId, contactType, data.firstName, data.lastName, data.email],
     tenantId
   );
 
