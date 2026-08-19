@@ -1,0 +1,89 @@
+{
+  "app_id": "golden-key",
+  "name": "Golden Key",
+  "version": "0.1.0",
+  "description": "Digital custody platform — encrypted vaults, sealed assets, hash-chained provenance, exportable receipts. Classical crypto only.",
+  "tenant_id": "00000000-0000-4000-8000-0000000000gk",
+  "status": "active",
+  "cores": [
+    "custody-vault",
+    "custody-receipt"
+  ],
+  "config": {
+    "custody-vault": {
+      "enabled": true,
+      "limits": {
+        "vaultsPerTenant": 50,
+        "assetsPerVault": 10000
+      }
+    },
+    "custody-receipt": {
+      "enabled": true
+    }
+  },
+  "api_keys_required": [],
+  "routes": [
+    {
+      "path": "/api/vaults",
+      "method": "POST",
+      "auth": true,
+      "description": "Create vault"
+    },
+    {
+      "path": "/api/vaults/:vaultId",
+      "method": "GET",
+      "auth": true,
+      "description": "Get vault metadata"
+    },
+    {
+      "path": "/api/vaults/:vaultId/assets",
+      "method": "POST",
+      "auth": true,
+      "description": "Deposit asset"
+    },
+    {
+      "path": "/api/vaults/:vaultId/assets",
+      "method": "GET",
+      "auth": true,
+      "description": "List assets (metadata only)"
+    },
+    {
+      "path": "/api/vaults/:vaultId/seal",
+      "method": "POST",
+      "auth": true,
+      "description": "Seal vault"
+    },
+    {
+      "path": "/api/vaults/:vaultId/receipt",
+      "method": "POST",
+      "auth": true,
+      "description": "Issue vault custody receipt"
+    },
+    {
+      "path": "/api/assets/:assetId",
+      "method": "GET",
+      "auth": true,
+      "description": "Get asset metadata / authorized view"
+    },
+    {
+      "path": "/api/assets/:assetId/seal",
+      "method": "POST",
+      "auth": true,
+      "description": "Seal asset"
+    },
+    {
+      "path": "/api/assets/:assetId/receipt",
+      "method": "POST",
+      "auth": true,
+      "description": "Issue asset custody receipt"
+    },
+    {
+      "path": "/api/receipts/verify",
+      "method": "POST",
+      "auth": true,
+      "description": "Verify a custody receipt"
+    }
+  ],
+  "created_at": "2026-08-16T00:00:00Z",
+  "owner": "Ruthless Technologies"
+}
