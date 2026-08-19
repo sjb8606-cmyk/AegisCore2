@@ -13,8 +13,10 @@ import type { Express, RequestHandler } from 'express';
 import { getLogger } from '@platform/observability';
 import { loadAppConfig, listDeclaredApps, AppError, ErrorCode } from './config';
 import type { AppConfig } from './config';
+import { resolveAppIdForTenant, clearAppIdCache } from './tenant-router';
 
 export { loadAppConfig, listDeclaredApps, AppConfig, AppError, ErrorCode };
+export { resolveAppIdForTenant, clearAppIdCache };
 
 const logger = getLogger('app-loader');
 
