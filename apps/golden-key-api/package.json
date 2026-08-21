@@ -4,19 +4,16 @@
   "private": true,
   "main": "src/index.ts",
   "scripts": {
-    "dev": "tsx src/index.ts",
-    "build": "tsc",
-    "start": "node dist/index.js"
+    "dev": "GOLDEN_KEY_DEV_AUTH=1 tsx src/index.ts",
+    "start": "node dist/index.js",
+    "build": "tsc"
   },
   "dependencies": {
-    "@platform/app-loader": "*",
-    "@platform/auth": "*",
+    "@platform/custody-ops": "*",
     "@platform/custody-receipt": "*",
     "@platform/custody-vault": "*",
     "@platform/observability": "*",
-    "@platform/utils": "*",
-    "express": "^4.19.0",
-    "zod": "^3.22.4"
+    "express": "^4.19.0"
   },
   "devDependencies": {
     "@types/express": "^4.17.21",
