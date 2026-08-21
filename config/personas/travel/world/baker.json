@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["anthropology", "wildlife_migration", "indigenous_studies"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "anthropology",
+      "wildlife_migration",
+      "indigenous_studies"
+    ],
     "learning_objectives": [
       "Understand the unique cultural distinction of the Caribou Inuit, who adapted to inland survival rather than coastal marine hunting",
       "Analyze the ecological dependency of an entire human population on the migration of specific caribou herds",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "baker_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/baker.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

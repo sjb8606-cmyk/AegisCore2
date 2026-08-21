@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Geology & Ancient History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Karst Topography", "Neolithic Archaeology", "Botany Studies"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Karst Topography",
+      "Neolithic Archaeology",
+      "Botany Studies"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Burren's unique limestone pavement (karst), created by Carboniferous marine deposition and subsequent glaciation.",
       "Analyze the engineering and construction of 'Poulnabrone Dolmen' (portal tomb), explaining how massive limestone slabs are balanced without mortar.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "the_burren_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/the_burren.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

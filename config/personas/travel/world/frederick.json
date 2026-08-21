@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["civil_war_logistics", "urban_preservation", "mid_atlantic_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "civil_war_logistics",
+      "urban_preservation",
+      "mid_atlantic_history"
+    ],
     "learning_objectives": [
       "Understand the strategic geographic importance of Frederick as a transportation hub during the Civil War",
       "Analyze the 1864 ransom of Frederick by Confederate General Jubal Early and how the city saved its infrastructure",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "frederick_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/frederick.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

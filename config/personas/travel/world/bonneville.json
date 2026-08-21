@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Sports",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["salt_flats_geology", "aerodynamics", "recreation_history"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "salt_flats_geology",
+      "aerodynamics",
+      "recreation_history"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Bonneville Salt Flats through the evaporation of ancient Lake Bonneville",
       "Analyze why the flat, hard salt crust creates the ideal natural speedway for testing land-speed records",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bonneville_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bonneville.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

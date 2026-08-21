@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Benedictine_Monasticism", "UNESCO_Religious_Sites", "Gothic_and_Classicist_Design"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Benedictine_Monasticism",
+      "UNESCO_Religious_Sites",
+      "Gothic_and_Classicist_Design"
+    ],
     "learning_objectives": [
       "Understand the historical role of the Pannonhalma Archabbey as the cradle of Hungarian literacy, Christianity, and education founded in 996 CE.",
       "Analyze the architectural synthesis of the abbey, focusing on the Transition Gothic style of the church and the classicist design of the 19th-century library.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "pannonhalma_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/pannonhalma.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

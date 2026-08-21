@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Agronomy & Local Culture",
-    "grade_levels": ["elementary", "middle_school", "adult"],
-    "curriculum_tags": ["Oasis Agronomy", "Traditional Terraces", "Minority Culture"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Oasis Agronomy",
+      "Traditional Terraces",
+      "Minority Culture"
+    ],
     "learning_objectives": [
       "Understand the agricultural and hydraulic engineering of the 'Dragon's Backbone' (Longji) terraces, built by minority farmers since the Yuan Dynasty.",
       "Analyze the ethnography of the Red Yao women (Huangluo village), evaluating why they cut their hair only once in their lives (at age eighteen).",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "longji_terraces_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/longji_terraces.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

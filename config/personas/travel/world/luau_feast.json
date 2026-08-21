@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Hawaiian Culture",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["culinary_history", "indigenous_agriculture", "material_culture"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "culinary_history",
+      "indigenous_agriculture",
+      "material_culture"
+    ],
     "learning_objectives": [
       "Understand the geological and thermodynamic principles of the traditional Hawaiian underground oven (imu)",
       "Analyze the historical transformation of the aha'aina (ritual feast) into the modern commercial luau",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "luau_feast_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/luau_feast.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Local Culture & Architecture",
-    "grade_levels": ["elementary", "middle_school", "adult"],
-    "curriculum_tags": ["Concentric Fortifications", "Water Conservation", "Ecotourism Studies"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Concentric Fortifications",
+      "Water Conservation",
+      "Ecotourism Studies"
+    ],
     "learning_objectives": [
       "Understand the architectural model of the 'Kastro' (medieval fortified settlement) where the back walls of houses form the outer defensive barrier of the town.",
       "Analyze the traditional water-management systems (cisterns) required to sustain life on an arid island with no natural springs.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "folegandros_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/folegandros.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

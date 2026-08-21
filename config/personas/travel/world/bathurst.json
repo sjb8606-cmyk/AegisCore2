@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Eco-Tourism",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["eco_tourism", "arctic_ecology", "remote_logistics"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "eco_tourism",
+      "arctic_ecology",
+      "remote_logistics"
+    ],
     "learning_objectives": [
       "Understand the immense logistical and economic challenges of operating eco-tourism in the High Arctic",
       "Analyze the biodiversity of the Bathurst Inlet ecosystem, including caribou, muskoxen, and grizzly bears",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bathurst_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bathurst.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

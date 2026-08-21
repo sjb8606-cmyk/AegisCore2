@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Contemporary Art & Urban History",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Industrial Archaeology", "Bauhaus Design", "Contemporary Chinese Art"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Industrial Archaeology",
+      "Bauhaus Design",
+      "Contemporary Chinese Art"
+    ],
     "learning_objectives": [
       "Understand the architectural design of the 'Bauhaus' industrial style, analyzing how its curved concrete roofs and North-facing skylights maximize natural light for workshops.",
       "Analyze the model of private, creative-led urban regeneration used to transform the abandoned military factories of 798 into a modern art district.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "798_art_district_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/798_art_district.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

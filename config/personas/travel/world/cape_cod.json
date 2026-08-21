@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["coastal_morphology", "glaciology", "conservation_ecology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "coastal_morphology",
+      "glaciology",
+      "conservation_ecology"
+    ],
     "learning_objectives": [
       "Understand how a terminal moraine formed Cape Cod during the retreat of the Laurentide ice sheet",
       "Analyze the process of longshore drift and how wave energy constantly reshapes barrier beach systems",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cape_cod_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cape_cod.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

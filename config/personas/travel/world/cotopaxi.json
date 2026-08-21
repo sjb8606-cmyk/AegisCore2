@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["volcanology", "alpine_hydrology", "paramo_ecology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "volcanology",
+      "alpine_hydrology",
+      "paramo_ecology"
+    ],
     "learning_objectives": [
       "Understand the geological structure and historical eruptions of Cotopaxi as one of the world's highest active stratovolcanoes.",
       "Analyze the ecological adaptations of the 'Páramo' ecosystem (highland grasslands) in conserving water and supporting endemic Andean wildlife.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cotopaxi_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cotopaxi.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

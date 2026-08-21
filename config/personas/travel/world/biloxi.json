@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["coastal_history", "seafood_industry", "civil_war_memory"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "coastal_history",
+      "seafood_industry",
+      "civil_war_memory"
+    ],
     "learning_objectives": [
       "Understand the historical development and cultural diversity of the Biloxi seafood canning industry",
       "Analyze the post-war life of Jefferson Davis and the creation of Beauvoir as a confederate memorial",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "biloxi_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/biloxi.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

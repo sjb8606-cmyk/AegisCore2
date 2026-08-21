@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["material_culture", "gulf_history", "heritage_conservation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "material_culture",
+      "gulf_history",
+      "heritage_conservation"
+    ],
     "learning_objectives": [
       "Understand the concept of 'material culture' and how everyday domestic objects reflect the economic reality of pre-oil Qatari families.",
       "Identify the distinct functions of traditional objects like the Dallah (coffee pot), the Mandoos (wooden chest), and pearl scales.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "doha_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/doha.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

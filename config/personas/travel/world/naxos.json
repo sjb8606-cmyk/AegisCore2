@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Mythology",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Classical Greek Religion", "Venetian Crusades", "Island Agronomy"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Classical Greek Religion",
+      "Venetian Crusades",
+      "Island Agronomy"
+    ],
     "learning_objectives": [
       "Understand the historical role of Naxos as the dominant power of the early Cyclades and the mythic setting for the cult of Dionysus.",
       "Analyze the military and administrative architecture of the Kastro (Venetian Castle), built by Marco Sanudo in 1207.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "naxos_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/naxos.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

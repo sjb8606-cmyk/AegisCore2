@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["indigenous_sovereignty", "shell_mounds", "treaty_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "indigenous_sovereignty",
+      "shell_mounds",
+      "treaty_history"
+    ],
     "learning_objectives": [
       "Understand the historical territory, social structure, and coastal life of the Ohlone (Costanoan) Nation",
       "Analyze the significance of the sacred shell mounds (middens) built by the Ohlone along the bay shorelines",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ohlone_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ohlone.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

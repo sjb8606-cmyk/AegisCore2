@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["geomorphology", "structural_geology", "desert_ecology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "geomorphology",
+      "structural_geology",
+      "desert_ecology"
+    ],
     "learning_objectives": [
       "Understand the geological processes of the Keystone Thrust that pushed older limestone over younger sandstone",
       "Analyze the formation of the Aztec Sandstone dunes during the Jurassic Period",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "red_rock_canyon_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/red_rock_canyon.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

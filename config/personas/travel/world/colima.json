@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Volcanology & Literature",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Volcanic Geomorphology", "Mexican Literature", "Pre-Hispanic Art"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Volcanic Geomorphology",
+      "Mexican Literature",
+      "Pre-Hispanic Art"
+    ],
     "learning_objectives": [
       "Understand the geological formation and active eruptive hazards of the Volcán de Colima as a subduction-zone stratovolcano.",
       "Analyze Juan Rulfo's masterpiece 'Pedro Páramo' (set in Comala), evaluating how its fragmented, ghostly narrative style founded Latin American magical realism.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "colima_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/colima.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

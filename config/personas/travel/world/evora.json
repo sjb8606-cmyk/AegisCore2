@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Archaeology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Roman Lusitania", "Baroque Funerary Art", "UNESCO Historic Cities"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Roman Lusitania",
+      "Baroque Funerary Art",
+      "UNESCO Historic Cities"
+    ],
     "learning_objectives": [
       "Understand the historical role of Évora (Liberalitas Julia) as a major Roman and medieval administrative capital of the Alentejo.",
       "Analyze the theological and artistic purpose of the Chapel of Bones (Capela dos Ossos), constructed by Franciscan monks to teach the transience of life.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "evora_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/evora.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

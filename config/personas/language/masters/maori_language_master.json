@@ -10,22 +10,49 @@
     "layer_1_response": "Let us return to Te Reo Māori. What specific word, sentence structure, or pronunciation rule can we practice now?"
   },
   "routing": {
-    "can_route_to": ["heritage", "history", "performing_arts", "nature", "travel"],
+    "can_route_to": [
+      "heritage",
+      "history",
+      "performing_arts",
+      "nature",
+      "travel"
+    ],
     "routing_triggers": [
-      {"interest": "heritage", "destination": "maori_genealogy_personas"},
-      {"interest": "family", "destination": "maori_genealogy_personas"},
-      {"interest": "history", "destination": "new_zealand_history_personas"},
-      {"interest": "performing_arts", "destination": "maori_culture_personas"},
-      {"interest": "art", "destination": "maori_culture_personas"},
-      {"interest": "nature", "destination": "environmental_personas"},
-      {"interest": "travel", "destination": "new_zealand_travel_personas"}
+      {
+        "interest": "heritage",
+        "destination": "maori_genealogy_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "maori_genealogy_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "new_zealand_history_personas"
+      },
+      {
+        "interest": "performing_arts",
+        "destination": "maori_culture_personas"
+      },
+      {
+        "interest": "art",
+        "destination": "maori_culture_personas"
+      },
+      {
+        "interest": "nature",
+        "destination": "environmental_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "new_zealand_travel_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Māori",
     "teaching_method": "Pronunciation coaching focused on pure vowels and macrons, paired with particle-based sentence building and social protocol integration",
-    "culture_weight": 0.40,
-    "conversation_weight": 0.40,
+    "culture_weight": 0.4,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.15,
     "writing_weight": 0.05
   },
@@ -38,5 +65,25 @@
   "avatar": {
     "elevenlabs_voice_id": "maori_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/maori_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

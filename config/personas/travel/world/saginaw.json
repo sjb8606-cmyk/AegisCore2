@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Industry",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["industrial_history", "forestry_impacts", "labor_studies"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "industrial_history",
+      "forestry_impacts",
+      "labor_studies"
+    ],
     "learning_objectives": [
       "Understand the economic dominance of the Saginaw Valley during the late 19th-century timber boom",
       "Analyze the ecological impact of clear-cutting the native white pine forests of Michigan",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "saginaw_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/saginaw.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

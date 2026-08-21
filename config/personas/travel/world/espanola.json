@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["avian_aerodynamics", "marine_reptiles", "island_aging"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "avian_aerodynamics",
+      "marine_reptiles",
+      "island_aging"
+    ],
     "learning_objectives": [
       "Explain the aerodynamic principles that allow the Waved Albatross (Phoebastria irrorata) to utilize wind currents for long-distance ocean gliding.",
       "Understand the physiological adaptations of the Marine Iguana (Amblyrhynchus cristatus) that allow it to feed in cold salt water and excrete salt.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "espanola_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/espanola.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

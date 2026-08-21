@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Technology & Science",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["computer_history", "innovation_economics", "semiconductors"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "computer_history",
+      "innovation_economics",
+      "semiconductors"
+    ],
     "learning_objectives": [
       "Understand the historical transition of the Santa Clara Valley from an agricultural 'Valley of Heart's Delight' to Silicon Valley",
       "Analyze the physics and engineering of silicon semiconductors that launched the modern computing age",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "silicon_valley_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/silicon_valley.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

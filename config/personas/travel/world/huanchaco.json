@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Local Culture & Coastal Geography",
-    "grade_levels": ["elementary", "middle_school", "adult"],
-    "curriculum_tags": ["Traditional Aquaculture", "Coastal Ecology", "History of Surf"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Traditional Aquaculture",
+      "Coastal Ecology",
+      "History of Surf"
+    ],
     "learning_objectives": [
       "Understand the historical continuity of the 'Caballito de Totora' as one of the oldest active maritime fishing vessels in human history.",
       "Analyze the structural design and material science of the totora reed boat, explaining how its buoyancy and curved bow allow it to cut through high surf.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "huanchaco_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/huanchaco.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

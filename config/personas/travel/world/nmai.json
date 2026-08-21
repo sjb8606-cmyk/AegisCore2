@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["indigenous_governance", "museum_decolonization", "architecture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "indigenous_governance",
+      "museum_decolonization",
+      "architecture"
+    ],
     "learning_objectives": [
       "Understand the unique collaborative design process and organic architecture of the NMAI building by Douglas Cardinal",
       "Analyze the shift from traditional 'salvage anthropology' museums to self-represented Indigenous curation models",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "nmai_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/nmai.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

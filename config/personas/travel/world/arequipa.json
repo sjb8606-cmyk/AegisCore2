@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Architectural History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Volcanic Urbanism", "Monastic Citadels", "Colonial History"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Volcanic Urbanism",
+      "Monastic Citadels",
+      "Colonial History"
+    ],
     "learning_objectives": [
       "Understand the historical role of Arequipa as a planned Spanish city built of local 'Sillar' (volcanic tuff) and its strategic position.",
       "Analyze the architectural and social design of the Santa Catalina Monastery, a massive, 20,000-square-meter cloistered convent that operated as a self-contained city.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "arequipa_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/arequipa.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

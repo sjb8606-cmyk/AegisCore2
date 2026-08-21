@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Business Operations",
-    "grade_levels": ["university", "adult", "professional"],
-    "curriculum_tags": ["Independent_Consulting_Economics", "Service_Business_Operations", "Small_Business_Finance"],
+    "grade_levels": [
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Independent_Consulting_Economics",
+      "Service_Business_Operations",
+      "Small_Business_Finance"
+    ],
     "learning_objectives": [
       "Understand utilization rate and effective hourly rate, and explain why billable time alone doesn't determine profitability.",
       "Analyze how pipeline coverage ratio functions as an early-warning system for revenue gaps in a solo business.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "biz_op_consultant_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/biz_op_consultant.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

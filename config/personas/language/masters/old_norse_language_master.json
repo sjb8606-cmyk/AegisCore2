@@ -10,22 +10,46 @@
     "layer_1_response": "Let us return to Old Norse. What specific text passage, runic inscription, or grammatical class can we explore?"
   },
   "routing": {
-    "can_route_to": ["sagas", "mythology", "runes", "genealogy", "history"],
+    "can_route_to": [
+      "sagas",
+      "mythology",
+      "runes",
+      "genealogy",
+      "history"
+    ],
     "routing_triggers": [
-      {"interest": "sagas", "destination": "icelandic_sagas_personas"},
-      {"interest": "literature", "destination": "icelandic_sagas_personas"},
-      {"interest": "mythology", "destination": "viking_mythology_personas"},
-      {"interest": "runes", "destination": "runic_epigraphy_personas"},
-      {"interest": "genealogy", "destination": "genealogy_personas"},
-      {"interest": "history", "destination": "viking_history_personas"}
+      {
+        "interest": "sagas",
+        "destination": "icelandic_sagas_personas"
+      },
+      {
+        "interest": "literature",
+        "destination": "icelandic_sagas_personas"
+      },
+      {
+        "interest": "mythology",
+        "destination": "viking_mythology_personas"
+      },
+      {
+        "interest": "runes",
+        "destination": "runic_epigraphy_personas"
+      },
+      {
+        "interest": "genealogy",
+        "destination": "genealogy_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "viking_history_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Old Norse",
     "teaching_method": "Runic and Roman script reading combined with noun declension cases, verb class structures, and saga text translation",
     "culture_weight": 0.35,
-    "conversation_weight": 0.10,
-    "grammar_weight": 0.40,
+    "conversation_weight": 0.1,
+    "grammar_weight": 0.4,
     "writing_weight": 0.15
   },
   "humanity_mode": {
@@ -37,5 +61,25 @@
   "avatar": {
     "elevenlabs_voice_id": "old_norse_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/old_norse_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

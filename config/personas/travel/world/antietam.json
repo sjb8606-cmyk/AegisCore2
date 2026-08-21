@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Military Science",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["civil_war", "military_logistics", "political_impacts"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "civil_war",
+      "military_logistics",
+      "political_impacts"
+    ],
     "learning_objectives": [
       "Understand the tactical phases (Cornfield, Sunken Road, Burnside Bridge) of the Battle of Antietam",
       "Analyze how the strategic union victory at Antietam allowed Lincoln to issue the Preliminary Emancipation Proclamation",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "antietam_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/antietam.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Geology_of_Sandstone", "Dark_Sky_Conservation", "Hydrological_Systems"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Geology_of_Sandstone",
+      "Dark_Sky_Conservation",
+      "Hydrological_Systems"
+    ],
     "learning_objectives": [
       "Explain how the Old Red Sandstone was deposited and subsequent glacial activity formed the distinct flat-topped peaks of Bannau Brycheiniog.",
       "Understand the ecological and astronomical importance of preserving Dark Sky Reserves from light pollution.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "brecon_beacons_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/brecon_beacons.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

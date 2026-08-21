@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["antebellum_history", "rebellion", "regional_geography"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "antebellum_history",
+      "rebellion",
+      "regional_geography"
+    ],
     "learning_objectives": [
       "Understand the history of the West Florida Republic and the 1810 rebellion against Spanish rule in St. Francisville",
       "Analyze the socioeconomic wealth of the cotton plantations in the Felicianas during the antebellum era",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "feliciana_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/feliciana.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

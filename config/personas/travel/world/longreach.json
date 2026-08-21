@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Local Culture",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Pioneer History", "History of Aviation", "Outback Sociology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Pioneer History",
+      "History of Aviation",
+      "Outback Sociology"
+    ],
     "learning_objectives": [
       "Understand the historical role of the Stockman (drover) in opening and managing the vast pastoral interior of Australia.",
       "Analyze the founding and strategic role of Qantas (Queensland and Northern Territory Aerial Services) in 1920 in conquering the tyranny of distance.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "longreach_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/longreach.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

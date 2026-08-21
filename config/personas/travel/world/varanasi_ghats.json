@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Religious Studies",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Hindu Theology", "Sacred Geography", "Benares History"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Hindu Theology",
+      "Sacred Geography",
+      "Benares History"
+    ],
     "learning_objectives": [
       "Understand the theological concept of 'Moksha' (liberation from samsara) and why Varanasi is the premier sacred destination for dying and cremation in Hinduism.",
       "Analyze the role of the 'Ghats' (stone steps) as transitional spaces between the secular city and the sacred river.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "varanasi_ghats_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/varanasi_ghats.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

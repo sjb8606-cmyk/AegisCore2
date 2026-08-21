@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Business Operations",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Childcare_Business_Economics", "Regulated_Industries", "Small_Business_Finance"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Childcare_Business_Economics",
+      "Regulated_Industries",
+      "Small_Business_Finance"
+    ],
     "learning_objectives": [
       "Understand how mandated child-to-staff ratios create a labor cost floor that doesn't scale down with lower enrollment.",
       "Analyze how occupancy rate against licensed capacity determines whether a childcare business breaks even.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "biz_op_daycare_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/biz_op_daycare.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

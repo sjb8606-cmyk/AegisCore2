@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Forest_Ecology", "Horology_History", "Sustainable_Forestry"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Forest_Ecology",
+      "Horology_History",
+      "Sustainable_Forestry"
+    ],
     "learning_objectives": [
       "Explain the ecological structure of a temperate coniferous forest and the environmental factors that define the Black Forest.",
       "Understand the historical development of the cuckoo clock and the wooden-movement horology of the Black Forest in the 18th century.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "black_forest_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/black_forest.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

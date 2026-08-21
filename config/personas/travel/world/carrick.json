@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Salmon_Fisheries_History", "Seabird_Ecology", "Geological_Formations"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Salmon_Fisheries_History",
+      "Seabird_Ecology",
+      "Geological_Formations"
+    ],
     "learning_objectives": [
       "Explain how the volcanic geology of Carrick-a-Rede and Rathlin Island formed the dramatic cliffs and sea stacs that support massive bird colonies.",
       "Understand the historical methods and social structure of the traditional Irish salmon fisheries on the North Antrim coast.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "carrick_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/carrick.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

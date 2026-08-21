@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Urban Geography & History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["urban_renewal", "industrial_heritage", "maritime_engineering"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "urban_renewal",
+      "industrial_heritage",
+      "maritime_engineering"
+    ],
     "learning_objectives": [
       "Understand the historical role of the Washington Navy Yard as a premier naval ordnance and shipbuilding center",
       "Analyze the process of adaptive reuse in converting industrial military shipyards into modern commercial and residential zones",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "navy_yard_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/navy_yard.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

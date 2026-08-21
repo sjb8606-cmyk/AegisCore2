@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Literature",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Tudor_England", "Shakespearean_Drama", "Elizabethan_Society"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Tudor_England",
+      "Shakespearean_Drama",
+      "Elizabethan_Society"
+    ],
     "learning_objectives": [
       "Explain how a provincial upbringing and classical education in Tudor Stratford influenced William Shakespeare’s vocabulary and imagery.",
       "Understand the social and economic standing of a Tudor glovemaker and how Shakespeare leveraged his Stratford wealth to secure his London theatrical career.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "stratford_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/stratford.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

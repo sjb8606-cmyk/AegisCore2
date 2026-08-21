@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Business Operations",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Fitness_Business_Economics", "Retention_Economics", "Small_Business_Finance"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Fitness_Business_Economics",
+      "Retention_Economics",
+      "Small_Business_Finance"
+    ],
     "learning_objectives": [
       "Understand monthly churn rate and explain why retention matters more than acquisition for membership-based businesses.",
       "Analyze how member lifetime value is calculated and how it should inform acquisition spending.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "biz_op_gym_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/biz_op_gym.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

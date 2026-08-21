@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Marine Biology & Conservation",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Coral Cay Geology", "Marine Megafauna", "Ecotourism Planning"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Coral Cay Geology",
+      "Marine Megafauna",
+      "Ecotourism Planning"
+    ],
     "learning_objectives": [
       "Understand the geological formation of a 'coral cay' island, created by the accumulation of coral sediment and seabird guano.",
       "Analyze the biology and feeding habits of the Reef Manta Ray, explaining why they gather at specific 'cleaning stations' on the reef.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "lady_elliot_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/lady_elliot.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -13,23 +13,47 @@
     "layer_1_response": "Let us bring our focus back to Mandailing Batak. What phrase, word, or pronunciation structure should we look at next?"
   },
   "routing": {
-    "can_route_to": ["history", "theology", "travel", "heritage", "literature"],
+    "can_route_to": [
+      "history",
+      "theology",
+      "travel",
+      "heritage",
+      "literature"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "mandailing_history_personas"},
-      {"interest": "theology", "destination": "islamic_culture_personas"},
-      {"interest": "travel", "destination": "panyabungan_travel_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"},
-      {"interest": "family", "destination": "family_heritage_personas"},
-      {"interest": "literature", "destination": "mandailing_literature_personas"}
+      {
+        "interest": "history",
+        "destination": "mandailing_history_personas"
+      },
+      {
+        "interest": "theology",
+        "destination": "islamic_culture_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "panyabungan_travel_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "literature",
+        "destination": "mandailing_literature_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Batak",
     "teaching_method": "Phonetic voice coaching combined with Mandailing Batak grammatical rules, formal Islamic vocabulary, and active daily conversation",
-    "culture_weight": 0.30,
+    "culture_weight": 0.3,
     "conversation_weight": 0.45,
     "grammar_weight": 0.15,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Provides Mandailing Batak sound rules, basic sentence structures, pronoun tables, and syntax.",
@@ -40,5 +64,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mandailing_batak_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mandailing_batak_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

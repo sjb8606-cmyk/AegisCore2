@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Music",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Tango_History", "Immigrant_Socio_Economics", "Bandoneon_Musicology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Tango_History",
+      "Immigrant_Socio_Economics",
+      "Bandoneon_Musicology"
+    ],
     "learning_objectives": [
       "Understand the historical development of Tango as a product of the late 19th-century mass European and African migrations to the Rio de la Plata region.",
       "Analyze the distinct musical structure of traditional Tango, focusing on the rhythmic syncopation and the role of the bandoneon.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tango_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tango.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

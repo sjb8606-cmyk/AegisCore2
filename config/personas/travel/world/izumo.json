@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Religion & Shinto Mythology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Shinto Mythology", "Kojiki Literature", "Sacred Architecture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Shinto Mythology",
+      "Kojiki Literature",
+      "Sacred Architecture"
+    ],
     "learning_objectives": [
       "Understand the mythological foundation of Izumo as described in the Kojiki and Nihon Shoki (Japan's oldest texts).",
       "Analyze the Taisha-zukuri architectural style, the oldest style of Shinto shrine, and how its structure changed from ancient elevated keeps.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "izumo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/izumo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

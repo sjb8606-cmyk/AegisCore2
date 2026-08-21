@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Nature & Alpine Geography",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Coastal Geomorphology", "Oceanography", "Early Christian Hermitages"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Coastal Geomorphology",
+      "Oceanography",
+      "Early Christian Hermitages"
+    ],
     "learning_objectives": [
       "Understand the geological formation of Slieve League (Carboniferous quartzite and sandstone) and its resistance to Atlantic wave erosion.",
       "Analyze the role of early Christian hermits (Saint Assicus) who sought extreme spiritual isolation on the high cliffs of Donegal.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "slieve_league_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/slieve_league.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

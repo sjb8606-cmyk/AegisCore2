@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Arts & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["american_art", "cultural_mythology", "indigenous_displacement"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "american_art",
+      "cultural_mythology",
+      "indigenous_displacement"
+    ],
     "learning_objectives": [
       "Understand the artistic techniques and cultural impact of Norman Rockwell's illustrations on mid-20th century American identity",
       "Analyze the tragic history of the Stockbridge Mohicans and their displacement during the colonial period",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "stockbridge_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/stockbridge.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

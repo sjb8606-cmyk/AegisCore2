@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["calypso_history", "political_satire", "caribbean_literature"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "calypso_history",
+      "political_satire",
+      "caribbean_literature"
+    ],
     "learning_objectives": [
       "Explain the historical development of Calypso from West African griot praise-and-satire songs and French creole stick-fighting chants.",
       "Analyze the literary device of 'double-entendre' (double meaning) and how calypsonians used it to critique colonial authorities and social inequality.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "calypso_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/calypso.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

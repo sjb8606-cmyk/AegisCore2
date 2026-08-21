@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Ecology",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["naval_history", "coastal_processes", "barrier_dunes"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "naval_history",
+      "coastal_processes",
+      "barrier_dunes"
+    ],
     "learning_objectives": [
       "Understand the strategic significance of the Battle of Mobile Bay (1864) and Fort Morgan in the Civil War",
       "Analyze the geological and engineering challenges of maintaining sandy beaches against Gulf hurricanes",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "gulf_shores_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/gulf_shores.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

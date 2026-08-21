@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Culinary & Culture",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["urban_history", "food_systems", "immigration_studies"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "urban_history",
+      "food_systems",
+      "immigration_studies"
+    ],
     "learning_objectives": [
       "Understand the historical evolution of municipal food markets and their integration with railway infrastructure",
       "Analyze the role of public food markets in fostering multicultural integration and small business incubation",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "reading_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/reading.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

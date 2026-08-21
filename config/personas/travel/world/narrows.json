@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Wildlife & Nature",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["geology", "ornithology", "indigenous_history"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "geology",
+      "ornithology",
+      "indigenous_history"
+    ],
     "learning_objectives": [
       "Understand the geological formation of limestone narrows in glacial lakes",
       "Analyze the acoustic phenomena that gave the province of Manitoba its name",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "narrows_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/narrows.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

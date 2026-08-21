@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Horticultural_Science", "Plant_Breeding", "Agricultural_Economics"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Horticultural_Science",
+      "Plant_Breeding",
+      "Agricultural_Economics"
+    ],
     "learning_objectives": [
       "Understand the biology of bulb-flowering plants, specifically the requirement of cold-temperature vernalization to trigger spring blooming.",
       "Analyze the historical role of the Keukenhof as both a massive display garden and a global export catalog for Dutch floriculture.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "keukenhof_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/keukenhof.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

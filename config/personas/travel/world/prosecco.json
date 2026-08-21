@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Viticulture & Landscape Ecology",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Heroic Viticulture", "Martinotti Method", "UNESCO Landscapes"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Heroic Viticulture",
+      "Martinotti Method",
+      "UNESCO Landscapes"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the steep, hogback clay-limestone ridges (ciglioni) of the Prosecco hills.",
       "Analyze the Martinotti-Charmat method (secondary fermentation in massive steel pressure tanks/autoclaves) used to preserve the delicate, primary fruit aromas of the Glera grape.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "prosecco_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/prosecco.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

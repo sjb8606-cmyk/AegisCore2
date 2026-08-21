@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Culture & Urban Design",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["urban_planning", "progressive_politics", "localism"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "urban_planning",
+      "progressive_politics",
+      "localism"
+    ],
     "learning_objectives": [
       "Understand the urban design principles behind the pedestrianization of Church Street Marketplace",
       "Analyze the rise of independent progressive politics in Burlington during the late 20th century",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "burlington_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/burlington.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

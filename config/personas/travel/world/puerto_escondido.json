@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Local Culture & Adventure Sports",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Oceanography", "Sports Geography", "Coastal Ecosystems"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Oceanography",
+      "Sports Geography",
+      "Coastal Ecosystems"
+    ],
     "learning_objectives": [
       "Understand the oceanography of Puerto Escondido, specifically how the deep offshore trench (the Middle America Trench) amplifies Pacific swells to create the giant waves of Zicatela.",
       "Analyze the transition of Puerto Escondido from an isolated coffee-exporting port (Puerto Escondido) to a global capital of extreme surfing.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "puerto_escondido_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/puerto_escondido.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

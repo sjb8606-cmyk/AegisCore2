@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["glaciology_and_erosion", "paramo_ecology", "mountain_geomorphology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "glaciology_and_erosion",
+      "paramo_ecology",
+      "mountain_geomorphology"
+    ],
     "learning_objectives": [
       "Explain the geological and glacial processes that carved the moraines, cirques, and glacial lakes of the Chirripó massif during the Pleistocene epoch.",
       "Understand the unique biological adaptations of the 'Páramo' ecosystem, focusing on dwarf bamboo and fire-adapted shrubs at high altitude.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "chirripo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/chirripo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Ecology & Local History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Alpine Ecology", "Tea Fermentation", "Mountain Economics"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Alpine Ecology",
+      "Tea Fermentation",
+      "Mountain Economics"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Western Ghats (the great escarpment of India) and its role as a UNESCO biodiversity hotspot.",
       "Analyze the process of tea cultivation and fermentation, explaining how the cool, misty climate of Munnar (1,600m) concentrates aromatic oils.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "munnar_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/munnar.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

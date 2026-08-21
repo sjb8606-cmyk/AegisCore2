@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Governance",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["political_science", "indigenous_law", "civic_planning"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "political_science",
+      "indigenous_law",
+      "civic_planning"
+    ],
     "learning_objectives": [
       "Understand the unique political structure of American Samoa's Fono, where the Senate is composed entirely of traditional matai (chiefs)",
       "Analyze the Deeds of Cession (1900 and 1904) that secured the territory's land and cultural rights under the US flag",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "fono_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/fono.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

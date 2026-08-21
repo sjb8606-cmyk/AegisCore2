@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Literature",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Anglo_Welsh_Literature", "Poetic_Form", "Radio_Drama"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Anglo_Welsh_Literature",
+      "Poetic_Form",
+      "Radio_Drama"
+    ],
     "learning_objectives": [
       "Analyze Dylan Thomas's unique use of rhythm, sound play, and compound adjectives in poems like 'Fern Hill' and 'Do not go gentle into that good night.'",
       "Understand the structure and social satire of the radio play 'Under Milk Wood' as a portrait of a Welsh seaside village.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "dylan_thomas_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/dylan_thomas.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

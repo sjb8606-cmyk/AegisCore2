@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Local Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Urban Design History", "Free-Settler Colonies", "Socio-Cultural Festivals"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Urban Design History",
+      "Free-Settler Colonies",
+      "Socio-Cultural Festivals"
+    ],
     "learning_objectives": [
       "Understand the unique, planned urban design of Adelaide (designed by Colonel William Light in 1837), focusing on its parkland ring belt.",
       "Analyze the social and political history of South Australia as a systematically planned, non-convict colony based on Edward Gibbon Wakefield's theories.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "adelaide_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/adelaide.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Jesuit_Education_Americas", "University_History_Argentina", "UNESCO_Urban_Blocks"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Jesuit_Education_Americas",
+      "University_History_Argentina",
+      "UNESCO_Urban_Blocks"
+    ],
     "learning_objectives": [
       "Understand the historical role of the Society of Jesus in founding the National University of Córdoba (1613) and establishing the city as a major South American center of scholarship.",
       "Analyze the architectural and urban design of the Jesuit Block, explaining how it integrated university, church, and residential spaces into a single, cohesive block.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cordoba_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cordoba.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

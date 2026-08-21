@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["bedouin_culture", "desert_survival", "aeolian_processes"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "bedouin_culture",
+      "desert_survival",
+      "aeolian_processes"
+    ],
     "learning_objectives": [
       "Understand the cultural and social codes of Bedouin hospitality (diyafah) and the structure of the traditional desert majlis.",
       "Explain the physical process of aeolian transport and how wind direction shapes different types of sand dunes in the Grand Erg Oriental.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sealine_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sealine.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

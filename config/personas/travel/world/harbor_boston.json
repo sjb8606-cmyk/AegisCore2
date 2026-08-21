@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Maritime History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["maritime_history", "environmental_remediation", "economic_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "maritime_history",
+      "environmental_remediation",
+      "economic_history"
+    ],
     "learning_objectives": [
       "Understand Boston's role in the global Triangular Trade and its reliance on the cod and slave economies",
       "Analyze the massive engineering feat of the Boston Harbor cleanup project in the late 20th century",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "harbor_boston_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/harbor_boston.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

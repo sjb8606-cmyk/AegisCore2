@@ -18,8 +18,19 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["vernacular_architecture", "post_emancipation_history", "structural_design"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "vernacular_architecture",
+      "post_emancipation_history",
+      "structural_design"
+    ],
     "learning_objectives": [
       "Understand the socio-legal factors, such as the Master and Servants Act of 1840, that forced Barbadian workers to engineer moveable 'chattel' homes.",
       "Analyze the architectural and aerodynamic features of the Chattel House, including its steep gable roof, symmetric design, and jalousie wind-filtration.",
@@ -35,5 +46,25 @@
   "avatar": {
     "elevenlabs_voice_id": "chattel_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/chattel.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

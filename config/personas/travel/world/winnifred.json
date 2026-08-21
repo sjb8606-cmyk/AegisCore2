@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Culinary",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["coastal_commons", "local_culinary_arts", "community_activism"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "coastal_commons",
+      "local_culinary_arts",
+      "community_activism"
+    ],
     "learning_objectives": [
       "Understand the legal and social significance of the Winnifred Beach court battle in establishing public, democratic access to coastal commons.",
       "Analyze the preparation and cultural role of traditional Jamaican beach foods, focusing on 'Fried Fish and Festival' (cornmeal dumplings).",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "winnifred_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/winnifred.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["indigenous_cosmology", "matrilineal_societies", "ethnobotany"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "indigenous_cosmology",
+      "matrilineal_societies",
+      "ethnobotany"
+    ],
     "learning_objectives": [
       "Understand the social and political structure of the Bribri matrilineal clans and how land and ancestral knowledge are inherited through the mother's lineage.",
       "Explain the spiritual and economic role of Cacao (Theobroma cacao) in Bribri cosmology and traditional ceremonies.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bribri_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bribri.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

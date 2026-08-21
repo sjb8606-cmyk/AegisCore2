@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Local Culture & Coastal Geography",
-    "grade_levels": ["elementary", "middle_school", "adult"],
-    "curriculum_tags": ["Rift Valley Geography", "Bedouin History", "Astronomical Studies"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Rift Valley Geography",
+      "Bedouin History",
+      "Astronomical Studies"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Gulf of Aqaba as part of the Great Rift Valley and its deep-water channels.",
       "Analyze the social structure and nomadic history of the Tarabin Bedouins who settled on the Sinai coast.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "nuweiba_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/nuweiba.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

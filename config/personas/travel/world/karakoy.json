@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Urban Planning",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Urban Regeneration", "Jewish Heritage", "Maritime Engineering"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Urban Regeneration",
+      "Jewish Heritage",
+      "Maritime Engineering"
+    ],
     "learning_objectives": [
       "Understand the historical role of Galata (Karaköy) as the primary, high-security merchant port of the Byzantine and Ottoman empires.",
       "Analyze the engineering of Galataport, focusing on how its unique underground terminal and movable security walls preserve public access to the Bosphorus.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "karakoy_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/karakoy.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

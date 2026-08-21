@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["mining_history", "ghost_towns", "labor_studies"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "mining_history",
+      "ghost_towns",
+      "labor_studies"
+    ],
     "learning_objectives": [
       "Understand the economic significance of the 1890s gold boom in western Montana",
       "Analyze the civil engineering and preservation challenges of maintaining wooden structures in a high-precipitation forest",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "garnet_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/garnet.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

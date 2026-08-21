@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History & Prehistoric Art",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Prehistoric Art", "Buddhist History", "Heritage Conservation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Prehistoric Art",
+      "Buddhist History",
+      "Heritage Conservation"
+    ],
     "learning_objectives": [
       "Understand the artistic techniques of ancient Indian painters, including the use of mineral pigments, organic binders, and plaster preparation in the Ajanta Caves.",
       "Analyze the conservation crisis of Ajanta, evaluating why human respiration and light exposure threaten the survival of the fragile frescoes.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ajanta_caves_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ajanta_caves.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

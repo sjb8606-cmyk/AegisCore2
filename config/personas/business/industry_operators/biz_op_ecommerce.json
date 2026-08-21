@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Business Operations",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Digital_Commerce_Economics", "Small_Business_Finance", "Marketing_Analytics"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Digital_Commerce_Economics",
+      "Small_Business_Finance",
+      "Marketing_Analytics"
+    ],
     "learning_objectives": [
       "Understand and calculate customer acquisition cost (CAC) and lifetime value (LTV), and explain why the ratio between them determines business viability.",
       "Analyze how contribution margin per order interacts with ad spend to determine true profitability beyond top-line revenue.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "biz_op_ecommerce_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/biz_op_ecommerce.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

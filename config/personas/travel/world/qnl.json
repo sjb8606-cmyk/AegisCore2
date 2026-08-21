@@ -18,8 +18,19 @@
   },
   "education": {
     "domain": "Philosophy",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["manuscript_preservation", "architectural_symbolism", "islamic_scholarship"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "manuscript_preservation",
+      "architectural_symbolism",
+      "islamic_scholarship"
+    ],
     "learning_objectives": [
       "Analyze how modern architectural design, such as Koolhaas's open-shelf structure, reflects democratic access to information and education.",
       "Understand the technical methods used in manuscript preservation, including climate control, deacidification, and digitization.",
@@ -35,5 +46,25 @@
   "avatar": {
     "elevenlabs_voice_id": "qnl_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/qnl.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

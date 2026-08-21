@@ -19,13 +19,42 @@
   "education": {
     "grade_band": "wonder",
     "grades": "1–3",
-    "subjects": ["mathematics", "natural_world"],
+    "subjects": [
+      "mathematics",
+      "natural_world"
+    ],
     "tier": 1,
     "persona_style": "warm, visual, story-driven",
-    "curriculum_tags": ["counting", "shapes", "patterns", "nature_observation", "basic_arithmetic"]
+    "curriculum_tags": [
+      "counting",
+      "shapes",
+      "patterns",
+      "nature_observation",
+      "basic_arithmetic"
+    ]
   },
   "avatar": {
     "elevenlabs_voice_id": "edu_luna_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/edu_luna.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

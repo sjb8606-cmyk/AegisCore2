@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Delta_Hydrology_Geomorphology", "Riparian_Architecture", "Wetland_Ecology_Parana"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Delta_Hydrology_Geomorphology",
+      "Riparian_Architecture",
+      "Wetland_Ecology_Parana"
+    ],
     "learning_objectives": [
       "Explain the geological and sediment-rich processes of the Paraná River Delta, one of the world's few major deltas that empties into another river system rather than an ocean.",
       "Understand the historical role of Tigre as a Belle Époque resort for the Buenos Aires elite, focusing on the architecture of its grand rowing and yacht clubs.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tigre_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tigre.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

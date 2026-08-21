@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Architecture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["colonial_history", "spanish_missions", "adobe_architecture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "colonial_history",
+      "spanish_missions",
+      "adobe_architecture"
+    ],
     "learning_objectives": [
       "Understand the strategic geographic role of Tucson as the northern outpost of the Spanish Empire",
       "Analyze the unique structural properties of adobe and lime plaster in the hot desert climate",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tucson_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tucson.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

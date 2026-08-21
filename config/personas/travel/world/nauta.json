@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Local Culture & Wilderness Lifestyle",
-    "grade_levels": ["elementary", "middle_school", "adult"],
-    "curriculum_tags": ["Riverine Geography", "Sustainable Fishing", "Indigenous Lifestyles"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Riverine Geography",
+      "Sustainable Fishing",
+      "Indigenous Lifestyles"
+    ],
     "learning_objectives": [
       "Understand the geographical significance of the Marañón-Ucayali confluence at Nauta as the official birthplace of the Amazon River.",
       "Analyze the architectural and social adaptation of 'stilt houses' (tambo) designed to allow families to live above seasonal river floods.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "nauta_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/nauta.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

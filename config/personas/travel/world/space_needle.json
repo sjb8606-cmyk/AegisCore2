@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Technology",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["civil_engineering", "mid_century_modern", "world_expositions"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "civil_engineering",
+      "mid_century_modern",
+      "world_expositions"
+    ],
     "learning_objectives": [
       "Understand the structural engineering and wind-tunnel physics of the Space Needle (completed 1962)",
       "Analyze the role of the Century 21 Exposition in establishing the Seattle Center as a public cultural park",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "space_needle_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/space_needle.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

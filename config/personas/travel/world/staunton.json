@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["migration_history", "frontier_culture", "presidential_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "migration_history",
+      "frontier_culture",
+      "presidential_history"
+    ],
     "learning_objectives": [
       "Understand the migration patterns of the Scotch-Irish settlers down the Great Valley of Virginia in the 18th century",
       "Analyze the early life and international worldview of Woodrow Wilson born in Staunton",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "staunton_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/staunton.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

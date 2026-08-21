@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Mughal Architecture",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Mughal Architecture", "Pietra Dura Inlay", "History of Art"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Mughal Architecture",
+      "Pietra Dura Inlay",
+      "History of Art"
+    ],
     "learning_objectives": [
       "Understand the structural engineering and archaeoastronomy of the Taj Mahal, focusing on how its symmetrical layout and outward-leaning minarets protect the tomb.",
       "Analyze the artistic and physical process of 'Pietra Dura' (parchin kari) stone inlay, explaining how semi-precious stones are fitted into marble.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "taj_mahal_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/taj_mahal.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

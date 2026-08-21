@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["colonial_settlements", "logwood_trade", "maritime_history"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "colonial_settlements",
+      "logwood_trade",
+      "maritime_history"
+    ],
     "learning_objectives": [
       "Understand the historical development of Belize City from its 17th-century origin as a British logwood and mahogany extraction camp.",
       "Analyze the mechanical engineering and history of the Belize City Swing Bridge as one of the world's few remaining manually operated swing bridges.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "belize_city_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/belize_city.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

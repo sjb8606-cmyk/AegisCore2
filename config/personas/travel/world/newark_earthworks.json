@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Archaeology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["mound_builders", "archaeoastronomy", "geography_of_sacred_spaces"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "mound_builders",
+      "archaeoastronomy",
+      "geography_of_sacred_spaces"
+    ],
     "learning_objectives": [
       "Understand the archaeological significance of the Newark Earthworks as the largest geometric earthwork complex in the world",
       "Analyze the complex lunar alignments (the 18.6-year lunar standstill cycle) engineered into the Octagon Earthworks",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "newark_earthworks_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/newark_earthworks.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Coastal Culture",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Roman Infrastructure", "Vernacular Architecture", "Marine Ecology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Roman Infrastructure",
+      "Vernacular Architecture",
+      "Marine Ecology"
+    ],
     "learning_objectives": [
       "Understand the strategic and maritime history of Tavira as a Phoenician, Roman, and Moorish river port connecting the Guadiana basin to the sea.",
       "Analyze the design of the traditional 'scissor roofs' (telhados de tesoura) unique to Tavira’s Renaissance mansions, explaining how they regulate heat.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tavira_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tavira.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

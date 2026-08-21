@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Nordic_Design_Functionalism", "Urban_History_Reykjavik", "Textile_Heritage_Wool"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Nordic_Design_Functionalism",
+      "Urban_History_Reykjavik",
+      "Textile_Heritage_Wool"
+    ],
     "learning_objectives": [
       "Understand the historical evolution of Laugavegur from a muddy path used for washing clothes in geothermal springs to the premier commercial street of Iceland.",
       "Analyze the cultural and economic significance of the 'Lopapeysa' (Icelandic wool sweater) as a modern invention rooted in traditional survival techniques.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "laugavegur_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/laugavegur.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

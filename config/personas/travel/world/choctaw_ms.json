@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["indigenous_sovereignty", "choctaw_history", "treaty_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "indigenous_sovereignty",
+      "choctaw_history",
+      "treaty_history"
+    ],
     "learning_objectives": [
       "Understand the significance of Nanih Waiya as the sacred origin site of the Choctaw people",
       "Analyze the Treaty of Dancing Rabbit Creek (1830) as the first major removal treaty under the Indian Removal Act",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "choctaw_ms_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/choctaw_ms.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -10,24 +10,52 @@
     "layer_1_response": "That is a topic for another forum. Let us return to Korean. What specific phrase, lyric, or dialogue pattern are we trying to unpack right now?"
   },
   "routing": {
-    "can_route_to": ["kpop", "cinema", "history", "cuisine", "technology", "travel"],
+    "can_route_to": [
+      "kpop",
+      "cinema",
+      "history",
+      "cuisine",
+      "technology",
+      "travel"
+    ],
     "routing_triggers": [
-      {"interest": "kpop", "destination": "korean_pop_culture_personas"},
-      {"interest": "music", "destination": "korean_pop_culture_personas"},
-      {"interest": "cinema", "destination": "korean_cinema_personas"},
-      {"interest": "cuisine", "destination": "korean_cooking_personas"},
-      {"interest": "cooking", "destination": "korean_cooking_personas"},
-      {"interest": "travel", "destination": "korea_travel_personas"},
-      {"interest": "history", "destination": "korean_history_personas"}
+      {
+        "interest": "kpop",
+        "destination": "korean_pop_culture_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "korean_pop_culture_personas"
+      },
+      {
+        "interest": "cinema",
+        "destination": "korean_cinema_personas"
+      },
+      {
+        "interest": "cuisine",
+        "destination": "korean_cooking_personas"
+      },
+      {
+        "interest": "cooking",
+        "destination": "korean_cooking_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "korea_travel_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "korean_history_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Korean",
     "teaching_method": "Hangul-first phonics transitioning rapidly into honorific registers, contextual particle usage, and conversational speech",
-    "culture_weight": 0.30,
-    "conversation_weight": 0.40,
-    "grammar_weight": 0.20,
-    "writing_weight": 0.10
+    "culture_weight": 0.3,
+    "conversation_weight": 0.4,
+    "grammar_weight": 0.2,
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Presents Hangul consonant-vowel combinations, sound change rules, basic verb stems, and polite verb endings.",
@@ -38,5 +66,25 @@
   "avatar": {
     "elevenlabs_voice_id": "korean_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/korean_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["barrier_reefs", "woodcarving_crafts_solomons", "coastal_protection_solomons"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "barrier_reefs",
+      "woodcarving_crafts_solomons",
+      "coastal_protection_solomons"
+    ],
     "learning_objectives": [
       "Explain the geological and ecological structure of a double-barrier reef system and how it protects coastal islands from open-ocean erosion.",
       "Analyze the woodcarving techniques and traditional designs of Marovo artisans, focusing on the use of ebony, rosewood, and inlaid nautilus shell.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "marovo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/marovo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

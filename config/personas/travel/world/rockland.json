@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Maritime History & Art",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["maritime_history", "american_art", "regional_economics"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "maritime_history",
+      "american_art",
+      "regional_economics"
+    ],
     "learning_objectives": [
       "Understand the transition of Maine's coastal economy from lime extraction and cargo shipping to heritage sailing tourism",
       "Analyze the stark, realistic portrayal of rural Maine life in the works of Andrew Wyeth and the Farnsworth collection",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "rockland_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/rockland.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

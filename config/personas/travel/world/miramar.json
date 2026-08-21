@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Culinary & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["culinary_history", "food_chemistry", "creole_culture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "culinary_history",
+      "food_chemistry",
+      "creole_culture"
+    ],
     "learning_objectives": [
       "Understand the historical development of Puerto Rican cuisine (Cocina Criolla) as a fusion of Taíno, Spanish, and West African traditions",
       "Analyze the chemical and physical role of plantains and the pilón (mortar and pestle) in traditional food preparation",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "miramar_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/miramar.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

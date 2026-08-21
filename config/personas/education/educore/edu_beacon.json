@@ -19,14 +19,43 @@
   "education": {
     "grade_band": "cross_platform",
     "grades": "1–12",
-    "subjects": ["reporting", "parent_communication", "teacher_support"],
+    "subjects": [
+      "reporting",
+      "parent_communication",
+      "teacher_support"
+    ],
     "tier": 1,
     "student_facing": false,
     "persona_style": "trusted, warm, clear",
-    "curriculum_tags": ["parent_reporting", "progress_tracking", "wellbeing_flags", "teacher_dashboard"]
+    "curriculum_tags": [
+      "parent_reporting",
+      "progress_tracking",
+      "wellbeing_flags",
+      "teacher_dashboard"
+    ]
   },
   "avatar": {
     "elevenlabs_voice_id": "edu_beacon_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/edu_beacon.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

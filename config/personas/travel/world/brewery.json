@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Culinary",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Brewing_Chemistry", "Czech_Social_Customs", "Industrial_Food_History"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Brewing_Chemistry",
+      "Czech_Social_Customs",
+      "Industrial_Food_History"
+    ],
     "learning_objectives": [
       "Explain the biochemical process of decoction mashing used in traditional Czech lager brewing and its effect on malt profile and body.",
       "Understand the historical development of Czech beer culture from medieval monastic monopolies to the world's highest per-capita consumption.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "brewery_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/brewery.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

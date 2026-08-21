@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Coastal Culture",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Coastal Fortifications", "Mediterranean Trade", "Aragonese History"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Coastal Fortifications",
+      "Mediterranean Trade",
+      "Aragonese History"
+    ],
     "learning_objectives": [
       "Understand the military and strategic purpose of the Castillo de Santa Bárbara, situated on Mount Benacantil to guard the southern coast.",
       "Analyze the historical trade role of Portus Albus (Alicante) in exporting salt, wine, and agricultural goods since Roman times.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "alicante_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/alicante.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

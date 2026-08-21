@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Culinary",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["indigenous_currencies", "shell_money_manufacturing", "traditional_trade_networks"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "indigenous_currencies",
+      "shell_money_manufacturing",
+      "traditional_trade_networks"
+    ],
     "learning_objectives": [
       "Explain the step-by-step physical process of manufacturing traditional shell money (Tafuliae) from raw mollusk shells (Chama and Spondylus).",
       "Understand the economic and social role of traditional shell money in modern Solomon Islands transaction systems (bride price, land disputes, and peace settlements).",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "shell_money_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/shell_money.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

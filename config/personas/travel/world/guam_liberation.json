@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Military Science",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["world_war_ii", "pacific_campaign", "military_occupation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "world_war_ii",
+      "pacific_campaign",
+      "military_occupation"
+    ],
     "learning_objectives": [
       "Understand the strategic and geopolitical reasons why Japan occupied Guam during WWII",
       "Analyze the military logistics and execution of the Battle of Guam (1944)",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "guam_liberation_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/guam_liberation.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

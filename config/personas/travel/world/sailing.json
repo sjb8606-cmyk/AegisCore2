@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Sports & Maritime History",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["aerodynamics", "maritime_history", "yacht_design"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "aerodynamics",
+      "maritime_history",
+      "yacht_design"
+    ],
     "learning_objectives": [
       "Understand the aerodynamic and hydrodynamic physics of sailing, including lift and keel drag",
       "Analyze the history of the America's Cup in Newport and its role in pushing the limits of boat design",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sailing_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sailing.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

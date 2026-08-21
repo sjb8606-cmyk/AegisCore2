@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Local Culture & Geomorphology",
-    "grade_levels": ["elementary", "middle_school", "adult"],
-    "curriculum_tags": ["Geothermal Systems", "Railway Logistics", "Mountain Communities"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Geothermal Systems",
+      "Railway Logistics",
+      "Mountain Communities"
+    ],
     "learning_objectives": [
       "Understand the geological mechanics of the Vilcabamba geothermal springs and how they generate therapeutic water in deep canyons.",
       "Analyze the logistics of the railway system that connects landlocked Cusco to the base of Machu Picchu.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "aguas_calientes_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/aguas_calientes.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

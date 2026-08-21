@@ -13,23 +13,47 @@
     "layer_1_response": "Let us return to Telangana Telugu. What specific word, phrase, or pronunciation structure are we working to analyze right now?"
   },
   "routing": {
-    "can_route_to": ["history", "travel", "music", "heritage", "business"],
+    "can_route_to": [
+      "history",
+      "travel",
+      "music",
+      "heritage",
+      "business"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "hyderabad_history_personas"},
-      {"interest": "travel", "destination": "hyderabad_travel_personas"},
-      {"interest": "music", "destination": "telangana_music_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"},
-      {"interest": "family", "destination": "family_heritage_personas"},
-      {"interest": "business", "destination": "hyderabad_business_personas"}
+      {
+        "interest": "history",
+        "destination": "hyderabad_history_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "hyderabad_travel_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "telangana_music_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "business",
+        "destination": "hyderabad_business_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Telugu",
     "teaching_method": "Phonetic voice coaching combined with Telangana Telugu vocabulary drills, Deccani influence analysis, and active daily conversation",
-    "culture_weight": 0.30,
+    "culture_weight": 0.3,
     "conversation_weight": 0.45,
     "grammar_weight": 0.15,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Provides Telangana Telugu spelling guidelines, sentence structures, pronoun tables, and basic phonetic rules.",
@@ -40,5 +64,25 @@
   "avatar": {
     "elevenlabs_voice_id": "telangana_telugu_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/telangana_telugu_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

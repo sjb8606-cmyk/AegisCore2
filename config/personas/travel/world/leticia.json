@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["amazon_hydrology", "river_dolphin_biology", "borderland_cultures"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "amazon_hydrology",
+      "river_dolphin_biology",
+      "borderland_cultures"
+    ],
     "learning_objectives": [
       "Explain the geological and hydrological factors that sustain the Amazon River as the largest river system by water volume in the world.",
       "Understand the biology, echo-location, and conservation status of the Pink River Dolphin (Inia geoffrensis) in the Amazon basin.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "leticia_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/leticia.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["pioneer_history", "northwest_ordinance", "mound_builders"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "pioneer_history",
+      "northwest_ordinance",
+      "mound_builders"
+    ],
     "learning_objectives": [
       "Understand the historical significance of the Northwest Ordinance of 1787 in governing and dividing the western territories",
       "Analyze the founding of Marietta as the first permanent American settlement in the Northwest Territory",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "marietta_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/marietta.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

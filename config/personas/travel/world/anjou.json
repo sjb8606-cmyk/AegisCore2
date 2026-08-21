@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Viticulture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Angevin Empire", "Soil Geology", "Viticulture Terroir"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Angevin Empire",
+      "Soil Geology",
+      "Viticulture Terroir"
+    ],
     "learning_objectives": [
       "Understand the rise and geopolitical scale of the Angevin (Plantagenet) Empire in the 12th century, centered in Angers.",
       "Analyze the geological transition from the 'White Anjou' (limestone) to the 'Black Anjou' (schist and slate) and its impact on viticulture.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "anjou_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/anjou.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

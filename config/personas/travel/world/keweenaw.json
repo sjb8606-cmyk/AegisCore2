@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Geology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["geology_of_copper", "industrial_history", "labor_studies"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "geology_of_copper",
+      "industrial_history",
+      "labor_studies"
+    ],
     "learning_objectives": [
       "Understand the geological formation of native copper deposits in the Keweenaw Peninsula's volcanic basalt",
       "Analyze the history and ethnic diversity of the 19th-century copper boom on Lake Superior",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "keweenaw_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/keweenaw.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

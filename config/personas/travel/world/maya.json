@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Art & History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["urban_history", "architecture", "cultural_studies"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "urban_history",
+      "architecture",
+      "cultural_studies"
+    ],
     "learning_objectives": [
       "Understand the economic factors that created Winnipeg's massive early 20th-century boom and bust",
       "Identify key elements of Chicago School and Richardsonian Romanesque architecture",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "maya_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/maya.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

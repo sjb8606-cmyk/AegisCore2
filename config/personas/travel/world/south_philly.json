@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Culinary & Culture",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["urban_sociology", "culinary_history", "immigration_studies"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "urban_sociology",
+      "culinary_history",
+      "immigration_studies"
+    ],
     "learning_objectives": [
       "Understand the historical significance of the 9th Street Italian Market as the oldest continuous outdoor market in the US",
       "Analyze the urban geography and social structure of the Philadelphia row house neighborhoods",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "south_philly_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/south_philly.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

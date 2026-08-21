@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["river_hydrology", "fish_ecology", "reservoir_management"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "river_hydrology",
+      "fish_ecology",
+      "reservoir_management"
+    ],
     "learning_objectives": [
       "Understand the engineering and history of the 1964 Flaming Gorge Dam project on the Green River",
       "Analyze the ecological impact of 'cold-water release' from the dam on downstream fisheries (the Green River tailwater)",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "flaming_gorge_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/flaming_gorge.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Culture & Geography",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["rural_sociology", "civil_engineering", "agritourism"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "rural_sociology",
+      "civil_engineering",
+      "agritourism"
+    ],
     "learning_objectives": [
       "Understand the structural engineering and historical necessity of covered timber bridges",
       "Analyze the transition of the Litchfield Hills from early industrial ironworks to affluent rural agritourism",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "litchfield_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/litchfield.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

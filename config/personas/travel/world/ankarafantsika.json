@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["dry_forest_ecology", "lemur_conservation", "sandy_canyons"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "dry_forest_ecology",
+      "lemur_conservation",
+      "sandy_canyons"
+    ],
     "learning_objectives": [
       "Understand the ecological and evolutionary factors behind the adaptation of the Mongoose Lemur (Eulemur mongoz) to dry deciduous forests.",
       "Analyze the geological formation of Ankarafantsika's spectacular, eroded sandy canyons (Lavaka).",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ankarafantsika_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ankarafantsika.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

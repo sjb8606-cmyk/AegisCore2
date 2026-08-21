@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Archaeology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Aymara Kingdoms", "Megalithic Engineering", "Funeral Customs"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Aymara Kingdoms",
+      "Megalithic Engineering",
+      "Funeral Customs"
+    ],
     "learning_objectives": [
       "Understand the historical role of the Colla Kingdom (Aymara-speaking) in the Altiplano and their construction of the Sillustani funeral towers.",
       "Analyze the engineering of 'Chullpas' (funerary towers), focusing on how they widen toward the top to create a stable, massive structural silhouette.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sillustani_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sillustani.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

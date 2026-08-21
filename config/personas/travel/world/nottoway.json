@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Architecture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["antebellum_history", "greek_revival", "social_stratification"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "antebellum_history",
+      "greek_revival",
+      "social_stratification"
+    ],
     "learning_objectives": [
       "Understand the economic scale and agricultural success of the Randolph family's sugar empire",
       "Analyze the transition from Greek Revival to Italianate architectural styles in the design of Nottoway",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "nottoway_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/nottoway.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

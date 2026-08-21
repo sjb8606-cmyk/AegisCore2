@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Culinary & Culture",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["culinary_history", "immigration_studies", "food_science"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "culinary_history",
+      "immigration_studies",
+      "food_science"
+    ],
     "learning_objectives": [
       "Understand the historical development of Chicago deep-dish pizza as an adaptation of southern Italian immigrant baking",
       "Analyze the chemical and physical differences between thin-crust and deep-dish baking (temperature and layering)",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "deep_dish_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/deep_dish.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

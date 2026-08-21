@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Alpine Geography",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Alpine Geomorphology", "Modern Religious Art", "Coastal Conservation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Alpine Geomorphology",
+      "Modern Religious Art",
+      "Coastal Conservation"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Lucanian Apennines (limestone cliffs) and their sudden, vertical descent into the Tyrrhenian Sea.",
       "Analyze the artistic and engineering history of the Christ the Redeemer statue (Cristo Redentore), constructed of white carrara marble and concrete in 1965.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "maratea_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/maratea.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

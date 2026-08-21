@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Alpine Geomorphology & Earth Science",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Tectonic Collision", "Glaciology", "High-Altitude Physiology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Tectonic Collision",
+      "Glaciology",
+      "High-Altitude Physiology"
+    ],
     "learning_objectives": [
       "Understand the geological formation of Mount Everest (Chomolungma), analyzing how tectonic plate collision and glacial erosion formed its peak.",
       "Analyze the physical mechanics of glacial retreat, particularly on the Rongbuk Glacier, as an indicator of global climate change.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "everest_base_camp_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/everest_base_camp.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

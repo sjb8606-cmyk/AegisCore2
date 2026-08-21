@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Culinary",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["viticulture_science", "basque_migration", "alluvial_soils"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "viticulture_science",
+      "basque_migration",
+      "alluvial_soils"
+    ],
     "learning_objectives": [
       "Explain the agricultural and soil chemistry factors that allow the heavy-tannin Tannat grape to thrive and mature in the alluvial clays of Carmelo.",
       "Understand the historical role of Basque immigrant Pascual Harriague in establishing commercial viticulture in Uruguay in 1870.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "carmelo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/carmelo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

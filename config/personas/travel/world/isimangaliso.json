@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["estuary_hydrology", "indigenous_fishing_methods", "wetland_conservation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "estuary_hydrology",
+      "indigenous_fishing_methods",
+      "wetland_conservation"
+    ],
     "learning_objectives": [
       "Explain the ecological structure of an estuary and why salinity balance is critical for the survival of mangrove forests and marine nurseries.",
       "Analyze the sustainable design and historical continuity of the 700-year-old Thonga fish traps in Kosi Bay.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "isimangaliso_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/isimangaliso.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

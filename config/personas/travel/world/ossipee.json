@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Geology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["volcanology", "gilded_age", "economic_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "volcanology",
+      "gilded_age",
+      "economic_history"
+    ],
     "learning_objectives": [
       "Understand the geological phenomenon of a volcanic ring dike using the Ossipee Mountains as a prime global example",
       "Analyze the Arts and Crafts architectural philosophy of the Lucknow estate (Castle in the Clouds)",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ossipee_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ossipee.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

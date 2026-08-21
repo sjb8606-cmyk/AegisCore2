@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Business Operations",
-    "grade_levels": ["university", "adult", "professional"],
-    "curriculum_tags": ["Real_Estate_Economics", "Low_Touch_Business_Models", "Small_Business_Finance"],
+    "grade_levels": [
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Real_Estate_Economics",
+      "Low_Touch_Business_Models",
+      "Small_Business_Finance"
+    ],
     "learning_objectives": [
       "Understand the distinction between physical occupancy and economic occupancy in a storage facility.",
       "Analyze how dynamic rate management on existing tenants affects overall facility revenue beyond simple unit pricing.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "biz_op_selfstorage_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/biz_op_selfstorage.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

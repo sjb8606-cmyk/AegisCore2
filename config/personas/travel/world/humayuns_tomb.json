@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Landscape Design",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Mughal Architecture", "Charbagh Gardens", "Sufi Culture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Mughal Architecture",
+      "Charbagh Gardens",
+      "Sufi Culture"
+    ],
     "learning_objectives": [
       "Understand the architectural significance of Humayun's Tomb as the first major example of Mughal garden-tomb design, which directly inspired the Taj Mahal.",
       "Analyze the design principles of the 'Charbagh' (four-part garden) and how its water channels represent the rivers of paradise described in Islamic texts.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "humayuns_tomb_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/humayuns_tomb.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

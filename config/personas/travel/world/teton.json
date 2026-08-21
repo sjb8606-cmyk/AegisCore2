@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["geomorphology", "structural_geology", "glaciology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "geomorphology",
+      "structural_geology",
+      "glaciology"
+    ],
     "learning_objectives": [
       "Understand the geological forces of active fault-block mountain building that created the Teton Range",
       "Analyze the role of glaciers in carving the deep canyons and moraine-dammed lakes (Jenny Lake)",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "teton_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/teton.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

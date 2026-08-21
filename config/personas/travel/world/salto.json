@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["hydrogeology", "guarani_aquifer", "citrus_agronomy"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "hydrogeology",
+      "guarani_aquifer",
+      "citrus_agronomy"
+    ],
     "learning_objectives": [
       "Explain the geological structure and international scale of the Guarani Aquifer as one of the world's largest freshwater reserves.",
       "Understand the geothermal heating process that allows groundwater to rise warm and mineral-rich in northwestern Uruguay.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "salto_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/salto.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

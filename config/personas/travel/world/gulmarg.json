@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Adventure Sports & Alpine Ecology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Alpine Geomorphology", "Snow Dynamics", "History of Mountaineering"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Alpine Geomorphology",
+      "Snow Dynamics",
+      "History of Mountaineering"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Pir Panjal range (the outer Himalayas) and its heavy winter snowfall patterns.",
       "Analyze the physical mechanics of 'dry powder' snow (Japow/Gulpow) created by sub-zero temperatures and high-altitude winds.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "gulmarg_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/gulmarg.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

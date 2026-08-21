@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Nature & Ecology",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["botany", "arctic_ecology", "climate_change"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "botany",
+      "arctic_ecology",
+      "climate_change"
+    ],
     "learning_objectives": [
       "Understand the extreme biological adaptations of flora surviving in permafrost environments",
       "Analyze the ecological role of the tundra in the broader global carbon cycle",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sylvia_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sylvia.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

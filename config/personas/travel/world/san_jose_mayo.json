@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["gaucho_history", "neoclassical_architecture", "interior_economics"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "gaucho_history",
+      "neoclassical_architecture",
+      "interior_economics"
+    ],
     "learning_objectives": [
       "Understand the historical role of San José de Mayo as a key administrative and agricultural hub for the Uruguayan interior in the 19th century.",
       "Analyze the neoclassical and Romanesque architectural features of the Basilica of San José, focusing on its monumental construction.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "san_jose_mayo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/san_jose_mayo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

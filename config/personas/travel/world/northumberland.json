@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Anglo_Saxon_Northumbria", "Viking_Invasions", "Coastal_Defenses"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Anglo_Saxon_Northumbria",
+      "Viking_Invasions",
+      "Coastal_Defenses"
+    ],
     "learning_objectives": [
       "Understand the historical significance of Lindisfarne as the cradle of English Christianity and the site of the first major Viking raid in 793 CE.",
       "Analyze how the volcanic geology of the Whin Sill provided ideal defensive foundations for castles like Bamburgh and Dunstanburgh.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "northumberland_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/northumberland.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

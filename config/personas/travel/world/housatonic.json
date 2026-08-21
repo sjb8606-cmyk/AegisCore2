@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Arts & Nature",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["industrial_history", "geology", "cultural_geography"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "industrial_history",
+      "geology",
+      "cultural_geography"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the marble belt in western Connecticut",
       "Analyze the rise and fall of the 19th-century Salisbury iron industry powered by the Housatonic River",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "housatonic_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/housatonic.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

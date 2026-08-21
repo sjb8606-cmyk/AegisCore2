@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Sacred Architecture",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["New Kingdom", "Hypostyle Engineering", "Religious Syncretism"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "New Kingdom",
+      "Hypostyle Engineering",
+      "Religious Syncretism"
+    ],
     "learning_objectives": [
       "Understand the historical role of Karnak as the primary religious capital of the New Kingdom and the administrative seat of the Amun-Ra priesthood.",
       "Analyze the structural engineering of the Great Hypostyle Hall, focusing on how its 134 sandstone columns support massive stone architraves without mortar.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "karnak_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/karnak.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

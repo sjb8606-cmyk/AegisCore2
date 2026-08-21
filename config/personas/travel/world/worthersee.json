@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Lakeside_Architecture", "Late_Romantic_Composition", "Resort_History"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Lakeside_Architecture",
+      "Late_Romantic_Composition",
+      "Resort_History"
+    ],
     "learning_objectives": [
       "Explain the unique limnological and climate factors that make the Wörthersee the warmest alpine lake in Austria.",
       "Analyze the distinct characteristics of the 'Wörthersee Style' (Wörthersee-Architektur) developed by Franz Baumgartner in the late 19th century.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "worthersee_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/worthersee.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

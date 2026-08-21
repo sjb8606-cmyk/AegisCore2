@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["WWI_Flanders_Fields", "Poetry_of_War", "Memorial_Architecture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "WWI_Flanders_Fields",
+      "Poetry_of_War",
+      "Memorial_Architecture"
+    ],
     "learning_objectives": [
       "Analyze the military and tactical significance of the Ypres Salient during World War I, focusing on the introduction of chemical weapons and trench warfare.",
       "Understand the historical process and social significance of Ypres' post-war reconstruction, particularly the rebuilding of the medieval Cloth Hall (Lakenhalle).",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ypres_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ypres.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["slave_trade_history", "caravan_routes", "coastal_monuments"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "slave_trade_history",
+      "caravan_routes",
+      "coastal_monuments"
+    ],
     "learning_objectives": [
       "Understand the historical role of Bagamoyo as the primary coastal terminal for the East African caravan trade in ivory and enslaved people.",
       "Analyze the colonial architecture of the German Boma and its role as the first administrative capital of German East Africa.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bagamoyo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bagamoyo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

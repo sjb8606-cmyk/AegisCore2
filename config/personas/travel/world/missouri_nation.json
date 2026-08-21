@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["river_geography", "colonial_dispossession", "indigenous_studies"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "river_geography",
+      "colonial_dispossession",
+      "indigenous_studies"
+    ],
     "learning_objectives": [
       "Understand the historical geography and political role of the Missouri (Niutachi) Nation in the lower Missouri River Valley",
       "Analyze the impact of early French contact and subsequent epidemics on the decline of the Missouri people",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "missouri_nation_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/missouri_nation.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

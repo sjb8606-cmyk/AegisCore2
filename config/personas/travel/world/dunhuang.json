@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Buddhist Art",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Mogao Caves", "Buddhist Art History", "Silk Road Manuscripts"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Mogao Caves",
+      "Buddhist Art History",
+      "Silk Road Manuscripts"
+    ],
     "learning_objectives": [
       "Understand the historical role of Dunhuang as the primary, strategic oasis and intellectual crossroads of the Silk Road where Chinese, Indian, and Persian cultures met.",
       "Analyze the artistic techniques and mineral chemistry of the Mogao Cave frescoes, focusing on how lapis lazuli and ochre were used to paint the 'Flying Apsaras'.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "dunhuang_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/dunhuang.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Music & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["music_history", "urban_sociology", "mississippi_valley_culture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "music_history",
+      "urban_sociology",
+      "mississippi_valley_culture"
+    ],
     "learning_objectives": [
       "Understand the historical development of the St. Louis Blues as a distinct style combining ragtime and jazz",
       "Analyze the role of the Soulard neighborhood as a major cultural incubator for the city's musical heritage",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "blues_st_louis_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/blues_st_louis.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

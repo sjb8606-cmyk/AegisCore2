@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Urban Planning",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Urban Regeneration", "Modernist Architecture", "Socio-Political History"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Urban Regeneration",
+      "Modernist Architecture",
+      "Socio-Political History"
+    ],
     "learning_objectives": [
       "Understand the military history of Montjuïc Castle as a symbol of Spanish central government control and suppression of Catalan autonomy.",
       "Analyze the architectural significance of Mies van der Rohe's 1929 Barcelona Pavilion as the supreme manifesto of modern, minimalist design ('less is more').",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "montjuic_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/montjuic.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

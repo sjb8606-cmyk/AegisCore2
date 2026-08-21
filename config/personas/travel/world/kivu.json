@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Science",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["limnology_kivu", "methane_extraction", "tectonic_rift_valleys"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "limnology_kivu",
+      "methane_extraction",
+      "tectonic_rift_valleys"
+    ],
     "learning_objectives": [
       "Explain the geological and hydrological factors that create the deep, stratified water layers of Lake Kivu, trapping methane and carbon dioxide.",
       "Understand the engineering and physics of the KivuWatt project, detailing how natural gas is extracted from deep water layers.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kivu_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kivu.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["indigenous_sovereignty", "material_culture", "sacred_landscapes"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "indigenous_sovereignty",
+      "material_culture",
+      "sacred_landscapes"
+    ],
     "learning_objectives": [
       "Understand the geological formation of catlinite (pipestone) in the quartzite ridges of southwestern Minnesota",
       "Analyze the historical role of the Pipestone quarries as a neutral, conflict-free sanctuary for multiple Indigenous nations",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "pipestone_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/pipestone.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -21,10 +21,36 @@
     "grades": "1–8",
     "type": "wonderling",
     "pillar": "Compassion",
-    "curriculum_tags": ["compassion", "empathy", "kindness", "perspective_taking", "social_emotional"]
+    "curriculum_tags": [
+      "compassion",
+      "empathy",
+      "kindness",
+      "perspective_taking",
+      "social_emotional"
+    ]
   },
   "avatar": {
     "elevenlabs_voice_id": "edu_lantern_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/edu_lantern.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

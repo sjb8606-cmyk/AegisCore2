@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["artificial_islands_lau", "traditional_canoe_engineering", "island_trade_networks"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "artificial_islands_lau",
+      "traditional_canoe_engineering",
+      "island_trade_networks"
+    ],
     "learning_objectives": [
       "Explain the engineering and structural techniques used by the Saltwater people to construct stable artificial islands from raw coral stones in the Lau Lagoon.",
       "Understand the structural engineering and buoyancy principles of traditional outrigger canoes built by central islanders.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "lau_lagoon_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/lau_lagoon.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Culture & Urban Lifestyle",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["urban_sociology", "architecture", "cultural_studies"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "urban_sociology",
+      "architecture",
+      "cultural_studies"
+    ],
     "learning_objectives": [
       "Understand the architectural and social necessity of Montreal's exterior spiral staircases",
       "Analyze the process of gentrification from a working-class immigrant hub to an artistic enclave",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "plateau_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/plateau.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

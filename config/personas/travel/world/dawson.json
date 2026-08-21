@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culture",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["economic_history", "canadian_heritage", "permafrost_geology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "economic_history",
+      "canadian_heritage",
+      "permafrost_geology"
+    ],
     "learning_objectives": [
       "Understand the mechanics of a rapid economic boom and bust cycle during the Klondike Gold Rush",
       "Analyze the impact of permafrost thaw on historical and modern infrastructure",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "dawson_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/dawson.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

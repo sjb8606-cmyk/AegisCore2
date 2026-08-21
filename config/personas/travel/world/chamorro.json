@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["indigenous_sovereignty", "chamorro_history", "treaty_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "indigenous_sovereignty",
+      "chamorro_history",
+      "treaty_history"
+    ],
     "learning_objectives": [
       "Understand the political and economic structure of the ancient Chamorro society before European contact",
       "Analyze the unique architectural engineering of latte stones (haligi and tasa) used to elevate homes",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "chamorro_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/chamorro.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

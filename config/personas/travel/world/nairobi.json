@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["urban_wildlife_interfaces", "east_african_railways", "national_parks"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "urban_wildlife_interfaces",
+      "east_african_railways",
+      "national_parks"
+    ],
     "learning_objectives": [
       "Understand the historical role of the Uganda Railway (completed in 1899) in founding Nairobi as a colonial railhead camp.",
       "Analyze the ecological and spatial management challenges of operating Nairobi National Park as an unfenced wilderness inside a major metropolis.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "nairobi_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/nairobi.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

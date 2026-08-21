@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["dry_farming", "pueblo_history", "sacred_geography"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "dry_farming",
+      "pueblo_history",
+      "sacred_geography"
+    ],
     "learning_objectives": [
       "Understand the agricultural and spiritual techniques of Hopi dry farming in sand dunes without irrigation",
       "Analyze the continuous, thousand-year history of Old Oraibi on Third Mesa",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "hopi_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/hopi.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

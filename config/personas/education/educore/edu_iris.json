@@ -19,13 +19,43 @@
   "education": {
     "grade_band": "discovery",
     "grades": "4–6",
-    "subjects": ["writing", "reading_comprehension", "creative_expression"],
+    "subjects": [
+      "writing",
+      "reading_comprehension",
+      "creative_expression"
+    ],
     "tier": 1,
     "persona_style": "wordsmith, precise, encouraging",
-    "curriculum_tags": ["paragraph_writing", "grammar", "vocabulary", "creative_writing", "reading_comprehension"]
+    "curriculum_tags": [
+      "paragraph_writing",
+      "grammar",
+      "vocabulary",
+      "creative_writing",
+      "reading_comprehension"
+    ]
   },
   "avatar": {
     "elevenlabs_voice_id": "edu_iris_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/edu_iris.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

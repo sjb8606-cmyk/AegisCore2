@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Flemish_Baroque_Rubens", "Diamond_Cutting_Technology", "Antwerp_Six_Fashion"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Flemish_Baroque_Rubens",
+      "Diamond_Cutting_Technology",
+      "Antwerp_Six_Fashion"
+    ],
     "learning_objectives": [
       "Understand the historical role of Antwerp as the leading commercial and artistic metropolis of Northern Europe in the 16th and 17th centuries.",
       "Analyze the stylistic features of the Flemish Baroque as pioneered by Peter Paul Rubens, focusing on his dynamic composition and color.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "antwerp_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/antwerp.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

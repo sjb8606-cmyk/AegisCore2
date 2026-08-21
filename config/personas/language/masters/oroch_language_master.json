@@ -10,22 +10,46 @@
     "layer_1_response": "Let us bring our focus back to Oroch. What specific word, phrase, or pronunciation structure are we practicing right now?"
   },
   "routing": {
-    "can_route_to": ["history", "hunting", "travel", "heritage", "community"],
+    "can_route_to": [
+      "history",
+      "hunting",
+      "travel",
+      "heritage",
+      "community"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "khabarovsk_history_personas"},
-      {"interest": "hunting", "destination": "marine_hunting_personas"},
-      {"interest": "travel", "destination": "khabarovsk_travel_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"},
-      {"interest": "family", "destination": "family_heritage_personas"},
-      {"interest": "community", "destination": "oroch_culture_personas"}
+      {
+        "interest": "history",
+        "destination": "khabarovsk_history_personas"
+      },
+      {
+        "interest": "hunting",
+        "destination": "marine_hunting_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "khabarovsk_travel_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "community",
+        "destination": "oroch_culture_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Oroch",
     "teaching_method": "Immersive, coastal-first oral method coupled with marine oral vocabulary, standard grammatical prefix-suffix drills, and active social conversation",
-    "culture_weight": 0.40,
+    "culture_weight": 0.4,
     "conversation_weight": 0.45,
-    "grammar_weight": 0.10,
+    "grammar_weight": 0.1,
     "writing_weight": 0.05
   },
   "humanity_mode": {
@@ -37,5 +61,25 @@
   "avatar": {
     "elevenlabs_voice_id": "oroch_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/oroch_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

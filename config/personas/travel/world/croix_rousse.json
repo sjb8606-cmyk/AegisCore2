@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Urban History & Sociology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Industrial Revolution", "Labour History", "Urban Geography"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Industrial Revolution",
+      "Labour History",
+      "Urban Geography"
+    ],
     "learning_objectives": [
       "Understand how the physical requirements of the Jacquard loom (height and light) dictated the unique architectural design of Croix-Rousse apartments.",
       "Analyze the Canut Revolts (1831, 1834) as some of the earliest worker-led uprisings of the Industrial Revolution, influencing Karl Marx.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "croix_rousse_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/croix_rousse.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Archaeology & Maritime History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Roman Daily Life", "Maritime Logistics", "Siltation Geography"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Roman Daily Life",
+      "Maritime Logistics",
+      "Siltation Geography"
+    ],
     "learning_objectives": [
       "Understand the logistical challenge of feeding ancient Rome, focusing on the 'Annona' (grain supply chain) from Egypt through the port of Ostia.",
       "Analyze the urban architecture of the 'Insula' (multi-story Roman apartment building) as the housing model for the working class, compared to aristocratic villas.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ostia_antica_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ostia_antica.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

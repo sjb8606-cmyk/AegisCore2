@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["wetland_ecology", "delta_hydrology", "indigenous_technologies"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "wetland_ecology",
+      "delta_hydrology",
+      "indigenous_technologies"
+    ],
     "learning_objectives": [
       "Explain the unique hydrological cycle of the Okavango Delta, tracing how seasonal floodwaters from Angola irrigate the Kalahari Desert.",
       "Understand the structural design and balancing physics of the traditional 'mokoro' canoe used to navigate shallow, papyrus-choked channels.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "okavango_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/okavango.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

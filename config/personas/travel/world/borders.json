@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Border_Reivers", "Historical_Novel", "Medieval_Monasticism"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Border_Reivers",
+      "Historical_Novel",
+      "Medieval_Monasticism"
+    ],
     "learning_objectives": [
       "Understand the political and religious reasons behind the destruction of the Borders Abbeys (Melrose, Dryburgh, Jedburgh, Kelso) during the 16th century.",
       "Analyze the social structure and military tactics of the Border Reivers, explaining how they survived on a volatile frontier.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "borders_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/borders.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

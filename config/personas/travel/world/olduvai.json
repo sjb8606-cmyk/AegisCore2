@@ -18,8 +18,19 @@
   },
   "education": {
     "domain": "Science",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["human_evolution", "palaeoanthropology", "geology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "human_evolution",
+      "palaeoanthropology",
+      "geology"
+    ],
     "learning_objectives": [
       "Understand the key physical and behavioral adaptations (such as bipedalism and Oldowan tool-making) that mark early hominin evolution at Olduvai.",
       "Explain the geological and stratigraphic processes of the East African Rift that facilitated the exceptional preservation of fossils in the gorge.",
@@ -35,5 +46,25 @@
   "avatar": {
     "elevenlabs_voice_id": "olduvai_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/olduvai.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

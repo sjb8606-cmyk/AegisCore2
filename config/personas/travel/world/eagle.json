@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Sports & Conservation",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["ichthyology", "conservation_ethics", "eco_tourism"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "ichthyology",
+      "conservation_ethics",
+      "eco_tourism"
+    ],
     "learning_objectives": [
       "Understand the biological indicators of a pristine, unpolluted watershed",
       "Analyze the ethics and biological effectiveness of catch-and-release fishing",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "eagle_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/eagle.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

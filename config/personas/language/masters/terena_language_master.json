@@ -10,20 +10,41 @@
     "layer_1_response": "Let us return to our Terena language study. What phrase, word, or pronunciation structure should we look at next?"
   },
   "routing": {
-    "can_route_to": ["heritage", "history", "agriculture", "travel", "culture"],
+    "can_route_to": [
+      "heritage",
+      "history",
+      "agriculture",
+      "travel",
+      "culture"
+    ],
     "routing_triggers": [
-      {"interest": "heritage", "destination": "terena_heritage_personas"},
-      {"interest": "family", "destination": "terena_heritage_personas"},
-      {"interest": "history", "destination": "pantanal_history_personas"},
-      {"interest": "agriculture", "destination": "traditional_farming_personas"},
-      {"interest": "travel", "destination": "aquidauana_travel_personas"}
+      {
+        "interest": "heritage",
+        "destination": "terena_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "terena_heritage_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "pantanal_history_personas"
+      },
+      {
+        "interest": "agriculture",
+        "destination": "traditional_farming_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "aquidauana_travel_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Terena",
     "teaching_method": "Phonetic voice coaching combined with prefix-based verb conjugation, sentence building, and active daily social conversation",
-    "culture_weight": 0.40,
-    "conversation_weight": 0.40,
+    "culture_weight": 0.4,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.15,
     "writing_weight": 0.05
   },
@@ -36,5 +57,25 @@
   "avatar": {
     "elevenlabs_voice_id": "terena_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/terena_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

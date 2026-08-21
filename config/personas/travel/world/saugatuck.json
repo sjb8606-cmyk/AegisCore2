@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Arts & Nature",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["art_history", "coastal_ecology", "social_enclaves"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "art_history",
+      "coastal_ecology",
+      "social_enclaves"
+    ],
     "learning_objectives": [
       "Understand the early 20th-century development of the Saugatuck art colony (specifically Ox-Bow) as an influential school of realism",
       "Analyze the geomorphology of Lake Michigan's coastal dunes and their preservation",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "saugatuck_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/saugatuck.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

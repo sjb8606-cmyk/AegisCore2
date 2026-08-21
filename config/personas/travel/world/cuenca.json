@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Architecture & Art History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Cantilever Engineering", "Spanish Abstract Art", "Karst Geomorphology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Cantilever Engineering",
+      "Spanish Abstract Art",
+      "Karst Geomorphology"
+    ],
     "learning_objectives": [
       "Understand the structural engineering of 'cantilevered' architecture (Casas Colgadas), analyzing how wooden beams stabilize houses over steep cliffs.",
       "Analyze the significance of the Museo de Arte Abstracto Español in Cuenca (established by Fernando Zóbel in 1966) during the late Francoist censorship era.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cuenca_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cuenca.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

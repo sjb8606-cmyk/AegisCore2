@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Military Science",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["monument_history", "presidential_heritage", "landscape_preservation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "monument_history",
+      "presidential_heritage",
+      "landscape_preservation"
+    ],
     "learning_objectives": [
       "Understand the architectural and engineering feats of carving Mount Rushmore under Gutzon Borglum",
       "Analyze the symbolic role of the four selected presidents (Washington, Jefferson, Lincoln, Roosevelt) in representing American expansion",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mount_rushmore_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mount_rushmore.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

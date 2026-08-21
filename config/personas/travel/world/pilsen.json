@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Culinary",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Pilsner_Chemistry", "Industrial_Revolution", "Czech_Brewing_History"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Pilsner_Chemistry",
+      "Industrial_Revolution",
+      "Czech_Brewing_History"
+    ],
     "learning_objectives": [
       "Explain the biochemical factors, particularly the extremely soft water of Pilsen and the low-temperature bottom fermentation, that made the 1842 pilsner unique.",
       "Analyze how the invention of Pilsner beer in 1842 triggered a global shift in brewing, making golden, clear lagers the dominant beer style on earth.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "pilsen_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/pilsen.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

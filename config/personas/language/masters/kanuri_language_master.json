@@ -10,23 +10,47 @@
     "layer_1_response": "Let us bring our focus back to Kanuri. What specific word, phrase, or pronunciation structure are we practicing right now?"
   },
   "routing": {
-    "can_route_to": ["history", "traditions", "travel", "heritage", "community"],
+    "can_route_to": [
+      "history",
+      "traditions",
+      "travel",
+      "heritage",
+      "community"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "bornu_history_personas"},
-      {"interest": "traditions", "destination": "lake_chad_culture_personas"},
-      {"interest": "travel", "destination": "lake_chad_travel_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"},
-      {"interest": "family", "destination": "family_heritage_personas"},
-      {"interest": "community", "destination": "kanuri_culture_personas"}
+      {
+        "interest": "history",
+        "destination": "bornu_history_personas"
+      },
+      {
+        "interest": "traditions",
+        "destination": "lake_chad_culture_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "lake_chad_travel_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "community",
+        "destination": "kanuri_culture_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Kanuri",
     "teaching_method": "Phonetic voice training coupled with standard grammatical postpositional drills, local idioms, and active social conversation",
     "culture_weight": 0.35,
-    "conversation_weight": 0.40,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.15,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Provides Kanuri sound charts, basic sentence structures, pronoun tables, and grammatical distinctions.",
@@ -37,5 +61,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kanuri_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kanuri_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

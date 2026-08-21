@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Alpine Ecology & Geology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Glacial Geology", "Alpine Ecology", "Volcanology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Glacial Geology",
+      "Alpine Ecology",
+      "Volcanology"
+    ],
     "learning_objectives": [
       "Understand the volcanic history of the Daisetsuzan volcanic group and the formation of its massive caldera basins.",
       "Analyze the survival strategies of alpine tundra plants (kane-aoi, dwarf pines) in high-latitude, short-summer environments.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "daisetsu_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/daisetsu.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

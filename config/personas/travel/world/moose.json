@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["ungulate_ecology", "migratory_corridors", "wildlife_refuges"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "ungulate_ecology",
+      "migratory_corridors",
+      "wildlife_refuges"
+    ],
     "learning_objectives": [
       "Understand the ecological necessity of wintering refuges for large ungulates (elk and moose) in the Rocky Mountains",
       "Analyze the historic creation of the National Elk Refuge in 1912 to prevent winter starvation",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "moose_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/moose.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

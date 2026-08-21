@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["forestry_ecology", "fire_management", "dendrology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "forestry_ecology",
+      "fire_management",
+      "dendrology"
+    ],
     "learning_objectives": [
       "Understand the biological adaptations that allow Sequoiadendron giganteum to become the most massive trees by volume on Earth",
       "Analyze the role of natural forest fires in triggering sequoia cone release and soil prep",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sequia_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sequia.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

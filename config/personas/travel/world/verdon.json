@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Geology & Adventure Sports",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Geomorphology", "Hydrology", "Limnology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Geomorphology",
+      "Hydrology",
+      "Limnology"
+    ],
     "learning_objectives": [
       "Understand the geological process of karst erosion that carved the massive limestone walls of the Gorges du Verdon.",
       "Analyze the chemical and physical factors (limestone flour, suspended minerals, micro-algae) that give the Verdon its unique turquoise color.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "verdon_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/verdon.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

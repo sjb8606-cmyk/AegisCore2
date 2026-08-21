@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Ecology",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["aquaculture", "material_culture", "unification_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "aquaculture",
+      "material_culture",
+      "unification_history"
+    ],
     "learning_objectives": [
       "Understand the sophisticated civil engineering and ecological principles of the Hawaiian fishpond (Loko I'a)",
       "Analyze the role of Kohala as the birthplace and early stronghold of Kamehameha the Great",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kohala_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kohala.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

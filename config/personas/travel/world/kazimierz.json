@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Holocaust_History", "Polish_Jewish_Heritage", "Oskar_Schindler"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Holocaust_History",
+      "Polish_Jewish_Heritage",
+      "Oskar_Schindler"
+    ],
     "learning_objectives": [
       "Understand the historical evolution of Kazimierz from an independent royal city founded in 1335 to the vibrant center of Jewish culture in Kraków.",
       "Analyze the systematic destruction of the Kraków Jewish community during the Holocaust, detailing the creation and liquidation of the Podgórze Ghetto.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kazimierz_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kazimierz.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

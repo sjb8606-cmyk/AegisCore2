@@ -19,11 +19,40 @@
   "education": {
     "tier": 2,
     "reports_to": "edu_marcus",
-    "subjects": ["war_history", "conflict_studies"],
-    "curriculum_tags": ["causes_of_war", "military_history", "conflict_analysis", "consequences", "peace_studies"]
+    "subjects": [
+      "war_history",
+      "conflict_studies"
+    ],
+    "curriculum_tags": [
+      "causes_of_war",
+      "military_history",
+      "conflict_analysis",
+      "consequences",
+      "peace_studies"
+    ]
   },
   "avatar": {
     "elevenlabs_voice_id": "edu_dr_russo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/edu_dr_russo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

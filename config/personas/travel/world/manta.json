@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["textile_crafts", "agricultural_history", "indigenous_technologies"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "textile_crafts",
+      "agricultural_history",
+      "indigenous_technologies"
+    ],
     "learning_objectives": [
       "Explain the history and naming confusion of the 'Panama Hat' (Sombrero de Paja Toquilla), tracing its true origin to Ecuadorian and Manabí artisans.",
       "Analyze the traditional weaving techniques, specifically the use of 'toquilla' palm fibers to achieve high-density weaves (vueltas).",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "manta_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/manta.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

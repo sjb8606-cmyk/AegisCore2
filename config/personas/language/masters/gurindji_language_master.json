@@ -10,13 +10,34 @@
     "layer_1_response": "That topic takes us away from our target language. Let us refocus on Gurindji. What specific construction or conversation can we study?"
   },
   "routing": {
-    "can_route_to": ["history", "pastoral", "travel", "culture", "heritage"],
+    "can_route_to": [
+      "history",
+      "pastoral",
+      "travel",
+      "culture",
+      "heritage"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "land_rights_history_personas"},
-      {"interest": "pastoral", "destination": "pastoral_ecology_personas"},
-      {"interest": "travel", "destination": "kalkaringi_travel_personas"},
-      {"interest": "culture", "destination": "gurindji_culture_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"}
+      {
+        "interest": "history",
+        "destination": "land_rights_history_personas"
+      },
+      {
+        "interest": "pastoral",
+        "destination": "pastoral_ecology_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "kalkaringi_travel_personas"
+      },
+      {
+        "interest": "culture",
+        "destination": "gurindji_culture_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      }
     ]
   },
   "language_engine": {
@@ -36,5 +57,25 @@
   "avatar": {
     "elevenlabs_voice_id": "gurindji_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/gurindji_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

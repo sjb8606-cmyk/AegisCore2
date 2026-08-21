@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Architecture & Rural Sociology",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Vernacular Architecture", "Rural Sociology", "Socio-Environmental History"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Vernacular Architecture",
+      "Rural Sociology",
+      "Socio-Environmental History"
+    ],
     "learning_objectives": [
       "Understand how vernacular architecture (Gassho-style) is designed to withstand extreme alpine winter conditions.",
       "Analyze the social structure of 'Yui' (mutual aid and community labor) required to re-thatch a massive farmhouse roof in a single day.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "shirakawa_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/shirakawa.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

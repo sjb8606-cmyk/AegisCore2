@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["industrial_engineering", "railway_history", "modernizing_trade"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "industrial_engineering",
+      "railway_history",
+      "modernizing_trade"
+    ],
     "learning_objectives": [
       "Explain the history and engineering challenges of constructing the Franco-Ethiopian Railway (completed in 1917) from Djibouti to Addis Ababa.",
       "Understand the urban planning history of Dire Dawa as a planned colonial city divided into European (Kezira) and indigenous (Megala) quarters.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "dire_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/dire.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

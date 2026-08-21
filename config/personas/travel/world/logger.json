@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Industry",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["industrial_history", "environmental_impact", "labor_studies"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "industrial_history",
+      "environmental_impact",
+      "labor_studies"
+    ],
     "learning_objectives": [
       "Understand the mechanics and logistics of the 19th-century spring river drives in Maine",
       "Analyze the ecological impact of clear-cutting the native white pine forests of New England",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "logger_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/logger.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Religious Art",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Celtic Kingdoms", "Romanesque Architecture", "High Cross Iconography"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Celtic Kingdoms",
+      "Romanesque Architecture",
+      "High Cross Iconography"
+    ],
     "learning_objectives": [
       "Understand the historical role of the Rock of Cashel (Carraig Phádraig) as the traditional seat of the Kings of Munster since the 4th century.",
       "Analyze the unique Romanesque architectural style of Cormac’s Chapel (completed 1134), evaluating its imported German-Rhenish influences.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "rock_of_cashel_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/rock_of_cashel.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

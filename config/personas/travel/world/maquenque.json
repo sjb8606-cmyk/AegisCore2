@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["conservation_biology", "wetland_hydrology", "endangered_species"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "conservation_biology",
+      "wetland_hydrology",
+      "endangered_species"
+    ],
     "learning_objectives": [
       "Explain the ecological and symbiotic relationship between the Great Green Macaw (Ara ambiguus) and the Almendro de Montaña tree (Dipteryx oleifera).",
       "Understand the importance of Maquenque National Wildlife Refuge as a critical biological corridor connecting Costa Rica and Nicaragua.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "maquenque_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/maquenque.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

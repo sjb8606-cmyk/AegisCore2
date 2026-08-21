@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Adventure & History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["wilderness_preservation", "river_navigation", "industrial_archaeology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "wilderness_preservation",
+      "river_navigation",
+      "industrial_archaeology"
+    ],
     "learning_objectives": [
       "Understand the creation of the Allagash Wilderness Waterway as a pioneer model for state-protected rivers",
       "Analyze the bizarre history of the Eagle Lake and West Branch Railroad buried deep in the Maine woods",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "allagash_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/allagash.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

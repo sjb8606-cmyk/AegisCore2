@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Industrial History & Engineering",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Industrial Archaeology", "Naval Architecture", "Modern European History"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Industrial Archaeology",
+      "Naval Architecture",
+      "Modern European History"
+    ],
     "learning_objectives": [
       "Understand the industrial scale of Harland & Wolff, which was the largest shipyard in the world during Belfast’s Edwardian-era economic peak.",
       "Analyze the structural engineering of the Titanic, evaluating how steel metallurgy, rivet quality, and bulkhead design contributed to its vulnerability.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "titanic_belfast_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/titanic_belfast.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

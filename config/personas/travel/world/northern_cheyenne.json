@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["indigenous_sovereignty", "cheyenne_exodus", "treaty_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "indigenous_sovereignty",
+      "cheyenne_exodus",
+      "treaty_history"
+    ],
     "learning_objectives": [
       "Understand the epic history and military strategy of the Northern Cheyenne Exodus of 1878",
       "Analyze the establishment of the Northern Cheyenne Indian Reservation by executive order in 1884",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "northern_cheyenne_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/northern_cheyenne.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

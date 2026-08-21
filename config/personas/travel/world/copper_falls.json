@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["geomorphology", "basalt_geology", "conservation_history"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "geomorphology",
+      "basalt_geology",
+      "conservation_history"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Precambrian basalt and the erosion that carved the Copper Falls gorges",
       "Analyze the role of the Civilian Conservation Corps (CCC) in constructing the park's log and stone infrastructure",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "copper_falls_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/copper_falls.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["volcanic_islands_fiji", "indigenous_governance", "coastal_protection_fiji"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "volcanic_islands_fiji",
+      "indigenous_governance",
+      "coastal_protection_fiji"
+    ],
     "learning_objectives": [
       "Understand the geological and marine processes of volcanic crater subsidence that formed the unique, circular island structure of Apolima.",
       "Analyze the social structure of the local family-based community, explaining their system of self-governance and traditional chiefly authority.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "apolima_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/apolima.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

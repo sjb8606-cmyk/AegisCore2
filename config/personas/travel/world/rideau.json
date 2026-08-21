@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Engineering",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["civil_engineering", "military_history", "canadian_heritage"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "civil_engineering",
+      "military_history",
+      "canadian_heritage"
+    ],
     "learning_objectives": [
       "Understand the geopolitical fears that drove the construction of an inland military canal",
       "Analyze the civil engineering principles of slackwater navigation systems",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "rideau_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/rideau.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

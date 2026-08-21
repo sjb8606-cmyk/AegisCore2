@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Music & Mythology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["cultural_mythology", "blues_history", "folklore"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "cultural_mythology",
+      "blues_history",
+      "folklore"
+    ],
     "learning_objectives": [
       "Understand the historical and cultural origins of the 'crossroads' myth in African American folklore",
       "Analyze the artistic innovations and recording history of Robert Johnson in the 1930s",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "crossroads_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/crossroads.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

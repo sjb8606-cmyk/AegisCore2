@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Architecture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["immigration_history", "german_heritage", "urban_preservation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "immigration_history",
+      "german_heritage",
+      "urban_preservation"
+    ],
     "learning_objectives": [
       "Understand the historical demographics of the South End (German Village) as a major 19th-century German immigrant enclave",
       "Analyze the architectural design and structural engineering of the brick 'Schiller' cottages",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "german_village_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/german_village.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

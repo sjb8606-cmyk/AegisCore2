@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["limnology", "reed_engineering", "andean_cosmology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "limnology",
+      "reed_engineering",
+      "andean_cosmology"
+    ],
     "learning_objectives": [
       "Explain the geological and hydrological factors that sustain Lake Titicaca as the highest navigable lake in the world, focusing on glacier drainage.",
       "Understand the structural engineering and buoyancy principles of traditional 'totora' reed boats (balsas de totora) built by Aymara craftsmen.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "titicaca_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/titicaca.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

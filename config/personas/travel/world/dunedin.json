@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["scottish_migration", "victorian_architecture", "marine_ecology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "scottish_migration",
+      "victorian_architecture",
+      "marine_ecology"
+    ],
     "learning_objectives": [
       "Understand the historical push-and-pull factors behind the Scottish Presbyterian migration to Otago in 1848.",
       "Identify the key characteristics of Victorian and Edwardian stone architecture that define Dunedin's urban layout.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "dunedin_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/dunedin.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

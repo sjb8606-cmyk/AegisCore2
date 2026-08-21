@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Culinary",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["viticulture_history", "cape_dutch_architecture", "agricultural_labor_systems"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "viticulture_history",
+      "cape_dutch_architecture",
+      "agricultural_labor_systems"
+    ],
     "learning_objectives": [
       "Understand how the unique terroir of the Western Cape's valleys enables the production of diverse, award-winning wine varietals.",
       "Critically evaluate the structural and historical elements of Cape Dutch architecture, highlighting the contributions of enslaved Asian and African craftsmen.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "winelands_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/winelands.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

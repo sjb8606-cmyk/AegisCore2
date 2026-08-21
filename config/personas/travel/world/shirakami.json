@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Wilderness",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Forestry", "Biodiversity", "Conservation Ecology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Forestry",
+      "Biodiversity",
+      "Conservation Ecology"
+    ],
     "learning_objectives": [
       "Understand the ecological role of the virgin beech forest as a massive water sponge that regulates the regional ecosystem.",
       "Analyze why Shirakami-Sanchi survived centuries of logging that decimated other Japanese forests.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "shirakami_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/shirakami.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

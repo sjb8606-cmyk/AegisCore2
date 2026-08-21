@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["indigenous_studies", "plateau_geography", "treaty_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "indigenous_studies",
+      "plateau_geography",
+      "treaty_history"
+    ],
     "learning_objectives": [
       "Understand the historical geography of the Southern Paiute (San Juan and Kaibab) along the Colorado Plateau",
       "Analyze the impact of early colonial trade and treaties on the territory of the Paiute Nation",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "paiute_ut_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/paiute_ut.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

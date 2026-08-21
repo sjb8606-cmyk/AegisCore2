@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["political_science", "cowboy_culture", "railroad_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "political_science",
+      "cowboy_culture",
+      "railroad_history"
+    ],
     "learning_objectives": [
       "Understand the historical role of the Union Pacific Railroad in founding Cheyenne as the 'Magic City of the Plains'",
       "Analyze the socioeconomic and cultural development of Cheyenne Frontier Days (since 1897) in regional branding",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cheyenne_wy_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cheyenne_wy.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Local Culture & History",
-    "grade_levels": ["elementary", "middle_school", "adult"],
-    "curriculum_tags": ["Pilgrimage Circles", "Tibetan Crafts", "Lagoon Ecology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Pilgrimage Circles",
+      "Tibetan Crafts",
+      "Lagoon Ecology"
+    ],
     "learning_objectives": [
       "Understand the historical role of the Barkhor (the 'Middle Circle') as both the primary commercial bazaar and the sacred pilgrim circuit of Lhasa.",
       "Analyze the physical and psychological practice of 'Prostration' (Kyangchag) used by Tibetan pilgrims to travel hundreds of miles to the Jokhang.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "barkhor_street_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/barkhor_street.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

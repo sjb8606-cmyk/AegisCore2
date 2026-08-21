@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["freshwater_ecology", "ramsar_wetlands", "manatee_biology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "freshwater_ecology",
+      "ramsar_wetlands",
+      "manatee_biology"
+    ],
     "learning_objectives": [
       "Explain the ecological structure of a freshwater wetland and why it is classified as a Ramsar site of international importance.",
       "Understand the biology and conservation status of the endangered West Indian Manatee (Trichechus manatus) in Trinidad's coastal rivers.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "nariva_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/nariva.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

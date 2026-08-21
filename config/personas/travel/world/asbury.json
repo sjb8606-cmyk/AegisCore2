@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Music & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["music_history", "urban_sociology", "cultural_studies"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "music_history",
+      "urban_sociology",
+      "cultural_studies"
+    ],
     "learning_objectives": [
       "Understand the social and economic conditions of 1970s New Jersey that birthed the 'Jersey Shore Sound'",
       "Analyze the role of live music venues (like the Stone Pony) in preserving community identity during urban decay",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "asbury_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/asbury.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

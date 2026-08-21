@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Admiral_Yi_Sun_sin", "Imjin_War_Naval_Battles", "Turtle_Ship_Technology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Admiral_Yi_Sun_sin",
+      "Imjin_War_Naval_Battles",
+      "Turtle_Ship_Technology"
+    ],
     "learning_objectives": [
       "Understand the strategic and technological innovations of the Geobukseon (Turtle Ship), explaining how its design countered Japanese boarding tactics.",
       "Analyze the naval tactics of Admiral Yi Sun-sin at the Battle of Hansando, focusing on his 'Crane Wing' formation (Hakik-jin).",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tongyeong_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tongyeong.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Gastronomy",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Hundred Years' War", "Culinary Terroir", "European Prehistory"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Hundred Years' War",
+      "Culinary Terroir",
+      "European Prehistory"
+    ],
     "learning_objectives": [
       "Understand the military geography of the Dordogne Valley as the heavily fortified frontier between French and English crowns during the Hundred Years' War.",
       "Analyze the culinary history of duck preservation (confit) and truffling as traditional survival techniques in rural France.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "perigord_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/perigord.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

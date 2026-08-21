@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["inuit_studies", "coastal_geography", "treaty_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "inuit_studies",
+      "coastal_geography",
+      "treaty_history"
+    ],
     "learning_objectives": [
       "Understand the historical territory, social structure, and coastal life of the Inupiat of Kotzebue Sound",
       "Analyze the transition of the region from a prehistoric trading hub to a modern administrative center",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kotzebue_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kotzebue.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

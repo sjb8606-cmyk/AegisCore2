@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["volcanology", "geomorphology", "panhandle_geography"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "volcanology",
+      "geomorphology",
+      "panhandle_geography"
+    ],
     "learning_objectives": [
       "Understand the geological formation of Black Mesa through volcanic basalt capping",
       "Analyze why the basalt cap protected the underlying sedimentary rock from erosion, creating the highest point in Oklahoma",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "black_mesa_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/black_mesa.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

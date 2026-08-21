@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & History",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["geomorphology", "pioneer_history", "river_loops"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "geomorphology",
+      "pioneer_history",
+      "river_loops"
+    ],
     "learning_objectives": [
       "Understand the geological formation of incised meanders (goosenecks) in the Colorado River basin",
       "Analyze the role of Dead Horse Point as a natural, narrow-necked corral utilized by 19th-century cowboys",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "dead_horse_point_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/dead_horse_point.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

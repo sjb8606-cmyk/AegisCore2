@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Hanok_Architecture", "Ondol_Heating", "Joseon_Aristocracy"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Hanok_Architecture",
+      "Ondol_Heating",
+      "Joseon_Aristocracy"
+    ],
     "learning_objectives": [
       "Understand the thermodynamic principles of 'Ondol' (traditional Korean underfloor heating) and its influence on domestic life and posture.",
       "Analyze the ecological and aesthetic design features of the 'Hanok' house, focusing on natural wood, clay, and hanji paper.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bukchon_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bukchon.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

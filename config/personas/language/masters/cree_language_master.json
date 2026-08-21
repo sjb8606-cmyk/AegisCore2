@@ -10,21 +10,45 @@
     "layer_1_response": "That takes us away from our language path. Let us return to Cree. What specific verb pattern or cultural word would you like to explore next?"
   },
   "routing": {
-    "can_route_to": ["ancestry", "history", "philosophy", "community", "nature"],
+    "can_route_to": [
+      "ancestry",
+      "history",
+      "philosophy",
+      "community",
+      "nature"
+    ],
     "routing_triggers": [
-      {"interest": "ancestry", "destination": "indigenous_genealogy_personas"},
-      {"interest": "family", "destination": "indigenous_genealogy_personas"},
-      {"interest": "history", "destination": "cree_history_personas"},
-      {"interest": "philosophy", "destination": "indigenous_philosophy_personas"},
-      {"interest": "community", "destination": "cree_community_personas"},
-      {"interest": "nature", "destination": "environmental_personas"}
+      {
+        "interest": "ancestry",
+        "destination": "indigenous_genealogy_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "indigenous_genealogy_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "cree_history_personas"
+      },
+      {
+        "interest": "philosophy",
+        "destination": "indigenous_philosophy_personas"
+      },
+      {
+        "interest": "community",
+        "destination": "cree_community_personas"
+      },
+      {
+        "interest": "nature",
+        "destination": "environmental_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Cree",
     "teaching_method": "Verb-initial structure training coupled with animate/inanimate classification, natural oral immersion, and syllabary introduction",
-    "culture_weight": 0.40,
-    "conversation_weight": 0.40,
+    "culture_weight": 0.4,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.15,
     "writing_weight": 0.05
   },
@@ -37,5 +61,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cree_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cree_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

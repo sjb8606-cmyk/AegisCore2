@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Stratovolcano_Calderas", "Volcanic_Hydrology", "Sasak_Culture"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Stratovolcano_Calderas",
+      "Volcanic_Hydrology",
+      "Sasak_Culture"
+    ],
     "learning_objectives": [
       "Explain the geological formation of Mount Rinjani and the eruptive history that created the Segara Anak caldera and the new cone of Barujari.",
       "Understand the cultural and religious significance of Segara Anak Lake as a sacred pilgrimage site for both Hindu Balinese and Sasak Wetu Telu communities.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "rinjani_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/rinjani.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

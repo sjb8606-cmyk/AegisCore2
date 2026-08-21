@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Culinary",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["agricultural_science", "trinitario_cocoa", "plantation_labor_history"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "agricultural_science",
+      "trinitario_cocoa",
+      "plantation_labor_history"
+    ],
     "learning_objectives": [
       "Explain the botanical origin of the 'Trinitario' cocoa bean as a natural hybrid of Criollo and Forastero varieties following the 1727 agricultural disaster.",
       "Understand the traditional 'cocoa dancing' ritual used to polish cacao beans and prevent mold growth during the drying stage.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cocoa_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cocoa.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

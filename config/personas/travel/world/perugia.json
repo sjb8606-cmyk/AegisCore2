@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culinary Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Etruscan Civilization", "Medieval Communes", "Food History"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Etruscan Civilization",
+      "Medieval Communes",
+      "Food History"
+    ],
     "learning_objectives": [
       "Understand the archaeological significance of Perugia's Etruscan walls and the massive Porta Marzia (Etruscan Arch).",
       "Analyze the social and political causes of the Salt War of 1540, explaining how the citizens of Perugia rebelled against papal taxation by baking unsalted bread (pane sciocco).",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "perugia_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/perugia.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

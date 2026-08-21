@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["geomorphology", "hydrology", "appalachian_ecology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "geomorphology",
+      "hydrology",
+      "appalachian_ecology"
+    ],
     "learning_objectives": [
       "Understand the geological formation and hydrology of Fall Creek Falls, the tallest waterfall in the eastern United States",
       "Analyze the erosion of the Cumberland Plateau's sandstone layers by high-gradient streams",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "fall_creek_falls_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/fall_creek_falls.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

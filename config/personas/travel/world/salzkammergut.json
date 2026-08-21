@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Hallstatt_Culture", "Salt_Mining_History", "Glacial_Lakes"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Hallstatt_Culture",
+      "Salt_Mining_History",
+      "Glacial_Lakes"
+    ],
     "learning_objectives": [
       "Explain the geological formation of the Salzkammergut’s limestone mountains and the glacial excavation of its deep, alpine lakes.",
       "Understand the historical role of the Hallstatt Salt Mine as the oldest active salt mine in the world, defining the Celtic 'Hallstatt Culture.'",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "salzkammergut_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/salzkammergut.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

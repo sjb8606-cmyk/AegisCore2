@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Local Culture & Economic History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Urban Trade Networks", "Socio-Cultural History", "Traditional Markets"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Urban Trade Networks",
+      "Socio-Cultural History",
+      "Traditional Markets"
+    ],
     "learning_objectives": [
       "Understand the historical origins of 'El Rastro' as a market born around the city's old slaughterhouses and tanneries in the 15th century.",
       "Analyze the role of open-air markets as vital economic and social survival spaces for marginalized communities across history.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "rastro_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/rastro.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

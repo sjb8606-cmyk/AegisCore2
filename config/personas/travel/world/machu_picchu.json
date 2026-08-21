@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Archaeology",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Inca Architecture", "Archaeoastronomy", "Colonial Exploration History"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Inca Architecture",
+      "Archaeoastronomy",
+      "Colonial Exploration History"
+    ],
     "learning_objectives": [
       "Understand the structural engineering of Machu Picchu, focusing on how its terrace and drainage systems protect a granite city from tropical landslides.",
       "Analyze the astronomical alignment of the Temple of the Sun and the Intihuatana stone with the winter and summer solstices.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "machu_picchu_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/machu_picchu.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Industry & Geography",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["resource_extraction", "economic_geography", "logistics"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "resource_extraction",
+      "economic_geography",
+      "logistics"
+    ],
     "learning_objectives": [
       "Understand the geological formation of kimberlite pipes and how diamonds are brought to the surface",
       "Analyze the massive logistical challenges and engineering required to build and maintain the NWT ice roads",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "diamond_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/diamond.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

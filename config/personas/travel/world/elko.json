@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culture",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["agricultural_history", "cowboy_poetry", "folklore"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "agricultural_history",
+      "cowboy_poetry",
+      "folklore"
+    ],
     "learning_objectives": [
       "Understand the historical development of the Western buckaroo (ranching) culture in the Great Basin",
       "Analyze the role of the National Cowboy Poetry Gathering in preserving and revitalizing oral-history folkways",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "elko_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/elko.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

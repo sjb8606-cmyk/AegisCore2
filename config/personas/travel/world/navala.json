@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["indigenous_governance", "traditional_architecture_fiji", "sustainable_communities"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "indigenous_governance",
+      "traditional_architecture_fiji",
+      "sustainable_communities"
+    ],
     "learning_objectives": [
       "Understand the social and political structure of traditional Fijian villages, explaining the role of communal labor (solesolevaki) in Navala.",
       "Analyze the design, construction materials, and environmental adaptation of traditional Fijian thatch houses (bures).",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "navala_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/navala.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

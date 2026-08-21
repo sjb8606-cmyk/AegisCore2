@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Sociology",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["civil_war", "lost_cause_myth", "monument_removal"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "civil_war",
+      "lost_cause_myth",
+      "monument_removal"
+    ],
     "learning_objectives": [
       "Understand the strategic and industrial reasons why Richmond was selected as the capital of the Confederacy",
       "Analyze the creation and sociological impact of the 'Lost Cause' mythology in the late 19th and early 20th centuries",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "richmond_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/richmond.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

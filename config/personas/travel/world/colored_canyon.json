@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Ecology & Alpine Geography",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Sedimentary Geology", "Karst Geomorphology? No, Sandstone", "Desert Ecology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Sedimentary Geology",
+      "Karst Geomorphology? No, Sandstone",
+      "Desert Ecology"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Coloured Canyon, focusing on how iron-oxide and manganese deposition created the distinct colored sandstone layers.",
       "Analyze the wind and water erosion processes that carved the narrow, winding labyrinth of the canyon walls.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "colored_canyon_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/colored_canyon.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Coastal Culture",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Caravan Logistics", "Saharan Trade", "Saadian History"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Caravan Logistics",
+      "Saharan Trade",
+      "Saadian History"
+    ],
     "learning_objectives": [
       "Understand the logistics and survival strategies of the Trans-Saharan caravan trade, analyzing why Zagora served as the primary launching pad.",
       "Analyze the biological adaptations of the Dromedary Camel (Camelus dromedarius) that allowed it to survive fifty-two days of desert travel.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "zagora_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/zagora.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Literature",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Welsh_Manuscripts", "Marine_Conservation", "Victorian_Academia"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Welsh_Manuscripts",
+      "Marine_Conservation",
+      "Victorian_Academia"
+    ],
     "learning_objectives": [
       "Understand the historical significance of the National Library of Wales in preserving key medieval Welsh manuscripts like the Black Book of Carmarthen.",
       "Analyze the ecological management of Cardigan Bay as a major habitat for bottlenose dolphins and grey seals.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ceredigion_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ceredigion.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

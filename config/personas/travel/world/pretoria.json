@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["political_history", "colonial_and_republican_architecture", "reconciliation"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "political_history",
+      "colonial_and_republican_architecture",
+      "reconciliation"
+    ],
     "learning_objectives": [
       "Understand the historical context of the Great Trek and the construction of the Voortrekker Monument as a symbol of Afrikaner nationalism.",
       "Analyze the architectural design and symbolic placement of the Union Buildings as a monument of British colonial reconciliation that became the seat of democratic power.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "pretoria_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/pretoria.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

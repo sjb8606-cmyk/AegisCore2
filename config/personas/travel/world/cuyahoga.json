@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Nature",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["environmental_history", "river_hydrology", "canal_systems"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "environmental_history",
+      "river_hydrology",
+      "canal_systems"
+    ],
     "learning_objectives": [
       "Understand the environmental history of the Cuyahoga River and its role in launching the Clean Water Act and EPA",
       "Analyze the construction of the Ohio & Erie Canal and its role in connecting Cleveland to the Ohio River",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cuyahoga_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cuyahoga.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

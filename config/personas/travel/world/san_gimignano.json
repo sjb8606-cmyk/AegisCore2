@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Architecture",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Medieval Urbanism", "Feudal Feuds", "DOCG Wine History"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Medieval Urbanism",
+      "Feudal Feuds",
+      "DOCG Wine History"
+    ],
     "learning_objectives": [
       "Understand the socio-political function of 'tower houses' (case-torri) as symbols of family status and defensive bastions in medieval Italian city-states.",
       "Analyze the impact of the Black Death (1348) in freezing the architectural development of San Gimignano, preserving its medieval layout.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "san_gimignano_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/san_gimignano.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

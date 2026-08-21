@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Business Operations",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Marketing_Economics", "Customer_Acquisition", "Small_Business_Finance"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Marketing_Economics",
+      "Customer_Acquisition",
+      "Small_Business_Finance"
+    ],
     "learning_objectives": [
       "Calculate customer acquisition cost by channel and use it to evaluate marketing spend effectiveness.",
       "Distinguish between awareness metrics and conversion metrics, and explain why both matter differently.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "biz_module_marketing_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/biz_module_marketing.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

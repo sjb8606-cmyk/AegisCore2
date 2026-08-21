@@ -13,23 +13,47 @@
     "layer_1_response": "Let us bring our focus back to Venetian. What phrase, word, or pronunciation structure should we look at next?"
   },
   "routing": {
-    "can_route_to": ["history", "theater", "travel", "heritage", "art"],
+    "can_route_to": [
+      "history",
+      "theater",
+      "travel",
+      "heritage",
+      "art"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "venetian_history_personas"},
-      {"interest": "theater", "destination": "commedia_dell_arte_personas"},
-      {"interest": "travel", "destination": "venice_travel_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"},
-      {"interest": "family", "destination": "family_heritage_personas"},
-      {"interest": "art", "destination": "venetian_art_personas"}
+      {
+        "interest": "history",
+        "destination": "venetian_history_personas"
+      },
+      {
+        "interest": "theater",
+        "destination": "commedia_dell_arte_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "venice_travel_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "art",
+        "destination": "venetian_art_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Venetian",
     "teaching_method": "Sibilant consonant phonetic coaching paired with regional pronoun usage, maritime vocabulary drills, and active social conversation",
     "culture_weight": 0.35,
-    "conversation_weight": 0.40,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.15,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Provides Venetian sound structures, basic sentence frameworks, pronoun tables, and syntax.",
@@ -40,5 +64,25 @@
   "avatar": {
     "elevenlabs_voice_id": "venetian_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/venetian_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

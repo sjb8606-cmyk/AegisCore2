@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["indigenous_identity", "civil_rights", "reconstruction_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "indigenous_identity",
+      "civil_rights",
+      "reconstruction_history"
+    ],
     "learning_objectives": [
       "Understand the unique history and distinct identity of the Lumbee Tribe of North Carolina",
       "Analyze the legend of Henry Berry Lowry and the Lowry War (1864-1874) as an Indigenous struggle for justice",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "lumbee_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/lumbee.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

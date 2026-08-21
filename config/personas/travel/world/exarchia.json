@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Political Sociology & Counterculture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Modern Greek History", "Social Movements", "Urban Commons"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Modern Greek History",
+      "Social Movements",
+      "Urban Commons"
+    ],
     "learning_objectives": [
       "Understand the historical significance of the 1973 Athens Polytechnic uprising in Exarchia as the catalyst that brought down the military junta.",
       "Analyze the concept of the 'Urban Commons' as illustrated in the self-managed, community-run Navarinou Park (a reclaimed parking lot).",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "exarchia_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/exarchia.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

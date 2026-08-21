@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Urban Archaeology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Jewish History", "Medieval Siege Warfare", "Scenic Architecture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Jewish History",
+      "Medieval Siege Warfare",
+      "Scenic Architecture"
+    ],
     "learning_objectives": [
       "Understand the historical role of the Jewish community in Girona (the Call) and its status as a premier center of Kabbalistic study in medieval Europe.",
       "Analyze the architectural and urban design of Girona's medieval fortifications and cathedral, focusing on its record-breaking 23-meter-wide Gothic nave.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "girona_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/girona.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

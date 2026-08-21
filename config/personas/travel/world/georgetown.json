@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Urban Geography",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["urban_history", "canals_infrastructure", "political_elites"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "urban_history",
+      "canals_infrastructure",
+      "political_elites"
+    ],
     "learning_objectives": [
       "Understand the pre-capital history of Georgetown as a vital Maryland tobacco port",
       "Analyze the engineering and ultimate commercial failure of the Chesapeake and Ohio (C&O) Canal",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "georgetown_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/georgetown.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

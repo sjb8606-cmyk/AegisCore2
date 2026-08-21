@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["land_reclamation_engineering", "luxury_tourism_models", "coastal_geography"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "land_reclamation_engineering",
+      "luxury_tourism_models",
+      "coastal_geography"
+    ],
     "learning_objectives": [
       "Explain the engineering process of marine land reclamation and the structural techniques used to build stable artificial islands.",
       "Understand the historical economic transition of Qatar from a pearl-dependent economy to a luxury real estate and global tourism hub.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "pearl_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/pearl.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

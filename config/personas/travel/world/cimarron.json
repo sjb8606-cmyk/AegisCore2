@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Geography",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["prairie_ecology", "transportation_history", "land_conservation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "prairie_ecology",
+      "transportation_history",
+      "land_conservation"
+    ],
     "learning_objectives": [
       "Understand the strategic and risky logistics of the Cimarron Cutoff on the Santa Fe Trail",
       "Analyze the creation of the National Grasslands as a government conservation response to the Dust Bowl",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cimarron_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cimarron.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

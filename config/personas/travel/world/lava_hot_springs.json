@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Leisure",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["geothermal_springs", "mineralogy", "recreation_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "geothermal_springs",
+      "mineralogy",
+      "recreation_history"
+    ],
     "learning_objectives": [
       "Understand the geological faulting and geothermal processes that heat the mineral waters of Lava Hot Springs",
       "Analyze the role of the Portneuf River valley as a historic transportation corridor for Native nations and pioneers",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "lava_hot_springs_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/lava_hot_springs.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

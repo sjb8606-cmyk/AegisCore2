@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Local Culture & History",
-    "grade_levels": ["elementary", "middle_school", "adult"],
-    "curriculum_tags": ["History of Tourism", "Espionage History", "Coastal Geomorphology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "History of Tourism",
+      "Espionage History",
+      "Coastal Geomorphology"
+    ],
     "learning_objectives": [
       "Understand the transformation of Cascais from a strategic fortress and fishing village to the 'Queen of Resorts' under King Luís I.",
       "Analyze the role of the Estoril coast as a neutral, high-density haven for exiled European royalty and international spies during World War II.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cascais_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cascais.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

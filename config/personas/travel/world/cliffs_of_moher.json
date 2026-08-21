@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Nature & Coastal Geography",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Coastal Geomorphology", "Oceanography", "Seabird Ecology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Coastal Geomorphology",
+      "Oceanography",
+      "Seabird Ecology"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Cliffs of Moher (layered sandstone, siltstone, and shale) and their resistance to Atlantic wave erosion.",
       "Analyze the ecological role of the cliffs as a Special Protection Area (SPA) for over 30,000 nesting pairs of seabirds (puffins, guillemots).",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cliffs_of_moher_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cliffs_of_moher.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

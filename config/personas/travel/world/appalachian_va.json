@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Industry",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["resource_extraction", "labor_history", "environmental_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "resource_extraction",
+      "labor_history",
+      "environmental_history"
+    ],
     "learning_objectives": [
       "Understand the geological processes that formed the bituminous coal seams of Southwest Virginia",
       "Analyze the socioeconomic structure of the Appalachian company town system and the use of scrip",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "appalachian_va_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/appalachian_va.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

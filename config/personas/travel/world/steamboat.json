@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Recreation",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["recreational_history", "cowboy_culture", "mountain_geography"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "recreational_history",
+      "cowboy_culture",
+      "mountain_geography"
+    ],
     "learning_objectives": [
       "Understand the historical development of Steamboat Springs as a pioneer center for winter sports",
       "Analyze the cultural significance of the 'Cowboy Downhill' in merging traditional ranching identity with modern skiing",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "steamboat_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/steamboat.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

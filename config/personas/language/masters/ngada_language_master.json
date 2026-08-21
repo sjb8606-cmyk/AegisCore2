@@ -10,23 +10,47 @@
     "layer_1_response": "Let us bring our focus back to Ngada. What specific word, phrase, or pronunciation structure are we practicing right now?"
   },
   "routing": {
-    "can_route_to": ["history", "megaliths", "travel", "heritage", "community"],
+    "can_route_to": [
+      "history",
+      "megaliths",
+      "travel",
+      "heritage",
+      "community"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "flores_history_personas"},
-      {"interest": "megaliths", "destination": "megalithic_culture_personas"},
-      {"interest": "travel", "destination": "bajawa_travel_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"},
-      {"interest": "family", "destination": "family_heritage_personas"},
-      {"interest": "community", "destination": "ngada_culture_personas"}
+      {
+        "interest": "history",
+        "destination": "flores_history_personas"
+      },
+      {
+        "interest": "megaliths",
+        "destination": "megalithic_culture_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "bajawa_travel_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "community",
+        "destination": "ngada_culture_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Ngada",
     "teaching_method": "Phonetic voice training coupled with standard grammatical prefix-suffix drills, local idioms, and active social conversation",
     "culture_weight": 0.35,
-    "conversation_weight": 0.40,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.15,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Provides Ngada sound charts, basic sentence structures, pronoun tables, and grammatical distinctions.",
@@ -37,5 +61,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ngada_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ngada_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

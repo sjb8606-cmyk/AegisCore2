@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Industrial Crafts",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Colonial Mining", "Churrigueresque Art", "Traditional Crafts"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Colonial Mining",
+      "Churrigueresque Art",
+      "Traditional Crafts"
+    ],
     "learning_objectives": [
       "Understand the historical role of Taxco as the premier silver mining capital of New Spain and its economic exploitation by Spanish miners like José de la Borda.",
       "Analyze the architectural style of 'Churrigueresque' (Ultra-Baroque) design as physically represented in the Santa Prisca Cathedral.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "taxco_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/taxco.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

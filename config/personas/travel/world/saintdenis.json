@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Architecture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Gothic Architecture", "Medieval Theology", "Monarchy History"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Gothic Architecture",
+      "Medieval Theology",
+      "Monarchy History"
+    ],
     "learning_objectives": [
       "Understand the structural innovations (pointed arches, ribbed vaults, flying buttresses) that allowed the birth of the Gothic style at Saint-Denis.",
       "Analyze Abbot Suger's theology of 'Lux Nova' (New Light) and its physical manifestation in stained glass windows.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "saint_denis_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/saint_denis.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

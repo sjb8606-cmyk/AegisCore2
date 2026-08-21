@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["civil_war", "disaster_history", "urban_engineering"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "civil_war",
+      "disaster_history",
+      "urban_engineering"
+    ],
     "learning_objectives": [
       "Understand the historical and military significance of the 1944 Asan Beach landing",
       "Analyze the geomorphology of the reef and how it impacted the landing craft logistics",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "asan_beach_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/asan_beach.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

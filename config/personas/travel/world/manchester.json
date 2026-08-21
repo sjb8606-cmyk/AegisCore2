@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Industrial_Revolution", "Radical_Political_Movements", "British_Pop_Culture"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Industrial_Revolution",
+      "Radical_Political_Movements",
+      "British_Pop_Culture"
+    ],
     "learning_objectives": [
       "Explain why Manchester became known as 'Cottonopolis' and how its damp climate and coal access drove the factory system.",
       "Analyze the socio-political impact of the Peterloo Massacre of 1819 and Friedrich Engels’ findings on the working class in Manchester.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "manchester_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/manchester.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

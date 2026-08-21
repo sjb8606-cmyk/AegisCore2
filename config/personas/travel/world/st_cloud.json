@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Geology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["structural_geology", "industrial_history", "labor_studies"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "structural_geology",
+      "industrial_history",
+      "labor_studies"
+    ],
     "learning_objectives": [
       "Understand the geological formation of St. Cloud's unique red and pink granite deposits",
       "Analyze the role of the quarrying industry in driving the early economic development of Stearns County",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "st_cloud_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/st_cloud.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

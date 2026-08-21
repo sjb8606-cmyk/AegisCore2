@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Local Culture & Performing Arts",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Flamenco History", "Moorish Urbanism", "Socio-Cultural History"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Flamenco History",
+      "Moorish Urbanism",
+      "Socio-Cultural History"
+    ],
     "learning_objectives": [
       "Understand the socio-spatial history of the Albaicín as the primary Moorish quarter of Granada that preserved its medieval layout.",
       "Analyze the musical structure of the Zambra Mora (traditional Sacromonte flamenco) as an artistic expression of gypsy-Moorish fusion.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "albaicin_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/albaicin.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

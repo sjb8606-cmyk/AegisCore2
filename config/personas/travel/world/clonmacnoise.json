@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Religious Studies",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Early Christian Ireland", "Insular Art History", "River Hydrology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Early Christian Ireland",
+      "Insular Art History",
+      "River Hydrology"
+    ],
     "learning_objectives": [
       "Understand the historical role of Clonmacnoise as the primary intellectual, artistic, and economic center of early medieval Ireland, positioned on the Shannon river crossroad.",
       "Analyze the artistic and theological iconography of the High Crosses (specifically the Cross of the Scriptures) carved from local sandstone.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "clonmacnoise_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/clonmacnoise.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

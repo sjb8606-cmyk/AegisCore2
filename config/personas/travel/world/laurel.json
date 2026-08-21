@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Adventure",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["fluvial_geomorphology", "outdoor_recreation", "appalachian_ecology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "fluvial_geomorphology",
+      "outdoor_recreation",
+      "appalachian_ecology"
+    ],
     "learning_objectives": [
       "Understand the fluvial geomorphology that created the Youghiogheny River Gorge at Ohiopyle",
       "Analyze the ecology of the Laurel Highlands, specifically the microclimates of the deep gorges",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "laurel_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/laurel.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

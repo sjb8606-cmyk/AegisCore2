@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["colonial_architecture", "coastal_fog_hydrology", "desert_exploration"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "colonial_architecture",
+      "coastal_fog_hydrology",
+      "desert_exploration"
+    ],
     "learning_objectives": [
       "Understand the historical role of Swakopmund as the primary deep-water port of German South West Africa, founded in 1892.",
       "Analyze the neoclassical and German neo-Gothic architectural features of colonial landmarks like the Woermannhaus and Hohenzollernhaus.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "swakopmund_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/swakopmund.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

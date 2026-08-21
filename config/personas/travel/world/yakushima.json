@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Wilderness",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Old-Growth Forests", "Biogeography", "UNESCO Conservation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Old-Growth Forests",
+      "Biogeography",
+      "UNESCO Conservation"
+    ],
     "learning_objectives": [
       "Understand the geological uplift of granite that created the extreme mountain climate of Yakushima.",
       "Analyze how high rainfall and nutrient-poor granite soil force Yakushima cedars (Yakusugi) to grow extremely slowly, producing resin-rich, rot-resistant wood.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "yakushima_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/yakushima.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

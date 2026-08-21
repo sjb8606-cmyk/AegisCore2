@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Local Culture & Alpine Geography",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Hill Stations", "Alpine Ecology", "Colonial Urbanism"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Hill Stations",
+      "Alpine Ecology",
+      "Colonial Urbanism"
+    ],
     "learning_objectives": [
       "Understand the urban concept of a 'Hill Station', analyzing why French colonial planners built Ifrane in the 1930s to escape the heat of the plains.",
       "Analyze the ecology of the Atlas Cedar (Cedrus atlantica) forests and their role as a critical carbon sink and biological habitat.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ifrane_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ifrane.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

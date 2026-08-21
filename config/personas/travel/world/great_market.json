@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Culinary",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Horticultural_Spices", "Victorian_Market_Logistics", "Traditional_Recipes"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Horticultural_Spices",
+      "Victorian_Market_Logistics",
+      "Traditional_Recipes"
+    ],
     "learning_objectives": [
       "Understand the chemical composition and culinary classification of Hungarian paprika, detailing the extraction of capsaicin and the history of its cultivation.",
       "Analyze the architectural and logistical design of Samu Pecz's 1897 Great Market Hall as a monument of late Victorian urban sanitation and trade control.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "great_market_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/great_market.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

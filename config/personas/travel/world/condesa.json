@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Urban Sociology & Culinary Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Art Deco Architecture", "Urban Sociology", "Culinary History"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Art Deco Architecture",
+      "Urban Sociology",
+      "Culinary History"
+    ],
     "learning_objectives": [
       "Understand the urban planning of Condesa, analyzing how the shape of the old 19th-century horse racetrack was transformed into the circular Avenida Álvaro Obregón.",
       "Analyze the architectural style of 'Mexican Art Deco', evaluating how it integrated European geometry with pre-Hispanic motifs.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "condesa_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/condesa.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

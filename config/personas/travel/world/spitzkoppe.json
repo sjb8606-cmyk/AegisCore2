@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["inselberg_geomorphology", "exfoliation_weathering", "desert_erosion"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "inselberg_geomorphology",
+      "exfoliation_weathering",
+      "desert_erosion"
+    ],
     "learning_objectives": [
       "Explain the geological and tectonic processes of magma intrusion and erosion that formed the granite inselbergs of Spitzkoppe.",
       "Understand the physical weathering process of exfoliation (onion-skin weathering) that shapes the smooth, rounded domes of the massif.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "spitzkoppe_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/spitzkoppe.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

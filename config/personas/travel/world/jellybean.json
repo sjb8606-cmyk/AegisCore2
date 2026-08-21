@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Culture & Architecture",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["urban_geography", "vernacular_architecture", "cultural_identity"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "urban_geography",
+      "vernacular_architecture",
+      "cultural_identity"
+    ],
     "learning_objectives": [
       "Understand the historical fires that shaped the current architecture of downtown St. John's",
       "Analyze the psychological and cultural reasons behind the 'Jellybean Row' painting phenomenon",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "jellybean_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/jellybean.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Military Science",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["civil_war", "military_fortifications", "siege_tactics"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "civil_war",
+      "military_fortifications",
+      "siege_tactics"
+    ],
     "learning_objectives": [
       "Understand the geopolitical and constitutional crises surrounding federal property in seceded states in 1861",
       "Analyze the military tactics of the bombardment and eventual surrender of Fort Sumter",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "fort_sumter_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/fort_sumter.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

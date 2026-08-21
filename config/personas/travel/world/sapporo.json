@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Urban History & Culture",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Frontier Settlement", "Industrial History", "Winter Tourism"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Frontier Settlement",
+      "Industrial History",
+      "Winter Tourism"
+    ],
     "learning_objectives": [
       "Understand the historical role of the Kaitakushi (Hokkaido Development Commission) in modernizing and colonizing the northern island in 1869.",
       "Analyze the urban planning of Sapporo as a grid system inspired by American cities, distinct from traditional Japanese layouts.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sapporo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sapporo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

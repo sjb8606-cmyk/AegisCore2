@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["riverine_ecology", "canid_social_behavior", "migration_corridors"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "riverine_ecology",
+      "canid_social_behavior",
+      "migration_corridors"
+    ],
     "learning_objectives": [
       "Explain the ecological and hydrological role of the Kwando River in connecting the high-rainfall Angolan highlands with the dry Kalahari basins.",
       "Understand the cooperative social structures, hunting strategies, and territory marking of the endangered African Wild Dog (Lycaon pictus) in river woodlands.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kwando_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kwando.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

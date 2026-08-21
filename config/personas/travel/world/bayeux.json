@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Textile Art",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Norman Conquest", "Medieval Textile Art", "Wartime Propaganda"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Norman Conquest",
+      "Medieval Textile Art",
+      "Wartime Propaganda"
+    ],
     "learning_objectives": [
       "Understand the political and familial succession crisis of 1066 that led to the Battle of Hastings.",
       "Analyze the Bayeux Tapestry as both a historical record and a tool of political propaganda to validate William's kingship.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bayeux_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bayeux.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

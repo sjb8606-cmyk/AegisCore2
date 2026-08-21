@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Union_of_Lublin", "Polish_Jewish_Heritage", "Holocaust_Majdanek"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Union_of_Lublin",
+      "Polish_Jewish_Heritage",
+      "Holocaust_Majdanek"
+    ],
     "learning_objectives": [
       "Understand the historical and geopolitical significance of the Union of Lublin (1569), which created the Polish-Lithuanian Commonwealth, one of Europe's largest multi-ethnic states.",
       "Analyze the architectural characteristics of the 'Lublin Renaissance' style, noting its distinct roof parapets and stucco decorations.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "lublin_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/lublin.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

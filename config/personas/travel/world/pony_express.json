@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Transport",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["transportation_history", "westward_expansion", "telegraph_revolution"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "transportation_history",
+      "westward_expansion",
+      "telegraph_revolution"
+    ],
     "learning_objectives": [
       "Understand the economic and political motivations behind the establishment of the Pony Express in 1860",
       "Analyze the logistics and relay system used to transport mail across 1,900 miles of wilderness",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "pony_express_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/pony_express.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Environment & Conservation",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["urban_sprawl", "hydrology", "environmental_policy"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "urban_sprawl",
+      "hydrology",
+      "environmental_policy"
+    ],
     "learning_objectives": [
       "Understand the geological formation of a glacial moraine and its role as a regional aquifer",
       "Analyze the legislative mechanisms used to contain urban sprawl via the Greenbelt Act",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "greenbelt_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/greenbelt.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["colonial_history", "naval_history", "cultural_festivals"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "colonial_history",
+      "naval_history",
+      "cultural_festivals"
+    ],
     "learning_objectives": [
       "Understand the French colonial origins of Mobile and its role as the first capital of Louisiana (1702)",
       "Analyze the cultural history and social structure of America's oldest Mardi Gras celebration and its mystic societies",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mobile_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mobile.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

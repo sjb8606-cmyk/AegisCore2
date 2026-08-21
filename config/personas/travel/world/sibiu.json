@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Saxon_Urban_Planning", "European_Capital_of_Culture", "Brukenthal_Enlightenment"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Saxon_Urban_Planning",
+      "European_Capital_of_Culture",
+      "Brukenthal_Enlightenment"
+    ],
     "learning_objectives": [
       "Understand the urban planning of Sibiu (Hermannstadt), focusing on the socio-economic division between the wealthy Upper Town and the manufacturing Lower Town.",
       "Analyze the role of Samuel von Brukenthal, the Habsburg governor of Transylvania, in bringing the Enlightenment to Sibiu and establishing its premier art museum.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sibiu_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sibiu.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

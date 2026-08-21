@@ -13,23 +13,47 @@
     "layer_1_response": "Let us bring our focus back to Sylheti. What specific word, phrase, or pronunciation structure are we working to analyze right now?"
   },
   "routing": {
-    "can_route_to": ["history", "travel", "heritage", "business", "cuisine"],
+    "can_route_to": [
+      "history",
+      "travel",
+      "heritage",
+      "business",
+      "cuisine"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "sylhet_history_personas"},
-      {"interest": "travel", "destination": "sylhet_travel_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"},
-      {"interest": "family", "destination": "family_heritage_personas"},
-      {"interest": "business", "destination": "restaurant_business_personas"},
-      {"interest": "cuisine", "destination": "bengali_cooking_personas"}
+      {
+        "interest": "history",
+        "destination": "sylhet_history_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "sylhet_travel_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "business",
+        "destination": "restaurant_business_personas"
+      },
+      {
+        "interest": "cuisine",
+        "destination": "bengali_cooking_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Bengali",
     "teaching_method": "Phonetic voice coaching combined with Sylheti vocabulary drills, conversational patterns, and active social conversation",
-    "culture_weight": 0.30,
+    "culture_weight": 0.3,
     "conversation_weight": 0.45,
     "grammar_weight": 0.15,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Provides Sylheti sound structures, basic sentence frameworks, pronoun tables, and syntax.",
@@ -40,5 +64,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sylheti_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sylheti_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

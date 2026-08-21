@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Civil Rights",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["civil_rights", "constitutional_law", "desegregation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "civil_rights",
+      "constitutional_law",
+      "desegregation"
+    ],
     "learning_objectives": [
       "Understand the historical events and constitutional crisis surrounding the desegregation of Little Rock Central High School in 1957",
       "Analyze the use of federal military power (101st Airborne) to enforce supreme court rulings on desegregation",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "central_high_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/central_high.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

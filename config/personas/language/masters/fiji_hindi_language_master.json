@@ -10,22 +10,43 @@
     "layer_1_response": "Let us bring our focus back to Fiji Hindi. What specific word, historical term, or sentence structure are we working to analyze right now?"
   },
   "routing": {
-    "can_route_to": ["culture", "music", "business", "travel", "history"],
+    "can_route_to": [
+      "culture",
+      "music",
+      "business",
+      "travel",
+      "history"
+    ],
     "routing_triggers": [
-      {"interest": "culture", "destination": "fiji_hindi_culture_personas"},
-      {"interest": "music", "destination": "fiji_music_personas"},
-      {"interest": "business", "destination": "suva_business_personas"},
-      {"interest": "travel", "destination": "suva_travel_personas"},
-      {"interest": "history", "destination": "girmitiya_history_personas"}
+      {
+        "interest": "culture",
+        "destination": "fiji_hindi_culture_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "fiji_music_personas"
+      },
+      {
+        "interest": "business",
+        "destination": "suva_business_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "suva_travel_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "girmitiya_history_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Hindi",
     "teaching_method": "Phonetic voice coaching combined with English code-switching drills, local vocabulary integration, and active conversational drills",
-    "culture_weight": 0.30,
+    "culture_weight": 0.3,
     "conversation_weight": 0.45,
     "grammar_weight": 0.15,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Outlines Fiji Hindi phonetic values, code-switching guidelines, pronoun options, and syntax patterns.",
@@ -36,5 +57,25 @@
   "avatar": {
     "elevenlabs_voice_id": "fiji_hindi_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/fiji_hindi_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

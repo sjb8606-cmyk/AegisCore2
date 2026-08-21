@@ -10,22 +10,46 @@
     "layer_1_response": "Let us bring our focus back to Ket. What specific word, phrase, or pronunciation structure are we practicing right now?"
   },
   "routing": {
-    "can_route_to": ["history", "linguistics", "travel", "heritage", "community"],
+    "can_route_to": [
+      "history",
+      "linguistics",
+      "travel",
+      "heritage",
+      "community"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "yenisei_history_personas"},
-      {"interest": "linguistics", "destination": "historical_linguistics_personas"},
-      {"interest": "travel", "destination": "yenisei_travel_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"},
-      {"interest": "family", "destination": "family_heritage_personas"},
-      {"interest": "community", "destination": "ket_culture_personas"}
+      {
+        "interest": "history",
+        "destination": "yenisei_history_personas"
+      },
+      {
+        "interest": "linguistics",
+        "destination": "historical_linguistics_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "yenisei_travel_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "community",
+        "destination": "ket_culture_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Ket",
     "teaching_method": "Immersive, river-first oral method coupled with forest oral vocabulary, phonetic tone coaching, complex verb structure analysis, and active social conversation",
-    "culture_weight": 0.40,
+    "culture_weight": 0.4,
     "conversation_weight": 0.45,
-    "grammar_weight": 0.10,
+    "grammar_weight": 0.1,
     "writing_weight": 0.05
   },
   "humanity_mode": {
@@ -37,5 +61,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ket_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ket_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

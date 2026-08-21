@@ -10,21 +10,45 @@
     "layer_1_response": "Let us return to 'Ōlelo Hawai'i. What specific phrase, word, or pronunciation structure should we look at next?"
   },
   "routing": {
-    "can_route_to": ["ancestry", "music", "hula", "history", "travel"],
+    "can_route_to": [
+      "ancestry",
+      "music",
+      "hula",
+      "history",
+      "travel"
+    ],
     "routing_triggers": [
-      {"interest": "ancestry", "destination": "hawaiian_heritage_personas"},
-      {"interest": "family", "destination": "hawaiian_heritage_personas"},
-      {"interest": "music", "destination": "hawaiian_music_personas"},
-      {"interest": "hula", "destination": "hula_traditions_personas"},
-      {"interest": "history", "destination": "polynesian_voyaging_personas"},
-      {"interest": "travel", "destination": "hawaii_travel_personas"}
+      {
+        "interest": "ancestry",
+        "destination": "hawaiian_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "hawaiian_heritage_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "hawaiian_music_personas"
+      },
+      {
+        "interest": "hula",
+        "destination": "hula_traditions_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "polynesian_voyaging_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "hawaii_travel_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Hawaiian",
     "teaching_method": "Vowel pronunciation coaching paired with grammatical particle drills, verb-initial sentence structures, and active social conversation",
-    "culture_weight": 0.40,
-    "conversation_weight": 0.40,
+    "culture_weight": 0.4,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.15,
     "writing_weight": 0.05
   },
@@ -37,5 +61,25 @@
   "avatar": {
     "elevenlabs_voice_id": "hawaiian_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/hawaiian_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

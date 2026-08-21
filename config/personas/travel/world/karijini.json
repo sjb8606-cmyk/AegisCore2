@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Geology & Speleology",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Banded Iron Formations", "Karst Geomorphology? No, Iron", "Desert Ecology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Banded Iron Formations",
+      "Karst Geomorphology? No, Iron",
+      "Desert Ecology"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Banded Iron Formations (BIF) in Karijini, explaining how photosynthetic bacteria oxygenated ancient oceans 2.5 billion years ago.",
       "Analyze the wind and water erosion processes that carved the narrow, vertical labyrinths of the gorges (like Weano and Hancock).",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "karijini_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/karijini.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

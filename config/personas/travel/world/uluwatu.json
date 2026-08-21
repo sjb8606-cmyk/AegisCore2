@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Polyrhythmic_Chanting", "Kecak_Dance_Anthropology", "Coastal_Karst_Erosion"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Polyrhythmic_Chanting",
+      "Kecak_Dance_Anthropology",
+      "Coastal_Karst_Erosion"
+    ],
     "learning_objectives": [
       "Understand the vocal and musical structure of the 'Kecak' dance, analyzing how the interlocking 'chak' chants function as a human polyrhythmic orchestra.",
       "Analyze the geological formation of Uluwatu’s limestone cliffs and the coastal wave-erosion processes that carve the deep sea caves below.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "uluwatu_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/uluwatu.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

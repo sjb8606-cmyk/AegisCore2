@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Philosophy & Cultural History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Existentialism", "Post-War Europe", "History of Philosophy"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Existentialism",
+      "Post-War Europe",
+      "History of Philosophy"
+    ],
     "learning_objectives": [
       "Understand the core philosophical distinction between 'existence precedes essence' as formulated by Jean-Paul Sartre.",
       "Analyze the role of the Parisian café (Les Deux Magots, Café de Flore) as a democratic space for intellectual labor and debate.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "saint_germain_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/saint_germain.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

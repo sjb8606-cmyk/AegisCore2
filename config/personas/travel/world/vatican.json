@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Art History & Sacred Architecture",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["High Renaissance Art", "Vatican History", "Counter-Reformation Architecture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "High Renaissance Art",
+      "Vatican History",
+      "Counter-Reformation Architecture"
+    ],
     "learning_objectives": [
       "Understand the architectural evolution of St. Peter's Basilica, analyzing the conflict between the Greek cross plan (Bramante) and the Latin cross plan (Maderno).",
       "Analyze the fresco technique (buon fresco) used by Michelangelo on the Sistine Chapel ceiling, evaluating the chemical challenges of wet plaster.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "vatican_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/vatican.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

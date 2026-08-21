@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Archaeology & Speleology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Subterranean Urbanism", "Speleology", "WWII History"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Subterranean Urbanism",
+      "Speleology",
+      "WWII History"
+    ],
     "learning_objectives": [
       "Understand the geological formation of 'Campanian yellow tuff' (tufa) and its physical properties as a lightweight, easily mineable building material.",
       "Analyze the engineering of the ancient Greek and Roman subterranean aqueduct systems that supplied water to Naples for centuries.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "napoli_sotterranea_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/napoli_sotterranea.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

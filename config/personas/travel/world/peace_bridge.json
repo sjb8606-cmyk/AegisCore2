@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Peace_and_Reconciliation", "Structural_Engineering", "Modern_Irish_History"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Peace_and_Reconciliation",
+      "Structural_Engineering",
+      "Modern_Irish_History"
+    ],
     "learning_objectives": [
       "Analyze how structural architecture, specifically the curved design of the Peace Bridge, can be used to promote social reconciliation in post-conflict cities.",
       "Understand the historical role of the River Foyle as a geographic, economic, and sectarian boundary in Derry/Londonderry.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "peace_bridge_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/peace_bridge.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

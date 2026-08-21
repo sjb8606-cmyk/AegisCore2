@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["coastal_morphology_fiji", "mutiny_on_the_bounty", "island_ecology_fiji"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "coastal_morphology_fiji",
+      "mutiny_on_the_bounty",
+      "island_ecology_fiji"
+    ],
     "learning_objectives": [
       "Explain the geological and marine processes of sand deposition that form low-lying coral sand keys in the Ha'apai group.",
       "Understand the historical events of April 1789 that led to the Mutiny on the Bounty off the shores of Tofua Island.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "haapai_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/haapai.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

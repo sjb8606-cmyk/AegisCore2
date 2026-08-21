@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Clay Architecture",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Vernacular Architecture", "Trans-Saharan Trade", "Medieval Islamic Towns"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Vernacular Architecture",
+      "Trans-Saharan Trade",
+      "Medieval Islamic Towns"
+    ],
     "learning_objectives": [
       "Understand the architectural design of 'Qasr' (fortified clay town), analyzing how its high-density, covered streets and mud-brick (pisé) regulate heat.",
       "Analyze the role of Dakhla as a crucial strategic trade post on the trans-Saharan caravan route connecting the Nile Valley to the far west.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "dakhla_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/dakhla.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

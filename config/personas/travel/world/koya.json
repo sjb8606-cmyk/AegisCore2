@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Religion & Philosophy",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Buddhism", "Religious Architecture", "Philosophy"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Buddhism",
+      "Religious Architecture",
+      "Philosophy"
+    ],
     "learning_objectives": [
       "Understand the foundational differences between esoteric Shingon Buddhism and other Japanese Buddhist sects.",
       "Analyze the psychological impact of the Okunoin graveyard as a physical manifestation of Buddhist cosmology.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "koya_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/koya.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

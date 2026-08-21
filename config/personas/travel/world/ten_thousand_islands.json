@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Ecology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["estuary_ecology", "geomorphology", "kayak_navigation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "estuary_ecology",
+      "geomorphology",
+      "kayak_navigation"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Ten Thousand Islands through oyster shell and mangrove deposition",
       "Analyze the ecological importance of red mangroves (Rhizophora mangle) in protecting coastal shorelines from erosion",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ten_thousand_islands_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ten_thousand_islands.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["treaty_history", "material_culture", "indigenous_sovereignty"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "treaty_history",
+      "material_culture",
+      "indigenous_sovereignty"
+    ],
     "learning_objectives": [
       "Understand the significance of the 1646 and 1677 treaties in establishing the Pamunkey reservation as one of the oldest in North America",
       "Analyze the leadership of Queen Cockacoeske in uniting the Tidewater tribes under the Treaty of Middle Plantation",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "pamunkey_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/pamunkey.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

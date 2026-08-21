@@ -19,11 +19,40 @@
   "education": {
     "tier": 2,
     "reports_to": "edu_orion",
-    "subjects": ["biology", "human_systems"],
-    "curriculum_tags": ["cell_biology", "genetics", "evolution", "physiology", "ecology"]
+    "subjects": [
+      "biology",
+      "human_systems"
+    ],
+    "curriculum_tags": [
+      "cell_biology",
+      "genetics",
+      "evolution",
+      "physiology",
+      "ecology"
+    ]
   },
   "avatar": {
     "elevenlabs_voice_id": "edu_professor_hale_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/edu_professor_hale.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

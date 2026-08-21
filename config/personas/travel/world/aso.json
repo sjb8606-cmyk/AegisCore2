@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Volcanology & Agricultural Landscapes",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Volcanology", "Agronomy", "Geological Hazards"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Volcanology",
+      "Agronomy",
+      "Geological Hazards"
+    ],
     "learning_objectives": [
       "Understand the geological process of caldera collapse following massive pyroclastic flows.",
       "Analyze the 'Noyaki' (grassland burning) system that has been maintained for 1,000 years to preserve pasture biodiversity.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "aso_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/aso.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

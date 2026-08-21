@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["marine_biology_dolphins", "coral_reefs", "coastal_protection_fiji"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "marine_biology_dolphins",
+      "coral_reefs",
+      "coastal_protection_fiji"
+    ],
     "learning_objectives": [
       "Explain the ecological and marine processes that support the high-density biodiversity and health of Naviti's coral gardens.",
       "Understand the social behaviors, echo-location, and conservation status of the Spinner Dolphin (Stenella longirostris) in Fiji's waters.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "naviti_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/naviti.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

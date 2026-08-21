@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["coastal_economies", "traditional_crafts_solomons", "urban_history_honiara"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "coastal_economies",
+      "traditional_crafts_solomons",
+      "urban_history_honiara"
+    ],
     "learning_objectives": [
       "Understand the historical development of Honiara from its post-WWII origin as a military-built port and town.",
       "Analyze the socioeconomic dynamics of the Honiara Central Market in facilitating trade and community exchange across multiple islands.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "honiara_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/honiara.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

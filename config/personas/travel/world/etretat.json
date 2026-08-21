@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Nature & Literature",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Geology", "Art History", "19th-Century Literature"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Geology",
+      "Art History",
+      "19th-Century Literature"
+    ],
     "learning_objectives": [
       "Understand the geological composition of the Normandy chalk cliffs (flint layers, marine fossils) and the mechanics of coastal erosion.",
       "Analyze why the dramatic, shifting light of Étretat’s arches made it a primary subject for plein-air Impressionist painters.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "etretat_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/etretat.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

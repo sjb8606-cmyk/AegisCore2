@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Psychoanalysis_History", "Viennese_Modernism", "Theory_of_Dreams"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Psychoanalysis_History",
+      "Viennese_Modernism",
+      "Theory_of_Dreams"
+    ],
     "learning_objectives": [
       "Understand the core concepts of Freudian psychoanalytic theory, including the tripartite mind (Id, Ego, Superego) and defense mechanisms.",
       "Analyze the historical context of late 19th-century Vienna that allowed psychoanalysis to emerge as a radical critique of bourgeois society.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sigmund_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sigmund.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

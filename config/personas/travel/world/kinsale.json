@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Maritime History & Culinary Arts",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Spanish Armada", "Star-Fort Architecture", "Culinary History"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Spanish Armada",
+      "Star-Fort Architecture",
+      "Culinary History"
+    ],
     "learning_objectives": [
       "Understand the strategic and military history of the Battle of Kinsale (1601) as a turning point in the Tudor conquest of Ireland.",
       "Analyze the military engineering of Charles Fort, a classic 17th-century star-fort designed to resist naval artillery.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kinsale_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kinsale.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

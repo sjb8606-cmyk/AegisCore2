@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Culinary & Performing Arts",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Culinary Science", "Operatic History", "Ducal Heritage"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Culinary Science",
+      "Operatic History",
+      "Ducal Heritage"
+    ],
     "learning_objectives": [
       "Understand the biochemical process of dry-curing Prosciutto di Parma, focusing on how sea salt, fat, and the dry Apennine wind prevent spoilage and concentrate flavor.",
       "Analyze the microbiological rules of Parmigiano-Reggiano production, detailing the role of raw-milk whey starters and calf rennet in curdling.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "parma_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/parma.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Dune_Geomorphology", "Marram_Grass_Ecology", "Coastal_Defenses_Nature"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Dune_Geomorphology",
+      "Marram_Grass_Ecology",
+      "Coastal_Defenses_Nature"
+    ],
     "learning_objectives": [
       "Explain the geological and ecological processes of wind-driven sand transport that form the expansive dune systems (Westhoek) of De Panne.",
       "Understand the biological role of Marram Grass (Ammophila arenaria) in binding sand and stabilizing the coastal dunes against storm erosion.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "de_panne_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/de_panne.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

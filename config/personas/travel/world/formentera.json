@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Marine Biology & Sustainable Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Marine Ecology", "Posidonia Seagrass", "Ecotourism Planning"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Marine Ecology",
+      "Posidonia Seagrass",
+      "Ecotourism Planning"
+    ],
     "learning_objectives": [
       "Understand the biology of Posidonia Oceanica (seagrass endemic to the Mediterranean) and why its oxygen production filters and clarifies coastal waters.",
       "Analyze why the Posidonia meadows of the Ibiza-Formentera channel are a UNESCO World Heritage site and their role as carbon sinks.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "formentera_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/formentera.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

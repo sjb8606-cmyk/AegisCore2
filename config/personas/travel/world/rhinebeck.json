@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Culinary & Agriculture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["sustainable_agriculture", "food_systems", "regional_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "sustainable_agriculture",
+      "food_systems",
+      "regional_history"
+    ],
     "learning_objectives": [
       "Understand the mechanics of sustainable, small-scale organic farming in the Hudson Valley",
       "Analyze the socioeconomic dynamics of the farm-to-table movement and its impact on rural gentrification",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "rhinebeck_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/rhinebeck.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

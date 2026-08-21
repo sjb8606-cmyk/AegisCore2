@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Military Science",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["military_history", "civil_war", "battlefield_preservation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "military_history",
+      "civil_war",
+      "battlefield_preservation"
+    ],
     "learning_objectives": [
       "Understand the tactical decisions and geographical factors that decided the Battle of Franklin (1864)",
       "Analyze the impact of the battle's catastrophic casualties on the collapse of the Confederate Army of Tennessee",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "franklin_tn_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/franklin_tn.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

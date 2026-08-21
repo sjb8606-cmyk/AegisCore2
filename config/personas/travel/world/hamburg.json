@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Hanseatic_League", "Industrial_Warehouses", "Maritime_Migration"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Hanseatic_League",
+      "Industrial_Warehouses",
+      "Maritime_Migration"
+    ],
     "learning_objectives": [
       "Analyze the architectural and engineering innovations of Hamburg's Speicherstadt as the world's largest historic warehouse complex built on oak piles.",
       "Understand the role of the Hanseatic League in establishing international trade networks and free-port privileges in Northern Europe.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "hamburg_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/hamburg.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

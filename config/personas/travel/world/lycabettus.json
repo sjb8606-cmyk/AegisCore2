@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Urban Geography",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Urban Geography", "Geomorphology", "Modern Greek History"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Urban Geography",
+      "Geomorphology",
+      "Modern Greek History"
+    ],
     "learning_objectives": [
       "Understand the geomorphological formation of Athens' limestone karst hills (klippen) and their role in historical defense and microclimates.",
       "Analyze the rapid, post-war urbanization of Athens, evaluating how the 'polykatoikia' apartment blocks created a dense, unified cityscape.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "lycabettus_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/lycabettus.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

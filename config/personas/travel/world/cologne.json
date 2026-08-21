@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Gothic_Architecture", "Medieval_Relics", "Rhineland_Culture"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Gothic_Architecture",
+      "Medieval_Relics",
+      "Rhineland_Culture"
+    ],
     "learning_objectives": [
       "Analyze the architectural history of Cologne Cathedral, understanding why its construction was suspended in 1560 and completed in 1880 in the Gothic Revival style.",
       "Evaluate the political and economic impact of the Relics of the Three Kings on Cologne's growth as a major medieval pilgrimage center.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cologne_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cologne.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

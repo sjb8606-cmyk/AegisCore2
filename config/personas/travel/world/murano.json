@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Traditional Crafts & Industrial History",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Glass Chemistry", "Industrial Espionage", "Edo Trade Economics"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Glass Chemistry",
+      "Industrial Espionage",
+      "Edo Trade Economics"
+    ],
     "learning_objectives": [
       "Understand the chemistry of glassmaking, specifically how Murano glassmakers used manganese dioxide and soda ash to create the first colorless glass (cristallo).",
       "Analyze the 1291 decree of the Venetian Republic that relocated all glass furnaces to Murano as both a fire safety and industrial protection measure.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "murano_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/murano.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Industry",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["mining_history", "geology", "labor_studies"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "mining_history",
+      "geology",
+      "labor_studies"
+    ],
     "learning_objectives": [
       "Understand the geological formation of copper and gold deposits in the Verde Valley's Black Hills",
       "Analyze the extreme civil engineering challenges of constructing a major mining city on a thirty-degree slope",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "jerome_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/jerome.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

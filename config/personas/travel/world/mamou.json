@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Music & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["cajun_culture", "folklore", "linguistic_preservation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "cajun_culture",
+      "folklore",
+      "linguistic_preservation"
+    ],
     "learning_objectives": [
       "Understand the historical development and social function of the Saturday morning Cajun music tradition in Mamou",
       "Analyze the role of community institutions (like Fred's Lounge) in preserving Louisiana French heritage",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mamou_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mamou.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

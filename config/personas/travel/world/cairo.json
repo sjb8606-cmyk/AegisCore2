@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Geography",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["river_hydrology", "civil_war_logistics", "racial_segregation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "river_hydrology",
+      "civil_war_logistics",
+      "racial_segregation"
+    ],
     "learning_objectives": [
       "Understand the strategic military importance of Cairo (Camp Defiance) in securing the Mississippi River during the Civil War",
       "Analyze the hydrological challenges of maintaining a city at the confluence of the nation's two largest river systems",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cairo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cairo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

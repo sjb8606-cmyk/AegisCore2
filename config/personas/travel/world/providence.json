@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Arts & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["urban_design", "public_art", "creative_industries"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "urban_design",
+      "public_art",
+      "creative_industries"
+    ],
     "learning_objectives": [
       "Understand the process of 'urban daylighting' that uncovered Providence's historic rivers",
       "Analyze the role of public art installations like WaterFire in revitalizing post-industrial urban centers",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "providence_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/providence.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

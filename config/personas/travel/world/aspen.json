@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["recreational_history", "mining_history", "cultural_geography"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "recreational_history",
+      "mining_history",
+      "cultural_geography"
+    ],
     "learning_objectives": [
       "Understand the 19th-century silver boom and bust cycle that established the physical infrastructure of Aspen",
       "Analyze the post-war 'Aspen Idea' formulated by Walter Paepcke to integrate mind, body, and spirit through art and sport",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "aspen_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/aspen.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

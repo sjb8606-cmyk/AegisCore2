@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["karst_geology", "maya_architecture", "subterranean_sanctuaries"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "karst_geology",
+      "maya_architecture",
+      "subterranean_sanctuaries"
+    ],
     "learning_objectives": [
       "Explain the geological and hydrological processes of chemical dissolution that form the limestone caves (karst geomorphology) of Cayo.",
       "Understand the structural engineering and agricultural terraces of the Classic Maya capital of Caracol.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cayo_district_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cayo_district.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Landscape Architecture & Cultural History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Urban Parks", "Iron-and-Glass Architecture", "Royal History"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Urban Parks",
+      "Iron-and-Glass Architecture",
+      "Royal History"
+    ],
     "learning_objectives": [
       "Understand the transformation of the Buen Retiro from an exclusive 17th-century royal palace garden into a public municipal park in 1868.",
       "Analyze the structural engineering of the Palacio de Cristal (built 1887), evaluating its use of prefabricated iron and glass designed by Ricardo Velázquez Bosco.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "retiro_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/retiro.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

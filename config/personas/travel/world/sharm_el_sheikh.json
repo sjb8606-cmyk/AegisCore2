@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Marine Biology & Tourism Studies",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Marine Conservation", "Coral Reef Ecology", "Ecotourism Planning"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Marine Conservation",
+      "Coral Reef Ecology",
+      "Ecotourism Planning"
+    ],
     "learning_objectives": [
       "Understand the geological and oceanographic reasons why the tip of the Sinai Peninsula (Ras Mohammed) has become one of the premier diving sanctuaries in the world.",
       "Analyze the transition of Sharm el-Sheikh from an isolated military outpost to a global capital of resort tourism and international peace summits.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sharm_el_sheikh_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sharm_el_sheikh.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

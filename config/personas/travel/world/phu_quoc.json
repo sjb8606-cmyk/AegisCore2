@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Island_Agricultural_Chemistry", "Bivalve_Biology_Pearls", "Marine_Conservation_Vietnam"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Island_Agricultural_Chemistry",
+      "Bivalve_Biology_Pearls",
+      "Marine_Conservation_Vietnam"
+    ],
     "learning_objectives": [
       "Explain the chemical and climatic factors, particularly the iron-rich laterite soils and coastal humidity, that make Phu Quoc ideal for cultivating high-quality black pepper.",
       "Understand the biological process of nacre secretion that forms pearls inside oysters and the modern methods of sustainable pearl farming.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "phu_quoc_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/phu_quoc.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -10,21 +10,45 @@
     "layer_1_response": "Let us bring our focus back to Achuar. What specific word, phrase, or pronunciation structure are we practicing right now?"
   },
   "routing": {
-    "can_route_to": ["history", "dreams", "travel", "heritage", "community"],
+    "can_route_to": [
+      "history",
+      "dreams",
+      "travel",
+      "heritage",
+      "community"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "pastaza_history_personas"},
-      {"interest": "dreams", "destination": "dream_interpretation_personas"},
-      {"interest": "travel", "destination": "pastaza_travel_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"},
-      {"interest": "family", "destination": "family_heritage_personas"},
-      {"interest": "community", "destination": "achuar_culture_personas"}
+      {
+        "interest": "history",
+        "destination": "pastaza_history_personas"
+      },
+      {
+        "interest": "dreams",
+        "destination": "dream_interpretation_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "pastaza_travel_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "community",
+        "destination": "achuar_culture_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Achuar",
     "teaching_method": "Phonetic voice training coupled with standard grammatical prefix-suffix drills, local idioms, and active social conversation",
-    "culture_weight": 0.40,
-    "conversation_weight": 0.40,
+    "culture_weight": 0.4,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.15,
     "writing_weight": 0.05
   },
@@ -37,5 +61,25 @@
   "avatar": {
     "elevenlabs_voice_id": "achuar_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/achuar_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Philosophy",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["christian_history_pacific", "choral_musicology", "social_welfare"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "christian_history_pacific",
+      "choral_musicology",
+      "social_welfare"
+    ],
     "learning_objectives": [
       "Understand the historical process and social impact of the Wesleyan Methodist missionary expansion in Tonga during the 19th century.",
       "Analyze the role of the Free Wesleyan Church as a major civil and educational institution in the modern kingdom.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "wesleyan_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/wesleyan.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

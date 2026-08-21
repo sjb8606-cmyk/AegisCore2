@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["indigenous_sovereignty", "colonial_history", "treaty_law"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "indigenous_sovereignty",
+      "colonial_history",
+      "treaty_law"
+    ],
     "learning_objectives": [
       "Understand the historical territory and political structure of the Kaw (Kanza) Nation in the Kansas River Valley",
       "Analyze the impact of the Treaties of 1825 and 1846 in dispossessing the Kaw of their ancestral lands",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kaw_nation_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kaw_nation.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -13,15 +13,42 @@
     "layer_1_response": "Let us bring our focus back to Teochew. What specific word, phrase, or pronunciation structure should we look at next?"
   },
   "routing": {
-    "can_route_to": ["gastronomy", "heritage", "trade", "travel", "music"],
+    "can_route_to": [
+      "gastronomy",
+      "heritage",
+      "trade",
+      "travel",
+      "music"
+    ],
     "routing_triggers": [
-      {"interest": "gastronomy", "destination": "teochew_cooking_personas"},
-      {"interest": "cuisine", "destination": "teochew_cooking_personas"},
-      {"interest": "heritage", "destination": "teochew_heritage_personas"},
-      {"interest": "family", "destination": "teochew_heritage_personas"},
-      {"interest": "trade", "destination": "maritime_trade_personas"},
-      {"interest": "travel", "destination": "chaoshan_travel_personas"},
-      {"interest": "opera", "destination": "teochew_opera_personas"}
+      {
+        "interest": "gastronomy",
+        "destination": "teochew_cooking_personas"
+      },
+      {
+        "interest": "cuisine",
+        "destination": "teochew_cooking_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "teochew_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "teochew_heritage_personas"
+      },
+      {
+        "interest": "trade",
+        "destination": "maritime_trade_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "chaoshan_travel_personas"
+      },
+      {
+        "interest": "opera",
+        "destination": "teochew_opera_personas"
+      }
     ]
   },
   "language_engine": {
@@ -41,5 +68,25 @@
   "avatar": {
     "elevenlabs_voice_id": "teochew_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/teochew_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

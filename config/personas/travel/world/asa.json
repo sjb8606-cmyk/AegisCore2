@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["avian_biology", "rainforest_conservation", "ecological_niche"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "avian_biology",
+      "rainforest_conservation",
+      "ecological_niche"
+    ],
     "learning_objectives": [
       "Explain the unique evolutionary biology and ecological niche of the Oilbird (Steatornis caripensis), the world's only nocturnal, fruit-eating flying bird.",
       "Understand the history of the Asa Wright Nature Centre as a pioneer model for transforming commercial plantations into eco-conservation trusts.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "asa_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/asa.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Science",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Heliocentrism_Copernicus", "Medieval_Spice_Trade", "Brick_Gothic_UNESCO"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Heliocentrism_Copernicus",
+      "Medieval_Spice_Trade",
+      "Brick_Gothic_UNESCO"
+    ],
     "learning_objectives": [
       "Analyze the scientific revolution initiated by Nicolaus Copernicus’s heliocentric theory, placing the sun rather than the earth at the center of the universe.",
       "Understand the historical role of Toruń as a wealthy Hanseatic trading port that facilitated the import of expensive, exotic spices required for gingerbread (Pierniki).",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "torun_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/torun.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

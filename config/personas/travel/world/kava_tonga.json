@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Culinary",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["kava_history", "botany_of_yaqona", "social_traditions"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "kava_history",
+      "botany_of_yaqona",
+      "social_traditions"
+    ],
     "learning_objectives": [
       "Explain the botanical features and chemical properties of the Kava plant (Piper methysticum), focusing on kavalactones and their physiological effects.",
       "Understand the historical origins of the Faikava, tracing its development from traditional sacred chiefly use to its modern role in Tongan youth socialization.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kava_tonga_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kava_tonga.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

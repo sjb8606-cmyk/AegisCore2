@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["forestry_ecology", "conservation_history", "dendrology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "forestry_ecology",
+      "conservation_history",
+      "dendrology"
+    ],
     "learning_objectives": [
       "Understand the biological adaptations that allow Sequoia sempervirens to become the tallest trees on Earth",
       "Analyze the role of coastal fog in supporting redwood ecosystems during dry summer months",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "redwoods_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/redwoods.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

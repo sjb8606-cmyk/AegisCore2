@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Geography",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["transportation_history", "geology_of_the_appalachians", "civil_engineering"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "transportation_history",
+      "geology_of_the_appalachians",
+      "civil_engineering"
+    ],
     "learning_objectives": [
       "Understand the strategic and economic competition between canals and railroads in 19th-century America",
       "Analyze the engineering feat of the Paw Paw Tunnel through the shale ridges of the Potomac",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "appalachian_md_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/appalachian_md.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

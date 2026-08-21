@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["world_war_ii", "unangan_history", "military_geography"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "world_war_ii",
+      "unangan_history",
+      "military_geography"
+    ],
     "learning_objectives": [
       "Understand the strategic significance of the Aleutian Islands Campaign in the Pacific Theater of WWII",
       "Analyze the tragic history of the forced evacuation and internment of the Unangan (Aleut) people by the US government",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "aleutian_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/aleutian.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

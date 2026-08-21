@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["proprietary_atolls", "tokelauan_heritage", "island_governance"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "proprietary_atolls",
+      "tokelauan_heritage",
+      "island_governance"
+    ],
     "learning_objectives": [
       "Understand the historical process and significance of Swains Island's unique political status as a privately-owned territory within American Samoa.",
       "Analyze the distinct linguistic features and cultural history of the Tokelauan people, tracing their lineage from northern atoll migrations.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "swains_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/swains.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

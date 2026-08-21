@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["barrier_islands", "marine_conservation", "coastal_ecology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "barrier_islands",
+      "marine_conservation",
+      "coastal_ecology"
+    ],
     "learning_objectives": [
       "Understand the geomorphology of barrier islands and how they naturally migrate in response to storms",
       "Analyze the adaptation and survival strategies of the wild horses of Shackleford Banks",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "crystal_coast_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/crystal_coast.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

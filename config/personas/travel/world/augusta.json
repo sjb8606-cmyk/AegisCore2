@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Leisure",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["leisure_history", "urban_geography", "industrial_canals"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "leisure_history",
+      "urban_geography",
+      "industrial_canals"
+    ],
     "learning_objectives": [
       "Understand the historical role of the Augusta Canal (built 1845) in driving the industrialization of the South",
       "Analyze the transformation of Fruitland Nurseries into the world-famous Augusta National Golf Club",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "augusta_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/augusta.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

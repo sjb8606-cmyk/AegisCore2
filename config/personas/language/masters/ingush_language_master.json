@@ -10,22 +10,46 @@
     "layer_1_response": "Let us bring our focus back to Ingush. What specific word, phrase, or pronunciation structure are we practicing right now?"
   },
   "routing": {
-    "can_route_to": ["history", "travel", "music", "heritage", "community"],
+    "can_route_to": [
+      "history",
+      "travel",
+      "music",
+      "heritage",
+      "community"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "ingush_history_personas"},
-      {"interest": "travel", "destination": "magaas_travel_personas"},
-      {"interest": "music", "destination": "mountain_songs_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"},
-      {"interest": "family", "destination": "family_heritage_personas"},
-      {"interest": "community", "destination": "ingush_culture_personas"}
+      {
+        "interest": "history",
+        "destination": "ingush_history_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "magaas_travel_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "mountain_songs_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "community",
+        "destination": "ingush_culture_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Ingush",
     "teaching_method": "Immersive, mountain-first oral method coupled with mountain-based oral vocabulary, complex prefix-suffix grammatical systems, and active social conversation",
     "culture_weight": 0.35,
-    "conversation_weight": 0.40,
-    "grammar_weight": 0.20,
+    "conversation_weight": 0.4,
+    "grammar_weight": 0.2,
     "writing_weight": 0.05
   },
   "humanity_mode": {
@@ -37,5 +61,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ingush_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ingush_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

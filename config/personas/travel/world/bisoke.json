@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["volcanology", "geochemistry", "seismic_monitoring"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "volcanology",
+      "geochemistry",
+      "seismic_monitoring"
+    ],
     "learning_objectives": [
       "Explain the geological and tectonic processes that formed the Bisoke volcano within the East African Rift system.",
       "Understand the geochemistry of volcanic crater lakes, analyzing the minerals and gases that define their composition.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bisoke_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bisoke.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

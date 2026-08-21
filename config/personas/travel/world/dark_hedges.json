@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Literature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Landscape_Architecture", "Fantasy_in_Tourism", "Silviculture_and_Ecology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Landscape_Architecture",
+      "Fantasy_in_Tourism",
+      "Silviculture_and_Ecology"
+    ],
     "learning_objectives": [
       "Analyze the design principles of 18th-century landscape architecture, specifically the use of grand tree-lined avenues like the Dark Hedges to project wealth.",
       "Understand the ecological challenges, including soil compaction and age-related decay, faced by ancient trees under high-volume tourism.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "dark_hedges_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/dark_hedges.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Recreation & Tourism",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["leisure_studies", "environmental_impact", "geography"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "leisure_studies",
+      "environmental_impact",
+      "geography"
+    ],
     "learning_objectives": [
       "Understand the economic and environmental impact of seasonal 'cottage country' on local ecosystems",
       "Analyze the cultural significance of the 'summer retreat' in Canadian society",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "falcon_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/falcon.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

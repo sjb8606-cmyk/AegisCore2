@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Governance",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["political_history", "architecture", "colonial_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "political_history",
+      "architecture",
+      "colonial_history"
+    ],
     "learning_objectives": [
       "Understand the Dutch colonial origins of Albany (Beverwyck) and the patroonship land system",
       "Analyze the architectural significance and politics of the New York State Capitol, particularly the Great Western Staircase",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "albany_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/albany.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

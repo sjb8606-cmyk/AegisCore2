@@ -10,23 +10,47 @@
     "layer_1_response": "Let us bring our focus back to Crimean Tatar. What specific word, phrase, or pronunciation structure are we practicing right now?"
   },
   "routing": {
-    "can_route_to": ["history", "politics", "travel", "heritage", "community"],
+    "can_route_to": [
+      "history",
+      "politics",
+      "travel",
+      "heritage",
+      "community"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "crimean_history_personas"},
-      {"interest": "politics", "destination": "crimea_politics_personas"},
-      {"interest": "travel", "destination": "crimea_travel_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"},
-      {"interest": "family", "destination": "family_heritage_personas"},
-      {"interest": "community", "destination": "crimean_tatar_culture_personas"}
+      {
+        "interest": "history",
+        "destination": "crimean_history_personas"
+      },
+      {
+        "interest": "politics",
+        "destination": "crimea_politics_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "crimea_travel_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "community",
+        "destination": "crimean_tatar_culture_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Turkish",
     "teaching_method": "Phonetic voice training coupled with standard grammatical prefix-suffix drills, local idioms, and active social conversation",
     "culture_weight": 0.35,
-    "conversation_weight": 0.40,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.15,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Provides Crimean Tatar sound charts, basic sentence structures, pronoun tables, and grammatical distinctions.",
@@ -37,5 +61,25 @@
   "avatar": {
     "elevenlabs_voice_id": "crimean_tatar_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/crimean_tatar_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

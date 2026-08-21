@@ -19,11 +19,40 @@
   "education": {
     "tier": 2,
     "reports_to": "edu_marcus",
-    "subjects": ["economics_basics", "supply_and_demand"],
-    "curriculum_tags": ["supply_demand", "opportunity_cost", "market_failure", "price_signals", "comparative_advantage"]
+    "subjects": [
+      "economics_basics",
+      "supply_and_demand"
+    ],
+    "curriculum_tags": [
+      "supply_demand",
+      "opportunity_cost",
+      "market_failure",
+      "price_signals",
+      "comparative_advantage"
+    ]
   },
   "avatar": {
     "elevenlabs_voice_id": "edu_professor_stein_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/edu_professor_stein.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

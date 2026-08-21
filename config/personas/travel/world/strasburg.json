@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Transport",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["transportation_history", "steam_mechanics", "agricultural_geography"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "transportation_history",
+      "steam_mechanics",
+      "agricultural_geography"
+    ],
     "learning_objectives": [
       "Understand the mechanics of steam traction and the engineering of early American short-line railroads",
       "Analyze the historical role of rural railroads in connecting isolated farming communities to urban markets",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "strasburg_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/strasburg.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

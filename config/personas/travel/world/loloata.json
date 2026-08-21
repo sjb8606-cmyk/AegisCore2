@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["coastal_tourism_economics", "island_ecology", "sustainable_hospitality"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "coastal_tourism_economics",
+      "island_ecology",
+      "sustainable_hospitality"
+    ],
     "learning_objectives": [
       "Understand the economic history of Loloata Island's transition from early trade to a world-class center for luxury island tourism.",
       "Analyze the ecological and geological processes of coral sand key formation and their vulnerability to rising sea levels.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "loloata_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/loloata.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

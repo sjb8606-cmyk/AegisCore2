@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Local Culture & Agronomy",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Volcanic Agriculture", "History of Medicine", "Thermal Geology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Volcanic Agriculture",
+      "History of Medicine",
+      "Thermal Geology"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Afyonkarahisar volcanic plug (the castle rock) and its role as a strategic military fortress since the Hittites.",
       "Analyze the agricultural history and biochemistry of the Opium Poppy (Papaver somniferum), evaluating its role in global pharmaceuticals.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "afyon_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/afyon.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

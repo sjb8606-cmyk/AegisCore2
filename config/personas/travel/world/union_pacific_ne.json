@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Transport",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["railroad_history", "steam_mechanics", "continental_expansion"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "railroad_history",
+      "steam_mechanics",
+      "continental_expansion"
+    ],
     "learning_objectives": [
       "Understand the strategic and geopolitical reasons behind the Pacific Railway Act of 1862",
       "Analyze the mechanical engineering and logistics of constructing the transcontinental railroad across the Great Plains",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "union_pacific_ne_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/union_pacific_ne.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

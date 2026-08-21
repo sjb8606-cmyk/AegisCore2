@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Sámi_Heritage_Sapmi", "Jeju_Haenyeo_Free_Diving", "UNESCO_Intangible_Heritage_Korea"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Sámi_Heritage_Sapmi",
+      "Jeju_Haenyeo_Free_Diving",
+      "UNESCO_Intangible_Heritage_Korea"
+    ],
     "learning_objectives": [
       "Understand the physiological adaptations and breathing techniques (sumbisori) used by Jeju Haenyeo to free-dive up to 10 meters without breathing apparatus.",
       "Analyze the unique socio-economic and matriarchal structure of the Haenyeo cooperatives (Eochon-gye) in Jeju history.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "haenyeo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/haenyeo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

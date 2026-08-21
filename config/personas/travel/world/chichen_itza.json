@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Maya Astronomy",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Maya Astronomy", "Acoustics & Physics", "Yucatan Archaeology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Maya Astronomy",
+      "Acoustics & Physics",
+      "Yucatan Archaeology"
+    ],
     "learning_objectives": [
       "Understand the structural engineering and archaeoastronomy of El Castillo (Pyramid of Kukulcán), focusing on how its orientation creates the equinox serpent shadow.",
       "Analyze the acoustic physics of the Great Ball Court of Chichén Itzá, explaining how its whisper-gallery walls project sound across 150 meters without electronic amplification.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "chichen_itza_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/chichen_itza.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

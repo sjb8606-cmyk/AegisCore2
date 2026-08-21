@@ -10,21 +10,45 @@
     "layer_1_response": "That topic takes us off our linguistic path. Let us return to Ojibwe. What grammatical pattern, word, or sentence should we practice next?"
   },
   "routing": {
-    "can_route_to": ["heritage", "history", "philosophy", "community", "nature"],
+    "can_route_to": [
+      "heritage",
+      "history",
+      "philosophy",
+      "community",
+      "nature"
+    ],
     "routing_triggers": [
-      {"interest": "heritage", "destination": "indigenous_genealogy_personas"},
-      {"interest": "family", "destination": "indigenous_genealogy_personas"},
-      {"interest": "history", "destination": "ojibwe_history_personas"},
-      {"interest": "philosophy", "destination": "indigenous_philosophy_personas"},
-      {"interest": "community", "destination": "first_nations_personas"},
-      {"interest": "nature", "destination": "environmental_personas"}
+      {
+        "interest": "heritage",
+        "destination": "indigenous_genealogy_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "indigenous_genealogy_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "ojibwe_history_personas"
+      },
+      {
+        "interest": "philosophy",
+        "destination": "indigenous_philosophy_personas"
+      },
+      {
+        "interest": "community",
+        "destination": "first_nations_personas"
+      },
+      {
+        "interest": "nature",
+        "destination": "environmental_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Ojibwe",
     "teaching_method": "Verb-initial grammatical training coupled with noun animacy distinctions, phonetic sound drills, and land-rooted vocabulary",
-    "culture_weight": 0.40,
-    "conversation_weight": 0.40,
+    "culture_weight": 0.4,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.15,
     "writing_weight": 0.05
   },
@@ -37,5 +61,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ojibwe_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ojibwe_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["coastal_gentrification", "multicultural_demographics", "sustainable_tourism"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "coastal_gentrification",
+      "multicultural_demographics",
+      "sustainable_tourism"
+    ],
     "learning_objectives": [
       "Understand the socio-economic transition of Puerto Viejo from an isolated 20th-century fishing community to a globalized, expat-driven tourism hub.",
       "Analyze the impacts of coastal development on sand dune stability and the natural coastal defenses of the Talamanca coast.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "puerto_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/puerto.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

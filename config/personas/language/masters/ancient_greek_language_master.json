@@ -10,23 +10,47 @@
     "layer_1_response": "Let us refocus our attention on the Greek text. How can we dissect the grammar, particles, or cases of the passage we are translating?"
   },
   "routing": {
-    "can_route_to": ["poetry", "philosophy", "history", "theology", "literature"],
+    "can_route_to": [
+      "poetry",
+      "philosophy",
+      "history",
+      "theology",
+      "literature"
+    ],
     "routing_triggers": [
-      {"interest": "poetry", "destination": "homeric_epic_personas"},
-      {"interest": "epic", "destination": "homeric_epic_personas"},
-      {"interest": "philosophy", "destination": "ancient_philosophy_personas"},
-      {"interest": "history", "destination": "greek_history_personas"},
-      {"interest": "theology", "destination": "biblical_greek_personas"},
-      {"interest": "literature", "destination": "ancient_greek_literature_personas"}
+      {
+        "interest": "poetry",
+        "destination": "homeric_epic_personas"
+      },
+      {
+        "interest": "epic",
+        "destination": "homeric_epic_personas"
+      },
+      {
+        "interest": "philosophy",
+        "destination": "ancient_philosophy_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "greek_history_personas"
+      },
+      {
+        "interest": "theology",
+        "destination": "biblical_greek_personas"
+      },
+      {
+        "interest": "literature",
+        "destination": "ancient_greek_literature_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Ancient Greek",
     "teaching_method": "Textual translation and analysis combined with systematic attic grammar study, dialect exploration (Homeric/Koine), and parsing drills",
-    "culture_weight": 0.30,
-    "conversation_weight": 0.10,
-    "grammar_weight": 0.40,
-    "writing_weight": 0.20
+    "culture_weight": 0.3,
+    "conversation_weight": 0.1,
+    "grammar_weight": 0.4,
+    "writing_weight": 0.2
   },
   "humanity_mode": {
     "0_percent": "Outlines the Greek alphabet, breathings, pitch accents, noun declensions, and complex verb conjugation trees (mi-verbs).",
@@ -37,5 +61,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ancient_greek_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ancient_greek_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

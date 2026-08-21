@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Austro_Hungarian_Empire", "Gothic_Revival_Architecture", "Hungarian_Sovereignty"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Austro_Hungarian_Empire",
+      "Gothic_Revival_Architecture",
+      "Hungarian_Sovereignty"
+    ],
     "learning_objectives": [
       "Analyze how the architecture of the Hungarian Parliament reflected the political aspirations and national identity of Hungary within the Dual Monarchy in the late 19th century.",
       "Understand the historical journey and symbolic significance of the Holy Crown of Saint Stephen (Szent Korona) in Hungarian statehood.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "parliament_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/parliament.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

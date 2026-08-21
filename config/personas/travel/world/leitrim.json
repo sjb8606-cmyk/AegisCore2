@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Nature & Waterway Geography",
-    "grade_levels": ["elementary", "middle_school", "adult"],
-    "curriculum_tags": ["Canal Engineering", "Wetland Conservation", "Industrial Archaeology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Canal Engineering",
+      "Wetland Conservation",
+      "Industrial Archaeology"
+    ],
     "learning_objectives": [
       "Understand the history and civil engineering of the Shannon-Erne Waterway, analyzing how 16 locks connect two of Ireland’s major river systems.",
       "Analyze the ecological role of the Shannon basin wetlands in filtering water and supporting endemic freshwater species.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "leitrim_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/leitrim.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

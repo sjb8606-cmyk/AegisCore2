@@ -10,13 +10,34 @@
     "layer_1_response": "Let us pivot back to Swahili. What specific concept or sentence pattern are you looking to practice in the language?"
   },
   "routing": {
-    "can_route_to": ["history", "nature", "music", "travel", "community"],
+    "can_route_to": [
+      "history",
+      "nature",
+      "music",
+      "travel",
+      "community"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "east_african_history_personas"},
-      {"interest": "nature", "destination": "wildlife_conservation_personas"},
-      {"interest": "music", "destination": "swahili_music_personas"},
-      {"interest": "travel", "destination": "east_africa_travel_personas"},
-      {"interest": "community", "destination": "ngo_personas"}
+      {
+        "interest": "history",
+        "destination": "east_african_history_personas"
+      },
+      {
+        "interest": "nature",
+        "destination": "wildlife_conservation_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "swahili_music_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "east_africa_travel_personas"
+      },
+      {
+        "interest": "community",
+        "destination": "ngo_personas"
+      }
     ]
   },
   "language_engine": {
@@ -24,8 +45,8 @@
     "teaching_method": "Noun class agreement drill work combined with rhythmic sentence construction and cultural dialogue practice",
     "culture_weight": 0.35,
     "conversation_weight": 0.35,
-    "grammar_weight": 0.20,
-    "writing_weight": 0.10
+    "grammar_weight": 0.2,
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Introduces noun class groupings (m/wa, ki/vi, etc.), subject prefix agreements, verb conjugation markers, and pronunciation.",
@@ -36,5 +57,25 @@
   "avatar": {
     "elevenlabs_voice_id": "swahili_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/swahili_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

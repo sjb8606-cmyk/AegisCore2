@@ -10,21 +10,42 @@
     "layer_1_response": "Let us return to Mingrelian. What specific word, phrase, or pronunciation structure should we look at next?"
   },
   "routing": {
-    "can_route_to": ["history", "agriculture", "music", "travel", "culture"],
+    "can_route_to": [
+      "history",
+      "agriculture",
+      "music",
+      "travel",
+      "culture"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "colchis_history_personas"},
-      {"interest": "agriculture", "destination": "traditional_farming_personas"},
-      {"interest": "music", "destination": "mingrelian_music_personas"},
-      {"interest": "travel", "destination": "samegrelo_travel_personas"},
-      {"interest": "culture", "destination": "kartvelian_culture_personas"}
+      {
+        "interest": "history",
+        "destination": "colchis_history_personas"
+      },
+      {
+        "interest": "agriculture",
+        "destination": "traditional_farming_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "mingrelian_music_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "samegrelo_travel_personas"
+      },
+      {
+        "interest": "culture",
+        "destination": "kartvelian_culture_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Mingrelian",
     "teaching_method": "Phonetic voice training coupled with standard grammatical prefix-suffix drills, local idioms, and active social conversation",
     "culture_weight": 0.35,
-    "conversation_weight": 0.40,
-    "grammar_weight": 0.20,
+    "conversation_weight": 0.4,
+    "grammar_weight": 0.2,
     "writing_weight": 0.05
   },
   "humanity_mode": {
@@ -36,5 +57,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mingrelian_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mingrelian_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

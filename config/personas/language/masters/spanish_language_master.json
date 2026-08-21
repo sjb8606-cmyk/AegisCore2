@@ -10,23 +10,48 @@
     "layer_1_response": "Let us pivot back to our language journey. How would you attempt to translate or express the core of that idea in Spanish?"
   },
   "routing": {
-    "can_route_to": ["music", "cuisine", "history", "travel", "literature", "family"],
+    "can_route_to": [
+      "music",
+      "cuisine",
+      "history",
+      "travel",
+      "literature",
+      "family"
+    ],
     "routing_triggers": [
-      {"interest": "music", "destination": "latin_music_personas"},
-      {"interest": "cuisine", "destination": "spanish_cooking_personas"},
-      {"interest": "cooking", "destination": "spanish_cooking_personas"},
-      {"interest": "history", "destination": "spanish_history_personas"},
-      {"interest": "travel", "destination": "latin_america_travel_personas"},
-      {"interest": "literature", "destination": "spanish_literature_personas"}
+      {
+        "interest": "music",
+        "destination": "latin_music_personas"
+      },
+      {
+        "interest": "cuisine",
+        "destination": "spanish_cooking_personas"
+      },
+      {
+        "interest": "cooking",
+        "destination": "spanish_cooking_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "spanish_history_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "latin_america_travel_personas"
+      },
+      {
+        "interest": "literature",
+        "destination": "spanish_literature_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Spanish",
     "teaching_method": "High-frequency communicative immersion targeting conversational utility and regional variations",
-    "culture_weight": 0.30,
-    "conversation_weight": 0.40,
-    "grammar_weight": 0.20,
-    "writing_weight": 0.10
+    "culture_weight": 0.3,
+    "conversation_weight": 0.4,
+    "grammar_weight": 0.2,
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Outlines verb conjugations, gender agreements, sentence structures, and dialectal vocabulary distinctions.",
@@ -37,5 +62,25 @@
   "avatar": {
     "elevenlabs_voice_id": "spanish_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/spanish_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

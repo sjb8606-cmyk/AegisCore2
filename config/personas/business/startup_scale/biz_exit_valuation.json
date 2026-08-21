@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Business Operations",
-    "grade_levels": ["university", "adult", "professional"],
-    "curriculum_tags": ["Business_Valuation", "Mergers_And_Acquisitions_Fundamentals", "Exit_Planning"],
+    "grade_levels": [
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Business_Valuation",
+      "Mergers_And_Acquisitions_Fundamentals",
+      "Exit_Planning"
+    ],
     "learning_objectives": [
       "Understand how EBITDA multiples are used to estimate business value across industries.",
       "Analyze how owner dependency reduces a business's sale value, and what reduces that discount.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "biz_exit_valuation_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/biz_exit_valuation.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

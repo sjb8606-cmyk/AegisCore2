@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Adventure",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["geomorphology", "oceanography", "glaciology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "geomorphology",
+      "oceanography",
+      "glaciology"
+    ],
     "learning_objectives": [
       "Understand the difference between a glacially carved fjord and a standard river valley",
       "Analyze the unique two-layer estuarine circulation (freshwater over saltwater) in the Saguenay",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "fjord_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/fjord.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Maritime History & Performing Arts",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Maritime Commerce", "Star-Fort Architecture", "Gnawa Music History"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Maritime Commerce",
+      "Star-Fort Architecture",
+      "Gnawa Music History"
+    ],
     "learning_objectives": [
       "Understand the historical role of Essaouira (Mogador) as a planned royal port of the 18th century designed to control international trade and tax Jewish merchants.",
       "Analyze the military engineering of the Scala de la Ville, a French-style star-fort designed to resist naval artillery bombardments.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "essaouira_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/essaouira.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

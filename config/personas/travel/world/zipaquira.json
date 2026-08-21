@@ -18,8 +18,19 @@
   },
   "education": {
     "domain": "Science",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["halite_geology", "mining_engineering", "pre_columbian_trade"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "halite_geology",
+      "mining_engineering",
+      "pre_columbian_trade"
+    ],
     "learning_objectives": [
       "Explain the geological formation of the massive Zipaquirá salt deposits from the evaporation of an ancient Cretaceous inland sea.",
       "Understand the structural engineering and safety innovations required to carve a massive, stable cathedral inside active salt mines.",
@@ -35,5 +46,25 @@
   "avatar": {
     "elevenlabs_voice_id": "zipaquira_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/zipaquira.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

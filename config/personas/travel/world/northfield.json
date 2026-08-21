@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Education",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["frontier_history", "collegiate_history", "reconstruction_era"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "frontier_history",
+      "collegiate_history",
+      "reconstruction_era"
+    ],
     "learning_objectives": [
       "Understand the historical events and strategic outcome of the 1876 James-Younger Gang raid on the First National Bank of Northfield",
       "Analyze the role of Carleton and St. Olaf colleges in establishing Northfield as an early Midwestern educational center",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "northfield_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/northfield.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Art & Urban Sociology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["contemporary_art", "urban_sociology", "gentrification"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "contemporary_art",
+      "urban_sociology",
+      "gentrification"
+    ],
     "learning_objectives": [
       "Understand the history and evolution of graffiti and street art from counter-culture to mainstream validation",
       "Analyze the process of using public art (specifically murals) as a deliberate strategy for urban revitalization",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "wynwood_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/wynwood.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

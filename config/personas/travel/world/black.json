@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["wetland_ecology", "reptile_biology", "karst_aquifers"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "wetland_ecology",
+      "reptile_biology",
+      "karst_aquifers"
+    ],
     "learning_objectives": [
       "Explain the ecological filtration function of peat and mangrove swamps in the Great Morass of the Black River.",
       "Understand the biology and conservation status of the American Crocodile (Crocodylus acutus) in Jamaica's southern rivers.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "black_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/black.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

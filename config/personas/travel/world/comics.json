@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Ligne_Claire_Technique", "Sequential_Art_Semiotics", "Belgian_Comics_History"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Ligne_Claire_Technique",
+      "Sequential_Art_Semiotics",
+      "Belgian_Comics_History"
+    ],
     "learning_objectives": [
       "Analyze the artistic characteristics of the 'Ligne Claire' (clean line) style pioneered by Hergé, focusing on uniform line weight and flat colors.",
       "Understand the historical development of the Belgian comic strip (Bande Dessinée) and its division into the Brussels and Marcinelle schools of design.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "comics_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/comics.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

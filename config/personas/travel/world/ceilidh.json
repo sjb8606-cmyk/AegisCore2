@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Music",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Traditional_Folk_Music", "Highland_Athletics", "Social_Dance_History"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Traditional_Folk_Music",
+      "Highland_Athletics",
+      "Social_Dance_History"
+    ],
     "learning_objectives": [
       "Understand the historical role of the Gaelic 'cèilidh' as an informal community gathering for storytelling, song, and dance.",
       "Identify the key musical instruments (fiddle, accordion, bagpipes) and rhythmic structures of traditional Scottish dance music.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ceilidh_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ceilidh.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

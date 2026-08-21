@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Maritime_Markets", "Baltic_Fisheries", "Municipal_Sanitation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Maritime_Markets",
+      "Baltic_Fisheries",
+      "Municipal_Sanitation"
+    ],
     "learning_objectives": [
       "Understand the historical role of the Helsinki Baltic Herring Market (Stadin Silakkamarkkinat) as one of Finland's oldest continuous public food traditions.",
       "Analyze the architectural and hygienic transition from open-air street markets to covered municipal market halls like the Vanha Kauppahalli.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "market_square_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/market_square.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

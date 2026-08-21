@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Culture & Climate",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["climate_justice", "inuit_studies", "environmental_science"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "climate_justice",
+      "inuit_studies",
+      "environmental_science"
+    ],
     "learning_objectives": [
       "Understand the historical significance of the Inuvialuit Final Agreement as the first comprehensive land claim in the NWT",
       "Analyze the catastrophic, disproportionate effects of global climate change on Arctic coastal communities",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "inuvialuit_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/inuvialuit.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["cuban_revolution", "che_guevara", "military_tactics"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "cuban_revolution",
+      "che_guevara",
+      "military_tactics"
+    ],
     "learning_objectives": [
       "Understand the military and strategic significance of the Battle of Santa Clara (December 1958) in the fall of the Batista regime.",
       "Analyze the tactical logistics of the derailment of the armored train (Tren Blindado) using bulldozers and homemade explosives.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "santa_clara_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/santa_clara.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

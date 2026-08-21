@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Industry",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["industrial_revolution", "labor_history", "urban_adaptation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "industrial_revolution",
+      "labor_history",
+      "urban_adaptation"
+    ],
     "learning_objectives": [
       "Understand the economic and geographic reasons why Pittsburgh became the global capital of steel production",
       "Analyze the causes and outcomes of the 1892 Homestead Strike, a turning point in American labor history",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "steel_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/steel.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

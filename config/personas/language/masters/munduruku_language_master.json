@@ -10,20 +10,41 @@
     "layer_1_response": "Let us bring our focus back to Munduruku. What specific word, river name, or pronunciation structure are we practicing right now?"
   },
   "routing": {
-    "can_route_to": ["history", "ecology", "weaving", "travel", "community"],
+    "can_route_to": [
+      "history",
+      "ecology",
+      "weaving",
+      "travel",
+      "community"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "tapajos_history_personas"},
-      {"interest": "ecology", "destination": "river_ecology_personas"},
-      {"interest": "weaving", "destination": "feather_weaving_personas"},
-      {"interest": "travel", "destination": "tapajos_travel_personas"},
-      {"interest": "community", "destination": "munduruku_culture_personas"}
+      {
+        "interest": "history",
+        "destination": "tapajos_history_personas"
+      },
+      {
+        "interest": "ecology",
+        "destination": "river_ecology_personas"
+      },
+      {
+        "interest": "weaving",
+        "destination": "feather_weaving_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "tapajos_travel_personas"
+      },
+      {
+        "interest": "community",
+        "destination": "munduruku_culture_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Munduruku",
     "teaching_method": "Immersive, river-first oral method coupled with river-based oral vocabulary, prefix-suffix verb drills, and active social conversation",
-    "culture_weight": 0.40,
-    "conversation_weight": 0.40,
+    "culture_weight": 0.4,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.15,
     "writing_weight": 0.05
   },
@@ -36,5 +57,25 @@
   "avatar": {
     "elevenlabs_voice_id": "munduruku_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/munduruku_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

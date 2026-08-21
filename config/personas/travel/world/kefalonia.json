@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Local Culture & Speleology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Hydrogeology", "Disaster Recovery", "Modern European Literature"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Hydrogeology",
+      "Disaster Recovery",
+      "Modern European Literature"
+    ],
     "learning_objectives": [
       "Understand the unique hydrogeological system of Katavothres, where seawater enters swallow holes on one side of Kefalonia, travels underground across the island, and emerges in Melissani Cave.",
       "Analyze the impact of the devastating 1953 Ionian earthquake on the architecture, population, and cultural memory of the island.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kefalonia_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kefalonia.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

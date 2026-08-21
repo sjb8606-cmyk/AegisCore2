@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["colonial_borders", "maya_maritime_trade", "marine_conservation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "colonial_borders",
+      "maya_maritime_trade",
+      "marine_conservation"
+    ],
     "learning_objectives": [
       "Understand the historical engineering feat of the classic Maya in digging the Bacalar Chico canal to connect the Chetumal Bay with the Caribbean Sea.",
       "Analyze the role of the Bacalar Chico Marine Reserve in protecting fragile coral reefs, mangroves, and sea-grass nurseries.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bacalar_chico_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bacalar_chico.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

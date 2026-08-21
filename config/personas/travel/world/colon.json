@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["mortuary_art", "religious_syncretism", "caribbean_history"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "mortuary_art",
+      "religious_syncretism",
+      "caribbean_history"
+    ],
     "learning_objectives": [
       "Analyze the neo-classical and neo-Gothic architectural elements of major monuments in Colón Cemetery, explaining their symbolic representation of class and lineage.",
       "Understand the historical development of religious syncretism in Cuba, focusing on the pairing of Catholic saints with Yoruba Orishas in Santería practices.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "colon_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/colon.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["coastal_history", "american_gentry", "disaster_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "coastal_history",
+      "american_gentry",
+      "disaster_history"
+    ],
     "learning_objectives": [
       "Understand the development of the shingle-style architectural movement in late 19th-century New England",
       "Analyze the catastrophic impact of the Great New England Hurricane of 1938 on coastal infrastructure",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "watch_hill_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/watch_hill.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

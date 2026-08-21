@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Ecology & Local History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Karst Geomorphology", "Byzantine Art History", "Riverine Ecology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Karst Geomorphology",
+      "Byzantine Art History",
+      "Riverine Ecology"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Ihlara Valley, analyzing how tectonic forces and water erosion carved a 150-meter volcanic canyon.",
       "Analyze the artistic and historical significance of the rock-cut churches (like Kokar Kilise), focusing on how their Syrian-Egyptian frescoes differ from other Byzantine styles.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ihlara_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ihlara.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

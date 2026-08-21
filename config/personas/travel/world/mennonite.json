@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Heritage & Culture",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["immigration_history", "religious_studies", "agriculture"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "immigration_history",
+      "religious_studies",
+      "agriculture"
+    ],
     "learning_objectives": [
       "Understand the religious and political motivations for Mennonite migration to Manitoba",
       "Analyze the unique village settlement patterns (Strassendorf) compared to the standard grid system",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mennonite_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mennonite.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Culinary Culture & Local Economics",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Industrial Agriculture", "Food Science", "Socio-Cultural History"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Industrial Agriculture",
+      "Food Science",
+      "Socio-Cultural History"
+    ],
     "learning_objectives": [
       "Understand the history of the English Market (Mercat de Sant Josep) and how it modernized the sanitation of food trading in Cork since 1788.",
       "Analyze the role of the Cork Butter Exchange as a global trading hub that standardized and exported salt butter to the British Empire.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "english_market_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/english_market.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Agronomy & Local Culture",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Sustainable Agriculture", "Cork Forestry", "Mediterranean Ecology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Sustainable Agriculture",
+      "Cork Forestry",
+      "Mediterranean Ecology"
+    ],
     "learning_objectives": [
       "Understand the ecological dynamics of the 'Montado' (cork oak dehesa), a unique agro-forestry system that supports high biodiversity.",
       "Analyze the manual, sustainable process of harvesting cork bark from Quercus suber trees without cutting them down.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "alentejo_rural_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/alentejo_rural.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Industry & Geography",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["metallurgy", "resource_extraction", "urban_planning"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "metallurgy",
+      "resource_extraction",
+      "urban_planning"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Labrador Trough and its global economic importance",
       "Analyze the environmental and logistical scale of open-pit mining in a subarctic environment",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "labrador_city_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/labrador_city.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

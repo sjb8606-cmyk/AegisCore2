@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["indigenous_studies", "post_colonialism", "cultural_revitalization"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "indigenous_studies",
+      "post_colonialism",
+      "cultural_revitalization"
+    ],
     "learning_objectives": [
       "Understand the displacement of the Tr'ondëk Hwëch'in people during the Klondike Gold Rush",
       "Analyze the cultural significance of the Moosehide Gathering in reclaiming Indigenous identity",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "moosehide_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/moosehide.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

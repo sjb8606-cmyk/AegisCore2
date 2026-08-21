@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["indigenous_sovereignty", "colonial_history", "treaty_law"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "indigenous_sovereignty",
+      "colonial_history",
+      "treaty_law"
+    ],
     "learning_objectives": [
       "Understand the historical territory of the Potawatomi Nation in southwest Michigan and northern Indiana",
       "Analyze the diplomatic strategies of Chief Leopold Pokagon in securing land rights during the 1833 Treaty of Chicago",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "potawatomi_mi_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/potawatomi_mi.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

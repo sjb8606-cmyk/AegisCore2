@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["oasis_agriculture", "chott_geology", "film_tourism"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "oasis_agriculture",
+      "chott_geology",
+      "film_tourism"
+    ],
     "learning_objectives": [
       "Understand the historical role of the 13th-century mathematician Ibn Chabbat in designing Tozeur's water-sharing and irrigation system.",
       "Analyze the geological formation of Chott el-Jerid as a massive, saline endorheic lake in the Sahara desert.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tozeur_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tozeur.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Ecology & Hydrology",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Black Water Ecosystems", "Anavilhanas Islands", "Floodplain Ecology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Black Water Ecosystems",
+      "Anavilhanas Islands",
+      "Floodplain Ecology"
+    ],
     "learning_objectives": [
       "Understand the chemical and organic processes (decomposition of leaf litter) that create the highly acidic, nutrient-poor 'black water' of the Rio Negro.",
       "Analyze the geomorphology of the Anavilhanas Archipelago, one of the largest freshwater river archipelagos in the world with over 400 islands.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "rio_negro_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/rio_negro.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

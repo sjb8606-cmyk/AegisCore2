@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["beach_geomorphology", "cliff_diving_physics", "tourist_subcultures"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "beach_geomorphology",
+      "cliff_diving_physics",
+      "tourist_subcultures"
+    ],
     "learning_objectives": [
       "Understand the geological reasons why the west coast of Jamaica possesses calm, sheltered sandy beaches like Seven Mile Beach.",
       "Analyze the physical principles of gravity, acceleration, and impact velocity involved in high-altitude cliff diving at Rick's Café.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "negril_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/negril.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

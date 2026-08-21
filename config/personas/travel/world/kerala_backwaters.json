@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Local Culture & Wetland Geography",
-    "grade_levels": ["elementary", "middle_school", "adult"],
-    "curriculum_tags": ["Wetland Ecology", "Traditional Boat-Building", "Water Management Systems"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Wetland Ecology",
+      "Traditional Boat-Building",
+      "Water Management Systems"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Kerala Backwaters, a unique network of brackish lagoons, canals, and lakes fed by thirty-eight rivers.",
       "Analyze the material science and craft of 'Kettuvallam' construction, explaining how jackwood planks are stitched together using coconut coir without metal nails.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kerala_backwaters_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kerala_backwaters.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

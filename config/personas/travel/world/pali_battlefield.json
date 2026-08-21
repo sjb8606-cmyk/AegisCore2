@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Military Science",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["military_history", "unification_warfare", "geography_of_warfare"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "military_history",
+      "unification_warfare",
+      "geography_of_warfare"
+    ],
     "learning_objectives": [
       "Understand the tactical maneuvers of the Battle of Nu'uanu (1795) that completed Kamehameha's conquest of Oahu",
       "Analyze how the physical geography of the Pali wind gap acted as a natural trap and deciding factor in the battle",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "pali_battlefield_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/pali_battlefield.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

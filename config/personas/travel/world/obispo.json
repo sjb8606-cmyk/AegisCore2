@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Literature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["caribbean_literature", "hemingway_in_cuba", "urban_geography"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "caribbean_literature",
+      "hemingway_in_cuba",
+      "urban_geography"
+    ],
     "learning_objectives": [
       "Analyze the role of Havana and Obispo Street in shaping the literary style and themes of Ernest Hemingway's mid-20th-century works.",
       "Understand the historical role of Obispo Street as the primary commercial and literary spine of colonial and republican Havana.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "obispo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/obispo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

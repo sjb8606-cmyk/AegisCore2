@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["wetland_ecology", "maritime_history", "resource_management"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "wetland_ecology",
+      "maritime_history",
+      "resource_management"
+    ],
     "learning_objectives": [
       "Understand why the Maryland legislature legally mandated the use of sail-powered skipjacks to prevent the overharvesting of oysters",
       "Analyze the ecological role of the Blackwater National Wildlife Refuge as a critical coastal wetland and migratory sanctuary",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "eastern_shore_md_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/eastern_shore_md.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

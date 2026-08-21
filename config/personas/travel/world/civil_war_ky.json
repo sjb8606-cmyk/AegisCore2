@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Military Science",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["military_history", "civil_war", "logistics_of_warfare"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "military_history",
+      "civil_war",
+      "logistics_of_warfare"
+    ],
     "learning_objectives": [
       "Understand the strategic significance of the Battle of Perryville (1862) in securing Kentucky for the Union",
       "Analyze the role of the 'acoustic shadow' phenomenon in altering the communications of the commanders during the battle",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "civil_war_ky_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/civil_war_ky.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

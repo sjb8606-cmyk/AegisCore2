@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Exploration",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["colonial_history", "exploration_myths", "economic_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "colonial_history",
+      "exploration_myths",
+      "economic_history"
+    ],
     "learning_objectives": [
       "Understand the economic and geopolitical motivations behind Martin Frobisher's 16th-century arctic voyages",
       "Analyze the psychological phenomenon of 'fool's gold' and the massive logistical failure of the expedition",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "frobisher_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/frobisher.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Sports & Culture",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["oceanography", "surfing_physics", "cultural_studies"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "oceanography",
+      "surfing_physics",
+      "cultural_studies"
+    ],
     "learning_objectives": [
       "Understand the geological and oceanographic forces that create the hollow, powerful waves of the Banzai Pipeline",
       "Analyze the historical development of surfing (he'e nalu) from traditional Hawaiian cultural practice to a global industry",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "north_shore_hi_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/north_shore_hi.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

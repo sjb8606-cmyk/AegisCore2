@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Landscape_Design_History", "Counterculture_1960s", "Urban_Planning_Parks"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Landscape_Design_History",
+      "Counterculture_1960s",
+      "Urban_Planning_Parks"
+    ],
     "learning_objectives": [
       "Understand the key design features of the English Landscape style in Louis Paul Zocher's Vondelpark plan.",
       "Analyze the role of the Vondelpark in the late 1960s and 1970s as a global center for the 'Provos' and hippy counterculture.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "vondelpark_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/vondelpark.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

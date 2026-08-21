@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["colonial_geopolitics", "vernacular_architecture", "smuggling_economies"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "colonial_geopolitics",
+      "vernacular_architecture",
+      "smuggling_economies"
+    ],
     "learning_objectives": [
       "Understand the strategic geopolitical role of Colonia del Sacramento as a Portuguese outpost designed to challenge Spanish trade monopolies in the River Plate.",
       "Analyze the architectural and urban planning contrasts between the organic, stone-paved Portuguese quarters and the symmetrical Spanish grids.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "colonia_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/colonia.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

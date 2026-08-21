@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["colonial_architecture", "agricultural_estates", "political_transitions"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "colonial_architecture",
+      "agricultural_estates",
+      "political_transitions"
+    ],
     "learning_objectives": [
       "Understand the historical and architectural design of Shiwa Ng'andu as a unique European-style country estate built in colonial Zambia.",
       "Analyze the political relationship between Stewart Gore-Browne and early Zambian independence leaders, highlighting his support for self-determination.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "shiwa_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/shiwa.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

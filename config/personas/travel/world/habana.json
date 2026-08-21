@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["colonial_urbanization", "spanish_empire", "caribbean_preservation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "colonial_urbanization",
+      "spanish_empire",
+      "caribbean_preservation"
+    ],
     "learning_objectives": [
       "Understand the strategic geopolitical role of Havana as the primary staging port for the Spanish treasure fleets in the Caribbean.",
       "Analyze the military and civil architecture of Habana Vieja, focusing on the Spanish baroque style and coastal fortification networks.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "habana_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/habana.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

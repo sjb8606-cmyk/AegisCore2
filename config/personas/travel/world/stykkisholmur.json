@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Maritime_Navigation", "Eiderdown_Harvesting", "Danish_Trade_Monopoly"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Maritime_Navigation",
+      "Eiderdown_Harvesting",
+      "Danish_Trade_Monopoly"
+    ],
     "learning_objectives": [
       "Understand the geological and ecological uniqueness of Breiðafjörður bay, containing thousands of shallow islands and massive tidal ranges.",
       "Analyze the historical impact of the Danish trade monopoly on the development and architecture of 19th-century trading posts like Stykkishólmur.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "stykkisholmur_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/stykkisholmur.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

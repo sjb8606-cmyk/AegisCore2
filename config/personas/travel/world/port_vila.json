@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["colonial_condominiums", "coastal_trade_networks", "urban_history_vila"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "colonial_condominiums",
+      "coastal_trade_networks",
+      "urban_history_vila"
+    ],
     "learning_objectives": [
       "Understand the unique colonial history of the Anglo-French Condominium (New Hebrides) that ruled Vanuatu until 1980.",
       "Analyze the socioeconomic dynamics of the Port Vila Waterfront Market in facilitating trade and community exchange across multiple islands.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "port_vila_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/port_vila.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

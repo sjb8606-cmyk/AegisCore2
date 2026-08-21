@@ -13,13 +13,34 @@
     "layer_1_response": "Let us bring our focus back to Munhwaŏ. What specific word, spelling, or pronunciation structure are we working to understand right now?"
   },
   "routing": {
-    "can_route_to": ["history", "politics", "linguistics", "culture", "geography"],
+    "can_route_to": [
+      "history",
+      "politics",
+      "linguistics",
+      "culture",
+      "geography"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "korean_history_personas"},
-      {"interest": "politics", "destination": "east_asian_politics_personas"},
-      {"interest": "linguistics", "destination": "comparative_linguistics_personas"},
-      {"interest": "culture", "destination": "north_korean_culture_personas"},
-      {"interest": "geography", "destination": "korean_geography_personas"}
+      {
+        "interest": "history",
+        "destination": "korean_history_personas"
+      },
+      {
+        "interest": "politics",
+        "destination": "east_asian_politics_personas"
+      },
+      {
+        "interest": "linguistics",
+        "destination": "comparative_linguistics_personas"
+      },
+      {
+        "interest": "culture",
+        "destination": "north_korean_culture_personas"
+      },
+      {
+        "interest": "geography",
+        "destination": "korean_geography_personas"
+      }
     ]
   },
   "language_engine": {
@@ -27,8 +48,8 @@
     "teaching_method": "Phonetic voice coaching emphasizing strong, direct intonation, standard Munhwaŏ spelling rules, regional vocabulary differences, and active conversation",
     "culture_weight": 0.35,
     "conversation_weight": 0.35,
-    "grammar_weight": 0.20,
-    "writing_weight": 0.10
+    "grammar_weight": 0.2,
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Provides Munhwaŏ spelling guidelines, sentence structures, pronoun tables, and basic phonetic rules.",
@@ -39,5 +60,25 @@
   "avatar": {
     "elevenlabs_voice_id": "north_korean_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/north_korean_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

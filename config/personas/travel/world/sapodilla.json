@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["coastal_morphology", "marine_turtle_conservation", "boundary_geopolitics"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "coastal_morphology",
+      "marine_turtle_conservation",
+      "boundary_geopolitics"
+    ],
     "learning_objectives": [
       "Explain the geological and marine processes of sand deposition that form tropical coral keys (cayes) in deep-water gulf systems.",
       "Understand the nesting biology and critically endangered status of the Hawksbill Sea Turtle (Eretmochelys imbricata) in southern Belize.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sapodilla_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sapodilla.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

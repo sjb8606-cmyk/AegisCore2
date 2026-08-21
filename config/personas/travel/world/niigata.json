@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Agriculture & Fermentation",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Biochemistry", "Agricultural Geography", "Culinary Arts"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Biochemistry",
+      "Agricultural Geography",
+      "Culinary Arts"
+    ],
     "learning_objectives": [
       "Understand the chemical process of multiple parallel fermentation used in sake brewing.",
       "Analyze why the mineral-poor, soft meltwater of Niigata produces a distinctively dry, clean style of sake (karakuchi).",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "niigata_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/niigata.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

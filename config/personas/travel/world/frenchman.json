@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Landscape Architecture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["landscape_architecture", "gilded_age", "recreational_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "landscape_architecture",
+      "gilded_age",
+      "recreational_history"
+    ],
     "learning_objectives": [
       "Understand the principles of landscape architecture used to design roads that blend seamlessly into the natural environment",
       "Analyze the socio-economic motivations of Gilded Age philanthropists in shaping public conservation lands",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "frenchman_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/frenchman.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["agricultural_history", "mormon_pioneers", "disaster_recovery"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "agricultural_history",
+      "mormon_pioneers",
+      "disaster_recovery"
+    ],
     "learning_objectives": [
       "Understand the history and motivations of the Mormon pioneer settlement of the Upper Snake River Valley",
       "Analyze the causes, execution, and catastrophic failure of the Teton Dam in June 1976",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "rexburg_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/rexburg.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

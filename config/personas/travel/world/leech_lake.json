@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["indigenous_sovereignty", "treaty_history", "environmental_law"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "indigenous_sovereignty",
+      "treaty_history",
+      "environmental_law"
+    ],
     "learning_objectives": [
       "Understand the historical territory and treaty rights of the Leech Lake Band of Ojibwe",
       "Analyze the Battle of Sugar Point (1898) as the last armed conflict between the US Army and Native nations",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "leech_lake_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/leech_lake.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

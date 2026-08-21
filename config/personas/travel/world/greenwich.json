@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Culture & Sociology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["social_movements", "queer_history", "counter_culture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "social_movements",
+      "queer_history",
+      "counter_culture"
+    ],
     "learning_objectives": [
       "Understand why Greenwich Village's irregular street grid (defying the 1811 plan) fostered an isolated enclave for counter-culture",
       "Analyze the causes and global impacts of the 1969 Stonewall Riots on the modern LGBTQ+ rights movement",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "greenwich_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/greenwich.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

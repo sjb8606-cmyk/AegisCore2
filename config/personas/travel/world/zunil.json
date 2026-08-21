@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["volcanic_agriculture", "geothermal_science", "religious_syncretism_andean_and_african"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "volcanic_agriculture",
+      "geothermal_science",
+      "religious_syncretism_andean_and_african"
+    ],
     "learning_objectives": [
       "Explain the geological and volcanic mechanisms of the Almolonga volcano that generate Zunil's geothermal hot springs.",
       "Understand the syncretism of the deity San Simón, explaining how he represents the fusion of Maya earth gods and Catholic saints.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "zunil_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/zunil.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

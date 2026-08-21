@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["indigenous_history", "trade_networks", "cultural_geography"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "indigenous_history",
+      "trade_networks",
+      "cultural_geography"
+    ],
     "learning_objectives": [
       "Understand the pre-contact trade dynamics between coastal and interior Indigenous nations",
       "Analyze the impact of changing transportation methods (river to highway) on the settlement patterns of the Selkirk First Nation",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "pelly_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/pelly.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

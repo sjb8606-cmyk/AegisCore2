@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Waterfall_Geomorphology", "Isostatic_Rebound_Cliffs", "Viking_Folklore"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Waterfall_Geomorphology",
+      "Isostatic_Rebound_Cliffs",
+      "Viking_Folklore"
+    ],
     "learning_objectives": [
       "Explain the geological process of post-glacial isostatic rebound that left the former sea cliffs of Skógafoss high and dry, miles from the modern ocean.",
       "Understand the hydrology and massive erosion power of the Skógá river, fed by the meltwaters of the Eyjafjallajökull and Mýrdalsjökull glaciers.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "skogafoss_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/skogafoss.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

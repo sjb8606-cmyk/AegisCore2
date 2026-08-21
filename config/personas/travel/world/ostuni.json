@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Local Culture & Agronomy",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Hygiene History", "Olive Agronomy", "Mediterranean Architecture"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Hygiene History",
+      "Olive Agronomy",
+      "Mediterranean Architecture"
+    ],
     "learning_objectives": [
       "Understand the historical and scientific purpose of whitewashing (using calcium hydroxide lime paint) as a disinfectant and thermal regulator in medieval cities.",
       "Analyze the agricultural history of the Valle d'Itria, focusing on the cultivation of ancient olive trees (ulivi secolari) that have survived for a thousand years.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ostuni_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ostuni.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

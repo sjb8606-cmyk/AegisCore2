@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Local Culture",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Urban Sociology", "Colonial Architecture", "History of Transportation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Urban Sociology",
+      "Colonial Architecture",
+      "History of Transportation"
+    ],
     "learning_objectives": [
       "Understand the historical development of Santa Teresa as a residential hilltop enclave for the 19th-century elite escaping yellow fever in the lowlands.",
       "Analyze the design and engineering of the 'Bonde' (electric streetcar), evaluating its role as a heritage transport system active since 1877.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "santa_teresa_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/santa_teresa.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

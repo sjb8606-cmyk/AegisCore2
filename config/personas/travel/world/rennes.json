@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Urban Sociology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Urban Fires", "Student Movements", "Breton Identity"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Urban Fires",
+      "Student Movements",
+      "Breton Identity"
+    ],
     "learning_objectives": [
       "Understand the urban reconstruction of Rennes following the Great Fire of 1720, comparing the wooden medieval layout with the classical stone grid.",
       "Analyze the political role of the Parlement of Brittany in defending regional autonomy against central French royal decrees.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "rennes_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/rennes.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

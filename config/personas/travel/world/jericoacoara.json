@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Local Culture & Geomorphology",
-    "grade_levels": ["elementary", "middle_school", "adult"],
-    "curriculum_tags": ["Desert Geomorphology", "Sailing Physics", "Ecotourism Studies"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Desert Geomorphology",
+      "Sailing Physics",
+      "Ecotourism Studies"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the 'shifting sand dunes' of Jericoacoara, analyzing how the strong trade winds (Alizés) transport sand.",
       "Analyze the physics of windsurfing and kitesurfing, explaining how high-velocity winds and flat lagoons create the optimal environment.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "jericoacoara_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/jericoacoara.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

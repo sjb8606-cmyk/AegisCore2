@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Religious Art",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Medieval History", "Gothic Architecture", "Impressionist Aesthetics"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Medieval History",
+      "Gothic Architecture",
+      "Impressionist Aesthetics"
+    ],
     "learning_objectives": [
       "Understand the trial, execution, and rehabilitation of Joan of Arc within the political context of the Hundred Years' War.",
       "Analyze the architectural evolution of Rouen Cathedral, focusing on its Flamboyant Gothic elements and iron spire.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "rouen_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/rouen.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

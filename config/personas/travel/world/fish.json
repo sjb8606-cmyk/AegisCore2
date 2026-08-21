@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["canyon_geomorphology", "tectonic_rifting", "geological_stratigraphy"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "canyon_geomorphology",
+      "tectonic_rifting",
+      "geological_stratigraphy"
+    ],
     "learning_objectives": [
       "Explain the geological and tectonic processes of plate fracturing and subsequent water erosion that formed the Fish River Canyon.",
       "Identify the distinct geological strata and rock layers visible on the canyon walls, tracing millions of years of earth history.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "fish_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/fish.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

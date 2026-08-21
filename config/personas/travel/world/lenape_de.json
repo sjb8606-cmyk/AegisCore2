@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["indigenous_sovereignty", "colonial_history", "language_reclamation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "indigenous_sovereignty",
+      "colonial_history",
+      "language_reclamation"
+    ],
     "learning_objectives": [
       "Understand the historical territory and political structure of the Lenape (Delaware) Nation in the Delaware Bay",
       "Analyze the impact of 'paper genocide' (identifying Indigenous people as 'colored' or 'mulatto' in censuses) on the legal erasure of the Lenape",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "lenape_de_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/lenape_de.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

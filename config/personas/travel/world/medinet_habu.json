@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Military Architecture",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["New Kingdom", "Military Architecture", "Sea Peoples Battle"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "New Kingdom",
+      "Military Architecture",
+      "Sea Peoples Battle"
+    ],
     "learning_objectives": [
       "Understand the military and strategic purpose of the Medinet Habu Temple-Fortress, constructed by Ramesses III as his memorial monument.",
       "Analyze the relief carvings of the Battle of the Delta, evaluating how they recorded the earliest naval battle in history against the Sea Peoples.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "medinet_habu_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/medinet_habu.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

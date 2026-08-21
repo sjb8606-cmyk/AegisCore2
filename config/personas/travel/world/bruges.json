@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Hanseatic_Bruges", "Flemish_Primitives_Art", "Canal_Silting_Economics"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Hanseatic_Bruges",
+      "Flemish_Primitives_Art",
+      "Canal_Silting_Economics"
+    ],
     "learning_objectives": [
       "Analyze the economic and strategic role of Bruges as the premier international trading port of the Hanseatic League in the 13th and 14th centuries.",
       "Understand how the silting of the Zwin channel in the 15th century caused the sudden economic decline of Bruges, preserving its medieval structure.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bruges_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bruges.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

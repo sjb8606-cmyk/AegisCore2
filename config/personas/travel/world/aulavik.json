@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Arctic Ecology",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["polar_desert_ecology", "zoology", "wilderness_preservation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "polar_desert_ecology",
+      "zoology",
+      "wilderness_preservation"
+    ],
     "learning_objectives": [
       "Understand the ecological characteristics of a polar desert and the Thomsen River watershed",
       "Analyze the biological adaptations that allow massive herbivores like muskoxen to thrive in extreme cold and low precipitation",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "aulavik_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/aulavik.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["rainforest_ecology", "silktail_conservation", "island_biogeography"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "rainforest_ecology",
+      "silktail_conservation",
+      "island_biogeography"
+    ],
     "learning_objectives": [
       "Explain the ecological and historical significance of the Waisali Rainforest as a critical sanctuary for endemic Fijian bird species.",
       "Understand the biological features, courtship behaviors, and conservation status of the rare Silktail Bird (Lamprolia victoriae).",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "waisali_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/waisali.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

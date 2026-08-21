@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["wetland_ecology", "mangrove_adaptations", "urban_runoff_mitigation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "wetland_ecology",
+      "mangrove_adaptations",
+      "urban_runoff_mitigation"
+    ],
     "learning_objectives": [
       "Explain the ecological filtration function of Red Mangroves (Rhizophora mangle) and Black Mangroves (Avicennia germinans) in coastal wetlands.",
       "Understand the importance of Graeme Hall as a Ramsar-aligned wetland sanctuary for migratory and resident Caribbean waterbirds.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "graeme_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/graeme.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

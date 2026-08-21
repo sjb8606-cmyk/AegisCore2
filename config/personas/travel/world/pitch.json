@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Science",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["geology", "hydrocarbons", "paleontological_preservation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "geology",
+      "hydrocarbons",
+      "paleontological_preservation"
+    ],
     "learning_objectives": [
       "Explain the geological process of oil-migration along deep subduction faults that created the Pitch Lake at La Brea.",
       "Identify the chemical and physical properties of natural asphalt and how it has been historically extracted and processed for global infrastructure.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "pitch_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/pitch.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

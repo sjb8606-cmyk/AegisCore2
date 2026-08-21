@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Conservation",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["geomorphology", "environmental_preservation", "interstate_policy"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "geomorphology",
+      "environmental_preservation",
+      "interstate_policy"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Palisades diabase sill during the rifting of Pangaea",
       "Analyze the historic creation of the Palisades Interstate Park Commission as a pioneer model for multi-state conservation",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "palisades_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/palisades.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

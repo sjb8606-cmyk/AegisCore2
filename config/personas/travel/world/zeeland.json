@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Hydraulic_Engineering", "Coastal_Defense", "Estuary_Ecology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Hydraulic_Engineering",
+      "Coastal_Defense",
+      "Estuary_Ecology"
+    ],
     "learning_objectives": [
       "Understand the catastrophic impact of the 1953 North Sea Flood and how it directly led to the establishment of the Delta Works.",
       "Analyze the engineering difference between a closed dike and a movable storm surge barrier (Oosterscheldekering) in balancing flood safety with environmental preservation.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "zeeland_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/zeeland.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

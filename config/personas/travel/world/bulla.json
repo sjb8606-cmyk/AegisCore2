@@ -18,8 +18,19 @@
   },
   "education": {
     "domain": "Science",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["subterranean_architecture", "geothermal_cooling", "ancient_adaptation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "subterranean_architecture",
+      "geothermal_cooling",
+      "ancient_adaptation"
+    ],
     "learning_objectives": [
       "Explain the geological and thermodynamic principles of passive geothermal cooling used in the subterranean villas of Bulla Regia.",
       "Understand the historical role of Bulla Regia as a major Numidian and Roman city that flourished through grain and olive trade.",
@@ -35,5 +46,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bulla_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bulla.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

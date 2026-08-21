@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Hawaiian Culture",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["wayfinding", "maritime_history", "indigenous_science"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "wayfinding",
+      "maritime_history",
+      "indigenous_science"
+    ],
     "learning_objectives": [
       "Understand the scientific principles of Polynesian wayfinding (non-instrument navigation) using stars, ocean swells, and bird flight",
       "Analyze the historical significance of the Hokule'a's 1976 voyage to Tahiti in proving the intentional settlement of Polynesia",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "voyaging_navigation_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/voyaging_navigation.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

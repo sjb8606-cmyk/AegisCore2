@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Agriculture & Culture",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["botany", "culinary_heritage", "food_science"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "botany",
+      "culinary_heritage",
+      "food_science"
+    ],
     "learning_objectives": [
       "Understand the biological and meteorological conditions that trigger starch-to-sugar conversion and sap flow in maple trees",
       "Analyze the technological history of maple syrup production from Indigenous clay pots to modern vacuum tubing and reverse osmosis",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "maple_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/maple.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,19 @@
   },
   "education": {
     "domain": "Sports",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["sports_science", "cardiovascular_physiology", "athletic_history"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "sports_science",
+      "cardiovascular_physiology",
+      "athletic_history"
+    ],
     "learning_objectives": [
       "Explain the cardiovascular and physiological adaptations (such as increased red blood cell production) that occur during long-term high-altitude training.",
       "Understand the historical development of Kenya's elite running culture, tracing its dominance in global middle- and long-distance athletics since the 1968 Olympics.",
@@ -35,5 +46,25 @@
   "avatar": {
     "elevenlabs_voice_id": "eldoret_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/eldoret.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

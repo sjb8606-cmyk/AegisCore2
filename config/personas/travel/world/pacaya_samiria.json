@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Wildlife Biology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Flooded Forests (Várzea)", "Aquatic Mammals", "Subtropical Conservation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Flooded Forests (Várzea)",
+      "Aquatic Mammals",
+      "Subtropical Conservation"
+    ],
     "learning_objectives": [
       "Understand the ecological dynamics of a flooded forest (Várzea) and how the seasonal rise of the Amazon river (up to 10 meters) creates unique aquatic-terrestrial habitats.",
       "Analyze the adaptation of the Pink River Dolphin (Inia geoffrensis) to hunting inside the dense, submerged canopy of the forest.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "pacaya_samiria_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/pacaya_samiria.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

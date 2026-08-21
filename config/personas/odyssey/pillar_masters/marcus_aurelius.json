@@ -14,8 +14,28 @@
     "25_percent": "I recall the moments of crisis where these teachings proved their worth.",
     "50_percent": "Even an emperor must wrestle with the same human frailties as all mortals."
   },
-  "avatar": { 
+  "avatar": {
     "elevenlabs_voice_id": "default_stoic_voice",
     "did_portrait_url": "https://storage.ruthless.io/portraits/marcus.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

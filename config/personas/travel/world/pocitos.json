@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["coastal_morphology", "estuary_oceanography", "social_rituals"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "coastal_morphology",
+      "estuary_oceanography",
+      "social_rituals"
+    ],
     "learning_objectives": [
       "Understand the physical oceanography of the Río de la Plata as the widest river estuary in the world, analyzing its freshwater-saltwater transitions.",
       "Explain the sociological role of the Rambla of Montevideo as a public 'commons' and a crucial democratic space for social integration.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "pocitos_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/pocitos.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,19 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["national_liberation", "sacred_monuments", "modernizing_reforms"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "national_liberation",
+      "sacred_monuments",
+      "modernizing_reforms"
+    ],
     "learning_objectives": [
       "Understand the historical role of Habib Bourguiba in leading the Tunisian independence movement and establishing the first modern republic in 1956.",
       "Analyze the architectural design and symbolic meaning of the Bourguiba Mausoleum as a monument to national and modernizing identity.",
@@ -35,5 +46,25 @@
   "avatar": {
     "elevenlabs_voice_id": "monastir_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/monastir.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

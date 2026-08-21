@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Religious Art",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Dravidian Architecture", "Mesoamerican Engineering", "Hydrology & Art"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Dravidian Architecture",
+      "Mesoamerican Engineering",
+      "Hydrology & Art"
+    ],
     "learning_objectives": [
       "Understand the strategic and hydraulic history of the Leshan Giant Buddha, constructed to pacify the turbulent river confluence (Min, Dadu, and Qingyi).",
       "Analyze the engineering of the hidden, internal drainage system of the Buddha (grooves and tunnels carved into the statue) that prevents structural water weathering.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "leshan_buddha_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/leshan_buddha.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

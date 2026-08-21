@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Archaeology",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Hellenistic Urbanism", "Hydraulics History", "Ecology of Rhodes"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Hellenistic Urbanism",
+      "Hydraulics History",
+      "Ecology of Rhodes"
+    ],
     "learning_objectives": [
       "Understand the urban planning of a 'Hellenistic residential town' (Kamiros), analyzing how its terraced layout separated religious, administrative, and private spaces.",
       "Analyze the advanced hydraulic and water-storage systems of Kamiros, focusing on the massive 600-cubic-meter central cistern.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kamiros_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kamiros.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

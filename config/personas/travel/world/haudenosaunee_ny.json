@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Governance",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["constitutional_law", "indigenous_studies", "democratic_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "constitutional_law",
+      "indigenous_studies",
+      "democratic_history"
+    ],
     "learning_objectives": [
       "Understand the political structure and democratic principles of the Great Law of Peace (Kayanerehkowa)",
       "Analyze the influence of the Haudenosaunee Confederacy on the drafting of the U.S. Constitution (1787)",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "haudenosaunee_ny_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/haudenosaunee_ny.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Urban Sociology & Contemporary Art",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Urban Sociology", "Azulejo Technology", "Gentrification Studies"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Urban Sociology",
+      "Azulejo Technology",
+      "Gentrification Studies"
+    ],
     "learning_objectives": [
       "Understand the modern model of urban regeneration in Lisbon, analyzing how Intendente transitioned from a marginalized red-light district to a creative hub.",
       "Analyze the chemistry and history of 'Azulejos' (traditional Portuguese tiles), focusing on the work of the Viúva Lamego factory.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "intendente_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/intendente.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

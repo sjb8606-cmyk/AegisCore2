@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Military Science",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["military_logistics", "civil_war", "terrain_tactics"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "military_logistics",
+      "civil_war",
+      "terrain_tactics"
+    ],
     "learning_objectives": [
       "Understand the strategic geographic reasons why Bragg selected Murfreesboro for the winter of 1862",
       "Analyze the role of the unique limestone and cedar glade terrain in creating tactical cover and chaos during the battle",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "stones_river_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/stones_river.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

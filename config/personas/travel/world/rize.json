@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Agronomy & Local Culture",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Subtropical Agriculture", "Tea Fermentation", "Mountain Economics"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Subtropical Agriculture",
+      "Tea Fermentation",
+      "Mountain Economics"
+    ],
     "learning_objectives": [
       "Understand the history and agricultural policy of introducing tea cultivation to the humid, steep slopes of Rize in the 1940s.",
       "Analyze the biochemical process of tea oxidation (black tea) and how the humid microclimate of the Pontic Alps shapes its flavor.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "rize_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/rize.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Nature & Coastal Geography",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Coastal Geomorphology", "Oceanography", "WWI Memorial History"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Coastal Geomorphology",
+      "Oceanography",
+      "WWI Memorial History"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Twelve Apostles (limestone sea stacks) through coastal marine erosion of ancient cliffs.",
       "Analyze the history and construction of the Great Ocean Road (1919–1932) as a national war memorial built by returned WWI soldiers.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "great_ocean_road_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/great_ocean_road.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

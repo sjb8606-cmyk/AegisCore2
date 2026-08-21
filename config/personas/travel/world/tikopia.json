@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["permaculture_systems", "zero_waste_economics", "island_limitations"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "permaculture_systems",
+      "zero_waste_economics",
+      "island_limitations"
+    ],
     "learning_objectives": [
       "Understand the key environmental, dietary, and social factors that define Tikopia as an international model of zero-waste agricultural sustainability.",
       "Analyze the multi-layered permaculture design of Tikopia's forest gardens, detailing how crops are grown under native canopy trees.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tikopia_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tikopia.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

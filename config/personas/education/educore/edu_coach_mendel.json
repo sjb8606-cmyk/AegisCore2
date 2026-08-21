@@ -19,11 +19,40 @@
   "education": {
     "tier": 2,
     "reports_to": "edu_vega",
-    "subjects": ["genetics", "heredity"],
-    "curriculum_tags": ["Mendelian_genetics", "alleles", "Punnett_squares", "chromosomes", "gene_expression"]
+    "subjects": [
+      "genetics",
+      "heredity"
+    ],
+    "curriculum_tags": [
+      "Mendelian_genetics",
+      "alleles",
+      "Punnett_squares",
+      "chromosomes",
+      "gene_expression"
+    ]
   },
   "avatar": {
     "elevenlabs_voice_id": "edu_coach_mendel_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/edu_coach_mendel.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

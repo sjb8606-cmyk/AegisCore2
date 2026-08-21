@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["colonial_fortifications", "afro_caribbean_heritage", "piracy_history"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "colonial_fortifications",
+      "afro_caribbean_heritage",
+      "piracy_history"
+    ],
     "learning_objectives": [
       "Analyze the military design and strategic placement of Portobelo's Spanish fortifications in securing the transisthmian silver route.",
       "Understand the social and historical context of the Black Christ devotion (El Cristo Negro) and its role in Afro-Panamanian identity.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "portobelo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/portobelo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

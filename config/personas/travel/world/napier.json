@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["seismology", "art_deco_architecture", "urban_history"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "seismology",
+      "art_deco_architecture",
+      "urban_history"
+    ],
     "learning_objectives": [
       "Analyze the geological causes and urban structural impacts of the 7.8 magnitude Hawke's Bay earthquake of February 3, 1931.",
       "Identify the key characteristics of Art Deco, Spanish Mission, and Stripped Classical architectural styles utilized in the rapid reconstruction of Napier.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "napier_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/napier.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

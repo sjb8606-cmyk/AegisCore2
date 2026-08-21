@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["indigenous_sovereignty", "water_rights", "lacustrine_ecology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "indigenous_sovereignty",
+      "water_rights",
+      "lacustrine_ecology"
+    ],
     "learning_objectives": [
       "Understand the historical territory, social structure, and lake-based life of the Northern Paiute (Numu) Nation",
       "Analyze the legal and political battles of the Paiute to protect the water levels and endangered fish (cui-ui, Lahontan cutthroat) of Pyramid Lake",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "paiute_nation_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/paiute_nation.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

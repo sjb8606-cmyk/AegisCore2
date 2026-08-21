@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Nature",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["wildlife_management", "recreational_history", "geomorphology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "wildlife_management",
+      "recreational_history",
+      "geomorphology"
+    ],
     "learning_objectives": [
       "Understand the history and ecological management of the bison herd in Custer State Park",
       "Analyze the geological processes of erosion that carved the granite Needles",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "custer_state_park_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/custer_state_park.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

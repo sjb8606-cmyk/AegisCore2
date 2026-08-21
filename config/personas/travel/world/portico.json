@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Urban Planning",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Urban Design History", "Medieval Law", "University Evolution"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Urban Design History",
+      "Medieval Law",
+      "University Evolution"
+    ],
     "learning_objectives": [
       "Understand the urban development of Bologna’s 'Porticoes' (UNESCO World Heritage) as a legal and architectural response to the housing crisis caused by the rapid growth of the University in the 11th century.",
       "Analyze the role of the University of Bologna (Alma Mater Studiorum, founded 1088) as the oldest active university in the world.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "portico_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/portico.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

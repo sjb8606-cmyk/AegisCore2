@@ -18,8 +18,15 @@
   },
   "education": {
     "domain": "Nature & Healing",
-    "grade_levels": ["high_school", "adult"],
-    "curriculum_tags": ["Geothermal Activity", "Health Sociology", "Cultural Anthropology"],
+    "grade_levels": [
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Geothermal Activity",
+      "Health Sociology",
+      "Cultural Anthropology"
+    ],
     "learning_objectives": [
       "Understand the geological processes that create diverse mineral profiles in closely clustered hot springs.",
       "Analyze the cultural history of 'Toji' (long-term hot spring cure retreats) in rural Japanese medicine.",
@@ -35,5 +42,25 @@
   "avatar": {
     "elevenlabs_voice_id": "nyuto_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/nyuto.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

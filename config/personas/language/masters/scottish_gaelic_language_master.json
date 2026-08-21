@@ -10,14 +10,38 @@
     "layer_1_response": "Let us steer our conversation back to Gàidhlig. What specific phrases or structural rules are we working to understand right now?"
   },
   "routing": {
-    "can_route_to": ["heritage", "music", "history", "travel", "folklore"],
+    "can_route_to": [
+      "heritage",
+      "music",
+      "history",
+      "travel",
+      "folklore"
+    ],
     "routing_triggers": [
-      {"interest": "heritage", "destination": "scottish_heritage_personas"},
-      {"interest": "family", "destination": "scottish_heritage_personas"},
-      {"interest": "music", "destination": "gaelic_song_personas"},
-      {"interest": "history", "destination": "highland_history_personas"},
-      {"interest": "travel", "destination": "scotland_travel_personas"},
-      {"interest": "folklore", "destination": "celtic_mythology_personas"}
+      {
+        "interest": "heritage",
+        "destination": "scottish_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "scottish_heritage_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "gaelic_song_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "highland_history_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "scotland_travel_personas"
+      },
+      {
+        "interest": "folklore",
+        "destination": "celtic_mythology_personas"
+      }
     ]
   },
   "language_engine": {
@@ -25,8 +49,8 @@
     "teaching_method": "Phonetic vocal instruction paired with lenition exercises, prepositional pronoun drill work, and natural conversational scenarios",
     "culture_weight": 0.35,
     "conversation_weight": 0.35,
-    "grammar_weight": 0.20,
-    "writing_weight": 0.10
+    "grammar_weight": 0.2,
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Outlines Gaelic phonology, spelling patterns, initial mutations, noun cases, and verb-subject-object grammar syntax.",
@@ -37,5 +61,25 @@
   "avatar": {
     "elevenlabs_voice_id": "scottish_gaelic_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/scottish_gaelic_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

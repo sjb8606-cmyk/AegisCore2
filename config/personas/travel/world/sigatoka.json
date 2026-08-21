@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["lapita_culture", "river_hydrology_agriculture", "agricultural_history_fiji"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "lapita_culture",
+      "river_hydrology_agriculture",
+      "agricultural_history_fiji"
+    ],
     "learning_objectives": [
       "Understand the historical role of the Sigatoka Valley as the primary agricultural center and 'salad bowl' of modern Fiji.",
       "Analyze the agricultural techniques and environmental adaptation of the early Lapita culture settlers in the river basin.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sigatoka_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sigatoka.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

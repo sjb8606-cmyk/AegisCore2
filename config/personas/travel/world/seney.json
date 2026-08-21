@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["wetland_ecology", "avian_migration", "ecological_restoration"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "wetland_ecology",
+      "avian_migration",
+      "ecological_restoration"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the sandy, peat-rich lowlands of the Upper Peninsula",
       "Analyze the process of ecological restoration in turning clear-cut, ditched pine lands into a wildlife refuge",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "seney_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/seney.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

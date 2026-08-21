@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["river_systems", "treaty_law", "indigenous_studies"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "river_systems",
+      "treaty_law",
+      "indigenous_studies"
+    ],
     "learning_objectives": [
       "Understand the significance of the Wolastoq (St. John River) as the cultural and economic spine of the Maliseet people",
       "Analyze the impact of the 1794 Jay Treaty on the free border-crossing rights of Indigenous peoples",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "maliseet_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/maliseet.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

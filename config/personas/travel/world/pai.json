@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Local Culture & Geomorphology",
-    "grade_levels": ["elementary", "middle_school", "adult"],
-    "curriculum_tags": ["Red Clay Erosion", "Thermal Systems", "Tourism Studies"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Red Clay Erosion",
+      "Thermal Systems",
+      "Tourism Studies"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Pai Canyon (highly weathered red clay-limestone ridges) and its vulnerability to heavy monsoonal erosion.",
       "Analyze the geothermal mechanics of the local hot springs, explaining why volcanic activity generates therapeutic sulfur waters in mountain valleys.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "pai_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/pai.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

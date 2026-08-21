@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Nature",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["atoll_formation", "marine_ecology", "conservation_policy"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "atoll_formation",
+      "marine_ecology",
+      "conservation_policy"
+    ],
     "learning_objectives": [
       "Understand the geological process of atoll formation (Darwin's theory) from a fringing reef to a barrier reef and lagoon",
       "Analyze the ecological role of coralline algae in building and cementing the structure of Rose Atoll",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "rose_atoll_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/rose_atoll.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

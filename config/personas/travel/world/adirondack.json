@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Conservation",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["wilderness_policy", "geology", "olympic_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "wilderness_policy",
+      "geology",
+      "olympic_history"
+    ],
     "learning_objectives": [
       "Understand the unique legal framework of the Adirondack Park under the 1894 'Forever Wild' constitutional amendment",
       "Analyze the geological uplift that created the Adirondack dome, distinct from the surrounding Appalachians",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "adirondack_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/adirondack.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["wetland_ecology", "mangrove_adaptations", "avian_biology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "wetland_ecology",
+      "mangrove_adaptations",
+      "avian_biology"
+    ],
     "learning_objectives": [
       "Explain the biological adaptations of the Red Mangrove (Rhizophora mangle) that allow it to filter salt and support estuary food chains.",
       "Understand the chemical and dietary processes (carotenoid absorption from crabs) that give the Scarlet Ibis (Eudocimus ruber) its intense red coloration.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "caroni_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/caroni.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Culinary",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Coffee_House_Culture", "Market_Trade_History", "Viennese_Gastronomy"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Coffee_House_Culture",
+      "Market_Trade_History",
+      "Viennese_Gastronomy"
+    ],
     "learning_objectives": [
       "Understand the historical origin of Viennese Coffee House Culture and its official recognition as UNESCO Intangible Cultural Heritage.",
       "Analyze the socio-economic and literary role of the coffee house as a 'democratic club' for artists, writers, and politicians in fin-de-siècle Vienna.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "naschmarkt_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/naschmarkt.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

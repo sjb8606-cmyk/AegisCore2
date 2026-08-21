@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Islamic Learning",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["History of Universities", "Islamic Golden Age", "Arabic Calligraphy"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "History of Universities",
+      "Islamic Golden Age",
+      "Arabic Calligraphy"
+    ],
     "learning_objectives": [
       "Understand the historical role of Al-Qarawiyyin as the oldest continuously active institution of higher learning in the world.",
       "Analyze the role of Muslim women (specifically Fatima al-Fihri) in funding and establishing major educational and religious institutions.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "qarawiyyin_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/qarawiyyin.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

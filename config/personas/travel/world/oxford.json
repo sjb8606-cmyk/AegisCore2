@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Tourism",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["rural_geography", "economic_transitions", "climatology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "rural_geography",
+      "economic_transitions",
+      "climatology"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Oxford Hills and their relation to the northern Appalachian chain",
       "Analyze the economic transition of New England farming towns into four-season recreation hubs",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "oxford_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/oxford.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

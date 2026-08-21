@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Meteorology",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["aerodynamics", "meteorology", "recreation_history"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "aerodynamics",
+      "meteorology",
+      "recreation_history"
+    ],
     "learning_objectives": [
       "Understand the meteorological mechanics of the 'Albuquerque Box' thermal wind pattern",
       "Analyze the physics of hot air buoyancy and flight control in ballooning",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "balloon_fiesta_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/balloon_fiesta.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

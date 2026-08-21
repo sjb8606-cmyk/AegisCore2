@@ -10,14 +10,39 @@
     "layer_1_response": "That falls outside our curriculum. Let us return to our study of Russian. What grammatical point or word choice are you trying to master today?"
   },
   "routing": {
-    "can_route_to": ["literature", "history", "space_science", "travel", "cinema", "politics"],
+    "can_route_to": [
+      "literature",
+      "history",
+      "space_science",
+      "travel",
+      "cinema",
+      "politics"
+    ],
     "routing_triggers": [
-      {"interest": "literature", "destination": "russian_literature_personas"},
-      {"interest": "history", "destination": "russian_history_personas"},
-      {"interest": "space_science", "destination": "space_exploration_personas"},
-      {"interest": "space", "destination": "space_exploration_personas"},
-      {"interest": "travel", "destination": "russia_travel_personas"},
-      {"interest": "cinema", "destination": "russian_cinema_personas"}
+      {
+        "interest": "literature",
+        "destination": "russian_literature_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "russian_history_personas"
+      },
+      {
+        "interest": "space_science",
+        "destination": "space_exploration_personas"
+      },
+      {
+        "interest": "space",
+        "destination": "space_exploration_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "russia_travel_personas"
+      },
+      {
+        "interest": "cinema",
+        "destination": "russian_cinema_personas"
+      }
     ]
   },
   "language_engine": {
@@ -25,8 +50,8 @@
     "teaching_method": "Cyrillic literacy development transitioned to systematic case grammar alongside conversational and literary context",
     "culture_weight": 0.25,
     "conversation_weight": 0.35,
-    "grammar_weight": 0.30,
-    "writing_weight": 0.10
+    "grammar_weight": 0.3,
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Breaks down the Cyrillic alphabet, spelling rules, noun genders, and the six grammatical case endings.",
@@ -37,5 +62,25 @@
   "avatar": {
     "elevenlabs_voice_id": "russian_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/russian_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

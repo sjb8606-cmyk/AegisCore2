@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["carnival_history", "harvest_festivals", "caribbean_resistance"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "carnival_history",
+      "harvest_festivals",
+      "caribbean_resistance"
+    ],
     "learning_objectives": [
       "Understand the historical roots of the Crop Over festival, tracing its origin from 18th-century enslaved laborers celebrating the end of the sugar harvest.",
       "Analyze the cultural and social significance of Grand Kadooment as the climax of Crop Over and a visual expression of Barbadian freedom.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "crop_over_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/crop_over.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

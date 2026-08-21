@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Philosophy",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Linguistic_Revival_Flanders", "Belgian_Language_Wars", "Sociolinguistics"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Linguistic_Revival_Flanders",
+      "Belgian_Language_Wars",
+      "Sociolinguistics"
+    ],
     "learning_objectives": [
       "Understand the historical factors, including the French-dominated administrative and legal system of 19th-century Belgium, that led to the suppression and eventual revival of Flemish.",
       "Analyze the structure of Flemish dialects (like West Flemish or Brabantian) and how they relate to standard Dutch.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "flemish_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/flemish.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

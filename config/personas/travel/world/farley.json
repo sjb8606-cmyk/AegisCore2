@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["plantation_society", "colonial_ruins", "mahogany_silviculture"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "plantation_society",
+      "colonial_ruins",
+      "mahogany_silviculture"
+    ],
     "learning_objectives": [
       "Analyze the social structure and extreme wealth of the 19th-century Barbadian plantocracy through the architecture and scale of the Farley Hill Great House.",
       "Understand the ecological history of Mahogany (Swietenia mahagoni) planting in Barbados and its role in reforestation and woodcraft.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "farley_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/farley.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["wwii_pacific_history", "guadalcanal_campaign", "military_logistics"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "wwii_pacific_history",
+      "guadalcanal_campaign",
+      "military_logistics"
+    ],
     "learning_objectives": [
       "Understand the military and strategic significance of the Battle of Bloody Ridge (Edson's Ridge) in September 1942 in defending Henderson Field.",
       "Analyze the role of local Solomon Islander scouts and coastwatchers, specifically Sir Jacob Vouza, in the Allied victory on Guadalcanal.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bloody_ridge_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bloody_ridge.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

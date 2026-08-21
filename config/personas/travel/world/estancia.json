@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["pastoral_economics", "gaucho_horsemanship", "range_ecology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "pastoral_economics",
+      "gaucho_horsemanship",
+      "range_ecology"
+    ],
     "learning_objectives": [
       "Explain the historical development of the 'Estancia' as the primary economic and social institution of rural Uruguay since the colonial era.",
       "Understand the biology, history, and unique endurance of the Creole Horse (Caballo Criollo) developed through natural selection in the Pampas.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "estancia_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/estancia.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

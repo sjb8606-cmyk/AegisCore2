@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Music",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["steelpan_invention", "acoustic_physics", "social_resistance"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "steelpan_invention",
+      "acoustic_physics",
+      "social_resistance"
+    ],
     "learning_objectives": [
       "Explain the acoustic physics and metallurgical processes involved in transforming a flat 55-gallon oil drum into a multi-octave steel pan instrument.",
       "Understand the socio-historical factors, including the colonial bans on African drums and tamboo bamboo, that directly drove the invention of the steel pan in Laventille.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "laventille_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/laventille.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

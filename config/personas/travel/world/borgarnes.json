@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Literature",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Icelandic_Sagas", "Old_Norse_Poetry", "Viking_Age_Settlement"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Icelandic_Sagas",
+      "Old_Norse_Poetry",
+      "Viking_Age_Settlement"
+    ],
     "learning_objectives": [
       "Analyze the character of Egill Skallagrímsson as the ultimate Viking anti-hero, combining extreme violence with masterful poetic genius.",
       "Understand the structural complexity of Old Norse poetry, specifically the use of 'kennings' (metaphorical compounds) and 'dróttkvætt' meter.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "borgarnes_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/borgarnes.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

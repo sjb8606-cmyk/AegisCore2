@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Music & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["acadian_history", "zydeco_music", "cultural_preservation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "acadian_history",
+      "zydeco_music",
+      "cultural_preservation"
+    ],
     "learning_objectives": [
       "Understand the historical tragedy of the 1755 Acadian Expulsion from Nova Scotia and their resettlement in Louisiana",
       "Analyze the musical and racial fusion of French folk traditions with African rhythms that created Zydeco and Cajun music",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "lafayette_cajun_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/lafayette_cajun.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

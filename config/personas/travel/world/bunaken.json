@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Coral_Triangle_Biodiversity", "Oceanic_Trenches", "Reef_Conservation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Coral_Triangle_Biodiversity",
+      "Oceanic_Trenches",
+      "Reef_Conservation"
+    ],
     "learning_objectives": [
       "Explain the oceanographic and ecological reasons why Bunaken and the Coral Triangle hold the world’s highest concentration of marine biodiversity.",
       "Understand the structural differences between shallow barrier reefs and the sheer, vertical coral walls (drop-offs) of Bunaken.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bunaken_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bunaken.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

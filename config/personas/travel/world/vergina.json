@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Archaeology",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Macedonian Kingdom", "Classical Art History", "Archaeoastronomy"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Macedonian Kingdom",
+      "Classical Art History",
+      "Archaeoastronomy"
+    ],
     "learning_objectives": [
       "Understand the political and dynasty history of the Kingdom of Macedon, focusing on how Philip II unified the Greek city-states before his assassination.",
       "Analyze the artistic and archaeological significance of the Royal Tombs of Aegae (Vergina), particularly the royal hunting fresco on the facade of Tomb II.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "vergina_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/vergina.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

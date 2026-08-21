@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Nature",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["coastal_geography", "real_estate_economics", "transportation_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "coastal_geography",
+      "real_estate_economics",
+      "transportation_history"
+    ],
     "learning_objectives": [
       "Understand the geological forces of coastal uplift and erosion shaping the Santa Lucia range",
       "Analyze the engineering and construction challenges of the historic Bixby Bridge (completed 1932)",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "big_sur_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/big_sur.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

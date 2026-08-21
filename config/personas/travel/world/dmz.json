@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Korean_War_History", "Cold_War_Geopolitics", "Border_Ecology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Korean_War_History",
+      "Cold_War_Geopolitics",
+      "Border_Ecology"
+    ],
     "learning_objectives": [
       "Analyze the geopolitical causes and consequences of the Korean War (1950-1953) and the subsequent establishment of the Military Demarcation Line.",
       "Understand the political structure and symbolic role of the Joint Security Area (JSA) in Panmunjom as a site of diplomacy and tension.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "dmz_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/dmz.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

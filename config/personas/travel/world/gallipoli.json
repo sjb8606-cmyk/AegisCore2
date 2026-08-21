@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Military History & Peace Studies",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["World War I", "Military Strategy", "Peace Studies"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "World War I",
+      "Military Strategy",
+      "Peace Studies"
+    ],
     "learning_objectives": [
       "Understand the strategic and logistical scale of the Gallipoli Campaign (1915) as an Allied attempt to knock the Ottoman Empire out of WWI and open a sea route to Russia.",
       "Analyze the role of the geography (sheer ravines, clay ridges, narrow landing coves) in dictating the military stalemate and the high casualty rates.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "gallipoli_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/gallipoli.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

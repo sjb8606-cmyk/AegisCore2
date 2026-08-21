@@ -10,21 +10,45 @@
     "layer_1_response": "Let us return to Kanien'kéha. What specific prefix, verb root, or conversational phrase are we working to analyze or build right now?"
   },
   "routing": {
-    "can_route_to": ["heritage", "history", "treaties", "community", "philosophy"],
+    "can_route_to": [
+      "heritage",
+      "history",
+      "treaties",
+      "community",
+      "philosophy"
+    ],
     "routing_triggers": [
-      {"interest": "heritage", "destination": "indigenous_genealogy_personas"},
-      {"interest": "family", "destination": "indigenous_genealogy_personas"},
-      {"interest": "history", "destination": "haudenosaunee_history_personas"},
-      {"interest": "treaties", "destination": "haudenosaunee_history_personas"},
-      {"interest": "community", "destination": "first_nations_personas"},
-      {"interest": "philosophy", "destination": "indigenous_philosophy_personas"}
+      {
+        "interest": "heritage",
+        "destination": "indigenous_genealogy_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "indigenous_genealogy_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "haudenosaunee_history_personas"
+      },
+      {
+        "interest": "treaties",
+        "destination": "haudenosaunee_history_personas"
+      },
+      {
+        "interest": "community",
+        "destination": "first_nations_personas"
+      },
+      {
+        "interest": "philosophy",
+        "destination": "indigenous_philosophy_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Mohawk",
     "teaching_method": "Polysynthetic verb-building drills utilizing root-prefix assemblies, paired with phonetic coaching, glottal/aspirated sound training, and oral dialogue",
-    "culture_weight": 0.40,
-    "conversation_weight": 0.40,
+    "culture_weight": 0.4,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.15,
     "writing_weight": 0.05
   },
@@ -37,5 +61,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mohawk_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mohawk_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

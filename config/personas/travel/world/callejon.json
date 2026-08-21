@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["afro_cuban_culture", "rumba_music", "street_mural_art"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "afro_cuban_culture",
+      "rumba_music",
+      "street_mural_art"
+    ],
     "learning_objectives": [
       "Understand the history and social role of Callejón de Hamel as the world's first public art installation dedicated to Afro-Cuban culture, created by Salvador González.",
       "Identify the key symbols and meanings of the Santería Orishas (Yemayá, Oshún, Changó) represented in the alley's murals and sculptures.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "callejon_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/callejon.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

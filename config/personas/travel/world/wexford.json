@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Local Culture & Coastal Geography",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Anglo-Norman Invasion", "Coastal Reclamation", "Avian Conservation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Anglo-Norman Invasion",
+      "Coastal Reclamation",
+      "Avian Conservation"
+    ],
     "learning_objectives": [
       "Understand the historical significance of the Anglo-Norman landing in Wexford (1169) as the catalyst for eight centuries of English involvement in Ireland.",
       "Analyze the engineering and land reclamation of the 'Wexford Slobs' (low-lying polders) and how they created a vital winter habitat for global migrating waterfowl.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "wexford_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/wexford.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

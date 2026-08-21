@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Wildlife Biology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Marine-Terrestrial Coupling", "Glaciology", "Large Carnivore Ecology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Marine-Terrestrial Coupling",
+      "Glaciology",
+      "Large Carnivore Ecology"
+    ],
     "learning_objectives": [
       "Understand the oceanographic process that makes Shiretoko the lowest latitude of seasonal drift ice (Ryuhyo) in the Northern Hemisphere.",
       "Analyze the marine-terrestrial coupling where salmon transport marine nutrients from the ocean into the deep forest ecosystem to feed brown bears and eagles.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "shiretoko_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/shiretoko.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

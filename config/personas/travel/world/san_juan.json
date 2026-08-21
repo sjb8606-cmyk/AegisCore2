@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Triassic_Paleontology", "Wind_Erosion_Yardangs", "UNESCO_Natural_Heritage"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Triassic_Paleontology",
+      "Wind_Erosion_Yardangs",
+      "UNESCO_Natural_Heritage"
+    ],
     "learning_objectives": [
       "Explain the geological and depositional processes that created the complete, continuous Triassic sediment sequence at Ischigualasto.",
       "Understand the paleontological significance of Ischigualasto’s fossil record, focusing on early dinosaurs like Eoraptor and Herrerasaurus.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "san_juan_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/san_juan.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

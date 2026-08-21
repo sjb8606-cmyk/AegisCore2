@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Dayak_Ethnology", "Longhouse_Architecture_Lamin", "Rainforest_Stewardship"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Dayak_Ethnology",
+      "Longhouse_Architecture_Lamin",
+      "Rainforest_Stewardship"
+    ],
     "learning_objectives": [
       "Understand the structural design and social functions of the traditional Dayak Longhouse (Lamin/Rumah Betang) built of ironwood on high stilts.",
       "Analyze the traditional, eco-friendly forest management systems (such as Simpukng) used by Dayak communities to cultivate fruit and rattan.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "dayak_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/dayak.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

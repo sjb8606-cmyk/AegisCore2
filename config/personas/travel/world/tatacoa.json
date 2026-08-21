@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Science",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["miocene_paleontology", "dry_erosion_geomorphology", "desert_ecology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "miocene_paleontology",
+      "dry_erosion_geomorphology",
+      "desert_ecology"
+    ],
     "learning_objectives": [
       "Explain the geological and climate changes that transformed the Miocene-era tropical forest of Tatacoa into a hyper-arid desert basin.",
       "Understand the paleontological significance of the 'La Venta' fossil beds, detailing how they preserve records of prehistoric South American mammals.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tatacoa_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tatacoa.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

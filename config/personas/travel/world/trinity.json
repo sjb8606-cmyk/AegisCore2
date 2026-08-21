@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Philosophy",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["orthodox_theology", "geez_liturgy", "imperial_heritage"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "orthodox_theology",
+      "geez_liturgy",
+      "imperial_heritage"
+    ],
     "learning_objectives": [
       "Analyze the historical significance of the Kingdom of Aksum's adoption of Christianity as a state religion in the 4th century CE under King Ezana.",
       "Understand the structural and liturgical design of an Ethiopian Orthodox cathedral, highlighting the role of the Tabot (covenant tablet replica).",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "trinity_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/trinity.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

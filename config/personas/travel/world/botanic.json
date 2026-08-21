@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Science",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Victorian_Engineering", "Botanical_History", "Academic_Architecture"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Victorian_Engineering",
+      "Botanical_History",
+      "Academic_Architecture"
+    ],
     "learning_objectives": [
       "Analyze the pioneering cast-iron and glass engineering of Richard Turner’s Palm House at Belfast Botanic Gardens.",
       "Understand the role of Victorian botanical gardens in global plant transfer, scientific classification, and imperial trade.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "botanic_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/botanic.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

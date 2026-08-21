@@ -13,23 +13,47 @@
     "layer_1_response": "Let us bring our focus back to Banten Sundanese. What specific word, phrase, or pronunciation structure are we working to analyze right now?"
   },
   "routing": {
-    "can_route_to": ["history", "martial_arts", "travel", "heritage", "business"],
+    "can_route_to": [
+      "history",
+      "martial_arts",
+      "travel",
+      "heritage",
+      "business"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "banten_history_personas"},
-      {"interest": "martial_arts", "destination": "debus_martial_arts_personas"},
-      {"interest": "travel", "destination": "serang_travel_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"},
-      {"interest": "family", "destination": "family_heritage_personas"},
-      {"interest": "business", "destination": "coastal_trade_personas"}
+      {
+        "interest": "history",
+        "destination": "banten_history_personas"
+      },
+      {
+        "interest": "martial_arts",
+        "destination": "debus_martial_arts_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "serang_travel_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "business",
+        "destination": "coastal_trade_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Sundanese",
     "teaching_method": "Phonetic voice coaching combined with Banten Sundanese vocabulary drills, martial arts terminology, and active daily conversation",
-    "culture_weight": 0.30,
+    "culture_weight": 0.3,
     "conversation_weight": 0.45,
     "grammar_weight": 0.15,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Provides Banten Sundanese sound structures, basic sentence frameworks, pronoun tables, and syntax.",
@@ -40,5 +64,25 @@
   "avatar": {
     "elevenlabs_voice_id": "banten_sundanese_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/banten_sundanese_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

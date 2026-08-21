@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Theology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["early_american_history", "quaker_theology", "urban_design"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "early_american_history",
+      "quaker_theology",
+      "urban_design"
+    ],
     "learning_objectives": [
       "Understand the core tenets of the Quaker 'Holy Experiment' in early colonial Pennsylvania",
       "Analyze William Penn's innovative green-country grid design for Philadelphia to prevent fire and disease",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "penn_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/penn.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

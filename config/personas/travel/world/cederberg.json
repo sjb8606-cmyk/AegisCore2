@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["san_rock_art", "indigenous_knowledge_systems", "geomorphology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "san_rock_art",
+      "indigenous_knowledge_systems",
+      "geomorphology"
+    ],
     "learning_objectives": [
       "Interpret San rock art as a sophisticated record of shamanic journeys, spiritual beliefs, and historical events rather than simple hunting records.",
       "Understand the geological processes of wind and water erosion that created the Cederberg's unique rock formations like the Maltese Cross.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cederberg_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cederberg.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

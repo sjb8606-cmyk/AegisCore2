@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["dry_forest_ecology", "island_biogeography", "marine_mammals"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "dry_forest_ecology",
+      "island_biogeography",
+      "marine_mammals"
+    ],
     "learning_objectives": [
       "Explain the ecological diversity of Machalilla National Park, contrasting the dry tropical forest with its marine and island ecosystems.",
       "Understand the importance of Isla de la Plata as a critical alternative breeding ground for nesting pelagic seabirds.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "machalilla_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/machalilla.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

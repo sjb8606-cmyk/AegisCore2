@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["river_ecology", "karst_hydrology", "conservation_history"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "river_ecology",
+      "karst_hydrology",
+      "conservation_history"
+    ],
     "learning_objectives": [
       "Understand the geological processes of karst topography that create massive springs like Big Spring",
       "Analyze the historic 1964 legislation that established the Ozark National Scenic Riverways",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "current_river_mo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/current_river_mo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

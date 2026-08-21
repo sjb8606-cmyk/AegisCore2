@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Urban Ecology",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Khmer Empire", "Urban Ecology", "Human-Wildlife Conflict"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Khmer Empire",
+      "Urban Ecology",
+      "Human-Wildlife Conflict"
+    ],
     "learning_objectives": [
       "Understand the historical role of Lopburi (Lavo) as a major provincial capital of the Khmer Empire and its subsequent role as a royal retreat of Ayutthaya.",
       "Analyze the urban ecology of Lopburi, evaluating how the crab-eating macaque has adapted to high-density city living and human food systems.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "lopburi_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/lopburi.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

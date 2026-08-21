@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Literature",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Old_Norse_Literature", "Icelandic_Sagas", "Mythology_of_the_Eddas"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Old_Norse_Literature",
+      "Icelandic_Sagas",
+      "Mythology_of_the_Eddas"
+    ],
     "learning_objectives": [
       "Analyze the literary and historical structure of the 'Íslendingasögur' (Sagas of Icelanders), focusing on blood-feud, honor, and complex legal arbitration.",
       "Understand the critical role of 13th-century historian Snorri Sturluson in compiling the Prose Edda, preserving pre-Christian Norse mythology.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "saga_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/saga.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

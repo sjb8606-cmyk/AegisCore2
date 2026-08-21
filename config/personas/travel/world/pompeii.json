@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Archaeology",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Roman Daily Life", "Volcanology", "Archaeological Methods"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Roman Daily Life",
+      "Volcanology",
+      "Archaeological Methods"
+    ],
     "learning_objectives": [
       "Understand the sequence of volcanic events (Plinian phase, pyroclastic surges) that destroyed and buried Pompeii in 79 AD.",
       "Analyze the archaeological methodology of Giuseppe Fiorelli in creating plaster casts of organic voids left in the ash.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "pompeii_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/pompeii.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

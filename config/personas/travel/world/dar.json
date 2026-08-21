@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["swahili_maritime_trade", "port_economics", "colonial_history"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "swahili_maritime_trade",
+      "port_economics",
+      "colonial_history"
+    ],
     "learning_objectives": [
       "Explain the historical role of Dar es Salaam as a key strategic port and capital on the Swahili Coast of the Indian Ocean.",
       "Analyze the cultural and economic significance of the Kivukoni Fish Market in supporting local livelihoods and coastal food security.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "dar_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/dar.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

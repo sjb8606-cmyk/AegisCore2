@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Ecology & Wildlife",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Wetland Ecology", "Marine Biology", "Conservation Planning"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Wetland Ecology",
+      "Marine Biology",
+      "Conservation Planning"
+    ],
     "learning_objectives": [
       "Understand the ecological dynamics of a delta wetland (Doñana) where fresh river water and salt ocean water create unique brackish habitats.",
       "Analyze the adaptation of the endemic, endangered Iberian Lynx (Lynx pardinus) to survival in Mediterranean pine scrub.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "donana_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/donana.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

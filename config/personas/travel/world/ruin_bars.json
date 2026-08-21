@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Urban_Regeneration", "Jewish_Heritage_Budapest", "Contemporary_Subcultures"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Urban_Regeneration",
+      "Jewish_Heritage_Budapest",
+      "Contemporary_Subcultures"
+    ],
     "learning_objectives": [
       "Understand how the unique socio-economic conditions of Budapest's Seventh District in the early 2000s allowed for the emergence of the 'Ruin Bar' (Romkocsma) phenomenon.",
       "Analyze the historical role of the Erzsébetváros district as the center of Jewish life, culture, and wartime tragedy in Budapest.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ruin_bars_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ruin_bars.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

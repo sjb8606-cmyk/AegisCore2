@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Geography",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["transportation_history", "lewis_clark", "railway_logistics"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "transportation_history",
+      "lewis_clark",
+      "railway_logistics"
+    ],
     "learning_objectives": [
       "Understand the historical significance of the 1804 council between Lewis and Clark and the regional Indigenous nations",
       "Analyze why President Lincoln selected Council Bluffs as the eastern terminus (Mile Zero) of the Transcontinental Railroad",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "council_bluffs_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/council_bluffs.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

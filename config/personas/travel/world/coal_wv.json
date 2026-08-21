@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Industry",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["labor_history", "coal_mining", "industrial_conflict"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "labor_history",
+      "coal_mining",
+      "industrial_conflict"
+    ],
     "learning_objectives": [
       "Understand the causes and outcomes of the 1920 Matewan Massacre during the West Virginia Coal Wars",
       "Analyze the corporate power structure of the 'company town' and the use of private detective agencies to suppress unionization",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "coal_wv_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/coal_wv.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

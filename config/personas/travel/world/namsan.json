@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Urban_Geography_Seoul", "Joseon_Defensive_Walls", "Telecommunication_Architecture"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Urban_Geography_Seoul",
+      "Joseon_Defensive_Walls",
+      "Telecommunication_Architecture"
+    ],
     "learning_objectives": [
       "Explain the geological and geographical role of Namsan as the central protective guardian mountain (Ansan) of historic Hanyang (Seoul).",
       "Understand the historical function of the 'Bongsu' (beacon mound) system in communicating military emergencies across the Joseon Kingdom.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "namsan_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/namsan.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

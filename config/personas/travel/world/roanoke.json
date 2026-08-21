@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["industrial_history", "appalachian_music", "cultural_geography"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "industrial_history",
+      "appalachian_music",
+      "cultural_geography"
+    ],
     "learning_objectives": [
       "Understand the historical role of Roanoke as the major industrial hub for the Norfolk & Western Railway",
       "Analyze the musical heritage of the Blue Ridge region, specifically the development of old-time and bluegrass music",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "roanoke_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/roanoke.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

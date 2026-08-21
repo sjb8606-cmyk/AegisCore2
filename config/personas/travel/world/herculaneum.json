@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Archaeology",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Volcanology", "Papyrology", "Archaeological Preservation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Volcanology",
+      "Papyrology",
+      "Archaeological Preservation"
+    ],
     "learning_objectives": [
       "Understand the geological difference between the volcanic burial of Pompeii (pumice and ash fall) and Herculaneum (hot pyroclastic density currents).",
       "Analyze the carbonization process that preserved organic materials (wood, food, papyrus) in Herculaneum without burning them.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "herculaneum_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/herculaneum.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

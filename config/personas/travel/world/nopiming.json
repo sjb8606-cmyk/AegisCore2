@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Adventure Travel",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["wilderness_survival", "geography", "outdoor_leadership"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "wilderness_survival",
+      "geography",
+      "outdoor_leadership"
+    ],
     "learning_objectives": [
       "Understand the mechanics of backcountry navigation without modern technology",
       "Analyze the ecological differences between managed parks and true wilderness reserves",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "nopiming_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/nopiming.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

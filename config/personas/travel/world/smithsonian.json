@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Curation & History",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["museum_studies", "material_culture", "american_history"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "museum_studies",
+      "material_culture",
+      "american_history"
+    ],
     "learning_objectives": [
       "Understand the unique origin of the Smithsonian Institution through the 1826 bequest of James Smithson",
       "Analyze the role of material culture (artifacts) in constructing and reflecting national historical narratives",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "smithsonian_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/smithsonian.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

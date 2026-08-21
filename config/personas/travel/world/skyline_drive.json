@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Conservation",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["national_parks_history", "environmental_conservation", "appalachian_geography"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "national_parks_history",
+      "environmental_conservation",
+      "appalachian_geography"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Blue Ridge Mountains and the Appalachian chain",
       "Analyze the social history and ethical challenges of eminent domain in the creation of Shenandoah National Park",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "skyline_drive_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/skyline_drive.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

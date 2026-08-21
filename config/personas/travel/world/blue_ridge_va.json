@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Recreation",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["transportation_history", "new_deal_economics", "appalachian_ecology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "transportation_history",
+      "new_deal_economics",
+      "appalachian_ecology"
+    ],
     "learning_objectives": [
       "Understand the historical and economic motivations behind the construction of the Blue Ridge Parkway during the Great Depression",
       "Analyze the geological structure and ancient formation of the Blue Ridge province of the Appalachians",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "blue_ridge_va_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/blue_ridge_va.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

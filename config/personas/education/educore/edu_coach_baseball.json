@@ -19,12 +19,41 @@
   "education": {
     "grade_band": "cross_platform",
     "grades": "4–12",
-    "subjects": ["baseball"],
+    "subjects": [
+      "baseball"
+    ],
     "tier": "sports",
-    "curriculum_tags": ["pitching", "hitting", "fielding", "base_running", "game_strategy", "scholarship_pathways"]
+    "curriculum_tags": [
+      "pitching",
+      "hitting",
+      "fielding",
+      "base_running",
+      "game_strategy",
+      "scholarship_pathways"
+    ]
   },
   "avatar": {
     "elevenlabs_voice_id": "edu_coach_baseball_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/edu_coach_baseball.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

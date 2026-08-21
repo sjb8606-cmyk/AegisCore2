@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["marine_biology_sharks", "coral_reefs", "estuary_ecology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "marine_biology_sharks",
+      "coral_reefs",
+      "estuary_ecology"
+    ],
     "learning_objectives": [
       "Explain the ecological and nutrient relationship between the Rufiji River Delta and the high-density marine biodiversity of the Mafia Island Marine Park.",
       "Understand the feeding behaviors, anatomy, and conservation status of the Whale Shark (Rhincodon typus) in the Indian Ocean.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mafia_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mafia.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

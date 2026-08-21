@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["geothermal_energy", "freshwater_limnology", "horticulture_economics"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "geothermal_energy",
+      "freshwater_limnology",
+      "horticulture_economics"
+    ],
     "learning_objectives": [
       "Understand the geological and hydrological factors that allow Lake Naivasha to remain a freshwater lake despite having no visible outlet in an endorheic basin.",
       "Analyze the technology and thermodynamic principles used to extract clean, renewable geothermal energy from the Olkaria fields in Hell's Gate.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "naivasha_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/naivasha.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

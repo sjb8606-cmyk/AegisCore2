@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["geomorphology", "indigenous_wars", "glacial_geology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "geomorphology",
+      "indigenous_wars",
+      "glacial_geology"
+    ],
     "learning_objectives": [
       "Understand the geological formation of St. Peter sandstone and the glacial meltwater floods (Kankakee Torrent) that carved the canyons",
       "Analyze the historical and cultural significance of the Illinois-Ottawa siege legend at Starved Rock",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "starved_rock_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/starved_rock.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -10,23 +10,47 @@
     "layer_1_response": "Let us bring our focus back to Gondi. What specific word, script character, or sentence pattern should we look at next?"
   },
   "routing": {
-    "can_route_to": ["history", "art", "music", "travel", "heritage"],
+    "can_route_to": [
+      "history",
+      "art",
+      "music",
+      "travel",
+      "heritage"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "gond_history_personas"},
-      {"interest": "art", "destination": "gond_art_personas"},
-      {"interest": "music", "destination": "gond_music_personas"},
-      {"interest": "travel", "destination": "bastart_travel_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"},
-      {"interest": "family", "destination": "family_heritage_personas"}
+      {
+        "interest": "history",
+        "destination": "gond_history_personas"
+      },
+      {
+        "interest": "art",
+        "destination": "gond_art_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "gond_music_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "bastart_travel_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "family_heritage_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Dravidian",
     "teaching_method": "Phonetic voice training coupled with regional vocabulary drills, and active social conversation",
     "culture_weight": 0.35,
-    "conversation_weight": 0.40,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.15,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Provides Gondi sound structures, basic sentence frameworks, pronoun tables, and syntax.",
@@ -37,5 +61,25 @@
   "avatar": {
     "elevenlabs_voice_id": "gondi_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/gondi_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

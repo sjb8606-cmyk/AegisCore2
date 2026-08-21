@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Nature",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["volcanology", "geomorphology", "conservation"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "volcanology",
+      "geomorphology",
+      "conservation"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Island Park Caldera as one of the largest volcanic calderas in the world",
       "Analyze the role of the Henry's Fork of the Snake River in creating a premier habitat for native trout",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "yellowstone_id_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/yellowstone_id.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

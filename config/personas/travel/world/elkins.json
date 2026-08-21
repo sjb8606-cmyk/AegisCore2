@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Forestry",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["forestry_ecology", "transportation_history", "environmental_recovery"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "forestry_ecology",
+      "transportation_history",
+      "environmental_recovery"
+    ],
     "learning_objectives": [
       "Understand the engineering of geared steam locomotives (like Shay and Climax) used in steep mountain logging",
       "Analyze the ecological impact of the late 19th-century clear-cut timber boom on the West Virginia highlands",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "elkins_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/elkins.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

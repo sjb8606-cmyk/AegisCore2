@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Archaeology & Classical History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Magna Graecia", "Doric Architecture", "Classical Urbanism"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Magna Graecia",
+      "Doric Architecture",
+      "Classical Urbanism"
+    ],
     "learning_objectives": [
       "Understand the historical colonization of southern Italy (Magna Graecia) by ancient Greeks and the founding of Akragas (Agrigento) in 580 BC.",
       "Analyze the evolution of the Doric architectural style, focusing on entasis (column swelling) and triglyph alignments in the Temple of Concordia.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "agrigento_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/agrigento.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

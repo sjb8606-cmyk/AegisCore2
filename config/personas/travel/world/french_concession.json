@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Urban Sociology & Pop Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Colonial Urbanism", "Art Deco Design", "Subcultural Movements"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Colonial Urbanism",
+      "Art Deco Design",
+      "Subcultural Movements"
+    ],
     "learning_objectives": [
       "Understand the urban development of the French Concession, analyzing how its low-density, garden-villa layout differed from the British and Chinese sectors of Shanghai.",
       "Analyze the architectural significance of the 'Shikumen' (stone gate house) style, evaluating how it integrated traditional Chinese courtyards with Western townhouses.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "french_concession_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/french_concession.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

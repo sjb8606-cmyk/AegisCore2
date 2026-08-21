@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Rural Heritage",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Edo Infrastructure", "Cultural Preservation", "Human Geography"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Edo Infrastructure",
+      "Cultural Preservation",
+      "Human Geography"
+    ],
     "learning_objectives": [
       "Understand the strategic purpose of the Nakasendo highway as an inland, secure route for the Tokugawa shogunate.",
       "Analyze the strict architectural preservation rules of towns like Tsumago ('sell not, let not, destroy not').",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kiso_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kiso.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

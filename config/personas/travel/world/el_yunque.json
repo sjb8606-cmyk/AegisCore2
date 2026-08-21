@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["rainforest_ecology", "orographic_precipitation", "conservation"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "rainforest_ecology",
+      "orographic_precipitation",
+      "conservation"
+    ],
     "learning_objectives": [
       "Understand the ecological characteristics and high precipitation of the El Yunque tropical rainforest",
       "Analyze the role of orographic lift in generating constant rainfall over the Luquillo Mountains",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "el_yunque_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/el_yunque.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

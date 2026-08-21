@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Ecology & Maritime History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Coastal Geomorphology", "Maritime Piracy", "Marine Biology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Coastal Geomorphology",
+      "Maritime Piracy",
+      "Marine Biology"
+    ],
     "learning_objectives": [
       "Understand the geological formation of Balos Lagoon, focusing on how wind and wave currents accumulate pink shell sediment (Foraminifera).",
       "Analyze the military and pirate history of the Gramvousa Fort, evaluating its strategic role in the 17th-century Venetian-Ottoman wars.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "balos_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/balos.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

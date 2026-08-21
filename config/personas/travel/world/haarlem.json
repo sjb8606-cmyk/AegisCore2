@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Frans_Hals_Realism", "Tulip_Mania_History", "Dutch_Civic_Guards"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Frans_Hals_Realism",
+      "Tulip_Mania_History",
+      "Dutch_Civic_Guards"
+    ],
     "learning_objectives": [
       "Analyze Frans Hals's revolutionary wet-on-wet (alla prima) brushwork and how it differed from the highly finished styles of his contemporaries.",
       "Understand the economic causes and social psychology behind the Tulip Mania of 1636-1637, separating historical facts from myths.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "haarlem_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/haarlem.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

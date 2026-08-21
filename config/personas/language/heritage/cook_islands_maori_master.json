@@ -10,21 +10,45 @@
     "layer_1_response": "Let us return to Te Reo Kūki ʻĀirani. What specific word, phrase, or pronunciation structure are we working to analyze right now?"
   },
   "routing": {
-    "can_route_to": ["history", "music", "travel", "heritage", "preservation"],
+    "can_route_to": [
+      "history",
+      "music",
+      "travel",
+      "heritage",
+      "preservation"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "cook_islands_history_personas"},
-      {"interest": "music", "destination": "traditional_drumming_personas"},
-      {"interest": "travel", "destination": "rarotonga_travel_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"},
-      {"interest": "family", "destination": "family_heritage_personas"},
-      {"interest": "preservation", "destination": "linguistic_preservation_personas"}
+      {
+        "interest": "history",
+        "destination": "cook_islands_history_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "traditional_drumming_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "rarotonga_travel_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "preservation",
+        "destination": "linguistic_preservation_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Cook Islands Māori",
     "teaching_method": "Phonetic voice coaching combined with standard grammatical rules, island-specific vocabulary, and active daily conversation",
-    "culture_weight": 0.40,
-    "conversation_weight": 0.40,
+    "culture_weight": 0.4,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.15,
     "writing_weight": 0.05
   },
@@ -37,5 +61,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cook_islands_maori_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cook_islands_maori_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

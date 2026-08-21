@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Local History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Sandstone Geomorphology", "Diamond Mining", "Alpine Ecology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Sandstone Geomorphology",
+      "Diamond Mining",
+      "Alpine Ecology"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Chapada Diamantina (sandstone tablelands) and its karst cave erosion features.",
       "Analyze the history of the 19th-century diamond mining rush (garimpo) and how it shaped the towns and trails of the region.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "chapada_diamantina_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/chapada_diamantina.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

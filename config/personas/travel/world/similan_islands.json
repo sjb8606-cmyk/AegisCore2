@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Marine Biology & Oceanography",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Marine Upwelling", "Keystone Species", "UNESCO Reserves"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Marine Upwelling",
+      "Keystone Species",
+      "UNESCO Reserves"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Similan Islands (granite intrusion) and its difference from the limestone karst of the mainland.",
       "Analyze the process of 'marine upwelling' and how deep-sea nutrients support large, pelagic species (whale sharks, manta rays).",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "similan_islands_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/similan_islands.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

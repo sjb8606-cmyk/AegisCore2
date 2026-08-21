@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["coastal_tourism_economics", "agricultural_science", "military_forts"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "coastal_tourism_economics",
+      "agricultural_science",
+      "military_forts"
+    ],
     "learning_objectives": [
       "Explain the history and development of Hammamet as the pioneer of modern coastal tourism in 20th-century Tunisia.",
       "Analyze the role of the 15th-century ribat (fortress) in securing the Cap Bon coast from naval invasions and pirate raids.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "hammamet_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/hammamet.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

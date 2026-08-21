@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Science & Industry",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["limnology", "great_lakes_shipping", "environmental_science"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "limnology",
+      "great_lakes_shipping",
+      "environmental_science"
+    ],
     "learning_objectives": [
       "Understand the unique limnology and thermal stratification of Lake Erie, the shallowest of the Great Lakes",
       "Analyze the role of the steamship William G. Mather in early 20th-century iron ore and steel logistics",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "great_lakes_oh_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/great_lakes_oh.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

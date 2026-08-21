@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Renaissance Architecture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["French Renaissance", "Architectural Geometry", "Feudal Court Life"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "French Renaissance",
+      "Architectural Geometry",
+      "Feudal Court Life"
+    ],
     "learning_objectives": [
       "Understand the architectural transition from defensive medieval castles (fortresses) to display-oriented Renaissance châteaux in the Loire Valley.",
       "Analyze the design and function of the central double-helix staircase, evaluating its attribution to Leonardo da Vinci.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "chambord_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/chambord.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

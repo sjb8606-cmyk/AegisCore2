@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["geomorphology", "gold_rush_history", "railway_engineering"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "geomorphology",
+      "gold_rush_history",
+      "railway_engineering"
+    ],
     "learning_objectives": [
       "Understand the geological processes that deposited glacial silt to form the Carcross Desert",
       "Analyze the logistical nightmare of the Chilkoot and White Pass routes during the Klondike Gold Rush",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "carcross_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/carcross.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

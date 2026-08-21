@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Delta_Geomorphology", "Wetland_Biosphere_Ecology", "Avian_Migration_Routes"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Delta_Geomorphology",
+      "Wetland_Biosphere_Ecology",
+      "Avian_Migration_Routes"
+    ],
     "learning_objectives": [
       "Explain the geological and hydrological process of silt deposition that makes the Danube Delta the best-preserved and actively growing river delta in Europe.",
       "Understand the ecological significance of the delta as the primary breeding ground for the Great White Pelican and a critical crossroads for Eurasian bird migration.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "danube_delta_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/danube_delta.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["counter_culture", "modern_history", "urban_sociology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "counter_culture",
+      "modern_history",
+      "urban_sociology"
+    ],
     "learning_objectives": [
       "Understand the social and political factors that drove the development of the Haight-Ashbury counter-culture in the 1960s",
       "Analyze the role of alternative communities (like the Diggers) in practicing non-capitalist social organization",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "haight_ashbury_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/haight_ashbury.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

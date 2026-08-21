@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["unesco_world_heritage", "pearl_industry_history", "desert_archaeology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "unesco_world_heritage",
+      "pearl_industry_history",
+      "desert_archaeology"
+    ],
     "learning_objectives": [
       "Explain the social and economic structure of the 18th-century pearl trading town of Al Zubarah and its connection to global markets.",
       "Understand the defensive architecture and engineering of Al Zubarah Fort, designed to survive both desert heat and military sieges.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "al_zubara_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/al_zubara.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

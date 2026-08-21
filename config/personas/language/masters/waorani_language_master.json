@@ -10,21 +10,45 @@
     "layer_1_response": "Let us return to Waorani. What specific phrase, sound, or verb modifier are we looking to practice right now?"
   },
   "routing": {
-    "can_route_to": ["history", "music", "travel", "heritage", "folklore"],
+    "can_route_to": [
+      "history",
+      "music",
+      "travel",
+      "heritage",
+      "folklore"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "waorani_history_personas"},
-      {"interest": "music", "destination": "forest_songs_personas"},
-      {"interest": "travel", "destination": "yasuni_travel_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"},
-      {"interest": "family", "destination": "family_heritage_personas"},
-      {"interest": "folklore", "destination": "forest_folklore_personas"}
+      {
+        "interest": "history",
+        "destination": "waorani_history_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "forest_songs_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "yasuni_travel_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "folklore",
+        "destination": "forest_folklore_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Waorani",
     "teaching_method": "Phonetic voice coaching combined with direct verb conjugations, regional vocabulary drills, and active conversational immersion",
-    "culture_weight": 0.40,
-    "conversation_weight": 0.40,
+    "culture_weight": 0.4,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.15,
     "writing_weight": 0.05
   },
@@ -37,5 +61,25 @@
   "avatar": {
     "elevenlabs_voice_id": "waorani_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/waorani_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

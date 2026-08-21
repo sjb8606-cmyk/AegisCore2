@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Ecology",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["salmon_ecology", "resource_management", "fluvial_geography"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "salmon_ecology",
+      "resource_management",
+      "fluvial_geography"
+    ],
     "learning_objectives": [
       "Understand the complex, anadromous life cycle of the Pacific salmon and its role in nutrient cycling",
       "Analyze the scientific and legal mechanisms of modern fisheries management in protecting the Kenai run",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kenai_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kenai.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

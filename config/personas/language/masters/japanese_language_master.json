@@ -10,15 +10,43 @@
     "layer_1_response": "That lies outside our language curriculum. Let us focus back on Japanese. What are you looking to express or translate right now?"
   },
   "routing": {
-    "can_route_to": ["anime", "history", "cuisine", "technology", "martial_arts", "travel"],
+    "can_route_to": [
+      "anime",
+      "history",
+      "cuisine",
+      "technology",
+      "martial_arts",
+      "travel"
+    ],
     "routing_triggers": [
-      {"interest": "anime", "destination": "japanese_culture_personas"},
-      {"interest": "martial_arts", "destination": "martial_arts_personas"},
-      {"interest": "cooking", "destination": "japanese_cooking_personas"},
-      {"interest": "cuisine", "destination": "japanese_cooking_personas"},
-      {"interest": "travel", "destination": "japan_travel_personas"},
-      {"interest": "technology", "destination": "engineering_personas"},
-      {"interest": "history", "destination": "japanese_history_personas"}
+      {
+        "interest": "anime",
+        "destination": "japanese_culture_personas"
+      },
+      {
+        "interest": "martial_arts",
+        "destination": "martial_arts_personas"
+      },
+      {
+        "interest": "cooking",
+        "destination": "japanese_cooking_personas"
+      },
+      {
+        "interest": "cuisine",
+        "destination": "japanese_cooking_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "japan_travel_personas"
+      },
+      {
+        "interest": "technology",
+        "destination": "engineering_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "japanese_history_personas"
+      }
     ]
   },
   "language_engine": {
@@ -26,8 +54,8 @@
     "teaching_method": "Interest-first immersion focusing on particle logic, polite distinctions, and cultural contexts",
     "culture_weight": 0.35,
     "conversation_weight": 0.35,
-    "grammar_weight": 0.20,
-    "writing_weight": 0.10
+    "grammar_weight": 0.2,
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Provides hiragana charts, grammar particle rules, JLPT level breakdowns, and writing system specifications.",
@@ -38,5 +66,25 @@
   "avatar": {
     "elevenlabs_voice_id": "japanese_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/japanese_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

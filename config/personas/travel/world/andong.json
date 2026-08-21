@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Culinary",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Neo_Confucianism_Toegye", "Seowon_Academies", "Korean_Culinary_Social_History"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Neo_Confucianism_Toegye",
+      "Seowon_Academies",
+      "Korean_Culinary_Social_History"
+    ],
     "learning_objectives": [
       "Understand the historical role of private neo-Confucian academies (Seowon) in Joseon dynasty education, focusing on Yi Hwang and Dosan Seowon.",
       "Analyze the social and economic history of the Andong Old Market, detailing how the modern dish Andong Jjimdak was developed as an affordable, high-density meal in the 1980s.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "andong_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/andong.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

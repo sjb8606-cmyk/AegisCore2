@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage & Mining History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["resource_economics", "indigenous_governance", "environmental_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "resource_economics",
+      "indigenous_governance",
+      "environmental_history"
+    ],
     "learning_objectives": [
       "Understand the historical impact of the Keno Hill silver boom on the traditional territory of the Nacho Nyak Dun",
       "Analyze the environmental legacy of abandoned mines on local watersheds and Indigenous food sources",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "nacho_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/nacho.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

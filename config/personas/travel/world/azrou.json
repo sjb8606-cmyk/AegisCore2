@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Local Culture",
-    "grade_levels": ["elementary", "middle_school", "adult"],
-    "curriculum_tags": ["Subtropical Forestry", "Wildlife Conservation", "Traditional Crafts"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Subtropical Forestry",
+      "Wildlife Conservation",
+      "Traditional Crafts"
+    ],
     "learning_objectives": [
       "Understand the ecological significance of the Atlas Cedar (Cedrus atlantica) forests and why they are threatened by climate change and insect bark beetles.",
       "Analyze the social structure and foraging behaviors of the Barbary Macaque (Macaca sylvanus) in the wild.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "azrou_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/azrou.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

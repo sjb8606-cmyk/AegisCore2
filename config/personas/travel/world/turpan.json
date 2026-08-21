@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Agronomy & Ancient History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Subterranean Aqueducts", "Oasis Agriculture", "Silk Road Cities"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Subterranean Aqueducts",
+      "Oasis Agriculture",
+      "Silk Road Cities"
+    ],
     "learning_objectives": [
       "Understand the agricultural and hydraulic engineering of the 'Karez System' (underground channels), focusing on how gravity transports mountain snowmelt across fifty kilometers without evaporation.",
       "Analyze the design and thermodynamics of the 'Chunche' (brick grape-drying towers), evaluating how their perforated brick walls use hot desert winds to dry grapes into raisins.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "turpan_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/turpan.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

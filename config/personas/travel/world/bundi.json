@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Architecture & Local History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Water Harvesting", "Mural Painting History", "Rajput Fortresses"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Water Harvesting",
+      "Mural Painting History",
+      "Rajput Fortresses"
+    ],
     "learning_objectives": [
       "Understand the structural engineering and water-harvesting role of the 'Baori' (stepwell), analyzing how it stored rain water in arid climates.",
       "Analyze the artistic style of the Bundi school of painting, focusing on the vibrant, nature-inspired murals of the Chitrashala.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bundi_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bundi.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

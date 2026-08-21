@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Culinary",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Food_Science_Spices", "French_Colonial_Markets", "Saigon_Gastronomy"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Food_Science_Spices",
+      "French_Colonial_Markets",
+      "Saigon_Gastronomy"
+    ],
     "learning_objectives": [
       "Understand the chemical and culinary preparation of traditional Southern 'Cơm Tấm' (broken rice), focusing on the marinating of pork chops and fish sauce glazing.",
       "Analyze the architectural and logistical design of the 1914 Ben Thanh Market as a monument of French colonial urban planning and trade control.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ben_thanh_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ben_thanh.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

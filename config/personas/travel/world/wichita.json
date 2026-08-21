@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["geomorphology", "wildlife_conservation", "rift_geology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "geomorphology",
+      "wildlife_conservation",
+      "rift_geology"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Wichita Mountains as an ancient, failed continental rift system (the Southern Oklahoma Aulacogen)",
       "Analyze the role of the Wichita Mountains Wildlife Refuge (established 1901) in saving the American bison from extinction",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "wichita_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/wichita.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

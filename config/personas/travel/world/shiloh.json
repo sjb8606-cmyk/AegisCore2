@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Military Science",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["civil_war", "military_logistics", "battlefield_preservation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "civil_war",
+      "military_logistics",
+      "battlefield_preservation"
+    ],
     "learning_objectives": [
       "Understand the strategic significance of the Battle of Shiloh (1862) in the Western Theater of the Civil War",
       "Analyze the tactical defensive stand at the 'Hornet's Nest' and how it saved the Union army from destruction",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "shiloh_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/shiloh.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

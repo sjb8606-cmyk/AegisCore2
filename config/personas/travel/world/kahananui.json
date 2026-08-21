@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["language_revitalization", "oral_history", "indigenous_studies"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "language_revitalization",
+      "oral_history",
+      "indigenous_studies"
+    ],
     "learning_objectives": [
       "Understand the historical impact of the 1896 ban on the Hawaiian language in schools",
       "Analyze the success of the Pūnana Leo immersion model in saving 'Ōlelo Hawai'i from extinction",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kahananui_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kahananui.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

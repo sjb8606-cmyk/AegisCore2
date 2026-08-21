@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Horticulture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["geothermal_springs", "gilded_age_history", "spa_culture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "geothermal_springs",
+      "gilded_age_history",
+      "spa_culture"
+    ],
     "learning_objectives": [
       "Understand the geological faulting and geothermal processes that heat the waters of Hot Springs",
       "Analyze the history and architectural styles of the historic Bathhouse Row (Gilded Age and Renaissance Revival)",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "hot_springs_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/hot_springs.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

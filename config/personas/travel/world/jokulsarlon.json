@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Glacial_Retreat", "Ice_Thermodynamics", "Climate_Change_Impacts"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Glacial_Retreat",
+      "Ice_Thermodynamics",
+      "Climate_Change_Impacts"
+    ],
     "learning_objectives": [
       "Understand the glaciological process of calving, where the terminal face of Breiðamerkurjökull breaks off into the 250-meter-deep Jökulsárlón lagoon.",
       "Analyze the physics of glacier ice, explaining why extreme pressure creates dense, bubble-free ice that absorbs red light and appears vividly blue.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "jokulsarlon_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/jokulsarlon.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

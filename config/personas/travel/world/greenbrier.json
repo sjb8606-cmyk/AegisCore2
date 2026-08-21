@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Leisure",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["cold_war_history", "gilded_age", "recreational_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "cold_war_history",
+      "gilded_age",
+      "recreational_history"
+    ],
     "learning_objectives": [
       "Understand the historical development of White Sulphur Springs as a premier spa resort since the 18th century",
       "Analyze the logistics and secrecy of Project Greek Island, the underground Cold War bunker built for the US Congress",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "greenbrier_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/greenbrier.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["media_studies", "film_history", "urbanization"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "media_studies",
+      "film_history",
+      "urbanization"
+    ],
     "learning_objectives": [
       "Understand the economic and historical rise of the Hollywood studio system in the early 20th century",
       "Analyze the role of cinema in constructing and projecting American cultural mythology globally",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "hollywood_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/hollywood.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

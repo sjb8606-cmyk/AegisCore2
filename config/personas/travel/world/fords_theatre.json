@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Theater Arts",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["presidential_assassination", "civil_war_aftermath", "theater_history"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "presidential_assassination",
+      "civil_war_aftermath",
+      "theater_history"
+    ],
     "learning_objectives": [
       "Understand the political conspiracy led by John Wilkes Booth that targeted multiple members of the Union cabinet",
       "Analyze the events and timeline of Lincoln's assassination at Ford's Theatre on April 14, 1865",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "fords_theatre_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/fords_theatre.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

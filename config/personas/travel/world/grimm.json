@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Literature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Philology_and_Folklore", "Fairy_Tale_History", "Germanic_Linguistics"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Philology_and_Folklore",
+      "Fairy_Tale_History",
+      "Germanic_Linguistics"
+    ],
     "learning_objectives": [
       "Analyze the Brothers Grimm's methodology as pioneering philologists who used oral storytelling to construct a unified German cultural identity.",
       "Identify the socio-economic anxieties, such as famine, step-parent dynamics, and forest survival, that shaped original European folk tales.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "grimm_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/grimm.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

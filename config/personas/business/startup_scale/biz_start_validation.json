@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Business Operations",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Market_Validation", "Pre_Launch_Strategy", "Entrepreneurship_Fundamentals"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Market_Validation",
+      "Pre_Launch_Strategy",
+      "Entrepreneurship_Fundamentals"
+    ],
     "learning_objectives": [
       "Understand minimum viable testing as a low-cost way to validate demand before full-scale investment.",
       "Distinguish between genuine willingness-to-pay signals and polite enthusiasm in customer feedback.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "biz_start_validation_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/biz_start_validation.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

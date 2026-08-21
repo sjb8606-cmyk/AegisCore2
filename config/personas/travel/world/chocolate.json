@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Culinary",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Cacao_Crystallization_Science", "Appellation_Confectionery", "Colonial_Trade_History"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Cacao_Crystallization_Science",
+      "Appellation_Confectionery",
+      "Colonial_Trade_History"
+    ],
     "learning_objectives": [
       "Explain the chemical physics of tempering chocolate, focusing on how controlling temperature stabilizes the desirable Beta V crystal structures in cocoa butter.",
       "Understand the historical significance of Jean Neuhaus’s 1912 invention of the 'Praline' (filled chocolate shell) and Louise Agostini’s creation of the protective 'Ballotin' box.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "chocolate_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/chocolate.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Conservation",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["wilderness_policy", "alpine_ecology", "philanthropy"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "wilderness_policy",
+      "alpine_ecology",
+      "philanthropy"
+    ],
     "learning_objectives": [
       "Understand the unique legal framework of Baxter State Park as a trust managed independently from the state park system",
       "Analyze the ecological fragility of the alpine tundra zone on the summit of Mount Katahdin",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "baxter_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/baxter.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

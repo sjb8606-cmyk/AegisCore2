@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["indigenous_sovereignty", "trail_of_tears", "land_tenure"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "indigenous_sovereignty",
+      "trail_of_tears",
+      "land_tenure"
+    ],
     "learning_objectives": [
       "Understand the historical events of the Cherokee Removal (1838) and the resistance of the Oconaluftee Cherokee",
       "Analyze the legal and economic creation of the Qualla Boundary as purchased, communal land held in trust",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cherokee_boundary_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cherokee_boundary.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

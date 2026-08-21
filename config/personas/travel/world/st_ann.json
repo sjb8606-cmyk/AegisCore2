@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["botanical_conservation", "caribbean_fauna", "colonial_scientific_gardens"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "botanical_conservation",
+      "caribbean_fauna",
+      "colonial_scientific_gardens"
+    ],
     "learning_objectives": [
       "Understand the historical role of colonial botanical gardens as key global centers for scientific plant exchange, economic botany, and species classification.",
       "Identify the unique, endemic flora of Trinidad and Tobago, explaining their ecological roles in the wider Caribbean rainforest biome.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "st_ann_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/st_ann.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

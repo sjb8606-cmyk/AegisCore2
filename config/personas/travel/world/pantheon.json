@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Architecture & Classical History",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Roman Engineering", "Classical Geometry", "Urban Transformation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Roman Engineering",
+      "Classical Geometry",
+      "Urban Transformation"
+    ],
     "learning_objectives": [
       "Understand the structural engineering of the Pantheon’s dome, focusing on the use of lightweight volcanic tufa aggregates and coffering to reduce weight.",
       "Analyze the mathematical harmony of the interior space, which contains a perfect, virtual sphere of 43.3 meters in diameter.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "pantheon_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/pantheon.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Culture & Retail Economics",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["retail_economics", "urban_planning", "mass_culture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "retail_economics",
+      "urban_planning",
+      "mass_culture"
+    ],
     "learning_objectives": [
       "Understand the economic development and historic scale of the Mall of America (opened 1992)",
       "Analyze the transition of the site from outdoor sports (Metropolitan Stadium) to indoor mega-retail",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mall_of_america_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mall_of_america.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

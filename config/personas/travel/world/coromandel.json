@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["coastal_erosion", "geothermal_springs", "forestry_history"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "coastal_erosion",
+      "geothermal_springs",
+      "forestry_history"
+    ],
     "learning_objectives": [
       "Understand the geological mechanism that allows hot geothermal water to rise through fissures directly onto the intertidal zone of Hot Water Beach.",
       "Analyze the process of coastal erosion that carved the massive natural limestone arch of Cathedral Cove.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "coromandel_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/coromandel.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

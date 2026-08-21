@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Viticulture & Culinary Arts",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Terroir Science", "Slow Food Philosophy", "Fungal Biology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Terroir Science",
+      "Slow Food Philosophy",
+      "Fungal Biology"
+    ],
     "learning_objectives": [
       "Understand the geological composition of the Langhe hills (Tortonian and Helvetian soils) and their impact on the Nebbiolo grape.",
       "Analyze the organic biology and symbiosis of the White Truffle of Alba (Tuber magnatum pico) with the roots of oak and poplar trees.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "langhe_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/langhe.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

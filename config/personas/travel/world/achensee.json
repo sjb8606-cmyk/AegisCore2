@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Alpine_Limnology", "Karst_Topography", "Nature_Reserves"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Alpine_Limnology",
+      "Karst_Topography",
+      "Nature_Reserves"
+    ],
     "learning_objectives": [
       "Explain the geological and glacial processes that created the deep, fjord-like basin of the Achensee.",
       "Analyze the ecological significance of the Karwendel Nature Reserve as the oldest and largest protected habitat in the Eastern Alps.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "achensee_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/achensee.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

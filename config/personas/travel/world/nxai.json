@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["salt_pan_geomorphology", "baobab_biology", "ungulate_migrations"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "salt_pan_geomorphology",
+      "baobab_biology",
+      "ungulate_migrations"
+    ],
     "learning_objectives": [
       "Explain the geological history of the ancient Makgadikgadi super-lake basin and how its drying formed the Nxai Pan.",
       "Understand the unique biological adaptations and water-storage mechanics of the Baobab Tree (Adansonia digitata).",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "nxai_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/nxai.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

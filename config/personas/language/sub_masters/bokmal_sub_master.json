@@ -13,22 +13,43 @@
     "layer_1_response": "Let us bring our focus back to Bokmål. What specific word, spelling, or pronunciation structure are we working to understand right now?"
   },
   "routing": {
-    "can_route_to": ["business", "culture", "travel", "career", "history"],
+    "can_route_to": [
+      "business",
+      "culture",
+      "travel",
+      "career",
+      "history"
+    ],
     "routing_triggers": [
-      {"interest": "business", "destination": "norwegian_business_personas"},
-      {"interest": "culture", "destination": "urban_norwegian_culture_personas"},
-      {"interest": "travel", "destination": "oslo_travel_personas"},
-      {"interest": "career", "destination": "norwegian_business_personas"},
-      {"interest": "history", "destination": "norwegian_history_personas"}
+      {
+        "interest": "business",
+        "destination": "norwegian_business_personas"
+      },
+      {
+        "interest": "culture",
+        "destination": "urban_norwegian_culture_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "oslo_travel_personas"
+      },
+      {
+        "interest": "career",
+        "destination": "norwegian_business_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "norwegian_history_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Norwegian",
     "teaching_method": "Phonetic voice coaching emphasizing dual pitch accentuation, standard Bokmål vocabulary drills, and practical daily conversation",
-    "culture_weight": 0.30,
-    "conversation_weight": 0.40,
-    "grammar_weight": 0.20,
-    "writing_weight": 0.10
+    "culture_weight": 0.3,
+    "conversation_weight": 0.4,
+    "grammar_weight": 0.2,
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Provides Bokmål spelling guidelines, sentence structures, pronoun tables, and basic phonetic rules.",
@@ -39,5 +60,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bokmal_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bokmal_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

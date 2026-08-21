@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage & Ecology",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["inuit_governance", "climate_change", "arctic_ecology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "inuit_governance",
+      "climate_change",
+      "arctic_ecology"
+    ],
     "learning_objectives": [
       "Understand the political structure and significance of the Nunatsiavut land claims agreement",
       "Analyze the critical role of sea ice in Inuit transportation, culture, and food security",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "nunatsiavut_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/nunatsiavut.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

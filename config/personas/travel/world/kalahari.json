@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["desert_ecology", "san_culture", "carnivore_adaptations"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "desert_ecology",
+      "san_culture",
+      "carnivore_adaptations"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Kalahari Basin as the world's largest continuous sand-body.",
       "Analyze the unique biological and social adaptations of the Brown Hyena (Parahyaena brunnea) to hyper-arid environments.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kalahari_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kalahari.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

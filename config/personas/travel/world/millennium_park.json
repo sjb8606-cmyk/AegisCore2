@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Art & Urban Design",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["contemporary_sculpture", "landscape_design", "urban_regeneration"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "contemporary_sculpture",
+      "landscape_design",
+      "urban_regeneration"
+    ],
     "learning_objectives": [
       "Understand the engineering and construction of Cloud Gate (the Bean) using seamless stainless steel plates",
       "Analyze the role of Millennium Park as a masterclass in urban rail yard reclamation",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "millennium_park_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/millennium_park.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

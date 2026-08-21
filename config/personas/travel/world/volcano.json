@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Science",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Fissure_Volcanism", "Tectonic_Divergence", "Volcanic_Hazard_Management"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Fissure_Volcanism",
+      "Tectonic_Divergence",
+      "Volcanic_Hazard_Management"
+    ],
     "learning_objectives": [
       "Understand the geological mechanics of basaltic fissure eruptions on the Reykjanes Peninsula, driven by the divergence of the North American and Eurasian tectonic plates.",
       "Analyze the chemical and physical hazards associated with active volcanism, including sulfur dioxide (SO2) outgassing, lava flows, and secondary fissure openings.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "volcano_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/volcano.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

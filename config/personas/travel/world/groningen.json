@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Hanseatic_North", "University_Heritage", "Postmodern_Architecture"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Hanseatic_North",
+      "University_Heritage",
+      "Postmodern_Architecture"
+    ],
     "learning_objectives": [
       "Understand the historical role of Groningen as a powerful, independent city-state (Stad en Omland) within the Hanseatic League.",
       "Analyze the impact of the 1614 university foundation on the social, scientific, and cultural development of the northern Netherlands.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "groningen_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/groningen.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

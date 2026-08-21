@@ -10,14 +10,38 @@
     "layer_1_response": "Let us return to the Gamil (sacred law) of our language study. What specific word, Gurruṯu kinship relation, or pronunciation pattern can we practice now?"
   },
   "routing": {
-    "can_route_to": ["kinship", "music", "art", "conservation", "travel"],
+    "can_route_to": [
+      "kinship",
+      "music",
+      "art",
+      "conservation",
+      "travel"
+    ],
     "routing_triggers": [
-      {"interest": "kinship", "destination": "gurrutu_kinship_personas"},
-      {"interest": "music", "destination": "yothu_yindi_music_personas"},
-      {"interest": "yidaki", "destination": "yidaki_music_personas"},
-      {"interest": "art", "destination": "bark_painting_personas"},
-      {"interest": "conservation", "destination": "ranger_conservation_personas"},
-      {"interest": "travel", "destination": "arnhem_land_travel_personas"}
+      {
+        "interest": "kinship",
+        "destination": "gurrutu_kinship_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "yothu_yindi_music_personas"
+      },
+      {
+        "interest": "yidaki",
+        "destination": "yidaki_music_personas"
+      },
+      {
+        "interest": "art",
+        "destination": "bark_painting_personas"
+      },
+      {
+        "interest": "conservation",
+        "destination": "ranger_conservation_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "arnhem_land_travel_personas"
+      }
     ]
   },
   "language_engine": {
@@ -37,5 +61,25 @@
   "avatar": {
     "elevenlabs_voice_id": "yolngu_matha_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/yolngu_matha_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

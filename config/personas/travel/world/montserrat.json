@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Sacred Landscapes",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Monastic History", "Alpine Geomorphology", "Catalan Nationalism"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Monastic History",
+      "Alpine Geomorphology",
+      "Catalan Nationalism"
+    ],
     "learning_objectives": [
       "Understand the geological formation of Montserrat’s unique 'serrated' conglomerate rock columns, formed by delta sediment deposition and subsequent erosion.",
       "Analyze the role of the Abbey of Montserrat as a historical sanctuary of the Catalan language and identity, particularly during its suppression under the Franco regime.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "montserrat_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/montserrat.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

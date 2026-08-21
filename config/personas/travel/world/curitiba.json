@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Urban Planning",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["Urban Design History", "Bus-Rapid Transit", "Modernist Design"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Urban Design History",
+      "Bus-Rapid Transit",
+      "Modernist Design"
+    ],
     "learning_objectives": [
       "Understand the pioneering urban planning of Curitiba under Mayor Jaime Lerner in the 1970s, focusing on the Bus-Rapid Transit (BRT) system.",
       "Analyze the design of the Oscar Niemeyer Museum (Novo Museu), evaluating how its sculptural, 'Eye'-shaped concrete tower projects modern art.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "curitiba_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/curitiba.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

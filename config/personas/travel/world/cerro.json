@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["colonial_fortifications", "industrial_labor_history", "national_sovereignty"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "colonial_fortifications",
+      "industrial_labor_history",
+      "national_sovereignty"
+    ],
     "learning_objectives": [
       "Explain the strategic military role of the Fortaleza del Cerro in securing the Spanish control of the River Plate estuary against British and Portuguese fleets.",
       "Understand the social and economic history of the Cerro neighborhood as a major center for immigrant labor and the 20th-century meatpacking industry.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cerro_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cerro.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

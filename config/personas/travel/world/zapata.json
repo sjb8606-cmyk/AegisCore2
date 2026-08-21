@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["cold_war_history", "wetland_ecology", "endemic_species"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "cold_war_history",
+      "wetland_ecology",
+      "endemic_species"
+    ],
     "learning_objectives": [
       "Understand the military and geopolitical events of the April 1961 Bay of Pigs (Playa Girón) invasion during the height of the Cold War.",
       "Explain the unique, endemic biology of the Cuban Crocodile (Crocodylus rhombifer) and why the Zapata Swamp is its last remaining sanctuary.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "zapata_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/zapata.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

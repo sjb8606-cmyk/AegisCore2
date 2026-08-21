@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["indigenous_sovereignty", "colonial_warfare", "american_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "indigenous_sovereignty",
+      "colonial_warfare",
+      "american_history"
+    ],
     "learning_objectives": [
       "Understand the geopolitical power of the Shawnee Nation in the 18th-century Ohio River Valley",
       "Analyze the military and political strategies of Chief Tecumseh and his brother the Prophet in building a pan-Indigenous confederacy",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "shawnee_wv_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/shawnee_wv.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

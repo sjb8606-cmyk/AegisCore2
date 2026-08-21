@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["primate_ecology", "volcanic_ecosystems", "conservation_history"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "primate_ecology",
+      "volcanic_ecosystems",
+      "conservation_history"
+    ],
     "learning_objectives": [
       "Explain the unique, social structures and behavioral biology of the endangered Mountain Gorilla (Gorilla beringei beringei) in its natural habitat.",
       "Understand the geological and tectonic forces that formed the Virunga volcanic chain across Rwanda, Uganda, and the DRC.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "volcanoes_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/volcanoes.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

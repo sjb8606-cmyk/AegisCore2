@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["colonial_history", "military_architecture", "coastal_defense"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "colonial_history",
+      "military_architecture",
+      "coastal_defense"
+    ],
     "learning_objectives": [
       "Understand the historical role of Port Townsend as a premier 19th-century maritime port and customs entry point",
       "Analyze the military architecture and strategic role of Fort Worden in the 'Endicott Period' coastal defense system",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "port_townsend_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/port_townsend.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

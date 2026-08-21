@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Urban Sociology & Traditional Crafts",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Shikumen Architecture", "Urban Regeneration", "Community Crafts"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Shikumen Architecture",
+      "Urban Regeneration",
+      "Community Crafts"
+    ],
     "learning_objectives": [
       "Understand the structural engineering and history of 'Shikumen' (stone-gate house) architecture, evaluating how it integrated traditional Chinese courtyards with Western terraced townhouses.",
       "Analyze the model of bottom-up, artist-led urban regeneration used to preserve Tianzifang from demolition in the late 1990s.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tianzifang_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tianzifang.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

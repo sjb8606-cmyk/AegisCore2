@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Conservation & Recreation",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["urban_ecology", "park_management", "political_geography"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "urban_ecology",
+      "park_management",
+      "political_geography"
+    ],
     "learning_objectives": [
       "Understand the ecological importance of maintaining large green corridors adjacent to major cities",
       "Analyze the historical creation of Gatineau Park as a project of the National Capital Commission",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "gatineau_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/gatineau.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["colonial_urbanization", "rio_de_la_plata_geopolitics", "candombe_origins"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "colonial_urbanization",
+      "rio_de_la_plata_geopolitics",
+      "candombe_origins"
+    ],
     "learning_objectives": [
       "Understand the strategic geopolitical role of Montevideo's natural deep-water port in the 18th-century Spanish-Portuguese empire struggles.",
       "Analyze the neoclassical and baroque architectural styles of Ciudad Vieja's landmark structures, including the Cabildo and Cathedral.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ciudad_vieja_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ciudad_vieja.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

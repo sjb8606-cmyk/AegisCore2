@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Engineering",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["civil_engineering", "industrial_history", "hydroelectric_power"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "civil_engineering",
+      "industrial_history",
+      "hydroelectric_power"
+    ],
     "learning_objectives": [
       "Understand the structural engineering and geology of the Stone Arch Bridge (built 1883)",
       "Analyze the role of St. Anthony Falls in driving the early industrialization and flour milling dominance of Minneapolis",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "stone_arch_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/stone_arch.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

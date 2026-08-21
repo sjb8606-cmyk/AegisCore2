@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["film_tourism_economics", "island_ecology", "native_fauna_conservation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "film_tourism_economics",
+      "island_ecology",
+      "native_fauna_conservation"
+    ],
     "learning_objectives": [
       "Understand the global economic and cultural impact of film-induced tourism (specifically the movie Cast Away) on Fiji's tourism industry.",
       "Analyze the ecological and conservation importance of keeping small, uninhabited islands (like Monuriki) free from permanent development.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "monuriki_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/monuriki.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

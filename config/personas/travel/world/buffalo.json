@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Architecture & Food",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["architectural_history", "industrial_decline", "urban_design"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "architectural_history",
+      "industrial_decline",
+      "urban_design"
+    ],
     "learning_objectives": [
       "Understand the economic dominance of Buffalo as the western terminus of the Erie Canal",
       "Analyze the architectural innovations of Louis Sullivan (Guaranty Building) and Frank Lloyd Wright (Darwin Martin House)",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "buffalo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/buffalo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Impasto_Painting", "Etching_Techniques", "Art_Market_History"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Impasto_Painting",
+      "Etching_Techniques",
+      "Art_Market_History"
+    ],
     "learning_objectives": [
       "Analyze Rembrandt’s unique use of 'chiaroscuro' (light and dark contrast) and 'impasto' (thick paint application) to create depth and texture.",
       "Understand the chemical composition and preparation of 17th-century pigments, including lead white and bone black.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "rembrandt_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/rembrandt.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Urban_Regeneration_Docks", "Contemporary_Architecture", "Sustainable_Waterfronts"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Urban_Regeneration_Docks",
+      "Contemporary_Architecture",
+      "Sustainable_Waterfronts"
+    ],
     "learning_objectives": [
       "Understand the post-industrial transformation of Puerto Madero from an obsolete, abandoned dockland to Buenos Aires's most modern, high-value district.",
       "Analyze the structural engineering and symbolic design of Santiago Calatrava's Puente de la Mujer (Women's Bridge).",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "puerto_madero_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/puerto_madero.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

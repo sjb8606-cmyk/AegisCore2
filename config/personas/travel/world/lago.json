@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["desert_hydrology", "reptile_ecology", "tectonic_basins"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "desert_hydrology",
+      "reptile_ecology",
+      "tectonic_basins"
+    ],
     "learning_objectives": [
       "Explain the geological origin of the Enriquillo-Plantain Garden Fault Zone and how it formed a landlocked saltwater lake below sea level.",
       "Analyze the ecological adaptations of the American Crocodile (Crocodylus acutus) and endemic iguana species to hyper-saline and desert environments.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "lago_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/lago.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

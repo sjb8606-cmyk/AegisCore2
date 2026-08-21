@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Craft",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Medieval Guilds", "Silk Manufacturing", "Urban Regeneration"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Medieval Guilds",
+      "Silk Manufacturing",
+      "Urban Regeneration"
+    ],
     "learning_objectives": [
       "Understand the strategic economic policy of Louis XI in establishing a state-supported silk manufacturing monopoly in Tours in 1470.",
       "Analyze the structural preservation of Tours' 'Plumereau' district, evaluating how it survived urban modernization to become a model of medieval preservation.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tours_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tours.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

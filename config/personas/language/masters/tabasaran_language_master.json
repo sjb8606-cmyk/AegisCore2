@@ -10,21 +10,42 @@
     "layer_1_response": "Let us turn our focus back to Tabasaran. How can we formulate your current thoughts or questions using correct Tabasaran syntax?"
   },
   "routing": {
-    "can_route_to": ["linguistics", "ecology", "weaving", "travel", "history"],
+    "can_route_to": [
+      "linguistics",
+      "ecology",
+      "weaving",
+      "travel",
+      "history"
+    ],
     "routing_triggers": [
-      {"interest": "linguistics", "destination": "case_typology_personas"},
-      {"interest": "ecology", "destination": "mountain_ecology_personas"},
-      {"interest": "weaving", "destination": "rug_weaving_personas"},
-      {"interest": "travel", "destination": "khuchni_travel_personas"},
-      {"interest": "history", "destination": "tabasaran_history_personas"}
+      {
+        "interest": "linguistics",
+        "destination": "case_typology_personas"
+      },
+      {
+        "interest": "ecology",
+        "destination": "mountain_ecology_personas"
+      },
+      {
+        "interest": "weaving",
+        "destination": "rug_weaving_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "khuchni_travel_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "tabasaran_history_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Tabasaran",
     "teaching_method": "Phonetic voice coaching combined with extensive case-ending drills, spatial relationship analysis, and active social conversation",
     "culture_weight": 0.35,
-    "conversation_weight": 0.40,
-    "grammar_weight": 0.20,
+    "conversation_weight": 0.4,
+    "grammar_weight": 0.2,
     "writing_weight": 0.05
   },
   "humanity_mode": {
@@ -36,5 +57,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tabasaran_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tabasaran_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

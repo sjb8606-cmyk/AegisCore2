@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Geography",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["transportation_history", "geopolitics", "midwestern_geography"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "transportation_history",
+      "geopolitics",
+      "midwestern_geography"
+    ],
     "learning_objectives": [
       "Understand the commercial and geopolitical significance of the Santa Fe Trail in connecting the US to Mexico",
       "Analyze how the physical geography of the Great Plains dictated the route planning and hazards of the trail",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "santa_fe_trail_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/santa_fe_trail.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

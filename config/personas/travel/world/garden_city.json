@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Ecology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["dust_bowl", "aquifer_depletion", "industrial_agriculture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "dust_bowl",
+      "aquifer_depletion",
+      "industrial_agriculture"
+    ],
     "learning_objectives": [
       "Understand the ecological and agricultural causes of the 1930s Dust Bowl on the Southern Plains",
       "Analyze the dependence of modern High Plains agriculture on the finite water resources of the Ogallala Aquifer",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "garden_city_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/garden_city.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Intangible_Heritage", "Folk_Art_Embroidery", "Traditional_Crafts"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Intangible_Heritage",
+      "Folk_Art_Embroidery",
+      "Traditional_Crafts"
+    ],
     "learning_objectives": [
       "Analyze the social and symbolic differences between Kalocsa and Matyó embroidery styles, focusing on their color palettes and floral motifs.",
       "Understand the historical role of the 'writing women' (íróasszonyok) in drafting and preserving traditional folk patterns.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "embroidery_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/embroidery.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

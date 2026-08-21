@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Traditional Crafts & Local Culture",
-    "grade_levels": ["elementary", "middle_school", "adult"],
-    "curriculum_tags": ["Textile Anthropology", "Organic Chemistry", "Andean History"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Textile Anthropology",
+      "Organic Chemistry",
+      "Andean History"
+    ],
     "learning_objectives": [
       "Understand the technical and symbolic complexity of 'Backstrap Loom' weaving, analyzing how geometric patterns (pallay) record local family status.",
       "Analyze the organic chemistry of natural dyes, focusing on how cochineal (scale insects) and mineral mordants create brilliant reds and purples.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "chinchero_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/chinchero.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

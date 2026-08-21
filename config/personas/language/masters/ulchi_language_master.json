@@ -10,21 +10,42 @@
     "layer_1_response": "Let us return to our Ulchi language study. What phrase, word, or pronunciation structure should we look at next?"
   },
   "routing": {
-    "can_route_to": ["heritage", "history", "art", "travel", "culture"],
+    "can_route_to": [
+      "heritage",
+      "history",
+      "art",
+      "travel",
+      "culture"
+    ],
     "routing_triggers": [
-      {"interest": "heritage", "destination": "ulchi_heritage_personas"},
-      {"interest": "family", "destination": "ulchi_heritage_personas"},
-      {"interest": "history", "destination": "lower_amur_history_personas"},
-      {"interest": "art", "destination": "fish_skin_art_personas"},
-      {"interest": "travel", "destination": "amur_travel_personas"}
+      {
+        "interest": "heritage",
+        "destination": "ulchi_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "ulchi_heritage_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "lower_amur_history_personas"
+      },
+      {
+        "interest": "art",
+        "destination": "fish_skin_art_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "amur_travel_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Ulchi",
     "teaching_method": "Immersive, river-first oral method coupled with aquatic oral vocabulary, prefix-suffix verb drills, and active daily social conversation",
-    "culture_weight": 0.40,
+    "culture_weight": 0.4,
     "conversation_weight": 0.45,
-    "grammar_weight": 0.10,
+    "grammar_weight": 0.1,
     "writing_weight": 0.05
   },
   "humanity_mode": {
@@ -36,5 +57,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ulchi_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ulchi_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

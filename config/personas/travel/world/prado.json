@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Art History & Dynastic History",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Spanish Golden Age", "Courtly Propaganda", "Goya Black Paintings"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Spanish Golden Age",
+      "Courtly Propaganda",
+      "Goya Black Paintings"
+    ],
     "learning_objectives": [
       "Understand the visual and philosophical complexity of Diego Velázquez’s 'Las Meninas', focusing on the use of spatial perspective and the viewer's role.",
       "Analyze the dramatic artistic transition of Francisco de Goya, from a light-filled royal tapestry painter to the dark, isolated genius of the Black Paintings (Pinturas Negras).",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "prado_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/prado.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

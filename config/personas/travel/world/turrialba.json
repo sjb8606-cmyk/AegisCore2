@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Science",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["agroforestry", "genetic_preservation_seed_banks", "soil_fertility"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "agroforestry",
+      "genetic_preservation_seed_banks",
+      "soil_fertility"
+    ],
     "learning_objectives": [
       "Understand the scientific concept of agroforestry and how integrating trees into crop systems enhances soil nutrients and biodiversity.",
       "Analyze the role of CATIE (Tropical Agricultural Research and Higher Education Center) in conserving global tropical seed diversity, specifically coffee and cacao.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "turrialba_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/turrialba.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

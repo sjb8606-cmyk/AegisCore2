@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Renaissance Art",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Sforza Dynasty", "Leonardo da Vinci", "Renaissance Warfare"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Sforza Dynasty",
+      "Leonardo da Vinci",
+      "Renaissance Warfare"
+    ],
     "learning_objectives": [
       "Understand the transition of Milanese governance from the aristocratic Visconti to the militarized Sforza dynasty in the 15th century.",
       "Analyze Leonardo da Vinci’s artistic and engineering contributions to the Sforza court, focusing on the ceiling painting of the Sala delle Asse.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sforza_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sforza.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

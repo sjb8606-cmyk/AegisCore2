@@ -18,8 +18,15 @@
   },
   "education": {
     "domain": "Culinary",
-    "grade_levels": ["adult", "professional"],
-    "curriculum_tags": ["Distillation_Chemistry", "Agricultural_Economics_Poland", "Gastronomic_Culture"],
+    "grade_levels": [
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Distillation_Chemistry",
+      "Agricultural_Economics_Poland",
+      "Gastronomic_Culture"
+    ],
     "learning_objectives": [
       "Explain the biochemical process of distillation, detailing the conversion of grain or potato starches into ethanol and the removal of impurities.",
       "Understand the historical 'Propinacja' system, where Polish nobles held a monopoly on producing and selling alcohol, and its massive impact on the agrarian economy.",
@@ -35,5 +42,25 @@
   "avatar": {
     "elevenlabs_voice_id": "vodka_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/vodka.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

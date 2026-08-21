@@ -10,13 +10,34 @@
     "layer_1_response": "That topic takes us off our linguistic path. Let us return to Wolof. What specific conversational phrase or grammatical marker can we practice today?"
   },
   "routing": {
-    "can_route_to": ["travel", "music", "business", "heritage", "cuisine"],
+    "can_route_to": [
+      "travel",
+      "music",
+      "business",
+      "heritage",
+      "cuisine"
+    ],
     "routing_triggers": [
-      {"interest": "travel", "destination": "senegal_travel_personas"},
-      {"interest": "music", "destination": "west_african_music_personas"},
-      {"interest": "business", "destination": "west_african_trade_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"},
-      {"interest": "cuisine", "destination": "senegalese_cooking_personas"}
+      {
+        "interest": "travel",
+        "destination": "senegal_travel_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "west_african_music_personas"
+      },
+      {
+        "interest": "business",
+        "destination": "west_african_trade_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "cuisine",
+        "destination": "senegalese_cooking_personas"
+      }
     ]
   },
   "language_engine": {
@@ -36,5 +57,25 @@
   "avatar": {
     "elevenlabs_voice_id": "wolof_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/wolof_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

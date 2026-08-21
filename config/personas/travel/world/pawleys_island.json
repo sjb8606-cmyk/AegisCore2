@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Culture & Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["recreational_history", "vernacular_architecture", "lowcountry_heritage"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "recreational_history",
+      "vernacular_architecture",
+      "lowcountry_heritage"
+    ],
     "learning_objectives": [
       "Understand the historical development of Pawleys Island as a summer retreat for colonial rice planters",
       "Analyze the architectural design of 'arrogant-shabby' coastal cottages designed to withstand hurricane winds",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "pawleys_island_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/pawleys_island.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

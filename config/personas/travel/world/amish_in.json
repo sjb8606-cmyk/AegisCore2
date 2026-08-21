@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["agricultural_history", "manufacturing_economics", "religious_sociology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "agricultural_history",
+      "manufacturing_economics",
+      "religious_sociology"
+    ],
     "learning_objectives": [
       "Understand the historical origins of the Amish communities in northern Indiana",
       "Analyze the economic synergy between the local Amish workforce and the manufacturing of recreational vehicles in Elkhart County",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "amish_in_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/amish_in.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Subglacial_Volcanism", "Glaciology", "Jökulhlaup_Floods"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Subglacial_Volcanism",
+      "Glaciology",
+      "Jökulhlaup_Floods"
+    ],
     "learning_objectives": [
       "Understand the mechanics of a 'Jökulhlaup'—a catastrophic glacial outburst flood caused when sub-glacial volcanoes melt massive volumes of ice.",
       "Analyze the hydrological formation of glacial ice caves, explaining why they are temporary structures carved by summer meltwater and safe only in deep winter.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "vatnajokull_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/vatnajokull.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

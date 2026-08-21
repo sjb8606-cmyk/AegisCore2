@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Wildlife Biology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Prehistoric Forestry", "Coral Reef Ecology", "UNESCO Reserves"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Prehistoric Forestry",
+      "Coral Reef Ecology",
+      "UNESCO Reserves"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Great Barrier Reef (the world's largest living structure) and how its coral polyps build massive calcium carbonate reefs.",
       "Analyze the ecology of the Daintree Rainforest, the oldest continuously active tropical rainforest in the world (dating back 180 million years).",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cairns_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cairns.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

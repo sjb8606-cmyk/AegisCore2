@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Science",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["plate_tectonics", "evolutionary_biology", "ocean_currents"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "plate_tectonics",
+      "evolutionary_biology",
+      "ocean_currents"
+    ],
     "learning_objectives": [
       "Explain the plate tectonic processes that lifted the Isthmus of Panama, closing the Central American Seaway three million years ago.",
       "Analyze the evolutionary impact of the Great American Biotic Interchange (GABI) on terrestrial fauna of North and South America.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "biomuseo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/biomuseo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["border_economics", "informal_markets", "cultural_fusion"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "border_economics",
+      "informal_markets",
+      "cultural_fusion"
+    ],
     "learning_objectives": [
       "Understand the historical role of Punta Gorda as a key strategic port and capital of the Toledo district in southern Belize.",
       "Analyze the socioeconomic dynamics of the Saturday open-air market in facilitating trade between Maya and Garifuna communities.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "punta_gorda_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/punta_gorda.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

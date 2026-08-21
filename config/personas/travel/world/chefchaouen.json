@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Local Culture & History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Andalusian Refugees", "Hygienic History", "Rif Mountain Culture"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Andalusian Refugees",
+      "Hygienic History",
+      "Rif Mountain Culture"
+    ],
     "learning_objectives": [
       "Understand the historical role of Chefchaouen as a fortress town established in 1471 by Mulay Ali Ben Moussa to resist Portuguese expansion.",
       "Analyze the geological and chemical history of whitewashing, explaining how the addition of copper sulfate or indigo created the iconic blue pigment.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "chefchaouen_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/chefchaouen.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

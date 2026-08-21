@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Urban Archaeology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Medieval Aragon", "Roman Urbanism", "Historic Preservation Theory"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Medieval Aragon",
+      "Roman Urbanism",
+      "Historic Preservation Theory"
+    ],
     "learning_objectives": [
       "Understand the Roman founding and defensive layout of Barcino (ancient Barcelona) as recorded in the surviving city walls and temple columns.",
       "Analyze the political and maritime expansion of the Crown of Aragon in the Mediterranean during the 13th and 14th centuries, centered in the Gothic Quarter.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "gothic_quarter_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/gothic_quarter.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

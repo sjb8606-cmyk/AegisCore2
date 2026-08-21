@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Literature",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Middle_English", "Medieval_Society", "Chaucerian_Literature"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Middle_English",
+      "Medieval_Society",
+      "Chaucerian_Literature"
+    ],
     "learning_objectives": [
       "Analyze how Chaucer's Canterbury Tales serves as a satirical social commentary on the three estates of medieval society.",
       "Understand the political and religious significance of Thomas Becket's martyrdom and its impact on European pilgrimage routes.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "canterbury_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/canterbury.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

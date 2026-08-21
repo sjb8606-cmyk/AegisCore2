@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["colonial_history", "manila_galleons", "geopolitics"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "colonial_history",
+      "manila_galleons",
+      "geopolitics"
+    ],
     "learning_objectives": [
       "Understand the historical significance of Ferdinand Magellan's 1521 landing at Umatac Bay",
       "Analyze the role of Umatac as a critical port of call for the Spanish Manila Galleon trade (1565-1815)",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "umatac_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/umatac.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

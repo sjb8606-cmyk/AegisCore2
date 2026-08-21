@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Engineering",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["timber_framing", "recreational_history", "civil_engineering"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "timber_framing",
+      "recreational_history",
+      "civil_engineering"
+    ],
     "learning_objectives": [
       "Understand the structural engineering and historical necessity of covered timber bridges",
       "Analyze the Town lattice truss system used in 19th-century bridge construction",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bridges_ia_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bridges_ia.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

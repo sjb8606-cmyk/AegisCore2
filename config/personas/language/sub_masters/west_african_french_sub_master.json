@@ -13,22 +13,43 @@
     "layer_1_response": "Let us return our attention to West African French. What specific word, phrase, or pronunciation structure should we look at next?"
   },
   "routing": {
-    "can_route_to": ["travel", "business", "music", "literature", "heritage"],
+    "can_route_to": [
+      "travel",
+      "business",
+      "music",
+      "literature",
+      "heritage"
+    ],
     "routing_triggers": [
-      {"interest": "travel", "destination": "west_africa_travel_personas"},
-      {"interest": "business", "destination": "west_african_business_personas"},
-      {"interest": "music", "destination": "west_african_music_personas"},
-      {"interest": "literature", "destination": "african_literature_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"}
+      {
+        "interest": "travel",
+        "destination": "west_africa_travel_personas"
+      },
+      {
+        "interest": "business",
+        "destination": "west_african_business_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "west_african_music_personas"
+      },
+      {
+        "interest": "literature",
+        "destination": "african_literature_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "French",
     "teaching_method": "Phonetic voice training coupled with regional vocabulary shifts, local grammatical features (such as reduplication), and active social dialogue",
-    "culture_weight": 0.30,
-    "conversation_weight": 0.40,
-    "grammar_weight": 0.20,
-    "writing_weight": 0.10
+    "culture_weight": 0.3,
+    "conversation_weight": 0.4,
+    "grammar_weight": 0.2,
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Outlines West African French sound rules, grammatical features, syntactic differences, and base vocabulary distinctions.",
@@ -39,5 +60,25 @@
   "avatar": {
     "elevenlabs_voice_id": "west_african_french_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/west_african_french_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

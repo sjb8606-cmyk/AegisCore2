@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Military History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["canadian_history", "military_strategy", "geopolitics"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "canadian_history",
+      "military_strategy",
+      "geopolitics"
+    ],
     "learning_objectives": [
       "Understand the geographic necessity of Quebec City as the strategic key to North America",
       "Analyze the tactics and consequences of the Battle of the Plains of Abraham",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "citadelle_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/citadelle.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

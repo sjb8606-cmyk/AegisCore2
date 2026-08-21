@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["accretionary_tectonics", "alpine_ecology", "park_management"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "accretionary_tectonics",
+      "alpine_ecology",
+      "park_management"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Chugach Mountains as part of an active plate collision (accretionary wedge)",
       "Analyze the adaptation and survival strategies of the flora and fauna in the high subalpine and alpine tundra zones",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "chugach_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/chugach.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

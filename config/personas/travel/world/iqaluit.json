@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Governance",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["political_science", "indigenous_governance", "northern_development"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "political_science",
+      "indigenous_governance",
+      "northern_development"
+    ],
     "learning_objectives": [
       "Understand the political history and significance of the creation of the Nunavut territory in 1999",
       "Analyze the logistical challenges of governing a massive, sparsely populated territory with no road connections",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "iqaluit_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/iqaluit.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

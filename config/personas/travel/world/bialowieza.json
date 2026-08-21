@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Primeval_Forest_Ecology", "Bison_Conservation_Rewilding", "Deadwood_Biodiversity"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Primeval_Forest_Ecology",
+      "Bison_Conservation_Rewilding",
+      "Deadwood_Biodiversity"
+    ],
     "learning_objectives": [
       "Understand the ecological characteristics of a 'primeval' or old-growth forest, focusing on the critical biological role of dead and decaying wood in supporting biodiversity.",
       "Analyze the historical conservation of the European Bison (Żubr), detailing its extinction in the wild in 1919 and its successful reintroduction from zoo populations.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bialowieza_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bialowieza.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Ecology & Alpine Geography",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Cloud Forest Ecology", "Waterfalls & Hydrology", "Ecotourism Planning"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Cloud Forest Ecology",
+      "Waterfalls & Hydrology",
+      "Ecotourism Planning"
+    ],
     "learning_objectives": [
       "Understand the geological formation of Gocta Waterfall (771m, one of the tallest in the world) through karst water erosion on vertical limestone cliffs.",
       "Analyze the biology of the Amazonian cloud forest, focusing on endemic orchids, hummingbirds, and the endangered yellow-tailed woolly monkey.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "gocta_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/gocta.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

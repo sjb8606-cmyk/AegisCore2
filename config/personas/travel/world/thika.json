@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["agricultural_history", "river_hydrology", "industrial_transitions"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "agricultural_history",
+      "river_hydrology",
+      "industrial_transitions"
+    ],
     "learning_objectives": [
       "Explain the geological and hydrological factors that generate the Chania and Thika waterfalls in the Aberdare river basin.",
       "Understand the 20th-century transition of Thika from an colonial agricultural pineapple-shipping outpost into a major industrial city.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "thika_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/thika.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Maritime History",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["barrier_islands", "maritime_history", "coastal_ecology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "barrier_islands",
+      "maritime_history",
+      "coastal_ecology"
+    ],
     "learning_objectives": [
       "Understand the geological formation and migration of barrier islands in the Gulf of Mexico",
       "Analyze the strategic military role of Fort Massachusetts on Ship Island during the Civil War",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "gulf_islands_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/gulf_islands.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

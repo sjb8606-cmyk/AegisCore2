@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["community_tourism_economics", "volcanic_islands_fiji", "sustainable_hospitality_fiji"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "community_tourism_economics",
+      "volcanic_islands_fiji",
+      "sustainable_hospitality_fiji"
+    ],
     "learning_objectives": [
       "Understand the socio-economic transition of the Yasawa Islands from isolated agricultural communities to a major model of community-owned ecotourism.",
       "Analyze the geological formation of volcanic islands and their fragile, freshwater lens aquifers.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "yasawa_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/yasawa.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

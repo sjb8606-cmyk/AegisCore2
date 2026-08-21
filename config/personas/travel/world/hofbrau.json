@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Culinary",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Bavarian_Culture", "Reinheitsgebot_History", "Sociology_of_Taverns"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Bavarian_Culture",
+      "Reinheitsgebot_History",
+      "Sociology_of_Taverns"
+    ],
     "learning_objectives": [
       "Understand the historical origins of the Bavarian Reinheitsgebot of 1516 and its impact on the quality and regulation of European brewing.",
       "Analyze the social function of the beer hall and the 'Stammtisch' as democratic communal spaces in Bavarian society.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "hofbrau_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/hofbrau.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

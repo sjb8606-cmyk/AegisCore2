@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["indigenous_sovereignty", "geography_of_trade", "colonial_treaties"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "indigenous_sovereignty",
+      "geography_of_trade",
+      "colonial_treaties"
+    ],
     "learning_objectives": [
       "Understand the geological significance of the Chicago Portage as the continental divide between the Great Lakes and the Mississippi watershed",
       "Analyze the political and economic role of the Potawatomi Nation in managing early trade routes in the midwest",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "potawatomi_chicago_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/potawatomi_chicago.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

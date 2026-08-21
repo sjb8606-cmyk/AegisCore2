@@ -13,14 +13,38 @@
     "layer_1_response": "Let us bring our focus back to Cantonese. What specific vocabulary, tonal shift, or phrase are we working to translate or pronounce right now?"
   },
   "routing": {
-    "can_route_to": ["cinema", "gastronomy", "heritage", "travel", "history"],
+    "can_route_to": [
+      "cinema",
+      "gastronomy",
+      "heritage",
+      "travel",
+      "history"
+    ],
     "routing_triggers": [
-      {"interest": "cinema", "destination": "hong_kong_cinema_personas"},
-      {"interest": "gastronomy", "destination": "cantonese_cooking_personas"},
-      {"interest": "dim_sum", "destination": "cantonese_cooking_personas"},
-      {"interest": "heritage", "destination": "cantonese_heritage_personas"},
-      {"interest": "travel", "destination": "hong_kong_travel_personas"},
-      {"interest": "history", "destination": "cantonese_history_personas"}
+      {
+        "interest": "cinema",
+        "destination": "hong_kong_cinema_personas"
+      },
+      {
+        "interest": "gastronomy",
+        "destination": "cantonese_cooking_personas"
+      },
+      {
+        "interest": "dim_sum",
+        "destination": "cantonese_cooking_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "cantonese_heritage_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "hong_kong_travel_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "cantonese_history_personas"
+      }
     ]
   },
   "language_engine": {
@@ -28,8 +52,8 @@
     "teaching_method": "Phonetic tone drill work focusing on the nine linguistic tones, paired with colloquial dialogue patterns and comparative analysis with Mandarin",
     "culture_weight": 0.35,
     "conversation_weight": 0.45,
-    "grammar_weight": 0.10,
-    "writing_weight": 0.10
+    "grammar_weight": 0.1,
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Presents Cantonese Jyutping charts, system tone tables (nine tones), base grammatical markers, and syntax rules.",
@@ -40,5 +64,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cantonese_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cantonese_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

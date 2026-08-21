@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["marine_biology", "traditional_fishing", "conservation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "marine_biology",
+      "traditional_fishing",
+      "conservation"
+    ],
     "learning_objectives": [
       "Explain the ecological factors that make False Bay a unique marine biological hotspot, including the impact of the Agulhas and Benguela currents.",
       "Analyze the socio-economic history of traditional handline fishing communities in the Western Cape and their struggles under modern fishing quotas.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kalk_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kalk.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

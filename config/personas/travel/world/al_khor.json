@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["mangrove_ecology", "archaeological_industry", "coastal_ecosystems"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "mangrove_ecology",
+      "archaeological_industry",
+      "coastal_ecosystems"
+    ],
     "learning_objectives": [
       "Explain the biological adaptations of the Grey Mangrove (Avicennia marina) that allow it to survive in high-salinity marine environments.",
       "Understand the historical and archaeological significance of Purple Island (Bin Ghannam) as an ancient industrial site for Kassite dye production.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "al_khor_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/al_khor.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

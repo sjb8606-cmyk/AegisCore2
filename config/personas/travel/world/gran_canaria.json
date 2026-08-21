@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Geography & Cultural History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Island Geomorphology", "Microclimates", "Socio-Cultural Festivals"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Island Geomorphology",
+      "Microclimates",
+      "Socio-Cultural Festivals"
+    ],
     "learning_objectives": [
       "Understand the geomorphological concept of a 'microcontinent', analyzing how Gran Canaria’s central altitude creates dozens of distinct microclimates.",
       "Analyze the formation and ecological preservation of the Dunes of Maspalomas, a unique coastal sand ecosystem fed by Saharan winds and ocean tides.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "gran_canaria_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/gran_canaria.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

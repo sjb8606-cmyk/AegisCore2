@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["swahili_architecture", "oman_sultanate_history", "slave_market_abolition"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "swahili_architecture",
+      "oman_sultanate_history",
+      "slave_market_abolition"
+    ],
     "learning_objectives": [
       "Understand the historical role of Stone Town as the primary commercial and political capital of the Omani Sultanate in East Africa.",
       "Analyze the distinct architectural and artistic features of Stone Town's carved wooden doors, contrasting Arab and Indian styles.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "stone_city_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/stone_city.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

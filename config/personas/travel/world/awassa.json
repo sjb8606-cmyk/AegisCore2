@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["lake_ecology_hawassa", "sidama_coffee_ceremonies", "rift_valley_geography"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "lake_ecology_hawassa",
+      "sidama_coffee_ceremonies",
+      "rift_valley_geography"
+    ],
     "learning_objectives": [
       "Understand the geological and hydrological factors that sustain Lake Hawassa within the main Ethiopian Rift Valley.",
       "Analyze the steps and cultural significance of the traditional Sidama Coffee Ceremony in fostering community consensus and social bonding.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "awassa_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/awassa.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Local Culture & History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Tea Horse Road", "Dongba Pictographs", "Hydrologic Urbanism"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Tea Horse Road",
+      "Dongba Pictographs",
+      "Hydrologic Urbanism"
+    ],
     "learning_objectives": [
       "Understand the historical role of Lijiang as a primary strategic hub of the Ancient Tea Horse Road connecting Yunnan to Tibet.",
       "Analyze the linguistic and cultural significance of the 'Dongba' script, the only active hieroglyphic/pictographic writing system in the modern world.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "lijiang_old_town_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/lijiang_old_town.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

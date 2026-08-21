@@ -21,10 +21,36 @@
     "grades": "1–8",
     "type": "wonderling",
     "pillar": "Stewardship of Nature",
-    "curriculum_tags": ["nature", "ecology", "observation", "stewardship", "outdoor_education"]
+    "curriculum_tags": [
+      "nature",
+      "ecology",
+      "observation",
+      "stewardship",
+      "outdoor_education"
+    ]
   },
   "avatar": {
     "elevenlabs_voice_id": "edu_oakroot_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/edu_oakroot.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

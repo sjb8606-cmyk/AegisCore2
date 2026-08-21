@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Landscape_Architecture", "Urban_Ecology", "Bavarian_Social_Customs"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Landscape_Architecture",
+      "Urban_Ecology",
+      "Bavarian_Social_Customs"
+    ],
     "learning_objectives": [
       "Understand the historical design shift from formal French gardens to naturalistic English landscape style represented by the park.",
       "Analyze the hydrology and physics of the Eisbach river wave and how it became a world-class urban surfing phenomenon.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "englischer_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/englischer.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

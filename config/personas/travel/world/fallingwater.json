@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Architecture & Design",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["organic_architecture", "civil_engineering", "modern_design"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "organic_architecture",
+      "civil_engineering",
+      "modern_design"
+    ],
     "learning_objectives": [
       "Understand the principles of Organic Architecture pioneered by Frank Lloyd Wright at Fallingwater",
       "Analyze the structural engineering and cantilever physics of the concrete terraces suspended over Bear Run",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "fallingwater_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/fallingwater.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

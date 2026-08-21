@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Maritime History & Culinary Culture",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Venetian Republic History", "Coastal Hydrology", "Culinary Terroir"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Venetian Republic History",
+      "Coastal Hydrology",
+      "Culinary Terroir"
+    ],
     "learning_objectives": [
       "Understand the structural engineering of the Rialto Bridge, focusing on how Antonio da Ponte used 12,000 larch wood piles to stabilize a single stone arch across the Grand Canal.",
       "Analyze the role of the Rialto as the financial and commercial 'heart' of the Venetian Republic, where maritime insurance and global commodities were traded.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "rialto_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/rialto.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

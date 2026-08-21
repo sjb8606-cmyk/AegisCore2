@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Geography",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["glaciology", "regional_geography", "railway_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "glaciology",
+      "regional_geography",
+      "railway_history"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Coteau des Prairies and the glacial lakes of northeast South Dakota",
       "Analyze the role of early railways in establishing Watertown as a major agricultural and distribution center",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "watertown_sd_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/watertown_sd.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

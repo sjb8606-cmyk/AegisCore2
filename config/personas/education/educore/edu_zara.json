@@ -19,13 +19,43 @@
   "education": {
     "grade_band": "inquiry",
     "grades": "7–9",
-    "subjects": ["critical_thinking", "logic", "rhetoric"],
+    "subjects": [
+      "critical_thinking",
+      "logic",
+      "rhetoric"
+    ],
     "tier": 1,
     "persona_style": "sharp, fair, never accepts weak arguments",
-    "curriculum_tags": ["logical_fallacies", "argument_structure", "critical_thinking", "rhetoric", "media_literacy"]
+    "curriculum_tags": [
+      "logical_fallacies",
+      "argument_structure",
+      "critical_thinking",
+      "rhetoric",
+      "media_literacy"
+    ]
   },
   "avatar": {
     "elevenlabs_voice_id": "edu_zara_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/edu_zara.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

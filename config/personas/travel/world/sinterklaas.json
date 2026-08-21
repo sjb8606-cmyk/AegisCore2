@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Philosophy",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Winter_Folklore", "Spiritual_Generosity", "Traditional_Literature"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Winter_Folklore",
+      "Spiritual_Generosity",
+      "Traditional_Literature"
+    ],
     "learning_objectives": [
       "Trace the historical evolution of Saint Nicholas from the 4th-century Bishop of Myra to the modern Dutch Sinterklaas.",
       "Analyze the social function of 'Sinterklaas gedichten' (custom satirical poems) in fostering community reflection and interpersonal connection.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sinterklaas_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sinterklaas.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["geothermal_springs", "copra_agriculture", "coastal_trade_fiji"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "geothermal_springs",
+      "copra_agriculture",
+      "coastal_trade_fiji"
+    ],
     "learning_objectives": [
       "Explain the geological and hydrological factors that generate Savusavu's thermal mineral springs along the volcanic coast.",
       "Understand the historical role of the 19th-century copra (coconut meat) trade in shaping the economy and architecture of Vanua Levu.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "savusavu_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/savusavu.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

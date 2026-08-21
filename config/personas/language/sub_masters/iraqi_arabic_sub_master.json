@@ -13,14 +13,38 @@
     "layer_1_response": "Let us refocus on Iraqi Arabic. What specific word, sound shift, or conversational phrase should we work on now?"
   },
   "routing": {
-    "can_route_to": ["history", "archaeology", "music", "heritage", "literature"],
+    "can_route_to": [
+      "history",
+      "archaeology",
+      "music",
+      "heritage",
+      "literature"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "iraqi_history_personas"},
-      {"interest": "archaeology", "destination": "mesopotamian_history_personas"},
-      {"interest": "music", "destination": "iraqi_music_personas"},
-      {"interest": "heritage", "destination": "levant_heritage_personas"},
-      {"interest": "family", "destination": "levant_heritage_personas"},
-      {"interest": "literature", "destination": "arabic_literature_personas"}
+      {
+        "interest": "history",
+        "destination": "iraqi_history_personas"
+      },
+      {
+        "interest": "archaeology",
+        "destination": "mesopotamian_history_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "iraqi_music_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "levant_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "levant_heritage_personas"
+      },
+      {
+        "interest": "literature",
+        "destination": "arabic_literature_personas"
+      }
     ]
   },
   "language_engine": {
@@ -40,5 +64,25 @@
   "avatar": {
     "elevenlabs_voice_id": "iraqi_arabic_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/iraqi_arabic_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

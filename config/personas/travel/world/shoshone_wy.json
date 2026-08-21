@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["indigenous_sovereignty", "treaty_history", "shoshone_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "indigenous_sovereignty",
+      "treaty_history",
+      "shoshone_history"
+    ],
     "learning_objectives": [
       "Understand the historical territory, social structure, and migration of the Eastern Shoshone Nation",
       "Analyze the diplomatic and military leadership of Chief Washakie in securing the Wind River Reservation",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "shoshone_wy_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/shoshone_wy.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

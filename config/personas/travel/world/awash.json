@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["rift_valley_geology", "geothermal_forces", "desert_adaptations"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "rift_valley_geology",
+      "geothermal_forces",
+      "desert_adaptations"
+    ],
     "learning_objectives": [
       "Explain the geological and tectonic processes of the East African Rift System that are actively splitting the African and Somali plates in Awash.",
       "Understand the geothermal heating process that generates the hot springs and active fumaroles of Mount Fentale.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "awash_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/awash.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

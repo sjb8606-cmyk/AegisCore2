@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Culture & Sociology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["urban_sociology", "subcultures", "gentrification"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "urban_sociology",
+      "subcultures",
+      "gentrification"
+    ],
     "learning_objectives": [
       "Understand the historical development of Venice, California as a planned resort modeled on Italy's canals",
       "Analyze the process of gentrification and how creative subcultures (beats, skaters, tech) act as the vanguard for real estate",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "venice_beach_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/venice_beach.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

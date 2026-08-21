@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Memorial Design",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["civil_war", "landscape_architecture", "collective_memory"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "civil_war",
+      "landscape_architecture",
+      "collective_memory"
+    ],
     "learning_objectives": [
       "Understand the controversial reception and design of Maya Lin's Vietnam Veterans Memorial",
       "Analyze the psychological and aesthetic power of abstract minimalist design in public monuments",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "vietnam_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/vietnam.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

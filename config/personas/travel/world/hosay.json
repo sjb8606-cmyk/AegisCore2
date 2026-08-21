@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["hosay_riots", "shia_history", "intercultural_solidarity"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "hosay_riots",
+      "shia_history",
+      "intercultural_solidarity"
+    ],
     "learning_objectives": [
       "Explain the historical and spiritual origins of the Hosay festival, commemorating the martyrdom of Hussein (grandson of Prophet Muhammad) at the Battle of Karbala.",
       "Analyze the causes and social consequences of the 1884 Hosay Riots (Jahaji Massacre) where British colonial forces fired on peaceful indentured laborers.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "hosay_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/hosay.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

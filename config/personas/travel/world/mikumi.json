@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["savanna_ecology", "infrastructure_impact", "floodplain_dynamics"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "savanna_ecology",
+      "infrastructure_impact",
+      "floodplain_dynamics"
+    ],
     "learning_objectives": [
       "Understand the ecological dynamics of the Mkata Floodplain and how it supports high-density herbivore populations during dry seasons.",
       "Analyze the environmental and conservation impacts of major international highways (like the Tanzam Highway) bisecting national parks.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mikumi_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mikumi.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

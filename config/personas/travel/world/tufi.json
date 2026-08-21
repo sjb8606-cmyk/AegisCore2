@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["ria_coastlines", "volcanic_geomorphology", "coral_biology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "ria_coastlines",
+      "volcanic_geomorphology",
+      "coral_biology"
+    ],
     "learning_objectives": [
       "Explain the geological and marine processes of volcanic lava flow subsidence and rising sea levels that form the unique 'ria' coastlines (fjords) of Tufi.",
       "Understand the ecological importance of the deep, vertical coral walls of the fjords in supporting diverse marine life and filter-feeding pelagics.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tufi_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tufi.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

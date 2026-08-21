@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Local Culture & Maritime History",
-    "grade_levels": ["elementary", "middle_school", "adult"],
-    "curriculum_tags": ["River Transportation", "Afro-Mexican Music", "Colonial Architecture"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "River Transportation",
+      "Afro-Mexican Music",
+      "Colonial Architecture"
+    ],
     "learning_objectives": [
       "Understand the historical role of Tlacotalpan as a primary Spanish inland river port connecting the Gulf of Mexico to the agricultural interior.",
       "Analyze the architectural design of 'Sotavento' style neoclassical houses, evaluating how wide arcades and tile roofs regulate tropical heat and rain.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tlacotalpan_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tlacotalpan.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

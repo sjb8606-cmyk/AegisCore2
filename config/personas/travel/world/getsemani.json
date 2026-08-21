@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["street_art", "afro_colombian_history", "urban_gentrification"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "street_art",
+      "afro_colombian_history",
+      "urban_gentrification"
+    ],
     "learning_objectives": [
       "Understand the historical role of Pedro Romero and the working-class 'lanceros' of Getsemaní in spearheading Cartagena's 1811 independence movement.",
       "Analyze the themes, techniques, and social messages represented in the contemporary street art and murals of Getsemaní.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "getsemani_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/getsemani.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

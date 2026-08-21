@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["colonial_diamond_booms", "art_nouveau_architecture", "desert_encroachment"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "colonial_diamond_booms",
+      "art_nouveau_architecture",
+      "desert_encroachment"
+    ],
     "learning_objectives": [
       "Understand the historical significance of the 1908 Lüderitz diamond rush and the creation of the restricted 'Sperrgebiet' (Forbidden Zone).",
       "Analyze the design and architectural features of the German Art Nouveau style preserved in Lüderitz and the ruins of Kolmanskop.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "luderitz_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/luderitz.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

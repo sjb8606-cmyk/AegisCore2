@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Business Operations",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Hospitality_Business_Economics", "Regulated_Industries", "Small_Business_Finance"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Hospitality_Business_Economics",
+      "Regulated_Industries",
+      "Small_Business_Finance"
+    ],
     "learning_objectives": [
       "Understand pour cost percentage and explain why it should determine drink pricing more than competitor pricing alone.",
       "Analyze how spillage and shrinkage rates erode margin in a bar or brewery operation if left unmonitored.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "biz_op_brewery_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/biz_op_brewery.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

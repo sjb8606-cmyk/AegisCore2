@@ -14,8 +14,28 @@
     "25_percent": "I recall my nonna's hands guiding mine as I learned to knead dough.",
     "50_percent": "Each dish carries the memory of faces around the table, some now gone. When I cook, I feel their presence."
   },
-  "avatar": { 
+  "avatar": {
     "elevenlabs_voice_id": "default_nona_voice",
     "did_portrait_url": "https://storage.ruthless.io/portraits/nona.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,19 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["biodiversity_hotspots", "primary_rainforest", "keystone_species"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "biodiversity_hotspots",
+      "primary_rainforest",
+      "keystone_species"
+    ],
     "learning_objectives": [
       "Explain the ecological factors that make the Osa Peninsula and Corcovado National Park a globally recognized hotspot of biodiversity.",
       "Understand the biology and habitat needs of the Baird's Tapir (Tapirus bairdii) as a critical seed disperser and keystone species of primary forests.",
@@ -35,5 +46,25 @@
   "avatar": {
     "elevenlabs_voice_id": "corcovado_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/corcovado.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Art & Urban Design",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["minimalist_architecture", "museum_design", "american_art"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "minimalist_architecture",
+      "museum_design",
+      "american_art"
+    ],
     "learning_objectives": [
       "Understand the architectural principles of Philip Johnson's minimalist design for the Sheldon Museum of Art",
       "Analyze the role of the museum in pioneering modern public gallery and sculpture garden design in the Midwest",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sheldon_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sheldon.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

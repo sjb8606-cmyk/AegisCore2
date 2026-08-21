@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Law",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["military_history", "higher_education_history", "civic_duty"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "military_history",
+      "higher_education_history",
+      "civic_duty"
+    ],
     "learning_objectives": [
       "Understand the tactical significance of the Battle of Princeton (1777) in reversing the fortunes of the Continental Army",
       "Analyze the role of early American colleges in training the political and legal minds of the revolution",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "princeton_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/princeton.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

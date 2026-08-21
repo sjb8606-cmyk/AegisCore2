@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Ecology & Wildlife Biology",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Rainforest Ecology", "Animal Nutrition", "Ecotourism Planning"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Rainforest Ecology",
+      "Animal Nutrition",
+      "Ecotourism Planning"
+    ],
     "learning_objectives": [
       "Understand the geological and biochemical process of 'geophagy'—why macaws and parrots eat sodium-rich clay to neutralize toxins from forest seeds.",
       "Analyze the ecological role of the Tambopata National Reserve in protecting the highest density of bird and butterfly species on earth.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "puerto_maldonado_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/puerto_maldonado.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

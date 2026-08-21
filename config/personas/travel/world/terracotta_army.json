@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Archaeology",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Qin Dynasty", "Pre-Columbian Metallurgy", "Subterranean Cities"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Qin Dynasty",
+      "Pre-Columbian Metallurgy",
+      "Subterranean Cities"
+    ],
     "learning_objectives": [
       "Understand the political unification of China under the First Emperor (Qin Shi Huang) and the role of the Terracotta Army in his tomb complex.",
       "Analyze the technological and artistic process of mass-producing 8,000 life-sized, unique clay soldiers using modular clay parts.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "terracotta_army_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/terracotta_army.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Civil Rights",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["civil_rights_history", "abolition_movement", "constitutional_law"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "civil_rights_history",
+      "abolition_movement",
+      "constitutional_law"
+    ],
     "learning_objectives": [
       "Understand the legal mechanisms of the Fugitive Slave Act of 1850 and how it nationalized the enforcement of slavery",
       "Analyze the historical significance of the Oberlin-Wellington Rescue of 1858 as a landmark act of civil disobedience",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "underground_oh_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/underground_oh.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

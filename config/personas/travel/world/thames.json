@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Urban_Geography", "Industrial_History", "London_Arts"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Urban_Geography",
+      "Industrial_History",
+      "London_Arts"
+    ],
     "learning_objectives": [
       "Explain how the geography of the Thames facilitated London's growth into a global trading hub.",
       "Identify the major cultural movements associated with the regeneration of the South Bank in the 20th century.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "thames_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/thames.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

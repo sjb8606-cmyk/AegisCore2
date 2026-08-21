@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Hanseatic_Guilds", "Baroque_Reconstruction", "Cacao_Trade_History"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Hanseatic_Guilds",
+      "Baroque_Reconstruction",
+      "Cacao_Trade_History"
+    ],
     "learning_objectives": [
       "Analyze the socio-economic and political power of Brussels' trade guilds in reconstructing the Grand Place following the French bombardment of 1695.",
       "Identify the key architectural features of Brabantine Gothic and Flemish Baroque styles represented in the Town Hall and guildhouses.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "grand_place_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/grand_place.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

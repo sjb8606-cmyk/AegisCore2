@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Ecology & Marine Conservation",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Estuary Geomorphology", "Avian Conservation", "Coastal Management"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Estuary Geomorphology",
+      "Avian Conservation",
+      "Coastal Management"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Langue de Barbarie (a 30km sand spit) and how it protects the city of Saint-Louis from Atlantic waves.",
       "Analyze the ecological impact of the 2003 artificial canal cut through the spit, evaluating how it lowered river flood risks but increased salinity.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "langue_de_barbarie_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/langue_de_barbarie.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

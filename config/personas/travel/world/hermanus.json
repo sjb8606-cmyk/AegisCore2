@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["cetacean_biology", "marine_conservation", "overberg_history"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "cetacean_biology",
+      "marine_conservation",
+      "overberg_history"
+    ],
     "learning_objectives": [
       "Explain the reproductive and migratory life cycles of the Southern Right Whale and why they seek the sheltered waters of Walker Bay.",
       "Analyze the historical shift in Hermanus from a 19th-century whaling station to a global center for non-invasive whale watching and conservation.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "hermanus_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/hermanus.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

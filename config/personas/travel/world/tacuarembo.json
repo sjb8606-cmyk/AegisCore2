@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["tango_history", "gaucho_culture", "regional_identity"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "tango_history",
+      "gaucho_culture",
+      "regional_identity"
+    ],
     "learning_objectives": [
       "Evaluate the historical arguments and evidence surrounding the birthplace claim of Carlos Gardel in Tacuarembó (Valle Edén).",
       "Understand the cultural and social significance of the Fiesta de la Patria Gaucha in preserving traditional music, horse skills, and crafts.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tacuarembo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tacuarembo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

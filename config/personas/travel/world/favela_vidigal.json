@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Urban Sociology & Pop Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Informal Settlements", "Urban Geography", "African Diaspora Music"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Informal Settlements",
+      "Urban Geography",
+      "African Diaspora Music"
+    ],
     "learning_objectives": [
       "Understand the historical development of Rio’s 'Favelas', analyzing how they grew as informal, self-built solutions to the housing crisis of the late 19th century.",
       "Analyze the social and political role of 'Funk Carioca' (favela funk) as a powerful vehicle of working-class youth expression and resistance.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "favela_vidigal_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/favela_vidigal.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

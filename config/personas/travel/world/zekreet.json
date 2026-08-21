@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["land_art", "geomorphology", "sculptural_materials"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "land_art",
+      "geomorphology",
+      "sculptural_materials"
+    ],
     "learning_objectives": [
       "Analyze how land art installations, such as Richard Serra's 'East-West/West-East', manipulate human perception of scale and geographical space.",
       "Explain the geological processes of wind abrasion and water erosion that formed the unique mushroom-shaped limestone pillars of Zekreet.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "zekreet_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/zekreet.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

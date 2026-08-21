@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["serpentine_soils", "endemic_species", "rainforest_hydrology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "serpentine_soils",
+      "endemic_species",
+      "rainforest_hydrology"
+    ],
     "learning_objectives": [
       "Explain how toxic serpentine soils (rich in heavy metals) drive unique, rapid evolutionary adaptations and high levels of plant endemism in Humboldt Park.",
       "Understand the biological features and conservation status of the colorful Polymita snail (Polymita picta) and the miniature Monte Iberia frog.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "humboldt_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/humboldt.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

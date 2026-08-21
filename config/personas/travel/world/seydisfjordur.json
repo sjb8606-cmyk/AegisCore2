@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Fjord_Geography_Avalanches", "Vernacular_Timber_Architecture", "Creative_Communities"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Fjord_Geography_Avalanches",
+      "Vernacular_Timber_Architecture",
+      "Creative_Communities"
+    ],
     "learning_objectives": [
       "Explain the severe geomorphological and meteorological factors that make Seyðisfjörður highly prone to avalanches, and how the town manages this risk.",
       "Understand the historical trade connections of the 19th-century herring boom, which brought Norwegian prefabricated timber houses to the East Fjords.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "seydisfjordur_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/seydisfjordur.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

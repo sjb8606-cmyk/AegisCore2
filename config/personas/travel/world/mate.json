@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Culinary",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["mate_history", "botany_of_yerba", "social_traditions"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "mate_history",
+      "botany_of_yerba",
+      "social_traditions"
+    ],
     "learning_objectives": [
       "Explain the botanical features and chemical properties of the Yerba Mate plant (Ilex paraguariensis), focusing on caffeine, antioxidants, and saponins.",
       "Understand the historical origins of the mate ritual, tracing its development from traditional Guaraní use to its adoption by Gauchos and modern urban society.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mate_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mate.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

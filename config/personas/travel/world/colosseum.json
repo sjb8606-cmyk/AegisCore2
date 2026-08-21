@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Roman Archaeology",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Roman Empire History", "Classical Architecture", "Urban Archaeology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Roman Empire History",
+      "Classical Architecture",
+      "Urban Archaeology"
+    ],
     "learning_objectives": [
       "Understand the structural engineering of the Flavian Amphitheatre (Colosseum), focusing on the use of concrete vaults, travertine stone, and crowd-control systems.",
       "Analyze the political utility of the gladiatorial games (panem et circenses) as a systematic tool of Roman imperial social control.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "colosseum_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/colosseum.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

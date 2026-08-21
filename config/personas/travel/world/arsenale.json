@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Maritime History & Contemporary Art",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Industrial Archaeology", "Venetian Navy", "Contemporary Art Curating"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Industrial Archaeology",
+      "Venetian Navy",
+      "Contemporary Art Curating"
+    ],
     "learning_objectives": [
       "Understand the pre-industrial assembly line of the Venetian Arsenale, analyzing how it standardized parts to build a warship in a single day.",
       "Analyze the role of the Corderie (rope factory) in producing the rigging and sails that powered the Venetian merchant and war fleets.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "arsenale_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/arsenale.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

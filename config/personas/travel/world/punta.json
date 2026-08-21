@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["coastal_tourism_economics", "organic_architecture", "coastal_geography"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "coastal_tourism_economics",
+      "organic_architecture",
+      "coastal_geography"
+    ],
     "learning_objectives": [
       "Understand the geological and oceanographic transitions that occur where the River Plate estuary meets the open Atlantic Ocean at Punta del Este.",
       "Analyze the concept of 'organic architecture' in Carlos Páez Vilaró's Casapueblo, studying how its hand-built design mimics mud-dauber nests.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "punta_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/punta.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

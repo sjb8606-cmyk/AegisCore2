@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Culture & Sociology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["urban_sociology", "civil_rights", "music_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "urban_sociology",
+      "civil_rights",
+      "music_history"
+    ],
     "learning_objectives": [
       "Understand the historical significance of the U Street corridor as 'Black Broadway' during the era of segregation",
       "Analyze the socioeconomic and political integration of Adams Morgan through its neighborhood school unification in the 1950s",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "adams_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/adams.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -13,23 +13,47 @@
     "layer_1_response": "Let us bring our focus back to Court Javanese. What phrase, word, or ceremonial structure should we look at next?"
   },
   "routing": {
-    "can_route_to": ["history", "music", "mysticism", "arts", "poetry"],
+    "can_route_to": [
+      "history",
+      "music",
+      "mysticism",
+      "arts",
+      "poetry"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "yogyakarta_sultanate_history_personas"},
-      {"interest": "music", "destination": "gamelan_music_personas"},
-      {"interest": "mysticism", "destination": "javanese_mysticism_personas"},
-      {"interest": "arts", "destination": "wayang_kulit_personas"},
-      {"interest": "art", "destination": "wayang_kulit_personas"},
-      {"interest": "poetry", "destination": "javanese_poetry_personas"}
+      {
+        "interest": "history",
+        "destination": "yogyakarta_sultanate_history_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "gamelan_music_personas"
+      },
+      {
+        "interest": "mysticism",
+        "destination": "javanese_mysticism_personas"
+      },
+      {
+        "interest": "arts",
+        "destination": "wayang_kulit_personas"
+      },
+      {
+        "interest": "art",
+        "destination": "wayang_kulit_personas"
+      },
+      {
+        "interest": "poetry",
+        "destination": "javanese_poetry_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Javanese",
     "teaching_method": "Phonetic voice training coupled with classical court vocabulary, ceremonial registers, and active social conversation",
-    "culture_weight": 0.30,
+    "culture_weight": 0.3,
     "conversation_weight": 0.45,
     "grammar_weight": 0.15,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Provides Court Javanese spelling guidelines, sentence structures, pronoun tables, and basic phonetic rules.",
@@ -40,5 +64,25 @@
   "avatar": {
     "elevenlabs_voice_id": "yogyakarta_court_javanese_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/yogyakarta_court_javanese_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

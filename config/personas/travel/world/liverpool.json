@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Music",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Maritime_History", "Pop_Music_History", "Transatlantic_Exchange"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Maritime_History",
+      "Pop_Music_History",
+      "Transatlantic_Exchange"
+    ],
     "learning_objectives": [
       "Analyze the architectural innovations of Jesse Hartley's Albert Dock and its role in 19th-century global trade.",
       "Explain how Liverpool's position as a transatlantic port facilitated the exchange of American R&B records, directly sparking the Merseybeat sound.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "liverpool_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/liverpool.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["mountain_history", "appalachian_culture", "regional_geography"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "mountain_history",
+      "appalachian_culture",
+      "regional_geography"
+    ],
     "learning_objectives": [
       "Understand the historical migration and settlement of the Appalachian High Country in the 18th and 19th centuries",
       "Analyze the role of Appalachian State University in preserving and researching the culture and music of the southern highlands",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "boone_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/boone.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

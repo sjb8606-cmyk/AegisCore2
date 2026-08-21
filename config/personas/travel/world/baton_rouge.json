@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Governance",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["political_science", "populism", "modern_architecture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "political_science",
+      "populism",
+      "modern_architecture"
+    ],
     "learning_objectives": [
       "Understand the populist political career and legacy of Louisiana Governor and Senator Huey P. Long",
       "Analyze the unique Art Deco design of the Louisiana State Capitol, the tallest state capitol in the US",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "baton_rouge_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/baton_rouge.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

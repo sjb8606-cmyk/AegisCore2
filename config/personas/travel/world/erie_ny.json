@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Education",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["chautauqua_movement", "adult_education", "cultural_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "chautauqua_movement",
+      "adult_education",
+      "cultural_history"
+    ],
     "learning_objectives": [
       "Understand the historical impact of the Chautauqua Movement in democratic adult education in America",
       "Analyze the architectural design of the Chautauqua Institution as a planned, utopian educational village",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "erie_ny_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/erie_ny.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

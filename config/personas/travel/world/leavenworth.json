@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["urban_redevelopment", "german_heritage", "recreational_economics"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "urban_redevelopment",
+      "german_heritage",
+      "recreational_economics"
+    ],
     "learning_objectives": [
       "Understand the economic crisis of Leavenworth caused by the relocation of the railroad and the decline of logging",
       "Analyze the strategic 'Project LIFE' initiative of the 1960s that redesigned the city's architecture to mimic a Bavarian village",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "leavenworth_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/leavenworth.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

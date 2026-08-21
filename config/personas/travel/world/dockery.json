@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Music",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["industrial_agriculture", "blues_origins", "reconstruction_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "industrial_agriculture",
+      "blues_origins",
+      "reconstruction_history"
+    ],
     "learning_objectives": [
       "Understand the historical role of Dockery Farms as the primary incubator for the early Delta blues",
       "Analyze the socioeconomic structure of the post-Reconstruction cotton plantation and the sharecrop system",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "dockery_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/dockery.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

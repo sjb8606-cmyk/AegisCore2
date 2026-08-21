@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Maritime History & Ecology",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["maritime_history", "marine_salvage", "coastal_ecology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "maritime_history",
+      "marine_salvage",
+      "coastal_ecology"
+    ],
     "learning_objectives": [
       "Understand the historical and economic impact of the 1715 Spanish Treasure Fleet disaster on global maritime trade",
       "Analyze the legal and ethical framework of modern underwater marine salvage in Florida",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "treasure_coast_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/treasure_coast.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

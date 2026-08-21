@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Nature",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["island_biogeography", "speleology", "conservation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "island_biogeography",
+      "speleology",
+      "conservation"
+    ],
     "learning_objectives": [
       "Understand the geological formation of Mona Island as a raised limestone platform",
       "Analyze the ecological concept of island endemism, focusing on the Mona Ground Iguana",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mona_island_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mona_island.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

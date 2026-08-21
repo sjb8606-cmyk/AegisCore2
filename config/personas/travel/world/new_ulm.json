@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["frontier_conflict", "german_immigration", "dakota_war"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "frontier_conflict",
+      "german_immigration",
+      "dakota_war"
+    ],
     "learning_objectives": [
       "Understand the social and political causes of the U.S.-Dakota War of 1862 in southern Minnesota",
       "Analyze the Battles of New Ulm as critical defensive actions by German immigrant settlers",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "new_ulm_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/new_ulm.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

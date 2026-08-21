@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Technology",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["mechanical_engineering", "subcultural_sociology", "industrial_design"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "mechanical_engineering",
+      "subcultural_sociology",
+      "industrial_design"
+    ],
     "learning_objectives": [
       "Understand the mechanical engineering and thermodynamics of the four-stroke V-Twin motorcycle engine",
       "Analyze the cultural and sociological development of the motorcycle club subculture in post-WWII America",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "harley_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/harley.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

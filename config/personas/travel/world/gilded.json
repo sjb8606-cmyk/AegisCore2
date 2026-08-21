@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Architecture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["gilded_age_economics", "architecture", "social_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "gilded_age_economics",
+      "architecture",
+      "social_history"
+    ],
     "learning_objectives": [
       "Understand the economic conditions (monopolies and lack of income tax) that created the extreme wealth of the Gilded Age",
       "Analyze the Beaux-Arts and Renaissance Revival architectural styles of the Newport Mansions",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "gilded_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/gilded.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

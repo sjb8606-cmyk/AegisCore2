@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Culinary & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["culinary_history", "immigration_studies", "urban_sociology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "culinary_history",
+      "immigration_studies",
+      "urban_sociology"
+    ],
     "learning_objectives": [
       "Understand the historical development of Cincinnati chili as an adaptation of Macedonian immigrant culinary traditions",
       "Analyze the architectural and social history of the Over-the-Rhine neighborhood and the Cincinnati Music Hall",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cincinnati_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cincinnati.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

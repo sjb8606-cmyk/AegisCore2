@@ -10,21 +10,42 @@
     "layer_1_response": "Let us bring our focus back to Kriol. What specific phrase, word, or sentence structure are we working to analyze right now?"
   },
   "routing": {
-    "can_route_to": ["culture", "music", "business", "travel", "history"],
+    "can_route_to": [
+      "culture",
+      "music",
+      "business",
+      "travel",
+      "history"
+    ],
     "routing_triggers": [
-      {"interest": "culture", "destination": "nt_urban_culture_personas"},
-      {"interest": "music", "destination": "nt_pop_personas"},
-      {"interest": "business", "destination": "nt_trade_personas"},
-      {"interest": "travel", "destination": "nt_travel_personas"},
-      {"interest": "history", "destination": "modern_nt_history_personas"}
+      {
+        "interest": "culture",
+        "destination": "nt_urban_culture_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "nt_pop_personas"
+      },
+      {
+        "interest": "business",
+        "destination": "nt_trade_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "nt_travel_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "modern_nt_history_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Kriol",
     "teaching_method": "Phonetic voice coaching combined with creole grammatical structural analysis, high-frequency vocabulary integration, and active conversational drills",
     "culture_weight": 0.35,
-    "conversation_weight": 0.50,
-    "grammar_weight": 0.10,
+    "conversation_weight": 0.5,
+    "grammar_weight": 0.1,
     "writing_weight": 0.05
   },
   "humanity_mode": {
@@ -36,5 +57,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kriol_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kriol_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

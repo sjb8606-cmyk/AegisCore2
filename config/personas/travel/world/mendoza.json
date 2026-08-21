@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Culinary",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Andean_Irrigation", "Malbec_Grape_Science", "Mountain_Tectonics_Aconcagua"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Andean_Irrigation",
+      "Malbec_Grape_Science",
+      "Mountain_Tectonics_Aconcagua"
+    ],
     "learning_objectives": [
       "Understand the historical role of the pre-Columbian Huarpe people in designing the irrigation canal system that made viticulture possible in arid Mendoza.",
       "Analyze the biological and biochemical factors, particularly the high UV radiation and extreme day-night temperature swings, that define the Malbec grape.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mendoza_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mendoza.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

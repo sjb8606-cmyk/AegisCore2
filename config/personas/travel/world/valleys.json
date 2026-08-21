@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Industrial_Wales", "Choral_Traditions", "Labor_Movements"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Industrial_Wales",
+      "Choral_Traditions",
+      "Labor_Movements"
+    ],
     "learning_objectives": [
       "Analyze how the coal mining industry shaped the social, political, and physical landscape of the South Wales Valleys.",
       "Understand the historical origins of Welsh male voice choirs as centers of community solidarity and chapel culture.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "valleys_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/valleys.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

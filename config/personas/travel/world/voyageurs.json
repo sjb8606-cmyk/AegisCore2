@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Maritime Geography",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["fur_trade_history", "glacial_lakes", "border_studies"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "fur_trade_history",
+      "glacial_lakes",
+      "border_studies"
+    ],
     "learning_objectives": [
       "Understand the economic and political significance of the voyageurs in the 18th-century North American fur trade",
       "Analyze the geomorphology of the border lakes region formed by the southern edge of the Canadian Shield",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "voyageurs_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/voyageurs.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

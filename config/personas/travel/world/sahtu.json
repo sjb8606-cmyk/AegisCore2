@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["nuclear_history", "environmental_justice", "indigenous_studies"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "nuclear_history",
+      "environmental_justice",
+      "indigenous_studies"
+    ],
     "learning_objectives": [
       "Understand the historical role of the Port Radium mine in supplying uranium for the Manhattan Project",
       "Analyze the environmental and health impacts on the Sahtu Dene men who were hired to transport radioactive ore without protection",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sahtu_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sahtu.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

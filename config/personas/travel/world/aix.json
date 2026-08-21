@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Art & Local Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Post-Impressionism", "Modern Art Theory", "French Urban History"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Post-Impressionism",
+      "Modern Art Theory",
+      "French Urban History"
+    ],
     "learning_objectives": [
       "Understand Paul Cézanne's artistic philosophy in reducing nature to the cylinder, the sphere, and the cone, laying the groundwork for Cubism.",
       "Analyze the architectural design and social structure of the 17th-century Mazarin district in Aix-en-Provence.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "aix_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/aix.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

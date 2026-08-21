@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Culinary",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["culinary_heritage", "food_syncretism", "marine_fauna"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "culinary_heritage",
+      "food_syncretism",
+      "marine_fauna"
+    ],
     "learning_objectives": [
       "Understand the historical roots of the Barbadian national dish (Cou-Cou), tracing its lineage from West African cornmeal and fufu dishes brought during colonization.",
       "Identify the unique anatomical and behavioral features of the Flying Fish (Hirundichthys affinis) that allow it to leap and glide above the water.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "flying_fish_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/flying_fish.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

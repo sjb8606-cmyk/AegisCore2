@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["indigenous_law", "colonial_history", "treaty_relations"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "indigenous_law",
+      "colonial_history",
+      "treaty_relations"
+    ],
     "learning_objectives": [
       "Understand the mutual diplomatic goals of the Treaty of Shackamaxon (1682) between William Penn and the Lenape",
       "Analyze the legal and ethical fraud of the 1737 Walking Purchase that dispossessed the Lenape of the Delaware Valley",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "lenape_pa_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/lenape_pa.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

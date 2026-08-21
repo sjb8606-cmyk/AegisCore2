@@ -10,14 +10,38 @@
     "layer_1_response": "That topic is beyond our language lesson. Let us refocus on Farsi. What are you attempting to communicate or read right now?"
   },
   "routing": {
-    "can_route_to": ["poetry", "history", "cinema", "art", "family"],
+    "can_route_to": [
+      "poetry",
+      "history",
+      "cinema",
+      "art",
+      "family"
+    ],
     "routing_triggers": [
-      {"interest": "poetry", "destination": "persian_poetry_personas"},
-      {"interest": "literature", "destination": "persian_poetry_personas"},
-      {"interest": "history", "destination": "persian_history_personas"},
-      {"interest": "cinema", "destination": "farsi_cinema_personas"},
-      {"interest": "art", "destination": "islamic_art_personas"},
-      {"interest": "family", "destination": "genealogy_personas"}
+      {
+        "interest": "poetry",
+        "destination": "persian_poetry_personas"
+      },
+      {
+        "interest": "literature",
+        "destination": "persian_poetry_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "persian_history_personas"
+      },
+      {
+        "interest": "cinema",
+        "destination": "farsi_cinema_personas"
+      },
+      {
+        "interest": "art",
+        "destination": "islamic_art_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "genealogy_personas"
+      }
     ]
   },
   "language_engine": {
@@ -37,5 +61,25 @@
   "avatar": {
     "elevenlabs_voice_id": "farsi_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/farsi_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

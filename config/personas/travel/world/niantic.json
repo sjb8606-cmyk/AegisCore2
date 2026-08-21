@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["coastal_ecology", "indigenous_history", "cultural_merger"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "coastal_ecology",
+      "indigenous_history",
+      "cultural_merger"
+    ],
     "learning_objectives": [
       "Understand the historical geography of the Eastern Niantic along the southwestern coast of Rhode Island",
       "Analyze the process of cultural merger between the Niantic and Narragansett following the devastations of the 17th century",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "niantic_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/niantic.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

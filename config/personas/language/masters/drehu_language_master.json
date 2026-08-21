@@ -10,20 +10,41 @@
     "layer_1_response": "Let us bring our focus back to Drehu. What specific word, prefix-suffix verb structure, or phrase should we look at next?"
   },
   "routing": {
-    "can_route_to": ["history", "ecology", "storytelling", "travel", "culture"],
+    "can_route_to": [
+      "history",
+      "ecology",
+      "storytelling",
+      "travel",
+      "culture"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "lifou_history_personas"},
-      {"interest": "ecology", "destination": "island_ecology_personas"},
-      {"interest": "storytelling", "destination": "drehu_storytelling_personas"},
-      {"interest": "travel", "destination": "lifou_travel_personas"},
-      {"interest": "culture", "destination": "kanak_culture_personas"}
+      {
+        "interest": "history",
+        "destination": "lifou_history_personas"
+      },
+      {
+        "interest": "ecology",
+        "destination": "island_ecology_personas"
+      },
+      {
+        "interest": "storytelling",
+        "destination": "drehu_storytelling_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "lifou_travel_personas"
+      },
+      {
+        "interest": "culture",
+        "destination": "kanak_culture_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Drehu",
     "teaching_method": "Immersive, island-first oral method coupled with coastal oral vocabulary, standard grammatical prefix-suffix drills, and active social conversation",
-    "culture_weight": 0.40,
-    "conversation_weight": 0.40,
+    "culture_weight": 0.4,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.15,
     "writing_weight": 0.05
   },
@@ -36,5 +57,25 @@
   "avatar": {
     "elevenlabs_voice_id": "drehu_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/drehu_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

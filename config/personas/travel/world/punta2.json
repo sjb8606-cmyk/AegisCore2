@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["surf_physics", "coastal_gentrification", "artisanal_fisheries"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "surf_physics",
+      "coastal_gentrification",
+      "artisanal_fisheries"
+    ],
     "learning_objectives": [
       "Explain the physical principles of wave mechanics and wind refraction that generate the powerful surf swells along the eastern Uruguayan coast.",
       "Understand the historical development of Punta del Diablo from a 1940s shark-fishing community to a major alternative tourism hub.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "punta2_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/punta2.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

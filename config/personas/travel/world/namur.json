@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Vauban_Engineering", "European_Sieges_History", "Sambre_Meuse_Confluence"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Vauban_Engineering",
+      "European_Sieges_History",
+      "Sambre_Meuse_Confluence"
+    ],
     "learning_objectives": [
       "Analyze the military and architectural evolution of the Namur Citadel as a prime example of a strategic, multi-layered European fortress.",
       "Understand the strategic significance of the Sambre-Meuse confluence in controlling the trade and military invasion routes of Northern Europe.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "namur_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/namur.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

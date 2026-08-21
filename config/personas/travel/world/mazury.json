@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Glacial_Geomorphology_Lakes", "Inland_Sailing_Navigation", "WWII_Military_Headquarters"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Glacial_Geomorphology_Lakes",
+      "Inland_Sailing_Navigation",
+      "WWII_Military_Headquarters"
+    ],
     "learning_objectives": [
       "Explain the geological processes of Pleistocene glaciation (terminal moraines and outwash plains) that created the extensive Masurian Lake District.",
       "Understand the historical transition of the Masurian region from the medieval Teutonic Order and East Prussia to post-WWII Poland.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mazury_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mazury.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

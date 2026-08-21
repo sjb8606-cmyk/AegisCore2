@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Urban Geography",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["urban_geography", "domestic_slave_trade", "colonial_ports"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "urban_geography",
+      "domestic_slave_trade",
+      "colonial_ports"
+    ],
     "learning_objectives": [
       "Understand the historical role of Alexandria as a major tobacco and grain port in the colonial and federal eras",
       "Analyze the significance of Alexandria as the headquarters for Franklin & Armfield, the nation's largest domestic slave-trading firm",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "alexandria_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/alexandria.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

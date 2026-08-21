@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Archaeology",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Classic Maya History", "Epigraphy & Glyphs", "Rainforest Architecture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Classic Maya History",
+      "Epigraphy & Glyphs",
+      "Rainforest Architecture"
+    ],
     "learning_objectives": [
       "Understand the political and dynasty history of Palenque (B'aakal), focusing on how Pakal the Great consolidated power through architecture.",
       "Analyze the design and engineering of the Temple of the Inscriptions, particularly the internal corbelled staircase leading to the royal crypt.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "palenque_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/palenque.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

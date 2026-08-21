@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Alpine Geomorphology & Botany",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Alpine Geomorphology", "Eucalyptus Chemistry", "Gondwanan Botany"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Alpine Geomorphology",
+      "Eucalyptus Chemistry",
+      "Gondwanan Botany"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Blue Mountains (sandstone plateau) and how water erosion carved its massive canyons and valleys.",
       "Analyze the organic chemistry of Eucalyptus trees, focusing on how volatile terpene oils create the blue light-refraction (Tyndall effect).",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "blue_mountains_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/blue_mountains.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

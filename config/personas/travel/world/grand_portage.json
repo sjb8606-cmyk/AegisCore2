@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["fur_trade", "indigenous_alliances", "maritime_economics"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "fur_trade",
+      "indigenous_alliances",
+      "maritime_economics"
+    ],
     "learning_objectives": [
       "Understand the economic significance of the Grand Portage trail in bypassing the rapids of the Pigeon River",
       "Analyze the role of the North West Company in established a global fur-trading network",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "grand_portage_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/grand_portage.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

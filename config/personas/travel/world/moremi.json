@@ -18,8 +18,19 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["indigenous_conservation", "savanna_ecotones", "canid_ecology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "indigenous_conservation",
+      "savanna_ecotones",
+      "canid_ecology"
+    ],
     "learning_objectives": [
       "Understand the historical significance of the Moremi Game Reserve's establishment in 1963 by the Batawana tribe as a model for indigenous conservation.",
       "Analyze the complex, cooperative social structures and hunting strategies of the endangered African Wild Dog (Lycaon pictus).",
@@ -35,5 +46,25 @@
   "avatar": {
     "elevenlabs_voice_id": "moremi_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/moremi.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

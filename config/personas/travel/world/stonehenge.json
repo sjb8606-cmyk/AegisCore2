@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Philosophy",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Neolithic_Archaeology", "Archaeoastronomy", "Ancient_Landscapes"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Neolithic_Archaeology",
+      "Archaeoastronomy",
+      "Ancient_Landscapes"
+    ],
     "learning_objectives": [
       "Identify the key construction phases of Stonehenge and the difference between sarsen stones and Welsh bluestones.",
       "Explain how Stonehenge aligns with the summer and winter solstices and what this reveals about Neolithic astronomical knowledge.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "stonehenge_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/stonehenge.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

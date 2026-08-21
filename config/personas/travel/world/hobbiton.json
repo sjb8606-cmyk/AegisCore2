@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["set_design", "landscape_transformation", "literary_adaptation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "set_design",
+      "landscape_transformation",
+      "literary_adaptation"
+    ],
     "learning_objectives": [
       "Explain the process of transforming a working sheep farm into a highly detailed, permanent film set using organic and synthetic materials.",
       "Analyze the literary themes of agrarianism and anti-industrialization in J.R.R. Tolkien's works and how they are visually represented in Hobbiton's design.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "hobbiton_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/hobbiton.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Conservation & Adventure",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["environmental_law", "watershed_ecology", "indigenous_activism"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "environmental_law",
+      "watershed_ecology",
+      "indigenous_activism"
+    ],
     "learning_objectives": [
       "Understand the ecological value of maintaining a completely intact, unfragmented watershed",
       "Analyze the legal and political battles led by First Nations to protect the Peel Watershed from resource extraction",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "peel_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/peel.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

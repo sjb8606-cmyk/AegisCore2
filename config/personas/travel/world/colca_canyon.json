@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Alpine Geomorphology & Local Culture",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Alpine Geomorphology", "Andean Sociology", "Avian Biology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Alpine Geomorphology",
+      "Andean Sociology",
+      "Avian Biology"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Colca Canyon, analyzing how tectonic uplift and river erosion carved a 3,270-meter gorge.",
       "Analyze the adaptation of the Andean Condor (Vultur gryphus) to survival in high-altitude thermal updrafts.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "colca_canyon_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/colca_canyon.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Archaeology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["mound_builders", "archaeology", "ancient_astronomy"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "mound_builders",
+      "archaeology",
+      "ancient_astronomy"
+    ],
     "learning_objectives": [
       "Understand the geological formation and archaeological significance of the Hopewell culture earthworks",
       "Analyze the unique geometric design (octagons, circles, squares) of the massive earthwork enclosures",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "hopewell_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/hopewell.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

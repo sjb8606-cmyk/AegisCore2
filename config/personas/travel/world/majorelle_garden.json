@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Art History & Landscape Design",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["French Orientalism", "Cubist Landscape Design", "History of Fashion"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "French Orientalism",
+      "Cubist Landscape Design",
+      "History of Fashion"
+    ],
     "learning_objectives": [
       "Understand the artistic and architectural philosophy of Jacques Majorelle, focusing on his development of 'Majorelle Blue' (a highly saturated ultramarine-cobalt) and his integration of Cubist architecture.",
       "Analyze the role of Yves Saint Laurent and Pierre Bergé in acquiring and preserving the Majorelle Garden, saving it from urban real estate development in 1980.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "majorelle_garden_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/majorelle_garden.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

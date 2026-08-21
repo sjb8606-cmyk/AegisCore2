@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["marine_reefs", "island_hospitality", "coastal_protection_fiji"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "marine_reefs",
+      "island_hospitality",
+      "coastal_protection_fiji"
+    ],
     "learning_objectives": [
       "Understand the ecological function of barrier coral reefs in protecting coastal villages from wave erosion and sustaining local marine biodiversity.",
       "Analyze the structural geology of terraced limestone rock pools as natural coastal barriers.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "keleti_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/keleti.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

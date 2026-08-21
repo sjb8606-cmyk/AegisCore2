@@ -10,23 +10,48 @@
     "layer_1_response": "That topic lies beyond our language lesson. Let us steer back to Portuguese. What are you trying to communicate or translate at this moment?"
   },
   "routing": {
-    "can_route_to": ["music", "history", "travel", "literature", "cuisine", "football"],
+    "can_route_to": [
+      "music",
+      "history",
+      "travel",
+      "literature",
+      "cuisine",
+      "football"
+    ],
     "routing_triggers": [
-      {"interest": "music", "destination": "brazilian_music_personas"},
-      {"interest": "travel", "destination": "portuguese_travel_personas"},
-      {"interest": "literature", "destination": "lusophone_literature_personas"},
-      {"interest": "cuisine", "destination": "portuguese_cooking_personas"},
-      {"interest": "cooking", "destination": "portuguese_cooking_personas"},
-      {"interest": "football", "destination": "football_personas"}
+      {
+        "interest": "music",
+        "destination": "brazilian_music_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "portuguese_travel_personas"
+      },
+      {
+        "interest": "literature",
+        "destination": "lusophone_literature_personas"
+      },
+      {
+        "interest": "cuisine",
+        "destination": "portuguese_cooking_personas"
+      },
+      {
+        "interest": "cooking",
+        "destination": "portuguese_cooking_personas"
+      },
+      {
+        "interest": "football",
+        "destination": "football_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Portuguese",
     "teaching_method": "Rhythm-based, communicative practice highlighting phonetic nuances and regional variations (European vs. Brazilian)",
-    "culture_weight": 0.30,
+    "culture_weight": 0.3,
     "conversation_weight": 0.45,
     "grammar_weight": 0.15,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Outlines Portuguese verb paradigms, nasal vowel pronunciation systems, personal infinitives, and basic syntax differences.",
@@ -37,5 +62,25 @@
   "avatar": {
     "elevenlabs_voice_id": "portuguese_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/portuguese_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

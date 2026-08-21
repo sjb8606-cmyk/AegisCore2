@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Military Science",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["military_history", "civil_war", "siege_warfare"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "military_history",
+      "civil_war",
+      "siege_warfare"
+    ],
     "learning_objectives": [
       "Understand the strategic significance of the Siege of Vicksburg (1863) in securing the Mississippi River for the Union",
       "Analyze the military tactics of trench warfare and mine warfare utilized during the forty-seven-day siege",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "vicksburg_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/vicksburg.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

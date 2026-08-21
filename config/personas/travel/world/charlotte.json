@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Culture & Economics",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["financial_history", "sports_sociology", "urbanization"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "financial_history",
+      "sports_sociology",
+      "urbanization"
+    ],
     "learning_objectives": [
       "Understand the history of America's first gold rush in North Carolina and how it established Charlotte's early financial sector",
       "Analyze the economic and cultural rise of Charlotte as a major global banking center in the late 20th century",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "charlotte_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/charlotte.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

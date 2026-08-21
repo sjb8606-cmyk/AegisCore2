@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Civil Rights",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["civil_rights_movement", "nonviolent_protest", "american_history"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "civil_rights_movement",
+      "nonviolent_protest",
+      "american_history"
+    ],
     "learning_objectives": [
       "Understand the origins, execution, and nationwide impact of the 1960 Greensboro Sit-Ins",
       "Analyze the philosophy and tactics of nonviolent direct action pioneered by the civil rights movement",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "greensboro_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/greensboro.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

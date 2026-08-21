@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Nature & Film History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["film_studies", "conservation_ecology", "cultural_nostalgia"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "film_studies",
+      "conservation_ecology",
+      "cultural_nostalgia"
+    ],
     "learning_objectives": [
       "Understand how film representation (specifically 'On Golden Pond') shapes public perception and conservation of a natural landscape",
       "Analyze the strict, community-driven conservation regulations that preserve Squam's water quality and loon habitats",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "squam_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/squam.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

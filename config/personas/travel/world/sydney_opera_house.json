@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Architecture & Performing Arts",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Modernist Architecture", "Spherical Geometry", "Acoustic Design"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Modernist Architecture",
+      "Spherical Geometry",
+      "Acoustic Design"
+    ],
     "learning_objectives": [
       "Understand the structural engineering and deconstructivist architecture of the Sydney Opera House, focusing on Utzon’s spherical geometry solution.",
       "Analyze the acoustics of the Concert Hall, evaluating how the wood-paneled walls and suspended reflectors project orchestral sound.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sydney_opera_house_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sydney_opera_house.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

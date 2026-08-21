@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["world_war_ii", "survival_history", "sociology_of_warfare"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "world_war_ii",
+      "survival_history",
+      "sociology_of_warfare"
+    ],
     "learning_objectives": [
       "Understand the history and psychological impact of Japanese 'holdout' soldiers in the Pacific after WWII",
       "Analyze the survival techniques and engineering of Shoichi Yokoi's underground cave shelter in Talofofo",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "talofofo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/talofofo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

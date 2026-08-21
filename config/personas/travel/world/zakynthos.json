@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Ecology & Maritime History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Marine Conservation", "Coastal Geomorphology", "Maritime Law"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Marine Conservation",
+      "Coastal Geomorphology",
+      "Maritime Law"
+    ],
     "learning_objectives": [
       "Understand the geological formation of Zakynthos's white limestone cliffs and how maritime erosion creates dramatic pocket beaches (like Navagio).",
       "Analyze the ecology and nesting habits of the endangered Loggerhead Sea Turtle (Caretta caretta) in the Gulf of Laganas.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "zakynthos_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/zakynthos.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

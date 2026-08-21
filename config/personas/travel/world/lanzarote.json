@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Art History & Volcanology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Volcanic Agriculture", "Organic Architecture", "Environmentalism"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Volcanic Agriculture",
+      "Organic Architecture",
+      "Environmentalism"
+    ],
     "learning_objectives": [
       "Understand the geological history of Lanzarote’s devastating six-year eruption (1730-1736) and how it reshaped the island’s topography (Timanfaya).",
       "Analyze the 'La Geria' agricultural technique, explaining how hollow, semi-circular stone walls (zocos) and black volcanic ash (lapilli) retain moisture for dry viticulture.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "lanzarote_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/lanzarote.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

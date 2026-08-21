@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Urban Design & Architecture",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["architectural_history", "structural_engineering", "urban_geography"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "architectural_history",
+      "structural_engineering",
+      "urban_geography"
+    ],
     "learning_objectives": [
       "Understand the structural innovations (like steel-frame construction) that birthed the first modern skyscrapers in Chicago",
       "Analyze the civil engineering and public health motivations behind reversing the flow of the Chicago River in 1900",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "magnificent_mile_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/magnificent_mile.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Nature & Marine Biology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Marine Conservation", "Island Biogeography", "History of Slavery"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Marine Conservation",
+      "Island Biogeography",
+      "History of Slavery"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Tarutao Archipelago, focusing on its limestone and sandstone geomorphology.",
       "Analyze the history of Tarutao as a high-security penal colony during WWII and its subsequent transition to a global pirate sanctuary.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "satun_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/satun.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

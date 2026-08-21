@@ -18,8 +18,19 @@
   },
   "education": {
     "domain": "Science",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["aerodynamics", "supersonic_flight", "aviation_history"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "aerodynamics",
+      "supersonic_flight",
+      "aviation_history"
+    ],
     "learning_objectives": [
       "Explain the physical principles of supersonic flight, detailing how aircraft bypass the sound barrier and manage atmospheric friction heat.",
       "Understand the aerodynamic design of the Concorde's delta wings and its unique nose-droop mechanism for take-off and landing.",
@@ -35,5 +46,25 @@
   "avatar": {
     "elevenlabs_voice_id": "concorde_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/concorde.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

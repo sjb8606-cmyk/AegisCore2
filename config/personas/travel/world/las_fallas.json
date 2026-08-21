@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Culture & Festivals",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Festival Anthropology", "Acoustics & Pyrotechnics", "Guild History"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Festival Anthropology",
+      "Acoustics & Pyrotechnics",
+      "Guild History"
+    ],
     "learning_objectives": [
       "Understand the historical origins of Las Fallas as the spring clearing and burning of wooden scraps by medieval carpenter guilds (Gremi de Fusters).",
       "Analyze the acoustic physics of the 'Mascletà', explaining how firecrackers are sequenced by weight and interval to create a musical, rhythmic percussion of noise.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "las_fallas_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/las_fallas.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

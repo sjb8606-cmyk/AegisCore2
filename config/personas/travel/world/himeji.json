@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Military Architecture & History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Feudal Military Strategy", "Japanese Architecture", "Historic Preservation"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Feudal Military Strategy",
+      "Japanese Architecture",
+      "Historic Preservation"
+    ],
     "learning_objectives": [
       "Understand the defensive innovations of Himeji Castle, including its labyrinthine paths and loophole placements.",
       "Analyze the use of white plaster (shiro-shikkui) as both an aesthetic choice and a fireproofing technology.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "himeji_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/himeji.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

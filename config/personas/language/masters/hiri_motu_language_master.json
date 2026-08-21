@@ -10,23 +10,47 @@
     "layer_1_response": "Let us bring our focus back to Hiri Motu. What specific phrase, spelling, or pronunciation structure are we working to analyze right now?"
   },
   "routing": {
-    "can_route_to": ["history", "travel", "linguistics", "heritage", "culture"],
+    "can_route_to": [
+      "history",
+      "travel",
+      "linguistics",
+      "heritage",
+      "culture"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "hiri_voyage_history_personas"},
-      {"interest": "travel", "destination": "port_moresby_travel_personas"},
-      {"interest": "linguistics", "destination": "creole_linguistics_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"},
-      {"interest": "family", "destination": "family_heritage_personas"},
-      {"interest": "culture", "destination": "hiri_culture_personas"}
+      {
+        "interest": "history",
+        "destination": "hiri_voyage_history_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "port_moresby_travel_personas"
+      },
+      {
+        "interest": "linguistics",
+        "destination": "creole_linguistics_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "culture",
+        "destination": "hiri_culture_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Hiri Motu",
     "teaching_method": "Phonetic voice training coupled with standard grammatical prefix-suffix drills, local idioms, and active social conversation",
     "culture_weight": 0.35,
-    "conversation_weight": 0.40,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.15,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Provides Hiri Motu sound charts, basic sentence structures, pronoun tables, and grammatical distinctions.",
@@ -37,5 +61,25 @@
   "avatar": {
     "elevenlabs_voice_id": "hiri_motu_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/hiri_motu_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

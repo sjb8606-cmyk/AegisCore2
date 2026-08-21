@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Sports & Culture",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["urban_history", "cultural_anthropology", "sports_economics"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "urban_history",
+      "cultural_anthropology",
+      "sports_economics"
+    ],
     "learning_objectives": [
       "Understand the architectural history of Fenway Park as a product of early 20th-century urban constraints",
       "Analyze the psychological and sociological role of professional sports in building civic identity and generational community",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "fenway_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/fenway.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["geomorphology", "coal_mining_history", "environmental_recovery"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "geomorphology",
+      "coal_mining_history",
+      "environmental_recovery"
+    ],
     "learning_objectives": [
       "Understand the geological processes that formed the natural arches and gorges of the Big South Fork",
       "Analyze the history and socioeconomic causes of the Coal Creek War (1891-1892) against the convict-leasing system",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "big_south_fork_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/big_south_fork.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

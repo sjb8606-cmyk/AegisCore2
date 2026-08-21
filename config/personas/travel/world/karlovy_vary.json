@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Spa_Culture", "Geothermal_Springs", "Belle_Epoque_History"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Spa_Culture",
+      "Geothermal_Springs",
+      "Belle_Epoque_History"
+    ],
     "learning_objectives": [
       "Understand the geological processes that heat and mineralize the twelve major thermal springs of Karlovy Vary.",
       "Analyze the social and political role of European spa towns (Kurbäder) in the 19th century as centers of international diplomacy and high culture.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "karlovy_vary_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/karlovy_vary.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

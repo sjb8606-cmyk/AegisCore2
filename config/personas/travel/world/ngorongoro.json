@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["caldera_formation", "volcanic_soils", "ecosystem_concentration"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "caldera_formation",
+      "volcanic_soils",
+      "ecosystem_concentration"
+    ],
     "learning_objectives": [
       "Explain the geological and tectonic processes of volcanic collapse that formed the giant caldera of Ngorongoro.",
       "Understand why the mineral-rich volcanic soils of the crater floor support extremely high densities of large herbivores and predators year-round.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ngorongoro_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ngorongoro.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

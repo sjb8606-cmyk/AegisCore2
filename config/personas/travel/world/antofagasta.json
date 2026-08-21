@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Technology",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["open_pit_mining", "industrial_economics", "radio_astronomy"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "open_pit_mining",
+      "industrial_economics",
+      "radio_astronomy"
+    ],
     "learning_objectives": [
       "Explain the geological and mineralogical processes that created the massive copper deposits of the Atacama Desert in northern Chile.",
       "Understand the technology and scientific objectives of the major international astronomical observatories operating in the Antofagasta region.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "antofagasta_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/antofagasta.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

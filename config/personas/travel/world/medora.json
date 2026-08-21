@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Culture & Heritage",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["western_history", "cowboy_culture", "theatrical_preservation"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "western_history",
+      "cowboy_culture",
+      "theatrical_preservation"
+    ],
     "learning_objectives": [
       "Understand the historical founding of Medora by the Marquis de Mores and its role in the 19th-century cattle boom",
       "Analyze the cultural construction and popularity of the 'Medora Musical' as a tribute to Theodore Roosevelt's western legacy",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "medora_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/medora.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

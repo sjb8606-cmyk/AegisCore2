@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["coastal_morphology", "marine_turtle_conservation", "coastal_engineering"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "coastal_morphology",
+      "marine_turtle_conservation",
+      "coastal_engineering"
+    ],
     "learning_objectives": [
       "Explain the ecological and coastal engineering factors that maintain the golden sands of the Placencia Peninsula.",
       "Understand the nesting habits and conservation status of the Hawksbill Sea Turtle (Eretmochelys imbricata) along the southern beaches.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "placencia_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/placencia.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

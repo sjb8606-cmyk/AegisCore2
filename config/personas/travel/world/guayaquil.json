@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["wars_of_independence", "urban_renewal", "estuary_geography"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "wars_of_independence",
+      "urban_renewal",
+      "estuary_geography"
+    ],
     "learning_objectives": [
       "Understand the historical significance of the 1822 Guayaquil Conference between Simón Bolívar and José de San Martín in deciding the future of South American independence.",
       "Analyze the architectural design and structural preservation of Las Peñas, explaining why wooden houses were designed to survive the tropical estuary climate.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "guayaquil_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/guayaquil.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

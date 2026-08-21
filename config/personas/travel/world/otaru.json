@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Industrial History & Handcrafts",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Overfishing History", "Industrial Transitions", "Glassblowing Technology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Overfishing History",
+      "Industrial Transitions",
+      "Glassblowing Technology"
+    ],
     "learning_objectives": [
       "Understand the economic boom and environmental collapse of the Hokkaido herring industry in the late 19th and early 20th centuries.",
       "Analyze the civil engineering of the Otaru Canal as a reclaimed water channel built to facilitate manual warehouse unloading.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "otaru_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/otaru.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Literature",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["american_literature", "creative_writing", "political_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "american_literature",
+      "creative_writing",
+      "political_history"
+    ],
     "learning_objectives": [
       "Understand the history and impact of the Iowa Writers' Workshop on 20th-century American literature",
       "Analyze the political and geographic reasons for moving the state capital from Iowa City to Des Moines in 1857",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "iowa_city_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/iowa_city.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

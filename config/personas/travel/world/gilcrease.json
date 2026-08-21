@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Art & History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["western_art", "gilded_age", "material_culture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "western_art",
+      "gilded_age",
+      "material_culture"
+    ],
     "learning_objectives": [
       "Understand the artistic styles and nationalistic goals of the painters of the American West (Moran, Remington)",
       "Analyze the role of Thomas Gilcrease, of Creek ancestry, in collecting and preserving Indigenous and Western art",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "gilcrease_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/gilcrease.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

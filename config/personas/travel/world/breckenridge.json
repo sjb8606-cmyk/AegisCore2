@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Recreation",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["mining_history", "recreational_history", "regional_geography"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "mining_history",
+      "recreational_history",
+      "regional_geography"
+    ],
     "learning_objectives": [
       "Understand the history and scale of the 1859 Breckenridge Gold Rush during the Colorado Pike's Peak gold rush",
       "Analyze the environmental impact of hydraulic and dredge mining on the Blue River valley",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "breckenridge_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/breckenridge.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

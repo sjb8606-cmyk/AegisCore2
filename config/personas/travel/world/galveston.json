@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["coastal_erosion", "disaster_history", "urban_engineering"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "coastal_erosion",
+      "disaster_history",
+      "urban_engineering"
+    ],
     "learning_objectives": [
       "Understand the catastrophic impact and meteorology of the Great Galveston Hurricane of 1900",
       "Analyze the massive civil engineering projects (seawall construction and city grade raising) undertaken after the storm",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "galveston_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/galveston.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

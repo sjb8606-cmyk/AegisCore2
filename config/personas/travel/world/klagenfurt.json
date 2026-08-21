@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Renaissance_Urbanism", "Civic_Mythology", "Canal_Engineering"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Renaissance_Urbanism",
+      "Civic_Mythology",
+      "Canal_Engineering"
+    ],
     "learning_objectives": [
       "Understand the urban planning of Klagenfurt in the 16th century, analyzing why Italian architects were hired to rebuild the city in a uniform Renaissance style.",
       "Analyze the civil engineering and cultural symbolism of the Lindworm Monument (Lindwurmbrunnen) constructed in 1593.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "klagenfurt_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/klagenfurt.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

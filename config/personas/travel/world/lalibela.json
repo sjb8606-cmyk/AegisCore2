@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["zagwe_dynasty", "rock_hewn_architecture", "religious_syncretism_andean_and_african"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "zagwe_dynasty",
+      "rock_hewn_architecture",
+      "religious_syncretism_andean_and_african"
+    ],
     "learning_objectives": [
       "Understand the historical role of the Zagwe Dynasty and King Lalibela in constructing the eleven rock-hewn churches in the 12th century.",
       "Analyze the unique monolithic and semi-monolithic engineering techniques used to carve churches downward into volcanic basalt.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "lalibela_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/lalibela.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

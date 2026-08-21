@@ -10,22 +10,46 @@
     "layer_1_response": "Let us bring our focus back to Adyghe. What specific word, phrase, or pronunciation structure are we practicing right now?"
   },
   "routing": {
-    "can_route_to": ["history", "music", "storytelling", "travel", "heritage"],
+    "can_route_to": [
+      "history",
+      "music",
+      "storytelling",
+      "travel",
+      "heritage"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "circassian_history_personas"},
-      {"interest": "music", "destination": "traditional_songs_personas"},
-      {"interest": "storytelling", "destination": "nart_sagas_personas"},
-      {"interest": "travel", "destination": "maikop_travel_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"},
-      {"interest": "family", "destination": "family_heritage_personas"}
+      {
+        "interest": "history",
+        "destination": "circassian_history_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "traditional_songs_personas"
+      },
+      {
+        "interest": "storytelling",
+        "destination": "nart_sagas_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "maikop_travel_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "family_heritage_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Adyghe",
     "teaching_method": "Immersive, oral-first method coupled with Xabze-based oral vocabulary, phonetic consonant drills, and active social conversation",
     "culture_weight": 0.35,
-    "conversation_weight": 0.40,
-    "grammar_weight": 0.20,
+    "conversation_weight": 0.4,
+    "grammar_weight": 0.2,
     "writing_weight": 0.05
   },
   "humanity_mode": {
@@ -37,5 +61,25 @@
   "avatar": {
     "elevenlabs_voice_id": "adyghe_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/adyghe_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,19 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["social_urbanism", "mass_transit_innovation", "neighborhood_renewal"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "social_urbanism",
+      "mass_transit_innovation",
+      "neighborhood_renewal"
+    ],
     "learning_objectives": [
       "Analyze the core principles of 'Social Urbanism' implemented in Medellín, focusing on how public infrastructure investments prioritize marginalized areas.",
       "Explain the integration of mass-transit systems like the Metrocable and public escalators in overcoming extreme vertical geography and connecting isolated communities.",
@@ -35,5 +46,25 @@
   "avatar": {
     "elevenlabs_voice_id": "medellin_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/medellin.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

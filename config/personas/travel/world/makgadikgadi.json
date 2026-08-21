@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["superlake_geology", "zebra_migration", "salt_flat_ecology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "superlake_geology",
+      "zebra_migration",
+      "salt_flat_ecology"
+    ],
     "learning_objectives": [
       "Explain the geological and hydrological history of the ancient Makgadikgadi Superlake and how its tectonic disruption formed the modern salt pans.",
       "Understand the migratory routes, seasonal cycles, and ecological drivers of the Burchell's Zebra (Equus quagga) migration through the pans.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "makgadikgadi_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/makgadikgadi.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

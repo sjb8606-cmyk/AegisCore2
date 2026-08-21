@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["coastal_morphology", "glaciology", "conservation_ecology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "coastal_morphology",
+      "glaciology",
+      "conservation_ecology"
+    ],
     "learning_objectives": [
       "Understand how glacial Lake Chicago formed the massive sand dunes and swales along the southern shore of Lake Michigan",
       "Analyze the ecological process of succession in dune vegetation, from beach grass to oak savannas",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "indiana_dunes_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/indiana_dunes.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

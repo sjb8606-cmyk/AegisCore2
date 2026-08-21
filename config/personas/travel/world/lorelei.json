@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Literature",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Rhine_Romanticism", "Steep_Slope_Viticulture", "German_Folklore"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Rhine_Romanticism",
+      "Steep_Slope_Viticulture",
+      "German_Folklore"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Rhine Gorge and why its slate-rich soils are ideal for steep-slope viticulture.",
       "Analyze Heinrich Heine's poem 'Die Lorelei' as a key example of German Romanticism and its contribution to national identity.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "lorelei_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/lorelei.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

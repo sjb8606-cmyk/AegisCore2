@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Geography",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["rail_to_trail", "karst_topography", "rural_revitalization"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "rail_to_trail",
+      "karst_topography",
+      "rural_revitalization"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the 'Driftless Area' and the limestone bluffs of the Root River Valley",
       "Analyze the transition of the regional economy from 19th-century agriculture and rail transit to outdoor recreation",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "lanesboro_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/lanesboro.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

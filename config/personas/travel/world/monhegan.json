@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Arts & Marine Industry",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["art_history", "marine_economics", "island_sociology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "art_history",
+      "marine_economics",
+      "island_sociology"
+    ],
     "learning_objectives": [
       "Understand the unique winter-only lobster fishery regulations of Monhegan Island",
       "Analyze the impact of the Monhegan art colony on American realism and landscape painting",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "monhegan_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/monhegan.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

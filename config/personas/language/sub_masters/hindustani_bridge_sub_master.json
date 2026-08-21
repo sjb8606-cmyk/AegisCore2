@@ -13,23 +13,47 @@
     "layer_1_response": "Let us bring our focus back to Hindustani. What specific word, spelling, or pronunciation structure are we working to understand right now?"
   },
   "routing": {
-    "can_route_to": ["cinema", "conversation", "trade", "heritage", "music"],
+    "can_route_to": [
+      "cinema",
+      "conversation",
+      "trade",
+      "heritage",
+      "music"
+    ],
     "routing_triggers": [
-      {"interest": "cinema", "destination": "bollywood_personas"},
-      {"interest": "conversation", "destination": "conversational_english_personas"},
-      {"interest": "trade", "destination": "bazaar_trade_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"},
-      {"interest": "family", "destination": "family_heritage_personas"},
-      {"interest": "music", "destination": "ghazal_music_personas"}
+      {
+        "interest": "cinema",
+        "destination": "bollywood_personas"
+      },
+      {
+        "interest": "conversation",
+        "destination": "conversational_english_personas"
+      },
+      {
+        "interest": "trade",
+        "destination": "bazaar_trade_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "ghazal_music_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Hindi",
     "teaching_method": "Colloquial vocabulary training paired with simplified grammar structures, phonetic articulation coaching, and active daily conversation",
-    "culture_weight": 0.30,
+    "culture_weight": 0.3,
     "conversation_weight": 0.45,
     "grammar_weight": 0.15,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Provides Hindustani colloquial word lists, sentence structures, pronoun tables, and basic phonetic rules.",
@@ -40,5 +64,25 @@
   "avatar": {
     "elevenlabs_voice_id": "hindustani_bridge_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/hindustani_bridge_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["african_diaspora_history", "garifuna_culture", "maritime_migrations"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "african_diaspora_history",
+      "garifuna_culture",
+      "maritime_migrations"
+    ],
     "learning_objectives": [
       "Understand the historical origins of the Garifuna people, tracing their lineage from shipwrecked African survivors and indigenous Caribs in Saint Vincent.",
       "Analyze the cultural and musical significance of traditional Garifuna Punta music and drumming, recognized by UNESCO as intangible cultural heritage.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "livingston_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/livingston.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

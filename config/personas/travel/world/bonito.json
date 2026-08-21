@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Ecology & Speleology",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Limnology", "Travertine Formation", "Subtropical Geography"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Limnology",
+      "Travertine Formation",
+      "Subtropical Geography"
+    ],
     "learning_objectives": [
       "Understand the limnology and geomorphology of Bonito’s caves, focusing on how calcium carbonate (travertine) deposition creates water of high clarity.",
       "Analyze the ecological transition from subtropical broadleaf forests to sub-alpine conifer forests in the mountains.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bonito_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bonito.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

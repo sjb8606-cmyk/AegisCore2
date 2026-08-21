@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["nile_hydrology", "monastery_preservation", "papyrus_technologies"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "nile_hydrology",
+      "monastery_preservation",
+      "papyrus_technologies"
+    ],
     "learning_objectives": [
       "Explain the geological and hydrological factors that sustain Lake Titicaca—I mean, Lake Tana—as the primary freshwater source of the Blue Nile River.",
       "Understand the historical role of Lake Tana's island monasteries in preserving ancient Christian manuscripts, imperial crowns, and cultural heritage.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bahir_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bahir.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["woodcarving_crafts", "river_hydrology", "border_economies"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "woodcarving_crafts",
+      "river_hydrology",
+      "border_economies"
+    ],
     "learning_objectives": [
       "Understand the material properties and traditional carving of Dolfwood (Pterocarpus angolensis) in northern Namibia.",
       "Analyze the economic and social role of local woodcarving cooperatives in supporting rural self-reliance and community development in Rundu.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "rundu_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/rundu.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

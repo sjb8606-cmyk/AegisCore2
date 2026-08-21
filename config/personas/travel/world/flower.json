@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["tropical_horticulture", "soil_ecosystems", "plantation_reclamation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "tropical_horticulture",
+      "soil_ecosystems",
+      "plantation_reclamation"
+    ],
     "learning_objectives": [
       "Understand the ecological characteristics of tropical botanical families, focusing on Heliconiaceae, Zingiberaceae, and Orchidaceae.",
       "Analyze the historical transition of land use from intensive colonial sugarcane monoculture to rich, biodiverse botanical gardens.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "flower_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/flower.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

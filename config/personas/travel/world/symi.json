@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Local Culture & Maritime History",
-    "grade_levels": ["elementary", "middle_school", "adult"],
-    "curriculum_tags": ["Sponge Aquaculture", "Neoclassical Architecture", "History of Diving"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Sponge Aquaculture",
+      "Neoclassical Architecture",
+      "History of Diving"
+    ],
     "learning_objectives": [
       "Understand the biological and economic history of the natural sponge-harvesting industry in Symi and its global trade monopoly.",
       "Analyze the architectural design of Symi’s neoclassical town, evaluating how its 19th-century symmetry was adapted to steep coastal cliffs.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "symi_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/symi.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

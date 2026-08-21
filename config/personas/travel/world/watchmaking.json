@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Technology",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Horology_Science", "UNESCO_Industrial_Towns", "Precision_Engineering"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Horology_Science",
+      "UNESCO_Industrial_Towns",
+      "Precision_Engineering"
+    ],
     "learning_objectives": [
       "Explain the mechanical and physics-based principles of the Swiss Lever Escapement, detailing how it regulates the release of energy from the mainspring.",
       "Understand the unique urban planning of La Chaux-de-Fonds and Le Locle, designed specifically to meet the lighting and workspace needs of watchmakers.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "watchmaking_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/watchmaking.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

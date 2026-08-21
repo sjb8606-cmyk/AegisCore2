@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Music",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["african_diaspora_history", "candombe_drumming", "intangible_cultural_heritage"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "african_diaspora_history",
+      "candombe_drumming",
+      "intangible_cultural_heritage"
+    ],
     "learning_objectives": [
       "Understand the historical roots of Candombe, tracing its lineage from African enslaved populations in 18th-century Montevideo.",
       "Analyze the distinct musical roles and rhythmic patterns of the three Candombe drums: the high Chico, the improvising Repique, and the deep, anchoring Piano.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "candombe_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/candombe.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

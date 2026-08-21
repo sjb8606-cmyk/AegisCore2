@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Winter_Tourism_Economics", "Alvar_Aalto_Reconstruction", "Arctic_Geography"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Winter_Tourism_Economics",
+      "Alvar_Aalto_Reconstruction",
+      "Arctic_Geography"
+    ],
     "learning_objectives": [
       "Understand the historical role of Alvar Aalto in the post-WWII reconstruction of Rovaniemi, focusing on his 'Reindeer Horn' urban plan.",
       "Explain the geographical definition of the Arctic Circle and how its latitude shifts due to the tilt of the Earth's axis.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "santa_claus_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/santa_claus.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

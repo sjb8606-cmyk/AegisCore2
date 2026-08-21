@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culture",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["urban_history", "pop_culture", "civic_redevelopment"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "urban_history",
+      "pop_culture",
+      "civic_redevelopment"
+    ],
     "learning_objectives": [
       "Understand the historical role of Fremont Street as the original commercial and civic center of Las Vegas",
       "Analyze the urban planning strategy of the Fremont Street Experience canopy in revitalizing a declining downtown",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "fremont_street_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/fremont_street.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

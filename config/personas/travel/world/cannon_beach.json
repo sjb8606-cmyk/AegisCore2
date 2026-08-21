@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["coastal_morphology", "marine_conservation", "oregon_beach_bill"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "coastal_morphology",
+      "marine_conservation",
+      "oregon_beach_bill"
+    ],
     "learning_objectives": [
       "Understand the geological formation of Haystack Rock as a basalt sea stack erupted during the Miocene Epoch",
       "Analyze the role of the 1967 Oregon Beach Bill in preserving the state's entire coastline as free, public land",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cannon_beach_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cannon_beach.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

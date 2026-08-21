@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Religion",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["religious_history", "colonial_sociology", "utopian_societies"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "religious_history",
+      "colonial_sociology",
+      "utopian_societies"
+    ],
     "learning_objectives": [
       "Understand the historical events that led the Latter-day Saints to establish their capital at Nauvoo in 1839",
       "Analyze the socioeconomic and political friction between the rapidly growing Nauvoo community and the surrounding Illinois settlers",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "nauvoo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/nauvoo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

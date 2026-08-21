@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Viticulture & Local Culture",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Terroir Science", "Baja-Med Gastronomy", "California Current"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Terroir Science",
+      "Baja-Med Gastronomy",
+      "California Current"
+    ],
     "learning_objectives": [
       "Understand the climatology of the Valle de Guadalupe, focusing on how the cold California Current generates morning fog that cools the inland desert valley.",
       "Analyze the culinary synthesis of 'Baja-Med' cuisine, evaluating how it integrates local Mexican ingredients with Mediterranean techniques.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ensenada_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ensenada.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

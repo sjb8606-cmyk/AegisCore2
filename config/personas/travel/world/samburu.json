@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["indigenous_pastoralism", "samburu_culture", "savanna_ecology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "indigenous_pastoralism",
+      "samburu_culture",
+      "savanna_ecology"
+    ],
     "learning_objectives": [
       "Understand the social and political structure of the Samburu pastoralist clans, explaining their semi-nomadic herding lifestyle.",
       "Analyze the cultural and symbolic significance of traditional Samburu beadwork and age-set systems in social cohesion.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "samburu_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/samburu.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

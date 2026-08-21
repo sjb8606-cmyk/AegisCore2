@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Archaeology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Zapotec Civilization", "Mesoamerican Urbanism", "Archaeological Discoveries"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Zapotec Civilization",
+      "Mesoamerican Urbanism",
+      "Archaeological Discoveries"
+    ],
     "learning_objectives": [
       "Understand the rise of the Zapotec Civilization (500 BC) and the founding of Monte Albán as one of the earliest urban centers in Mesoamerica.",
       "Analyze the architectural engineering required to flatten a mountain peak to construct the Grand Plaza of Monte Albán.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "monte_alban_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/monte_alban.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Local Culture & Wildlife Geography",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Swamp Drainage", "Etruscan History", "Traditional Lifestyles"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Swamp Drainage",
+      "Etruscan History",
+      "Traditional Lifestyles"
+    ],
     "learning_objectives": [
       "Understand the geological and hydrological history of the Maremma, specifically how a toxic, malarial swamp was reclaimed for agriculture.",
       "Analyze the cultural history of the 'Butteri' (Maremma cowboys) and their sustainable horse-handling methods.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "maremma_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/maremma.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

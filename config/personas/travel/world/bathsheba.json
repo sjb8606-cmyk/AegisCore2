@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["coastal_geomorphology", "surf_physics", "scotland_district_geology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "coastal_geomorphology",
+      "surf_physics",
+      "scotland_district_geology"
+    ],
     "learning_objectives": [
       "Explain the unique geological composition of the Scotland District, highlighting how it differs from the rest of Barbadian coral limestone.",
       "Analyze the physical forces of wave refraction and coastal bathymetry that generate the powerful surf of the Bathsheba Soup Bowl.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bathsheba_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bathsheba.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

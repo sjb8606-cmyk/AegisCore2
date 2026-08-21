@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["urban_sociology", "tenement_yards", "reggae_birthplace"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "urban_sociology",
+      "tenement_yards",
+      "reggae_birthplace"
+    ],
     "learning_objectives": [
       "Understand the urban planning history of Trench Town as a 1940s government housing scheme and how its communal layout influenced social and artistic development.",
       "Analyze the role of communal yards ('tenement yards') as crucial incubators for cooperative music-making and Rastafari reasoning in Kingston.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "trench_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/trench.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

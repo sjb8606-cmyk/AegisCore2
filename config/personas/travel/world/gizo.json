@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["pt_109_rescue", "indigenous_scouts_wwii", "maritime_history_solomons"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "pt_109_rescue",
+      "indigenous_scouts_wwii",
+      "maritime_history_solomons"
+    ],
     "learning_objectives": [
       "Understand the historical events of August 1943 in Gizo that led to the rescue of future US President John F. Kennedy and his PT-109 crew.",
       "Analyze the critical, often uncredited role of local Solomon Islander scouts (such as Biuku Gasa and Eroni Kumana) in the rescue.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "gizo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/gizo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

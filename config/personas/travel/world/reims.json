@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Viticulture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["French Monarchy", "High Gothic Architecture", "Champagne Production"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "French Monarchy",
+      "High Gothic Architecture",
+      "Champagne Production"
+    ],
     "learning_objectives": [
       "Understand the political and spiritual significance of Reims Cathedral as the exclusive coronation church of the French Kings.",
       "Analyze the high gothic architectural style of Reims, focusing on its unified, sculpted portals and the integration of light.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "reims_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/reims.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

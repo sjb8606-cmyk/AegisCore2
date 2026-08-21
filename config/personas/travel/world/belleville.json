@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Urban Sociology & Contemporary Art",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Urban Sociology", "Street Art Studies", "History of Migration"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Urban Sociology",
+      "Street Art Studies",
+      "History of Migration"
+    ],
     "learning_objectives": [
       "Understand the impact of Haussmann's 1860 annexation of working-class suburbs like Belleville into the city limits of Paris.",
       "Analyze how waves of migration (Armenian, Jewish, North African, Chinese) shaped the economic and cultural fabric of the district.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "belleville_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/belleville.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

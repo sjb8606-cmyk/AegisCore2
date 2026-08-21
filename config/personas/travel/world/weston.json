@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Sociology",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["history_of_medicine", "architectural_history", "industrial_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "history_of_medicine",
+      "architectural_history",
+      "industrial_history"
+    ],
     "learning_objectives": [
       "Understand the Kirkbride plan of asylum architecture and its relationship with early mental health treatment theories",
       "Analyze the socioeconomic impact of the handmade glass industry in West Virginia, powered by cheap natural gas",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "weston_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/weston.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

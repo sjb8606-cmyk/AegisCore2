@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Marine Adventure",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Byzantine History", "Deep-Sea Physiology", "Coastal Geomorphology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Byzantine History",
+      "Deep-Sea Physiology",
+      "Coastal Geomorphology"
+    ],
     "learning_objectives": [
       "Understand the history and construction of the Monastery of Hozoviotissa (1017 AD), analyzing how its vertical, narrow design fit into a sheer cliff face.",
       "Analyze the physical and physiological challenges of free-diving (apnea) in deep water as represented in modern cinema.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "amorgos_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/amorgos.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

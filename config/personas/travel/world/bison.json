@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Conservation & Wildlife",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["conservation_genetics", "wildlife_management", "ecology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "conservation_genetics",
+      "wildlife_management",
+      "ecology"
+    ],
     "learning_objectives": [
       "Understand the genetic bottleneck and hybridization history of the Wood Buffalo bison herds",
       "Analyze the epidemiological challenges of managing tuberculosis and brucellosis in wild ungulates",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bison_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bison.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

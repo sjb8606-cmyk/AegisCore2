@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Local Culture & Maritime History",
-    "grade_levels": ["elementary", "middle_school", "adult"],
-    "curriculum_tags": ["History of Tourism", "Coastal Geomorphology", "Marine Conservation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "History of Tourism",
+      "Coastal Geomorphology",
+      "Marine Conservation"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Manly Sand Spit (tombolo) and how its unique position separates the harbor from the ocean.",
       "Analyze the historical role of the Manly Ferry (active since 1854) in transforming a remote peninsula into Sydney's primary seaside resort.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "manly_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/manly.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

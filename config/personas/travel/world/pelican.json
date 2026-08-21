@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Science & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["wetland_ecology", "conservation", "hydrology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "wetland_ecology",
+      "conservation",
+      "hydrology"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Prairie Pothole Region",
       "Analyze the role of wetlands in filtering water and mitigating droughts/floods",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "pelican_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/pelican.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

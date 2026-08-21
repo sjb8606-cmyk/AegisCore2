@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Industry",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["gold_rush", "auroral_physics", "permafrost_engineering"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "gold_rush",
+      "auroral_physics",
+      "permafrost_engineering"
+    ],
     "learning_objectives": [
       "Understand the history and scale of the 1902 Tanana Valley Gold Rush",
       "Analyze the mechanical engineering of industrial bucket-line gold dredges in placer mining",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "fairbanks_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/fairbanks.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

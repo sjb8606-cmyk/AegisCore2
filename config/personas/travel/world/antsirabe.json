@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["colonial_urbanization", "geothermal_science", "artisanal_crafts"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "colonial_urbanization",
+      "geothermal_science",
+      "artisanal_crafts"
+    ],
     "learning_objectives": [
       "Explain the geological and hydrological factors that generate Antsirabe's thermal mineral springs in the volcanic highlands.",
       "Understand the historical role of Norwegian and French missionaries in the 19th-century development of the city.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "antsirabe_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/antsirabe.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

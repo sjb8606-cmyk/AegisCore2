@@ -13,14 +13,38 @@
     "layer_1_response": "Let us return to Shanghainese. What specific word, pronunciation rule, or conversational phrase can we practice right now?"
   },
   "routing": {
-    "can_route_to": ["business", "history", "arts", "heritage", "travel"],
+    "can_route_to": [
+      "business",
+      "history",
+      "arts",
+      "heritage",
+      "travel"
+    ],
     "routing_triggers": [
-      {"interest": "business", "destination": "shanghai_business_personas"},
-      {"interest": "history", "destination": "shanghai_history_personas"},
-      {"interest": "arts", "destination": "jiangnan_culture_personas"},
-      {"interest": "opera", "destination": "huju_opera_personas"},
-      {"interest": "heritage", "destination": "shanghai_heritage_personas"},
-      {"interest": "travel", "destination": "shanghai_travel_personas"}
+      {
+        "interest": "business",
+        "destination": "shanghai_business_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "shanghai_history_personas"
+      },
+      {
+        "interest": "arts",
+        "destination": "jiangnan_culture_personas"
+      },
+      {
+        "interest": "opera",
+        "destination": "huju_opera_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "shanghai_heritage_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "shanghai_travel_personas"
+      }
     ]
   },
   "language_engine": {
@@ -40,5 +64,25 @@
   "avatar": {
     "elevenlabs_voice_id": "shanghainese_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/shanghainese_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

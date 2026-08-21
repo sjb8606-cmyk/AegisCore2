@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Wildlife Biology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Elevational Gradient", "Top Predator Conservation", "Indigenous Sovereignty"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Elevational Gradient",
+      "Top Predator Conservation",
+      "Indigenous Sovereignty"
+    ],
     "learning_objectives": [
       "Understand the concept of 'elevational gradient' and how Manu’s descent from the Andes to the Amazon basin creates a vertical corridor of unprecedented biodiversity.",
       "Analyze the role of the Jaguar (Panthera onca) as a keystone predator that regulates the health of the rainforest ecosystem.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "manu_national_park_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/manu_national_park.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

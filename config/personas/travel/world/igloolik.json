@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Arts & Media",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["film_studies", "indigenous_media", "cultural_preservation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "film_studies",
+      "indigenous_media",
+      "cultural_preservation"
+    ],
     "learning_objectives": [
       "Understand the historical significance of Isuma as Canada's first Inuit independent production company",
       "Analyze how film and digital media are used to preserve and revitalize the Inuktitut language and oral histories",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "igloolik_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/igloolik.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

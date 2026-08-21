@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["lewis_clark", "industrial_history", "frontier_logistics"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "lewis_clark",
+      "industrial_history",
+      "frontier_logistics"
+    ],
     "learning_objectives": [
       "Understand the historical significance of the Lewis and Clark Expedition and the death of Sergeant Charles Floyd",
       "Analyze the economic and social rise of Sioux City as a major late 19th-century meatpacking and industrial hub",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sioux_city_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sioux_city.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

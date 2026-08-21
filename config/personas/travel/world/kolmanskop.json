@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["diamond_boom_history", "german_colonial_architecture", "desertification_processes"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "diamond_boom_history",
+      "german_colonial_architecture",
+      "desertification_processes"
+    ],
     "learning_objectives": [
       "Understand the historical and economic context of the 1908 diamond rush that led to the rapid construction and luxury of Kolmanskop.",
       "Analyze the German-colonial architectural and structural features of the abandoned great houses and municipal buildings.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kolmanskop_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kolmanskop.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

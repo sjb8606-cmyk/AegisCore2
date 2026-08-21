@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["river_trade_economies", "filigree_metallurgy", "colonial_architecture"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "river_trade_economies",
+      "filigree_metallurgy",
+      "colonial_architecture"
+    ],
     "learning_objectives": [
       "Understand the historical role of Mompox as a crucial, secure inland river port for Spanish silver transit along the Magdalena River.",
       "Analyze the high-level metallurgical craft of hand-weaving traditional silver filigree jewelry preserved in Mompox workshops.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mompox_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mompox.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

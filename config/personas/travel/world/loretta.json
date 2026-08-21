@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Music & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["american_music_history", "appalachian_studies", "women_studies"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "american_music_history",
+      "appalachian_studies",
+      "women_studies"
+    ],
     "learning_objectives": [
       "Understand the historical connection between coal mining communities and the development of country music",
       "Analyze the role of Loretta Lynn and other female artists in introducing working-class women's issues to national media",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "loretta_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/loretta.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

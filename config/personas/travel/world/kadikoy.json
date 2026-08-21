@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Culinary Culture & Local Sociology",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Culinary Science", "Maritime Trade", "Urban Sociology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Culinary Science",
+      "Maritime Trade",
+      "Urban Sociology"
+    ],
     "learning_objectives": [
       "Understand the history of Kadıköy (ancient Chalcedon) and its development as the primary food-supply and agricultural gateway for Constantinople.",
       "Analyze the role of the Bosphorus ferry network in facilitating high-volume daily commuting and cultural exchange between Europe and Asia.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kadikoy_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kadikoy.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

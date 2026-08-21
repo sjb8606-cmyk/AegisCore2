@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Maritime History & Ecology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["marine_ecology", "industrial_history", "american_literature"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "marine_ecology",
+      "industrial_history",
+      "american_literature"
+    ],
     "learning_objectives": [
       "Understand the historical role of Monterey as the 'Sardine Capital of the World' in the early 20th century",
       "Analyze the ecological restoration and marine biodiversity of the Monterey Bay submarine canyon",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "monterey_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/monterey.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

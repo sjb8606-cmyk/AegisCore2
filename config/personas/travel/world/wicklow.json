@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Alpine Geography",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Early Christian Ireland", "Glacial Geomorphology", "Monastic Architecture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Early Christian Ireland",
+      "Glacial Geomorphology",
+      "Monastic Architecture"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Wicklow Mountains, specifically how Pleistocene-era glaciers carved the deep 'U-shaped' valley of Glendalough.",
       "Analyze the architectural design and defensive purpose of the Irish Round Tower, evaluating how its elevated entrance and granite vaults resisted Viking raiders.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "wicklow_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/wicklow.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

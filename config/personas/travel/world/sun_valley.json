@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["recreational_history", "mechanical_engineering", "american_literature"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "recreational_history",
+      "mechanical_engineering",
+      "american_literature"
+    ],
     "learning_objectives": [
       "Understand the invention and engineering of the world's first chairlift (1936) at Sun Valley",
       "Analyze the role of the Union Pacific Railroad in developing and branding Sun Valley as America's first destination ski resort",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sun_valley_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sun_valley.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

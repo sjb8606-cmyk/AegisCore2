@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Upland_Hydrology", "Granite_Geology", "Dry_Stone_Masonry"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Upland_Hydrology",
+      "Granite_Geology",
+      "Dry_Stone_Masonry"
+    ],
     "learning_objectives": [
       "Explain the geological formation of the Mourne Mountains as a series of Tertiary granite intrusions subsequently carved by glaciers.",
       "Understand the engineering history and function of the Mourne Wall and the Silent Valley Reservoir in securing Belfast's water supply.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mourne_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mourne.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

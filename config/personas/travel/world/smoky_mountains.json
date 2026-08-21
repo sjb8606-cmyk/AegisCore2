@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Conservation",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["national_parks_history", "environmental_conservation", "appalachian_ecology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "national_parks_history",
+      "environmental_conservation",
+      "appalachian_ecology"
+    ],
     "learning_objectives": [
       "Understand the geological formation and plate tectonics that created the Great Smoky Mountains",
       "Analyze the social history and ethical challenges of land acquisition in the creation of America's most visited national park",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "smoky_mountains_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/smoky_mountains.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

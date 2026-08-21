@@ -10,22 +10,43 @@
     "layer_1_response": "That topic takes us away from our target language. Let us refocus on Efik. What specific construction or conversation can we study?"
   },
   "routing": {
-    "can_route_to": ["history", "maritime", "music", "travel", "culture"],
+    "can_route_to": [
+      "history",
+      "maritime",
+      "music",
+      "travel",
+      "culture"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "calabar_history_personas"},
-      {"interest": "maritime", "destination": "maritime_history_personas"},
-      {"interest": "music", "destination": "calabar_folk_songs_personas"},
-      {"interest": "travel", "destination": "calabar_travel_personas"},
-      {"interest": "culture", "destination": "coastal_culture_personas"}
+      {
+        "interest": "history",
+        "destination": "calabar_history_personas"
+      },
+      {
+        "interest": "maritime",
+        "destination": "maritime_history_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "calabar_folk_songs_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "calabar_travel_personas"
+      },
+      {
+        "interest": "culture",
+        "destination": "coastal_culture_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Efik",
     "teaching_method": "Phonetic syllable training coupled with grammatical prefix drills, and interactive coastal and social dialogue",
     "culture_weight": 0.35,
-    "conversation_weight": 0.40,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.15,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Introduces Efik consonants, pronoun paradigms, and basic syntax guidelines.",
@@ -36,5 +57,25 @@
   "avatar": {
     "elevenlabs_voice_id": "efik_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/efik_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

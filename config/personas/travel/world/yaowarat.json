@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Culinary Culture & Local Sociology",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Teochew Migration", "Wok Hei Chemistry", "Urban Sociology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Teochew Migration",
+      "Wok Hei Chemistry",
+      "Urban Sociology"
+    ],
     "learning_objectives": [
       "Understand the historical development of Yaowarat as the primary commercial and cultural hub of Bangkok's Chinese diaspora since 1782.",
       "Analyze the culinary chemistry of 'Wok Hei' (the breath of the wok), explaining how extreme heat, oil caramelization, and smoking fat create its flavor.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "yaowarat_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/yaowarat.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

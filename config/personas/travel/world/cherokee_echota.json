@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Governance",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["indigenous_law", "trail_of_tears", "colonial_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "indigenous_law",
+      "trail_of_tears",
+      "colonial_history"
+    ],
     "learning_objectives": [
       "Understand the political structure of the Cherokee Nation at New Echota and the adoption of a written constitution",
       "Analyze Sequoyah's invention of the Cherokee syllabary and its role in fostering rapid literacy and sovereignty",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cherokee_echota_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cherokee_echota.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

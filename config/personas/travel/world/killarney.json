@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Ecology & Estate History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Sub-Alpine Botany", "Glacial Ecology", "Estate History"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Sub-Alpine Botany",
+      "Glacial Ecology",
+      "Estate History"
+    ],
     "learning_objectives": [
       "Understand the geological and glacial processes that carved the three lakes of Killarney and the Gap of Dunloe.",
       "Analyze the ecological significance of the Killarney National Park (the first national park in Ireland) as the last remaining habitat for Ireland’s native Red Deer.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "killarney_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/killarney.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Vietnam_War", "Modernist_Architecture_Asia", "Saigon_Reunification_1975"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Vietnam_War",
+      "Modernist_Architecture_Asia",
+      "Saigon_Reunification_1975"
+    ],
     "learning_objectives": [
       "Analyze the architectural design and philosophical symbolism of Ngo Viet Thu's 1966 palace, focusing on how it incorporated traditional Chinese characters (like 'Ji' and 'Xing') into a modernist structure.",
       "Understand the historical events of April 30, 1975, and how the fall of Saigon led to the reunification of North and South Vietnam.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "reunification_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/reunification.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

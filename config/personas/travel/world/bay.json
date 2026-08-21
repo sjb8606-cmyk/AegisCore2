@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Urban_Regeneration", "Welsh_Devolution", "Multicultural_History"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Urban_Regeneration",
+      "Welsh_Devolution",
+      "Multicultural_History"
+    ],
     "learning_objectives": [
       "Understand how the building of the Cardiff Bay Barrage transformed a tidal mudflat into a freshwater lake and sparked major urban regeneration.",
       "Analyze the design of the Senedd (Welsh Parliament) as a symbol of transparency, sustainability, and modern democratic values.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bay_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bay.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Culinary",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Scottish_Enlightenment", "Georgian_Architecture", "Distillation_Science"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Scottish_Enlightenment",
+      "Georgian_Architecture",
+      "Distillation_Science"
+    ],
     "learning_objectives": [
       "Analyze the urban planning principles of James Craig's 1767 New Town plan as a reflection of Enlightenment philosophy.",
       "Understand the chemical processes of fermentation, distillation, and cask maturation in Scotch whisky production.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "new_town_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/new_town.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

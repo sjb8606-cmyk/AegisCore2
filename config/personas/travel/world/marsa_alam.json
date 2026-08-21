@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Marine Biology & Conservation",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Marine Biology", "Seagrass Ecology", "Ecotourism Planning"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Marine Biology",
+      "Seagrass Ecology",
+      "Ecotourism Planning"
+    ],
     "learning_objectives": [
       "Understand the biology of the Dugong (Dugong dugon), an endangered marine mammal that relies entirely on seagrass beds for nutrition.",
       "Analyze the oceanographic reasons why the southern Red Sea (Abu Dabbab) remains a critical refuge for marine megafauna.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "marsa_alam_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/marsa_alam.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

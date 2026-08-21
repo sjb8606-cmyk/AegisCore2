@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Art_Nouveau_Architecture", "Iron_Engineering_Horta", "Total_Artwork_Gesamtkunstwerk"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Art_Nouveau_Architecture",
+      "Iron_Engineering_Horta",
+      "Total_Artwork_Gesamtkunstwerk"
+    ],
     "learning_objectives": [
       "Analyze how Victor Horta integrated structural iron and glass—previously used only for industrial stations—into high-end residential interiors.",
       "Identify the key characteristics of Art Nouveau style, focusing on the organic 'whiplash' curve, natural light filtration, and open-plan spatial design.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "horta_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/horta.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

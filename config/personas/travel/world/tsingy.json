@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["karst_geomorphology", "calcite_dissolution", "lemur_ecology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "karst_geomorphology",
+      "calcite_dissolution",
+      "lemur_ecology"
+    ],
     "learning_objectives": [
       "Explain the geological and water dissolution processes (karstification) that carve the sharp limestone needles (tsingy) of Bemaraha.",
       "Understand the unique biological and leaping adaptations of the Decken's Sifaka (Propithecus deckeni) in navigating razor-sharp stone forests.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tsingy_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tsingy.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

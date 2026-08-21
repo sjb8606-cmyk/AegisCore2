@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Sea_Temples_Bali", "Nirartha_Voyages", "Marine_Erosion_Karst"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Sea_Temples_Bali",
+      "Nirartha_Voyages",
+      "Marine_Erosion_Karst"
+    ],
     "learning_objectives": [
       "Understand the strategic and cosmological design of Bali’s sea temples (Pura Segara) established by Dang Hyang Nirartha to protect the island from ocean spirits.",
       "Analyze the geological processes of marine wave erosion and hydraulic action that formed the basalt stack of Tanah Lot.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tanah_lot_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tanah_lot.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

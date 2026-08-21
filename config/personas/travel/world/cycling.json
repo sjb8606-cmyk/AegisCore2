@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Urban_Mobility", "Social_Protest_History", "Sustainable_Infrastructure"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Urban_Mobility",
+      "Social_Protest_History",
+      "Sustainable_Infrastructure"
+    ],
     "learning_objectives": [
       "Understand the historical role of the 'Stop de Kindermoord' (Stop the Child Murder) protests of the 1970s in reshaping Dutch urban transport policy.",
       "Analyze the civil engineering principles of segregated bicycle infrastructure, including protected intersections and priority signaling.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cycling_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cycling.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Traditional Crafts & Local Culture",
-    "grade_levels": ["elementary", "middle_school", "adult"],
-    "curriculum_tags": ["Traditional Crafts", "Hittite History", "River Geology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Traditional Crafts",
+      "Hittite History",
+      "River Geology"
+    ],
     "learning_objectives": [
       "Understand the geological deposition of iron-rich silt by the Kızılırmak (Red River) and its physical properties as an ideal potting clay.",
       "Analyze the design and function of the 'Hittite Wine Jug' (characterized by its hollow, circular center designed to be carried on a hunter's shoulder).",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "avanos_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/avanos.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

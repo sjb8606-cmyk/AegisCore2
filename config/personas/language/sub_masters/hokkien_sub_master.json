@@ -13,14 +13,38 @@
     "layer_1_response": "Let us bring our focus back to Hokkien. What specific phrase, tonal shift, or vocabulary word can we study right now?"
   },
   "routing": {
-    "can_route_to": ["heritage", "travel", "music", "business", "history"],
+    "can_route_to": [
+      "heritage",
+      "travel",
+      "music",
+      "business",
+      "history"
+    ],
     "routing_triggers": [
-      {"interest": "heritage", "destination": "hokkien_heritage_personas"},
-      {"interest": "family", "destination": "hokkien_heritage_personas"},
-      {"interest": "travel", "destination": "taiwan_travel_personas"},
-      {"interest": "music", "destination": "hokkien_pop_personas"},
-      {"interest": "business", "destination": "southeast_asia_business_personas"},
-      {"interest": "history", "destination": "maritime_history_personas"}
+      {
+        "interest": "heritage",
+        "destination": "hokkien_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "hokkien_heritage_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "taiwan_travel_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "hokkien_pop_personas"
+      },
+      {
+        "interest": "business",
+        "destination": "southeast_asia_business_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "maritime_history_personas"
+      }
     ]
   },
   "language_engine": {
@@ -40,5 +64,25 @@
   "avatar": {
     "elevenlabs_voice_id": "hokkien_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/hokkien_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

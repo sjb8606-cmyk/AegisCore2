@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Business",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["border_economics", "informal_markets", "aymara_trade_networks"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "border_economics",
+      "informal_markets",
+      "aymara_trade_networks"
+    ],
     "learning_objectives": [
       "Understand the economic dynamics of transboundary informal markets, focusing on Desaguadero's role in Peru-Bolivia trade.",
       "Analyze the hydrological role of the Desaguadero River as the primary outlet draining Lake Titicaca into Lake Poopó.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "desaguadero_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/desaguadero.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

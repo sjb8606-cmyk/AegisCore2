@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Cetacean_Ecology", "Eco_Tourism_Economics", "Marine_Conservation_Iceland"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Cetacean_Ecology",
+      "Eco_Tourism_Economics",
+      "Marine_Conservation_Iceland"
+    ],
     "learning_objectives": [
       "Explain the oceanographic features of Skjálfandi bay, detailing how glacial meltwater and ocean currents create a nutrient-rich feeding ground for baleen whales.",
       "Understand the biology, migration patterns, and feeding techniques of the Humpback Whale (Megaptera novaeangliae) and the Blue Whale.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "husavik_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/husavik.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

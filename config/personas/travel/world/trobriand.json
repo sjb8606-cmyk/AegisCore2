@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["kula_ring", "matrilineal_societies", "yam_harvest_culture"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "kula_ring",
+      "matrilineal_societies",
+      "yam_harvest_culture"
+    ],
     "learning_objectives": [
       "Understand the social and political structure of the Trobriand matrilineal clans and how land and chiefly status are inherited through the mother's line.",
       "Analyze the economic and spiritual logic of the Kula Ring, explaining the reciprocal exchange of Mwali armshells and Soulava necklaces.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "trobriand_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/trobriand.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

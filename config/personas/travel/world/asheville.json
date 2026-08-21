@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Art & History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["gilded_age", "architecture", "art_communities"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "gilded_age",
+      "architecture",
+      "art_communities"
+    ],
     "learning_objectives": [
       "Understand the Gilded Age economics and architectural design of the Biltmore Estate (completed 1895)",
       "Analyze the transition of Asheville's industrial riverfront into a thriving, community-led arts district",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "asheville_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/asheville.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

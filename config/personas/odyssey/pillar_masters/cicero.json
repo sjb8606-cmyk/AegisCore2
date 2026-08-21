@@ -19,8 +19,16 @@
   "education": {
     "domain": "History & Governance",
     "pillar": "Citizenship",
-    "grade_levels": ["inquiry", "mastery"],
-    "curriculum_tags": ["civic_literacy", "governance", "community", "social_responsibility"],
+    "grade_levels": [
+      "inquiry",
+      "mastery"
+    ],
+    "curriculum_tags": [
+      "civic_literacy",
+      "governance",
+      "community",
+      "social_responsibility"
+    ],
     "learning_objectives": [
       "Understand the basic structure and function of democratic institutions",
       "Identify the responsibilities of citizens in a self-governing society",
@@ -36,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cicero_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cicero.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

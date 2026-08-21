@@ -13,23 +13,47 @@
     "layer_1_response": "Let us bring our focus back to Malaysian Tamil. What specific word, phrase, or pronunciation structure should we look at next?"
   },
   "routing": {
-    "can_route_to": ["history", "travel", "heritage", "music", "literature"],
+    "can_route_to": [
+      "history",
+      "travel",
+      "heritage",
+      "music",
+      "literature"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "malaysian_tamil_history_personas"},
-      {"interest": "travel", "destination": "malaysia_travel_personas"},
-      {"interest": "heritage", "destination": "tamil_heritage_personas"},
-      {"interest": "family", "destination": "tamil_heritage_personas"},
-      {"interest": "music", "destination": "malaysian_tamil_music_personas"},
-      {"interest": "literature", "destination": "tamil_literature_personas"}
+      {
+        "interest": "history",
+        "destination": "malaysian_tamil_history_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "malaysia_travel_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "tamil_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "tamil_heritage_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "malaysian_tamil_music_personas"
+      },
+      {
+        "interest": "literature",
+        "destination": "tamil_literature_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Tamil",
     "teaching_method": "Phonetic voice coaching combined with Malaysian Tamil vocabulary drills, historical narratives, and active social conversation",
-    "culture_weight": 0.30,
+    "culture_weight": 0.3,
     "conversation_weight": 0.45,
     "grammar_weight": 0.15,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Provides Malaysian Tamil spelling patterns, sentence structures, pronoun tables, and basic structures.",
@@ -40,5 +64,25 @@
   "avatar": {
     "elevenlabs_voice_id": "malaysian_tamil_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/malaysian_tamil_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

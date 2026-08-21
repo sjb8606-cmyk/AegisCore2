@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Technology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["industrial_history", "labor_studies", "geology_of_coal"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "industrial_history",
+      "labor_studies",
+      "geology_of_coal"
+    ],
     "learning_objectives": [
       "Understand the geological formation of anthracite coal and why Lackawanna County became its global epicenter",
       "Analyze the role of Scranton as a pioneer in urban electrification (the electric trolley system)",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "scranton_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/scranton.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

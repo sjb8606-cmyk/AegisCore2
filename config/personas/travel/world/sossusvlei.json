@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["aeolian_geomorphology", "desert_wood_preservation", "palaeoclimatology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "aeolian_geomorphology",
+      "desert_wood_preservation",
+      "palaeoclimatology"
+    ],
     "learning_objectives": [
       "Explain the geological history of the Namib Desert (the oldest on Earth) and how the shifting of the Tsauchab River formed the clay pans of Sossusvlei and Deadvlei.",
       "Understand the chemical and environmental reasons why dead Camelthorn Trees (Acacia erioloba) in Deadvlei have not decomposed after 900 years.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sossusvlei_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sossusvlei.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

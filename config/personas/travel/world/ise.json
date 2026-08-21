@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Religion & Cultural Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Shintoism", "Sustainable Architecture", "Japanese Imperial History"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Shintoism",
+      "Sustainable Architecture",
+      "Japanese Imperial History"
+    ],
     "learning_objectives": [
       "Understand the ritual of Shikinen Sengu (rebuilding the shrine every 20 years) as a method of passing down architectural knowledge.",
       "Analyze the relationship between the Ise Grand Shrine and the mythic origins of the Japanese Imperial Family.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ise_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ise.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

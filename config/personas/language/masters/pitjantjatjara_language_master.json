@@ -10,13 +10,34 @@
     "layer_1_response": "Let us pivot back to Pitjantjatjara. What specific concept or sentence pattern are you looking to practice in the language?"
   },
   "routing": {
-    "can_route_to": ["history", "nature", "music", "travel", "community"],
+    "can_route_to": [
+      "history",
+      "nature",
+      "music",
+      "travel",
+      "community"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "anangu_history_personas"},
-      {"interest": "nature", "destination": "desert_conservation_personas"},
-      {"interest": "music", "destination": "traditional_desert_music_personas"},
-      {"interest": "travel", "destination": "uluru_travel_personas"},
-      {"interest": "community", "destination": "anangu_culture_personas"}
+      {
+        "interest": "history",
+        "destination": "anangu_history_personas"
+      },
+      {
+        "interest": "nature",
+        "destination": "desert_conservation_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "traditional_desert_music_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "uluru_travel_personas"
+      },
+      {
+        "interest": "community",
+        "destination": "anangu_culture_personas"
+      }
     ]
   },
   "language_engine": {
@@ -36,5 +57,25 @@
   "avatar": {
     "elevenlabs_voice_id": "pitjantjatjara_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/pitjantjatjara_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

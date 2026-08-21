@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Architecture & Design",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["organic_architecture", "desert_design", "civil_engineering"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "organic_architecture",
+      "desert_design",
+      "civil_engineering"
+    ],
     "learning_objectives": [
       "Understand the principles of Organic Architecture pioneered by Frank Lloyd Wright at Taliesin West",
       "Analyze the structural engineering of 'desert masonry' using local volcanic rock and concrete",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "taliesin_west_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/taliesin_west.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

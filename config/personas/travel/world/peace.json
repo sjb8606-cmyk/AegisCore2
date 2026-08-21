@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Modern History & Peace Studies",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Modern History", "Geopolitics", "Ethics of Technology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Modern History",
+      "Geopolitics",
+      "Ethics of Technology"
+    ],
     "learning_objectives": [
       "Understand the scientific, military, and human consequences of the atomic bomb detonation on Hiroshima.",
       "Analyze Kenzo Tange's architectural design of the Peace Memorial Park as a tool for public mourning and international reconciliation.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "peace_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/peace.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

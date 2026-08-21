@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Sports & Conservation",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["ichthyology", "conservation_ethics", "watershed_ecology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "ichthyology",
+      "conservation_ethics",
+      "watershed_ecology"
+    ],
     "learning_objectives": [
       "Understand the habitat requirements of wild brook trout and landlocked salmon in cold-water lakes",
       "Analyze the history and ecological effectiveness of catch-and-release and artificial-lure-only regulations",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "rangeley_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/rangeley.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

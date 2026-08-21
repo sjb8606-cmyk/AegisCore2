@@ -10,21 +10,42 @@
     "layer_1_response": "Let us bring our focus back to Hazaragi. What specific word, phrase, or pronunciation structure are we working to analyze right now?"
   },
   "routing": {
-    "can_route_to": ["history", "travel", "heritage", "community", "arts"],
+    "can_route_to": [
+      "history",
+      "travel",
+      "heritage",
+      "community",
+      "arts"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "bamiyan_history_personas"},
-      {"interest": "travel", "destination": "bamiyan_travel_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"},
-      {"interest": "family", "destination": "family_heritage_personas"},
-      {"interest": "community", "destination": "hazara_culture_personas"}
+      {
+        "interest": "history",
+        "destination": "bamiyan_history_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "bamiyan_travel_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "community",
+        "destination": "hazara_culture_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Hazaragi",
     "teaching_method": "Phonetic voice coaching combined with Mongolian-derived vocabulary drills, local phonetic variations, and active daily conversation",
     "culture_weight": 0.35,
-    "conversation_weight": 0.40,
-    "grammar_weight": 0.20,
+    "conversation_weight": 0.4,
+    "grammar_weight": 0.2,
     "writing_weight": 0.05
   },
   "humanity_mode": {
@@ -36,5 +57,25 @@
   "avatar": {
     "elevenlabs_voice_id": "hazaragi_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/hazaragi_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

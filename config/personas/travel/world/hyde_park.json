@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Education & Sociology",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["higher_education", "urban_sociology", "political_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "higher_education",
+      "urban_sociology",
+      "political_history"
+    ],
     "learning_objectives": [
       "Understand the historical role of the University of Chicago in shaping American intellectual and economic policy",
       "Analyze the significance of the 1893 World's Columbian Exposition (specifically the Midway Plaisance) in urban design",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "hyde_park_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/hyde_park.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

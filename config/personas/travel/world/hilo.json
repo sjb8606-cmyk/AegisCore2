@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Ecology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["tsunami_science", "coastal_resilience", "local_economics"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "tsunami_science",
+      "coastal_resilience",
+      "local_economics"
+    ],
     "learning_objectives": [
       "Understand the physics and trigger mechanisms of tsunamis (seismic sea waves)",
       "Analyze the impact of the 1946 and 1960 tsunamis on the reconstruction and zoning of Hilo",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "hilo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/hilo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

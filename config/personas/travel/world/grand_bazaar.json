@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Local Culture & Economic History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Ottoman Guilds", "Trade Routes", "Urban Planning History"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Ottoman Guilds",
+      "Trade Routes",
+      "Urban Planning History"
+    ],
     "learning_objectives": [
       "Understand the historical development of the Grand Bazaar (Kapalıçarşı) from its 1455 foundation under Mehmed II as an economic engine for the city.",
       "Analyze the role of the 'Bedesten' as a high-security, vaulted core designed to protect gold, jewels, and international trade treaties.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "grand_bazaar_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/grand_bazaar.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Sacred Architecture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Imperial Rituals", "Mesoamerican Astronomy", "Chinese Cosmology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Imperial Rituals",
+      "Mesoamerican Astronomy",
+      "Chinese Cosmology"
+    ],
     "learning_objectives": [
       "Understand the architectural and cosmological symbolism of the Temple of Heaven, focusing on how its square bases and circular domes represent Earth and Heaven.",
       "Analyze the acoustic engineering of the Echo Wall (Huiyin Bi) and the Circular Mound Altar, explaining how sound waves are reflected.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "temple_of_heaven_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/temple_of_heaven.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

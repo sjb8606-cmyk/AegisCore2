@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geology & Art History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Volcanic Geomorphology", "Hellenistic Sculpture", "Traditional Architecture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Volcanic Geomorphology",
+      "Hellenistic Sculpture",
+      "Traditional Architecture"
+    ],
     "learning_objectives": [
       "Understand the geological formation of Milos's volcanic landscapes, focusing on the white tuff and bentonite clay of Sarakiniko.",
       "Analyze the artistic style of the Venus de Milo (Aphrodite of Milos), evaluating its place in the transition from Classical to Hellenistic Greek sculpture.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "milos_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/milos.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

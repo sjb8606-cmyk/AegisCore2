@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Vietnam_Independence", "Cold_War_Architecture", "Ba_Dinh_Square"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Vietnam_Independence",
+      "Cold_War_Architecture",
+      "Ba_Dinh_Square"
+    ],
     "learning_objectives": [
       "Analyze the historical significance of the 1945 Declaration of Independence read by Ho Chi Minh at Ba Dinh Square within the context of global decolonization.",
       "Identify the key architectural and symbolic features of Soviet Socialist-Classicist design in the construction of the Mausoleum.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ho_chi_minh_mausoleum_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ho_chi_minh_mausoleum.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

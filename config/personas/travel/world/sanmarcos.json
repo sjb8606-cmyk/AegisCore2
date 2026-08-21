@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Philosophy",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["wellness_philosophies", "indigenous_ecology", "sustainable_communities"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "wellness_philosophies",
+      "indigenous_ecology",
+      "sustainable_communities"
+    ],
     "learning_objectives": [
       "Understand the key environmental, dietary, and social factors that define San Marcos as an international center of holistic wellness.",
       "Analyze the integration of modern western alternative healing practices with traditional Kaqchikel Mayan views of nature (Pachamama).",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sanmarcos_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sanmarcos.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

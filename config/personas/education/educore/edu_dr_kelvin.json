@@ -19,11 +19,40 @@
   "education": {
     "tier": 2,
     "reports_to": "edu_vega",
-    "subjects": ["physics", "forces_and_motion"],
-    "curriculum_tags": ["Newtons_laws", "kinematics", "dynamics", "momentum", "energy_conservation"]
+    "subjects": [
+      "physics",
+      "forces_and_motion"
+    ],
+    "curriculum_tags": [
+      "Newtons_laws",
+      "kinematics",
+      "dynamics",
+      "momentum",
+      "energy_conservation"
+    ]
   },
   "avatar": {
     "elevenlabs_voice_id": "edu_dr_kelvin_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/edu_dr_kelvin.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

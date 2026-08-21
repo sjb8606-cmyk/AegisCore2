@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Industrial History & Geology",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["History of Communication", "Palaeontology", "Industrial Archaeology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "History of Communication",
+      "Palaeontology",
+      "Industrial Archaeology"
+    ],
     "learning_objectives": [
       "Understand the history and global impact of the first successful Transatlantic Telegraph Cable (1866) connecting Valentia Island to Newfoundland.",
       "Analyze the geological and evolutionary significance of the Valentia Tetrapod Trackway (385 million years old) as evidence of the transition of life from sea to land.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "valentia_island_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/valentia_island.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

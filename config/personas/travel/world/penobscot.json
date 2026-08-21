@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["indigenous_sovereignty", "environmental_racism", "cultural_revitalization"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "indigenous_sovereignty",
+      "environmental_racism",
+      "cultural_revitalization"
+    ],
     "learning_objectives": [
       "Understand the historical sovereignty of the Penobscot Nation over the islands of the Penobscot River",
       "Analyze the impact of the Penobscot River Restoration Project in removing dams to restore migratory fish pathways",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "penobscot_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/penobscot.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

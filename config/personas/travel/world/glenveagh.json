@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Local History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Post-Famine Landlords", "Glacial Geomorphology", "Upland Ecology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Post-Famine Landlords",
+      "Glacial Geomorphology",
+      "Upland Ecology"
+    ],
     "learning_objectives": [
       "Understand the historical tragedy of the Derryveagh Evictions (1861), where landlord John Adair cleared 244 people to create a private hunting estate.",
       "Analyze the glacial geomorphology of the Derryveagh range, explaining how glaciers carved the deep 'U-shaped' Glenveagh valley.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "glenveagh_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/glenveagh.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

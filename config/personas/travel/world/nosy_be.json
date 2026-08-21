@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Culinary",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["agricultural_science", "marine_biology_sharks", "island_tourism_economics"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "agricultural_science",
+      "marine_biology_sharks",
+      "island_tourism_economics"
+    ],
     "learning_objectives": [
       "Explain the complex, manual pollination and curing processes of the Vanilla orchid (Vanilla planifolia) in northern Madagascar.",
       "Understand the ecological importance of the Lokobe National Park in preserving the island's endemic primary forest and native fauna.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "nosy_be_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/nosy_be.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

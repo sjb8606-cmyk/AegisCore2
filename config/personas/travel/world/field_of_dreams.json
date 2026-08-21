@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culture",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["cultural_mythology", "pop_culture", "agricultural_economics"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "cultural_mythology",
+      "pop_culture",
+      "agricultural_economics"
+    ],
     "learning_objectives": [
       "Understand the cultural and cinematic impact of the 1989 film 'Field of Dreams' on American mythology",
       "Analyze the economic and social transition of a working family farm into a global heritage tourism site",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "field_of_dreams_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/field_of_dreams.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

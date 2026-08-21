@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Emigration_History", "Winter_War_Lease", "Resort_Architecture"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Emigration_History",
+      "Winter_War_Lease",
+      "Resort_Architecture"
+    ],
     "learning_objectives": [
       "Understand the historical role of Hanko as the primary port of departure for over 250,000 Finnish emigrants traveling to North America between 1880 and 1930.",
       "Analyze the strategic military significance of Hanko Peninsula during World War II, focusing on its forced lease to the Soviet Union after the Winter War.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "hanko_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/hanko.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

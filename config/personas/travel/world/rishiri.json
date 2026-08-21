@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Nature & Marine Harvesting",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Marine Harvesting", "Alpine Ecology", "Umami Chemistry"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Marine Harvesting",
+      "Alpine Ecology",
+      "Umami Chemistry"
+    ],
     "learning_objectives": [
       "Understand why sub-arctic, nutrient-rich currents around Rishiri produce world-class Kombu (kelp) with high glutamic acid content.",
       "Analyze the biogeographical phenomenon on neighboring Rebun Island where alpine flowers bloom at sea level due to extreme northern latitudes.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "rishiri_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/rishiri.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

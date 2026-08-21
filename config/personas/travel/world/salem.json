@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Sociology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["colonial_history", "sociology", "legal_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "colonial_history",
+      "sociology",
+      "legal_history"
+    ],
     "learning_objectives": [
       "Understand the intersection of puritan theology, land disputes, and gender bias that caused the 1692 Salem Witch Trials",
       "Analyze the psychological mechanics of mass hysteria and its modern parallels",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "salem_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/salem.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

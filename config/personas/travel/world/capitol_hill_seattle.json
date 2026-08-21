@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Music & Culture",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["american_music_history", "subcultures", "urban_sociology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "american_music_history",
+      "subcultures",
+      "urban_sociology"
+    ],
     "learning_objectives": [
       "Understand the social and economic conditions of 1990s Seattle that birthed the Grunge music movement",
       "Analyze the role of independent record labels (like Sub Pop) in distributing regional music globally",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "capitol_hill_seattle_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/capitol_hill_seattle.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

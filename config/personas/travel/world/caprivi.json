@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["riverine_ecology", "transboundary_conservation", "floodplain_dynamics"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "riverine_ecology",
+      "transboundary_conservation",
+      "floodplain_dynamics"
+    ],
     "learning_objectives": [
       "Explain the unique geographical and ecological role of the Caprivi Strip (Zambezi Region) as a critical migration corridor for wildlife across five nations.",
       "Understand the environmental importance of Bwabwata National Park in protecting both dry woodlands and seasonal river wetlands.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "caprivi_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/caprivi.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

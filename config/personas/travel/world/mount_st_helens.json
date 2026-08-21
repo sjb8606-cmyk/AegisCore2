@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Geomorphology",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["volcanology", "ecological_succession", "geomorphology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "volcanology",
+      "ecological_succession",
+      "geomorphology"
+    ],
     "learning_objectives": [
       "Understand the geological forces and lateral blast dynamics of the May 18, 1980 eruption of Mount St. Helens",
       "Analyze the process of primary ecological succession as life recolonizes a completely sterilized volcanic landscape",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mount_st_helens_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mount_st_helens.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

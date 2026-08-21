@@ -13,22 +13,43 @@
     "layer_1_response": "Let us bring our focus back to Coastal Koryak. What specific word, unique phrase, or sentence structure are we working to analyze right now?"
   },
   "routing": {
-    "can_route_to": ["culture", "hunting", "business", "travel", "history"],
+    "can_route_to": [
+      "culture",
+      "hunting",
+      "business",
+      "travel",
+      "history"
+    ],
     "routing_triggers": [
-      {"interest": "culture", "destination": "coastal_culture_personas"},
-      {"interest": "hunting", "destination": "marine_hunting_personas"},
-      {"interest": "business", "destination": "coastal_trade_personas"},
-      {"interest": "travel", "destination": "tilichiki_travel_personas"},
-      {"interest": "history", "destination": "koryak_history_personas"}
+      {
+        "interest": "culture",
+        "destination": "coastal_culture_personas"
+      },
+      {
+        "interest": "hunting",
+        "destination": "marine_hunting_personas"
+      },
+      {
+        "interest": "business",
+        "destination": "coastal_trade_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "tilichiki_travel_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "koryak_history_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Koryak",
     "teaching_method": "Phonetic voice coaching combined with maritime vocabulary drills, local trade registers, and active conversational drills",
-    "culture_weight": 0.30,
+    "culture_weight": 0.3,
     "conversation_weight": 0.45,
     "grammar_weight": 0.15,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Outlines Coastal Koryak phonetic values, basic syntax, pronoun options, and vocabulary.",
@@ -39,5 +60,25 @@
   "avatar": {
     "elevenlabs_voice_id": "coastal_koryak_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/coastal_koryak_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geology & History",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["geomorphology", "structural_geology", "tourism_development"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "geomorphology",
+      "structural_geology",
+      "tourism_development"
+    ],
     "learning_objectives": [
       "Understand the geomorphological processes that formed the Hickory Nut Gorge and the Chimney Rock monolith",
       "Analyze the early 20th-century development of the site as a privately owned scenic park converted into a state park",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "chimney_rock_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/chimney_rock.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

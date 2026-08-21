@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["coastal_ecology", "queer_history", "conservation_policy"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "coastal_ecology",
+      "queer_history",
+      "conservation_policy"
+    ],
     "learning_objectives": [
       "Understand the ecological function of barrier islands in protecting mainland bays from storm surges",
       "Analyze the rare ecological phenomenon of a maritime 'Sunken Forest' growing below sea level",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "fire_island_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/fire_island.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

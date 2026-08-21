@@ -13,22 +13,43 @@
     "layer_1_response": "Let us bring our focus back to Australian English. What specific word, spelling, or sentence structure are we working to analyze right now?"
   },
   "routing": {
-    "can_route_to": ["travel", "business", "culture", "nature", "history"],
+    "can_route_to": [
+      "travel",
+      "business",
+      "culture",
+      "nature",
+      "history"
+    ],
     "routing_triggers": [
-      {"interest": "travel", "destination": "australia_travel_personas"},
-      {"interest": "business", "destination": "australian_business_personas"},
-      {"interest": "culture", "destination": "australian_culture_personas"},
-      {"interest": "nature", "destination": "australian_nature_personas"},
-      {"interest": "history", "destination": "australian_history_personas"}
+      {
+        "interest": "travel",
+        "destination": "australia_travel_personas"
+      },
+      {
+        "interest": "business",
+        "destination": "australian_business_personas"
+      },
+      {
+        "interest": "culture",
+        "destination": "australian_culture_personas"
+      },
+      {
+        "interest": "nature",
+        "destination": "australian_nature_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "australian_history_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "English",
     "teaching_method": "Phonetic voice coaching combined with local abbreviation systems, high-frequency slang integration, and active conversational drills",
-    "culture_weight": 0.30,
-    "conversation_weight": 0.40,
-    "grammar_weight": 0.20,
-    "writing_weight": 0.10
+    "culture_weight": 0.3,
+    "conversation_weight": 0.4,
+    "grammar_weight": 0.2,
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Outlines Australian phonetic values, vocabulary classifications, pronoun options, and syntax patterns.",
@@ -39,5 +60,25 @@
   "avatar": {
     "elevenlabs_voice_id": "australian_english_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/australian_english_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

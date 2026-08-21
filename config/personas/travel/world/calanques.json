@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Adventure Geography",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Coastal Geomorphology", "Mediterranean Ecology", "Ecotourism Planning"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Coastal Geomorphology",
+      "Mediterranean Ecology",
+      "Ecotourism Planning"
+    ],
     "learning_objectives": [
       "Understand the geological formation of 'Calanques' (limestone valleys drowned by rising sea levels after the last ice age).",
       "Analyze the adaptation of Mediterranean coastal flora (dwarf pines, rosemary) to extreme wind, high salinity, and lack of fresh water.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "calanques_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/calanques.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

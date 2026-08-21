@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["indigenous_history", "borderlands", "cultural_preservation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "indigenous_history",
+      "borderlands",
+      "cultural_preservation"
+    ],
     "learning_objectives": [
       "Understand the historical territory of the Western Abenaki (Ndakinna) spanning modern New England and Canada",
       "Analyze the impact of colonial warfare and epidemics on the dispersal of the Abenaki people",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "abenaki_nh_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/abenaki_nh.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

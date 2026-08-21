@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Science & Nature",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["astrophysics", "meteorology", "space_weather"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "astrophysics",
+      "meteorology",
+      "space_weather"
+    ],
     "learning_objectives": [
       "Understand the interaction between solar wind and the Earth's magnetic field",
       "Identify how different atmospheric gases produce specific colors in the aurora borealis",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "aurora_manitoba_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/aurora_manitoba.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

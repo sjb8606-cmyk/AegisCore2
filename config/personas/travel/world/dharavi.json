@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Urban Sociology & Economics",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Informal Economies", "Urban Sociology", "Industrial Recycling"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Informal Economies",
+      "Urban Sociology",
+      "Industrial Recycling"
+    ],
     "learning_objectives": [
       "Understand the historical development of Dharavi from a marshy fishing village to the high-density industrial core of modern Mumbai.",
       "Analyze the role of the informal economy in recycling and manufacturing, explaining how plastic sorting and leather work generate over $1 billion in annual revenue.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "dharavi_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/dharavi.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

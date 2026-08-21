@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Industrial Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Industrial Revolution", "Bakumatsu Period", "Global Trade networks"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Industrial Revolution",
+      "Bakumatsu Period",
+      "Global Trade networks"
+    ],
     "learning_objectives": [
       "Understand Thomas Glover's role in covertly arming the anti-shogunate forces to trigger the Meiji Restoration.",
       "Analyze the early industrialization of Japan, focusing on coal mining (Hashima/Gunkanjima) and shipbuilding in Nagasaki.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "glover_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/glover.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

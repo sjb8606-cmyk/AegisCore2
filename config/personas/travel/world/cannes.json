@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Cinema Studies & Tourism",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["History of Cinema", "Tourism Planning", "Cold War Culture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "History of Cinema",
+      "Tourism Planning",
+      "Cold War Culture"
+    ],
     "learning_objectives": [
       "Understand the political origin of the Cannes Film Festival (1939/1946) as a democratic response to the politicized Venice Film Festival under Mussolini.",
       "Analyze how the Croisette boulevard developed as a spatial playground for the elite, utilizing luxury architecture and maritime geography.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cannes_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cannes.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

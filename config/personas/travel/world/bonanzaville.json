@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Heritage",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["pioneer_history", "agricultural_economics", "material_culture"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "pioneer_history",
+      "agricultural_economics",
+      "material_culture"
+    ],
     "learning_objectives": [
       "Understand the history and scale of the late 19th-century 'Bonanza Farms' in North Dakota",
       "Analyze the material culture and vernacular architecture of prairie pioneer settlements",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bonanzaville_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bonanzaville.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

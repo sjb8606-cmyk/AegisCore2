@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Prague_Jewish_History", "Gothic_Synagogues", "Holocaust_Museum_Deception"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Prague_Jewish_History",
+      "Gothic_Synagogues",
+      "Holocaust_Museum_Deception"
+    ],
     "learning_objectives": [
       "Understand the historical development of the Prague Ghetto and its transition into the Josefov quarter under Emperor Joseph II.",
       "Analyze the architectural design and structural history of the Old-New Synagogue as a unique monument of early Gothic architecture.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "josefov_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/josefov.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

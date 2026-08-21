@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Science",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["karst_geology", "aquifer_filtration", "river_hydrology_fiji"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "karst_geology",
+      "aquifer_filtration",
+      "river_hydrology_fiji"
+    ],
     "learning_objectives": [
       "Explain the geological and chemical processes of water filtration that form the deep, ultra-clear blue holes of Espiritu Santo.",
       "Understand the hydrology of the island's limestone aquifer system and how underground rivers feed the coastal springs.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "blue_hole_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/blue_hole.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

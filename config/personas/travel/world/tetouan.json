@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Cultural Heritage",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Andalusian Refugees", "Spanish Protectorate", "Colonial Urbanism"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Andalusian Refugees",
+      "Spanish Protectorate",
+      "Colonial Urbanism"
+    ],
     "learning_objectives": [
       "Understand the historical role of Tetouan as the primary cultural and administrative capital of the Spanish Protectorate in Morocco (1913–1956).",
       "Analyze the architectural synthesis of the Medina (UNESCO World Heritage), evaluating how it integrated Andalusian and Sephardic designs.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tetouan_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tetouan.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

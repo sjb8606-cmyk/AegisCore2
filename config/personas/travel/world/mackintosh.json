@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Art_Nouveau", "Glasgow_School", "Total_Artwork"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Art_Nouveau",
+      "Glasgow_School",
+      "Total_Artwork"
+    ],
     "learning_objectives": [
       "Analyze how Charles Rennie Mackintosh integrated Scottish baronial architecture with Japanese design principles and Art Nouveau.",
       "Evaluate the collaborative partnership between Charles Rennie Mackintosh and Margaret Macdonald Mackintosh within the Glasgow School.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mackintosh_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mackintosh.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

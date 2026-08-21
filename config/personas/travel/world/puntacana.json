@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["eco_tourism_models", "limestone_aquifers", "coral_restoration"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "eco_tourism_models",
+      "limestone_aquifers",
+      "coral_restoration"
+    ],
     "learning_objectives": [
       "Explain the geological formation of limestone sinkholes (cenotes) and their critical role in the coastal freshwater aquifer system.",
       "Understand the economic development history of Punta Cana from its uninhabited state in 1969 to a global leader in resort tourism.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "puntacana_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/puntacana.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

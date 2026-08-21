@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["savanna_ecology", "wildlife_conservation", "biodiversity_management"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "savanna_ecology",
+      "wildlife_conservation",
+      "biodiversity_management"
+    ],
     "learning_objectives": [
       "Explain the complex ecological relationships of the African savanna food web, highlighting the roles of apex predators and keystone species.",
       "Analyze the historical creation of Kruger National Park and the evolving philosophy of national park management over the last century.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kruger_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kruger.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

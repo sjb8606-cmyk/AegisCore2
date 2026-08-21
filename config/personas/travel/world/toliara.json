@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["colonial_trade_networks", "mahafaly_sculpture", "marine_conservation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "colonial_trade_networks",
+      "mahafaly_sculpture",
+      "marine_conservation"
+    ],
     "learning_objectives": [
       "Understand the historical role of Toliara as a major regional administrative and commercial hub in southern Madagascar.",
       "Analyze the cultural and artistic significance of traditional Mahafaly funerary sculptures (aloalo) and painted stone tombs.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "toliara_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/toliara.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

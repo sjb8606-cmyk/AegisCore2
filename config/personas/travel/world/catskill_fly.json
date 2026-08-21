@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Sports & Conservation",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["aquatic_entomology", "conservation_ecology", "fly_fishing_history"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "aquatic_entomology",
+      "conservation_ecology",
+      "fly_fishing_history"
+    ],
     "learning_objectives": [
       "Identify the life cycles of aquatic macroinvertebrates (mayflies, caddisflies) and their role as ecological indicators",
       "Understand the history of fly tying and conservation in the Catskill region (specifically the Beaverkill and Willowemoc)",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "catskill_fly_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/catskill_fly.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

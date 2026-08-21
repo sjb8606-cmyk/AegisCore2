@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["rainforest_ecology", "plantation_history", "material_culture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "rainforest_ecology",
+      "plantation_history",
+      "material_culture"
+    ],
     "learning_objectives": [
       "Understand the ecological characteristics and biodiversity of St. Croix's subtropical rainforest",
       "Analyze the material culture and history of Estate Whim as a preserved Danish sugar estate",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "st_croix_rainforest_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/st_croix_rainforest.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

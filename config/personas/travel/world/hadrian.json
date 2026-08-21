@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Roman_Britain", "Military_Engineering", "Archaeological_Epigraphy"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Roman_Britain",
+      "Military_Engineering",
+      "Archaeological_Epigraphy"
+    ],
     "learning_objectives": [
       "Understand the strategic, administrative, and economic functions of Hadrian's Wall beyond simple military defense.",
       "Analyze the social diversity of the Roman auxiliary units stationed on the wall through archaeological evidence like the Vindolanda Tablets.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "hadrian_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/hadrian.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

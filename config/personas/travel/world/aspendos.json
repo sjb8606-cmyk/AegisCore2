@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Performing Arts & Archaeology",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Acoustics & Physics", "Roman Architecture", "Seljuk Transitions"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Acoustics & Physics",
+      "Roman Architecture",
+      "Seljuk Transitions"
+    ],
     "learning_objectives": [
       "Understand the acoustic physics of the Theatre of Aspendos, specifically how its limestone seating filters out low-frequency background noise while amplifying high-frequency voices.",
       "Analyze the architectural design of the 'Scenae Frons' (the monumental stage wall) and how it projected sound back onto the audience.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "aspendos_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/aspendos.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

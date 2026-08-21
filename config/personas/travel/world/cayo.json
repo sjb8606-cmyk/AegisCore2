@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["coastal_ecology", "island_tourism_economics", "marine_conservation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "coastal_ecology",
+      "island_tourism_economics",
+      "marine_conservation"
+    ],
     "learning_objectives": [
       "Explain the geological formation of cayos (coral sand keys) in tropical bay systems and their vulnerability to sea-level rise.",
       "Understand the environmental impact of high-intensity luxury resort tourism on island waste management and freshwater systems.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cayo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cayo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

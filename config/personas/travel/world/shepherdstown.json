@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["colonial_history", "civil_war_medicine", "history_of_technology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "colonial_history",
+      "civil_war_medicine",
+      "history_of_technology"
+    ],
     "learning_objectives": [
       "Understand the early colonial history of Shepherdstown as a key Potomac crossing point",
       "Analyze the role of the town as a massive, improvised hospital system following the Battle of Antietam",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "shepherdstown_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/shepherdstown.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

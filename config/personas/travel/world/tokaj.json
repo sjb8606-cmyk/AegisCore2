@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Culinary",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Noble_Rot_Botrytis", "Volcanic_Viticulture", "Historic_Wine_Classifications"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Noble_Rot_Botrytis",
+      "Volcanic_Viticulture",
+      "Historic_Wine_Classifications"
+    ],
     "learning_objectives": [
       "Explain the biochemical process of 'botrytisation' (noble rot) and how it dehydrates grapes to concentrate sugars, acids, and flavors.",
       "Understand the historical significance of the 1730 Tokaj Vineyard Classification as the world's first formal, geographic wine appellation system.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tokaj_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tokaj.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

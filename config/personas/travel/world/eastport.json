@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["oceanography", "geopolitics", "coastal_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "oceanography",
+      "geopolitics",
+      "coastal_history"
+    ],
     "learning_objectives": [
       "Understand the oceanographic forces that create reversing falls and massive whirlpools in the Bay of Fundy",
       "Analyze the geopolitical history of Eastport as a trade and military boundary between the US and British Canada",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "eastport_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/eastport.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["classic_maya_architecture", "river_trade", "astronomical_symbolism"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "classic_maya_architecture",
+      "river_trade",
+      "astronomical_symbolism"
+    ],
     "learning_objectives": [
       "Understand the historical role of Xunantunich as a major Classic Maya ceremonial center and its strategic connection to the Mopan River trade routes.",
       "Analyze the artistic and political symbolism of the plaster stucco friezes on El Castillo, detailing how they represent astronomical and dynastic power.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "xunantunich_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/xunantunich.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

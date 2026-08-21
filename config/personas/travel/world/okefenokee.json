@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["swamp_ecology", "peatlands", "wetland_conservation"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "swamp_ecology",
+      "peatlands",
+      "wetland_conservation"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Okefenokee Swamp on a Pleistocene terrace",
       "Analyze the role of peat accumulation and fire in maintaining the unique mosaic of marsh and forest",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "okefenokee_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/okefenokee.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

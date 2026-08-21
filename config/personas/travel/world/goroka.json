@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["sing_sing_culture", "cultural_integration", "pacification_histories"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "sing_sing_culture",
+      "cultural_integration",
+      "pacification_histories"
+    ],
     "learning_objectives": [
       "Understand the historical origin of the Goroka Show (founded in 1957) and its role in promoting inter-tribal peace and cultural integration in the highlands.",
       "Analyze the artistic techniques and materials (including bird of paradise feathers and ochre) used in traditional 'bilas' body ornamentation.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "goroka_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/goroka.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

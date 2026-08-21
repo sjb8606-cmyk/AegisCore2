@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Governance",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["indigenous_law", "political_science", "canadian_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "indigenous_law",
+      "political_science",
+      "canadian_history"
+    ],
     "learning_objectives": [
       "Understand the historic Tłı̨chǫ Agreement, the first combined comprehensive land claim and self-government agreement in the NWT",
       "Analyze the structure and function of the Tłı̨chǫ Government in modern Canadian politics",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tlicho_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tlicho.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

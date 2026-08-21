@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["marine_biology", "coral_reefs", "coastal_protection"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "marine_biology",
+      "coral_reefs",
+      "coastal_protection"
+    ],
     "learning_objectives": [
       "Explain the ecological structure of coral reefs, detailing how zooxanthellae algae and coral polyps exist in a symbiotic relationship.",
       "Understand the geological formation of shallow, offshore sandy pools (like the Nylon Pool) inside coral lagoon systems.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "buccoo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/buccoo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

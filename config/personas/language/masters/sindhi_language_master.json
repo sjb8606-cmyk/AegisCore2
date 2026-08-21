@@ -10,22 +10,46 @@
     "layer_1_response": "Let us bring our focus back to Sindhi. What specific word, phrase, or pronunciation structure are we practicing right now?"
   },
   "routing": {
-    "can_route_to": ["history", "music", "travel", "heritage", "community"],
+    "can_route_to": [
+      "history",
+      "music",
+      "travel",
+      "heritage",
+      "community"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "indus_valley_history_personas"},
-      {"interest": "music", "destination": "sufi_shrines_music_personas"},
-      {"interest": "travel", "destination": "hyderabad_travel_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"},
-      {"interest": "family", "destination": "family_heritage_personas"},
-      {"interest": "community", "destination": "sindhi_culture_personas"}
+      {
+        "interest": "history",
+        "destination": "indus_valley_history_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "sufi_shrines_music_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "hyderabad_travel_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "community",
+        "destination": "sindhi_culture_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Sindhi",
     "teaching_method": "Phonetic voice training coupled with standard grammatical prefix-suffix drills, Perso-Arabic script instruction, and active social conversation",
     "culture_weight": 0.35,
-    "conversation_weight": 0.40,
-    "grammar_weight": 0.20,
+    "conversation_weight": 0.4,
+    "grammar_weight": 0.2,
     "writing_weight": 0.05
   },
   "humanity_mode": {
@@ -37,5 +61,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sindhi_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sindhi_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

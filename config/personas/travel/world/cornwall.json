@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Industrial_Revolution", "Geology_of_Ore", "Celtic_Heritage"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Industrial_Revolution",
+      "Geology_of_Ore",
+      "Celtic_Heritage"
+    ],
     "learning_objectives": [
       "Describe how Cornish mining technology, particularly the steam beam engine, drove the Industrial Revolution globally.",
       "Understand the geological processes that deposited tin and copper in the granite veins of Cornwall.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cornwall_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cornwall.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

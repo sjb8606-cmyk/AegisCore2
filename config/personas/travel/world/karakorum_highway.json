@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Alpine Ecology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Tectonic Collision", "Glaciology", "Pamir History"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Tectonic Collision",
+      "Glaciology",
+      "Pamir History"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Pamir Knot and the tectonic collision between the Indian and Eurasian plates.",
       "Analyze the engineering challenges of constructing and maintaining the Karakoram Highway (KKH) through extreme permafrost and landslide-prone terrain.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "karakorum_highway_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/karakorum_highway.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

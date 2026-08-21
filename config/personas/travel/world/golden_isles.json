@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Ecology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["coastal_ecology", "gilded_age_history", "marine_conservation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "coastal_ecology",
+      "gilded_age_history",
+      "marine_conservation"
+    ],
     "learning_objectives": [
       "Understand the Gilded Age history of the Jekyll Island Club as the exclusive winter retreat of America's wealthiest families",
       "Analyze the ecological importance of Georgia's barrier islands in protecting the coastal mainland and salt marshes",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "golden_isles_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/golden_isles.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

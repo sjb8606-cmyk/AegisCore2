@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Culinary & Chemistry",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["organic_chemistry", "industrial_history", "agriculture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "organic_chemistry",
+      "industrial_history",
+      "agriculture"
+    ],
     "learning_objectives": [
       "Understand the biochemical process of fermentation and the distillation of corn mash",
       "Analyze the organic chemistry of barrel aging, specifically how charring wood creates vanillin and tannins",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bourbon_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bourbon.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

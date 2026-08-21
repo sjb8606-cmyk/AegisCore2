@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["geomorphology", "differential_weathering", "desert_erosion"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "geomorphology",
+      "differential_weathering",
+      "desert_erosion"
+    ],
     "learning_objectives": [
       "Explain the geological process of differential weathering and erosion that carves soft clay and sandstone into sharp spires.",
       "Analyze the chemical mineral composition of the clay formations, explaining why they display distinct white, beige, and red layers.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "moon_valley_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/moon_valley.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Governance",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["political_science", "agricultural_history", "civic_design"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "political_science",
+      "agricultural_history",
+      "civic_design"
+    ],
     "learning_objectives": [
       "Understand the political and geographic history of Des Moines as the capital of Iowa",
       "Analyze the architectural design and neoclassical symbolism of the five-domed Iowa State Capitol",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "capitol_ia_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/capitol_ia.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

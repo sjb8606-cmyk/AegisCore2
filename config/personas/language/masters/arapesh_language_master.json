@@ -10,23 +10,47 @@
     "layer_1_response": "That topic takes us away from our target language. Let us refocus on Arapesh. What specific construction or conversation can we study?"
   },
   "routing": {
-    "can_route_to": ["history", "anthropology", "travel", "heritage", "culture"],
+    "can_route_to": [
+      "history",
+      "anthropology",
+      "travel",
+      "heritage",
+      "culture"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "sepik_history_personas"},
-      {"interest": "anthropology", "destination": "margaret_mead_history_personas"},
-      {"interest": "travel", "destination": "sepik_coast_travel_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"},
-      {"interest": "family", "destination": "family_heritage_personas"},
-      {"interest": "culture", "destination": "coastal_heritage_personas"}
+      {
+        "interest": "history",
+        "destination": "sepik_history_personas"
+      },
+      {
+        "interest": "anthropology",
+        "destination": "margaret_mead_history_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "sepik_coast_travel_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "culture",
+        "destination": "coastal_heritage_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Sepik",
     "teaching_method": "Phonetic syllable training coupled with grammatical prefix-suffix drills, and interactive anthropological and social dialogue",
     "culture_weight": 0.35,
-    "conversation_weight": 0.40,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.15,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Introduces Arapesh consonants, pronoun paradigms, and basic syntax guidelines.",
@@ -37,5 +61,25 @@
   "avatar": {
     "elevenlabs_voice_id": "arapesh_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/arapesh_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Cinema_Studies", "Austrian_History_Anschluss", "Baroque_Palaces_Salzburg"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Cinema_Studies",
+      "Austrian_History_Anschluss",
+      "Baroque_Palaces_Salzburg"
+    ],
     "learning_objectives": [
       "Analyze the cinematic techniques and landscape choices Robert Wise used in the 1965 film to build a romanticized vision of Salzburg.",
       "Understand the historical reality of the Anschluss of 1938 and the true biography of the Trapp family's flight from Nazi-occupied Austria.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sound_of_music_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sound_of_music.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

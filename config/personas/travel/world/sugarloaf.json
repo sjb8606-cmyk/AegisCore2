@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Recreation & Nature",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["alpine_ecology", "recreation_management", "geomorphology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "alpine_ecology",
+      "recreation_management",
+      "geomorphology"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Appalachian chain in western Maine",
       "Analyze the ecological impact of ski resort infrastructure on high-altitude forest ecosystems",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sugarloaf_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sugarloaf.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

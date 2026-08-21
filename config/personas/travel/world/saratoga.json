@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Leisure",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["geology", "gilded_age", "military_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "geology",
+      "gilded_age",
+      "military_history"
+    ],
     "learning_objectives": [
       "Understand the geological faults that create the naturally carbonated mineral springs of Saratoga",
       "Analyze the significance of the Battle of Saratoga (1777) as the turning point of the American Revolution",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "saratoga_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/saratoga.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

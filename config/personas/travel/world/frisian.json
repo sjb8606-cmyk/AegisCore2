@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Tidal_Sedimentation", "Minority_Language_Ecology", "Wetland_Conservation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Tidal_Sedimentation",
+      "Minority_Language_Ecology",
+      "Wetland_Conservation"
+    ],
     "learning_objectives": [
       "Explain the physical and hydrological processes that create the unique intertidal mudflat systems of the Wadden Sea.",
       "Understand the historical and social factors that allowed the West Frisian language (Frysk) to survive as an official language in the Netherlands.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "frisian_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/frisian.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

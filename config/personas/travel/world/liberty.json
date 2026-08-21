@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Law",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["constitutional_history", "american_revolution", "civics"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "constitutional_history",
+      "american_revolution",
+      "civics"
+    ],
     "learning_objectives": [
       "Understand the geopolitical and economic factors that led to the drafting of the Declaration of Independence in 1776",
       "Analyze the structural debates and compromises of the 1787 Constitutional Convention at Independence Hall",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "liberty_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/liberty.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

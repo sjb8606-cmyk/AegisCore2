@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Subarctic_Ecology", "Forest_Regeneration", "Glacial_Landforms"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Subarctic_Ecology",
+      "Forest_Regeneration",
+      "Glacial_Landforms"
+    ],
     "learning_objectives": [
       "Explain why the Cairngorms plateau is classified as a sub-arctic environment and how its species adapt to extreme cold and wind.",
       "Understand the ecological role of the Caledonian Pinewood as a key native habitat and the challenges of its modern regeneration.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cairngorms_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cairngorms.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

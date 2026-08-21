@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Maritime History & Marine Conservation",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Maritime History", "Garibaldi & Unification", "Marine Ecology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Maritime History",
+      "Garibaldi & Unification",
+      "Marine Ecology"
+    ],
     "learning_objectives": [
       "Understand the strategic military history of the La Maddalena archipelago, focusing on its role as a naval base for Nelson, Napoleon, and NATO.",
       "Analyze the life and political exile of Giuseppe Garibaldi on the island of Caprera, evaluating his transition from revolutionary general to farmer.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "maddalena_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/maddalena.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

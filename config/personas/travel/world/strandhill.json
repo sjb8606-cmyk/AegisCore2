@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Local Culture & Adventure Geography",
-    "grade_levels": ["elementary", "middle_school", "adult"],
-    "curriculum_tags": ["Marine Biology & Harvesting", "Oceanography & Swells", "History of Wellness"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Marine Biology & Harvesting",
+      "Oceanography & Swells",
+      "History of Wellness"
+    ],
     "learning_objectives": [
       "Understand why the geological positioning of Sligo Bay creates some of the most consistent, high-energy Atlantic swells (waves) in Europe.",
       "Analyze the biochemistry of kelp (Laminaria digitata) and how its high iodine and alginate content are utilized in traditional therapeutic seaweed baths.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "strandhill_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/strandhill.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

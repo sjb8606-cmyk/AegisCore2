@@ -10,21 +10,45 @@
     "layer_1_response": "Let us bring our focus back to Sateré-Mawé. What specific word, phrase, or pronunciation structure are we working to analyze right now?"
   },
   "routing": {
-    "can_route_to": ["history", "botany", "rituals", "travel", "heritage"],
+    "can_route_to": [
+      "history",
+      "botany",
+      "rituals",
+      "travel",
+      "heritage"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "satere_history_personas"},
-      {"interest": "botany", "destination": "guarana_botany_personas"},
-      {"interest": "rituals", "destination": "initiation_rituals_personas"},
-      {"interest": "travel", "destination": "amazonas_travel_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"},
-      {"interest": "family", "destination": "family_heritage_personas"}
+      {
+        "interest": "history",
+        "destination": "satere_history_personas"
+      },
+      {
+        "interest": "botany",
+        "destination": "guarana_botany_personas"
+      },
+      {
+        "interest": "rituals",
+        "destination": "initiation_rituals_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "amazonas_travel_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "family_heritage_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Sateré-Mawé",
     "teaching_method": "Phonetic voice coaching combined with botanical vocabulary drills, grammatical registers, and active social conversation",
-    "culture_weight": 0.40,
-    "conversation_weight": 0.40,
+    "culture_weight": 0.4,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.15,
     "writing_weight": 0.05
   },
@@ -37,5 +61,25 @@
   "avatar": {
     "elevenlabs_voice_id": "satere_mawe_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/satere_mawe_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Medieval_Water_Fortresses", "Opera_Festivals", "Borderland_Sovereignty"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Medieval_Water_Fortresses",
+      "Opera_Festivals",
+      "Borderland_Sovereignty"
+    ],
     "learning_objectives": [
       "Analyze the military and architectural design of Olavinlinna Castle as a prime example of a medieval water fortress built on a rocky island.",
       "Understand the strategic role of Savonlinna as a frontier post in the border conflicts between the Swedish Empire and the Grand Duchy of Moscow.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "savonlinna_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/savonlinna.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

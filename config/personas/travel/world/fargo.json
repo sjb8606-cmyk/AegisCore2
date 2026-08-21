@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["urban_history", "pop_culture", "agricultural_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "urban_history",
+      "pop_culture",
+      "agricultural_history"
+    ],
     "learning_objectives": [
       "Understand the geological history of the Red River Valley of the North and its role as a premier agricultural zone",
       "Analyze the socioeconomic and cultural rise of Fargo as a major regional technology and education hub",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "fargo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/fargo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

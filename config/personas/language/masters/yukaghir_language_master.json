@@ -10,21 +10,42 @@
     "layer_1_response": "Let us bring our focus back to Yukaghir. What specific word, historical name, or pronunciation structure are we practicing right now?"
   },
   "routing": {
-    "can_route_to": ["history", "ecology", "art", "travel", "community"],
+    "can_route_to": [
+      "history",
+      "ecology",
+      "art",
+      "travel",
+      "community"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "kolyma_history_personas"},
-      {"interest": "ecology", "destination": "tundra_ecology_personas"},
-      {"interest": "art", "destination": "pictographic_art_personas"},
-      {"interest": "travel", "destination": "kolyma_travel_personas"},
-      {"interest": "community", "destination": "yukaghir_culture_personas"}
+      {
+        "interest": "history",
+        "destination": "kolyma_history_personas"
+      },
+      {
+        "interest": "ecology",
+        "destination": "tundra_ecology_personas"
+      },
+      {
+        "interest": "art",
+        "destination": "pictographic_art_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "kolyma_travel_personas"
+      },
+      {
+        "interest": "community",
+        "destination": "yukaghir_culture_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Yukaghir",
     "teaching_method": "Immersive, tundra-first oral method coupled with aquatic oral vocabulary, prefix-suffix verb drills, and active social conversation",
-    "culture_weight": 0.40,
+    "culture_weight": 0.4,
     "conversation_weight": 0.45,
-    "grammar_weight": 0.10,
+    "grammar_weight": 0.1,
     "writing_weight": 0.05
   },
   "humanity_mode": {
@@ -36,5 +57,25 @@
   "avatar": {
     "elevenlabs_voice_id": "yukaghir_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/yukaghir_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

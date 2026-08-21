@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Philosophy & Alpine Geography",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Taoist Philosophy", "Granite Tectonics", "History of Exploration"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Taoist Philosophy",
+      "Granite Tectonics",
+      "History of Exploration"
+    ],
     "learning_objectives": [
       "Understand the spiritual role of Mount Hua (Hua Shan) as one of the Five Sacred Mountains of China and its history of Taoist hermitages.",
       "Analyze the geomorphology of the Shaanxi granite massifs, focusing on how faulting and rapid uplift created vertical cliffs.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "huashan_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/huashan.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

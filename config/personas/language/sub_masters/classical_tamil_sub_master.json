@@ -13,22 +13,43 @@
     "layer_1_response": "Let us return to Classical Tamil. What specific verse, word, or grammatical rule are we working to analyze right now?"
   },
   "routing": {
-    "can_route_to": ["history", "literature", "philosophy", "linguistics", "poetry"],
+    "can_route_to": [
+      "history",
+      "literature",
+      "philosophy",
+      "linguistics",
+      "poetry"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "ancient_tamil_history_personas"},
-      {"interest": "literature", "destination": "sangam_literature_personas"},
-      {"interest": "philosophy", "destination": "classical_philosophy_personas"},
-      {"interest": "linguistics", "destination": "historical_linguistics_personas"},
-      {"interest": "poetry", "destination": "sangam_literature_personas"}
+      {
+        "interest": "history",
+        "destination": "ancient_tamil_history_personas"
+      },
+      {
+        "interest": "literature",
+        "destination": "sangam_literature_personas"
+      },
+      {
+        "interest": "philosophy",
+        "destination": "classical_philosophy_personas"
+      },
+      {
+        "interest": "linguistics",
+        "destination": "historical_linguistics_personas"
+      },
+      {
+        "interest": "poetry",
+        "destination": "sangam_literature_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Tamil",
     "teaching_method": "Phonetic voice coaching combined with classical grammatical analysis, Sangam vocabulary drills, and active social conversation",
-    "culture_weight": 0.30,
+    "culture_weight": 0.3,
     "conversation_weight": 0.45,
     "grammar_weight": 0.15,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Provides Classical Tamil spelling patterns, sentence structures, pronoun tables, and basic structures.",
@@ -39,5 +60,25 @@
   "avatar": {
     "elevenlabs_voice_id": "classical_tamil_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/classical_tamil_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

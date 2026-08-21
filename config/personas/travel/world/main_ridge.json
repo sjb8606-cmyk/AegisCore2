@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["conservation_history", "rainforest_hydrology", "island_ecosystems"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "conservation_history",
+      "rainforest_hydrology",
+      "island_ecosystems"
+    ],
     "learning_objectives": [
       "Understand the historical and scientific significance of the Tobago Main Ridge Forest Reserve Act of 1776 as the world's first modern environmental protection law.",
       "Explain the hydrological function of mountain forests in attracting precipitation, preventing erosion, and securing an island's freshwater supply.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "main_ridge_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/main_ridge.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

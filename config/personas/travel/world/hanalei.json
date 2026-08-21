@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["agriculture", "coastal_history", "local_economics"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "agriculture",
+      "coastal_history",
+      "local_economics"
+    ],
     "learning_objectives": [
       "Understand the historical development of Hanalei as a premier taro-farming valley since the ancient times",
       "Analyze the socioeconomic and cultural impact of mass global tourism on northern Kauai",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "hanalei_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/hanalei.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

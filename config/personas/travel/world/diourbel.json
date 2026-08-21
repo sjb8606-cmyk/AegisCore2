@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Local Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Wolof History", "Sufi Resistance", "Baobab Botany"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Wolof History",
+      "Sufi Resistance",
+      "Baobab Botany"
+    ],
     "learning_objectives": [
       "Understand the historical role of Diourbel (ancient capital of the Kingdom of Baol) and its transition to a major center of Mouride pilgrimage.",
       "Analyze the geological and botanical properties of the African Baobab (Adansonia digitata), evaluating its role as a water reservoir and community meeting place.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "diourbel_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/diourbel.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

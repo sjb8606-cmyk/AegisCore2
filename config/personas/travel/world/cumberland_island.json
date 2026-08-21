@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["coastal_ecology", "feral_species", "gilded_age"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "coastal_ecology",
+      "feral_species",
+      "gilded_age"
+    ],
     "learning_objectives": [
       "Understand the history of the Carnegie family on Cumberland Island and the construction of Dungeness",
       "Analyze the ecological impact of feral horses on a protected barrier island ecosystem",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cumberland_island_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cumberland_island.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

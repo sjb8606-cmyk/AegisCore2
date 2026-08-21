@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Warsaw_Uprising_1944", "Urban_Resistance_Warfare", "Cold_War_Origins"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Warsaw_Uprising_1944",
+      "Urban_Resistance_Warfare",
+      "Cold_War_Origins"
+    ],
     "learning_objectives": [
       "Understand the strategic, political, and moral motivations behind the Polish Home Army's decision to launch the Warsaw Uprising in August 1944.",
       "Analyze the geopolitical betrayal by the Soviet Union, which halted its advance across the Vistula River to allow German forces to crush the Polish resistance.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "uprising_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/uprising.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

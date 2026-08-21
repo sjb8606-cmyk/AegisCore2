@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["amazon_ecology", "river_dolphin_biology", "eco_tourism_economies"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "amazon_ecology",
+      "river_dolphin_biology",
+      "eco_tourism_economies"
+    ],
     "learning_objectives": [
       "Understand the ecological features of the Bolivian Amazon (Pampas and Selva), explaining how they support high-density wildlife biomes.",
       "Analyze the biology, echo-location, and conservation status of the Bolivian Pink River Dolphin (Inia boliviensis) in the Beni River system.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "rurrenabaque_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/rurrenabaque.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

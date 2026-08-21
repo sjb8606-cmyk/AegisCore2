@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Memorial Design",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["domestic_terrorism", "collective_memory", "landscape_architecture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "domestic_terrorism",
+      "collective_memory",
+      "landscape_architecture"
+    ],
     "learning_objectives": [
       "Understand the events, causes, and national impacts of the Oklahoma City Bombing on April 19, 1995",
       "Analyze the architectural symbolism of the Outdoor Symbolic Memorial (Gates of Time, Field of Empty Chairs)",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "okc_memorial_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/okc_memorial.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

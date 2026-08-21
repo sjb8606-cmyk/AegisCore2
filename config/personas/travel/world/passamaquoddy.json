@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage & Ecology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["indigenous_rights", "marine_ecology", "canadian_us_borderlands"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "indigenous_rights",
+      "marine_ecology",
+      "canadian_us_borderlands"
+    ],
     "learning_objectives": [
       "Understand the structure and history of the Wabanaki Confederacy",
       "Analyze the impact of the US-Canada border on the traditional territory of the Passamaquoddy people",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "passamaquoddy_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/passamaquoddy.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["indigenous_sovereignty", "water_rights", "treaty_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "indigenous_sovereignty",
+      "water_rights",
+      "treaty_history"
+    ],
     "learning_objectives": [
       "Understand the historical treaty rights and sovereignty of the Confederated Tribes of Warm Springs",
       "Analyze the Treaty of 1855 and the retention of off-reservation hunting and fishing rights in the Columbia River",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "confederated_tribes_or_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/confederated_tribes_or.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

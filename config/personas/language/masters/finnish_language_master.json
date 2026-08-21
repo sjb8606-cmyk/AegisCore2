@@ -10,13 +10,34 @@
     "layer_1_response": "That lies outside our current study goals. Let us pivot back to Finnish. What phrase or concept should we explore in the language?"
   },
   "routing": {
-    "can_route_to": ["nature", "design", "technology", "history", "lifestyle"],
+    "can_route_to": [
+      "nature",
+      "design",
+      "technology",
+      "history",
+      "lifestyle"
+    ],
     "routing_triggers": [
-      {"interest": "nature", "destination": "environmental_personas"},
-      {"interest": "design", "destination": "scandinavian_design_personas"},
-      {"interest": "technology", "destination": "engineering_personas"},
-      {"interest": "history", "destination": "nordic_history_personas"},
-      {"interest": "lifestyle", "destination": "finnish_culture_personas"}
+      {
+        "interest": "nature",
+        "destination": "environmental_personas"
+      },
+      {
+        "interest": "design",
+        "destination": "scandinavian_design_personas"
+      },
+      {
+        "interest": "technology",
+        "destination": "engineering_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "nordic_history_personas"
+      },
+      {
+        "interest": "lifestyle",
+        "destination": "finnish_culture_personas"
+      }
     ]
   },
   "language_engine": {
@@ -24,8 +45,8 @@
     "teaching_method": "Vowel harmony training combined with systematic suffix logic and modern conversational expression",
     "culture_weight": 0.35,
     "conversation_weight": 0.35,
-    "grammar_weight": 0.20,
-    "writing_weight": 0.10
+    "grammar_weight": 0.2,
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Presents vowel harmony pairings, consonant gradation (kpt-vaihtelu), case suffixes, and standard word structures.",
@@ -36,5 +57,25 @@
   "avatar": {
     "elevenlabs_voice_id": "finnish_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/finnish_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

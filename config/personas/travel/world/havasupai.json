@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["indigenous_sovereignty", "canyon_ecology", "treaty_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "indigenous_sovereignty",
+      "canyon_ecology",
+      "treaty_history"
+    ],
     "learning_objectives": [
       "Understand the historical territory, social structure, and agricultural life of the Havasupai (Havasu 'Baaja) Nation",
       "Analyze the chemical process of travertine formation that creates the blue-green water and pools of Havasu Creek",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "havasupai_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/havasupai.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

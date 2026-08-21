@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Ancient History & Archaeology",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Neolithic Revolution", "Archaeoastronomy", "Megalithic Architecture"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Neolithic Revolution",
+      "Archaeoastronomy",
+      "Megalithic Architecture"
+    ],
     "learning_objectives": [
       "Understand the scale and construction timeline of the Carrowmore Megalithic Cemetery during the Mesolithic-Neolithic transition (4000 BC).",
       "Analyze the engineering of 'dolmens' (T-shaped monuments) and 'passage tombs', explaining how limestone slabs are balanced without mortar.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "carrowmore_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/carrowmore.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

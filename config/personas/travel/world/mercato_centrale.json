@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Culinary Culture & Local Economics",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Culinary Science", "Working Class History", "Iron Architecture"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Culinary Science",
+      "Working Class History",
+      "Iron Architecture"
+    ],
     "learning_objectives": [
       "Understand the history of the Mercato Centrale, analyzing how Giuseppe Mengoni’s 1874 iron-and-glass architecture modernized the sanitation of food trading in Florence.",
       "Analyze the culinary biology of Lampredotto (the fourth stomach of the cow) and its role as a historic working-class street food.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mercato_centrale_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mercato_centrale.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

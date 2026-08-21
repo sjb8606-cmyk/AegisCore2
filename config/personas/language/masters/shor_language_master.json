@@ -10,22 +10,46 @@
     "layer_1_response": "Let us return to Shor. What specific word, phrase, or pronunciation structure are we working to analyze right now?"
   },
   "routing": {
-    "can_route_to": ["ecology", "history", "music", "travel", "heritage"],
+    "can_route_to": [
+      "ecology",
+      "history",
+      "music",
+      "travel",
+      "heritage"
+    ],
     "routing_triggers": [
-      {"interest": "ecology", "destination": "taiga_ecology_personas"},
-      {"interest": "history", "destination": "shor_history_personas"},
-      {"interest": "music", "destination": "traditional_music_personas"},
-      {"interest": "travel", "destination": "kemerovo_travel_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"},
-      {"interest": "family", "destination": "family_heritage_personas"}
+      {
+        "interest": "ecology",
+        "destination": "taiga_ecology_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "shor_history_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "traditional_music_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "kemerovo_travel_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "family_heritage_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Shor",
     "teaching_method": "Immersive, taiga-first oral method coupled with forest oral vocabulary, phonetic consonant training, and active social conversation",
-    "culture_weight": 0.40,
+    "culture_weight": 0.4,
     "conversation_weight": 0.45,
-    "grammar_weight": 0.10,
+    "grammar_weight": 0.1,
     "writing_weight": 0.05
   },
   "humanity_mode": {
@@ -37,5 +61,25 @@
   "avatar": {
     "elevenlabs_voice_id": "shor_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/shor_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

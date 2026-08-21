@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["hilltop_settlements", "berber_linguistics", "sacred_graves"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "hilltop_settlements",
+      "berber_linguistics",
+      "sacred_graves"
+    ],
     "learning_objectives": [
       "Understand the historical role of Chenini as a strategic 'citadel' (kalaa) designed to protect Berber communities from lowland invasions.",
       "Analyze the geological and architectural techniques used to carve homes and granaries directly into the horizontal strata of the limestone cliffs.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "chenini_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/chenini.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

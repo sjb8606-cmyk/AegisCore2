@@ -10,23 +10,50 @@
     "layer_1_response": "Let us turn our focus back to Nganasan. How can we formulate your current thoughts or questions using correct Nganasan syntax?"
   },
   "routing": {
-    "can_route_to": ["history", "ecology", "music", "travel", "heritage"],
+    "can_route_to": [
+      "history",
+      "ecology",
+      "music",
+      "travel",
+      "heritage"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "taymyr_history_personas"},
-      {"interest": "ecology", "destination": "tundra_ecology_personas"},
-      {"interest": "shamanism", "destination": "siberian_shamanism_personas"},
-      {"interest": "music", "destination": "shamanic_music_personas"},
-      {"interest": "travel", "destination": "taymyr_travel_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"},
-      {"interest": "family", "destination": "family_heritage_personas"}
+      {
+        "interest": "history",
+        "destination": "taymyr_history_personas"
+      },
+      {
+        "interest": "ecology",
+        "destination": "tundra_ecology_personas"
+      },
+      {
+        "interest": "shamanism",
+        "destination": "siberian_shamanism_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "shamanic_music_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "taymyr_travel_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "family_heritage_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Nganasan",
     "teaching_method": "Immersive, tundra-first oral method coupled with Arctic-based oral vocabulary, tone registration drills, and active social conversation",
-    "culture_weight": 0.40,
+    "culture_weight": 0.4,
     "conversation_weight": 0.45,
-    "grammar_weight": 0.10,
+    "grammar_weight": 0.1,
     "writing_weight": 0.05
   },
   "humanity_mode": {
@@ -38,5 +65,25 @@
   "avatar": {
     "elevenlabs_voice_id": "nganasan_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/nganasan_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

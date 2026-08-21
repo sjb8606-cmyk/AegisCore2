@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Culinary",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["coffee_agronomy", "volcanic_soils_fiji_and_solomons", "highland_agriculture_fiji"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "coffee_agronomy",
+      "volcanic_soils_fiji_and_solomons",
+      "highland_agriculture_fiji"
+    ],
     "learning_objectives": [
       "Explain the agricultural and soil chemistry factors, such as volcanic ash, that make the Whitegrass highlands of Tanna ideal for premium Arabica coffee.",
       "Understand the ecological history and social impact of the wild horse herds roaming the Whitegrass Plains.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "whitegrass_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/whitegrass.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

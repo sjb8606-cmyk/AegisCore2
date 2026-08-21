@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Urban Design & Ecology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["urban_planning", "adaptive_reuse", "gentrification"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "urban_planning",
+      "adaptive_reuse",
+      "gentrification"
+    ],
     "learning_objectives": [
       "Understand the historical role of Buffalo Bayou in the founding and early commerce of Houston",
       "Analyze the design principles of the Buffalo Bayou Park in reclaiming urban waterways for public transit and recreation",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "buffalo_bayou_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/buffalo_bayou.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

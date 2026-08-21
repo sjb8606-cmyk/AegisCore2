@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["maritime_history", "apartheid_struggle", "colonial_trade"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "maritime_history",
+      "apartheid_struggle",
+      "colonial_trade"
+    ],
     "learning_objectives": [
       "Understand the strategic role of Table Bay in global colonial shipping routes from the 17th century onward.",
       "Analyze the historical significance of Robben Island as a site of exile and political resistance.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "waterfront_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/waterfront.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Traditional Crafts & Local History",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Artisan Guilds", "Renaissance Crafts", "Urban Geography"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Artisan Guilds",
+      "Renaissance Crafts",
+      "Urban Geography"
+    ],
     "learning_objectives": [
       "Understand the socio-spatial division of Florence, analyzing why the Oltrarno (Left Bank) developed as the working-class artisan district.",
       "Analyze the traditional techniques of Florentine crafts, including woodcarving, leather gilding, and paper marbling.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "oltrarno_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/oltrarno.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

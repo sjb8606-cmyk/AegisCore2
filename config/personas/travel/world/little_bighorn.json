@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Military Science",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["military_history", "indian_wars", "geography_of_warfare"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "military_history",
+      "indian_wars",
+      "geography_of_warfare"
+    ],
     "learning_objectives": [
       "Understand the tactical decisions and geographical factors that decided the Battle of the Little Bighorn (1876)",
       "Analyze the political and ideological significance of Custer's defeat in mobilizing public opinion for the final subjugation of the Plains tribes",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "little_bighorn_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/little_bighorn.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

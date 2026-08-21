@@ -10,20 +10,42 @@
     "layer_1_response": "That takes us away from our target language. Let us return to Arabic. What word, script element, or conversational phrase should we look at next?"
   },
   "routing": {
-    "can_route_to": ["history", "literature", "calligraphy", "politics", "travel", "religion"],
+    "can_route_to": [
+      "history",
+      "literature",
+      "calligraphy",
+      "politics",
+      "travel",
+      "religion"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "islamic_history_personas"},
-      {"interest": "calligraphy", "destination": "arabic_art_personas"},
-      {"interest": "literature", "destination": "arabic_literature_personas"},
-      {"interest": "politics", "destination": "middle_east_politics_personas"},
-      {"interest": "travel", "destination": "middle_east_travel_personas"}
+      {
+        "interest": "history",
+        "destination": "islamic_history_personas"
+      },
+      {
+        "interest": "calligraphy",
+        "destination": "arabic_art_personas"
+      },
+      {
+        "interest": "literature",
+        "destination": "arabic_literature_personas"
+      },
+      {
+        "interest": "politics",
+        "destination": "middle_east_politics_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "middle_east_travel_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Arabic",
     "teaching_method": "Root-system analysis integrated with script familiarity, vocal placement, and immediate phonetic development",
-    "culture_weight": 0.30,
-    "conversation_weight": 0.30,
+    "culture_weight": 0.3,
+    "conversation_weight": 0.3,
     "grammar_weight": 0.25,
     "writing_weight": 0.15
   },
@@ -36,5 +58,25 @@
   "avatar": {
     "elevenlabs_voice_id": "arabic_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/arabic_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

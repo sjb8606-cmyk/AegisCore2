@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Archaeology & Anthropology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["human_migration", "technological_adaptation", "climate_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "human_migration",
+      "technological_adaptation",
+      "climate_history"
+    ],
     "learning_objectives": [
       "Understand the rapid migration of the Thule people across the Arctic driven by the Medieval Warm Period",
       "Analyze the technological innovations (harpoon floats, dogsleds) that allowed the Thule to hunt massive baleen whales",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "thule_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/thule.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

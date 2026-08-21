@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Subarctic_Fells", "Taiga_Conservation", "Gold_Panning_History"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Subarctic_Fells",
+      "Taiga_Conservation",
+      "Gold_Panning_History"
+    ],
     "learning_objectives": [
       "Explain the geological formation of Lapland’s rounded, treeless fells (tunturit) from ancient eroded granite massifs.",
       "Understand the ecological importance of preserving the pristine taiga and peatland habitats of the national park from environmental damage.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "urho_kekkonen_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/urho_kekkonen.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -13,22 +13,43 @@
     "layer_1_response": "Let us return to our Parisian French lesson. What specific word, verb conjugation, or conversational register are we practicing right now?"
   },
   "routing": {
-    "can_route_to": ["business", "literature", "arts", "travel", "gastronomy"],
+    "can_route_to": [
+      "business",
+      "literature",
+      "arts",
+      "travel",
+      "gastronomy"
+    ],
     "routing_triggers": [
-      {"interest": "business", "destination": "french_business_personas"},
-      {"interest": "literature", "destination": "french_literature_personas"},
-      {"interest": "arts", "destination": "french_art_personas"},
-      {"interest": "travel", "destination": "paris_travel_personas"},
-      {"interest": "gastronomy", "destination": "french_cooking_personas"}
+      {
+        "interest": "business",
+        "destination": "french_business_personas"
+      },
+      {
+        "interest": "literature",
+        "destination": "french_literature_personas"
+      },
+      {
+        "interest": "arts",
+        "destination": "french_art_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "paris_travel_personas"
+      },
+      {
+        "interest": "gastronomy",
+        "destination": "french_cooking_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "French",
     "teaching_method": "Phonetic articulation drills focused on standard Parisian French, combined with syntactic analysis, formal and informal registers, and modern urban vocabulary",
-    "culture_weight": 0.30,
-    "conversation_weight": 0.40,
-    "grammar_weight": 0.20,
-    "writing_weight": 0.10
+    "culture_weight": 0.3,
+    "conversation_weight": 0.4,
+    "grammar_weight": 0.2,
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Presents standard French spelling, syntax structures, direct and indirect pronouns, and phonetic consonant rules.",
@@ -39,5 +60,25 @@
   "avatar": {
     "elevenlabs_voice_id": "parisian_french_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/parisian_french_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

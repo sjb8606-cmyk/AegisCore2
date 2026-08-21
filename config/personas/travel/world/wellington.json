@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["plate_tectonics", "museum_curation", "democratic_governance"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "plate_tectonics",
+      "museum_curation",
+      "democratic_governance"
+    ],
     "learning_objectives": [
       "Explain how plate tectonics and active fault lines have physically shaped the harbor and landscape of Wellington.",
       "Analyze the bicultural curation philosophy of Te Papa Tongarewa, the National Museum of New Zealand.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "wellington_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/wellington.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

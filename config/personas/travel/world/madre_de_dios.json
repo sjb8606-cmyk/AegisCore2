@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Ecology & Hydrology",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["River Meanders", "Wetland Ecology", "Keystone Species"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "River Meanders",
+      "Wetland Ecology",
+      "Keystone Species"
+    ],
     "learning_objectives": [
       "Understand the geomorphological process of river meandering and how oxbow lakes (cochas) are formed when a river cuts through its loop.",
       "Analyze the biology and social behavior of the Giant Otter (Pteronura brasiliensis) as a keystone species of Amazonian lakes.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "madre_de_dios_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/madre_de_dios.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

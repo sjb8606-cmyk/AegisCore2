@@ -18,8 +18,19 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["classic_maya_civilization", "karst_hydrology_jungles", "rainforest_preservation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "classic_maya_civilization",
+      "karst_hydrology_jungles",
+      "rainforest_preservation"
+    ],
     "learning_objectives": [
       "Explain the geological and hydrological factors that allowed the Classic Maya to build a massive, water-secure metropolis in the seasonal Petén rainforest.",
       "Understand the architectural design and stone-carving techniques of Tikal's monumental temples, focusing on the corbeled arch.",
@@ -35,5 +46,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tikal_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tikal.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

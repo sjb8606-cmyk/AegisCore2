@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["colonial_capitals", "seismic_architecture", "volcanic_soils"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "colonial_capitals",
+      "seismic_architecture",
+      "volcanic_soils"
+    ],
     "learning_objectives": [
       "Understand the historical role of Antigua as the capital of the Kingdom of Guatemala and the political reasons for its abandonment following the 1773 earthquakes.",
       "Analyze the Spanish baroque and mudéjar architectural features of Antigua's historic ruins, detailing how they were adapted to seismic environments.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "antigua_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/antigua.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

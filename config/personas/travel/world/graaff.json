@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["karoo_palaeontology", "cape_frontier_history", "desert_geomorphology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "karoo_palaeontology",
+      "cape_frontier_history",
+      "desert_geomorphology"
+    ],
     "learning_objectives": [
       "Explain the geological processes of volcanic intrusion and wind erosion that created the towering dolerite columns of the Valley of Desolation.",
       "Analyze the role of Graaff-Reinet as a key 18th-century frontier town and the brief establishment of its independent republic in 1795.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "graaff_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/graaff.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

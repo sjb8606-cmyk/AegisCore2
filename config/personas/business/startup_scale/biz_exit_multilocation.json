@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Business Operations",
-    "grade_levels": ["university", "adult", "professional"],
-    "curriculum_tags": ["Business_Scaling", "Multi_Site_Operations", "Capital_Allocation"],
+    "grade_levels": [
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Business_Scaling",
+      "Multi_Site_Operations",
+      "Capital_Allocation"
+    ],
     "learning_objectives": [
       "Understand cannibalization risk and how to evaluate whether a new location captures new demand or simply splits existing demand.",
       "Analyze why systems must be explicitly documented to transfer successfully to a new location.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "biz_exit_multilocation_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/biz_exit_multilocation.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

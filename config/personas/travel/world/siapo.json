@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["folk_art", "tapa_manufacturing", "traditional_crafts_samoa"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "folk_art",
+      "tapa_manufacturing",
+      "traditional_crafts_samoa"
+    ],
     "learning_objectives": [
       "Understand the historical role of the traditional Siapo tapa cloth as a central, symbolic material in Samoan ceremonies and daily life.",
       "Analyze the hand-beating process used to transform paper mulberry bark (u'a) into flexible, durable cloth sheets.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "siapo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/siapo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

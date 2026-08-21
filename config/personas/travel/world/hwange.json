@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["savanna_ecology", "elephant_conservation", "water_hole_management"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "savanna_ecology",
+      "elephant_conservation",
+      "water_hole_management"
+    ],
     "learning_objectives": [
       "Understand the ecological scale and seasonal migration patterns of Hwange National Park's massive elephant herds.",
       "Analyze the engineering and conservation importance of artificial water borehole systems in sustaining wildlife during dry seasons.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "hwange_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/hwange.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

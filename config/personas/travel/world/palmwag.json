@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["species_conservation", "desert_adapted_wildlife", "concession_models"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "species_conservation",
+      "desert_adapted_wildlife",
+      "concession_models"
+    ],
     "learning_objectives": [
       "Understand the key ecological and physical differences between the desert-adapted Black Rhino (Diceros bicornis) and savanna rhino populations.",
       "Analyze the role of community-owned conservancies and the Save the Rhino Trust in successfully managing wildlife protection in Namibia.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "palmwag_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/palmwag.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

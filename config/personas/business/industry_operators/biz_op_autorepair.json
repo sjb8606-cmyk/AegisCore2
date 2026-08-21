@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Business Operations",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Auto_Repair_Business_Economics", "Service_Business_Operations", "Small_Business_Finance"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Auto_Repair_Business_Economics",
+      "Service_Business_Operations",
+      "Small_Business_Finance"
+    ],
     "learning_objectives": [
       "Understand bay turnover rate and explain why an idle bay is more costly to a shop than equipment downtime.",
       "Analyze how effective labor rate differs from posted labor rate once technician productivity is factored in.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "biz_op_autorepair_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/biz_op_autorepair.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

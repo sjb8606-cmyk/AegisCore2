@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Karst_Geomorphology", "Subterranean_Rivers", "Biodiversity_Conservation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Karst_Geomorphology",
+      "Subterranean_Rivers",
+      "Biodiversity_Conservation"
+    ],
     "learning_objectives": [
       "Explain the geological and chemical processes of carbonation and water erosion that formed the ancient karst mountains of Phong Nha.",
       "Understand the ecological and geological importance of Phong Nha-Ke Bang as a UNESCO World Heritage site housing the world's largest cave systems.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "phong_nha_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/phong_nha.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

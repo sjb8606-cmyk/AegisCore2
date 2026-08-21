@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Landscape Design",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Victorian Engineering", "History of Science", "Irish Intellectual History"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Victorian Engineering",
+      "History of Science",
+      "Irish Intellectual History"
+    ],
     "learning_objectives": [
       "Understand the history and civil engineering of the Belfast Botanic Gardens' Palm House, constructed in 1839 by ironmaster Richard Turner.",
       "Analyze the role of Queen's University Belfast (founded 1845) in driving the scientific, medical, and literary advancement of Northern Ireland.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "botanic_belfast_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/botanic_belfast.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

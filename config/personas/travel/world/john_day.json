@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["paleontology", "geomorphology", "stratigraphy"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "paleontology",
+      "geomorphology",
+      "stratigraphy"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the John Day Fossil Beds through volcanic ash deposition and erosion",
       "Analyze the process of clay weathering that creates the colorful, banded layers of the Painted Hills",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "john_day_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/john_day.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

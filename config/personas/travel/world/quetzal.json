@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["cloud_forest_conservation", "avian_biodiversity", "indigenous_symbolism"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "cloud_forest_conservation",
+      "avian_biodiversity",
+      "indigenous_symbolism"
+    ],
     "learning_objectives": [
       "Understand the biological and nesting adaptations of the Resplendent Quetzal (Pharomachrus mocinno) in high-altitude cloud forests.",
       "Explain the ecological and hydrological role of the Biotopo del Quetzal in protecting the highland water table of central Guatemala.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "quetzal_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/quetzal.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

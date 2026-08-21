@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["chinese_indentured_labor", "immigrant_integration", "caribbean_diasporas"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "chinese_indentured_labor",
+      "immigrant_integration",
+      "caribbean_diasporas"
+    ],
     "learning_objectives": [
       "Analyze the historical context of the Chinese indenture system (1847-1874) and why thousands of Chinese laborers were imported to Cuba's sugarcane fields.",
       "Understand the social and political contributions of Chinese immigrants to the Cuban Wars of Independence, particularly in the Liberation Army.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "chinatown_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/chinatown.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

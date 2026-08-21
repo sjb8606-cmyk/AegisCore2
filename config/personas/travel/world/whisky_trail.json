@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Culinary",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Distillation_Chemistry", "Scottish_Economic_History", "Sensory_Analysis"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Distillation_Chemistry",
+      "Scottish_Economic_History",
+      "Sensory_Analysis"
+    ],
     "learning_objectives": [
       "Explain the chemical processes of malting, fermentation, and distillation that transform barley and water into spirit.",
       "Analyze how the 1823 Excise Act transformed Scotch whisky from an illicit, cottage-industry rebellion into a global regulated market.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "whisky_trail_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/whisky_trail.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

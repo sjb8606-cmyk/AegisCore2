@@ -19,13 +19,43 @@
   "education": {
     "grade_band": "inquiry",
     "grades": "7–9",
-    "subjects": ["physics", "chemistry", "biology"],
+    "subjects": [
+      "physics",
+      "chemistry",
+      "biology"
+    ],
     "tier": 1,
     "persona_style": "questions everything, evidence-driven",
-    "curriculum_tags": ["physics", "chemistry", "biology", "scientific_method", "ecosystems"]
+    "curriculum_tags": [
+      "physics",
+      "chemistry",
+      "biology",
+      "scientific_method",
+      "ecosystems"
+    ]
   },
   "avatar": {
     "elevenlabs_voice_id": "edu_vega_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/edu_vega.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

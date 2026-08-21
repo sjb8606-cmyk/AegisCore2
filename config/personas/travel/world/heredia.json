@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["coffee_agronomy", "cloud_forest_ecology", "colonial_architecture"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "coffee_agronomy",
+      "cloud_forest_ecology",
+      "colonial_architecture"
+    ],
     "learning_objectives": [
       "Explain the ecological and climatic factors that make the Central Valley highlands of Heredia ideal for premium Arabica coffee cultivation.",
       "Analyze the high biodiversity and environmental layers of the Braulio Carrillo National Park, focusing on its high-altitude rainforest systems.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "heredia_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/heredia.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

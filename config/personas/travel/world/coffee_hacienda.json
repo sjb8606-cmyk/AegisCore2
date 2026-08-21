@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Agriculture & History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["viticulture", "agricultural_history", "local_economics"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "viticulture",
+      "agricultural_history",
+      "local_economics"
+    ],
     "learning_objectives": [
       "Understand the geological and climatic conditions of the Cordillera Central that favor premium coffee cultivation",
       "Analyze the economic and labor history of the 19th-century Puerto Rican coffee boom and the role of the jibaro (peasant farmer)",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "coffee_hacienda_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/coffee_hacienda.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

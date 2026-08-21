@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["pre_columbian_metallurgy", "costa_rican_demilitarization", "coffee_economics"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "pre_columbian_metallurgy",
+      "costa_rican_demilitarization",
+      "coffee_economics"
+    ],
     "learning_objectives": [
       "Analyze the high-level metallurgical techniques, including lost-wax casting, used by pre-Columbian indigenous peoples in Costa Rica.",
       "Understand the historical events and social significance of the abolition of the Costa Rican army in 1948 by José Figueres Ferrer.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "san_jose_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/san_jose.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

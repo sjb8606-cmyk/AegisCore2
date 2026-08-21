@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["coastal_tourism_economics", "cool_climate_viticulture", "belle_epoque_architecture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "coastal_tourism_economics",
+      "cool_climate_viticulture",
+      "belle_epoque_architecture"
+    ],
     "learning_objectives": [
       "Understand the socio-economic history of Viña del Mar's development as an elite resort city during Chile's 19th-century industrial boom.",
       "Analyze the geological and climatic factors, specifically the coastal fog (vaguada costera), that make the Casablanca Valley ideal for cool-climate wines.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "vina_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/vina.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

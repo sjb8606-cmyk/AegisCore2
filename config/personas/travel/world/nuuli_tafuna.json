@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["colonial_protectorates", "maritime_trade_networks", "island_ecology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "colonial_protectorates",
+      "maritime_trade_networks",
+      "island_ecology"
+    ],
     "learning_objectives": [
       "Understand the historical process and political impact of the division of the Samoan archipelago into American Samoa and the independent state of Samoa.",
       "Analyze the strategic and economic role of Pago Pago Harbor as a major deep-water port and naval coaling station in the Pacific.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "nuuli_tafuna_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/nuuli_tafuna.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

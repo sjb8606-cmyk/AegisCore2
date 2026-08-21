@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Art & Maritime Lifestyle",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Impressionist History", "Island Geomorphology", "Breton Culture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Impressionist History",
+      "Island Geomorphology",
+      "Breton Culture"
+    ],
     "learning_objectives": [
       "Understand how Claude Monet’s stay on Belle-Île-en-Mer transitioned his style toward heavier impasto and abstract expressions of nature's forces.",
       "Analyze the geomorphological structure of the schist and granite cliffs of the island and their resistance to Atlantic winter storms.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "belle_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/belle.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

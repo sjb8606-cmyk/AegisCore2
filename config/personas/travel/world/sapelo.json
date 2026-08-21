@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["gullah_geechee", "island_sociology", "land_tenure"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "gullah_geechee",
+      "island_sociology",
+      "land_tenure"
+    ],
     "learning_objectives": [
       "Understand the historical development and cultural significance of Hog Hammock as the last intact Gullah community on Sapelo Island",
       "Analyze the legal and tax mechanisms (such as land valuation shifts) that threaten historical Black land ownership on the Sea Islands",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sapelo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sapelo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

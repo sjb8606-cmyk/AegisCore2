@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Ecology & Alpine Geography",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Limnology", "Travertine Formation", "Subtropical Geography"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Limnology",
+      "Travertine Formation",
+      "Subtropical Geography"
+    ],
     "learning_objectives": [
       "Understand the limnology and geomorphology of Jiuzhaigou’s lakes, focusing on how calcium carbonate (travertine) deposition creates water of high clarity.",
       "Analyze the ecological transition from subtropical broadleaf forests to sub-alpine conifer forests in the Min Mountains of Sichuan.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "jiuzhaigou_valley_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/jiuzhaigou_valley.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

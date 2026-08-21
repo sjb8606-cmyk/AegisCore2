@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Culinary",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Bibimbap_Nutrition", "Obangsaek_Color_Theory", "Joseon_Dynasty_Origins"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Bibimbap_Nutrition",
+      "Obangsaek_Color_Theory",
+      "Joseon_Dynasty_Origins"
+    ],
     "learning_objectives": [
       "Explain the cultural philosophy of 'Obangsaek' (Five Colors) and how it dictates the nutritional and aesthetic balance of traditional Jeonju Bibimbap.",
       "Understand the historical role of Jeonju as the ancestral home of the Joseon Dynasty’s royal Yi clan, focusing on the Gyeonggijeon shrine.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "jeonju_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/jeonju.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

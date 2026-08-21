@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Technology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["industrial_revolution", "labor_history", "history_of_technology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "industrial_revolution",
+      "labor_history",
+      "history_of_technology"
+    ],
     "learning_objectives": [
       "Understand how Samuel Slater's intellectual espionage launched the American Industrial Revolution at Pawtucket Falls",
       "Analyze the transition from the domestic family-based economy to the factory system (the Rhode Island System)",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "slater_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/slater.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

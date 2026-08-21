@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Culinary Culture & Maritime Sociology",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Culinary History", "Urban Reclamation", "Maritime Geography"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Culinary History",
+      "Urban Reclamation",
+      "Maritime Geography"
+    ],
     "learning_objectives": [
       "Understand the historical development of Crawford Market (designed by William Emerson in 1869) as the primary food-supply and agricultural gateway for Bombay.",
       "Analyze the role of the Koli fishermen as the indigenous, maritime community of Bombay’s original seven islands.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "crawford_market_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/crawford_market.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

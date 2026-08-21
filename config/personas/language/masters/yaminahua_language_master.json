@@ -10,21 +10,45 @@
     "layer_1_response": "Let us turn our focus back to Yaminahua. How can we formulate your current thoughts or questions using correct Yaminahua syntax?"
   },
   "routing": {
-    "can_route_to": ["history", "ecology", "music", "travel", "heritage"],
+    "can_route_to": [
+      "history",
+      "ecology",
+      "music",
+      "travel",
+      "heritage"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "ucayali_history_personas"},
-      {"interest": "ecology", "destination": "forest_ecology_personas"},
-      {"interest": "music", "destination": "mountain_folk_music_personas"},
-      {"interest": "travel", "destination": "sepahua_travel_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"},
-      {"interest": "family", "destination": "family_heritage_personas"}
+      {
+        "interest": "history",
+        "destination": "ucayali_history_personas"
+      },
+      {
+        "interest": "ecology",
+        "destination": "forest_ecology_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "mountain_folk_music_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "sepahua_travel_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "family_heritage_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Yaminahua",
     "teaching_method": "Phonetic voice coaching combined with tone registration drills, verbal aspect structures, and active social conversation",
-    "culture_weight": 0.40,
-    "conversation_weight": 0.40,
+    "culture_weight": 0.4,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.15,
     "writing_weight": 0.05
   },
@@ -37,5 +61,25 @@
   "avatar": {
     "elevenlabs_voice_id": "yaminahua_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/yaminahua_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

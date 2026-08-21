@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Viticulture & Geology",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Geology & Terroir", "Glacial Ecology", "Viticulture Technology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Geology & Terroir",
+      "Glacial Ecology",
+      "Viticulture Technology"
+    ],
     "learning_objectives": [
       "Understand the geological formation of Kimmeridgian limestone (marl filled with Exogyra virgula fossils) and its impact on Chardonnay wine minerality.",
       "Analyze the climatic challenge of late spring frost in Chablis and the engineering solutions used to protect the vines (smudge pots, water aspersion).",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "chablis_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/chablis.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

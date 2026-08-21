@@ -19,13 +19,43 @@
   "education": {
     "grade_band": "discovery",
     "grades": "4–6",
-    "subjects": ["sciences", "logic", "systems_thinking"],
+    "subjects": [
+      "sciences",
+      "logic",
+      "systems_thinking"
+    ],
     "tier": 1,
     "persona_style": "young scientist, curious, evidence-driven",
-    "curriculum_tags": ["scientific_method", "biology", "chemistry", "systems_thinking", "logic"]
+    "curriculum_tags": [
+      "scientific_method",
+      "biology",
+      "chemistry",
+      "systems_thinking",
+      "logic"
+    ]
   },
   "avatar": {
     "elevenlabs_voice_id": "edu_nova_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/edu_nova.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

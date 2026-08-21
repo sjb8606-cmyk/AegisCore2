@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Jacobite_Risings", "Highland_Clan_System", "Caldera_Geology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Jacobite_Risings",
+      "Highland_Clan_System",
+      "Caldera_Geology"
+    ],
     "learning_objectives": [
       "Analyze the political and legal complexities of the 1692 Glencoe Massacre within the context of the first Jacobite Rising.",
       "Understand the geological formation of Glencoe as a classic example of a deeply glaciated volcanic caldera.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "glencoe_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/glencoe.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

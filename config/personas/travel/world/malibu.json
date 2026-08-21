@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["coastal_geography", "real_estate_economics", "transportation_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "coastal_geography",
+      "real_estate_economics",
+      "transportation_history"
+    ],
     "learning_objectives": [
       "Understand the historical role of the Rindge family in keeping Malibu isolated and its eventual development",
       "Analyze the geological and engineering challenges of maintaining the Pacific Coast Highway (PCH) against landslide hazards",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "malibu_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/malibu.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

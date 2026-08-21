@@ -19,11 +19,40 @@
   "education": {
     "tier": 2,
     "reports_to": "edu_zara",
-    "subjects": ["debate", "case_building"],
-    "curriculum_tags": ["debate_structure", "case_construction", "rebuttal", "cross_examination", "evidence_quality"]
+    "subjects": [
+      "debate",
+      "case_building"
+    ],
+    "curriculum_tags": [
+      "debate_structure",
+      "case_construction",
+      "rebuttal",
+      "cross_examination",
+      "evidence_quality"
+    ]
   },
   "avatar": {
     "elevenlabs_voice_id": "edu_dr_adler_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/edu_dr_adler.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Business",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["industrial_economics", "traditional_trade", "medina_preservation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "industrial_economics",
+      "traditional_trade",
+      "medina_preservation"
+    ],
     "learning_objectives": [
       "Understand the economic development history of Sfax as a major global center for olive oil production and maritime trade.",
       "Analyze the military design and structural preservation of Sfax's 9th-century Medina walls, explaining their role in coastal defense.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sfax_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sfax.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

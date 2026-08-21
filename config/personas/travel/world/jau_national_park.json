@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Wildlife Biology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Primary Rainforests", "Black Water Hydrology", "Indigenous Petroglyphs"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Primary Rainforests",
+      "Black Water Hydrology",
+      "Indigenous Petroglyphs"
+    ],
     "learning_objectives": [
       "Understand the ecological dynamics of a primary, unlogged tropical rainforest (Jaú) and its role as a massive global carbon sink.",
       "Analyze the hydrology of the Jaú River basin, explaining why its acidic black-water prevents the development of high mosquito populations.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "jau_national_park_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/jau_national_park.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

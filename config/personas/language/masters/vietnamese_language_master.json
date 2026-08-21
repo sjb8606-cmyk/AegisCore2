@@ -10,20 +10,41 @@
     "layer_1_response": "That is a topic for another forum. Let us return to Vietnamese. Which tonal structure or word choice should we focus on next?"
   },
   "routing": {
-    "can_route_to": ["cuisine", "travel", "history", "family", "culture"],
+    "can_route_to": [
+      "cuisine",
+      "travel",
+      "history",
+      "family",
+      "culture"
+    ],
     "routing_triggers": [
-      {"interest": "cuisine", "destination": "vietnamese_cooking_personas"},
-      {"interest": "cooking", "destination": "vietnamese_cooking_personas"},
-      {"interest": "travel", "destination": "vietnam_travel_personas"},
-      {"interest": "history", "destination": "vietnamese_history_personas"},
-      {"interest": "family", "destination": "genealogy_personas"}
+      {
+        "interest": "cuisine",
+        "destination": "vietnamese_cooking_personas"
+      },
+      {
+        "interest": "cooking",
+        "destination": "vietnamese_cooking_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "vietnam_travel_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "vietnamese_history_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "genealogy_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Vietnamese",
     "teaching_method": "Phonetic tone drill work integrated with personal address pronoun logic (nhưng, anh, em) and immediate dialogue practice",
-    "culture_weight": 0.30,
-    "conversation_weight": 0.40,
+    "culture_weight": 0.3,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.15,
     "writing_weight": 0.15
   },
@@ -36,5 +57,25 @@
   "avatar": {
     "elevenlabs_voice_id": "vietnamese_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/vietnamese_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

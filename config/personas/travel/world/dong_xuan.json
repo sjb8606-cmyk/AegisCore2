@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Culinary",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Food_Science_Spices_Pho", "French_Colonial_Markets", "Traditional_Gastronomy_Vietnam"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Food_Science_Spices_Pho",
+      "French_Colonial_Markets",
+      "Traditional_Gastronomy_Vietnam"
+    ],
     "learning_objectives": [
       "Understand the chemical and biological factors that define the slow-simmered bone broth of northern Phở, focusing on the roles of star anise, cinnamon, and ginger.",
       "Analyze the architectural and logistical design of the 1889 Dong Xuan Market as a monument of French colonial urban planning and trade control.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "dong_xuan_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/dong_xuan.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

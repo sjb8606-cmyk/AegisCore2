@@ -10,14 +10,38 @@
     "layer_1_response": "Let us turn our focus back to Warlpiri. How can we express that concept or phrase using authentic Warlpiri patterns?"
   },
   "routing": {
-    "can_route_to": ["art", "conservation", "travel", "heritage", "storytelling"],
+    "can_route_to": [
+      "art",
+      "conservation",
+      "travel",
+      "heritage",
+      "storytelling"
+    ],
     "routing_triggers": [
-      {"interest": "art", "destination": "yuendumu_art_personas"},
-      {"interest": "conservation", "destination": "desert_ecology_personas"},
-      {"interest": "travel", "destination": "tanami_travel_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"},
-      {"interest": "family", "destination": "family_heritage_personas"},
-      {"interest": "storytelling", "destination": "jukurrpa_storytelling_personas"}
+      {
+        "interest": "art",
+        "destination": "yuendumu_art_personas"
+      },
+      {
+        "interest": "conservation",
+        "destination": "desert_ecology_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "tanami_travel_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "storytelling",
+        "destination": "jukurrpa_storytelling_personas"
+      }
     ]
   },
   "language_engine": {
@@ -37,5 +61,25 @@
   "avatar": {
     "elevenlabs_voice_id": "warlpiri_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/warlpiri_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Industry",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["industrial_history", "mining_engineering", "railroad_logistics"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "industrial_history",
+      "mining_engineering",
+      "railroad_logistics"
+    ],
     "learning_objectives": [
       "Understand the historical role of the Kennecott Mines as the richest concentration of copper ore ever discovered",
       "Analyze the engineering and logistics of constructing the Copper River & Northwestern Railway through glaciated mountain passes",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kennecott_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kennecott.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

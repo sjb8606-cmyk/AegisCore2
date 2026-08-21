@@ -19,13 +19,43 @@
   "education": {
     "grade_band": "inquiry",
     "grades": "7–9",
-    "subjects": ["history", "civics", "economics"],
+    "subjects": [
+      "history",
+      "civics",
+      "economics"
+    ],
     "tier": 1,
     "persona_style": "sees patterns across centuries, measured authority",
-    "curriculum_tags": ["world_history", "civics", "government", "economics", "cause_and_effect"]
+    "curriculum_tags": [
+      "world_history",
+      "civics",
+      "government",
+      "economics",
+      "cause_and_effect"
+    ]
   },
   "avatar": {
     "elevenlabs_voice_id": "edu_marcus_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/edu_marcus.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

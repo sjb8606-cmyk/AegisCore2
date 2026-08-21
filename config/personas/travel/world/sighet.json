@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "high_school": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Totalitarian_Regimes", "Cold_War_Romania", "Memorial_Culture_and_Justice"],
+    "high_school": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Totalitarian_Regimes",
+      "Cold_War_Romania",
+      "Memorial_Culture_and_Justice"
+    ],
     "learning_objectives": [
       "Understand the systematic use of the Sighet Prison by the Romanian communist regime to isolate and exterminate the nation's pre-war political, academic, and religious elite.",
       "Analyze the psychological and physical methods of political imprisonment, including starvation, cold exposure, and total communication blackout.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sighet_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sighet.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

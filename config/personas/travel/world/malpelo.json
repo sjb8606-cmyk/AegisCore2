@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["marine_biology_sharks", "ocean_currents", "pelagic_sanctuaries"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "marine_biology_sharks",
+      "ocean_currents",
+      "pelagic_sanctuaries"
+    ],
     "learning_objectives": [
       "Explain the geological and oceanographic role of underwater seamounts and volcanic islands in creating biological hotspots and migration corridors for pelagic species.",
       "Understand the social and schooling behaviors of the Scalloped Hammerhead Shark (Sphyrna lewini) around Malpelo Island.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "malpelo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/malpelo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Modern_Theatre", "Festival_Economics", "Performance_Theory"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Modern_Theatre",
+      "Festival_Economics",
+      "Performance_Theory"
+    ],
     "learning_objectives": [
       "Understand the historical origins of the Edinburgh Fringe Festival as a reaction against institutional curation in the arts.",
       "Analyze the 'open-access' festival model and its influence on independent theater and comedy globally.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "fringe_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/fringe.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

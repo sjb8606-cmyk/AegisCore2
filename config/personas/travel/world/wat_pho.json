@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Medicine & Sacred Art",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Traditional Thai Medicine", "Buddhist Iconography", "Epigraphy & Education"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Traditional Thai Medicine",
+      "Buddhist Iconography",
+      "Epigraphy & Education"
+    ],
     "learning_objectives": [
       "Understand the history of Wat Pho as the first public university of Thailand, established by King Rama III to preserve medical, scientific, and literary knowledge on stone inscriptions.",
       "Analyze the physiological and anatomical theory of 'Nuad Thai' (traditional Thai massage, UNESCO Intangible Heritage), focusing on the ten energy lines (Sen Sib).",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "wat_pho_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/wat_pho.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -19,13 +19,43 @@
   "education": {
     "grade_band": "inquiry",
     "grades": "7–9",
-    "subjects": ["coding", "systems_thinking", "technology"],
+    "subjects": [
+      "coding",
+      "systems_thinking",
+      "technology"
+    ],
     "tier": 1,
     "persona_style": "builder, systems thinker, practical",
-    "curriculum_tags": ["programming", "algorithms", "systems_thinking", "logic", "debugging"]
+    "curriculum_tags": [
+      "programming",
+      "algorithms",
+      "systems_thinking",
+      "logic",
+      "debugging"
+    ]
   },
   "avatar": {
     "elevenlabs_voice_id": "edu_coda_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/edu_coda.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

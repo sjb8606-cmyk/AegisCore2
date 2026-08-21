@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Hydraulic Engineering",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Hydraulic Engineering", "Border Relations", "Industrial Sociology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Hydraulic Engineering",
+      "Border Relations",
+      "Industrial Sociology"
+    ],
     "learning_objectives": [
       "Understand the history and civil engineering of the Itaipu Dam, constructed as a bi-national project between Brazil and Paraguay.",
       "Analyze the role of the Paraná River basin as a strategic power and trade artery connecting the southern cone.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "foz_do_iguacu_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/foz_do_iguacu.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

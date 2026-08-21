@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Nature",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["marine_biology", "conservation_science", "military_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "marine_biology",
+      "conservation_science",
+      "military_history"
+    ],
     "learning_objectives": [
       "Understand the life cycle, nesting habits, and conservation status of loggerhead sea turtles",
       "Analyze the historical role of Topsail Island in WWII rocket testing (Operation Bumblebee)",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "topsail_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/topsail.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

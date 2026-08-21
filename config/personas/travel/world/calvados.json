@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Culinary & Fermentation",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Agro-Food Chemistry", "Regional Gastronomy", "Fermentation Studies"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Agro-Food Chemistry",
+      "Regional Gastronomy",
+      "Fermentation Studies"
+    ],
     "learning_objectives": [
       "Understand the chemical balance of tannins, sugar, and acid required in apple varieties to ferment stable cider.",
       "Analyze the process of double-distillation in copper alembic stills to produce Calvados AOC.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "calvados_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/calvados.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

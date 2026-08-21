@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Craft",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Meiji Restoration", "Bushido", "Traditional Crafts"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Meiji Restoration",
+      "Bushido",
+      "Traditional Crafts"
+    ],
     "learning_objectives": [
       "Understand the political complexities of the Boshin War and why the Aizu clan remained loyal to the falling Tokugawa Shogunate.",
       "Analyze the psychological conditioning of bushido ethics on the youth of Aizu (the Byakkotai tragedy).",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "aizu_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/aizu.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

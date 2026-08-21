@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Archaeology",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["New Kingdom History", "Tomb Engineering", "Funerary Beliefs"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "New Kingdom History",
+      "Tomb Engineering",
+      "Funerary Beliefs"
+    ],
     "learning_objectives": [
       "Understand the historical transition from pyramid construction to hidden, rock-cut tombs in the Valley of the Kings to prevent tomb robbing.",
       "Analyze the structural design of the tombs (like Seti I’s), focusing on how corridors and chambers descend into the limestone mountain.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "valley_of_the_kings_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/valley_of_the_kings.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

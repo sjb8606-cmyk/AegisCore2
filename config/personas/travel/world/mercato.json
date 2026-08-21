@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Business",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["informal_economies", "reverse_logistics", "urban_geography"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "informal_economies",
+      "reverse_logistics",
+      "urban_geography"
+    ],
     "learning_objectives": [
       "Understand the scale and economic dynamics of the Addis Mercato as the largest open-air informal market in Africa.",
       "Analyze the process of reverse logistics and industrial recycling (specifically metalwork) practiced in the 'Minalesh' sector of the market.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mercato_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mercato.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

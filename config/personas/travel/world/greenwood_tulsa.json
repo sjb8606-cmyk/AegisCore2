@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Civil Rights",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["civil_rights", "racial_violence", "economic_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "civil_rights",
+      "racial_violence",
+      "economic_history"
+    ],
     "learning_objectives": [
       "Understand the economic success and community development of the Greenwood District ('Black Wall Street') prior to 1921",
       "Analyze the causes, execution, and immediate aftermath of the Tulsa Race Massacre of 1921",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "greenwood_tulsa_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/greenwood_tulsa.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Urban Geography & Subcultures",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Urban Hydrology", "Industrial History", "Subcultural Studies"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Urban Hydrology",
+      "Industrial History",
+      "Subcultural Studies"
+    ],
     "learning_objectives": [
       "Understand the engineering and design of Milan's historical canal network (Navigli), specifically Leonardo da Vinci's lock gate system.",
       "Analyze the role of the Navigli in transporting massive blocks of Candoglia marble to build the Duomo.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "navigli_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/navigli.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

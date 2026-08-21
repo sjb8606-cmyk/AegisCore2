@@ -13,13 +13,34 @@
     "layer_1_response": "Let us steer our conversation back to Argentine Spanish. What specific voseo verb form, Lunfardo word, or pronunciation structure are we working to understand right now?"
   },
   "routing": {
-    "can_route_to": ["tango", "music", "literature", "travel", "football"],
+    "can_route_to": [
+      "tango",
+      "music",
+      "literature",
+      "travel",
+      "football"
+    ],
     "routing_triggers": [
-      {"interest": "tango", "destination": "tango_traditions_personas"},
-      {"interest": "music", "destination": "argentine_music_personas"},
-      {"interest": "literature", "destination": "argentine_literature_personas"},
-      {"interest": "travel", "destination": "argentina_travel_personas"},
-      {"interest": "football", "destination": "football_personas"}
+      {
+        "interest": "tango",
+        "destination": "tango_traditions_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "argentine_music_personas"
+      },
+      {
+        "interest": "literature",
+        "destination": "argentine_literature_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "argentina_travel_personas"
+      },
+      {
+        "interest": "football",
+        "destination": "football_personas"
+      }
     ]
   },
   "language_engine": {
@@ -27,8 +48,8 @@
     "teaching_method": "Phonetic intonation coaching paired with voseo grammar training, Lunfardo slang drills, and high-energy interactive conversation",
     "culture_weight": 0.35,
     "conversation_weight": 0.45,
-    "grammar_weight": 0.10,
-    "writing_weight": 0.10
+    "grammar_weight": 0.1,
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Outlines Argentine sound systems (yeísmo/sheísmo), voseo conjugation rules, vocabulary classifications, and syntax.",
@@ -39,5 +60,25 @@
   "avatar": {
     "elevenlabs_voice_id": "argentine_spanish_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/argentine_spanish_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

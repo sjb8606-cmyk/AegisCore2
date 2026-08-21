@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Åland_Autonomy_1921", "Windjammer_Maritime_History", "Demilitarization_Treaties"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Åland_Autonomy_1921",
+      "Windjammer_Maritime_History",
+      "Demilitarization_Treaties"
+    ],
     "learning_objectives": [
       "Understand the historical and legal significance of the 1921 League of Nations decision that established Åland's unique autonomous, Swedish-speaking status under Finnish sovereignty.",
       "Analyze the role of Gustav Erikson's shipping company in maintaining the world's last fleet of commercial windjammers (four-masted barques) in Mariehamn.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "aland_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/aland.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Religious Studies",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Inca Conquest", "Sovereign Ransom", "Andean Syncretism"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Inca Conquest",
+      "Sovereign Ransom",
+      "Andean Syncretism"
+    ],
     "learning_objectives": [
       "Understand the historical events of the Battle of Cajamarca (1532) and the capture of the Sapa Inca Atahualpa by Francisco Pizarro.",
       "Analyze the Ransom Room (Cuarto del Rescate) as the only remaining Inca structure in Cajamarca and its physical role in the conquest.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cajamarca_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cajamarca.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

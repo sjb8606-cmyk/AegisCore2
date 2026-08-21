@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Culinary",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Borderland_Resettlement", "Kalevala_Folklore", "Traditional_Baking_Science"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Borderland_Resettlement",
+      "Kalevala_Folklore",
+      "Traditional_Baking_Science"
+    ],
     "learning_objectives": [
       "Understand the historical impact of the Winter War and the subsequent evacuation and resettlement of 400,000 Karelian refugees across Finland.",
       "Analyze the culinary structure and traditional preparation methods of the EU-protected Karelian Pie (Karjalanpiirakka).",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "karelia_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/karelia.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

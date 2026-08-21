@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Engineering",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["civil_engineering", "maritime_history", "great_lakes_shipping"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "civil_engineering",
+      "maritime_history",
+      "great_lakes_shipping"
+    ],
     "learning_objectives": [
       "Understand the structural engineering and lift mechanics of the Duluth Aerial Lift Bridge (reconstructed 1929)",
       "Analyze the strategic and economic role of the Port of Duluth-Superior as the most inland seaport in the world",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "duluth_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/duluth.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

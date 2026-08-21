@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["indigenous_pastoralism", "otjize_culture", "sacred_hearths"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "indigenous_pastoralism",
+      "otjize_culture",
+      "sacred_hearths"
+    ],
     "learning_objectives": [
       "Understand the social and political structure of the Himba pastoralist clans, explaining their semi-nomadic cattle-herding lifestyle.",
       "Analyze the chemical and cultural significance of the 'Otjize' paste (red ochre, butterfat, and aromatic resins) in protecting the skin and representing beauty.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "himba_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/himba.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

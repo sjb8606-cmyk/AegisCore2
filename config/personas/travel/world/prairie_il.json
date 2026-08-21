@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Ecology",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["tallgrass_prairie", "pioneer_agriculture", "soil_conservation"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "tallgrass_prairie",
+      "pioneer_agriculture",
+      "soil_conservation"
+    ],
     "learning_objectives": [
       "Understand the ecological structure and biodiversity of the historic North American tallgrass prairie",
       "Analyze the technological impact of John Deere's steel plow on breaking the prairie soil and ending the ecosystem",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "prairie_il_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/prairie_il.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

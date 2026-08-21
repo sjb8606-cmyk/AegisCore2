@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Transport",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["civil_engineering", "transportation_history", "hydrology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "civil_engineering",
+      "transportation_history",
+      "hydrology"
+    ],
     "learning_objectives": [
       "Understand the geological concept of the 'fall line' and why it dictated early American settlement and transport",
       "Analyze the engineering challenges of constructing the James River & Kanawha Canal through the Blue Ridge",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "james_river_va_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/james_river_va.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

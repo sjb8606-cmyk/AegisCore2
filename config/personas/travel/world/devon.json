@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Space Science & Geology",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["planetary_science", "astrobiology", "geology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "planetary_science",
+      "astrobiology",
+      "geology"
+    ],
     "learning_objectives": [
       "Understand the geological formation of impact craters and their preservation in polar environments",
       "Analyze why Devon Island serves as an ideal planetary analogue for Mars research (Haughton-Mars Project)",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "devon_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/devon.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

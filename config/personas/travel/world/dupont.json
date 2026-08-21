@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Politics & International Relations",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["international_relations", "diplomacy", "urban_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "international_relations",
+      "diplomacy",
+      "urban_history"
+    ],
     "learning_objectives": [
       "Understand the diplomatic geography of Embassy Row and its role in global international relations",
       "Analyze the social history of Dupont Circle as a historic, progressive center for the LGBTQ+ and anti-war movements in the 20th century",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "dupont_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/dupont.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

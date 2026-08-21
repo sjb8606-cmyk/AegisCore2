@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["conservation_history", "historic_preservation", "architectural_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "conservation_history",
+      "historic_preservation",
+      "architectural_history"
+    ],
     "learning_objectives": [
       "Understand the birth of the American conservation movement through the writings of George Perkins Marsh in Woodstock",
       "Analyze the architectural curation of a high-end New England village green",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "woodstock_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/woodstock.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

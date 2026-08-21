@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Culture & Agriculture",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["agricultural_history", "folk_art", "regional_branding"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "agricultural_history",
+      "folk_art",
+      "regional_branding"
+    ],
     "learning_objectives": [
       "Understand the historical development of 'grain palaces' as promotional tools for early Midwestern agricultural settlement",
       "Analyze the artistic design, crop selection, and annual reconstruction of the Mitchell Corn Palace murals",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "corn_palace_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/corn_palace.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

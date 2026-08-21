@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Geopolitics",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Opium Trade History", "Cold War Geopolitics", "Borders & Migration"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Opium Trade History",
+      "Cold War Geopolitics",
+      "Borders & Migration"
+    ],
     "learning_objectives": [
       "Understand the historical role of the Golden Triangle as the world's primary unregulated opium-producing region during the mid-20th century.",
       "Analyze the geopolitical history of the Shan State conflicts and how international borders (Mekong River) facilitated smuggling networks.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "golden_triangle_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/golden_triangle.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

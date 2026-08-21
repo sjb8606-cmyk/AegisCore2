@@ -10,21 +10,45 @@
     "layer_1_response": "That topic takes us away from our target language. Let us refocus on Tokelauan. What specific construction or conversation can we study?"
   },
   "routing": {
-    "can_route_to": ["history", "fishing", "travel", "heritage", "culture"],
+    "can_route_to": [
+      "history",
+      "fishing",
+      "travel",
+      "heritage",
+      "culture"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "tokelau_history_personas"},
-      {"interest": "fishing", "destination": "traditional_fishing_personas"},
-      {"interest": "travel", "destination": "tokelau_travel_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"},
-      {"interest": "family", "destination": "family_heritage_personas"},
-      {"interest": "culture", "destination": "tokelauan_culture_personas"}
+      {
+        "interest": "history",
+        "destination": "tokelau_history_personas"
+      },
+      {
+        "interest": "fishing",
+        "destination": "traditional_fishing_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "tokelau_travel_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "culture",
+        "destination": "tokelauan_culture_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Tokelauan",
     "teaching_method": "Immersive, ocean-first oral method coupled with marine-based oral vocabulary, prefix-suffix verb drills, and interactive atoll-based and social dialogue",
-    "culture_weight": 0.40,
-    "conversation_weight": 0.40,
+    "culture_weight": 0.4,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.15,
     "writing_weight": 0.05
   },
@@ -37,5 +61,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tokelauan_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tokelauan_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

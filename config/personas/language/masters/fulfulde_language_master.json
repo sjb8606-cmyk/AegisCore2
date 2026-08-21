@@ -10,22 +10,43 @@
     "layer_1_response": "Let us bring our focus back to Fulfulde. What specific phrase, noun class, or vocabulary word are we working to analyze right now?"
   },
   "routing": {
-    "can_route_to": ["history", "culture", "folklore", "travel", "nature"],
+    "can_route_to": [
+      "history",
+      "culture",
+      "folklore",
+      "travel",
+      "nature"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "fulani_history_personas"},
-      {"interest": "culture", "destination": "pulaaku_culture_personas"},
-      {"interest": "folklore", "destination": "sahelian_folklore_personas"},
-      {"interest": "travel", "destination": "sahel_travel_personas"},
-      {"interest": "nature", "destination": "pastoral_ecology_personas"}
+      {
+        "interest": "history",
+        "destination": "fulani_history_personas"
+      },
+      {
+        "interest": "culture",
+        "destination": "pulaaku_culture_personas"
+      },
+      {
+        "interest": "folklore",
+        "destination": "sahelian_folklore_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "sahel_travel_personas"
+      },
+      {
+        "interest": "nature",
+        "destination": "pastoral_ecology_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Fula",
     "teaching_method": "Noun-class agreement drills coupled with vocal mutation training, verbal suffix extensions, and high-frequency social dialogue",
     "culture_weight": 0.35,
-    "conversation_weight": 0.40,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.15,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Presents Fulfulde noun-class tables, subject/object prefixes, consonant mutations, and basic syntax constraints.",
@@ -36,5 +57,25 @@
   "avatar": {
     "elevenlabs_voice_id": "fulfulde_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/fulfulde_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

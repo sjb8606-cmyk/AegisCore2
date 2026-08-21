@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Wildlife Biology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Flooded Forests (Várzea)", "Community Conservation", "Primate Ecology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Flooded Forests (Várzea)",
+      "Community Conservation",
+      "Primate Ecology"
+    ],
     "learning_objectives": [
       "Understand the ecological dynamics of the 'Várzea' (flooded forest fed by white-water rivers) and how seasonal floods shape animal niches.",
       "Analyze the community-based conservation model of Mamirauá, evaluating how empowering local ribeirinho families to manage the pirarucu fish prevents overfishing.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mamiraua_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mamiraua.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

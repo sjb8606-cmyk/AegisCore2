@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & History",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["civil_engineering", "river_hydrology", "environmental_destruction"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "civil_engineering",
+      "river_hydrology",
+      "environmental_destruction"
+    ],
     "learning_objectives": [
       "Understand the engineering and history of the 1963 Glen Canyon Dam project on the Colorado River",
       "Analyze the ecological and aesthetic loss of Glen Canyon ('the place no one knew') under the waters of Lake Powell",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "glen_canyon_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/glen_canyon.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

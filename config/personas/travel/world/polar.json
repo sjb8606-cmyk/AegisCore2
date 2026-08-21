@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Transport",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["transportation_history", "northern_geography", "indigenous_communities"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "transportation_history",
+      "northern_geography",
+      "indigenous_communities"
+    ],
     "learning_objectives": [
       "Understand the vital role of the Ontario Northland Railway in connecting Moosonee to the rest of the province",
       "Analyze the engineering challenges of maintaining rail infrastructure over shifting muskeg",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "polar_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/polar.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

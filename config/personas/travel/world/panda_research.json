@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Wildlife Biology & Local Culture",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Panda Conservation", "Sichuan Gastronomy", "Performing Arts"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Panda Conservation",
+      "Sichuan Gastronomy",
+      "Performing Arts"
+    ],
     "learning_objectives": [
       "Understand the evolutionary history and unique digestive biology of the Giant Panda as a carnivore adapted entirely to a bamboo diet.",
       "Analyze the cultural and social role of the Chengdu Teahouse as a democratic, communal public space for trade and debate since the Qing Dynasty.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "panda_research_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/panda_research.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

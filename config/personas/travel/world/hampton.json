@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Culture & Leisure",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["recreational_history", "coastal_geography", "sociology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "recreational_history",
+      "coastal_geography",
+      "sociology"
+    ],
     "learning_objectives": [
       "Understand the socio-economic evolution of Hampton Beach as a popular working-class tourist destination",
       "Analyze the geological and engineering challenges of maintaining sandy beaches against Atlantic winter storms",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "hampton_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/hampton.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

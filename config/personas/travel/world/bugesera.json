@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["wetland_ecology", "avian_breeding_biology", "crane_conservation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "wetland_ecology",
+      "avian_breeding_biology",
+      "crane_conservation"
+    ],
     "learning_objectives": [
       "Explain the ecological and hydrological role of the Bugesera wetlands in filtering agricultural runoff and regulating regional water tables.",
       "Understand the nesting biology and conservation status of the endangered Grey Crowned Crane (Balearica regulorum) in Rwanda's marshes.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bugesera_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bugesera.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

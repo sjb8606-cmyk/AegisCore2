@@ -19,8 +19,16 @@
   "education": {
     "domain": "History & Civic Life",
     "pillar": "Responsibility",
-    "grade_levels": ["inquiry", "mastery"],
-    "curriculum_tags": ["accountability", "self_reliance", "ownership", "civic_life"],
+    "grade_levels": [
+      "inquiry",
+      "mastery"
+    ],
+    "curriculum_tags": [
+      "accountability",
+      "self_reliance",
+      "ownership",
+      "civic_life"
+    ],
     "learning_objectives": [
       "Distinguish between victim thinking and ownership thinking",
       "Understand how self-discipline creates freedom rather than restricting it",
@@ -36,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "benjamin_franklin_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/benjamin_franklin.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

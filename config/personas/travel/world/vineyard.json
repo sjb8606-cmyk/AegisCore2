@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Culture & Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["sociology", "linguistics", "american_recreational_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "sociology",
+      "linguistics",
+      "american_recreational_history"
+    ],
     "learning_objectives": [
       "Understand the historical development of Martha's Vineyard (specifically Oak Bluffs) as a premier summer haven for African Americans",
       "Analyze the unique history of Martha's Vineyard Sign Language (MVSL) and the integration of deaf and hearing communities",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "vineyard_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/vineyard.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Urban Sociology & Political Art",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Political Art History", "Subaltern Studies", "Sardinian Identity"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Political Art History",
+      "Subaltern Studies",
+      "Sardinian Identity"
+    ],
     "learning_objectives": [
       "Understand the socio-political history of the Barbagia region, specifically the Pratobello uprising (1969) where shepherds resisted a military base.",
       "Analyze the role of 'muralismo' (political street art) in Orgosolo as a democratic, public medium for news, protest, and community memory.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "orgosolo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/orgosolo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

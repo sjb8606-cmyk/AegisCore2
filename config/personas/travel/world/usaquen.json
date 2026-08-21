@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["urban_regeneration", "artisan_economies", "colonial_estates"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "urban_regeneration",
+      "artisan_economies",
+      "colonial_estates"
+    ],
     "learning_objectives": [
       "Evaluate the urban transformation of Usaquén from an isolated colonial village to an integrated creative neighborhood of Bogotá.",
       "Analyze the economic and social role of traditional outdoor flea markets in preserving national material culture and supporting small-business livelihoods.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "usaquen_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/usaquen.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

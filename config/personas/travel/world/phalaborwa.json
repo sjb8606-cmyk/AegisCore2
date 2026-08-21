@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["northern_kruger_ecology", "archaeometallurgy", "human_wildlife_coexistence"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "northern_kruger_ecology",
+      "archaeometallurgy",
+      "human_wildlife_coexistence"
+    ],
     "learning_objectives": [
       "Explain the ecological differences between northern Kruger's mopane woodlands and the southern acacia savannas, specifically regarding elephant behavior.",
       "Understand the archaeological significance of ancient iron and copper smelting sites in the Phalaborwa region as evidence of pre-colonial African metallurgy.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "phalaborwa_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/phalaborwa.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

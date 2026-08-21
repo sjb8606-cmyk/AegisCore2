@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Architecture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["antebellum_history", "greek_revival", "urban_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "antebellum_history",
+      "greek_revival",
+      "urban_history"
+    ],
     "learning_objectives": [
       "Understand the historical role of the Garden District as the wealthy American enclave in New Orleans",
       "Analyze the architectural design and structural scale of the Greek Revival and Italianate mansions",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "garden_district_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/garden_district.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

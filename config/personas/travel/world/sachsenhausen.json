@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Holocaust_History", "NS_State_Terror", "Memorial_Culture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Holocaust_History",
+      "NS_State_Terror",
+      "Memorial_Culture"
+    ],
     "learning_objectives": [
       "Understand the systematic role of Sachsenhausen as the administrative and training center for the entire concentration camp system of the Nazi state.",
       "Analyze how the physical layout and geometric design of the camp reflected the totalitarian desire for absolute surveillance and control.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sachsenhausen_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sachsenhausen.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Political Iconography",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Constitutional History", "Venetian Gothic Art", "Judicial Architecture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Constitutional History",
+      "Venetian Gothic Art",
+      "Judicial Architecture"
+    ],
     "learning_objectives": [
       "Understand the unique, balanced constitutional structure of the Venetian Republic (Serenissima) designed to prevent individual dictatorship.",
       "Analyze the architectural and artistic iconography of the Doge's Palace, specifically how Tintoretto and Veronese paintings projected state propaganda.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "doge_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/doge.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

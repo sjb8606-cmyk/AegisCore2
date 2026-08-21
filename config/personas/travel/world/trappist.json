@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Culinary",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Monastic_Brewing", "Fermentation_Microbiology", "Appellation_Laws"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Monastic_Brewing",
+      "Fermentation_Microbiology",
+      "Appellation_Laws"
+    ],
     "learning_objectives": [
       "Explain the biochemical process of top-fermentation and 'bottle conditioning' (secondary fermentation in the bottle) used in Trappist brewing.",
       "Understand the strict legal criteria required to carry the 'Authentic Trappist Product' (ATP) designation on a beer bottle.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "trappist_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/trappist.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

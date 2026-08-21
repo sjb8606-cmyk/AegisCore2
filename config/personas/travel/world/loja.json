@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["classical_music_history", "indigenous_botany_podocarpus", "regional_identity"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "classical_music_history",
+      "indigenous_botany_podocarpus",
+      "regional_identity"
+    ],
     "learning_objectives": [
       "Analyze the historical reasons why Loja became established as the musical capital of Ecuador, focusing on its early academies and conservatory models.",
       "Identify the unique ecological features of the Podocarpus National Park, explaining why the Podocarpus conifer is a rare evolutionary anomaly in South America.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "loja_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/loja.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

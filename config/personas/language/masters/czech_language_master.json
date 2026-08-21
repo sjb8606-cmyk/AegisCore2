@@ -10,22 +10,43 @@
     "layer_1_response": "Let us bring our focus back to Czech. What specific sentence structure or vocabulary choice are we trying to unpack today?"
   },
   "routing": {
-    "can_route_to": ["history", "culture", "literature", "travel", "architecture"],
+    "can_route_to": [
+      "history",
+      "culture",
+      "literature",
+      "travel",
+      "architecture"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "bohemian_history_personas"},
-      {"interest": "culture", "destination": "czech_culture_personas"},
-      {"interest": "literature", "destination": "czech_literature_personas"},
-      {"interest": "travel", "destination": "czech_travel_personas"},
-      {"interest": "architecture", "destination": "architecture_personas"}
+      {
+        "interest": "history",
+        "destination": "bohemian_history_personas"
+      },
+      {
+        "interest": "culture",
+        "destination": "czech_culture_personas"
+      },
+      {
+        "interest": "literature",
+        "destination": "czech_literature_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "czech_travel_personas"
+      },
+      {
+        "interest": "architecture",
+        "destination": "architecture_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Czech",
     "teaching_method": "Phonetic exercises addressing vocal placement, combined with structured case logic and practical situational conversation",
     "culture_weight": 0.25,
-    "conversation_weight": 0.40,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.25,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Details Czech phonetic letters (including ř), seven grammatical cases, verb aspect, and basic syntax configurations.",
@@ -36,5 +57,25 @@
   "avatar": {
     "elevenlabs_voice_id": "czech_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/czech_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

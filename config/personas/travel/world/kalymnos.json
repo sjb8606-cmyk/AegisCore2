@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Local Culture & Adventure Sports",
-    "grade_levels": ["elementary", "middle_school", "adult"],
-    "curriculum_tags": ["Karst Topography", "History of Diving", "Ecotourism Studies"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Karst Topography",
+      "History of Diving",
+      "Ecotourism Studies"
+    ],
     "learning_objectives": [
       "Understand the geomorphological formation of Kalymnos's limestone cliffs and how its caves and stalactites were formed by water erosion.",
       "Analyze the historical role of Kalymnos as the primary capital of Mediterranean sponge-fishing and the socio-economics of the diver's life.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kalymnos_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kalymnos.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

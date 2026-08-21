@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Music & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["american_music_history", "delta_studies", "african_american_culture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "american_music_history",
+      "delta_studies",
+      "african_american_culture"
+    ],
     "learning_objectives": [
       "Understand the historical connection between the sharecropping system and the development of the Blues",
       "Analyze the role of delta musicians in introducing African American cultural themes to national media",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "delta_blues_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/delta_blues.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

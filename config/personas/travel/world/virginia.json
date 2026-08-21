@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Adventure & Nature",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["fluvial_geomorphology", "wilderness_management", "geology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "fluvial_geomorphology",
+      "wilderness_management",
+      "geology"
+    ],
     "learning_objectives": [
       "Understand the geological uplift and erosion processes that created the deep canyons of the South Nahanni River",
       "Analyze the ecological pristine state of Nahanni National Park Reserve as a UNESCO World Heritage site",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "virginia_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/virginia.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

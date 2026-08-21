@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geology & Speleology",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["speleology", "geomorphology", "karst_topography"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "speleology",
+      "geomorphology",
+      "karst_topography"
+    ],
     "learning_objectives": [
       "Understand the chemical process of sulfuric acid dissolution (rather than carbonic acid) that carved Carlsbad Caverns",
       "Analyze the scale and geological structure of the Big Room, the largest single cave chamber by volume in North America",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "carlsbad_caverns_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/carlsbad_caverns.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

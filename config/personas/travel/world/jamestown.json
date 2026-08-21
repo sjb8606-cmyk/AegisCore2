@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Archaeology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["early_colonialism", "archaeological_methods", "starving_time"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "early_colonialism",
+      "archaeological_methods",
+      "starving_time"
+    ],
     "learning_objectives": [
       "Understand the ecological and logistical failures of the early Jamestown settlement",
       "Analyze the archaeological evidence (such as the Jane skeleton) that proved cannibalism occurred during the Starving Time of 1609-1610",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "jamestown_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/jamestown.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

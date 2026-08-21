@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Luxury_Tourism_Economics", "Eco_Friendly_Resorts", "Balinese_Hospitality"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Luxury_Tourism_Economics",
+      "Eco_Friendly_Resorts",
+      "Balinese_Hospitality"
+    ],
     "learning_objectives": [
       "Analyze the economic and social factors that drove Seminyak's transition from a quiet rural village into a global hub of luxury and design tourism.",
       "Understand the principles of sustainable luxury architecture, detailing how modern resorts integrate Balinese wooden structures and open-air ventilation.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "seminyak_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/seminyak.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["cuban_revolution", "modern_architecture", "mid_century_urbanization"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "cuban_revolution",
+      "modern_architecture",
+      "mid_century_urbanization"
+    ],
     "learning_objectives": [
       "Analyze the urban planning shifts in Havana that led to the development of Vedado as a high-density, modern financial and cultural center in the 20th century.",
       "Understand the political and ideological significance of the Plaza de la Revolución as the physical stage for the Cuban revolutionary state.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "vedado_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/vedado.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

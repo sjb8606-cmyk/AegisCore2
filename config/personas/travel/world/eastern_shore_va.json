@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["marine_ecology", "climate_adaptation", "linguistics"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "marine_ecology",
+      "climate_adaptation",
+      "linguistics"
+    ],
     "learning_objectives": [
       "Understand the geological processes causing land subsidence and sea-level rise on Tangier Island",
       "Analyze the linguistic preservation of Elizabethian-era English dialects in isolated maritime communities",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "eastern_shore_va_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/eastern_shore_va.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

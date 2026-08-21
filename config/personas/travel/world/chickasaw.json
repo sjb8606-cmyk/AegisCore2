@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["indigenous_studies", "river_geography", "treaty_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "indigenous_studies",
+      "river_geography",
+      "treaty_history"
+    ],
     "learning_objectives": [
       "Understand the historical geography of the Chickasaw Bluffs along the Mississippi River",
       "Analyze the impact of early colonial trade and treaties on the territory of the Chickasaw Nation",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "chickasaw_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/chickasaw.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

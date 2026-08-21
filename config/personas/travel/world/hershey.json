@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Business & Sociology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["industrial_history", "corporate_paternalism", "food_systems"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "industrial_history",
+      "corporate_paternalism",
+      "food_systems"
+    ],
     "learning_objectives": [
       "Understand the business strategies and innovations of Milton Hershey in mass-producing milk chocolate",
       "Analyze the concept of 'corporate paternalism' through the design and governance of the town of Hershey",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "hershey_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/hershey.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

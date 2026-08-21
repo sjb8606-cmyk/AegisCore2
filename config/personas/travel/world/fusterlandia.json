@@ -18,8 +18,19 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["public_art", "mosaic_sculpture", "community_arts_programs"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "public_art",
+      "mosaic_sculpture",
+      "community_arts_programs"
+    ],
     "learning_objectives": [
       "Understand the artistic techniques of 'mosaic' and 'trencadís' (using broken ceramic shards) popularized by Jaimanitas artists.",
       "Analyze the social and economic impacts of community-based public art projects on traditional fishing villages.",
@@ -35,5 +46,25 @@
   "avatar": {
     "elevenlabs_voice_id": "fusterlandia_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/fusterlandia.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["agroforestry_gardens", "indigenous_botany", "amazon_histories"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "agroforestry_gardens",
+      "indigenous_botany",
+      "amazon_histories"
+    ],
     "learning_objectives": [
       "Understand the ecological design and biodiversity of traditional Kichwa forest gardens (chakras) as sustainable agroforestry systems.",
       "Analyze the chemical and cultural significance of the Guayusa leaf (Ilex guayusa) in Amazonian daily rituals and pre-dawn community meetings.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tena_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tena.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

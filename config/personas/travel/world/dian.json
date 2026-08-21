@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Science",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["primate_behavior", "field_methodology", "wildlife_veterinary_science"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "primate_behavior",
+      "field_methodology",
+      "wildlife_veterinary_science"
+    ],
     "learning_objectives": [
       "Explain the key concepts of primate vocal, gestural, and social communication using the scientific case study of the mountain gorilla.",
       "Understand the history and scientific objectives of the Karisoke Research Center founded by Dian Fossey in 1967.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "dian_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/dian.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

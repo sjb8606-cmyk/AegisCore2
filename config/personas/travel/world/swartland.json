@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Culinary",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["sustainable_agriculture", "natural_wine_production", "agrarian_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "sustainable_agriculture",
+      "natural_wine_production",
+      "agrarian_history"
+    ],
     "learning_objectives": [
       "Explain the ecological benefits of dry-land farming and old-vine viticulture in arid regions.",
       "Analyze the difference between industrial wine production and the natural, low-intervention methods popularized in the Swartland.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "swartland_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/swartland.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

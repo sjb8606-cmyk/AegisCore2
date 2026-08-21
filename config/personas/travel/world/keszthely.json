@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Hungarian_Enlightenment", "Baroque_Palaces", "Library_Archives"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Hungarian_Enlightenment",
+      "Baroque_Palaces",
+      "Library_Archives"
+    ],
     "learning_objectives": [
       "Understand the role of Count György Festetics in establishing the Helikon Library and the Georgikon, Europe's first independent agricultural college.",
       "Identify the key architectural and design elements of the late Baroque and Neo-Rococo styles in the Festetics Palace.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "keszthely_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/keszthely.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

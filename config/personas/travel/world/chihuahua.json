@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Cultural Heritage",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Mexican Revolution", "Desert Agronomy", "Mining History"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Mexican Revolution",
+      "Desert Agronomy",
+      "Mining History"
+    ],
     "learning_objectives": [
       "Understand the causes and military campaigns of the Mexican Revolution (1910-1920) in the north, focusing on Pancho Villa's Division of the North.",
       "Analyze the role of northern hacienda ranching and silver mining in creating the independent economic power of Chihuahua.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "chihuahua_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/chihuahua.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Science",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["human_evolution", "paleontology", "biosphere_conservation"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "human_evolution",
+      "paleontology",
+      "biosphere_conservation"
+    ],
     "learning_objectives": [
       "Analyze the evolutionary significance of Australopithecus and early Homo fossils discovered in the Makapansgat caves.",
       "Explain the unique geological composition of the Waterberg plateau and how limestone caves act as natural fossil preservation vaults.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "waterberg_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/waterberg.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

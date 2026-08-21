@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Local Culture & Textile History",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Lace History", "Urban Color Psychology", "Lagoon Ecology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Lace History",
+      "Urban Color Psychology",
+      "Lagoon Ecology"
+    ],
     "learning_objectives": [
       "Understand the historical navigation of the Venetian Lagoon, specifically how extreme winter fog led to the color-zoning of Burano houses.",
       "Analyze the technical and labor-intensive process of 'Punto in Aria' (point in the air) needle-lace making.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "burano_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/burano.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

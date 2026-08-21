@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["archaeology", "colonial_violence", "trade_monopolies"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "archaeology",
+      "colonial_violence",
+      "trade_monopolies"
+    ],
     "learning_objectives": [
       "Understand the military and economic dominance of the Susquehannock in the mid-17th century fur trade",
       "Analyze the causes and outcomes of the 1763 Conestoga Massacre by the Paxton Boys",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "susquehannock_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/susquehannock.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Landscape Design & Imperial History",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Imperial Gardens", "Mural Painting History", "Qing Dynasty"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Imperial Gardens",
+      "Mural Painting History",
+      "Qing Dynasty"
+    ],
     "learning_objectives": [
       "Understand the design principles of the Chinese Imperial Garden (Yuanlin), focusing on how the Summer Palace (Yiheyuan) integrates natural mountains, water, and artificial pavilions.",
       "Analyze the political and economic controversy of Empress Cixi utilizing the national navy funds to reconstruct the palace in the late 19th century.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "summer_palace_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/summer_palace.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

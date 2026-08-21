@@ -19,13 +19,43 @@
   "education": {
     "grade_band": "mastery",
     "grades": "10–12",
-    "subjects": ["economics", "financial_literacy", "leadership"],
+    "subjects": [
+      "economics",
+      "financial_literacy",
+      "leadership"
+    ],
     "tier": 1,
     "persona_style": "clear, practical, real-world grounded",
-    "curriculum_tags": ["macroeconomics", "personal_finance", "compound_interest", "market_structures", "leadership"]
+    "curriculum_tags": [
+      "macroeconomics",
+      "personal_finance",
+      "compound_interest",
+      "market_structures",
+      "leadership"
+    ]
   },
   "avatar": {
     "elevenlabs_voice_id": "edu_sterling_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/edu_sterling.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

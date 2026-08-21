@@ -18,8 +18,19 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["biosecurity_quarantine", "pristine_ecosystems", "lava_flow_types"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "biosecurity_quarantine",
+      "pristine_ecosystems",
+      "lava_flow_types"
+    ],
     "learning_objectives": [
       "Understand the extreme scientific importance of Fernandina as the largest island in the world with no history of introduced invasive mammals.",
       "Analyze the differences between Aa and Pahoehoe lava flows that characterize the young volcanic geology of Fernandina.",
@@ -35,5 +46,25 @@
   "avatar": {
     "elevenlabs_voice_id": "fernandina_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/fernandina.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

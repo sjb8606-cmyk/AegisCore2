@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["abbasid_fortifications", "maritime_history", "military_monasticism"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "abbasid_fortifications",
+      "maritime_history",
+      "military_monasticism"
+    ],
     "learning_objectives": [
       "Understand the military and strategic role of the Sousse Ribat in securing the North African coast during the early Islamic expansion.",
       "Analyze the unique, multi-functional design of the Ribat as both a defensive military fortress and a spiritual monastery for soldier-monks (murabitun).",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sousse_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sousse.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

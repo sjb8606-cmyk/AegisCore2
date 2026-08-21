@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["political_structures", "colonial_encounters", "river_ecology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "political_structures",
+      "colonial_encounters",
+      "river_ecology"
+    ],
     "learning_objectives": [
       "Understand the political structure and diplomatic strategies of the Pennacook Confederacy under Chief Passaconaway",
       "Analyze the ecological and cultural impact of the industrialization of the Merrimack River on Indigenous fisheries",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "pennacook_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/pennacook.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

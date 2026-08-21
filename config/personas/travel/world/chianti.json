@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Viticulture & Rural Culture",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Terroir Science", "Mezzadria Farming", "Tuscan History"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Terroir Science",
+      "Mezzadria Farming",
+      "Tuscan History"
+    ],
     "learning_objectives": [
       "Understand the geological composition of 'Galestro' (slaty clay) and 'Alberese' (limestone) soils and their impact on Sangiovese grape viticulture.",
       "Analyze the historical role of the 'Mezzadria' (sharecropping) system in shaping the physical landscape of Tuscan hills (cypress lines, stone farms).",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "chianti_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/chianti.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

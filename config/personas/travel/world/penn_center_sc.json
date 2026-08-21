@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Civil Rights",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["civil_rights", "reconstruction_era", "black_education"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "civil_rights",
+      "reconstruction_era",
+      "black_education"
+    ],
     "learning_objectives": [
       "Understand the historical significance of the Penn School as the first school established for freed slaves (1862)",
       "Analyze the successes and limitations of the Port Royal Experiment in transitioning freedmen to economic autonomy",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "penn_center_sc_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/penn_center_sc.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

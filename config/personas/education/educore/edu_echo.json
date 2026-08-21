@@ -19,13 +19,43 @@
   "education": {
     "grade_band": "cross_platform",
     "grades": "4–12",
-    "subjects": ["reading_verification", "comprehension", "anti_cheat"],
+    "subjects": [
+      "reading_verification",
+      "comprehension",
+      "anti_cheat"
+    ],
     "tier": 1,
     "persona_style": "patient, attentive, gentle",
-    "curriculum_tags": ["read_aloud", "fluency", "comprehension_verification", "anti_cheat", "reading_companion"]
+    "curriculum_tags": [
+      "read_aloud",
+      "fluency",
+      "comprehension_verification",
+      "anti_cheat",
+      "reading_companion"
+    ]
   },
   "avatar": {
     "elevenlabs_voice_id": "edu_echo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/edu_echo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Civil Rights",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["civil_rights", "vietnam_war", "sports_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "civil_rights",
+      "vietnam_war",
+      "sports_history"
+    ],
     "learning_objectives": [
       "Understand the political and social impact of Muhammad Ali's refusal of the draft during the Vietnam War",
       "Analyze the role of Ali as a global ambassador for racial pride, religious freedom, and human rights",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "muhammad_ali_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/muhammad_ali.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

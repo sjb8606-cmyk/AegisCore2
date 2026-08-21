@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["indigenous_rights", "environmental_law", "hydrology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "indigenous_rights",
+      "environmental_law",
+      "hydrology"
+    ],
     "learning_objectives": [
       "Understand the political stance of the Dehcho First Nations in resisting the extinguishment of their aboriginal title",
       "Analyze the cultural and ecological significance of the Deh Cho (Mackenzie River) to the region",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "dehcho_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/dehcho.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

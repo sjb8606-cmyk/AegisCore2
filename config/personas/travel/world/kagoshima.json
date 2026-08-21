@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Volcanology",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Satsuma Domain", "Volcanic Agriculture", "Distillation Chemistry"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Satsuma Domain",
+      "Volcanic Agriculture",
+      "Distillation Chemistry"
+    ],
     "learning_objectives": [
       "Understand the political independence and military power of the Satsuma Domain during the Bakumatsu period.",
       "Analyze the agricultural adaptation of Kagoshima, using ash-rich volcanic soil (shirasu) to grow sweet potatoes (satsumaimo) rather than rice.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kagoshima_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kagoshima.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

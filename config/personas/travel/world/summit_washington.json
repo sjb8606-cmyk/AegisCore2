@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Meteorology",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["meteorology", "climatology", "mechanical_engineering"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "meteorology",
+      "climatology",
+      "mechanical_engineering"
+    ],
     "learning_objectives": [
       "Understand the meteorological factors (storm track convergence and orographic lift) that create extreme weather on Mount Washington",
       "Analyze the mechanical engineering of Sylvester Marsh's cog railway, the world's first mountain-climbing rack railway",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "summit_washington_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/summit_washington.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

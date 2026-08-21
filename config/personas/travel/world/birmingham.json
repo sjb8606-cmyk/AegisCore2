@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Business",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Industrial_History", "Social_Reform_in_Business", "Craftsmanship_and_Trade"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Industrial_History",
+      "Social_Reform_in_Business",
+      "Craftsmanship_and_Trade"
+    ],
     "learning_objectives": [
       "Analyze how the 'city of a thousand trades' model differed from the large-scale cotton mills of northern England.",
       "Understand the social and economic motivations behind the Cadbury family's creation of Bournville as a model village for workers.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "birmingham_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/birmingham.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

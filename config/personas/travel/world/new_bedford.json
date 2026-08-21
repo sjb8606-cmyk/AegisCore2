@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Maritime History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["whaling_history", "underground_railroad", "industrial_revolution"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "whaling_history",
+      "underground_railroad",
+      "industrial_revolution"
+    ],
     "learning_objectives": [
       "Understand how New Bedford became the wealthiest city in America in the mid-19th century through the whaling industry",
       "Analyze the diverse, global makeup of whaling crews and New Bedford's history as a haven for escaped slaves (underground railroad)",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "new_bedford_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/new_bedford.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

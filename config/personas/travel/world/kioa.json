@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["pacific_migration_histories", "tuvaluan_heritage", "island_governance"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "pacific_migration_histories",
+      "tuvaluan_heritage",
+      "island_governance"
+    ],
     "learning_objectives": [
       "Understand the historical process and causes of the Tuvaluan migration from Vaitupu to Kioa Island in 1947.",
       "Analyze the social and political structure of the Kioa Island community, explaining their system of self-governance and the role of the Maneapa.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kioa_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kioa.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

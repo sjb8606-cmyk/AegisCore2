@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["colonial_history", "frontier_conflict", "historic_preservation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "colonial_history",
+      "frontier_conflict",
+      "historic_preservation"
+    ],
     "learning_objectives": [
       "Understand the global geopolitical causes (Queen Anne's War) of the 1704 Raid on Deerfield",
       "Analyze the material culture of early New England through preserved colonial architecture and decorative arts",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "deerfield_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/deerfield.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

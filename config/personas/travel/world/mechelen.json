@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Burgundian_Netherlands", "Carillon_Acoustics", "Renaissance_Humanism_Flanders"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Burgundian_Netherlands",
+      "Carillon_Acoustics",
+      "Renaissance_Humanism_Flanders"
+    ],
     "learning_objectives": [
       "Understand the historical role of Mechelen as the administrative and intellectual capital of the Burgundian Netherlands under Regent Margaret of Austria.",
       "Analyze the acoustic physics and mechanical design of the Carillon (beiaard) as a traditional Flemish musical instrument played with a baton keyboard.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mechelen_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mechelen.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

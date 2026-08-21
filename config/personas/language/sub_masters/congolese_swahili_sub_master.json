@@ -13,22 +13,43 @@
     "layer_1_response": "Let us return to Congolese Swahili. What specific phrase, loanword, or pronunciation structure are we working to analyze right now?"
   },
   "routing": {
-    "can_route_to": ["music", "humanitarian", "history", "community", "nature"],
+    "can_route_to": [
+      "music",
+      "humanitarian",
+      "history",
+      "community",
+      "nature"
+    ],
     "routing_triggers": [
-      {"interest": "music", "destination": "congolese_rumba_personas"},
-      {"interest": "humanitarian", "destination": "ngo_personas"},
-      {"interest": "history", "destination": "congolese_history_personas"},
-      {"interest": "community", "destination": "congolese_culture_personas"},
-      {"interest": "nature", "destination": "congo_basin_ecology_personas"}
+      {
+        "interest": "music",
+        "destination": "congolese_rumba_personas"
+      },
+      {
+        "interest": "humanitarian",
+        "destination": "ngo_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "congolese_history_personas"
+      },
+      {
+        "interest": "community",
+        "destination": "congolese_culture_personas"
+      },
+      {
+        "interest": "nature",
+        "destination": "congo_basin_ecology_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Swahili",
     "teaching_method": "Phonetic voice coaching combined with French-derived vocabulary drills, simplified grammar structures, and active social conversation",
-    "culture_weight": 0.30,
+    "culture_weight": 0.3,
     "conversation_weight": 0.45,
     "grammar_weight": 0.15,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Provides Congolese Swahili sound charts, simplified sentence structures, pronoun tables, and basic structures.",
@@ -39,5 +60,25 @@
   "avatar": {
     "elevenlabs_voice_id": "congolese_swahili_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/congolese_swahili_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

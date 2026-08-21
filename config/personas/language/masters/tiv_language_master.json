@@ -10,22 +10,43 @@
     "layer_1_response": "Let us steer back to our Tiv language lesson. How would you attempt to translate or express your thought in the language?"
   },
   "routing": {
-    "can_route_to": ["history", "music", "travel", "family", "heritage"],
+    "can_route_to": [
+      "history",
+      "music",
+      "travel",
+      "family",
+      "heritage"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "benue_history_personas"},
-      {"interest": "music", "destination": "tiv_music_personas"},
-      {"interest": "travel", "destination": "benue_travel_personas"},
-      {"interest": "family", "destination": "family_heritage_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"}
+      {
+        "interest": "history",
+        "destination": "benue_history_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "tiv_music_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "benue_travel_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Tiv",
     "teaching_method": "Phonetic voice coaching coupled with noun class prefixes, verbal suffix modifications, and active daily conversation",
     "culture_weight": 0.35,
-    "conversation_weight": 0.40,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.15,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Provides Tiv sound charts, sentence structures, pronoun tables, and basic grammatical rules.",
@@ -36,5 +57,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tiv_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tiv_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

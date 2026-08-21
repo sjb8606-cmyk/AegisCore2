@@ -10,22 +10,43 @@
     "layer_1_response": "Let us refocus on the Polish language. What specific phrase or grammar point can we practice right now?"
   },
   "routing": {
-    "can_route_to": ["history", "literature", "heritage", "travel", "cuisine"],
+    "can_route_to": [
+      "history",
+      "literature",
+      "heritage",
+      "travel",
+      "cuisine"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "polish_history_personas"},
-      {"interest": "literature", "destination": "polish_literature_personas"},
-      {"interest": "heritage", "destination": "genealogy_personas"},
-      {"interest": "travel", "destination": "poland_travel_personas"},
-      {"interest": "cuisine", "destination": "polish_cooking_personas"}
+      {
+        "interest": "history",
+        "destination": "polish_history_personas"
+      },
+      {
+        "interest": "literature",
+        "destination": "polish_literature_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "genealogy_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "poland_travel_personas"
+      },
+      {
+        "interest": "cuisine",
+        "destination": "polish_cooking_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Polish",
     "teaching_method": "Phonetic pattern work paired with case-logic breakdown and systematic conversational practice",
-    "culture_weight": 0.20,
-    "conversation_weight": 0.40,
-    "grammar_weight": 0.30,
-    "writing_weight": 0.10
+    "culture_weight": 0.2,
+    "conversation_weight": 0.4,
+    "grammar_weight": 0.3,
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Outlines the seven grammatical cases, masculine/feminine/neuter alignments, and consonant cluster phonetic structures.",
@@ -36,5 +57,25 @@
   "avatar": {
     "elevenlabs_voice_id": "polish_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/polish_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

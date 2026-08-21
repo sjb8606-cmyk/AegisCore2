@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Media & Technology",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["media_history", "journalism_ethics", "communications"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "media_history",
+      "journalism_ethics",
+      "communications"
+    ],
     "learning_objectives": [
       "Understand the historical significance of Ted Turner founding CNN and pioneering the 24-hour news cycle",
       "Analyze the impact of cable television on the speed, delivery, and political polarization of global journalism",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cnn_center_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cnn_center.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

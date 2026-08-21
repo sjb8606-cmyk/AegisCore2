@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["geology", "fynbos_biodiversity", "south_african_history"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "geology",
+      "fynbos_biodiversity",
+      "south_african_history"
+    ],
     "learning_objectives": [
       "Understand how Cape Town's microclimates and unique geological history shape its flora and fauna.",
       "Analyze the impact of Table Mountain as a historic marine navigation beacon and indigenous sacred site.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "table_mountain_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/table_mountain.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

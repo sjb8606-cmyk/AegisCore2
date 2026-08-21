@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["siege_history", "regional_industry", "river_geography"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "siege_history",
+      "regional_industry",
+      "river_geography"
+    ],
     "learning_objectives": [
       "Understand the military and strategic significance of the 1864 Defense of Paysandú in the context of the Triple Alliance and Uruguayan civil conflicts.",
       "Analyze the industrial development of Paysandú in the late 19th and 20th centuries, focusing on beer brewing, textiles, and port logistics.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "paysandu_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/paysandu.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

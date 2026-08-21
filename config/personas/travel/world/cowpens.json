@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Military Science",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["military_history", "revolutionary_war", "tactical_analysis"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "military_history",
+      "revolutionary_war",
+      "tactical_analysis"
+    ],
     "learning_objectives": [
       "Understand the double-envelopment tactic executed by Daniel Morgan at the Battle of Cowpens",
       "Analyze why the Southern Campaign of the Revolutionary War relied so heavily on militia and irregular warfare",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cowpens_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cowpens.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

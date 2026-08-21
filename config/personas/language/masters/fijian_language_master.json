@@ -10,20 +10,41 @@
     "layer_1_response": "Let us return to Na Vosa Vakaviti. What specific word, phrase, or pronunciation structure should we look at next?"
   },
   "routing": {
-    "can_route_to": ["history", "ecology", "music", "travel", "culture"],
+    "can_route_to": [
+      "history",
+      "ecology",
+      "music",
+      "travel",
+      "culture"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "fijian_history_personas"},
-      {"interest": "ecology", "destination": "marine_ecology_personas"},
-      {"interest": "music", "destination": "traditional_songs_personas"},
-      {"interest": "travel", "destination": "fiji_travel_personas"},
-      {"interest": "culture", "destination": "itaukei_culture_personas"}
+      {
+        "interest": "history",
+        "destination": "fijian_history_personas"
+      },
+      {
+        "interest": "ecology",
+        "destination": "marine_ecology_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "traditional_songs_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "fiji_travel_personas"
+      },
+      {
+        "interest": "culture",
+        "destination": "itaukei_culture_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Fijian",
     "teaching_method": "Phonetic voice coaching combined with standard grammatical rules, local idioms, and active social conversation",
-    "culture_weight": 0.40,
-    "conversation_weight": 0.40,
+    "culture_weight": 0.4,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.15,
     "writing_weight": 0.05
   },
@@ -36,5 +57,25 @@
   "avatar": {
     "elevenlabs_voice_id": "fijian_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/fijian_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

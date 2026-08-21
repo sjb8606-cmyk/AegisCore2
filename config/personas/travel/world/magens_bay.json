@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Culture & Leisure",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["coastal_geography", "recreational_history", "marine_conservation"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "coastal_geography",
+      "recreational_history",
+      "marine_conservation"
+    ],
     "learning_objectives": [
       "Understand the geological formation and protection of Magens Bay as a deep-pocket estuary",
       "Analyze the history of the bay's donation to the public by Arthur Fairchild (1940s)",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "magens_bay_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/magens_bay.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

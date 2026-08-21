@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Politics",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["presidential_history", "cold_war", "hill_country"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "presidential_history",
+      "cold_war",
+      "hill_country"
+    ],
     "learning_objectives": [
       "Understand the historical significance of the LBJ Ranch as the 'Texas White House' during his presidency",
       "Analyze the political and social legacy of Lyndon B. Johnson's Great Society and Vietnam War policies",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "lbj_ranch_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/lbj_ranch.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Viticulture & Local Culture",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Terroir Science", "Karri Forests", "Coastal Surfing"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Terroir Science",
+      "Karri Forests",
+      "Coastal Surfing"
+    ],
     "learning_objectives": [
       "Understand the geological composition of the Margaret River soils (Leeuwin-Naturaliste ridge gravels) and their impact on Cabernet Sauvignon viticulture.",
       "Analyze the biology and scale of the Karri (Eucalyptus diversicolor) forest, the third-tallest tree species in the world.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "margaret_river_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/margaret_river.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

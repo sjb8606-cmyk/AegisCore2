@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Colonial Architecture",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["French Colonialism", "Toucouleur Empire", "Riverine Logistics"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "French Colonialism",
+      "Toucouleur Empire",
+      "Riverine Logistics"
+    ],
     "learning_objectives": [
       "Understand the strategic and military history of the Fort de Podor, constructed by Louis Faidherbe in 1854 to secure the French monopoly on the gum arabic trade.",
       "Analyze the military architecture of the fort, evaluating how its brick bastions and barracks adapted to colonial warfare along the Senegal River.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "podor_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/podor.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

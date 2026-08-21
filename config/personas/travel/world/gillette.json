@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Architecture",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["architectural_history", "theatre_arts", "gilded_age"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "architectural_history",
+      "theatre_arts",
+      "gilded_age"
+    ],
     "learning_objectives": [
       "Understand the architectural phenomenon of American wealth constructing faux-medieval ruins and castles",
       "Analyze the life and cultural impact of William Gillette, particularly his role in shaping the modern image of Sherlock Holmes",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "gillette_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/gillette.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

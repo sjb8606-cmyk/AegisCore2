@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Byzantine_Fresco_Art", "Moldavian_Architecture", "Stephen_the_Great_History"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Byzantine_Fresco_Art",
+      "Moldavian_Architecture",
+      "Stephen_the_Great_History"
+    ],
     "learning_objectives": [
       "Analyze the unique artistic and theological choice of the Painted Monasteries of Bucovina to feature vast, complex frescoes on the exterior walls exposed to the elements.",
       "Understand the chemical composition and enduring mystery of 'Voroneț Blue,' a highly durable pigment based on azurite and lapis lazuli.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "voronet_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/voronet.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

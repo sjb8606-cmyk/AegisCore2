@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Music",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Acoustic_Engineering", "Contemporary_Nordic_Architecture", "Crisis_Economics_Art"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Acoustic_Engineering",
+      "Contemporary_Nordic_Architecture",
+      "Crisis_Economics_Art"
+    ],
     "learning_objectives": [
       "Analyze the acoustic design of Harpa's Eldborg hall, including its adjustable reverberation chambers and architectural isolation from harbor noise.",
       "Understand the collaborative design process between artist Olafur Eliasson and Henning Larsen Architects in creating the geometric 'quasi-brick' glass facade.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "harpa_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/harpa.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

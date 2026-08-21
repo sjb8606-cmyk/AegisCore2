@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Illyrian_Archaeology", "Iron_Age_Balkans", "Pre_Roman_Maritime_Technology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Illyrian_Archaeology",
+      "Iron_Age_Balkans",
+      "Pre_Roman_Maritime_Technology"
+    ],
     "learning_objectives": [
       "Understand the socio-political organization and geographical distribution of the various Illyrian tribes (e.g., Liburnians, Delmatae) across the ancient Adriatic.",
       "Analyze the advanced maritime technology of the Illyrians, specifically the 'liburna,' a fast, maneuverable galley that was eventually adopted by the Roman Navy.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "illyrian_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/illyrian.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

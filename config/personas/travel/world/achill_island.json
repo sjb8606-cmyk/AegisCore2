@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Ecology & Local History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Post-Famine Archaeology", "Coastal Geomorphology", "Basking Shark Ecology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Post-Famine Archaeology",
+      "Coastal Geomorphology",
+      "Basking Shark Ecology"
+    ],
     "learning_objectives": [
       "Understand the socio-economic impact of the Great Famine (1845–1852) on rural western Ireland, as recorded in Achill’s Deserted Village.",
       "Analyze the geological formation of Achill's sea cliffs, particularly Croaghaun, the highest sea cliffs in Ireland.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "achill_island_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/achill_island.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["coastal_ecology", "dendrology", "conservation"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "coastal_ecology",
+      "dendrology",
+      "conservation"
+    ],
     "learning_objectives": [
       "Understand the biology and ecological requirements of the Torrey Pine (Pinus torreyana), the rarest pine species in the US",
       "Analyze the geological geomorphology of the sandstone cliffs and marine terraces of La Jolla",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "torrey_pines_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/torrey_pines.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["phoenician_civilization", "punic_architecture", "coastal_industries"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "phoenician_civilization",
+      "punic_architecture",
+      "coastal_industries"
+    ],
     "learning_objectives": [
       "Explain the historical significance of Kerkouane as the world's only intact, un-rebuilt Punic town plan from the 3rd century BCE.",
       "Analyze the architectural design and domestic comfort of Punic homes, focusing on the incorporation of private bathtubs and drainage systems.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kerkouane_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kerkouane.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

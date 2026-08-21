@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["colonial_history", "architectural_restoration", "civil_war_occupation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "colonial_history",
+      "architectural_restoration",
+      "civil_war_occupation"
+    ],
     "learning_objectives": [
       "Understand the political and economic role of Tryon Palace as the first permanent capitol of North Carolina",
       "Analyze the Regulator Movement (1765-1771) as an early, agrarian rebellion against colonial taxation and corruption",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "new_bern_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/new_bern.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

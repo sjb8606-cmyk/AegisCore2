@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culture",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["western_history", "gold_rush_history", "frontier_justice"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "western_history",
+      "gold_rush_history",
+      "frontier_justice"
+    ],
     "learning_objectives": [
       "Understand the historical role of Deadwood as a major 19th-century gold-mining boomtown on Lakota land",
       "Analyze the transition from absolute lawlessness to municipal law enforcement in the Black Hills",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "deadwood_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/deadwood.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

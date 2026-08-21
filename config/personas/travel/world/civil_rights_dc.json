@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Civil Rights",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["civil_rights_movement", "rhetoric", "monument_design"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "civil_rights_movement",
+      "rhetoric",
+      "monument_design"
+    ],
     "learning_objectives": [
       "Understand the political and rhetorical significance of Martin Luther King Jr.'s 'I Have a Dream' speech and its memorial design",
       "Analyze the transition of the National Mall from a space of federal power to the premier stage for civil rights protest",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "civil_rights_dc_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/civil_rights_dc.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

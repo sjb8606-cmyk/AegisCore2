@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Literature & Cultural History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Fernando Pessoa", "Portuguese Modernism", "Urban Reconstruction"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Fernando Pessoa",
+      "Portuguese Modernism",
+      "Urban Reconstruction"
+    ],
     "learning_objectives": [
       "Understand the literary genius of Fernando Pessoa, analyzing his use of 'heteronyms' (autonomous literary personas) to explore the fragmentation of modern identity.",
       "Analyze the urban reconstruction of Chiado following the devastating 1988 fire, evaluating the minimalist, preservation-based architecture of Álvaro Siza Vieira.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "chiado_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/chiado.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

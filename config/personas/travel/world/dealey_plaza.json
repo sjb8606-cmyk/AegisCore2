@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Civil Rights",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["political_history", "cold_war_era", "historical_methodology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "political_history",
+      "cold_war_era",
+      "historical_methodology"
+    ],
     "learning_objectives": [
       "Understand the events, historical context, and national impacts of the assassination of John F. Kennedy on November 22, 1963",
       "Analyze the role of Dealey Plaza as the birthplace of modern American conspiracy culture",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "dealey_plaza_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/dealey_plaza.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

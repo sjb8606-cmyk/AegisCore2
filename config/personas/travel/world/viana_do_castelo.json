@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Local Culture & Maritime History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Maritime Commerce", "Gold Filigree", "Minho Folklore"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Maritime Commerce",
+      "Gold Filigree",
+      "Minho Folklore"
+    ],
     "learning_objectives": [
       "Understand the historical role of Viana do Castelo as a primary port of the Portuguese cod-fishing fleet (the White Fleet) sailing to Newfoundland.",
       "Analyze the design and craftsmanship of 'Filigrana' (gold filigree jewelry), focusing on how thin gold wires are bent and welded to create the Heart of Viana (Coração de Viana).",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "viana_do_castelo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/viana_do_castelo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

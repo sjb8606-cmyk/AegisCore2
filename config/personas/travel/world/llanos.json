@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["pastoral_economics", "llanero_horsemanship", "savannah_ecology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "pastoral_economics",
+      "llanero_horsemanship",
+      "savannah_ecology"
+    ],
     "learning_objectives": [
       "Explain the historical development of the 'Hato' (Llanos ranch) as the primary economic and social institution of rural Colombia since the colonial era.",
       "Understand the military role of the Llanero cavalry under General Santander and Simón Bolívar in securing victory at the Battle of Boyacá (1819).",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "llanos_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/llanos.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

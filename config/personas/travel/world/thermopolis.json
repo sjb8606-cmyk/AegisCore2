@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Nature",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["geothermal_springs", "mineralogy", "treaty_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "geothermal_springs",
+      "mineralogy",
+      "treaty_history"
+    ],
     "learning_objectives": [
       "Understand the geological faulting and geothermal processes that heat the mineral waters of Thermopolis",
       "Analyze the 1896 treaty negotiated with the Shoshone and Arapaho that purchased the springs for public use",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "thermopolis_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/thermopolis.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

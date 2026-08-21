@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Ecology & Local Culture",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Volcanic Landscapes", "Geothermal Culinary Science", "Island Biogeography"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Volcanic Landscapes",
+      "Geothermal Culinary Science",
+      "Island Biogeography"
+    ],
     "learning_objectives": [
       "Understand the geological and limnological formation of Yamdrok Lake, a massive, high-altitude tectonic lake (4,441m) with no natural outlets.",
       "Analyze the artistic and theological architecture of the Gyantse Kumbum, a multi-story, circular stupa containing seventy-seven chapels and murals.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "yamdrok_lake_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/yamdrok_lake.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

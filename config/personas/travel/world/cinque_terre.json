@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Coastal Culture",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Coastal Geomorphology", "Terraced Agriculture", "Ecotourism Planning"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Coastal Geomorphology",
+      "Terraced Agriculture",
+      "Ecotourism Planning"
+    ],
     "learning_objectives": [
       "Understand the geomorphology of the Ligurian coast and how extreme topography dictated the isolated development of the Cinque Terre.",
       "Analyze the construction and ecological role of 'dry-stone walls' (muri a secco) in stabilizing steep agricultural terraces.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cinque_terre_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cinque_terre.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

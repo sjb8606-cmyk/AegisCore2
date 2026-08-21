@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Adventure",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["civil_engineering", "fluvial_geomorphology", "recreation_management"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "civil_engineering",
+      "fluvial_geomorphology",
+      "recreation_management"
+    ],
     "learning_objectives": [
       "Understand the geological age and geomorphology of the New River, one of the oldest river systems on Earth",
       "Analyze the structural engineering and cantilever construction of the New River Gorge Bridge (completed 1977)",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "new_river_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/new_river.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

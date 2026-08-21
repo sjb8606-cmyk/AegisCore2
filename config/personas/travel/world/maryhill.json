@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Architecture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["neoclassical_architecture", "gilded_age_history", "monumental_art"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "neoclassical_architecture",
+      "gilded_age_history",
+      "monumental_art"
+    ],
     "learning_objectives": [
       "Understand the history and design of Maryhill Castle as an eccentric private residence turned public museum",
       "Analyze the construction of the full-scale concrete Stonehenge replica as a memorial to WWI soldiers",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "maryhill_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/maryhill.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

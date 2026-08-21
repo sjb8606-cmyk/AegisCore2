@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["indigenous_sovereignty", "revolutionary_war", "treaty_law"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "indigenous_sovereignty",
+      "revolutionary_war",
+      "treaty_law"
+    ],
     "learning_objectives": [
       "Understand the critical military and humanitarian role of the Oneida in the American Revolutionary War",
       "Analyze the systemic illegal land transactions by New York State that violated the 1794 Treaty of Canandaigua",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "oneida_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/oneida.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

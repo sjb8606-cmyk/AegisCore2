@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Roman Archaeology",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Roman Empire History", "Byzantine Politics", "Urban Archaeology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Roman Empire History",
+      "Byzantine Politics",
+      "Urban Archaeology"
+    ],
     "learning_objectives": [
       "Understand the structural engineering and civic layout of the Hippodrome of Constantinople as the political and social center of the Byzantine capital.",
       "Analyze the role of the chariot-racing factions (Blues and Greens) as early political parties capable of challenging imperial authority (the Nika Riots).",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "hippodrome_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/hippodrome.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

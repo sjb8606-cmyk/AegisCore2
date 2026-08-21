@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Religious Studies",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Pilgrimage Studies", "Romanesque Art History", "Galician Culture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Pilgrimage Studies",
+      "Romanesque Art History",
+      "Galician Culture"
+    ],
     "learning_objectives": [
       "Understand the historical role of Santiago de Compostela as one of the three holy cities of Christendom (with Rome and Jerusalem).",
       "Analyze the Romanesque and Baroque architecture of the Cathedral of Santiago, focusing on the sculptured 'Pórtico de la Gloria'.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "santiago_compostela_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/santiago_compostela.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

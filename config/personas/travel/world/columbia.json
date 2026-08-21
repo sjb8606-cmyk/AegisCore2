@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Governance",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["political_science", "civil_war_destruction", "urban_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "political_science",
+      "civil_war_destruction",
+      "urban_history"
+    ],
     "learning_objectives": [
       "Understand the political and geographic reasons for establishing Columbia as a planned capital in 1786",
       "Analyze the military and social consequences of the burning of Columbia by Union forces in February 1865",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "columbia_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/columbia.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

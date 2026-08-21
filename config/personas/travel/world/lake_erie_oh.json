@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Maritime History",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["naval_history", "coastal_morphology", "great_lakes"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "naval_history",
+      "coastal_morphology",
+      "great_lakes"
+    ],
     "learning_objectives": [
       "Understand the strategic significance of the Battle of Lake Erie (1813) in securing the Northwest for the United States",
       "Analyze the design and construction of the Perry's Victory and International Peace Memorial (completed 1915)",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "lake_erie_oh_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/lake_erie_oh.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

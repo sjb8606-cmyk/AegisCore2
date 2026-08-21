@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Culinary",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["food_history", "indentured_labor_adaptations", "caribbean_gastronomy"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "food_history",
+      "indentured_labor_adaptations",
+      "caribbean_gastronomy"
+    ],
     "learning_objectives": [
       "Trace the origin of Trinidadian 'Doubles' from its invention in 1936 by Indo-Trinidadian entrepreneur Emamool Deen (aka Mamoo Deen) in Princes Town.",
       "Analyze how East Indian culinary traditions (such as chana masala and poori) were adapted using local Caribbean ingredients to create new, iconic street foods.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "doubles_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/doubles.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

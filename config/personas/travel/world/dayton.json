@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Technology",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["aerospace_history", "wright_brothers", "military_engineering"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "aerospace_history",
+      "wright_brothers",
+      "military_engineering"
+    ],
     "learning_objectives": [
       "Understand the mechanical engineering and aerodynamic discoveries of the Wright Brothers in Dayton",
       "Analyze the role of Wright-Patterson Air Force Base and the museum in the development of military aviation technology",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "dayton_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/dayton.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

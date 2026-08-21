@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Travel",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["transportation_history", "geography", "commercial_tourism"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "transportation_history",
+      "geography",
+      "commercial_tourism"
+    ],
     "learning_objectives": [
       "Understand the origin of the Mohawk Trail as an ancient Indigenous trade and military corridor",
       "Analyze the engineering and economic development of the trail as one of America's first scenic highways",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mohawk_trail_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mohawk_trail.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

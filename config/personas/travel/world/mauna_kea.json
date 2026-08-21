@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Astronomy",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["astronomy", "indigenous_studies", "environmental_policy"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "astronomy",
+      "indigenous_studies",
+      "environmental_policy"
+    ],
     "learning_objectives": [
       "Understand why the high-altitude, low-humidity environment of Mauna Kea makes it the premier global site for optical astronomy",
       "Analyze the spiritual significance of Mauna a Wākea as the first-born child of Wākea and Papahānaumoku",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mauna_kea_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mauna_kea.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

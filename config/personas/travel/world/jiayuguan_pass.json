@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Military Architecture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Great Wall History", "Military Engineering", "Sovereign Frontiers"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Great Wall History",
+      "Military Engineering",
+      "Sovereign Frontiers"
+    ],
     "learning_objectives": [
       "Understand the military and strategic purpose of the Jiayuguan Pass (completed 1372) as the western gateway of the Ming Great Wall guarding the Hexi Corridor.",
       "Analyze the clay-and-straw rammed earth (pisé) construction techniques used to build massive, stable fortresses in arid desert climates.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "jiayuguan_pass_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/jiayuguan_pass.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

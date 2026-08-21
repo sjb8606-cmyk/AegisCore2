@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Culinary",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["indo_caribbean_history", "musical_syncretism", "indentured_labor_culture"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "indo_caribbean_history",
+      "musical_syncretism",
+      "indentured_labor_culture"
+    ],
     "learning_objectives": [
       "Understand the historical roots of Indo-Trinidadian folk music, tracing its lineage from Bhojpuri songs brought by indentured laborers in 1845.",
       "Analyze the musical synthesis of Chutney Soca, explaining how the dholak, harmonium, and dhantal are integrated with modern soca synthesizers.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "chutney_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/chutney.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

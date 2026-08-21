@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["pioneer_history", "presidential_history", "frontier_culture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "pioneer_history",
+      "presidential_history",
+      "frontier_culture"
+    ],
     "learning_objectives": [
       "Understand the historical context of the Lincoln family's frontier life in Indiana (1816-1830)",
       "Analyze how the physical hardships and social isolation of the Indiana frontier shaped Abraham Lincoln's character and self-education",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "lincoln_in_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/lincoln_in.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

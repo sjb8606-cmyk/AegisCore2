@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Local Culture & Music History",
-    "grade_levels": ["elementary", "middle_school", "adult"],
-    "curriculum_tags": ["Bossa Nova", "Landscape Architecture", "Urban Beach Sociology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Bossa Nova",
+      "Landscape Architecture",
+      "Urban Beach Sociology"
+    ],
     "learning_objectives": [
       "Understand the urban development of Copacabana and Ipanema, analyzing how Roberto Burle Marx’s landscape architecture created the modern identity of the beaches.",
       "Analyze the musical and poetic structure of Bossa Nova, explaining how its syncopated guitar beat and melancholic lyrics (saudade) reflected post-war Brazil.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "copacabana_beach_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/copacabana_beach.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

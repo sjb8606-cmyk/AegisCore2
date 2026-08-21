@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Urban Sociology & Contemporary Art",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Industrial Archaeology", "Urban Regeneration", "Contemporary Street Art"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Industrial Archaeology",
+      "Urban Regeneration",
+      "Contemporary Street Art"
+    ],
     "learning_objectives": [
       "Understand the history of Lisbon's industrialization in the 19th century, focusing on the role of the Alcântara textile mills in shaping the working-class city.",
       "Analyze the model of private, creative-led urban regeneration used to transform the abandoned LX Factory into a modern design hub.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "lx_factory_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/lx_factory.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

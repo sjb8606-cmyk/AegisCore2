@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Igneous_Petrology", "Alpine_Safety", "Hebridean_Ecology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Igneous_Petrology",
+      "Alpine_Safety",
+      "Hebridean_Ecology"
+    ],
     "learning_objectives": [
       "Understand the volcanic processes that formed the contrasting landscapes of the Black Cuillin (gabbro) and Red Cuillin (granite).",
       "Analyze the ecological impact of high-volume tourism on fragile island ecosystems like the Fairy Pools and the Old Man of Storr.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "skye_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/skye.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Landscape Design & Classical History",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Roman Imperial Architecture", "Renaissance Hydraulics", "Landscape Scenography"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Roman Imperial Architecture",
+      "Renaissance Hydraulics",
+      "Landscape Scenography"
+    ],
     "learning_objectives": [
       "Understand the architectural design of Hadrian's Villa (Villa Adriana) as an early modern 'museum of travel' representing the provinces of the Roman Empire.",
       "Analyze the hydraulic engineering of the Villa d'Este, explaining how Pirro Ligorio channeled the Aniene river using only gravity and atmospheric pressure to power 500 fountains.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tivoli_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tivoli.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

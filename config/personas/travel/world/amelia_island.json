@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["colonial_history", "maritime_trade", "sovereignty_shifts"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "colonial_history",
+      "maritime_trade",
+      "sovereignty_shifts"
+    ],
     "learning_objectives": [
       "Understand the geopolitical reasons why Amelia Island became a highly contested boundary and smuggling hub",
       "Analyze the history of the 'Eight Flags' that have flown over the island since 1562",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "amelia_island_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/amelia_island.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

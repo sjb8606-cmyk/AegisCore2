@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Archaeology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["mound_builders", "regional_geography", "indigenous_studies"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "mound_builders",
+      "regional_geography",
+      "indigenous_studies"
+    ],
     "learning_objectives": [
       "Understand the geological formation and archaeological significance of the Poverty Point mounds",
       "Analyze the role of Monroe as a vital transportation and agricultural hub in northeast Louisiana",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "monroe_la_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/monroe_la.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

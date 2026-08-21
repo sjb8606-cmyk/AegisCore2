@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["succulent_botany", "basalt_geology", "san_ethnobotany"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "succulent_botany",
+      "basalt_geology",
+      "san_ethnobotany"
+    ],
     "learning_objectives": [
       "Explain the unique succulent and structural adaptations of the Quiver Tree (Aloidendron dichotomum) to survive in hyper-arid climates.",
       "Understand the geological formation of the Giant's Playground, focusing on the weathering of volcanic dolerite rock formations.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "keetmanshoop_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/keetmanshoop.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Literature",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["European_Romanticism", "Romanian_Philology", "Eminescu_Poetry_Luceafarul"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "European_Romanticism",
+      "Romanian_Philology",
+      "Eminescu_Poetry_Luceafarul"
+    ],
     "learning_objectives": [
       "Analyze the themes of genius, isolation, and impossible love in Mihai Eminescu's masterwork 'Luceafărul' (The Evening Star).",
       "Understand the historical role of Eminescu and the 'Junimea' society in standardizing and elevating the modern Romanian literary language.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "eminescu_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/eminescu.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Sudeten_History", "Munich_Agreement", "Post_War_Expulsions"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Sudeten_History",
+      "Munich_Agreement",
+      "Post_War_Expulsions"
+    ],
     "learning_objectives": [
       "Understand the historical roots of German settlement in the Bohemian borderlands (Sudetenland) dating back to the medieval era.",
       "Analyze the political steps, including the 1938 Munich Agreement and the post-WWII Beneš Decrees, that led to the expulsion of three million Sudeten Germans.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sudeten_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sudeten.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

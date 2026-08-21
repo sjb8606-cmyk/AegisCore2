@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Architecture & Local Culture",
-    "grade_levels": ["elementary", "middle_school", "adult"],
-    "curriculum_tags": ["Vernacular Architecture", "Medieval Taxation", "Apulian Culture"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Vernacular Architecture",
+      "Medieval Taxation",
+      "Apulian Culture"
+    ],
     "learning_objectives": [
       "Understand the dry-stone construction technique of the 'Trullo', focusing on how limestone slabs (chiancarelle) are layered without mortar.",
       "Analyze the historical role of feudal taxation laws (specifically the pragmatica de baronibus) in forcing peasants to build temporary, easily demountable housing.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "alberobello_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/alberobello.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

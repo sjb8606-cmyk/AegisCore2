@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Art History & Maritime Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Pre-Impressionism", "Maritime History", "Vernacular Architecture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Pre-Impressionism",
+      "Maritime History",
+      "Vernacular Architecture"
+    ],
     "learning_objectives": [
       "Understand the historical transition of Honfleur from a strategic military port during the Hundred Years' War to a peaceful artistic haven in the 19th century.",
       "Analyze the architectural uniqueness of Sainte-Catherine, the largest wooden church in France built by shipwrights with double-hull roofs.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "honfleur_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/honfleur.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

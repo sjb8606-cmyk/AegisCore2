@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culture",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["western_history", "cowboy_culture", "tourism_economics"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "western_history",
+      "cowboy_culture",
+      "tourism_economics"
+    ],
     "learning_objectives": [
       "Understand the historical role of Jackson Hole as a major 19th-century fur-trapping and ranching valley",
       "Analyze the socioeconomic and cultural rise of Jackson as a major global ski and summer tourism destination",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "jackson_wy_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/jackson_wy.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

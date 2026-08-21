@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["comarca_governance", "textile_crafts", "indigenous_resistance"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "comarca_governance",
+      "textile_crafts",
+      "indigenous_resistance"
+    ],
     "learning_objectives": [
       "Understand the political structure and self-governance of the Ngäbe-Buglé Comarca, established under national law in 1997.",
       "Analyze the traditional 'chácara' bag weaving technique using natural, hand-spun fibers from the pita plant (Aechmea magdalenae).",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ngabe_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ngabe.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

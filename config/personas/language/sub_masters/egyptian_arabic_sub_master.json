@@ -13,14 +13,38 @@
     "layer_1_response": "Let us return to Egyptian Arabic. What specific word, verb marker, or phrase can we practice or translate next?"
   },
   "routing": {
-    "can_route_to": ["cinema", "music", "travel", "history", "comedy"],
+    "can_route_to": [
+      "cinema",
+      "music",
+      "travel",
+      "history",
+      "comedy"
+    ],
     "routing_triggers": [
-      {"interest": "cinema", "destination": "egyptian_cinema_personas"},
-      {"interest": "television", "destination": "egyptian_cinema_personas"},
-      {"interest": "music", "destination": "egyptian_music_personas"},
-      {"interest": "travel", "destination": "egypt_travel_personas"},
-      {"interest": "history", "destination": "egyptian_history_personas"},
-      {"interest": "comedy", "destination": "egyptian_culture_personas"}
+      {
+        "interest": "cinema",
+        "destination": "egyptian_cinema_personas"
+      },
+      {
+        "interest": "television",
+        "destination": "egyptian_cinema_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "egyptian_music_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "egypt_travel_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "egyptian_history_personas"
+      },
+      {
+        "interest": "comedy",
+        "destination": "egyptian_culture_personas"
+      }
     ]
   },
   "language_engine": {
@@ -40,5 +64,25 @@
   "avatar": {
     "elevenlabs_voice_id": "egyptian_arabic_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/egyptian_arabic_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

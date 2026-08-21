@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Civil Rights",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["labor_history", "coal_wars", "corporate_monopolies"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "labor_history",
+      "coal_wars",
+      "corporate_monopolies"
+    ],
     "learning_objectives": [
       "Understand the economic and working conditions of southern Colorado coal miners that led to the 1913 strike",
       "Analyze the events of the Ludlow Massacre on April 20, 1914, and the role of the Colorado National Guard",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "trinidad_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/trinidad.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Intertidal_Ecology", "Barrier_Islands", "Livestock_Adaptations"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Intertidal_Ecology",
+      "Barrier_Islands",
+      "Livestock_Adaptations"
+    ],
     "learning_objectives": [
       "Explain the unique geological and ecological dynamics of the Wadden Sea as the world's largest unbroken system of intertidal sand and mudflats.",
       "Understand the physical adaptations of the Texel sheep breed that allow it to produce high-quality wool in windy, coastal conditions.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "texel_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/texel.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

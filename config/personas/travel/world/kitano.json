@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Architecture",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Meiji Restoration", "Urban Sociology", "Disaster Recovery"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Meiji Restoration",
+      "Urban Sociology",
+      "Disaster Recovery"
+    ],
     "learning_objectives": [
       "Understand the architectural and cultural impact of the 'Ijinkan' (foreign settlements) on Meiji-era Japan.",
       "Analyze how Kobe developed a distinct cosmopolitan identity (jazz, baking, fashion) due to its port.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kitano_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kitano.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

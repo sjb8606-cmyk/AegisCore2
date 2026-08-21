@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["indigenous_sovereignty", "co_management", "badlands_ecology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "indigenous_sovereignty",
+      "co_management",
+      "badlands_ecology"
+    ],
     "learning_objectives": [
       "Understand the legal framework of the South Unit of Badlands National Park as co-managed land by the Oglala Sioux Tribe and NPS",
       "Analyze the ecological and geological characteristics of the White River badlands within tribal territory",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "white_river_sd_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/white_river_sd.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

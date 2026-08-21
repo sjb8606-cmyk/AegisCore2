@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["colonial_history", "gilded_age", "pioneer_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "colonial_history",
+      "gilded_age",
+      "pioneer_history"
+    ],
     "learning_objectives": [
       "Understand the historical role of Charles E. Conrad in founding Kalispell and developing the trade of the Flathead Valley",
       "Analyze the Victorian architecture and interior design of the Conrad Mansion (completed 1895)",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kalispell_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kalispell.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

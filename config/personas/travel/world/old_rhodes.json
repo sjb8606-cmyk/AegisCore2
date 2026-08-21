@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Military Architecture",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Crusader History", "Fortification Engineering", "Ottoman Sieges"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Crusader History",
+      "Fortification Engineering",
+      "Ottoman Sieges"
+    ],
     "learning_objectives": [
       "Understand the military engineering of late medieval 'bastion' defense systems as illustrated in the UNESCO-protected walls of Rhodes.",
       "Analyze the role of the Knights Hospitaller (Knights of Saint John) as a sovereign, militarized monastic order in the eastern Mediterranean.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "old_rhodes_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/old_rhodes.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

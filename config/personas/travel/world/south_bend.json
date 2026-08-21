@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Sociology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["industrial_history", "higher_education_history", "urban_sociology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "industrial_history",
+      "higher_education_history",
+      "urban_sociology"
+    ],
     "learning_objectives": [
       "Understand the historical role of the Studebaker Corporation in driving the early industrialization of South Bend",
       "Analyze the political and social history of the University of Notre Dame as a major Catholic educational institution",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "south_bend_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/south_bend.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

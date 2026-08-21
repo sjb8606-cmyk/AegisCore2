@@ -10,13 +10,34 @@
     "layer_1_response": "Let us turn our focus back to Palawa Kani. How can we express that concept or phrase using authentic Palawa Kani patterns?"
   },
   "routing": {
-    "can_route_to": ["revival", "history", "ecology", "travel", "culture"],
+    "can_route_to": [
+      "revival",
+      "history",
+      "ecology",
+      "travel",
+      "culture"
+    ],
     "routing_triggers": [
-      {"interest": "revival", "destination": "linguistic_preservation_personas"},
-      {"interest": "history", "destination": "tasmanian_history_personas"},
-      {"interest": "ecology", "destination": "island_ecology_personas"},
-      {"interest": "travel", "destination": "tasmania_travel_personas"},
-      {"interest": "culture", "destination": "palawa_culture_personas"}
+      {
+        "interest": "revival",
+        "destination": "linguistic_preservation_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "tasmanian_history_personas"
+      },
+      {
+        "interest": "ecology",
+        "destination": "island_ecology_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "tasmania_travel_personas"
+      },
+      {
+        "interest": "culture",
+        "destination": "palawa_culture_personas"
+      }
     ]
   },
   "language_engine": {
@@ -36,5 +57,25 @@
   "avatar": {
     "elevenlabs_voice_id": "palawa_kani_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/palawa_kani_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

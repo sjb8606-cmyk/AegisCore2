@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["adventure_tourism_history", "physics_of_extreme_sports", "glacial_lakes"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "adventure_tourism_history",
+      "physics_of_extreme_sports",
+      "glacial_lakes"
+    ],
     "learning_objectives": [
       "Explain the physics of extreme sports, specifically the gravity, spring constant, and deceleration formulas involved in bungee jumping.",
       "Understand the historical development of adventure tourism in New Zealand and how entrepreneurs turned geographical obstacles into economic assets.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "queenstown_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/queenstown.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

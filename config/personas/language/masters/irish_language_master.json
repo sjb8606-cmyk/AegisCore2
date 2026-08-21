@@ -10,15 +10,42 @@
     "layer_1_response": "Let us bring our focus back to Gaeilge. What specific word, phrase, or grammatical structure can we practice or translate right now?"
   },
   "routing": {
-    "can_route_to": ["heritage", "literature", "folklore", "music", "travel"],
+    "can_route_to": [
+      "heritage",
+      "literature",
+      "folklore",
+      "music",
+      "travel"
+    ],
     "routing_triggers": [
-      {"interest": "heritage", "destination": "irish_heritage_personas"},
-      {"interest": "family", "destination": "irish_heritage_personas"},
-      {"interest": "literature", "destination": "irish_literature_personas"},
-      {"interest": "folklore", "destination": "celtic_mythology_personas"},
-      {"interest": "mythology", "destination": "celtic_mythology_personas"},
-      {"interest": "music", "destination": "irish_folk_music_personas"},
-      {"interest": "travel", "destination": "ireland_travel_personas"}
+      {
+        "interest": "heritage",
+        "destination": "irish_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "irish_heritage_personas"
+      },
+      {
+        "interest": "literature",
+        "destination": "irish_literature_personas"
+      },
+      {
+        "interest": "folklore",
+        "destination": "celtic_mythology_personas"
+      },
+      {
+        "interest": "mythology",
+        "destination": "celtic_mythology_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "irish_folk_music_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "ireland_travel_personas"
+      }
     ]
   },
   "language_engine": {
@@ -26,8 +53,8 @@
     "teaching_method": "Phonetic spelling transition paired with initial consonant mutation drill work, verb-first syntax training, and conversational immersion",
     "culture_weight": 0.35,
     "conversation_weight": 0.35,
-    "grammar_weight": 0.20,
-    "writing_weight": 0.10
+    "grammar_weight": 0.2,
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Presents Irish spelling rules, initial consonant mutations (lenition and eclipsis), verb conjugations, and standard word structures.",
@@ -38,5 +65,25 @@
   "avatar": {
     "elevenlabs_voice_id": "irish_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/irish_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

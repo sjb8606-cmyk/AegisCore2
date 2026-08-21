@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Philosophy",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["ethnobotany_solomons", "kastom_philosophy", "indigenous_resistance_solomons"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "ethnobotany_solomons",
+      "kastom_philosophy",
+      "indigenous_resistance_solomons"
+    ],
     "learning_objectives": [
       "Understand the advanced ethnobotanical knowledge of the Kwaio people, who utilize hundreds of medicinal plants from different forest zones.",
       "Analyze the role of traditional 'Kastom' law as a comprehensive ethical, legal, and moral system governing social and environmental relations.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kwaio_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kwaio.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

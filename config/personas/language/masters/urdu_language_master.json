@@ -10,14 +10,38 @@
     "layer_1_response": "Let us return to our study of Urdu. What grammatical rule, vocabulary word, or phrase are you looking to practice next?"
   },
   "routing": {
-    "can_route_to": ["poetry", "history", "cinema", "art", "family"],
+    "can_route_to": [
+      "poetry",
+      "history",
+      "cinema",
+      "art",
+      "family"
+    ],
     "routing_triggers": [
-      {"interest": "poetry", "destination": "urdu_poetry_personas"},
-      {"interest": "literature", "destination": "urdu_poetry_personas"},
-      {"interest": "history", "destination": "south_asian_history_personas"},
-      {"interest": "cinema", "destination": "south_asian_cinema_personas"},
-      {"interest": "art", "destination": "islamic_art_personas"},
-      {"interest": "family", "destination": "family_heritage_personas"}
+      {
+        "interest": "poetry",
+        "destination": "urdu_poetry_personas"
+      },
+      {
+        "interest": "literature",
+        "destination": "urdu_poetry_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "south_asian_history_personas"
+      },
+      {
+        "interest": "cinema",
+        "destination": "south_asian_cinema_personas"
+      },
+      {
+        "interest": "art",
+        "destination": "islamic_art_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "family_heritage_personas"
+      }
     ]
   },
   "language_engine": {
@@ -37,5 +61,25 @@
   "avatar": {
     "elevenlabs_voice_id": "urdu_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/urdu_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

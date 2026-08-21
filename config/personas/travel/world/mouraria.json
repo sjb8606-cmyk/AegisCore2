@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Local Culture & History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Moorish Lisbon", "History of Fado", "Urban Sociology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Moorish Lisbon",
+      "History of Fado",
+      "Urban Sociology"
+    ],
     "learning_objectives": [
       "Understand the historical role of the 'Mouraria' as the designated Moorish quarter of Lisbon following the Christian Reconquista of 1147.",
       "Analyze the role of Maria Severa in popularizing Fado in the 19th century, evaluating how her marginalized social status shaped the music's themes.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mouraria_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mouraria.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

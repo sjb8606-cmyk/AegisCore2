@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Reindeer_Physiology", "Lichen_Symbiosis", "Taiga_Ecology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Reindeer_Physiology",
+      "Lichen_Symbiosis",
+      "Taiga_Ecology"
+    ],
     "learning_objectives": [
       "Explain the unique physiological adaptations of the Reindeer (Rangifer tarandus) that allow it to survive extreme sub-zero temperatures and wind.",
       "Understand the ecological relationship between reindeer and lichen (Cladonia rangiferina) as their primary winter food resource.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "reindeer_farm_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/reindeer_farm.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

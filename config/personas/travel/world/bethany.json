@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["estuary_ecology", "civil_engineering", "coastal_processes"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "estuary_ecology",
+      "civil_engineering",
+      "coastal_processes"
+    ],
     "learning_objectives": [
       "Understand the geomorphology of barrier islands and why they naturally form and close tidal inlets",
       "Analyze the engineering required to stabilize and bridge a high-energy tidal inlet like the Indian River",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bethany_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bethany.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

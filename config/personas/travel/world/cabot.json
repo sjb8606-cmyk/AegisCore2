@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Agriculture & Economics",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["agricultural_economics", "food_chemistry", "cooperative_business"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "agricultural_economics",
+      "food_chemistry",
+      "cooperative_business"
+    ],
     "learning_objectives": [
       "Understand the economic structure and historical success of agricultural cooperatives in New England",
       "Analyze the chemical process of cheese making, from milk fermentation to enzyme-driven aging",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cabot_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cabot.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

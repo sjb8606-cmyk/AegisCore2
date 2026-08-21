@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Agronomy & Industrial History",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Industrial Agriculture", "Colonial Botany", "Riverine Irrigation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Industrial Agriculture",
+      "Colonial Botany",
+      "Riverine Irrigation"
+    ],
     "learning_objectives": [
       "Understand the history and agricultural policy of the French colonial experiment 'Richard Toll' (Richard's Garden) in the 1820s.",
       "Analyze the biological and chemical process of sugar production from Saccharum officinarum, focusing on how soil and river irrigation shape its yield.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "richard_toll_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/richard_toll.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

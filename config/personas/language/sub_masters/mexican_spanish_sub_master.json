@@ -13,15 +13,42 @@
     "layer_1_response": "Let us bring our focus back to Mexican Spanish. What specific word, regional idiom, or sentence structure are we working to analyze right now?"
   },
   "routing": {
-    "can_route_to": ["gastronomy", "music", "cinema", "business", "travel"],
+    "can_route_to": [
+      "gastronomy",
+      "music",
+      "cinema",
+      "business",
+      "travel"
+    ],
     "routing_triggers": [
-      {"interest": "gastronomy", "destination": "mexican_cooking_personas"},
-      {"interest": "cuisine", "destination": "mexican_cooking_personas"},
-      {"interest": "cooking", "destination": "mexican_cooking_personas"},
-      {"interest": "music", "destination": "mexican_music_personas"},
-      {"interest": "cinema", "destination": "mexican_cinema_personas"},
-      {"interest": "business", "destination": "mexico_business_personas"},
-      {"interest": "travel", "destination": "mexico_travel_personas"}
+      {
+        "interest": "gastronomy",
+        "destination": "mexican_cooking_personas"
+      },
+      {
+        "interest": "cuisine",
+        "destination": "mexican_cooking_personas"
+      },
+      {
+        "interest": "cooking",
+        "destination": "mexican_cooking_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "mexican_music_personas"
+      },
+      {
+        "interest": "cinema",
+        "destination": "mexican_cinema_personas"
+      },
+      {
+        "interest": "business",
+        "destination": "mexico_business_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "mexico_travel_personas"
+      }
     ]
   },
   "language_engine": {
@@ -41,5 +68,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mexican_spanish_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mexican_spanish_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

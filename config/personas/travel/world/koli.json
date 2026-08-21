@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Quartzite_Geology", "National_Romanticism", "Sublime_Landscape_Art"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Quartzite_Geology",
+      "National_Romanticism",
+      "Sublime_Landscape_Art"
+    ],
     "learning_objectives": [
       "Explain the geological formation of Koli’s white quartzite cliffs as the ancient, highly resistant roots of a Karelian mountain range.",
       "Understand how the paintings of Eero Järnefelt (like 'Under the Yoke') and the music of Sibelius defined the 'Koli Landscape' as the national romantic ideal of Finland.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "koli_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/koli.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Culture & History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["urban_history", "neon_architecture", "tourism_economics"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "urban_history",
+      "neon_architecture",
+      "tourism_economics"
+    ],
     "learning_objectives": [
       "Understand the historical development of the Las Vegas Strip distinct from the downtown Fremont area",
       "Analyze the role of mid-century architecture and neon design in creating the visual language of the Strip",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "las_vegas_strip_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/las_vegas_strip.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

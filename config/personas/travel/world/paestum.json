@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Archaeology & Food Heritage",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Magna Graecia", "Doric Architecture", "Traditional Food Systems"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Magna Graecia",
+      "Doric Architecture",
+      "Traditional Food Systems"
+    ],
     "learning_objectives": [
       "Understand the historical colonization of southern Italy (Magna Graecia) by ancient Greeks and the founding of Poseidonia (Paestum) in 600 BC.",
       "Analyze the evolution of the Doric architectural style as physically recorded in the three intact temples of Paestum.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "paestum_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/paestum.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

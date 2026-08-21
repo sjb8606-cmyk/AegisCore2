@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Military Science",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["aerospace_history", "colonial_settlements", "military_engineering"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "aerospace_history",
+      "colonial_settlements",
+      "military_engineering"
+    ],
     "learning_objectives": [
       "Understand the history and historical significance of Tristan de Luna's 1559 attempt to settle Pensacola",
       "Analyze the role of Naval Air Station Pensacola in the development and training of American naval aviators",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "pensacola_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/pensacola.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

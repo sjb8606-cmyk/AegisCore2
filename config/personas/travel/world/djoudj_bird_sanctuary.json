@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Ecology & Avian Biology",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Wetland Ecology", "Bird Migration", "Water Engineering"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Wetland Ecology",
+      "Bird Migration",
+      "Water Engineering"
+    ],
     "learning_objectives": [
       "Understand the ecological dynamics of a river delta wetland (Djoudj) and how the seasonal rise of the Senegal river supports over three million migrating birds.",
       "Analyze the flight and nesting habits of the Great White Pelican (Pelecanus onocrotalus) in the sanctuary.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "djoudj_bird_sanctuary_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/djoudj_bird_sanctuary.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

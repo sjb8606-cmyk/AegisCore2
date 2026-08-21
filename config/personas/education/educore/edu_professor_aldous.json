@@ -19,11 +19,40 @@
   "education": {
     "tier": 2,
     "reports_to": "edu_lyra",
-    "subjects": ["classical_literature", "world_literature"],
-    "curriculum_tags": ["literary_analysis", "world_literature", "textual_analysis", "literary_history", "comparative_literature"]
+    "subjects": [
+      "classical_literature",
+      "world_literature"
+    ],
+    "curriculum_tags": [
+      "literary_analysis",
+      "world_literature",
+      "textual_analysis",
+      "literary_history",
+      "comparative_literature"
+    ]
   },
   "avatar": {
     "elevenlabs_voice_id": "edu_professor_aldous_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/edu_professor_aldous.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

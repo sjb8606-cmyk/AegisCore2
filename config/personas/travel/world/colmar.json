@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Art History & Local Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Northern Renaissance", "Medieval Medicine", "Alsatian Culture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Northern Renaissance",
+      "Medieval Medicine",
+      "Alsatian Culture"
+    ],
     "learning_objectives": [
       "Understand the theological and medical function of the Isenheim Altarpiece as a therapeutic tool for hospital patients suffering from ergotism (Saint Anthony's Fire).",
       "Analyze the architectural style of Alsatian half-timbered houses (colombage) and how color codes historically identified various merchant guilds.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "colmar_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/colmar.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Science",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["civics", "space_exploration", "regional_history"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "civics",
+      "space_exploration",
+      "regional_history"
+    ],
     "learning_objectives": [
       "Understand the unique structure of New Hampshire's citizen legislature, the largest in the English-speaking world outside of Westminster",
       "Analyze the legacy and educational impact of Christa McAuliffe and the Teacher in Space Project",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "concord_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/concord.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

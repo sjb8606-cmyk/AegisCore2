@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Local Culture & Adventure Sports",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["History of Tourism", "Basque Identity", "Oceanography"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "History of Tourism",
+      "Basque Identity",
+      "Oceanography"
+    ],
     "learning_objectives": [
       "Understand the transformation of Biarritz from a whaling port to the 'Queen of Resorts' under Empress Eugénie and Napoleon III.",
       "Analyze the oceanographic reasons (underwater canyons, Atlantic swells) why Biarritz developed as the birthplace of European surfing in 1957.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "biarritz_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/biarritz.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

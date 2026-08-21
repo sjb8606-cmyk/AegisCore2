@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["pre_historic_art", "san_cosmology", "granite_orogeny"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "pre_historic_art",
+      "san_cosmology",
+      "granite_orogeny"
+    ],
     "learning_objectives": [
       "Understand the historical and archaeological significance of the Brandberg (Dâures) as a major pre-historic sacred site and rock art gallery (over 45,000 paintings).",
       "Analyze the artistic techniques, materials (ochre, plant saps, animal fats), and symbolic meanings of the 'White Lady' and other shamanic figures.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "brandberg_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/brandberg.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

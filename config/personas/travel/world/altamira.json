@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Archaeology & Prehistoric Art",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Prehistoric Art", "Human Evolution", "Heritage Conservation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Prehistoric Art",
+      "Human Evolution",
+      "Heritage Conservation"
+    ],
     "learning_objectives": [
       "Understand the artistic techniques of Paleolithic painters, including the use of mineral pigments, charcoal shading, and three-dimensional rock relief.",
       "Analyze the conservation crisis of Altamira, evaluating why human carbon dioxide forced the permanent closure of the original cave.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "altamira_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/altamira.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

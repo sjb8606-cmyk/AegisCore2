@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Philosophy",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["islamic_philosophy", "sacred_architecture", "qatari_society"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "islamic_philosophy",
+      "sacred_architecture",
+      "qatari_society"
+    ],
     "learning_objectives": [
       "Identify the key structural elements of a mosque, including the minaret, mihrab, minbar, and dome, and their spiritual significance.",
       "Understand the historical development of Islamic law and theology associated with the teachings of Imam Muhammad ibn Abd al-Wahhab.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "imam_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/imam.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

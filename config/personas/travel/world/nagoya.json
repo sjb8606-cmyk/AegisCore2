@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Industrial Engineering & Cuisine",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["Industrial Engineering", "Economic Geography", "Regional Culinary Arts"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Industrial Engineering",
+      "Economic Geography",
+      "Regional Culinary Arts"
+    ],
     "learning_objectives": [
       "Understand the 'Kaizen' (continuous improvement) and 'Just-In-Time' manufacturing philosophies born in Nagoya's auto industry.",
       "Analyze the historical continuity of craftsmanship from Edo-period mechanical dolls (karakuri) to modern robotics.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "nagoya_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/nagoya.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

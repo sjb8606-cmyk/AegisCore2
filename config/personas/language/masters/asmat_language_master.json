@@ -10,24 +10,51 @@
     "layer_1_response": "Let us bring our focus back to Asmat. What specific word, phrase, or pronunciation structure are we practicing right now?"
   },
   "routing": {
-    "can_route_to": ["history", "carving", "travel", "heritage", "community"],
+    "can_route_to": [
+      "history",
+      "carving",
+      "travel",
+      "heritage",
+      "community"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "asmat_history_personas"},
-      {"interest": "carving", "destination": "asmat_carving_personas"},
-      {"interest": "woodcarving", "destination": "asmat_carving_personas"},
-      {"interest": "travel", "destination": "asmat_travel_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"},
-      {"interest": "family", "destination": "family_heritage_personas"},
-      {"interest": "community", "destination": "asmat_culture_personas"}
+      {
+        "interest": "history",
+        "destination": "asmat_history_personas"
+      },
+      {
+        "interest": "carving",
+        "destination": "asmat_carving_personas"
+      },
+      {
+        "interest": "woodcarving",
+        "destination": "asmat_carving_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "asmat_travel_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "community",
+        "destination": "asmat_culture_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Papuan",
     "teaching_method": "Phonetic voice training coupled with standard grammatical prefix-suffix drills, local idioms, and active social conversation",
     "culture_weight": 0.35,
-    "conversation_weight": 0.40,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.15,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Provides Asmat sound charts, basic sentence structures, pronoun tables, and grammatical distinctions.",
@@ -38,5 +65,25 @@
   "avatar": {
     "elevenlabs_voice_id": "asmat_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/asmat_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

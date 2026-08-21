@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Local Culture & Border Geography",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Siam-Malay Borders", "Lake Geography", "Socio-Cultural History"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Siam-Malay Borders",
+      "Lake Geography",
+      "Socio-Cultural History"
+    ],
     "learning_objectives": [
       "Understand the historical role of Corumbá as a strategic port on the Paraguay River connecting Brazil to the Rio de la Plata and the Atlantic.",
       "Analyze the cultural history of the 'Pantaneiro' (wetland cowboy) and their horse-handling methods in seasonal floodplains.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "corumba_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/corumba.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

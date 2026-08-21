@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Classical Architecture",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Classical Athens", "Optical Engineering", "Democracy History"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Classical Athens",
+      "Optical Engineering",
+      "Democracy History"
+    ],
     "learning_objectives": [
       "Understand the structural engineering of the Parthenon, focusing on how optical corrections (entasis, column inclination, stylobate curvature) create the illusion of perfect straightness.",
       "Analyze the political and imperial role of the Acropolis reconstruction using the funds of the Delian League under the leadership of Pericles.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "acropolis_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/acropolis.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

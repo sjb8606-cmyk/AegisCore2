@@ -13,13 +13,34 @@
     "layer_1_response": "Let us bring our focus back to Tanzanian Swahili. What phrase, word, or pronunciation structure should we look at next?"
   },
   "routing": {
-    "can_route_to": ["history", "literature", "travel", "career", "music"],
+    "can_route_to": [
+      "history",
+      "literature",
+      "travel",
+      "career",
+      "music"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "coastal_swahili_history_personas"},
-      {"interest": "literature", "destination": "swahili_literature_personas"},
-      {"interest": "travel", "destination": "tanzania_travel_personas"},
-      {"interest": "career", "destination": "east_african_business_personas"},
-      {"interest": "music", "destination": "taarab_music_personas"}
+      {
+        "interest": "history",
+        "destination": "coastal_swahili_history_personas"
+      },
+      {
+        "interest": "literature",
+        "destination": "swahili_literature_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "tanzania_travel_personas"
+      },
+      {
+        "interest": "career",
+        "destination": "east_african_business_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "taarab_music_personas"
+      }
     ]
   },
   "language_engine": {
@@ -27,8 +48,8 @@
     "teaching_method": "Noun-class agreement coaching paired with standard grammatical conjugation, regional vocabulary drills, and active social conversation",
     "culture_weight": 0.35,
     "conversation_weight": 0.35,
-    "grammar_weight": 0.20,
-    "writing_weight": 0.10
+    "grammar_weight": 0.2,
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Provides Tanzanian Swahili noun class guidelines, sentence structures, pronoun tables, and basic phonetic rules.",
@@ -39,5 +60,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tanzanian_swahili_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tanzanian_swahili_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

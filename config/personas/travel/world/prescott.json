@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Governance",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["political_science", "frontier_history", "civic_planning"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "political_science",
+      "frontier_history",
+      "civic_planning"
+    ],
     "learning_objectives": [
       "Understand the political and geographic reasons for selecting Prescott as the first territorial capital of Arizona in 1864",
       "Analyze the role of the Whiskey Row district in early frontier commerce and socialization",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "prescott_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/prescott.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

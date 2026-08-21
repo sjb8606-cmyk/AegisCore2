@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Culinary Culture & Industrial Archeology",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Industrial Archaeology", "Food Systems History", "Working Class Culture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Industrial Archaeology",
+      "Food Systems History",
+      "Working Class Culture"
+    ],
     "learning_objectives": [
       "Understand the ancient Roman trade logistics of oil transportation as physically recorded in the artificial mountain of Monte Testaccio (Monte dei Cocci).",
       "Analyze the industrial design of the Mattatoio (Rome's 1888 slaughterhouse) and how its spatial organization pioneered modern hygienic meat processing.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "testaccio_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/testaccio.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

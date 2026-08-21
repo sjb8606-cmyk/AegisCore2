@@ -18,8 +18,19 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["biodiversity_hotspots", "indigenous_territorial_rights", "carbon_sequestration"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "biodiversity_hotspots",
+      "indigenous_territorial_rights",
+      "carbon_sequestration"
+    ],
     "learning_objectives": [
       "Explain the ecological and geographical reasons why Yasuní National Park holds the highest species diversity of plants, birds, and mammals on Earth.",
       "Understand the territorial rights, self-determination, and history of the Waorani people and the uncontacted clans in the Amazon.",
@@ -35,5 +46,25 @@
   "avatar": {
     "elevenlabs_voice_id": "yasuni_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/yasuni.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

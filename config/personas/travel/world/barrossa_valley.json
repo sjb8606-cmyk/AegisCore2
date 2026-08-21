@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Viticulture & Local Culture",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Terroir Science", "Linguistics & Migration", "Silesian Pioneers"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Terroir Science",
+      "Linguistics & Migration",
+      "Silesian Pioneers"
+    ],
     "learning_objectives": [
       "Understand the geological and soil composition of the Barossa Valley (ancient iron-rich clays and red-brown earths) and its impact on Shiraz viticulture.",
       "Analyze the history and migration of the Silesian Lutheran pioneers (1840s) and how they established the unique agricultural and religious landscape of the valley.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "barossa_valley_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/barrossa_valley.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

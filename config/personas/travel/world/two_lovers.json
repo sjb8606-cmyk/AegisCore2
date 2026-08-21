@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["colonial_history", "indigenous_legend", "geomorphology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "colonial_history",
+      "indigenous_legend",
+      "geomorphology"
+    ],
     "learning_objectives": [
       "Understand the historical context of Spanish colonial rule in Guam and its impact on traditional Chamorro society",
       "Analyze the cultural significance of the Puntan Dos Amantes legend as a symbol of resistance to colonial authority",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "two_lovers_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/two_lovers.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

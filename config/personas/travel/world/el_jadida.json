@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Coastal Geography",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Renaissance Fortifications", "Water Engineering", "Portuguese Colonialism"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Renaissance Fortifications",
+      "Water Engineering",
+      "Portuguese Colonialism"
+    ],
     "learning_objectives": [
       "Understand the military and defensive architecture of the Portuguese City of Mazagan (El Jadida), focusing on the 16th-century star-shaped bastions.",
       "Analyze the hydraulic engineering of the Portuguese Cistern (built 1514 as an armory), evaluating how its gothic vaults collect and store rain water.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "el_jadida_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/el_jadida.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

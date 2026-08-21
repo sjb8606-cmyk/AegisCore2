@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Harris_Tweed_Act", "Gaelic_Oral_Tradition", "Crofting_Ecology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Harris_Tweed_Act",
+      "Gaelic_Oral_Tradition",
+      "Crofting_Ecology"
+    ],
     "learning_objectives": [
       "Explain the legal definitions and geographic protections established by the Harris Tweed Act of 1993.",
       "Understand the socio-economic structure of the crofting system in the Outer Hebrides and its role in sustainable land management.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "hebrides_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/hebrides.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

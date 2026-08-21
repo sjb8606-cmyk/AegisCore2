@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Political Geography",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Limnology", "Transboundary Conservation", "Cold War History"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Limnology",
+      "Transboundary Conservation",
+      "Cold War History"
+    ],
     "learning_objectives": [
       "Understand the limnology of the Great and Small Prespa Lakes, focusing on how their high altitude and geographic isolation created unique endemic ecosystems.",
       "Analyze the political and ecological history of the Prespa Park as Europe’s first transboundary protected area shared by three nations (Greece, Albania, North Macedonia).",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "prespa_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/prespa.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

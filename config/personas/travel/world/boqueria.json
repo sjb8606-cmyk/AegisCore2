@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Culinary Culture & Maritime Sociology",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Culinary History", "Urban Regeneration", "Mediterranean Geography"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Culinary History",
+      "Urban Regeneration",
+      "Mediterranean Geography"
+    ],
     "learning_objectives": [
       "Understand the historical development of La Boqueria (Mercat de Sant Josep) from an open-air meat market in the 13th century to an industrial iron-covered monument in 1914.",
       "Analyze the urban regeneration of the Barceloneta district, evaluating how a traditional fishing and industrial suburb was transformed for the 1992 Olympic Games.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "boqueria_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/boqueria.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Maritime History & Marine Biology",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Naval Engineering", "Marine Reserves", "Socio-Economics of Trade"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Naval Engineering",
+      "Marine Reserves",
+      "Socio-Economics of Trade"
+    ],
     "learning_objectives": [
       "Understand why the Ría de Vigo developed as Europe's primary industrial fishing port, analyzing its geographic and oceanographic advantages.",
       "Analyze the preservation of the Cíes Islands National Park, evaluating how its strict environmental protection preserves unique Atlantic marine and avian habitats.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "vigo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/vigo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

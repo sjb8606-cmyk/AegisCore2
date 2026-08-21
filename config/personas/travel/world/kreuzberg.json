@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Berlin_Counterculture", "Graffiti_and_Politics", "Immigration_History"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Berlin_Counterculture",
+      "Graffiti_and_Politics",
+      "Immigration_History"
+    ],
     "learning_objectives": [
       "Understand how the geography of the Berlin Wall created isolated, low-rent zones in Kreuzberg that attracted countercultural movements.",
       "Analyze the social and political messages embedded in iconic Kreuzberg murals, such as those by Victor Ash or Blu.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kreuzberg_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kreuzberg.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

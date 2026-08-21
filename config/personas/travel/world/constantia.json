@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["colonial_history", "slavery_at_the_cape", "agricultural_monopolies"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "colonial_history",
+      "slavery_at_the_cape",
+      "agricultural_monopolies"
+    ],
     "learning_objectives": [
       "Trace the origin of the South African wine industry from its establishment in 1685 by Cape Governor Simon van der Stel.",
       "Analyze the global economic impact of 'Vin de Constance' among the 18th-century European aristocracy.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "constantia_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/constantia.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

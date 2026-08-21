@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["informal_urbanization", "matatu_culture", "community_arts"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "informal_urbanization",
+      "matatu_culture",
+      "community_arts"
+    ],
     "learning_objectives": [
       "Understand the historical origin of Kibera as a land settlement granted to Nubian soldiers in the early 20th century.",
       "Analyze the economic and cultural significance of Kenya's 'Matatu' industry as a unique, self-regulated mass-transit system.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kibera_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kibera.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

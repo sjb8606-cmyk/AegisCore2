@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Tourism & Coastal Geography",
-    "grade_levels": ["elementary", "middle_school", "adult"],
-    "curriculum_tags": ["History of Tourism", "Coastal Geomorphology", "Urban Canal Networks"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "History of Tourism",
+      "Coastal Geomorphology",
+      "Urban Canal Networks"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Gold Coast's barrier beaches and how the Southport Spit projects sand northward.",
       "Analyze the transition of the region from a quiet, timber-getting coast to a global, high-density capital of resort tourism and high-rises (Q1).",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "gold_coast_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/gold_coast.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

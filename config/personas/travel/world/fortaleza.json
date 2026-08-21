@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Local Culture & Coastal Geography",
-    "grade_levels": ["elementary", "middle_school", "adult"],
-    "curriculum_tags": ["Coastal Geomorphology", "Traditional Fishing", "Colonial History"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Coastal Geomorphology",
+      "Traditional Fishing",
+      "Colonial History"
+    ],
     "learning_objectives": [
       "Understand the geological formation of Ceará's coast (sandy dunes and barrier reefs) and how they protect the harbor of Fortaleza.",
       "Analyze the material science and navigation of the 'Jangada' (traditional wooden raft with a triangular sail) used by local fishermen without a keel.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "fortaleza_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/fortaleza.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

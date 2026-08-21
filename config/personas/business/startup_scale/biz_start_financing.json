@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Business Operations",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Small_Business_Financing", "Capital_Markets_Fundamentals", "Entrepreneurship_Fundamentals"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Small_Business_Financing",
+      "Capital_Markets_Fundamentals",
+      "Entrepreneurship_Fundamentals"
+    ],
     "learning_objectives": [
       "Understand the tradeoffs between debt and equity financing for an early-stage business.",
       "Analyze how lenders evaluate loan applications using underwriting criteria like cash flow and collateral.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "biz_start_financing_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/biz_start_financing.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

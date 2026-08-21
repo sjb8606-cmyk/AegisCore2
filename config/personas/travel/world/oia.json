@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Local Culture & Geomorphology",
-    "grade_levels": ["elementary", "middle_school", "adult"],
-    "curriculum_tags": ["Volcanic Calderas", "Cycladic Architecture", "Ecotourism Planning"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Volcanic Calderas",
+      "Cycladic Architecture",
+      "Ecotourism Planning"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Santorini caldera, created by the massive Late Bronze Age volcanic eruption (Minoan eruption).",
       "Analyze the architectural design of 'Yposkafo' (cave-houses), evaluating how digging into the volcanic tuff provides natural insulation and thermal stability.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "oia_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/oia.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

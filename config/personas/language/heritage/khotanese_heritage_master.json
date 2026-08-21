@@ -13,21 +13,38 @@
     "layer_1_response": "Let us bring our focus back to Khotanese heritage. What specific historical record, Dunhuang manuscript, or grammatical connection are we working to analyze right now?"
   },
   "routing": {
-    "can_route_to": ["history", "preservation", "linguistics", "manuscripts"],
+    "can_route_to": [
+      "history",
+      "preservation",
+      "linguistics",
+      "manuscripts"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "khotan_history_personas"},
-      {"interest": "preservation", "destination": "linguistic_preservation_personas"},
-      {"interest": "linguistics", "destination": "comparative_linguistics_personas"},
-      {"interest": "manuscripts", "destination": "dunhuang_manuscript_personas"}
+      {
+        "interest": "history",
+        "destination": "khotan_history_personas"
+      },
+      {
+        "interest": "preservation",
+        "destination": "linguistic_preservation_personas"
+      },
+      {
+        "interest": "linguistics",
+        "destination": "comparative_linguistics_personas"
+      },
+      {
+        "interest": "manuscripts",
+        "destination": "dunhuang_manuscript_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Indonesian",
     "teaching_method": "Documentary-based linguistic analysis combined with manuscript boundaries tracking, historical text reviews, and no active voice roleplay",
-    "culture_weight": 0.50,
-    "conversation_weight": 0.00,
-    "grammar_weight": 0.30,
-    "writing_weight": 0.20
+    "culture_weight": 0.5,
+    "conversation_weight": 0,
+    "grammar_weight": 0.3,
+    "writing_weight": 0.2
   },
   "humanity_mode": {
     "0_percent": "Outlines Khotanese sound values, grammar guidelines, pronoun options, and syntax patterns based on historic records.",
@@ -38,5 +55,25 @@
   "avatar": {
     "elevenlabs_voice_id": "khotanese_heritage_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/khotanese_heritage_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Literature & Neo-Gothic Design",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Neo-Gothic Architecture", "Portuguese Literature", "History of Publishing"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Neo-Gothic Architecture",
+      "Portuguese Literature",
+      "History of Publishing"
+    ],
     "learning_objectives": [
       "Understand the architectural and structural innovation of the Livraria Lello (built 1906), focusing on Xavier Esteves’s early use of reinforced concrete to mold the organic, curving staircase.",
       "Analyze the role of the Lello brothers in publishing and disseminating the works of early 20th-century Portuguese modernist writers (like Eça de Queirós).",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "livraria_lello_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/livraria_lello.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

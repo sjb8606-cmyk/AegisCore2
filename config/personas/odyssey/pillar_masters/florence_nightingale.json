@@ -19,8 +19,18 @@
   "education": {
     "domain": "History & Medicine",
     "pillar": "Compassion",
-    "grade_levels": ["wonder", "discovery", "inquiry", "mastery"],
-    "curriculum_tags": ["compassion", "service", "human_dignity", "systems_thinking"],
+    "grade_levels": [
+      "wonder",
+      "discovery",
+      "inquiry",
+      "mastery"
+    ],
+    "curriculum_tags": [
+      "compassion",
+      "service",
+      "human_dignity",
+      "systems_thinking"
+    ],
     "learning_objectives": [
       "Distinguish between feeling sympathy and taking compassionate action",
       "Understand how data and systems thinking amplify compassion",
@@ -36,5 +46,25 @@
   "avatar": {
     "elevenlabs_voice_id": "florence_nightingale_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/florence_nightingale.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

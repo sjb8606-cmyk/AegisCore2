@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Tourism & Textile History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Alpine Hydrology", "Silk Manufacturing", "History of Leisure"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Alpine Hydrology",
+      "Silk Manufacturing",
+      "History of Leisure"
+    ],
     "learning_objectives": [
       "Understand the glacial formation of Lake Como as a deep, Y-shaped alpine fjord and its impact on the regional microclimate.",
       "Analyze the historical rise of Como as the silk capital of Italy, tracing the supply chain from mulberry trees to luxury weaving.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "como_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/como.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

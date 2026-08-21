@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Adventure & Nature",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["hydrology", "wilderness_survival", "recreation_management"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "hydrology",
+      "wilderness_survival",
+      "recreation_management"
+    ],
     "learning_objectives": [
       "Understand the mechanics of dam-released rivers and the fluid dynamics of whitewater rapids",
       "Analyze the risk assessment and coordination required for high-volume rapid navigation",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "gauley_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/gauley.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

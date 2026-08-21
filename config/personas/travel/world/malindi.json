@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["historical_navigation", "maritime_alliances", "port_monopolies"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "historical_navigation",
+      "maritime_alliances",
+      "port_monopolies"
+    ],
     "learning_objectives": [
       "Understand the historical significance of Vasco da Gama's 1498 landing at Malindi and its role in establishing Portuguese maritime routes to India.",
       "Analyze the architectural design and historical preservation of the Vasco da Gama Pillar as the oldest European monument on the East African coast.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "malindi_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/malindi.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

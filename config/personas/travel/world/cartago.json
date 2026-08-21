@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["volcanology", "colonial_history", "national_devotions"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "volcanology",
+      "colonial_history",
+      "national_devotions"
+    ],
     "learning_objectives": [
       "Understand the geological structure and historical eruptions of the Irazú Volcano, analyzing how volcanic activity has shaped the Central Valley's geography.",
       "Analyze the cultural and social significance of the pilgrimage (Romería) to the Basilica of Our Lady of the Angels as a unifying national symbol in Costa Rica.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cartago_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cartago.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

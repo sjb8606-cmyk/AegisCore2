@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Renaissance Architecture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["French Renaissance", "Women's History", "Feudal Dynasties"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "French Renaissance",
+      "Women's History",
+      "Feudal Dynasties"
+    ],
     "learning_objectives": [
       "Understand the pivotal role of women (Katherine Briçonnet, Diane de Poitiers, Catherine de' Medici, Louise de Lorraine) in designing and preserving Chenonceau.",
       "Analyze the architectural innovation of constructing a gallery bridge over the Cher river, turning a water barrier into a palace hall.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "chenonceau_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/chenonceau.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

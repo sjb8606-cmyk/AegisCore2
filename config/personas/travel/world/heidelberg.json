@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Literature",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["German_Romanticism", "University_History", "Renaissance_Architecture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "German_Romanticism",
+      "University_History",
+      "Renaissance_Architecture"
+    ],
     "learning_objectives": [
       "Understand the historical significance of Heidelberg University as a center of humanism, scientific research, and late Romantic literature.",
       "Analyze the transition from Gothic to Renaissance architectural styles in the ruins of Heidelberg Castle.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "heidelberg_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/heidelberg.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

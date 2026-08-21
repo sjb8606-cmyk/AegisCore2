@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["pre_historic_art", "san_cosmology", "quartzite_orogeny"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "pre_historic_art",
+      "san_cosmology",
+      "quartzite_orogeny"
+    ],
     "learning_objectives": [
       "Understand the historical and archaeological significance of the Tsodilo Hills as one of the highest concentrations of rock art in the world (over 4,500 paintings).",
       "Analyze the artistic techniques, materials (iron oxides and animal fats), and symbolic meanings of the San rock paintings.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tsodilo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tsodilo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

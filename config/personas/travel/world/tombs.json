@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["royal_history", "monumental_architecture", "customary_taboos"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "royal_history",
+      "monumental_architecture",
+      "customary_taboos"
+    ],
     "learning_objectives": [
       "Understand the historical role and scale of the Mala'ekula Royal Tombs as the sacred capital of the Tongan Monarchy.",
       "Analyze the neo-classical and traditional Tongan architectural features of the royal stone vaults.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tombs_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tombs.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

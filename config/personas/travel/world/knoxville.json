@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["tva_history", "urbanization", "appalachian_studies"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "tva_history",
+      "urbanization",
+      "appalachian_studies"
+    ],
     "learning_objectives": [
       "Understand the strategic and geopolitical reasons why Knoxville was selected as the first capital of Tennessee",
       "Analyze the impact of the Tennessee Valley Authority (TVA) on the modernization and economy of the region",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "knoxville_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/knoxville.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

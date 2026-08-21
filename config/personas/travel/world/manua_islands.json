@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["coral_reefs", "island_biogeography", "treaty_history"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "coral_reefs",
+      "island_biogeography",
+      "treaty_history"
+    ],
     "learning_objectives": [
       "Understand the geological formation and isolation of the Manu'a Islands (Ta'u and Ofu)",
       "Analyze the biological diversity and heat-resistance of the coral reefs of Ofu",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "manua_islands_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/manua_islands.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Urban Design & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["urban_planning", "hydraulics", "public_art"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "urban_planning",
+      "hydraulics",
+      "public_art"
+    ],
     "learning_objectives": [
       "Understand the urban planning principles behind the creation of the San Antonio River Walk",
       "Analyze the civil engineering and flood control systems designed by Robert H.H. Hugman",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "river_walk_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/river_walk.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

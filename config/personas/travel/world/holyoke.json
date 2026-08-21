@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Industrial Engineering",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["industrial_revolution", "civil_engineering", "urban_planning"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "industrial_revolution",
+      "civil_engineering",
+      "urban_planning"
+    ],
     "learning_objectives": [
       "Understand the hydraulic engineering principles of a multi-level gravity-fed canal system",
       "Analyze the design of Holyoke as one of America's first planned industrial cities",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "holyoke_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/holyoke.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

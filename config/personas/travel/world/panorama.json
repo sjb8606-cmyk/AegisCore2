@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["geomorphology", "gold_rush_history", "river_hydrology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "geomorphology",
+      "gold_rush_history",
+      "river_hydrology"
+    ],
     "learning_objectives": [
       "Understand the geological forces of erosion and plate tectonics that formed the Blyde River Canyon and the Drakensberg Escarpment.",
       "Analyze the impact of the 19th-century Mpumalanga gold rush on local demographics, land ownership, and economic infrastructure.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "panorama_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/panorama.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Law",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["history_of_crime", "constitutional_law", "urban_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "history_of_crime",
+      "constitutional_law",
+      "urban_history"
+    ],
     "learning_objectives": [
       "Understand the historical role of organized crime in financing and building the early resort industry of Las Vegas",
       "Analyze the significance of the Kefauver Committee hearings (1950-1951) in exposing national crime syndicates",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mob_museum_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mob_museum.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

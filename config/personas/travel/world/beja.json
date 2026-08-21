@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Religious Art",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Roman Lusitania", "Baroque Monasticism", "History of Literature"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Roman Lusitania",
+      "Baroque Monasticism",
+      "History of Literature"
+    ],
     "learning_objectives": [
       "Understand the historical role of Beja (Pax Julia) as a major Roman, Moorish, and medieval administrative capital of the southern Alentejo.",
       "Analyze the military and defensive architecture of the Torre de Menagem, the tallest medieval keep in Portugal.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "beja_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/beja.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

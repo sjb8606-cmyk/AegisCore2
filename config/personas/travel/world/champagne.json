@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage & Archaeology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["archaeology", "climate_change", "indigenous_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "archaeology",
+      "climate_change",
+      "indigenous_history"
+    ],
     "learning_objectives": [
       "Understand the phenomenon of alpine ice patch archaeology and how it differs from glacial archaeology",
       "Analyze the technological evolution from the atlatl (throwing dart) to the bow and arrow in North America",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "champagne_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/champagne.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

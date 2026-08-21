@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Art History & Local Culture",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Modern Art History", "Urban Regeneration", "Maritime Geography"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Modern Art History",
+      "Urban Regeneration",
+      "Maritime Geography"
+    ],
     "learning_objectives": [
       "Understand the childhood and familial roots of Pablo Picasso in Málaga, evaluating how his southern Spanish upbringing shaped his early artistic themes.",
       "Analyze the urban regeneration of the Soho district, evaluating how a neglected post-industrial neighborhood was transformed through street art (MAUS project).",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "malaga_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/malaga.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

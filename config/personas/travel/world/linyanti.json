@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["wetland_ecology", "animal_adaptations", "tectonic_wetlands"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "wetland_ecology",
+      "animal_adaptations",
+      "tectonic_wetlands"
+    ],
     "learning_objectives": [
       "Explain the ecological and geological processes of tectonic faulting that create the permanent, slow-flowing marshes of the Linyanti.",
       "Understand the unique biological and morphological adaptations of the Sitatunga (Tragelaphus spekii) that allow it to walk on marshy, floating vegetation.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "linyanti_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/linyanti.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

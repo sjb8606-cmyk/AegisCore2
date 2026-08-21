@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["urban_planning", "appalachian_studies", "river_ecology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "urban_planning",
+      "appalachian_studies",
+      "river_ecology"
+    ],
     "learning_objectives": [
       "Understand the historical role of the Clark Fork River in driving the early economic development of Missoula",
       "Analyze the role of the University of Montana in preserving and researching the culture and history of the state",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "missoula_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/missoula.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

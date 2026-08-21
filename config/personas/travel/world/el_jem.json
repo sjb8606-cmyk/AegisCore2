@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["roman_engineering", "gladiator_arenas", "olive_economics"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "roman_engineering",
+      "gladiator_arenas",
+      "olive_economics"
+    ],
     "learning_objectives": [
       "Understand the structural engineering and physics of the Roman arch used to support the massive, three-tiered Colosseum of El Jem.",
       "Analyze the economic connection between the olive oil trade of ancient Thysdrus and the funding of monumental public arenas.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "el_jem_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/el_jem.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

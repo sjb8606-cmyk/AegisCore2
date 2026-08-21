@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Art & Business",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["corporate_history", "museum_architecture", "retail_economics"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "corporate_history",
+      "museum_architecture",
+      "retail_economics"
+    ],
     "learning_objectives": [
       "Understand the business strategies and innovations of Sam Walton in founding and expanding Walmart",
       "Analyze the organic architectural design of Moshe Safdie at Crystal Bridges Museum of American Art",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bentonville_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bentonville.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["cloud_forest_ecology", "palm_biology", "conservation_history"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "cloud_forest_ecology",
+      "palm_biology",
+      "conservation_history"
+    ],
     "learning_objectives": [
       "Explain the unique meteorological processes that form high-altitude cloud forests (orographic precipitation) and how they differ from lowland rainforests.",
       "Understand why the Quindío Wax Palm (Ceroxylon quindiuense) is a rare evolutionary anomaly, growing to record heights in cold mountain climates.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "salento_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/salento.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

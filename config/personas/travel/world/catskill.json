@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["social_history", "jewish_studies", "environmental_reclamation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "social_history",
+      "jewish_studies",
+      "environmental_reclamation"
+    ],
     "learning_objectives": [
       "Understand the socio-political factors (anti-Semitism and exclusion) that necessitated the creation of the Borscht Belt resorts",
       "Analyze the role of the Catskills in the development of modern American stand-up comedy",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "catskill_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/catskill.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -10,22 +10,43 @@
     "layer_1_response": "That topic takes us away from our target language. Let us refocus on Hausa. What specific construction or conversation can we study?"
   },
   "routing": {
-    "can_route_to": ["history", "trade", "literature", "travel", "culture"],
+    "can_route_to": [
+      "history",
+      "trade",
+      "literature",
+      "travel",
+      "culture"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "sahel_history_personas"},
-      {"interest": "trade", "destination": "west_african_trade_personas"},
-      {"interest": "business", "destination": "west_african_trade_personas"},
-      {"interest": "literature", "destination": "hausa_literature_personas"},
-      {"interest": "travel", "destination": "nigeria_travel_personas"}
+      {
+        "interest": "history",
+        "destination": "sahel_history_personas"
+      },
+      {
+        "interest": "trade",
+        "destination": "west_african_trade_personas"
+      },
+      {
+        "interest": "business",
+        "destination": "west_african_trade_personas"
+      },
+      {
+        "interest": "literature",
+        "destination": "hausa_literature_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "nigeria_travel_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Hausa",
     "teaching_method": "Tonal distinction practice coupled with gender pronoun training and interactive marketplace and social dialogue",
     "culture_weight": 0.35,
-    "conversation_weight": 0.40,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.15,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Introduces Hausa low/high tones, implosive/ejective consonants, noun gender classifications, and person-aspect pronoun paradigms.",
@@ -36,5 +57,25 @@
   "avatar": {
     "elevenlabs_voice_id": "hausa_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/hausa_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

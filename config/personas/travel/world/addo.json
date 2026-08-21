@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["ecosystem_restoration", "carbon_sequestration_plants", "endangered_species"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "ecosystem_restoration",
+      "carbon_sequestration_plants",
+      "endangered_species"
+    ],
     "learning_objectives": [
       "Understand the historical collapse and subsequent recovery of the Eastern Cape elephant population from near-extinction in the early 20th century.",
       "Analyze the ecological role of Spekboom (Portulacaria afra) in carbon sequestration and sustaining regional elephant populations.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "addo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/addo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

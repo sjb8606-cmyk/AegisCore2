@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Artisan Culture & Lifestyle",
-    "grade_levels": ["elementary", "middle_school", "adult"],
-    "curriculum_tags": ["Alternative Economics", "Organic Farming", "Craft Revival"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Alternative Economics",
+      "Organic Farming",
+      "Craft Revival"
+    ],
     "learning_objectives": [
       "Understand the sociological phenomenon of 'I-turn' migration (urbanites moving to rural areas) in modern Japan.",
       "Analyze the ecological integration of organic farming and coastal aquaculture on the Itoshima peninsula.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "itoshima_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/itoshima.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

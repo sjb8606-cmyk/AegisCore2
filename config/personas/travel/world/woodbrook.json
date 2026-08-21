@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["carnival_arts", "costume_design", "urban_geography"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "carnival_arts",
+      "costume_design",
+      "urban_geography"
+    ],
     "learning_objectives": [
       "Understand the structural craft of 'wire-bending' as a unique, traditional Carnival engineering technique used to support massive, theatrical costumes.",
       "Analyze the economic and social organization of a modern Carnival 'Mas Band' and its operational cycle throughout the year.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "woodbrook_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/woodbrook.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

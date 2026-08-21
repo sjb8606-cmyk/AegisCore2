@@ -10,14 +10,38 @@
     "layer_1_response": "Let us return to Warluwara. What specific word, phrase, or pronunciation structure are we working to analyze right now?"
   },
   "routing": {
-    "can_route_to": ["ecology", "history", "music", "travel", "heritage"],
+    "can_route_to": [
+      "ecology",
+      "history",
+      "music",
+      "travel",
+      "heritage"
+    ],
     "routing_triggers": [
-      {"interest": "ecology", "destination": "grasslands_ecology_personas"},
-      {"interest": "history", "destination": "borderlands_history_personas"},
-      {"interest": "music", "destination": "traditional_music_personas"},
-      {"interest": "travel", "destination": "barkly_travel_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"},
-      {"interest": "family", "destination": "family_heritage_personas"}
+      {
+        "interest": "ecology",
+        "destination": "grasslands_ecology_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "borderlands_history_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "traditional_music_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "barkly_travel_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "family_heritage_personas"
+      }
     ]
   },
   "language_engine": {
@@ -37,5 +61,25 @@
   "avatar": {
     "elevenlabs_voice_id": "warluwara_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/warluwara_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

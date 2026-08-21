@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Tourism & Cinema Studies",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["History of Tourism", "Cinema Studies", "Fashion History"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "History of Tourism",
+      "Cinema Studies",
+      "Fashion History"
+    ],
     "learning_objectives": [
       "Understand the socio-economic creation of Deauville as a planned, high-society resort town designed to attract Parisian elites via the railway.",
       "Analyze Coco Chanel’s role in using her Deauville boutique to revolutionize women’s beach fashion (introducing jersey and casual sportswear).",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "deauville_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/deauville.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

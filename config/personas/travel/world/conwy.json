@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Edwardian_Castles", "Medieval_Military_Engineering", "Welsh_Conquest"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Edwardian_Castles",
+      "Medieval_Military_Engineering",
+      "Welsh_Conquest"
+    ],
     "learning_objectives": [
       "Identify the innovative defensive features of Conwy Castle, including its linear design, concentric-like barriers, and integrated town walls.",
       "Understand the socio-political purpose of Edward I’s 'Iron Ring' of castles in asserting English dominance over North Wales in the late 13th century.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "conwy_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/conwy.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

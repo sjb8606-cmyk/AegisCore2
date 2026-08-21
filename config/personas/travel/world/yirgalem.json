@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["forest_conservation", "sidama_culture", "organic_agriculture"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "forest_conservation",
+      "sidama_culture",
+      "organic_agriculture"
+    ],
     "learning_objectives": [
       "Understand the ecological and hydrological role of the Yirgalem forest in regulating and filtering the water supply of the southern valleys.",
       "Analyze the agricultural importance of the False Banana (Enset) in Sidama society as a vital, drought-resistant food security crop.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "yirgalem_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/yirgalem.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

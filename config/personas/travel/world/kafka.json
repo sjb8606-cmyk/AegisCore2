@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Literature",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Modernist_Literature", "Kafkaesque_Themes", "German_Jewish_Prague"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Modernist_Literature",
+      "Kafkaesque_Themes",
+      "German_Jewish_Prague"
+    ],
     "learning_objectives": [
       "Analyze the social and cultural dynamics of early 20th-century Prague as a multicultural city split between Czech, German, and Jewish identities.",
       "Define the literary concept of the 'Kafkaesque' and how it reflects modern experiences of alienation, bureaucracy, and existential guilt.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kafka_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kafka.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

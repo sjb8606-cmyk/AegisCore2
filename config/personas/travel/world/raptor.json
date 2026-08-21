@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ornithology & Conservation",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["ornithology", "aerodynamics", "wildlife_rehabilitation"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "ornithology",
+      "aerodynamics",
+      "wildlife_rehabilitation"
+    ],
     "learning_objectives": [
       "Understand the physiological adaptations that make raptors the apex predators of the sky",
       "Analyze the primary human causes of raptor injury (power lines, vehicles, toxins)",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "raptor_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/raptor.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

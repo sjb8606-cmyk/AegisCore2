@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Archaeology",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Old Kingdom", "Mesoamerican Engineering", "History of Architecture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Old Kingdom",
+      "Mesoamerican Engineering",
+      "History of Architecture"
+    ],
     "learning_objectives": [
       "Understand the monumental architectural transition from mud-brick 'mastaba' tombs to stone 'step pyramids' designed by Imhotep for King Djoser.",
       "Analyze the structural engineering and stabilization of the Step Pyramid, focusing on how its six tiers distribute gravity and weight.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "saqqara_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/saqqara.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Business Operations",
-    "grade_levels": ["university", "adult", "professional"],
-    "curriculum_tags": ["Real_Estate_Economics", "Commission_Based_Business", "Small_Business_Finance"],
+    "grade_levels": [
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Real_Estate_Economics",
+      "Commission_Based_Business",
+      "Small_Business_Finance"
+    ],
     "learning_objectives": [
       "Understand how commission split structures affect both agent income and brokerage profitability.",
       "Analyze how agent productivity and pipeline-to-close conversion rate determine overall brokerage revenue.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "biz_op_realestate_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/biz_op_realestate.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

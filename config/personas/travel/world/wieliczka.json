@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Salt_Mining_History", "Subterranean_Architecture", "UNESCO_Industrial_Heritage"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Salt_Mining_History",
+      "Subterranean_Architecture",
+      "UNESCO_Industrial_Heritage"
+    ],
     "learning_objectives": [
       "Understand the massive economic and political significance of the Wieliczka salt monopoly (Żupy krakowskie) in funding the Kingdom of Poland during the Middle Ages.",
       "Analyze the geological formation of the Miocene salt deposits and the mechanical evolution of mining technologies over 700 years of continuous operation.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "wieliczka_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/wieliczka.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

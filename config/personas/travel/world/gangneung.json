@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Joseon_Scholars_Ojukheon", "Korean_Coffee_Renaissance", "Olympic_Legacy_Gangneung"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Joseon_Scholars_Ojukheon",
+      "Korean_Coffee_Renaissance",
+      "Olympic_Legacy_Gangneung"
+    ],
     "learning_objectives": [
       "Understand the historical significance of Ojukheon as the birthplace of philosopher Yulgok and artist Shin Saimdang, the most celebrated woman in Joseon history.",
       "Analyze the social and culinary factors that allowed Gangneung to transform its quiet fishing beach of Anmok into South Korea's premier specialty coffee hub.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "gangneung_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/gangneung.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Business Operations",
-    "grade_levels": ["university", "adult", "professional"],
-    "curriculum_tags": ["Production_Business_Economics", "Distribution_Economics", "Regulated_Industries"],
+    "grade_levels": [
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Production_Business_Economics",
+      "Distribution_Economics",
+      "Regulated_Industries"
+    ],
     "learning_objectives": [
       "Understand how three-tier distribution margin stacking affects what a brewery actually earns per unit sold at retail.",
       "Analyze cost per barrel and packaging line efficiency as core production economics for a brewery.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "biz_op_brewery_production_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/biz_op_brewery_production.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

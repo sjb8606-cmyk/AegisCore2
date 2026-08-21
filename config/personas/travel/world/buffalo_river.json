@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Adventure",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["river_ecology", "conservation_history", "geomorphology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "river_ecology",
+      "conservation_history",
+      "geomorphology"
+    ],
     "learning_objectives": [
       "Understand the geological formation and geomorphology of the Buffalo River's limestone bluffs",
       "Analyze the history of the citizen-led conservation battle that established the Buffalo as America's first National River (1972)",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "buffalo_river_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/buffalo_river.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

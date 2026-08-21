@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["savanna_ecology", "baobab_biology", "elephant_migration"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "savanna_ecology",
+      "baobab_biology",
+      "elephant_migration"
+    ],
     "learning_objectives": [
       "Understand the ecological impact of high-density elephant populations on woody vegetation and baobabs during the dry season.",
       "Explain the unique biological adaptations and water-storage mechanics of the Baobab Tree (Adansonia digitata).",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tarangire_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tarangire.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -10,20 +10,41 @@
     "layer_1_response": "Let us bring our focus back to Pemon. What specific word, prefix-suffix verb structure, or phrase should we look at next?"
   },
   "routing": {
-    "can_route_to": ["history", "ecology", "geology", "travel", "culture"],
+    "can_route_to": [
+      "history",
+      "ecology",
+      "geology",
+      "travel",
+      "culture"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "gran_sabana_history_personas"},
-      {"interest": "ecology", "destination": "savanna_ecology_personas"},
-      {"interest": "geology", "destination": "tepui_geology_personas"},
-      {"interest": "travel", "destination": "venezuelan_amazon_travel_personas"},
-      {"interest": "culture", "destination": "cariban_culture_personas"}
+      {
+        "interest": "history",
+        "destination": "gran_sabana_history_personas"
+      },
+      {
+        "interest": "ecology",
+        "destination": "savanna_ecology_personas"
+      },
+      {
+        "interest": "geology",
+        "destination": "tepui_geology_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "venezuelan_amazon_travel_personas"
+      },
+      {
+        "interest": "culture",
+        "destination": "cariban_culture_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Pemon",
     "teaching_method": "Immersive, savanna-first oral method coupled with mountain-based oral vocabulary, prefix-suffix verb drills, and active social conversation",
-    "culture_weight": 0.40,
-    "conversation_weight": 0.40,
+    "culture_weight": 0.4,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.15,
     "writing_weight": 0.05
   },
@@ -36,5 +57,25 @@
   "avatar": {
     "elevenlabs_voice_id": "pemon_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/pemon_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

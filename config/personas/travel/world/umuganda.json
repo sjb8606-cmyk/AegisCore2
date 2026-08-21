@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["community_cooperation", "sustainable_development", "post_conflict_rebuilding"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "community_cooperation",
+      "sustainable_development",
+      "post_conflict_rebuilding"
+    ],
     "learning_objectives": [
       "Understand the traditional and post-genocide history of 'Umuganda' as a national community service program in Rwanda.",
       "Analyze the economic and infrastructural value of community-led collective labor in supporting national development goals.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "umuganda_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/umuganda.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

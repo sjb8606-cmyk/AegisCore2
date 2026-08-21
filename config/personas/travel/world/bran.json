@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Literature",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Gothic_Literature", "Medieval_Border_Fortresses", "Historical_Mythmaking"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Gothic_Literature",
+      "Medieval_Border_Fortresses",
+      "Historical_Mythmaking"
+    ],
     "learning_objectives": [
       "Analyze how Bram Stoker utilized Western European anxieties and fragmented historical accounts of Transylvania to create the defining Gothic novel, Dracula.",
       "Understand the actual military and economic role of Bran Castle as a customs post and defensive fortress on the border of Transylvania and Wallachia.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bran_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bran.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

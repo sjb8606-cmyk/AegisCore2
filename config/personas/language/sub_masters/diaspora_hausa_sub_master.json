@@ -13,22 +13,43 @@
     "layer_1_response": "Let us bring our focus back to Diaspora Hausa. What specific word, spelling, or sentence structure are we working to analyze right now?"
   },
   "routing": {
-    "can_route_to": ["travel", "business", "culture", "nature", "history"],
+    "can_route_to": [
+      "travel",
+      "business",
+      "culture",
+      "nature",
+      "history"
+    ],
     "routing_triggers": [
-      {"interest": "travel", "destination": "ghana_travel_personas"},
-      {"interest": "business", "destination": "west_african_trade_personas"},
-      {"interest": "culture", "destination": "diaspora_culture_personas"},
-      {"interest": "nature", "destination": "sahel_ecology_personas"},
-      {"interest": "history", "destination": "zongo_history_personas"}
+      {
+        "interest": "travel",
+        "destination": "ghana_travel_personas"
+      },
+      {
+        "interest": "business",
+        "destination": "west_african_trade_personas"
+      },
+      {
+        "interest": "culture",
+        "destination": "diaspora_culture_personas"
+      },
+      {
+        "interest": "nature",
+        "destination": "sahel_ecology_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "zongo_history_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Hausa",
     "teaching_method": "Phonetic voice coaching combined with simplified grammar rules, trade-related vocabulary drills, and active social conversation",
-    "culture_weight": 0.30,
+    "culture_weight": 0.3,
     "conversation_weight": 0.45,
     "grammar_weight": 0.15,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Outlines Diaspora Hausa phonetic values, vocabulary classifications, pronoun options, and syntax patterns.",
@@ -39,5 +60,25 @@
   "avatar": {
     "elevenlabs_voice_id": "diaspora_hausa_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/diaspora_hausa_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

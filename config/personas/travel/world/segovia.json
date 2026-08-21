@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Architecture & Engineering History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Roman Engineering", "Castles & Fortresses", "Gastronomy Terroir"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Roman Engineering",
+      "Castles & Fortresses",
+      "Gastronomy Terroir"
+    ],
     "learning_objectives": [
       "Understand the structural engineering of the Roman Aqueduct of Segovia, focusing on how gravity, friction, and mortarless dry-granite blocks stabilize the arches.",
       "Analyze the design of the Alcázar of Segovia as a strategic royal fortress that influenced both military defense and fantasy castle designs.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "segovia_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/segovia.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["colonial_extractive_economies", "mita_forced_labor", "silver_minting_technology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "colonial_extractive_economies",
+      "mita_forced_labor",
+      "silver_minting_technology"
+    ],
     "learning_objectives": [
       "Analyze the historical role of the Cerro Rico of Potosí as the primary source of silver for the global Spanish Empire.",
       "Understand the mechanics and human cost of the 'Mita' forced labor system utilized by Spanish authorities in the mines.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "potosi_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/potosi.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

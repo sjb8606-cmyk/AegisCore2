@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Renaissance_Architecture_Poland", "Jagiellonian_Dynasty", "Royal_Cathedrals"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Renaissance_Architecture_Poland",
+      "Jagiellonian_Dynasty",
+      "Royal_Cathedrals"
+    ],
     "learning_objectives": [
       "Understand the historical significance of Wawel Hill as the political and spiritual center of the Kingdom of Poland from the 11th to the 17th centuries.",
       "Analyze the architectural transition of the Wawel Castle from a Gothic stronghold to a masterpiece of the Italian Renaissance under King Sigismund the Old.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "wawel_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/wawel.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

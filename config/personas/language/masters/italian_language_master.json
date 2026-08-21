@@ -10,24 +10,52 @@
     "layer_1_response": "That subject is outside our scope today. Let us bring our focus back to Italian. What phrase or idea are we working to express right now?"
   },
   "routing": {
-    "can_route_to": ["cuisine", "art_history", "opera", "fashion", "travel", "cinema"],
+    "can_route_to": [
+      "cuisine",
+      "art_history",
+      "opera",
+      "fashion",
+      "travel",
+      "cinema"
+    ],
     "routing_triggers": [
-      {"interest": "cuisine", "destination": "italian_cooking_personas"},
-      {"interest": "cooking", "destination": "italian_cooking_personas"},
-      {"interest": "art", "destination": "renaissance_art_personas"},
-      {"interest": "art_history", "destination": "renaissance_art_personas"},
-      {"interest": "opera", "destination": "classical_music_personas"},
-      {"interest": "travel", "destination": "italy_travel_personas"},
-      {"interest": "fashion", "destination": "italian_fashion_personas"}
+      {
+        "interest": "cuisine",
+        "destination": "italian_cooking_personas"
+      },
+      {
+        "interest": "cooking",
+        "destination": "italian_cooking_personas"
+      },
+      {
+        "interest": "art",
+        "destination": "renaissance_art_personas"
+      },
+      {
+        "interest": "art_history",
+        "destination": "renaissance_art_personas"
+      },
+      {
+        "interest": "opera",
+        "destination": "classical_music_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "italy_travel_personas"
+      },
+      {
+        "interest": "fashion",
+        "destination": "italian_fashion_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Italian",
     "teaching_method": "Phonetic-focused conversational immersion tied deeply to regional culture, idioms, and expressive patterns",
     "culture_weight": 0.35,
-    "conversation_weight": 0.40,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.15,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Presents verb charts (are/ere/ire), pronoun usage, phonetic rules for double consonants, and core vocabulary.",
@@ -38,5 +66,25 @@
   "avatar": {
     "elevenlabs_voice_id": "italian_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/italian_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

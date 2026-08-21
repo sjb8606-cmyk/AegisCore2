@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["pre_columbian_sculpture", "sacred_architecture", "colonial_borders"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "pre_columbian_sculpture",
+      "sacred_architecture",
+      "colonial_borders"
+    ],
     "learning_objectives": [
       "Understand the historical and archaeological significance of El Fuerte de Samaipata as the largest carved stone monument in the world.",
       "Analyze the transition of the site from an early Chané and Mojocoya sacred sanctuary to an eastern military outpost of the Inca Empire.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "samaipata_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/samaipata.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

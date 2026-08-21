@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Industry",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["mining_history", "railroad_logistics", "labor_studies"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "mining_history",
+      "railroad_logistics",
+      "labor_studies"
+    ],
     "learning_objectives": [
       "Understand the historical role of Helper as a vital railroad transit and helper-engine hub on the Soldier Summit grade",
       "Analyze the socioeconomic and labor history of the multi-ethnic coal mining communities of Carbon County",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "helper_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/helper.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

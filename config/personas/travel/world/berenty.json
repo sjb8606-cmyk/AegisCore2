@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["gallery_forest_ecology", "lemur_behavior", "conservation_history"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "gallery_forest_ecology",
+      "lemur_behavior",
+      "conservation_history"
+    ],
     "learning_objectives": [
       "Understand the biological and social adaptations of the Ring-tailed Lemur (Lemur catta), focusing on its female-dominant society and scent-marking behaviors.",
       "Explain the ecological structure of southern gallery forests (tamarind canopies) and how they survive along seasonal rivers like the Mandrare.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "berenty_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/berenty.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

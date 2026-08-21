@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Travel",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["fur_trade_history", "canadian_history", "historical_geography"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "fur_trade_history",
+      "canadian_history",
+      "historical_geography"
+    ],
     "learning_objectives": [
       "Understand the Churchill River's role as a major artery in the North American fur trade",
       "Analyze the cultural exchange and conflict between European traders and Indigenous nations",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "churchill_river_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/churchill_river.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

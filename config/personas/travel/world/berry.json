@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Culinary & Agriculture",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["agronomy", "food_systems", "local_history"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "agronomy",
+      "food_systems",
+      "local_history"
+    ],
     "learning_objectives": [
       "Understand the domestication process of wild prairie botanicals",
       "Analyze the economic impact of niche agriculture in rural economies",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "berry_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/berry.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

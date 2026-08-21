@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Technology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["industrial_history", "refrigeration_science", "food_systems"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "industrial_history",
+      "refrigeration_science",
+      "food_systems"
+    ],
     "learning_objectives": [
       "Understand the biological process of fermentation and the chemistry of beer brewing on an industrial scale",
       "Analyze how the invention of refrigerated railcars allowed Anheuser-Busch to create the nation's first national beer brand",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "anheuser_busch_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/anheuser_busch.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

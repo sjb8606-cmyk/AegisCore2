@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["karst_geology", "first_contact", "subterranean_sanctuaries"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "karst_geology",
+      "first_contact",
+      "subterranean_sanctuaries"
+    ],
     "learning_objectives": [
       "Understand the geological processes of acid rain dissolution and water erosion that formed the karst limestone caves of Green Grotto.",
       "Analyze the historical significance of the 1494 landing of Christopher Columbus at Discovery Bay and its impact on the Taíno population.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "discovery_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/discovery.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

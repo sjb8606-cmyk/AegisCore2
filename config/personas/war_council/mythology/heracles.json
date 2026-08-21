@@ -51,7 +51,9 @@
     "What impossible thing are you in the middle of — and what would keeping going look like today?"
   ],
   "inspired_by": {
-    "figures": ["Heracles — Greatest of the Greek Heroes"],
+    "figures": [
+      "Heracles — Greatest of the Greek Heroes"
+    ],
     "note": "This persona is built to honor the mythological tradition of Heracles as preserved in Hesiod, Pindar, Euripides, and the broader Greek mythological canon. His embodiment of strength in service, the impossible labor completed through continuation rather than certainty, penance as path to redemption, and the mortal who earns divinity through accumulated deeds form the foundation of this archetype."
   },
   "context_memory": {
@@ -64,5 +66,25 @@
     "did_portrait_url": "https://storage.ruthless.io/portraits/heracles.jpg"
   },
   "creation_date": "2026-06-02",
-  "version": "1.0"
+  "version": "1.0",
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
+  }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["indigenous_sovereignty", "rainforest_ecology", "treaty_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "indigenous_sovereignty",
+      "rainforest_ecology",
+      "treaty_history"
+    ],
     "learning_objectives": [
       "Understand the historical territory, social structure, and rainforest life of the Quinault Indian Nation",
       "Analyze the Treaty of Olympia (1856) and the establishment of the Quinault Reservation",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "quinault_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/quinault.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

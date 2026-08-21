@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Heritage & Nature",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["park_management", "sociology", "canadian_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "park_management",
+      "sociology",
+      "canadian_history"
+    ],
     "learning_objectives": [
       "Understand the history and social impact of land expropriation for provincial parks",
       "Analyze the balance between heritage preservation and recreational tourism",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "hecla_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/hecla.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

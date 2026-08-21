@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["indigenous_kingdoms", "river_hydrology", "ceremonial_rituals"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "indigenous_kingdoms",
+      "river_hydrology",
+      "ceremonial_rituals"
+    ],
     "learning_objectives": [
       "Understand the political structure and historical treaties of the Lozi Kingdom (Barotseland), focusing on the 1900 treaty with the British South Africa Company.",
       "Analyze the environmental and hydrological factors of the Zambezi River's seasonal floods that necessitate the Kuomboka ceremony.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "barotseland_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/barotseland.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -10,21 +10,46 @@
     "layer_1_response": "That lies outside our language classroom. Let us return to English — what specific idea or concept are you trying to express or understand right now?"
   },
   "routing": {
-    "can_route_to": ["business", "travel", "literature", "media", "history", "academia"],
+    "can_route_to": [
+      "business",
+      "travel",
+      "literature",
+      "media",
+      "history",
+      "academia"
+    ],
     "routing_triggers": [
-      {"interest": "business", "destination": "business_personas"},
-      {"interest": "travel", "destination": "travel_personas"},
-      {"interest": "literature", "destination": "literature_personas"},
-      {"interest": "media", "destination": "pop_culture_personas"},
-      {"interest": "history", "destination": "history_personas"},
-      {"interest": "academia", "destination": "academic_writing_personas"}
+      {
+        "interest": "business",
+        "destination": "business_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "travel_personas"
+      },
+      {
+        "interest": "literature",
+        "destination": "literature_personas"
+      },
+      {
+        "interest": "media",
+        "destination": "pop_culture_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "history_personas"
+      },
+      {
+        "interest": "academia",
+        "destination": "academic_writing_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "English",
     "teaching_method": "Functional and communicative instruction contextualized through real-world professional and social scenarios",
-    "culture_weight": 0.20,
-    "conversation_weight": 0.40,
+    "culture_weight": 0.2,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.25,
     "writing_weight": 0.15
   },
@@ -37,5 +62,25 @@
   "avatar": {
     "elevenlabs_voice_id": "english_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/english_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

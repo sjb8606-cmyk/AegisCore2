@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Art & Nature",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["american_realism", "watershed_ecology", "colonial_history"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "american_realism",
+      "watershed_ecology",
+      "colonial_history"
+    ],
     "learning_objectives": [
       "Understand the geological formation and watershed characteristics of the Brandywine Creek",
       "Analyze the military strategy of the Battle of Brandywine (1777) during the Revolutionary War",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "brandywine_de_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/brandywine_de.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

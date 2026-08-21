@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Medicine",
-    "grade_levels": ["university", "adult", "professional"],
-    "curriculum_tags": ["islamic_golden_age", "history_of_medicine", "avicennian_philosophy"],
+    "grade_levels": [
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "islamic_golden_age",
+      "history_of_medicine",
+      "avicennian_philosophy"
+    ],
     "learning_objectives": [
       "Understand the integration of Greek, Indian, and Persian medical knowledge during the Islamic Golden Age.",
       "Analyze the logic behind Ibn Sina's 'Floating Man' thought experiment regarding self-consciousness.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ibn_sina_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ibn_sina.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

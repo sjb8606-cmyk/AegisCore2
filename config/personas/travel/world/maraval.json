@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["mountain_orogeny", "rainforest_hydrology", "soil_erosion_control"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "mountain_orogeny",
+      "rainforest_hydrology",
+      "soil_erosion_control"
+    ],
     "learning_objectives": [
       "Explain the geological origin of the Northern Range as a continuation of the Venezuelan Andes, detailing how tectonic forces lifted the mountains.",
       "Understand the hydrological cycle of the Maraval Valley and how native forest cover prevents catastrophic landslides and mudflows during the rainy season.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "maraval_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/maraval.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

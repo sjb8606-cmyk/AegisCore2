@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Civil Rights",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["indian_wars", "treaty_violations", "indigenous_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "indian_wars",
+      "treaty_violations",
+      "indigenous_history"
+    ],
     "learning_objectives": [
       "Understand the historical events and military strategy of the Battle of Washita River (1868)",
       "Analyze the systemic violation of the Treaty of Medicine Lodge (1867) by federal military forces",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "washita_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/washita.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

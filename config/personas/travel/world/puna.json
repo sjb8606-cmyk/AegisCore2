@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Salt_Flat_Geology", "Camelid_Husbandry", "High_Altitude_Survival"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Salt_Flat_Geology",
+      "Camelid_Husbandry",
+      "High_Altitude_Survival"
+    ],
     "learning_objectives": [
       "Explain the geological and climate processes that create the expansive salt flats (Salinas Grandes) of the Puna plateau through evaporation.",
       "Understand the physiological and biological adaptations of Camelids (llamas and vicuñas) to low-oxygen and extreme cold environments.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "puna_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/puna.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

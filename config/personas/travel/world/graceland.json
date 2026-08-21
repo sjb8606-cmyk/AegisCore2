@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["pop_culture_history", "music_sociology", "american_gentry"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "pop_culture_history",
+      "music_sociology",
+      "american_gentry"
+    ],
     "learning_objectives": [
       "Understand the social and cultural impact of Elvis Presley in nationalizing rock-and-roll and breaking musical barriers",
       "Analyze the architecture and interior design of Graceland as a reflection of 1970s celebrity material culture",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "graceland_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/graceland.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

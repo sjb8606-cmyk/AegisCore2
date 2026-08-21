@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Business Operations",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Hospitality_Business_Economics", "Event_Based_Business", "Small_Business_Finance"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Hospitality_Business_Economics",
+      "Event_Based_Business",
+      "Small_Business_Finance"
+    ],
     "learning_objectives": [
       "Understand how to calculate food cost per guest and why it should anchor per-head menu pricing.",
       "Analyze how event labor ratio affects profitability differently than in a fixed-location restaurant.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "biz_op_catering_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/biz_op_catering.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

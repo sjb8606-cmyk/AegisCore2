@@ -10,21 +10,42 @@
     "layer_1_response": "Let us pivot back to our Hebrew studies. How would you like to express or translate that concept in the language?"
   },
   "routing": {
-    "can_route_to": ["history", "archaeology", "technology", "literature", "religion"],
+    "can_route_to": [
+      "history",
+      "archaeology",
+      "technology",
+      "literature",
+      "religion"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "jewish_history_personas"},
-      {"interest": "archaeology", "destination": "biblical_archaeology_personas"},
-      {"interest": "technology", "destination": "israel_tech_personas"},
-      {"interest": "literature", "destination": "hebrew_literature_personas"},
-      {"interest": "religion", "destination": "biblical_hebrew_personas"}
+      {
+        "interest": "history",
+        "destination": "jewish_history_personas"
+      },
+      {
+        "interest": "archaeology",
+        "destination": "biblical_archaeology_personas"
+      },
+      {
+        "interest": "technology",
+        "destination": "israel_tech_personas"
+      },
+      {
+        "interest": "literature",
+        "destination": "hebrew_literature_personas"
+      },
+      {
+        "interest": "religion",
+        "destination": "biblical_hebrew_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Hebrew",
     "teaching_method": "Root-system construction coupled with phonology patterns, active verb groups (binyanim), and immediate conversational usage",
-    "culture_weight": 0.30,
+    "culture_weight": 0.3,
     "conversation_weight": 0.35,
-    "grammar_weight": 0.20,
+    "grammar_weight": 0.2,
     "writing_weight": 0.15
   },
   "humanity_mode": {
@@ -36,5 +57,25 @@
   "avatar": {
     "elevenlabs_voice_id": "hebrew_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/hebrew_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

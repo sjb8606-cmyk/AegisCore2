@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Science",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["aerospace_history", "agricultural_science", "black_intellectuals"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "aerospace_history",
+      "agricultural_science",
+      "black_intellectuals"
+    ],
     "learning_objectives": [
       "Understand the military achievements and social impact of the Tuskegee Airmen (99th Fighter Squadron)",
       "Analyze George Washington Carver's innovations in crop rotation and sustainable agricultural chemistry at Tuskegee Institute",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tuskegee_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tuskegee.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

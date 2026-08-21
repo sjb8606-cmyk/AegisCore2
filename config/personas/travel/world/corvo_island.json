@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Local Culture",
-    "grade_levels": ["elementary", "middle_school", "adult"],
-    "curriculum_tags": ["Volcanic Calderas", "Subtropical Isolation", "Avian Migration"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Volcanic Calderas",
+      "Subtropical Isolation",
+      "Avian Migration"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Caldeirão (the collapse caldera of Corvo) and its unique microclimate.",
       "Analyze the traditional wood-lock carpentry and architecture of Vila do Porto, designed to withstand extreme Atlantic storms.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "corvo_island_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/corvo_island.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

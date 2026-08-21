@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Coastal Geography",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Coastal Geomorphology", "Maritime Trade", "Maya Architecture"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Coastal Geomorphology",
+      "Maritime Trade",
+      "Maya Architecture"
+    ],
     "learning_objectives": [
       "Understand the geological formation of Yucatan's limestone cliffs and how marine erosion creates pocket beaches and reef barriers in Tulum.",
       "Analyze the role of Tulum (ancient Zama) as a vital fortified maritime trading hub connecting Yucatan to Central America.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tulum_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tulum.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

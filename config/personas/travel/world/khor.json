@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["geomorphology", "desert_ecosystems", "hydrology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "geomorphology",
+      "desert_ecosystems",
+      "hydrology"
+    ],
     "learning_objectives": [
       "Explain the geological and hydrological conditions that allow the sea to penetrate deep into the heart of the Qatari desert, forming the Inland Sea.",
       "Analyze the ecological adaptations of local flora and fauna, such as the Arabian Oryx, to extreme saline and arid environments.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "khor_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/khor.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

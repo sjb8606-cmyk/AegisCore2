@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["sloth_biology", "wildlife_rehabilitation", "canopy_conservation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "sloth_biology",
+      "wildlife_rehabilitation",
+      "canopy_conservation"
+    ],
     "learning_objectives": [
       "Explain the unique, slow metabolic and digestive adaptations of folivorous mammals like the Two-toed and Three-toed Sloth.",
       "Understand the ecological threats to urbanizing wildlife, focusing on electrocution on power lines, dog attacks, and habitat fragmentation.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sloth_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sloth.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

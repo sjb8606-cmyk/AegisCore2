@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["industrial_history", "german_immigration", "food_chemistry"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "industrial_history",
+      "german_immigration",
+      "food_chemistry"
+    ],
     "learning_objectives": [
       "Understand the biological process of fermentation and the chemistry of beer brewing (hops, yeast, water)",
       "Analyze the socioeconomic dominance of German immigrants in establishing Milwaukee as the 'Beer Capital of the World'",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "brewery_mke_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/brewery_mke.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

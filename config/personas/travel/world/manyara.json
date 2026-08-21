@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["rift_valley_lakes", "primate_behavior", "ecosystem_transitions"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "rift_valley_lakes",
+      "primate_behavior",
+      "ecosystem_transitions"
+    ],
     "learning_objectives": [
       "Explain the geological and hydrological processes of the East African Rift that formed the shallow, endorheic basin of Lake Manyara.",
       "Understand the behavioral adaptations and environmental factors that drive lions to climb trees in the groundwater forest.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "manyara_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/manyara.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

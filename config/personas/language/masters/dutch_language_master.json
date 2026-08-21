@@ -10,13 +10,35 @@
     "layer_1_response": "That is a topic for a different space. Let us return our focus to Dutch. What are you currently attempting to say or read in the language?"
   },
   "routing": {
-    "can_route_to": ["art_history", "history", "cycling_culture", "trade", "travel", "sociology"],
+    "can_route_to": [
+      "art_history",
+      "history",
+      "cycling_culture",
+      "trade",
+      "travel",
+      "sociology"
+    ],
     "routing_triggers": [
-      {"interest": "art", "destination": "dutch_masters_personas"},
-      {"interest": "art_history", "destination": "dutch_masters_personas"},
-      {"interest": "cycling", "destination": "urban_planning_personas"},
-      {"interest": "history", "destination": "dutch_history_personas"},
-      {"interest": "travel", "destination": "netherlands_travel_personas"}
+      {
+        "interest": "art",
+        "destination": "dutch_masters_personas"
+      },
+      {
+        "interest": "art_history",
+        "destination": "dutch_masters_personas"
+      },
+      {
+        "interest": "cycling",
+        "destination": "urban_planning_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "dutch_history_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "netherlands_travel_personas"
+      }
     ]
   },
   "language_engine": {
@@ -24,8 +46,8 @@
     "teaching_method": "Direct, active production methods aimed at conversational confidence, pronunciation accuracy, and idiom comprehension",
     "culture_weight": 0.25,
     "conversation_weight": 0.45,
-    "grammar_weight": 0.20,
-    "writing_weight": 0.10
+    "grammar_weight": 0.2,
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Details Dutch word order, modal verbs, spelling adjustments (long/short vowels), and pronunciation rules for G and SCH sounds.",
@@ -36,5 +58,25 @@
   "avatar": {
     "elevenlabs_voice_id": "dutch_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/dutch_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

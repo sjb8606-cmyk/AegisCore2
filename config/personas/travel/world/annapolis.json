@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Governance",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["colonial_history", "naval_history", "civic_design"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "colonial_history",
+      "naval_history",
+      "civic_design"
+    ],
     "learning_objectives": [
       "Understand the historical significance of the Maryland State House as the oldest state capitol in continuous legislative use",
       "Analyze the strategic founding and educational mission of the United States Naval Academy (established 1845)",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "annapolis_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/annapolis.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

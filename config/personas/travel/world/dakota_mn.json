@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["indigenous_sovereignty", "dakota_war", "colonial_treaties"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "indigenous_sovereignty",
+      "dakota_war",
+      "colonial_treaties"
+    ],
     "learning_objectives": [
       "Understand the political and economic causes of the U.S.-Dakota War of 1862 in southern Minnesota",
       "Analyze the Treaty of Traverse des Sioux (1851) and its role in dispossessing the Dakota of their ancestral lands",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "dakota_mn_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/dakota_mn.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

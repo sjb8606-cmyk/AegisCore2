@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["subantarctic_ecology", "island_sanctuaries", "cultural_harvesting"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "subantarctic_ecology",
+      "island_sanctuaries",
+      "cultural_harvesting"
+    ],
     "learning_objectives": [
       "Understand the ecological significance of Ulva Island as a predator-free open sanctuary and a model for mainland conservation.",
       "Analyze the behavioral differences of the Rakiura Tokoeka (Stewart Island Kiwi) compared to northern kiwi species, particularly their daytime foraging.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "stewart_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/stewart.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

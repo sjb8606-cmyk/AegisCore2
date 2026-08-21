@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Science",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["museum_education", "paleontology", "material_culture"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "museum_education",
+      "paleontology",
+      "material_culture"
+    ],
     "learning_objectives": [
       "Understand the history and progressive pedagogy of children's museums as distinct educational institutions",
       "Analyze how interactive, hands-on exhibits facilitate active learning in science and history",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "childrens_museum_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/childrens_museum.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

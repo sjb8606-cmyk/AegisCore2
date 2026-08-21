@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["modern_architecture", "global_economics", "skyscrapers"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "modern_architecture",
+      "global_economics",
+      "skyscrapers"
+    ],
     "learning_objectives": [
       "Identify the structural and architectural innovations in West Bay's landmark skyscrapers, particularly the Burj Doha and Tornado Tower.",
       "Understand the economic relationship between Qatar's oil and liquefied natural gas (LNG) discoveries and its rapid architectural expansion.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "west_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/west.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

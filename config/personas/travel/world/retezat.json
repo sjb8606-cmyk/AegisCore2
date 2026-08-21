@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Alpine_Glaciology", "Carpathian_Biodiversity", "Primeval_Forest_Conservation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Alpine_Glaciology",
+      "Carpathian_Biodiversity",
+      "Primeval_Forest_Conservation"
+    ],
     "learning_objectives": [
       "Explain the geological and glacial processes that carved the Retezat Mountains, creating the highest concentration of glacial lakes (tarns) in Romania.",
       "Understand the ecological significance of Retezat National Park in protecting Europe's last remaining unfragmented, old-growth primeval forests.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "retezat_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/retezat.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

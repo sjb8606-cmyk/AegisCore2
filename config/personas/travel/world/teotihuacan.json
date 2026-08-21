@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Archaeology",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Classic Mesoamerica", "Archaeoastronomy", "Urban Planning History"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Classic Mesoamerica",
+      "Archaeoastronomy",
+      "Urban Planning History"
+    ],
     "learning_objectives": [
       "Understand the urban planning and scale of Teotihuacan, analyzing how its grid layout and Avenue of the Dead were aligned with astronomical events.",
       "Analyze the Talud-Tablero architectural style as the primary design motif that influenced building across classic Mesoamerica.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "teotihuacan_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/teotihuacan.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

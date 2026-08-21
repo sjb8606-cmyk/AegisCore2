@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Eco-Tourism",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["hydrology", "eco_tourism", "wilderness_preservation"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "hydrology",
+      "eco_tourism",
+      "wilderness_preservation"
+    ],
     "learning_objectives": [
       "Understand the ecological value of free-flowing, undammed river systems",
       "Analyze the logistics and environmental impact of operating off-grid eco-lodges",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "seal_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/seal.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

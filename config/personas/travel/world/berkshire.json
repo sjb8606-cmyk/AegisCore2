@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Arts & Nature",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["music_history", "gilded_age", "cultural_geography"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "music_history",
+      "gilded_age",
+      "cultural_geography"
+    ],
     "learning_objectives": [
       "Understand the Gilded Age development of the Berkshires as an artistic and elite summer sanctuary",
       "Analyze the relationship between landscape and artistic creation, specifically in classical music and literature",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "berkshire_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/berkshire.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

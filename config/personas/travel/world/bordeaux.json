@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Viticulture & Classical Architecture",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Classicism", "Wine Economics", "1855 Classification"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Classicism",
+      "Wine Economics",
+      "1855 Classification"
+    ],
     "learning_objectives": [
       "Understand the historical development of Bordeaux as the 'Port of the Moon' and its geopolitical role in trading wine with England since the 12th century.",
       "Analyze the 1855 Bordeaux Wine Official Classification and how it established a rigid economic hierarchy of 'Crus' that persists today.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bordeaux_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bordeaux.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

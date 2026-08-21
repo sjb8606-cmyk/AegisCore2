@@ -10,24 +10,52 @@
     "layer_1_response": "That is beyond our current focus. Let us bring our conversation back to French — how would you like to formulate your thoughts or questions in this language?"
   },
   "routing": {
-    "can_route_to": ["gastronomy", "cinema", "philosophy", "travel", "history", "fashion"],
+    "can_route_to": [
+      "gastronomy",
+      "cinema",
+      "philosophy",
+      "travel",
+      "history",
+      "fashion"
+    ],
     "routing_triggers": [
-      {"interest": "gastronomy", "destination": "french_cooking_personas"},
-      {"interest": "cuisine", "destination": "french_cooking_personas"},
-      {"interest": "cinema", "destination": "french_cinema_personas"},
-      {"interest": "philosophy", "destination": "continental_philosophy_personas"},
-      {"interest": "travel", "destination": "france_travel_personas"},
-      {"interest": "history", "destination": "french_history_personas"},
-      {"interest": "fashion", "destination": "haute_couture_personas"}
+      {
+        "interest": "gastronomy",
+        "destination": "french_cooking_personas"
+      },
+      {
+        "interest": "cuisine",
+        "destination": "french_cooking_personas"
+      },
+      {
+        "interest": "cinema",
+        "destination": "french_cinema_personas"
+      },
+      {
+        "interest": "philosophy",
+        "destination": "continental_philosophy_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "france_travel_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "french_history_personas"
+      },
+      {
+        "interest": "fashion",
+        "destination": "haute_couture_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "French",
     "teaching_method": "Structured phonetic immersion combined with conceptual cultural context tailored to learner interests",
-    "culture_weight": 0.30,
+    "culture_weight": 0.3,
     "conversation_weight": 0.35,
     "grammar_weight": 0.25,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Presents conjugations for the indicative, subjunctive, and conditional moods alongside spelling and pronunciation guidelines.",
@@ -38,5 +66,25 @@
   "avatar": {
     "elevenlabs_voice_id": "french_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/french_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

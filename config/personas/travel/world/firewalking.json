@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Philosophy",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["religious_philosophy", "cultural_diversity", "thermal_physiology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "religious_philosophy",
+      "cultural_diversity",
+      "thermal_physiology"
+    ],
     "learning_objectives": [
       "Understand the philosophical and spiritual meaning of the Theemithi (Firewalking) ritual in South Indian Hindu traditions.",
       "Analyze the physical and biological factors (such as sweat evaporation and brief skin contact) involved in walking safely over hot coals.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "firewalking_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/firewalking.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

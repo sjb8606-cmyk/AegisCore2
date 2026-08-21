@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Ecology & Maritime History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Federal Democracies", "Coastal Geomorphology", "Avian Conservation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Federal Democracies",
+      "Coastal Geomorphology",
+      "Avian Conservation"
+    ],
     "learning_objectives": [
       "Understand the historical role of the Lycian League and the Bouleuterion of Patara as the earliest recorded model of a federal, representative democracy (celebrated by Montesquieu).",
       "Analyze the geological formation of Patara’s 18-kilometer sandy barrier beach and its role in protecting the inner estuary.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "patara_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/patara.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

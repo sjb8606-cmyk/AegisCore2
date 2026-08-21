@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Wilderness",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["arctic_ecology", "conservation", "biogeography"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "arctic_ecology",
+      "conservation",
+      "biogeography"
+    ],
     "learning_objectives": [
       "Understand the microclimate conditions that allow the Thelon River valley to support a boreal forest oasis in the tundra",
       "Analyze the biology and survival adaptations of the muskox in extreme arctic environments",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "thelon_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/thelon.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

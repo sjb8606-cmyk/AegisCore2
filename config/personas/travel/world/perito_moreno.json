@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Glacial_Dynamics", "Freshwater_Conservation", "Andean_Tectonics"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Glacial_Dynamics",
+      "Freshwater_Conservation",
+      "Andean_Tectonics"
+    ],
     "learning_objectives": [
       "Explain the geological and climate processes that sustain the Perito Moreno Glacier as one of the few stable or advancing glaciers in the world.",
       "Understand the mechanics of 'glacial rupture'—detailing how the ice dam at the Temple of the Sun is built up and dramatically collapses.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "perito_moreno_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/perito_moreno.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

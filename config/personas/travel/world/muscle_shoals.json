@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Music & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["music_history", "civil_rights_era", "cultural_geography"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "music_history",
+      "civil_rights_era",
+      "cultural_geography"
+    ],
     "learning_objectives": [
       "Understand the historical development and global impact of the 'Muscle Shoals Sound' in the 1960s and 1970s",
       "Analyze the socioeconomic and racial collaboration of Black artists (like Aretha Franklin) and white studio musicians (the Swampers) during segregation",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "muscle_shoals_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/muscle_shoals.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

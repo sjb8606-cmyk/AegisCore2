@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Nature & Maritime Lifestyle",
-    "grade_levels": ["elementary", "middle_school", "adult"],
-    "curriculum_tags": ["Coastal Geomorphology", "Marine Ecology", "Local Food Systems"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Coastal Geomorphology",
+      "Marine Ecology",
+      "Local Food Systems"
+    ],
     "learning_objectives": [
       "Understand the geomorphology of the Howth Peninsula (Cambrian quartzite and shale) and how its cliffs withstand Irish Sea wave erosion.",
       "Analyze the ecological role of Dublin Bay (UNESCO Biosphere Reserve) in supporting rich marine and avian communities, specifically gray seals.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "howth_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/howth.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

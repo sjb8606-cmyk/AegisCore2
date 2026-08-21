@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Culinary",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["marine_biology_humboldt", "industrial_revolution_architecture", "chilean_gastronomy"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "marine_biology_humboldt",
+      "industrial_revolution_architecture",
+      "chilean_gastronomy"
+    ],
     "learning_objectives": [
       "Explain the ecological and climatic role of the Humboldt Current in generating one of the most productive marine ecosystems on Earth along Chile's coast.",
       "Analyze the structural design and pre-fabricated engineering of the Mercado Central's cast-iron roof, manufactured in Glasgow in 1872.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mercado_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mercado.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

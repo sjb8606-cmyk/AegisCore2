@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Landscape Design & Culinary Culture",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Jiangnan Gardens", "Culinary Science", "Traditional Commerce"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Jiangnan Gardens",
+      "Culinary Science",
+      "Traditional Commerce"
+    ],
     "learning_objectives": [
       "Understand the design principles of the 'Jiangnan' classical garden (Yuyuan), focusing on how it uses winding paths, rockeries, and water to create a sense of infinite space.",
       "Analyze the culinary science of 'Xiaolongbao' (soup dumplings), explaining how agar-agar gelatin in the pork filling melts into savory broth during steaming.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "yuyuan_guide_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/yuyuan_guide.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

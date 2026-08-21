@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Business Operations",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Personal_Care_Business_Economics", "Service_Business_Operations", "Small_Business_Finance"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Personal_Care_Business_Economics",
+      "Service_Business_Operations",
+      "Small_Business_Finance"
+    ],
     "learning_objectives": [
       "Understand chair utilization rate as the core profitability metric for a service-based business charging by appointment.",
       "Analyze the difference between commission-based and booth-rent business models and their financial implications for owners and stylists.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "biz_op_salon_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/biz_op_salon.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

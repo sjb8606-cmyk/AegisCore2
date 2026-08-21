@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Geomorphology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["industrial_history", "environmental_racism", "geology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "industrial_history",
+      "environmental_racism",
+      "geology"
+    ],
     "learning_objectives": [
       "Understand the geomorphology of the New River Gorge at Hawks Nest",
       "Analyze the causes and legal aftermath of the Hawks Nest Tunnel Disaster (1830s-1930s), the worst industrial disaster in US history",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "hawks_nest_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/hawks_nest.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

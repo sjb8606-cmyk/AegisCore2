@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Literature & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["american_literature", "book_history", "cultural_geography"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "american_literature",
+      "book_history",
+      "cultural_geography"
+    ],
     "learning_objectives": [
       "Understand the historical role of independent bookstores in cultivating regional literary movements",
       "Analyze the socioeconomic and spatial design of a massive, block-long public bookstore",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "powells_books_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/powells_books.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

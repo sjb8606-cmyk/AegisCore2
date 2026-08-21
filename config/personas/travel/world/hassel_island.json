@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Maritime History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["maritime_history", "shipbuilding", "coastal_defense"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "maritime_history",
+      "shipbuilding",
+      "coastal_defense"
+    ],
     "learning_objectives": [
       "Understand the strategic maritime importance of Hassel Island in protecting Charlotte Amalie's harbor",
       "Analyze the engineering and history of the Creque Marine Railway (completed 1840)",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "hassel_island_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/hassel_island.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

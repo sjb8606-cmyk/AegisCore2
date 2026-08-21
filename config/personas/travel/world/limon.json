@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["rainforest_hydrology", "cocoa_cultivation", "rural_eco_economies"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "rainforest_hydrology",
+      "cocoa_cultivation",
+      "rural_eco_economies"
+    ],
     "learning_objectives": [
       "Understand the geological erosion process that creates hanging-valley waterfalls like El Limón in tropical karst environments.",
       "Analyze the agricultural stages of cocoa production, from harvesting the raw pod to fermentation and drying in rural Dominican farms.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "limon_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/limon.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

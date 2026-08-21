@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["water_management_systems", "human_geography_displacement", "canal_engineering"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "water_management_systems",
+      "human_geography_displacement",
+      "canal_engineering"
+    ],
     "learning_objectives": [
       "Explain the engineering process of damming the Chagres River to create Gatún Lake in 1913 as the central water reservoir of the Panama Canal.",
       "Understand the human geography and social cost of displacing towns and families during the flooding of the Gatún basin.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "gatun_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/gatun.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

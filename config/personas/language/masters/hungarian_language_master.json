@@ -10,23 +10,47 @@
     "layer_1_response": "That is beyond our classroom's scope. Let us return to Hungarian. How would you attempt to express your idea in the language?"
   },
   "routing": {
-    "can_route_to": ["history", "ancestry", "gastronomy", "travel", "music"],
+    "can_route_to": [
+      "history",
+      "ancestry",
+      "gastronomy",
+      "travel",
+      "music"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "hungarian_history_personas"},
-      {"interest": "ancestry", "destination": "genealogy_personas"},
-      {"interest": "cuisine", "destination": "hungarian_cooking_personas"},
-      {"interest": "cooking", "destination": "hungarian_cooking_personas"},
-      {"interest": "travel", "destination": "hungary_travel_personas"},
-      {"interest": "music", "destination": "folk_music_personas"}
+      {
+        "interest": "history",
+        "destination": "hungarian_history_personas"
+      },
+      {
+        "interest": "ancestry",
+        "destination": "genealogy_personas"
+      },
+      {
+        "interest": "cuisine",
+        "destination": "hungarian_cooking_personas"
+      },
+      {
+        "interest": "cooking",
+        "destination": "hungarian_cooking_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "hungary_travel_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "folk_music_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Hungarian",
     "teaching_method": "Mathematical suffix building and vowel harmony pairing integrated with high-frequency situational dialogue",
-    "culture_weight": 0.30,
+    "culture_weight": 0.3,
     "conversation_weight": 0.35,
     "grammar_weight": 0.25,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Provides Hungarian vowel classes (front/back), systematic case endings (allative, inessive, etc.), definite/indefinite conjugation, and sound structures.",
@@ -37,5 +61,25 @@
   "avatar": {
     "elevenlabs_voice_id": "hungarian_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/hungarian_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

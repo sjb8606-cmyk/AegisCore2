@@ -13,22 +13,43 @@
     "layer_1_response": "Let us bring our focus back to Bone Buginese. What specific word, phrase, or pronunciation structure are we working to analyze right now?"
   },
   "routing": {
-    "can_route_to": ["history", "literature", "script", "community", "arts"],
+    "can_route_to": [
+      "history",
+      "literature",
+      "script",
+      "community",
+      "arts"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "bone_history_personas"},
-      {"interest": "literature", "destination": "la_galigo_personas"},
-      {"interest": "script", "destination": "lontara_script_personas"},
-      {"interest": "community", "destination": "bugis_culture_personas"},
-      {"interest": "arts", "destination": "traditional_arts_personas"}
+      {
+        "interest": "history",
+        "destination": "bone_history_personas"
+      },
+      {
+        "interest": "literature",
+        "destination": "la_galigo_personas"
+      },
+      {
+        "interest": "script",
+        "destination": "lontara_script_personas"
+      },
+      {
+        "interest": "community",
+        "destination": "bugis_culture_personas"
+      },
+      {
+        "interest": "arts",
+        "destination": "traditional_arts_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Buginese",
     "teaching_method": "Phonetic voice coaching combined with Bone Buginese vocabulary drills, Lontara script analysis, and active social conversation",
-    "culture_weight": 0.30,
+    "culture_weight": 0.3,
     "conversation_weight": 0.45,
     "grammar_weight": 0.15,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Provides Bone Buginese sound structures, basic sentence frameworks, pronoun tables, and syntax.",
@@ -39,5 +60,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bone_buginese_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bone_buginese_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Sacred Landscapes",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Early Christian Monasticism", "Dry-Stone Technology", "Island Biogeography"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Early Christian Monasticism",
+      "Dry-Stone Technology",
+      "Island Biogeography"
+    ],
     "learning_objectives": [
       "Understand the history and spiritual motivation of early Christian ascetic monks who established a monastery on Skellig Michael in the 6th century.",
       "Analyze the structural engineering of the 'Clochán' (beehive stone hut), explaining how limestone slabs are layered in concentric rings without mortar to remain completely water-tight.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "skellig_michael_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/skellig_michael.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Medieval_Guilds", "UNESCO_Inhabited_Citadels", "Vlad_the_Impaler_Origins"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Medieval_Guilds",
+      "UNESCO_Inhabited_Citadels",
+      "Vlad_the_Impaler_Origins"
+    ],
     "learning_objectives": [
       "Analyze the defensive urban planning of Sighișoara, detailing how specific artisan guilds (e.g., Tinsmiths, Tailors) were legally responsible for financing and defending specific towers.",
       "Understand the historical context of the birth of Vlad III (The Impaler) during his father's exile in the citadel.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sighisoara_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sighisoara.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

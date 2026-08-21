@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Limnology", "Sailing_Regattas", "Lakeside_Ecology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Limnology",
+      "Sailing_Regattas",
+      "Lakeside_Ecology"
+    ],
     "learning_objectives": [
       "Explain the geological formation of Lake Balaton as a shallow, tectonic lake and how its depth affects its temperature and color.",
       "Understand the history and social significance of the Kékszalag (Blue Ribbon) Round-Balaton Regatta as Europe's oldest and longest lake race.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "balaton_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/balaton.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

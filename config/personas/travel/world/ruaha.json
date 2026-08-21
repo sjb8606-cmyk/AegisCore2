@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["savanna_ecology", "baobab_biology", "animal_adaptations"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "savanna_ecology",
+      "baobab_biology",
+      "animal_adaptations"
+    ],
     "learning_objectives": [
       "Explain the unique, physiological adaptations of desert-fringe antelopes (like the Greater Kudu) to survive with minimal water in rocky, arid highlands.",
       "Understand the ecological importance of the Great Ruaha River as the primary dry-season water source for migratory wildlife in the southern plateau.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ruaha_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ruaha.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

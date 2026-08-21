@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Technology",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["industrial_history", "assembly_line", "history_of_technology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "industrial_history",
+      "assembly_line",
+      "history_of_technology"
+    ],
     "learning_objectives": [
       "Understand the mechanical engineering and efficiency principles of Henry Ford's moving assembly line",
       "Analyze the socioeconomic impact of the Model T and the 'five-dollar day' on the American working class",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ford_detroit_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ford_detroit.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

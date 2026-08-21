@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Curatorial Studies",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Minoan Archaeology", "Venetian Colonialism", "Museum Curation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Minoan Archaeology",
+      "Venetian Colonialism",
+      "Museum Curation"
+    ],
     "learning_objectives": [
       "Understand the historical role of Heraklion (Candia) as the primary administrative and naval capital of Venetian Crete.",
       "Analyze the primary artifacts of the Heraklion Archaeological Museum, focusing on the Snake Goddess, the Bull-Leaper fresco, and the Phaistos Disc.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "heraklion_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/heraklion.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

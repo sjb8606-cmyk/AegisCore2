@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["volcanic_caves", "batwa_culture", "subterranean_sanctuaries"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "volcanic_caves",
+      "batwa_culture",
+      "subterranean_sanctuaries"
+    ],
     "learning_objectives": [
       "Explain the geological and volcanic processes of lava flow drainage that formed the basalt caves of Musanze.",
       "Understand the historical role of the caves as crucial shelters and military sanctuaries during historical conflicts in northern Rwanda.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "musanze_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/musanze.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

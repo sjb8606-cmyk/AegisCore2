@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Mountain Geography",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Alpine Geomorphology", "Greek Mythology", "Pastoral Sociology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Alpine Geomorphology",
+      "Greek Mythology",
+      "Pastoral Sociology"
+    ],
     "learning_objectives": [
       "Understand the geological formation of Mount Psiloritis (Ida) as a limestone karst massif and its network of sacred caves.",
       "Analyze the myth of the birth and rearing of Zeus in the Idaean Cave, evaluating its role in pan-Hellenic religion.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "psiloritis_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/psiloritis.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["military_logistics", "american_revolution", "geographic_defense"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "military_logistics",
+      "american_revolution",
+      "geographic_defense"
+    ],
     "learning_objectives": [
       "Understand why Washington selected Morristown (Jockey Hollow) as a highly defensible winter camp to monitor the British in NYC",
       "Analyze the extreme logistical challenges and biological threats (smallpox and freezing) faced by the Continental Army",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "morristown_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/morristown.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

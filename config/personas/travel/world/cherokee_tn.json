@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["indigenous_sovereignty", "sequoyah_syllabary", "colonial_treaties"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "indigenous_sovereignty",
+      "sequoyah_syllabary",
+      "colonial_treaties"
+    ],
     "learning_objectives": [
       "Understand the political and economic structure of the Overhill Cherokee towns in East Tennessee",
       "Analyze the intellectual achievement of Sequoyah in creating the Cherokee syllabary and its impact on literacy",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cherokee_tn_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cherokee_tn.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Botanical Heritage",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Edo Period", "Urban Planning", "Cultural Aesthetics"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Edo Period",
+      "Urban Planning",
+      "Cultural Aesthetics"
+    ],
     "learning_objectives": [
       "Understand the strict urban zoning laws of the Edo period that physically separated the samurai caste from the merchants.",
       "Analyze the architectural features of a high-ranking samurai estate in northern Japan.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kakunodate_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kakunodate.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

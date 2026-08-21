@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Local Culture & Culinary History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Urban Geography", "Culinary Chemistry", "Socio-Cultural History"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Urban Geography",
+      "Culinary Chemistry",
+      "Socio-Cultural History"
+    ],
     "learning_objectives": [
       "Understand the Greek urban planning of 'Neapolis' (Naples), analyzing how Spaccanapoli survives as the lower decumanus of the ancient grid.",
       "Analyze the chemistry and physics of authentic Neapolitan Pizza (Pizza Napoletana STG), focusing on high-heat wood combustion (485°C) and short bake times (60-90 seconds).",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "spaccanapoli_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/spaccanapoli.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

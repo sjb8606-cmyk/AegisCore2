@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Heritage",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["avain_ecology", "sustainable_harvesting", "arctic_geography"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "avain_ecology",
+      "sustainable_harvesting",
+      "arctic_geography"
+    ],
     "learning_objectives": [
       "Understand the critical ecological function of a polynya for wintering sea ducks in Hudson Bay",
       "Analyze the sustainable harvesting techniques used by the Inuit to gather eider down without harming the bird populations",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sanikiluaq_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sanikiluaq.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

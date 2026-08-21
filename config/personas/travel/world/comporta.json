@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Local Culture & Coastal Geography",
-    "grade_levels": ["elementary", "middle_school", "adult"],
-    "curriculum_tags": ["Wetland Agriculture", "Avian Conservation", "Coastal Geomorphology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Wetland Agriculture",
+      "Avian Conservation",
+      "Coastal Geomorphology"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Tróia Peninsula and how sand dunes and salt-marshes create unique coastal habitats.",
       "Analyze the agricultural history of rice cultivation in the sandy, high-salinity soils of the Sado basin.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "comporta_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/comporta.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["colonial_fortifications", "maritime_piracy", "swahili_architecture"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "colonial_fortifications",
+      "maritime_piracy",
+      "swahili_architecture"
+    ],
     "learning_objectives": [
       "Analyze the military engineering and strategic placement of Mombasa's Fort Jesus, designed by Italian architect Giovanni Battista Cairati in 1593.",
       "Understand the historical role of Mombasa as a primary port of call for the Indian Ocean spice and slave trades under Portuguese and Omani rule.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mombasa_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mombasa.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,19 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["savanna_ecology", "wildebeest_migration", "predator_dynamics"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "savanna_ecology",
+      "wildebeest_migration",
+      "predator_dynamics"
+    ],
     "learning_objectives": [
       "Understand the ecological and evolutionary factors behind the annual migration of millions of Blue Wildebeest (Connochaetes taurinus) in the Serengeti.",
       "Analyze the predator-prey dynamics of the savanna, focusing on the hunting strategies of large lion prides and cheetahs.",
@@ -35,5 +46,25 @@
   "avatar": {
     "elevenlabs_voice_id": "serengeti_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/serengeti.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

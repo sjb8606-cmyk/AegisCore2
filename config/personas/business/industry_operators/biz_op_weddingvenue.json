@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Business Operations",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Event_Venue_Economics", "Seasonal_Business_Planning", "Small_Business_Finance"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Event_Venue_Economics",
+      "Seasonal_Business_Planning",
+      "Small_Business_Finance"
+    ],
     "learning_objectives": [
       "Understand why date-based capacity makes an unbooked peak date a permanently lost revenue opportunity.",
       "Analyze how preferred vendor commission structures create a secondary revenue stream for venues.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "biz_op_weddingvenue_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/biz_op_weddingvenue.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Industrial Archaeology",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Colonial Mining", "Ultra-Baroque Art", "Pre-Hispanic Fortresses"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Colonial Mining",
+      "Ultra-Baroque Art",
+      "Pre-Hispanic Fortresses"
+    ],
     "learning_objectives": [
       "Understand the historical role of Zacatecas as a primary silver mining capital of New Spain and its economic exploitation under the Camino Real de Tierra Adentro.",
       "Analyze the architectural and decorative complexity of the Zacatecas Cathedral, focusing on how its pink cantera facade represents the peak of Mexican Baroque (Churrigueresque).",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "zacatecas_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/zacatecas.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

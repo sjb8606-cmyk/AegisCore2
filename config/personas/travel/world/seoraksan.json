@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Mesozoic_Granite", "Alpine_Safety_Korea", "Subalpine_Biodiversity"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Mesozoic_Granite",
+      "Alpine_Safety_Korea",
+      "Subalpine_Biodiversity"
+    ],
     "learning_objectives": [
       "Explain the geological formation of Seoraksan’s dramatic rock pillars as Mesozoic granite intrusions uncovered by millions of years of tectonic uplift and weathering.",
       "Understand the ecological importance of Seoraksan’s high-altitude pine forests and its role as a protected habitat for the endangered Asian black bear.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "seoraksan_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/seoraksan.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

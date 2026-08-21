@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["maritime_history", "funicular_engineering", "urban_geography"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "maritime_history",
+      "funicular_engineering",
+      "urban_geography"
+    ],
     "learning_objectives": [
       "Understand the historical role of Valparaíso as the primary Pacific port of call for ships navigating the Strait of Magellan before the Panama Canal opened (1914).",
       "Analyze the mechanical engineering and urban utility of the historic funicular (ascensor) system in resolving vertical transportation challenges.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "valparaiso_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/valparaiso.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

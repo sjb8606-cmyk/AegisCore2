@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Art History & Architecture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Neoclassical Urbanism", "Art Nouveau", "European Dynastic History"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Neoclassical Urbanism",
+      "Art Nouveau",
+      "European Dynastic History"
+    ],
     "learning_objectives": [
       "Understand the urban planning of Place Stanislas, analyzing how it bridged Nancy's medieval Old Town and the 16th-century New Town.",
       "Analyze the organic, nature-inspired philosophy of the 'École de Nancy' (Art Nouveau movement led by Émile Gallé and Daum).",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "nancy_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/nancy.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

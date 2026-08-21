@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["gold_rush_history", "environmental_impact", "frontier_justice"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "gold_rush_history",
+      "environmental_impact",
+      "frontier_justice"
+    ],
     "learning_objectives": [
       "Understand the history and global economic impact of the 1849 California Gold Rush",
       "Analyze the environmental devastation caused by early hydraulic and placer mining in the Sierra foothills",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "gold_rush_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/gold_rush.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

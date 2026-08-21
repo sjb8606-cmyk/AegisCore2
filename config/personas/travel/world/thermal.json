@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Culinary",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Geothermal_Hydrology", "Balneological_History", "Ottoman_Architecture"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Geothermal_Hydrology",
+      "Balneological_History",
+      "Ottoman_Architecture"
+    ],
     "learning_objectives": [
       "Explain the geological tectonics of the Buda thermal line that allow mineral-rich hot springs to rise to the surface in Budapest.",
       "Distinguish between Ottoman bath architecture (characterized by octagonal pools and dome skylights) and Belle Époque spa design.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "thermal_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/thermal.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

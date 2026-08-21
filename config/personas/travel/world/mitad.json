@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Science",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["geodesy", "coriolis_force", "astronomy_history"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "geodesy",
+      "coriolis_force",
+      "astronomy_history"
+    ],
     "learning_objectives": [
       "Understand the historical and scientific significance of the 18th-century French Geodesic Mission that verified the oblate spheroid shape of the Earth.",
       "Analyze the physical mechanics of gravity and centrifugal forces at the equator, explaining why objects weigh slightly less at Latitude 0.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mitad_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mitad.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

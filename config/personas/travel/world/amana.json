@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Religion",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["utopian_societies", "religious_history", "communal_economics"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "utopian_societies",
+      "religious_history",
+      "communal_economics"
+    ],
     "learning_objectives": [
       "Understand the theological and social structure of the Community of True Inspiration (Amana Colonies)",
       "Analyze the Great Change of 1932 when the colonies transitioned from communal living to a joint-stock cooperative corporation",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "amana_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/amana.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

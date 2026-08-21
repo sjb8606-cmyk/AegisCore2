@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Maritime History",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["estuary_ecology", "colonial_geography", "conservation"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "estuary_ecology",
+      "colonial_geography",
+      "conservation"
+    ],
     "learning_objectives": [
       "Understand the geological and historical role of Bayou St. John as a natural portage route connecting Lake Pontchartrain to the Mississippi River",
       "Analyze the ecological biodiversity of City Park's ancient live oak forest and bayou wetlands",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bayou_st_john_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bayou_st_john.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["political_history", "architectural_preservation", "sociology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "political_history",
+      "architectural_preservation",
+      "sociology"
+    ],
     "learning_objectives": [
       "Understand the 19th-century maritime wealth that funded the historic architecture of Maine's coastal villages",
       "Analyze the phenomenon of 'summer White Houses' and the intersection of immense political power with small-town life",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kennebunk_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kennebunk.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

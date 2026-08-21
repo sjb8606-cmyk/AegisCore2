@@ -10,21 +10,45 @@
     "layer_1_response": "Let us return to Matsigenka. What specific word, polite expression, or phrase can we study or translate right now?"
   },
   "routing": {
-    "can_route_to": ["heritage", "travel", "music", "literature", "history"],
+    "can_route_to": [
+      "heritage",
+      "travel",
+      "music",
+      "literature",
+      "history"
+    ],
     "routing_triggers": [
-      {"interest": "heritage", "destination": "arawakan_heritage_personas"},
-      {"interest": "family", "destination": "arawakan_heritage_personas"},
-      {"interest": "travel", "destination": "madre_de_dios_travel_personas"},
-      {"interest": "music", "destination": "traditional_songs_personas"},
-      {"interest": "literature", "destination": "matsigenka_literature_personas"},
-      {"interest": "history", "destination": "manu_history_personas"}
+      {
+        "interest": "heritage",
+        "destination": "arawakan_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "arawakan_heritage_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "madre_de_dios_travel_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "traditional_songs_personas"
+      },
+      {
+        "interest": "literature",
+        "destination": "matsigenka_literature_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "manu_history_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Matsigenka",
     "teaching_method": "Soft phonetic pronunciation coaching paired with grammatical honorific registers, local vocabulary, and realistic conversational scenarios",
-    "culture_weight": 0.40,
-    "conversation_weight": 0.40,
+    "culture_weight": 0.4,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.15,
     "writing_weight": 0.05
   },
@@ -37,5 +61,25 @@
   "avatar": {
     "elevenlabs_voice_id": "matsigenka_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/matsigenka_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["industrial_history", "tobacco_economy", "urban_renewal"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "industrial_history",
+      "tobacco_economy",
+      "urban_renewal"
+    ],
     "learning_objectives": [
       "Understand the rise and global dominance of the Duke family's tobacco monopoly in the late 19th century",
       "Analyze the process of adaptive reuse in turning massive brick industrial warehouses into modern commercial hubs",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "durham_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/durham.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

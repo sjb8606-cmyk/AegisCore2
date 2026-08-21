@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Culinary",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["High_Altitude_Viticulture", "Volcanic_Terroir", "Torrontes_Grape_Science"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "High_Altitude_Viticulture",
+      "Volcanic_Terroir",
+      "Torrontes_Grape_Science"
+    ],
     "learning_objectives": [
       "Explain the biological and geological factors, particularly the high UV radiation and extreme day-night temperature swings at 1,700 meters, that define the Torrontés grape.",
       "Understand the historical role of the Jesuit missionaries in introducing wine production and irrigation systems to Northwest Argentina in the 17th century.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cafayate_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cafayate.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

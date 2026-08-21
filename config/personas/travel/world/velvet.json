@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Velvet_Revolution", "Charter_77", "Dissident_Literature"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Velvet_Revolution",
+      "Charter_77",
+      "Dissident_Literature"
+    ],
     "learning_objectives": [
       "Understand the social and political origins of the 1989 Velvet Revolution, distinguishing it from other Eastern European anti-communist movements.",
       "Analyze Václav Havel's philosophical concept of 'The Power of the Powerless' and the responsibility of 'living in truth.'",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "velvet_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/velvet.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

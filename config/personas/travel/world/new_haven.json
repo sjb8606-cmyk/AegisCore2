@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Culture & Education",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["urban_sociology", "culinary_history", "higher_education"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "urban_sociology",
+      "culinary_history",
+      "higher_education"
+    ],
     "learning_objectives": [
       "Understand the historical tension and symbiosis between an elite Ivy League institution and a working-class industrial city",
       "Analyze the cultural impact of Italian immigration on the culinary identity of New England (specifically apizza)",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "new_haven_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/new_haven.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

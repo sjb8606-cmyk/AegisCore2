@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["mammalian_migration", "seed_dispersal_mechanics", "wetland_ecology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "mammalian_migration",
+      "seed_dispersal_mechanics",
+      "wetland_ecology"
+    ],
     "learning_objectives": [
       "Understand the ecological and evolutionary factors behind the annual migration of ten million Straw-colored Fruit Bats (Eidolon helvum) to Kasanka.",
       "Analyze the critical role of fruit bats as key seed dispersers, explaining how their migration regenerates forests across the African continent.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kasanka_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kasanka.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Law",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["penal_history", "civil_rights", "maritime_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "penal_history",
+      "civil_rights",
+      "maritime_history"
+    ],
     "learning_objectives": [
       "Understand the historical role of Alcatraz as a premier federal high-security prison",
       "Analyze the strategic and political significance of the 1969-1971 Occupation of Alcatraz by Indians of All Tribes",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "alcatraz_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/alcatraz.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Nature",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["tectonics", "geomorphology", "desert_ecology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "tectonics",
+      "geomorphology",
+      "desert_ecology"
+    ],
     "learning_objectives": [
       "Understand the geological forces of crustal extension and normal faulting that created the Basin and Range Province",
       "Analyze the ecological adaptations of the Great Basin desert flora, specifically the sagebrush community",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "basin_range_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/basin_range.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

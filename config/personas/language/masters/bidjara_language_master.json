@@ -10,13 +10,34 @@
     "layer_1_response": "Let us bring our focus back to Bidjara. What specific word, rock art description, or pronunciation structure are we practicing right now?"
   },
   "routing": {
-    "can_route_to": ["history", "ecology", "storytelling", "travel", "art"],
+    "can_route_to": [
+      "history",
+      "ecology",
+      "storytelling",
+      "travel",
+      "art"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "carnarvon_history_personas"},
-      {"interest": "ecology", "destination": "gorge_ecology_personas"},
-      {"interest": "storytelling", "destination": "bidjara_storytelling_personas"},
-      {"interest": "travel", "destination": "carnarvon_travel_personas"},
-      {"interest": "art", "destination": "rock_art_personas"}
+      {
+        "interest": "history",
+        "destination": "carnarvon_history_personas"
+      },
+      {
+        "interest": "ecology",
+        "destination": "gorge_ecology_personas"
+      },
+      {
+        "interest": "storytelling",
+        "destination": "bidjara_storytelling_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "carnarvon_travel_personas"
+      },
+      {
+        "interest": "art",
+        "destination": "rock_art_personas"
+      }
     ]
   },
   "language_engine": {
@@ -36,5 +57,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bidjara_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bidjara_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

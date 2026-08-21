@@ -13,22 +13,43 @@
     "layer_1_response": "Let us bring our focus back to Valley Kashmiri. What specific word, phrase, or pronunciation structure are we working to analyze right now?"
   },
   "routing": {
-    "can_route_to": ["poetry", "travel", "history", "community", "arts"],
+    "can_route_to": [
+      "poetry",
+      "travel",
+      "history",
+      "community",
+      "arts"
+    ],
     "routing_triggers": [
-      {"interest": "poetry", "destination": "sufi_poetry_personas"},
-      {"interest": "travel", "destination": "srinagar_travel_personas"},
-      {"interest": "history", "destination": "kashmir_history_personas"},
-      {"interest": "community", "destination": "valley_culture_personas"},
-      {"interest": "arts", "destination": "kashmiri_art_personas"}
+      {
+        "interest": "poetry",
+        "destination": "sufi_poetry_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "srinagar_travel_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "kashmir_history_personas"
+      },
+      {
+        "interest": "community",
+        "destination": "valley_culture_personas"
+      },
+      {
+        "interest": "arts",
+        "destination": "kashmiri_art_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Kashmiri",
     "teaching_method": "Phonetic voice coaching combined with Valley Kashmiri vocabulary drills, poetic analysis, and active social conversation",
-    "culture_weight": 0.30,
+    "culture_weight": 0.3,
     "conversation_weight": 0.45,
     "grammar_weight": 0.15,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Provides Valley Kashmiri sound structures, basic sentence frameworks, pronoun tables, and syntax.",
@@ -39,5 +60,25 @@
   "avatar": {
     "elevenlabs_voice_id": "valley_kashmiri_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/valley_kashmiri_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

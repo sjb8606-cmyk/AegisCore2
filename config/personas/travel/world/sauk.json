@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["indigenous_sovereignty", "black_hawk_war", "colonial_treaties"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "indigenous_sovereignty",
+      "black_hawk_war",
+      "colonial_treaties"
+    ],
     "learning_objectives": [
       "Understand the political structure and agricultural success of the Sauk Nation at Saukenuk",
       "Analyze the causes, campaigns, and catastrophic outcomes of the Black Hawk War of 1832",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sauk_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sauk.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

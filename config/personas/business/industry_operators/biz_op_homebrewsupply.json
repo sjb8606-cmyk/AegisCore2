@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Business Operations",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Niche_Retail_Economics", "Hobbyist_Market_Business", "Small_Business_Finance"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Niche_Retail_Economics",
+      "Hobbyist_Market_Business",
+      "Small_Business_Finance"
+    ],
     "learning_objectives": [
       "Understand why perishable specialty ingredients require tighter inventory turnover management than typical retail goods.",
       "Analyze how class or workshop revenue can supplement core retail margin in a niche hobbyist business.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "biz_op_homebrewsupply_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/biz_op_homebrewsupply.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

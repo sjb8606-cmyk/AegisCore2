@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Viticulture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Byzantine Fortresses", "Medieval Viticulture", "Mediterranean Siege"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Byzantine Fortresses",
+      "Medieval Viticulture",
+      "Mediterranean Siege"
+    ],
     "learning_objectives": [
       "Understand the military and strategic purpose of the Monemvasia rock as an impregnable, self-sufficient Byzantine fortress-city.",
       "Analyze the history and global trade of 'Malmsey' (Malvasia) sweet wine, which was exported from Monemvasia to European royal courts.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "monemvasia_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/monemvasia.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

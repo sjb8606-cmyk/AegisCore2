@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Coastal Geography & Resilience",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Geomorphology", "Disaster Management", "Marine Economy"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Geomorphology",
+      "Disaster Management",
+      "Marine Economy"
+    ],
     "learning_objectives": [
       "Understand the geomorphology of a 'ria' coastline and why it creates incredibly rich fishing grounds.",
       "Analyze why ria coastlines are uniquely vulnerable to massive tsunami amplification.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sanriku_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sanriku.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

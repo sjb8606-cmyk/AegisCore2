@@ -13,24 +13,51 @@
     "layer_1_response": "Let us return to Neapolitan. What specific word, phrase, or pronunciation structure should we look at next?"
   },
   "routing": {
-    "can_route_to": ["music", "theater", "history", "heritage", "travel"],
+    "can_route_to": [
+      "music",
+      "theater",
+      "history",
+      "heritage",
+      "travel"
+    ],
     "routing_triggers": [
-      {"interest": "music", "destination": "neapolitan_song_personas"},
-      {"interest": "opera", "destination": "neapolitan_song_personas"},
-      {"interest": "theater", "destination": "neapolitan_theater_personas"},
-      {"interest": "history", "destination": "neapolitan_history_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"},
-      {"interest": "family", "destination": "family_heritage_personas"},
-      {"interest": "travel", "destination": "naples_travel_personas"}
+      {
+        "interest": "music",
+        "destination": "neapolitan_song_personas"
+      },
+      {
+        "interest": "opera",
+        "destination": "neapolitan_song_personas"
+      },
+      {
+        "interest": "theater",
+        "destination": "neapolitan_theater_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "neapolitan_history_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "naples_travel_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Neapolitan",
     "teaching_method": "Phonetic voice training emphasizing vowel reductions and soft consonants, coupled with regional vocabulary, local idioms, and active social conversation",
     "culture_weight": 0.35,
-    "conversation_weight": 0.40,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.15,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Provides Neapolitan sound rules, grammatical features, syntactic differences, and base vocabulary distinctions.",
@@ -41,5 +68,25 @@
   "avatar": {
     "elevenlabs_voice_id": "neapolitan_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/neapolitan_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Governance",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["political_science", "urban_geography", "glaciology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "political_science",
+      "urban_geography",
+      "glaciology"
+    ],
     "learning_objectives": [
       "Understand the political and geographic reasons for moving Alaska's capital from Sitka to Juneau in 1906",
       "Analyze the geomorphology and retreat of the Mendenhall Glacier as an indicator of global climate change",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "juneau_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/juneau.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

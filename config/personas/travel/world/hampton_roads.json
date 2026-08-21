@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Maritime History",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["naval_history", "ironclad_warfare", "maritime_logistics"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "naval_history",
+      "ironclad_warfare",
+      "maritime_logistics"
+    ],
     "learning_objectives": [
       "Understand the significance of the Battle of Hampton Roads (1862) as the first battle between ironclad warships",
       "Analyze the strategic geographic advantages of the Hampton Roads roadstead for naval operations",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "hampton_roads_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/hampton_roads.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

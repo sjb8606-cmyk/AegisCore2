@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Political Sociology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Walled Cities", "Civil Rights Movement", "Modern Irish History"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Walled Cities",
+      "Civil Rights Movement",
+      "Modern Irish History"
+    ],
     "learning_objectives": [
       "Understand the military engineering of the Derry Walls (completed 1618) as the premier example of a planned, Renaissance-garrison town.",
       "Analyze the historical significance of the Siege of Derry (1689) and its role in shaping Loyalist and Unionist political identity.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "derry_walls_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/derry_walls.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

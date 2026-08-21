@@ -10,24 +10,52 @@
     "layer_1_response": "Let us return our attention to Mandarin. How might we explore or express that concept within our language exercises?"
   },
   "routing": {
-    "can_route_to": ["business", "history", "philosophy", "cuisine", "calligraphy", "travel"],
+    "can_route_to": [
+      "business",
+      "history",
+      "philosophy",
+      "cuisine",
+      "calligraphy",
+      "travel"
+    ],
     "routing_triggers": [
-      {"interest": "business", "destination": "mandarin_business_personas"},
-      {"interest": "history", "destination": "chinese_history_personas"},
-      {"interest": "philosophy", "destination": "eastern_philosophy_personas"},
-      {"interest": "cuisine", "destination": "chinese_cooking_personas"},
-      {"interest": "cooking", "destination": "chinese_cooking_personas"},
-      {"interest": "calligraphy", "destination": "chinese_art_personas"},
-      {"interest": "travel", "destination": "china_travel_personas"}
+      {
+        "interest": "business",
+        "destination": "mandarin_business_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "chinese_history_personas"
+      },
+      {
+        "interest": "philosophy",
+        "destination": "eastern_philosophy_personas"
+      },
+      {
+        "interest": "cuisine",
+        "destination": "chinese_cooking_personas"
+      },
+      {
+        "interest": "cooking",
+        "destination": "chinese_cooking_personas"
+      },
+      {
+        "interest": "calligraphy",
+        "destination": "chinese_art_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "china_travel_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Mandarin",
     "teaching_method": "Tone-sensitive communicative practice linked with character etymology and contextual usage patterns",
-    "culture_weight": 0.30,
-    "conversation_weight": 0.30,
-    "grammar_weight": 0.20,
-    "writing_weight": 0.20
+    "culture_weight": 0.3,
+    "conversation_weight": 0.3,
+    "grammar_weight": 0.2,
+    "writing_weight": 0.2
   },
   "humanity_mode": {
     "0_percent": "Delivers Pinyin charts, tone rules, radical classifications, stroke order animations, and grammatical structures.",
@@ -38,5 +66,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mandarin_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mandarin_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

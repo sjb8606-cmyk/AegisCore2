@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Arts & History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["modern_architecture", "performing_arts", "political_scandals"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "modern_architecture",
+      "performing_arts",
+      "political_scandals"
+    ],
     "learning_objectives": [
       "Understand the architectural design and structural scale of the John F. Kennedy Center for the Performing Arts",
       "Analyze the geopolitical history of the Watergate scandal (1972) and its proximity to the cultural center of the capital",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kennedy_center_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kennedy_center.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

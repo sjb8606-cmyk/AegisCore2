@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Science History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["History of Science", "Renaissance Art", "Royal Patronage"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "History of Science",
+      "Renaissance Art",
+      "Royal Patronage"
+    ],
     "learning_objectives": [
       "Understand the role of royal patronage (specifically François I) in facilitating the transfer of Italian Renaissance ideas and technology to France.",
       "Analyze Leonardo da Vinci’s late-life inventions and engineering concepts as preserved at the Clos Lucé manor.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "amboise_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/amboise.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

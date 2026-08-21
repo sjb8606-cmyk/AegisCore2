@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["tectonic_uplift", "limestone_escarpments", "caribbean_orography"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "tectonic_uplift",
+      "limestone_escarpments",
+      "caribbean_orography"
+    ],
     "learning_objectives": [
       "Understand the geological process of tectonic uplift that raised the coral limestone cap of Barbados, creating escarpments like Hackleton's Cliff.",
       "Analyze the physical geography of the Eastern Parishes and how they drain into the Atlantic ocean.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "hackleton_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/hackleton.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

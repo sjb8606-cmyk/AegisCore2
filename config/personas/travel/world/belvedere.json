@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Vienna_Secession", "Baroque_Palaces", "Art_Conservation"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Vienna_Secession",
+      "Baroque_Palaces",
+      "Art_Conservation"
+    ],
     "learning_objectives": [
       "Understand the stylistic features and political goals of the Vienna Secession movement led by Gustav Klimt in 1897.",
       "Analyze the architectural design of Johann Lukas von Hildebrandt’s Upper and Lower Belvedere as masterpieces of Baroque representation.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "belvedere_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/belvedere.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

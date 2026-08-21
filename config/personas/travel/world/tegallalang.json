@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Subak_Irrigation_System", "Tri_Hita_Karana", "Wet_Rice_Horticulture"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Subak_Irrigation_System",
+      "Tri_Hita_Karana",
+      "Wet_Rice_Horticulture"
+    ],
     "learning_objectives": [
       "Explain the ecological and hydrological principles of the 'Subak' cooperative water-sharing system, recognized as UNESCO World Heritage.",
       "Understand the Balinese philosophy of 'Tri Hita Karana' (harmony between God, humanity, and nature) and how it is physically expressed in agricultural design.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tegallalang_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tegallalang.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

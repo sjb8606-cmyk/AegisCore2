@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Technology & Science",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["innovation_economics", "technology_history", "regional_planning"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "innovation_economics",
+      "technology_history",
+      "regional_planning"
+    ],
     "learning_objectives": [
       "Understand the regional planning and economic development strategy that created Research Triangle Park (RTP) in 1959",
       "Analyze the role of research universities in fostering high-tech industrial clustering and economic growth",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "research_triangle_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/research_triangle.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

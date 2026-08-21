@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Philosophy",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Sauna_Anthropology", "Thermodynamics_of_Steam", "UNESCO_Intangible_Heritage"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Sauna_Anthropology",
+      "Thermodynamics_of_Steam",
+      "UNESCO_Intangible_Heritage"
+    ],
     "learning_objectives": [
       "Understand the social and historical role of the Sauna as Finland's central cultural institution and its official recognition as UNESCO Intangible Cultural Heritage.",
       "Analyze the thermodynamic principles of 'löyly'—the steam created by throwing water on hot stones—and how it affects humidity and heat perception.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sauna_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sauna.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Agriculture & Environment",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["limnology", "resource_management", "environmental_science"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "limnology",
+      "resource_management",
+      "environmental_science"
+    ],
     "learning_objectives": [
       "Understand the mechanics of cultural eutrophication and toxic algae blooms",
       "Analyze the economic impact of watershed pollution on the commercial fishing industry",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "winnipeg_lake_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/winnipeg_lake.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

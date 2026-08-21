@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["coastal_engineering", "canals_history", "urban_geography"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "coastal_engineering",
+      "canals_history",
+      "urban_geography"
+    ],
     "learning_objectives": [
       "Explain the history and engineering of the Amador Causeway, constructed using rock excavated from the Culebra Cut of the Panama Canal.",
       "Analyze the strategic military role of the Amador Islands during the US administration of the Canal Zone.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "causeway_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/causeway.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["architectural_design", "craft_revival", "modern_art_education"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "architectural_design",
+      "craft_revival",
+      "modern_art_education"
+    ],
     "learning_objectives": [
       "Understand the design process and artistic philosophy behind creating a simulated 16th-century Mediterranean village in the 20th-century Caribbean.",
       "Analyze the material properties of Dominican coral stone (caliza coralina) and its traditional hand-carving techniques.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "laromana_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/laromana.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

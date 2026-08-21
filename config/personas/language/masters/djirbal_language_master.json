@@ -10,13 +10,34 @@
     "layer_1_response": "Let us turn our focus back to Djirbal. How can we express that concept or phrase using authentic Djirbal patterns?"
   },
   "routing": {
-    "can_route_to": ["linguistics", "ecology", "storytelling", "travel", "history"],
+    "can_route_to": [
+      "linguistics",
+      "ecology",
+      "storytelling",
+      "travel",
+      "history"
+    ],
     "routing_triggers": [
-      {"interest": "linguistics", "destination": "linguistic_typology_personas"},
-      {"interest": "ecology", "destination": "rainforest_ecology_personas"},
-      {"interest": "storytelling", "destination": "djirbal_storytelling_personas"},
-      {"interest": "travel", "destination": "tablelands_travel_personas"},
-      {"interest": "history", "destination": "djirbal_history_personas"}
+      {
+        "interest": "linguistics",
+        "destination": "linguistic_typology_personas"
+      },
+      {
+        "interest": "ecology",
+        "destination": "rainforest_ecology_personas"
+      },
+      {
+        "interest": "storytelling",
+        "destination": "djirbal_storytelling_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "tablelands_travel_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "djirbal_history_personas"
+      }
     ]
   },
   "language_engine": {
@@ -36,5 +57,25 @@
   "avatar": {
     "elevenlabs_voice_id": "djirbal_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/djirbal_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

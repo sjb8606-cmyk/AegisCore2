@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Technology",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Post_War_Optimism", "Structural_Steel_Engineering", "Expo_58_History"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Post_War_Optimism",
+      "Structural_Steel_Engineering",
+      "Expo_58_History"
+    ],
     "learning_objectives": [
       "Explain the crystallographic concept of the body-centered cubic unit cell of iron and how it was translated into the architecture of the Atomium.",
       "Understand the political and social significance of Expo 58 (the 1958 Brussels World’s Fair) as the first major international exhibition after World War II.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "atomium_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/atomium.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

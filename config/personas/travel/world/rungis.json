@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Culinary & Commerce",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["Food Logistics", "French Gastronomy", "Urban Planning"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Food Logistics",
+      "French Gastronomy",
+      "Urban Planning"
+    ],
     "learning_objectives": [
       "Understand the logistical challenge and execution of relocating the central food market of Paris (Les Halles) to the suburbs (Rungis) in 1869-1969.",
       "Analyze the supply chain required to deliver fresh seafood, meat, and dairy to the restaurants of a metropolis daily.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "rungis_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/rungis.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

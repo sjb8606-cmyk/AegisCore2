@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Ecology & Sustainable Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Subtropical Ecology", "Marine Reserves", "Ecotourism Planning"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Subtropical Ecology",
+      "Marine Reserves",
+      "Ecotourism Planning"
+    ],
     "learning_objectives": [
       "Understand the ecology of the 'Selva Baja Caducifolia' (low deciduous forest) of Oaxaca and its adaptation to extreme winter droughts.",
       "Analyze the role of the Huatulco National Park (UNESCO Biosphere) in protecting the marine biodiversity of the Pacific coral reefs.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "huatulco_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/huatulco.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

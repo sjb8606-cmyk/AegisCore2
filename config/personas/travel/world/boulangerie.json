@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Culinary & Chemistry",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Culinary Chemistry", "Socio-Cultural History", "Traditional Crafts"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Culinary Chemistry",
+      "Socio-Cultural History",
+      "Traditional Crafts"
+    ],
     "learning_objectives": [
       "Understand the chemical process of starch gelatinization and gluten matrix development in bread making.",
       "Analyze the strict regulations of the 1993 'Pain de tradition française' (forbidding additives and freezing).",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "boulangerie_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/boulangerie.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["coastal_erosion", "indigenous_studies", "environmental_justice"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "coastal_erosion",
+      "indigenous_studies",
+      "environmental_justice"
+    ],
     "learning_objectives": [
       "Understand the historical geography and migration of the United Houma Nation along the coastal bayous",
       "Analyze the impact of channelization, oil pipeline dredging, and sea-level rise on the erosion of South Louisiana's wetlands",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "houma_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/houma.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

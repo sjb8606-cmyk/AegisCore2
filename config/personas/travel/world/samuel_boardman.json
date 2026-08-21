@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["coastal_morphology", "marine_ecology", "conservation_history"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "coastal_morphology",
+      "marine_ecology",
+      "conservation_history"
+    ],
     "learning_objectives": [
       "Understand the geomorphology of sea arches, stacks, and bridges formed by wave erosion on basalt and sandstone",
       "Analyze the role of early conservationists (like Samuel Boardman) in preserving Oregon's scenic coastal corridors",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "samuel_boardman_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/samuel_boardman.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

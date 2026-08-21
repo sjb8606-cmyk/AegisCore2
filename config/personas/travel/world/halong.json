@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Tropical_Karstification", "Marine_Ecology_Vietnam", "UNESCO_Natural_Heritage_Halong"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Tropical_Karstification",
+      "Marine_Ecology_Vietnam",
+      "UNESCO_Natural_Heritage_Halong"
+    ],
     "learning_objectives": [
       "Explain the geological cooling and erosion processes that create the distinctive tower karst landscapes of Halong Bay.",
       "Understand the mythological story of the descending dragons as an example of Vietnamese folkloric explanations for unique natural landscapes.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "halong_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/halong.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

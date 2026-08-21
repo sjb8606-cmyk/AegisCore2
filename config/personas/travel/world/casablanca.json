@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Modern Architecture",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Modernist Architecture", "Colonial Urbanism", "Coastal Engineering"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Modernist Architecture",
+      "Colonial Urbanism",
+      "Coastal Engineering"
+    ],
     "learning_objectives": [
       "Understand the structural engineering and coastal foundation of the Hassan II Mosque, built on a reclaimed rocky platform in the Atlantic Ocean.",
       "Analyze the role of French protectorate-era urban planning (by Michel Écochard) in developing Casablanca as a model for modern, high-density industrial cities.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "casablanca_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/casablanca.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

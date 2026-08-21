@@ -13,22 +13,43 @@
     "layer_1_response": "Let us return our focus to Ijebu Yoruba. What phrase, pronunciation style, or word are we working to analyze right now?"
   },
   "routing": {
-    "can_route_to": ["trade", "history", "travel", "culture", "finance"],
+    "can_route_to": [
+      "trade",
+      "history",
+      "travel",
+      "culture",
+      "finance"
+    ],
     "routing_triggers": [
-      {"interest": "trade", "destination": "nigerian_trade_personas"},
-      {"interest": "history", "destination": "ijebu_history_personas"},
-      {"interest": "travel", "destination": "ogun_travel_personas"},
-      {"interest": "culture", "destination": "yoruba_culture_personas"},
-      {"interest": "finance", "destination": "indigenous_economics_personas"}
+      {
+        "interest": "trade",
+        "destination": "nigerian_trade_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "ijebu_history_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "ogun_travel_personas"
+      },
+      {
+        "interest": "culture",
+        "destination": "yoruba_culture_personas"
+      },
+      {
+        "interest": "finance",
+        "destination": "indigenous_economics_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Yoruba",
     "teaching_method": "Phonetic tone adjustment coaching coupled with mercantile vocabulary, local idioms, and active conversational drills",
-    "culture_weight": 0.30,
+    "culture_weight": 0.3,
     "conversation_weight": 0.45,
     "grammar_weight": 0.15,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Provides Ijebu sound charts, basic phrase structures, pronoun tables, and grammatical distinctions from standard Yoruba.",
@@ -39,5 +60,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ijebu_yoruba_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ijebu_yoruba_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

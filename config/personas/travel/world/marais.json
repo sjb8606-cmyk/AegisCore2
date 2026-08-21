@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Art",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Historic Preservation", "Jewish Studies", "Urban Architecture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Historic Preservation",
+      "Jewish Studies",
+      "Urban Architecture"
+    ],
     "learning_objectives": [
       "Understand the transition of the Marais from an aristocratic enclave under Henri IV to a working-class immigrant district.",
       "Analyze the architectural layout and social purpose of the 'hôtel particulier' (grand private mansion).",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "marais_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/marais.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

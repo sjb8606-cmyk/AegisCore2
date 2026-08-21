@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Civil Rights",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["civil_rights", "voting_rights", "american_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "civil_rights",
+      "voting_rights",
+      "american_history"
+    ],
     "learning_objectives": [
       "Understand the key role of Medgar Evers in organizing voter registration drives and boycotts in Mississippi",
       "Analyze the legal and political mechanics of state-sponsored segregation (Jim Crow) in Mississippi",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "jackson_ms_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/jackson_ms.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

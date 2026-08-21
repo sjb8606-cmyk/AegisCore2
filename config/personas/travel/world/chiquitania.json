@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["vernacular_woodwork", "indigenous_crafts", "mission_history"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "vernacular_woodwork",
+      "indigenous_crafts",
+      "mission_history"
+    ],
     "learning_objectives": [
       "Explain the unique, hand-crafted wooden architecture and painting techniques of the Chiquitania baroque churches.",
       "Understand the historical role of the Jesuit Missions of Chiquitos and how they survived the 1767 expulsion of the Jesuits.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "chiquitania_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/chiquitania.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

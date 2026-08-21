@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Education & Sociology",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["higher_education", "sociology_of_sport", "regional_geography"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "higher_education",
+      "sociology_of_sport",
+      "regional_geography"
+    ],
     "learning_objectives": [
       "Understand the mission and history of land-grant universities under the 1862 Morrill Act",
       "Analyze the sociology of sports culture in creating a centralized civic identity in rural regions",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "state_college_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/state_college.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

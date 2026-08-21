@@ -19,13 +19,42 @@
   "education": {
     "grade_band": "mastery",
     "grades": "10–12",
-    "subjects": ["advanced_sciences", "university_prep"],
+    "subjects": [
+      "advanced_sciences",
+      "university_prep"
+    ],
     "tier": 1,
     "persona_style": "frontier scientist, precision-focused",
-    "curriculum_tags": ["advanced_physics", "advanced_chemistry", "advanced_biology", "astrophysics", "research_skills"]
+    "curriculum_tags": [
+      "advanced_physics",
+      "advanced_chemistry",
+      "advanced_biology",
+      "astrophysics",
+      "research_skills"
+    ]
   },
   "avatar": {
     "elevenlabs_voice_id": "edu_orion_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/edu_orion.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

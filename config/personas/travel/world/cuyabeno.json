@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["flooded_forests", "river_dolphin_ecology", "indigenous_territories"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "flooded_forests",
+      "river_dolphin_ecology",
+      "indigenous_territories"
+    ],
     "learning_objectives": [
       "Explain the ecological and botanical adaptations of the Igapó (macrolobium) forests that allow them to survive prolonged flooding in black-water lagoons.",
       "Understand the biology, echo-location, and conservation status of the Pink River Dolphin (Inia geoffrensis/boliviensis) in the Cuyabeno reserve.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cuyabeno_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cuyabeno.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

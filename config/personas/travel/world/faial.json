@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Maritime History & Volcanology",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["History of Navigation", "Plate Tectonics", "Telecommunications History"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "History of Navigation",
+      "Plate Tectonics",
+      "Telecommunications History"
+    ],
     "learning_objectives": [
       "Understand the historical role of Horta (Faial) as the primary, strategic harbor for transatlantic shipping, whaling, and early aviation.",
       "Analyze the volcanic and tectonic process of the 1957 Capelinhos eruption, which created a new landmass and triggered a massive wave of emigration to the US.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "faial_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/faial.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

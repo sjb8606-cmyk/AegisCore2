@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["salt_pan_ecology", "water_hole_dynamics", "savanna_management"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "salt_pan_ecology",
+      "water_hole_dynamics",
+      "savanna_management"
+    ],
     "learning_objectives": [
       "Explain the geological and hydrological history of the ancient Etosha super-lake basin and how its drying formed the modern salt pan.",
       "Understand the ecological and social dynamics of animal waterhole sharing, focusing on hierarchy, cooperation, and predator avoidance.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "etosha_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/etosha.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

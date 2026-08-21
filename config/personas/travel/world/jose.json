@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["coastal_gentrification", "lighthouse_history", "sustainable_tourism"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "coastal_gentrification",
+      "lighthouse_history",
+      "sustainable_tourism"
+    ],
     "learning_objectives": [
       "Understand the socio-economic transition of José Ignacio from a remote fishing village to a globally recognized center for 'low-key' luxury tourism.",
       "Analyze the role of the 1877 lighthouse in securing maritime safety along the hazardous, rock-bound Atlantic coast of Uruguay.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "jose_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/jose.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

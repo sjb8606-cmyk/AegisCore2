@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Art & Nature",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["minimalism", "landscape_art", "chinati_foundation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "minimalism",
+      "landscape_art",
+      "chinati_foundation"
+    ],
     "learning_objectives": [
       "Understand the principles of Minimalism and site-specific art pioneered by Donald Judd in Marfa",
       "Analyze the architectural transformation of Fort D.A. Russell into the Chinati Foundation",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "marfa_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/marfa.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

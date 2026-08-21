@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Recreation",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["ski_history", "meteorology", "avalanche_safety"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "ski_history",
+      "meteorology",
+      "avalanche_safety"
+    ],
     "learning_objectives": [
       "Understand the meteorological factors (the 'lake effect') that produce exceptionally dry, light snow in the Wasatch Range",
       "Analyze the transition of the Cottonwood Canyons from 19th-century silver mining districts to world-class ski resorts",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "wasatch_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/wasatch.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

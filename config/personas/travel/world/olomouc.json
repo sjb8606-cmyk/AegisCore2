@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Baroque_Monuments", "Plague_Remembrance", "Moravian_History"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Baroque_Monuments",
+      "Plague_Remembrance",
+      "Moravian_History"
+    ],
     "learning_objectives": [
       "Understand the historical and spiritual context that led the citizens of Olomouc to construct the massive Holy Trinity Column between 1716 and 1754.",
       "Analyze the artistic characteristics of the Olomouc Baroque style, distinguishing it from imperial Austrian or Bohemian Baroque.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "olomouc_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/olomouc.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

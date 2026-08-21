@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Arctic_Fox_Biology", "Avalanche_Geomorphology", "Subarctic_Survival"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Arctic_Fox_Biology",
+      "Avalanche_Geomorphology",
+      "Subarctic_Survival"
+    ],
     "learning_objectives": [
       "Understand the physiological and behavioral adaptations of the Arctic Fox (Vulpes lagopus) that allow it to survive sub-zero temperatures and food scarcity.",
       "Analyze the ecological history of the Arctic Fox as the only native land mammal in Iceland, having arrived by crossing sea ice during the last ice age.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "isafjordur_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/isafjordur.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

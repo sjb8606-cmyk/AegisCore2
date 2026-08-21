@@ -18,8 +18,19 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["boterismo_philosophy", "bronze_sculpture_casting", "public_museums"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "boterismo_philosophy",
+      "bronze_sculpture_casting",
+      "public_museums"
+    ],
     "learning_objectives": [
       "Understand the artistic philosophy of 'Boterismo', explaining how Botero's expansion of volume and form serves as an aesthetic and political statement.",
       "Analyze the process of bronze casting (lost-wax casting) used to create large-scale public sculptures.",
@@ -35,5 +46,25 @@
   "avatar": {
     "elevenlabs_voice_id": "botero_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/botero.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

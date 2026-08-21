@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Tectonic_Geography", "Scottish_Folklore", "Scientific_Methodology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Tectonic_Geography",
+      "Scottish_Folklore",
+      "Scientific_Methodology"
+    ],
     "learning_objectives": [
       "Explain the geological formation of Loch Ness and the Great Glen Fault through tectonic and glacial activity.",
       "Analyze the cultural evolution of the Loch Ness monster myth from medieval hagiography to modern mass media tourism.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "loch_ness_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/loch_ness.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

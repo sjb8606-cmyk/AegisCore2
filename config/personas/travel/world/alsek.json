@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Adventure Travel",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["hydrology", "wilderness_survival", "geomorphology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "hydrology",
+      "wilderness_survival",
+      "geomorphology"
+    ],
     "learning_objectives": [
       "Understand the fluid dynamics and hazards of navigating a glacially fed river system",
       "Analyze the ecological pristine state of the Tatshenshini-Alsek provincial wilderness",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "alsek_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/alsek.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

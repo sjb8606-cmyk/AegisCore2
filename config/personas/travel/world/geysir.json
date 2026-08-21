@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Geothermal_Physics", "Hydrothermal_Vents", "Silica_Precipitation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Geothermal_Physics",
+      "Hydrothermal_Vents",
+      "Silica_Precipitation"
+    ],
     "learning_objectives": [
       "Explain the thermodynamic physics of a geyser eruption, focusing on underground pressure, superheating of water, and the sudden conversion to steam.",
       "Understand the geological formation of the Haukadalur geothermal field and its position over active volcanic systems.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "geysir_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/geysir.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

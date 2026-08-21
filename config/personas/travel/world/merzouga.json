@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Ecology & Astronomy",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Desert Geomorphology", "Observational Astronomy", "Traditional Nomads"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Desert Geomorphology",
+      "Observational Astronomy",
+      "Traditional Nomads"
+    ],
     "learning_objectives": [
       "Understand the geological formation of 'barchan' and 'seif' dunes, analyzing how wind velocity and topography create the Erg Chebbi sand sea.",
       "Analyze the meteorological and environmental factors that create stable, high-altitude dark skies for stellar observation.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "merzouga_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/merzouga.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

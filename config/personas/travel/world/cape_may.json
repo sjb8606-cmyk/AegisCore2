@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Ecology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["architectural_history", "ornithology", "tourism_economics"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "architectural_history",
+      "ornithology",
+      "tourism_economics"
+    ],
     "learning_objectives": [
       "Understand the Victorian architectural styles (Queen Anne, Second Empire) that dominate Cape May's historic district",
       "Analyze why Cape May Peninsula functions as a critical geographic bottleneck for migratory birds along the Atlantic Flyway",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cape_may_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cape_may.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

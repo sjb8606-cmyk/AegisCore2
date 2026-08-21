@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Fluvial_Geomorphology", "Traditional_Rafting_Heritage", "Transboundary_Parks"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Fluvial_Geomorphology",
+      "Traditional_Rafting_Heritage",
+      "Transboundary_Parks"
+    ],
     "learning_objectives": [
       "Explain the geological phenomenon of an 'antecedent drainage system,' detailing how the Dunajec River maintained its course while the Pieniny mountains were uplifted around it.",
       "Understand the cultural and historical significance of the 'Flisacy' (traditional raftsmen), who have navigated the gorge for centuries.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "pieniny_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/pieniny.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

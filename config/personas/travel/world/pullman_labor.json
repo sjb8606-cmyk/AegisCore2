@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Labor Studies",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["labor_history", "civil_rights", "railroad_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "labor_history",
+      "civil_rights",
+      "railroad_history"
+    ],
     "learning_objectives": [
       "Understand the historical significance of the Brotherhood of Sleeping Car Porters as the first African American labor union chartered by the AFL",
       "Analyze the role of Pullman Porters in facilitating communication and economic mobility during the Great Migration",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "pullman_labor_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/pullman_labor.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

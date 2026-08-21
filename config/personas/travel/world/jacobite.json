@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Jacobite_Risings", "Military_Tactics", "Highland_Clearances"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Jacobite_Risings",
+      "Military_Tactics",
+      "Highland_Clearances"
+    ],
     "learning_objectives": [
       "Analyze the military and tactical errors, including the choices of terrain and night-march logistics, that led to the Jacobite defeat at Culloden.",
       "Understand the geopolitical dimensions of the Jacobite Risings, particularly the roles of France, Rome, and the British Hanoverian state.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "jacobite_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/jacobite.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["contemporary_gulf_art", "adaptive_reuse_architecture", "creative_residencies"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "contemporary_gulf_art",
+      "adaptive_reuse_architecture",
+      "creative_residencies"
+    ],
     "learning_objectives": [
       "Analyze how contemporary Qatari artists navigate the tension between traditional heritage and rapid globalization.",
       "Understand the architectural concept of adaptive reuse by studying how a 1980s civil defense fire station was transformed into an art hub.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "firestation_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/firestation.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

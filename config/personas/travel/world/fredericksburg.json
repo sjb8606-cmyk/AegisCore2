@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["immigration_history", "german_heritage", "treaty_law"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "immigration_history",
+      "german_heritage",
+      "treaty_law"
+    ],
     "learning_objectives": [
       "Understand the history and motivations of the German immigration to the Texas Hill Country under the Adelsverein",
       "Analyze the significance of the Meusebach-Comanche Treaty (1847) as one of the few lasting peace agreements between settlers and Indigenous nations",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "fredericksburg_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/fredericksburg.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Islamic Architecture",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Nasrid Dynasty", "Islamic Geometry", "Landscape Engineering"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Nasrid Dynasty",
+      "Islamic Geometry",
+      "Landscape Engineering"
+    ],
     "learning_objectives": [
       "Understand the political and spiritual role of the Alhambra as the palatine city of the Nasrid Dynasty, the last Muslim rulers of Spain.",
       "Analyze the geometric complexity and theological symbolism of Islamic stucco carving (yesería) and honeycomb vaulting (muqarnas).",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "alhambra_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/alhambra.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

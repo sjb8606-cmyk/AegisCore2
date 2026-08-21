@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["indigenous_governance_kenya", "beadwork_arts", "maasai_history"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "indigenous_governance_kenya",
+      "beadwork_arts",
+      "maasai_history"
+    ],
     "learning_objectives": [
       "Understand the social and political structure of the Maasai traditional governance (Kgotla-like councils) in managing pastoral lands in Narok.",
       "Analyze the high-level craft and design of traditional Maasai beadwork, explaining how colors represent specific social values (white for peace, red for bravery).",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "narok_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/narok.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

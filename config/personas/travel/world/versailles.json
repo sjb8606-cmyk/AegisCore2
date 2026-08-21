@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Landscape Design",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["French Baroque", "Absolute Monarchy", "Landscape Architecture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "French Baroque",
+      "Absolute Monarchy",
+      "Landscape Architecture"
+    ],
     "learning_objectives": [
       "Understand how Louis XIV used the physical space and architecture of Versailles to domesticate and control the French nobility.",
       "Analyze the design principles of the 'Jardin à la française' (French formal garden) as designed by André Le Nôtre.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "versailles_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/versailles.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

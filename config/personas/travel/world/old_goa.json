@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Colonial Architecture",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Portuguese Empire", "Baroque Architecture", "Religious Inquisition"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Portuguese Empire",
+      "Baroque Architecture",
+      "Religious Inquisition"
+    ],
     "learning_objectives": [
       "Understand the historical role of Velha Goa (Old Goa) as the maritime and administrative capital of the 'Estado da Índia' (Portuguese Empire in Asia) from 1510 to 1843.",
       "Analyze the architectural and decorative engineering of the Basilica of Bom Jesus, focusing on how its Italian-style marble mausoleum houses the body of Saint Francis Xavier.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "old_goa_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/old_goa.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

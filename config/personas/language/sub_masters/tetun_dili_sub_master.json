@@ -13,22 +13,43 @@
     "layer_1_response": "Let us bring our focus back to Tetun Dili. What specific word, Portuguese-switched phrase, or sentence structure are we working to analyze right now?"
   },
   "routing": {
-    "can_route_to": ["culture", "music", "business", "travel", "history"],
+    "can_route_to": [
+      "culture",
+      "music",
+      "business",
+      "travel",
+      "history"
+    ],
     "routing_triggers": [
-      {"interest": "culture", "destination": "dili_urban_culture_personas"},
-      {"interest": "music", "destination": "timor_pop_personas"},
-      {"interest": "business", "destination": "timor_business_personas"},
-      {"interest": "travel", "destination": "dili_travel_personas"},
-      {"interest": "history", "destination": "modern_timor_history_personas"}
+      {
+        "interest": "culture",
+        "destination": "dili_urban_culture_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "timor_pop_personas"
+      },
+      {
+        "interest": "business",
+        "destination": "timor_business_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "dili_travel_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "modern_timor_history_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Tetum",
     "teaching_method": "Phonetic voice coaching combined with Portuguese code-switching drills, modern urban slang integration, and active conversational drills",
-    "culture_weight": 0.30,
+    "culture_weight": 0.3,
     "conversation_weight": 0.45,
     "grammar_weight": 0.15,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Outlines Tetun Dili phonetic values, code-switching guidelines, pronoun options, and syntax patterns.",
@@ -39,5 +60,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tetun_dili_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tetun_dili_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

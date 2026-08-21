@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Culinary",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Fermentation_Biochemistry", "UNESCO_Kimjang_Traditions", "Food_Preservation_History"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Fermentation_Biochemistry",
+      "UNESCO_Kimjang_Traditions",
+      "Food_Preservation_History"
+    ],
     "learning_objectives": [
       "Explain the biochemical process of lactic acid fermentation that preserves Kimchi, focusing on the roles of Lactobacillus bacteria and salt in inhibiting pathogens.",
       "Understand the historical and social significance of 'Kimjang' (the communal making of winter Kimchi) as a UNESCO Intangible Cultural Heritage of humanity.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kimchi_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kimchi.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

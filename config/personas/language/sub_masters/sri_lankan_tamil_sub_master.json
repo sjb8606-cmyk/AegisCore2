@@ -13,22 +13,43 @@
     "layer_1_response": "Let us return to Sri Lankan Tamil. What specific phrase, unique vocabulary word, or pronunciation structure are we working to analyze right now?"
   },
   "routing": {
-    "can_route_to": ["history", "heritage", "diaspora", "literature", "travel"],
+    "can_route_to": [
+      "history",
+      "heritage",
+      "diaspora",
+      "literature",
+      "travel"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "sri_lankan_history_personas"},
-      {"interest": "heritage", "destination": "tamil_heritage_personas"},
-      {"interest": "diaspora", "destination": "tamil_diaspora_personas"},
-      {"interest": "literature", "destination": "tamil_literature_personas"},
-      {"interest": "travel", "destination": "jaffna_travel_personas"}
+      {
+        "interest": "history",
+        "destination": "sri_lankan_history_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "tamil_heritage_personas"
+      },
+      {
+        "interest": "diaspora",
+        "destination": "tamil_diaspora_personas"
+      },
+      {
+        "interest": "literature",
+        "destination": "tamil_literature_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "jaffna_travel_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Tamil",
     "teaching_method": "Phonetic voice coaching combined with Sri Lankan Tamil vocabulary drills, historical narratives, and active social conversation",
-    "culture_weight": 0.30,
+    "culture_weight": 0.3,
     "conversation_weight": 0.45,
     "grammar_weight": 0.15,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Provides Sri Lankan Tamil spelling patterns, sentence structures, pronoun tables, and basic structures.",
@@ -39,5 +60,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sri_lankan_tamil_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sri_lankan_tamil_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

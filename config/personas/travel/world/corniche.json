@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["coastal_reclamation", "maritime_trade", "urban_geography"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "coastal_reclamation",
+      "maritime_trade",
+      "urban_geography"
+    ],
     "learning_objectives": [
       "Explain the history and engineering of Doha's coastal land reclamation that created the Corniche promenade in the late 20th century.",
       "Identify the different types and historical maritime functions of the traditional wooden dhows of the Gulf.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "corniche_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/corniche.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

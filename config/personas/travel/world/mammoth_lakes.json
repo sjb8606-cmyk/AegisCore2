@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Nature",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["volcanology", "geomorphology", "seismology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "volcanology",
+      "geomorphology",
+      "seismology"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Long Valley Caldera and the active seismic nature of Mammoth Mountain",
       "Analyze the process of columnar jointing in basalt lava flows that created Devil's Postpile",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mammoth_lakes_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mammoth_lakes.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

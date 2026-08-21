@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Religious Studies",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Hindu Theology", "Sacred Geography", "Desert Festivals"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Hindu Theology",
+      "Sacred Geography",
+      "Desert Festivals"
+    ],
     "learning_objectives": [
       "Understand the unique theological role of Pushkar as the primary center of worship for the creator god Brahma in Hinduism.",
       "Analyze the role of 'Ghats' (stone steps) and sacred lakes in structuring Hindu pilgrimage rituals (snan/holy dips).",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "pushkar_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/pushkar.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

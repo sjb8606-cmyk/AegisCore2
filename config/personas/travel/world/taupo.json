@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["supervolcanoes", "river_hydrology", "maori_exploration"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "supervolcanoes",
+      "river_hydrology",
+      "maori_exploration"
+    ],
     "learning_objectives": [
       "Explain the geological definition of a volcanic caldera and the historic scale of Lake Taupō's super-eruptions (specifically the Oruanui and Hatepe events).",
       "Analyze the hydrology of the Waikato River and the physical forces that compress its massive volume through the narrow gorge of Huka Falls.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "taupo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/taupo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

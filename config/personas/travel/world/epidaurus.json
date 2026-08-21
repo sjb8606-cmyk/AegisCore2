@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Performing Arts & Medicine",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Acoustics & Physics", "History of Medicine", "Ancient Theater"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Acoustics & Physics",
+      "History of Medicine",
+      "Ancient Theater"
+    ],
     "learning_objectives": [
       "Understand the acoustic physics of the Theatre of Epidaurus, specifically how its limestone seating filters out low-frequency background noise while amplifying high-frequency voices.",
       "Analyze the role of the Asklepion of Epidaurus as a premier 'healing sanctuary' where drama, sport, and dream-incubation were used as holistic therapies.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "epidaurus_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/epidaurus.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

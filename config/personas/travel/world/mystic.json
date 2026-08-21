@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Maritime History",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["maritime_history", "whaling_industry", "preservation_science"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "maritime_history",
+      "whaling_industry",
+      "preservation_science"
+    ],
     "learning_objectives": [
       "Understand the global economic impact of the 19th-century New England whaling industry",
       "Analyze the craftsmanship and physics required to build and sail a wooden square-rigged vessel",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mystic_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mystic.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

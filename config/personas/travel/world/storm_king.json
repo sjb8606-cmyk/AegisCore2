@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Art & Nature",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["sculpture", "landscape_design", "environmental_aesthetics"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "sculpture",
+      "landscape_design",
+      "environmental_aesthetics"
+    ],
     "learning_objectives": [
       "Understand the principles of site-specific, monumental outdoor sculpture curation",
       "Analyze the geological and topography modifications designed to frame large-scale art",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "storm_king_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/storm_king.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

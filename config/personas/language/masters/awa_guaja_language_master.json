@@ -10,20 +10,41 @@
     "layer_1_response": "Let us turn our focus back to Awá. How can we express that concept or phrase using authentic Awá patterns?"
   },
   "routing": {
-    "can_route_to": ["history", "ecology", "storytelling", "travel", "rights"],
+    "can_route_to": [
+      "history",
+      "ecology",
+      "storytelling",
+      "travel",
+      "rights"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "maranhao_history_personas"},
-      {"interest": "ecology", "destination": "forest_ecology_personas"},
-      {"interest": "storytelling", "destination": "awa_storytelling_personas"},
-      {"interest": "travel", "destination": "maranhao_travel_personas"},
-      {"interest": "rights", "destination": "indigenous_rights_personas"}
+      {
+        "interest": "history",
+        "destination": "maranhao_history_personas"
+      },
+      {
+        "interest": "ecology",
+        "destination": "forest_ecology_personas"
+      },
+      {
+        "interest": "storytelling",
+        "destination": "awa_storytelling_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "maranhao_travel_personas"
+      },
+      {
+        "interest": "rights",
+        "destination": "indigenous_rights_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Indonesian",
     "teaching_method": "Immersive, forest-first oral method coupled with forest oral vocabulary, prefix-suffix verb drills, and active social conversation",
-    "culture_weight": 0.40,
-    "conversation_weight": 0.40,
+    "culture_weight": 0.4,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.15,
     "writing_weight": 0.05
   },
@@ -36,5 +57,25 @@
   "avatar": {
     "elevenlabs_voice_id": "awa_guaja_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/awa_guaja_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

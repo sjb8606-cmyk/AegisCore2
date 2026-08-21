@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Art History & Architecture",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Mexican Muralism", "Art Deco Design", "Revolutionary Art"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Mexican Muralism",
+      "Art Deco Design",
+      "Revolutionary Art"
+    ],
     "learning_objectives": [
       "Understand the history and construction of the Palacio de Bellas Artes, analyzing the transition from Porfirian Art Nouveau to post-revolutionary Art Deco.",
       "Analyze the political and ideological narratives of the murals by Diego Rivera, David Alfaro Siqueiros, and José Clemente Orozco.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bellas_artes_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bellas_artes.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

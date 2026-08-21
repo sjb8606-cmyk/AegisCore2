@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Literature",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Hanseatic_Trade", "Brick_Gothic", "German_Realism"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Hanseatic_Trade",
+      "Brick_Gothic",
+      "German_Realism"
+    ],
     "learning_objectives": [
       "Understand the role of Lübeck as the 'Queen' of the Hanseatic League and its control over northern European trade routes.",
       "Analyze the architectural characteristics and structural mechanics of Backsteingotik (Northern German Brick Gothic) as seen in the Holstentor.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "lubeck_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/lubeck.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

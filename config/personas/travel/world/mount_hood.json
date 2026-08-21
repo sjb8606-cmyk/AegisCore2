@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Recreation",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["wpa_history", "architecture", "mountain_recreation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "wpa_history",
+      "architecture",
+      "mountain_recreation"
+    ],
     "learning_objectives": [
       "Understand the historical and economic motivations behind the construction of Timberline Lodge by the WPA (1937)",
       "Analyze the organic architectural design and use of local materials (stone and timber) in the lodge construction",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mount_hood_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mount_hood.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

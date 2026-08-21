@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Arts & Indigenous Culture",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["indigenous_studies", "film_studies", "geomorphology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "indigenous_studies",
+      "film_studies",
+      "geomorphology"
+    ],
     "learning_objectives": [
       "Understand the geological processes of sedimentation and erosion that created the sandstone buttes and mesas of Monument Valley",
       "Analyze the role of director John Ford in establishing Monument Valley as the premier visual icon of the American West",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "monument_valley_ut_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/monument_valley_ut.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

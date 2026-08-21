@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Subarctic_Botany", "Microclimate_Ecology", "Eyjafjörður_Geography"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Subarctic_Botany",
+      "Microclimate_Ecology",
+      "Eyjafjörður_Geography"
+    ],
     "learning_objectives": [
       "Understand the botanical adaptations required for plants to survive in a sub-arctic environment, focusing on winter dormancy and rapid summer growth.",
       "Analyze how the deep, sheltered geography of Eyjafjörður creates a unique microclimate that protects Akureyri from the harshest Arctic winds.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "akureyri_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/akureyri.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

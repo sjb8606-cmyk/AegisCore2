@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["indigenous_survival", "eugenics_history", "canadian_us_early_contacts"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "indigenous_survival",
+      "eugenics_history",
+      "canadian_us_early_contacts"
+    ],
     "learning_objectives": [
       "Understand the historical presence and territorial boundaries of the Western Abenaki in the Lake Champlain basin",
       "Analyze the tragic history of the Vermont Eugenics Survey (1925-1936) and its targeted impact on Abenaki families",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "abenaki_vt_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/abenaki_vt.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

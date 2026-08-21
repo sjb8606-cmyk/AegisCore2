@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Hawaiian Culture",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["hula_history", "oral_traditions", "indigenous_performance"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "hula_history",
+      "oral_traditions",
+      "indigenous_performance"
+    ],
     "learning_objectives": [
       "Understand the distinction between Hula Kahiko (traditional, spiritual) and Hula 'Auana (modern, melodic)",
       "Analyze the historical suppression of hula under western missionary influence and its subsequent 1970s Hawaiian Renaissance revival",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "hula_keeper_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/hula_keeper.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

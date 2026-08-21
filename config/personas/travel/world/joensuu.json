@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Karelian_Orthodoxy", "River_Timber_Logistics", "Borderland_Coexistence"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Karelian_Orthodoxy",
+      "River_Timber_Logistics",
+      "Borderland_Coexistence"
+    ],
     "learning_objectives": [
       "Understand the historical role of Joensuu as a major hub for the log-floating and timber industry of eastern Finland along the Pielisjoki.",
       "Analyze the distinct cultural and religious development of Karelia, focusing on the co-existence of Lutheran and Orthodox traditions.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "joensuu_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/joensuu.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Music & Culture",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["american_music_history", "urbanization", "music_economics"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "american_music_history",
+      "urbanization",
+      "music_economics"
+    ],
     "learning_objectives": [
       "Understand the historical development of Lower Broadway as the commercial capital of country music",
       "Analyze the role of live music venues (like Tootsie's) in incubating country music stars and songwriters",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "broadway_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/broadway.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

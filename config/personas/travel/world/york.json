@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Viking_Britain", "Medieval_Urban_Life", "Archaeological_Science"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Viking_Britain",
+      "Medieval_Urban_Life",
+      "Archaeological_Science"
+    ],
     "learning_objectives": [
       "Understand how soil conditions in York allowed for the exceptional preservation of organic Viking artifacts.",
       "Identify the architectural characteristics and economic functions of medieval timber-framed streets like the Shambles.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "york_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/york.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

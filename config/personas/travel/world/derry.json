@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Plantation_of_Ulster", "Civil_Rights_Movements", "Siege_Architecture"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Plantation_of_Ulster",
+      "Civil_Rights_Movements",
+      "Siege_Architecture"
+    ],
     "learning_objectives": [
       "Understand the strategic and political reasons behind the construction of the Derry City Walls in 1613 during the Plantation of Ulster.",
       "Analyze the causes and long-term historical impact of the 105-day Siege of Derry in 1689.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "derry_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/derry.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

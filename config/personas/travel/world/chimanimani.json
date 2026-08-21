@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["quartzite_geology", "alpine_botany", "ndau_culture"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "quartzite_geology",
+      "alpine_botany",
+      "ndau_culture"
+    ],
     "learning_objectives": [
       "Explain the geological and metamorphic processes that formed the unique, rugged quartzite formations of the Chimanimani Range.",
       "Identify the endemic, high-altitude plant species (such as proteas and Ericas) that adapt to survive in cold, nutrient-poor mountain soils.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "chimanimani_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/chimanimani.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Ecology & Speleology",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Karst Topography", "Wetland Ecology", "Royal History"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Karst Topography",
+      "Wetland Ecology",
+      "Royal History"
+    ],
     "learning_objectives": [
       "Understand the geological formation of Khao Sam Roi Yot ('The Mountain with Three Hundred Peaks') as a limestone karst massif rising from coastal marshes.",
       "Analyze the hydraulic and biological structure of the Thung Sam Roi Yot, the largest freshwater marsh in Thailand.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "khao_sam_roi_yot_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/khao_sam_roi_yot.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Archaeology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["petroglyphs", "fremont_culture", "archaeological_preservation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "petroglyphs",
+      "fremont_culture",
+      "archaeological_preservation"
+    ],
     "learning_objectives": [
       "Understand the defining characteristics of the 'classic vernal' style of Fremont culture petroglyphs",
       "Analyze the socioeconomic and agricultural adaptations of the Fremont people in the arid Uinta Basin",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "vernal_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/vernal.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

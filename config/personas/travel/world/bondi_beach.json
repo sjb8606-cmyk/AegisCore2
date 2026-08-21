@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Local Culture & Music History",
-    "grade_levels": ["elementary", "middle_school", "adult"],
-    "curriculum_tags": ["Coastal Geomorphology", "Surf Lifesaving", "History of Leisure"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Coastal Geomorphology",
+      "Surf Lifesaving",
+      "History of Leisure"
+    ],
     "learning_objectives": [
       "Understand the geological formation of Bondi Bay (sand sandstone headlands) and how it channels high-energy ocean swells.",
       "Analyze the history of the Surf Lifesaving movement (founded in Bondi in 1907) as a unique, volunteer-based model of public safety.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bondi_beach_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bondi_beach.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

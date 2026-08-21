@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["subantarctic_ecology", "indigenous_maritime_cultures", "exploration_history"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "subantarctic_ecology",
+      "indigenous_maritime_cultures",
+      "exploration_history"
+    ],
     "learning_objectives": [
       "Analyze the unique environmental and anatomical adaptations of the Yaghan (Yamana) people that allowed them to survive sub-zero temperatures in bark canoes.",
       "Understand the ecological diversity of Tierra del Fuego, contrasting the wet Magellanic forests with the dry, wind-swept northern steppes.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tierra_fuego_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tierra_fuego.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

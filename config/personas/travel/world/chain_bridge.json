@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Suspension_Engineering", "Budapest_Unification_1873", "Belle_Epoque_Logistics"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Suspension_Engineering",
+      "Budapest_Unification_1873",
+      "Belle_Epoque_Logistics"
+    ],
     "learning_objectives": [
       "Analyze the civil engineering challenges and structural solutions of William Tierney Clark's 1849 suspension design for the Chain Bridge.",
       "Understand the pivotal role of Count István Széchenyi and the bridge in driving the formal unification of Buda, Pest, and Óbuda in 1873.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "chain_bridge_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/chain_bridge.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

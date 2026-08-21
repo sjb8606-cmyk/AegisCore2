@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Law",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["american_revolution", "civics", "political_propaganda"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "american_revolution",
+      "civics",
+      "political_propaganda"
+    ],
     "learning_objectives": [
       "Understand the economic and political motivations behind the Boston Tea Party and the American Revolution",
       "Analyze how public space, like the Boston Common and Faneuil Hall, acts as a catalyst for political dissent",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "freedom_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/freedom.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

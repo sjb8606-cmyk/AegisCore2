@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["immigration_history", "german_heritage", "religious_colonies"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "immigration_history",
+      "german_heritage",
+      "religious_colonies"
+    ],
     "learning_objectives": [
       "Understand the history and motivations of the German Lutheran missionary immigration to the Cass River Valley under Wilhelm Loehe",
       "Analyze the architectural design and structural engineering of the Zehnder's Holz Brücke (wooden bridge)",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "frankenmuth_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/frankenmuth.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

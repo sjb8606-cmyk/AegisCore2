@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Culinary",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["agricultural_science", "spice_chemistry", "plantation_labor_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "agricultural_science",
+      "spice_chemistry",
+      "plantation_labor_history"
+    ],
     "learning_objectives": [
       "Explain the botanical and agricultural processes involved in cultivating and harvesting key spices, including cloves, nutmeg, and vanilla.",
       "Understand the historical role of Zanzibar as a premier global hub in the 19th-century spice and maritime trade.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "spice_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/spice.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

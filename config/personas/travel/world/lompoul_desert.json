@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Desert Geomorphology",
-    "grade_levels": ["elementary", "middle_school", "adult"],
-    "curriculum_tags": ["Desert Geomorphology", "Sahelian Ecology", "Ecotourism Studies"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Desert Geomorphology",
+      "Sahelian Ecology",
+      "Ecotourism Studies"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Lompoul Dunes (orange quartz sand) and how the northern trade winds shape the shifting landscape.",
       "Analyze the ecological transition between the arid Sahara desert and the semi-arid Sahelian savannah of northern Senegal.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "lompoul_desert_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/lompoul_desert.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

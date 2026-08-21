@@ -21,10 +21,36 @@
     "grades": "1–8",
     "type": "wonderling",
     "pillar": "Discipline",
-    "curriculum_tags": ["discipline", "persistence", "growth_mindset", "effort", "habit_building"]
+    "curriculum_tags": [
+      "discipline",
+      "persistence",
+      "growth_mindset",
+      "effort",
+      "habit_building"
+    ]
   },
   "avatar": {
     "elevenlabs_voice_id": "edu_forge_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/edu_forge.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

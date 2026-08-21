@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Engineering",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["civil_engineering", "transportation_history", "border_studies"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "civil_engineering",
+      "transportation_history",
+      "border_studies"
+    ],
     "learning_objectives": [
       "Understand the structural engineering and design of the Blue Water cantilever and arch bridges",
       "Analyze the strategic and economic importance of the St. Clair River as an international maritime border",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "port_huron_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/port_huron.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["youth_development", "post_conflict_healing", "holistic_education"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "youth_development",
+      "post_conflict_healing",
+      "holistic_education"
+    ],
     "learning_objectives": [
       "Understand the social and historical origins of the Agahozo-Shalom Youth Village (ASYV) in addressing the post-genocide orphan and youth crises.",
       "Analyze the holistic, trauma-informed educational and healing models used to empower vulnerable youth in Rwanda.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "agahozo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/agahozo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

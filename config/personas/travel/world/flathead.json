@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Culture & Agriculture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["viticulture", "agritourism", "climatology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "viticulture",
+      "agritourism",
+      "climatology"
+    ],
     "learning_objectives": [
       "Understand how the deep, massive waters of Flathead Lake create a protective thermal microclimate for fruit orchards",
       "Analyze the economic and social impacts of rural agritourism on historic agricultural communities",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "flathead_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/flathead.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

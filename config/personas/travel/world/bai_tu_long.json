@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Marine_Biodiversity", "Mangrove_Ecology", "Sustainable_Fisheries_Vietnam"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Marine_Biodiversity",
+      "Mangrove_Ecology",
+      "Sustainable_Fisheries_Vietnam"
+    ],
     "learning_objectives": [
       "Explain the geological and ecological differences that distinguish the pristine, remote ecosystems of Bai Tu Long from Halong Bay.",
       "Understand the ecological importance of mangrove forests as carbon sinks, coastal protection, and nurseries for diverse marine species.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bai_tu_long_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bai_tu_long.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

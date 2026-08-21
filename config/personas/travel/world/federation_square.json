@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Modern Architecture",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Deconstructivist Architecture", "Modern Art History", "Urban Sociology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Deconstructivist Architecture",
+      "Modern Art History",
+      "Urban Sociology"
+    ],
     "learning_objectives": [
       "Understand the architectural design of Federation Square (completed 2002), analyzing how its deconstructivist zinc, glass, and sandstone fractals create public space.",
       "Analyze the role of the National Gallery of Victoria (NGV) as the oldest and most visited public art museum in Australia.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "federation_square_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/federation_square.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

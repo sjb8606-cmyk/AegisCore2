@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Argentine_Elite_History", "Peronism", "Funerary_Architecture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Argentine_Elite_History",
+      "Peronism",
+      "Funerary_Architecture"
+    ],
     "learning_objectives": [
       "Understand how the architectural styles and spatial organization of Recoleta Cemetery reflected the social status and political power of the Argentine oligarchy.",
       "Analyze the historical role of Eva Perón (Evita) in modern Argentine politics, focusing on her social welfare programs and labor mobilization.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "recoleta_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/recoleta.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Alpine Geomorphology & Mountain History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Alpine Geomorphology", "Inca Masonry", "History of Ascent"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Alpine Geomorphology",
+      "Inca Masonry",
+      "History of Ascent"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Huayna Picchu 'sugarloaf' peak through tectonic fracturing and river canyon erosion.",
       "Analyze the architectural design and structural masonry of the Temple of the Moon, built inside a natural granite cave.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "huayna_picchu_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/huayna_picchu.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

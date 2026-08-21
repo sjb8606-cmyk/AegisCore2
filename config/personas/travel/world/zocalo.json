@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Archaeology",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Aztec Civilization", "Spanish Conquest", "Urban Archaeology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Aztec Civilization",
+      "Spanish Conquest",
+      "Urban Archaeology"
+    ],
     "learning_objectives": [
       "Understand the urban transformation of Tenochtitlan into Mexico City, analyzing how the Spanish used Aztec stones to build colonial cathedrals.",
       "Analyze the religious and cosmological architecture of the Templo Mayor, focusing on the dual shrines of Huitzilopochtli and Tlaloc.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "zocalo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/zocalo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

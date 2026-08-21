@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Art & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["contemporary_sculpture", "landscape_design", "art_appreciation"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "contemporary_sculpture",
+      "landscape_design",
+      "art_appreciation"
+    ],
     "learning_objectives": [
       "Understand the history and architectural transformation of the former New Jersey State Fairgrounds into Grounds for Sculpture",
       "Analyze how scale and site-specificity alter the meaning of outdoor monumental sculpture",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "grounds_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/grounds.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

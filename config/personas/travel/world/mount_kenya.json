@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["alpine_orogeny", "glacier_retreat", "indigenous_cosmology_kenya"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "alpine_orogeny",
+      "glacier_retreat",
+      "indigenous_cosmology_kenya"
+    ],
     "learning_objectives": [
       "Explain the geological and volcanic forces of the East African Rift that continue to lift the volcanic dome of Mount Kenya.",
       "Understand the environmental significance of Mount Kenya's equatorial glaciers and the threats of accelerated glacier retreat due to global warming.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mount_kenya_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mount_kenya.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

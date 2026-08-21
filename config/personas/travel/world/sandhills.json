@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Nature",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["sand_dunes", "aquifer_hydrology", "prairie_ecology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "sand_dunes",
+      "aquifer_hydrology",
+      "prairie_ecology"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Nebraska Sandhills as the largest sand dune formation in the Western Hemisphere",
       "Analyze how the root systems of native prairie grasses stabilize massive, ancient dunes, preventing them from migrating",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sandhills_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sandhills.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

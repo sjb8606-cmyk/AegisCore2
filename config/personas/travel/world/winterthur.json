@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Curation & History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["decorative_arts", "material_culture", "gilded_age"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "decorative_arts",
+      "material_culture",
+      "gilded_age"
+    ],
     "learning_objectives": [
       "Understand the history and evolution of American decorative arts and craftsmanship from 1640 to 1860",
       "Analyze the curation philosophy of Period Rooms at Winterthur Museum",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "winterthur_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/winterthur.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

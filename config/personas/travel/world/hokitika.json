@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["nephrite_jade_mineralogy", "maori_resource_guardianship", "gold_rushes"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "nephrite_jade_mineralogy",
+      "maori_resource_guardianship",
+      "gold_rushes"
+    ],
     "learning_objectives": [
       "Explain the geological formation and mineral composition of Pounamu (Nephrite Jade) within the metamorphic rocks of the Southern Alps.",
       "Understand the legal and cultural frameworks of Kaitiakitanga (guardianship) and how Ngāi Tahu manages the sustainable extraction of pounamu.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "hokitika_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/hokitika.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

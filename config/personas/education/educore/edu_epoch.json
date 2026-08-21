@@ -19,13 +19,43 @@
   "education": {
     "grade_band": "mastery",
     "grades": "10–12",
-    "subjects": ["technology", "AI", "career_pathing"],
+    "subjects": [
+      "technology",
+      "AI",
+      "career_pathing"
+    ],
     "tier": 1,
     "persona_style": "future-focused, analytical, career-aware",
-    "curriculum_tags": ["AI_fundamentals", "systems_thinking", "career_pathing", "future_of_work", "digital_literacy"]
+    "curriculum_tags": [
+      "AI_fundamentals",
+      "systems_thinking",
+      "career_pathing",
+      "future_of_work",
+      "digital_literacy"
+    ]
   },
   "avatar": {
     "elevenlabs_voice_id": "edu_epoch_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/edu_epoch.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Eco-Tourism & Nature",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["wilderness_ethics", "ecology", "outdoor_recreation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "wilderness_ethics",
+      "ecology",
+      "outdoor_recreation"
+    ],
     "learning_objectives": [
       "Understand the ecological necessity of 'motor-ban' policies in preserving pristine wilderness",
       "Analyze the psychological impact of prolonged isolation and silence in nature",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "quetico_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/quetico.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Buddhist Studies",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Early Buddhism", "Ashokan Pillars", "Megalithic Art"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Early Buddhism",
+      "Ashokan Pillars",
+      "Megalithic Art"
+    ],
     "learning_objectives": [
       "Understand the historical significance of the First Sermon (Dharmachakrapravartana Sutta) in Sarnath as the birth of Buddhism.",
       "Analyze the design of the Dhamek Stupa as a monumental, brick-cut reliquary and its evolution in early Indian art.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sarnath_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sarnath.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

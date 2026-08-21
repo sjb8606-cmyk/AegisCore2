@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["dune_dynamics", "marine_mammal_ecology", "off_grid_sustainability"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "dune_dynamics",
+      "marine_mammal_ecology",
+      "off_grid_sustainability"
+    ],
     "learning_objectives": [
       "Explain the geological and wind erosion processes that form the massive, active shifting sand dunes of Cabo Polonio.",
       "Analyze the social structures and reproductive biology of the South American Sea Lion (Otaria flavescens) and Fur Seal colonies on the headlands.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "rocha_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/rocha.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Law",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["constitutional_law", "archival_science", "american_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "constitutional_law",
+      "archival_science",
+      "american_history"
+    ],
     "learning_objectives": [
       "Understand the material science and preservation technology required to protect ancient parchment documents",
       "Analyze the political and legal significance of the Charters of Freedom (Declaration, Constitution, Bill of Rights)",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "national_archives_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/national_archives.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

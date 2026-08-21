@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Philosophy",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["social_welfare_philosophy", "human_development", "costa_rican_identity"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "social_welfare_philosophy",
+      "human_development",
+      "costa_rican_identity"
+    ],
     "learning_objectives": [
       "Understand the philosophical and historical origins of the 'Pura Vida' concept as a national cultural identity based on peace, gratitude, and community.",
       "Analyze the social welfare reforms of the 1940s in Costa Rica, focusing on how investing in public health and education laid the foundation for national happiness.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "pura_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/pura.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

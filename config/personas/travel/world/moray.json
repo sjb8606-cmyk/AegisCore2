@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Agronomy & Soil Science",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Agricultural Engineering", "Microclimates", "Soil Chemistry"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Agricultural Engineering",
+      "Microclimates",
+      "Soil Chemistry"
+    ],
     "learning_objectives": [
       "Understand the agricultural engineering of Moray, focusing on how its concentric terraces mimic diverse eco-zones from the coast to the jungle.",
       "Analyze the thermal dynamics that generate a temperature gradient of up to 15 degrees Celsius between the lowest and highest terraces.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "moray_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/moray.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Geology & Spa Culture",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Geothermal Systems", "Hydrothermal Chemistry", "Regional Tourism"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Geothermal Systems",
+      "Hydrothermal Chemistry",
+      "Regional Tourism"
+    ],
     "learning_objectives": [
       "Understand the geological mechanics of Beppu's massive geothermal discharge, second only to Yellowstone.",
       "Analyze the mineral chemistry that creates distinct colors (iron-rich red, cobalt blue) in the hot springs.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "beppu_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/beppu.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

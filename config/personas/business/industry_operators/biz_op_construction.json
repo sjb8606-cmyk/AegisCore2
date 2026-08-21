@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Business Operations",
-    "grade_levels": ["university", "adult", "professional"],
-    "curriculum_tags": ["Construction_Business_Economics", "Project_Cash_Flow", "Small_Business_Finance"],
+    "grade_levels": [
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Construction_Business_Economics",
+      "Project_Cash_Flow",
+      "Small_Business_Finance"
+    ],
     "learning_objectives": [
       "Understand work-in-progress (WIP) reporting and explain how it reveals over-billing or under-billing on a project.",
       "Analyze how retainage exposure and draw schedule timing create cash flow risk independent of project profitability.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "biz_op_construction_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/biz_op_construction.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Culinary & Geography",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["viticulture", "climatology", "agricultural_economics"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "viticulture",
+      "climatology",
+      "agricultural_economics"
+    ],
     "learning_objectives": [
       "Understand the geological and soil diversity (loess and volcanic ash) that defines the Walla Walla Valley AVA",
       "Analyze the thermal physics of the valley's microclimate in grape ripening",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "walla_walla_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/walla_walla.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

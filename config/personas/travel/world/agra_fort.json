@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Military Architecture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Mughal Empire", "Fortification Engineering", "Sovereign Courts"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Mughal Empire",
+      "Fortification Engineering",
+      "Sovereign Courts"
+    ],
     "learning_objectives": [
       "Understand the military and strategic purpose of the Agra Fort, constructed by Akbar as his primary capital in the 16th century.",
       "Analyze the transition from Akbar's red sandstone military style to Shah Jahan's elegant white marble palace additions.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "agra_fort_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/agra_fort.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

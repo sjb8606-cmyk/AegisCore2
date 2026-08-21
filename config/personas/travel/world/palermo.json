@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Urban_Gentrification", "Argentine_Design_History", "Asado_Gastronomy"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Urban_Gentrification",
+      "Argentine_Design_History",
+      "Asado_Gastronomy"
+    ],
     "learning_objectives": [
       "Analyze the economic and social factors that drove Palermo’s transition from a working-class residential district to a global hub of design and gastronomy.",
       "Understand the principles of modern Argentine design, detailing how local artists combine European minimalism with rustic, Gaucho leather and wood.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "palermo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/palermo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

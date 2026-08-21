@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["dry_prairie_ecology", "astronomy", "agricultural_history"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "dry_prairie_ecology",
+      "astronomy",
+      "agricultural_history"
+    ],
     "learning_objectives": [
       "Understand the ecological characteristics and biodiversity of the endangered Florida dry prairie ecosystem",
       "Analyze the role of dark sky preservation in protecting nocturnal species and enabling astronomical observation",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kissimmee_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kissimmee.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

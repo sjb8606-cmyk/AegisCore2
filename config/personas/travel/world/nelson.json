@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["creative_industries", "hop_viticulture", "artisan_craft_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "creative_industries",
+      "hop_viticulture",
+      "artisan_craft_history"
+    ],
     "learning_objectives": [
       "Understand the history and evolution of the World of WearableArt (WOW) movement as a unique intersection of fashion, theater, and industrial design.",
       "Analyze why Nelson's specific latitude, soils, and sunshine hours make it the premier region in the southern hemisphere for commercial hop cultivation.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "nelson_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/nelson.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

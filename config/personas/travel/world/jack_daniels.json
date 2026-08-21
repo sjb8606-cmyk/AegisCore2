@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culinary",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["organic_chemistry", "industrial_history", "labor_studies"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "organic_chemistry",
+      "industrial_history",
+      "labor_studies"
+    ],
     "learning_objectives": [
       "Understand the chemical and physical process of 'charcoal mellowing' (the Lincoln County Process) that defines Tennessee Whiskey",
       "Analyze the role of Nearest Green, an enslaved master distiller, in teaching Jack Daniel the craft of whiskey making",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "jack_daniels_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/jack_daniels.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

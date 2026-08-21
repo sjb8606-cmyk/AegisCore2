@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Arts & Indigenous Culture",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["indigenous_art", "museum_decolonization", "material_culture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "indigenous_art",
+      "museum_decolonization",
+      "material_culture"
+    ],
     "learning_objectives": [
       "Understand the historical development of Native American art in the Southwest from traditional utility to contemporary fine art",
       "Analyze the impact of federal boarding schools on Indigenous identity and the artistic resistance that emerged from them",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "heard_museum_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/heard_museum.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

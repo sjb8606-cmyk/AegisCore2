@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Marcher_Lords", "Baroque_Gardens", "Imperial_Provenance"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Marcher_Lords",
+      "Baroque_Gardens",
+      "Imperial_Provenance"
+    ],
     "learning_objectives": [
       "Analyze the role of the Marcher Lords in medieval Welsh history and how Powis Castle survived by shifting its allegiances.",
       "Understand the design principles of the Italianate terraces at Powis Castle as one of the few surviving examples of original 17th-century baroque garden design.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "powys_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/powys.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

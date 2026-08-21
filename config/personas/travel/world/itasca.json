@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["hydrology", "exploration_history", "boreal_ecology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "hydrology",
+      "exploration_history",
+      "boreal_ecology"
+    ],
     "learning_objectives": [
       "Understand the hydrology of Lake Itasca as the primary reservoir for the headwaters of the Mississippi River",
       "Analyze Henry Schoolcraft's 1832 expedition and how he used Latin roots (veritas caput) to coin the name 'Itasca'",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "itasca_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/itasca.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

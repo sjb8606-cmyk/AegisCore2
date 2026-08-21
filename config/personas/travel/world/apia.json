@@ -18,8 +18,19 @@
   },
   "education": {
     "domain": "Literature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["robert_louis_stevenson", "colonial_history_samoa", "island_literature_sanctuaries"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "robert_louis_stevenson",
+      "colonial_history_samoa",
+      "island_literature_sanctuaries"
+    ],
     "learning_objectives": [
       "Understand the historical role and global significance of Robert Louis Stevenson (Tusitala) in Samoan society during the late 19th century.",
       "Analyze the colonial-era wooden architecture of the Vailima estate and its adaptation to the humid, tropical Pacific climate.",
@@ -35,5 +46,25 @@
   "avatar": {
     "elevenlabs_voice_id": "apia_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/apia.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

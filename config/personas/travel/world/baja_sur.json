@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Marine Biology & Adventure Geography",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Marine Biology", "Coastal Geomorphology", "Ecotourism Studies"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Marine Biology",
+      "Coastal Geomorphology",
+      "Ecotourism Studies"
+    ],
     "learning_objectives": [
       "Understand the biology of the Gray Whale (Eschrichtius robustus) and its annual 10,000-mile migration from the Arctic to the lagoons of Baja California Sur.",
       "Analyze the geomorphological formation of the Land's End granite arch (El Arco) through tectonic fracturing and marine wave erosion.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "baja_sur_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/baja_sur.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

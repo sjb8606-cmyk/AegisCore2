@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Arts & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["pop_art", "consumer_culture", "art_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "pop_art",
+      "consumer_culture",
+      "art_history"
+    ],
     "learning_objectives": [
       "Understand the origins and cultural impact of the Pop Art movement in challenging traditional fine art",
       "Analyze the silkscreen printing process as a mechanization of artistic production",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "warhol_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/warhol.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

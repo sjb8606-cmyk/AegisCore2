@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Maritime History & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["piracy_history", "linguistics", "island_isolation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "piracy_history",
+      "linguistics",
+      "island_isolation"
+    ],
     "learning_objectives": [
       "Understand the golden age of piracy and the strategic role of Ocracoke Inlet as a pirate haven",
       "Analyze the development of the distinct Ocracoke 'brogue' (Hoi Toide dialect) through geographic isolation",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ocracoke_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ocracoke.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

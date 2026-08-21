@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Industry",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["industrial_history", "manufacturing_economics", "fluvial_transport"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "industrial_history",
+      "manufacturing_economics",
+      "fluvial_transport"
+    ],
     "learning_objectives": [
       "Understand the engineering and history of the continuous track (crawler) tractor pioneered in Peoria",
       "Analyze the role of the Illinois River in facilitating the early industrial and agricultural trade of the Midwest",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "peoria_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/peoria.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

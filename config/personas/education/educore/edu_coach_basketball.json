@@ -19,12 +19,41 @@
   "education": {
     "grade_band": "cross_platform",
     "grades": "3–12",
-    "subjects": ["basketball"],
+    "subjects": [
+      "basketball"
+    ],
     "tier": "sports",
-    "curriculum_tags": ["ball_handling", "shooting", "defense", "team_systems", "court_vision", "scholarship_pathways"]
+    "curriculum_tags": [
+      "ball_handling",
+      "shooting",
+      "defense",
+      "team_systems",
+      "court_vision",
+      "scholarship_pathways"
+    ]
   },
   "avatar": {
     "elevenlabs_voice_id": "edu_coach_basketball_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/edu_coach_basketball.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

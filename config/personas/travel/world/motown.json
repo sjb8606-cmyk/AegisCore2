@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Music & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["american_music_history", "civil_rights_era", "cultural_economics"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "american_music_history",
+      "civil_rights_era",
+      "cultural_economics"
+    ],
     "learning_objectives": [
       "Understand the historical significance of Motown Records as a major Black-owned business and cultural force",
       "Analyze the 'assembly-line' production model of Berry Gordy modeled on Detroit's auto factories",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "motown_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/motown.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

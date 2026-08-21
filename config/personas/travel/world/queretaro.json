@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Engineering",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Colonial Engineering", "Constitutional History", "Mineralogy Studies"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Colonial Engineering",
+      "Constitutional History",
+      "Mineralogy Studies"
+    ],
     "learning_objectives": [
       "Understand the civil engineering and hydraulic design of the Querétaro Aqueduct (completed 1738), focusing on how gravity and stone channels transported water.",
       "Analyze the political significance of Querétaro as the stage for critical national events, including the execution of Maximilian and the drafting of the 1917 Constitution.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "queretaro_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/queretaro.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Balinese_Art_History", "Pita_Maha_Movement", "Ngayah_Philosophy"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Balinese_Art_History",
+      "Pita_Maha_Movement",
+      "Ngayah_Philosophy"
+    ],
     "learning_objectives": [
       "Understand the Balinese philosophy of 'Ngayah' as a model of selfless, communal artistic service dedicated to temple ritual and social cohesion.",
       "Analyze the artistic and historical significance of the 1930s 'Pita Maha' artists' cooperative in modernizing Balinese painting and woodcarving.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ubud_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ubud.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

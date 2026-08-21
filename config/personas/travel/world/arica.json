@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["pre_historic_preservation", "mummification_science", "coastal_hunter_gatherers"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "pre_historic_preservation",
+      "mummification_science",
+      "coastal_hunter_gatherers"
+    ],
     "learning_objectives": [
       "Understand the unique mummification techniques (black, red, and mud mummies) developed by the Chinchorro culture starting around 5000 BCE.",
       "Analyze the role of hyper-arid desert soil and high environmental arsenic levels in facilitating the preservation of human remains in northern Chile.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "arica_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/arica.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Local History",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Glacial Geomorphology", "Balkan History", "Scenic Infrastructure"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Glacial Geomorphology",
+      "Balkan History",
+      "Scenic Infrastructure"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Nine Glens of Antrim, analyzing how Pleistocene-era glaciers carved deep valleys through limestone and basalt.",
       "Analyze the historical role of the Glens as a distinct, isolated cultural sanctuary where Gaelic language and bardic traditions survived.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "glens_of_antrim_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/glens_of_antrim.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

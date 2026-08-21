@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["cloud_forest_conservation", "avian_biodiversity", "orchid_adaptation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "cloud_forest_conservation",
+      "avian_biodiversity",
+      "orchid_adaptation"
+    ],
     "learning_objectives": [
       "Explain the meteorological processes that form the high-humidity cloud forests of the Chocó-Andean ecological corridor.",
       "Understand the world-class avian biodiversity of Mindo, identifying key species such as the Cock-of-the-rock (Rupicola peruvianus).",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mindo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mindo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["social_stratification", "coastal_history", "american_literature"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "social_stratification",
+      "coastal_history",
+      "american_literature"
+    ],
     "learning_objectives": [
       "Understand the Gilded and modern wealth booms that created the exclusive enclave of the Hamptons",
       "Analyze the socioeconomic stratification of the East End, from local baymen to billionaire residents",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "hamtons_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/hamtons.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Local History",
-    "grade_levels": ["elementary", "middle_school", "adult"],
-    "curriculum_tags": ["Coastal Geomorphology", "Age of Sail", "History of Slavery"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Coastal Geomorphology",
+      "Age of Sail",
+      "History of Slavery"
+    ],
     "learning_objectives": [
       "Understand the geological formation of 'Ponta da Piedade' (limestone caves and sea stacks) through coastal marine erosion.",
       "Analyze the role of Lagos as the primary port where the first African slaves were brought to Europe in 1444, evaluating the global impact.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "lagos_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/lagos.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

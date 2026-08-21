@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Literature",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Science_Fiction_Origins", "Stratovolcano_Geology", "Icelandic_Sagas"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Science_Fiction_Origins",
+      "Stratovolcano_Geology",
+      "Icelandic_Sagas"
+    ],
     "learning_objectives": [
       "Analyze the role of Snæfellsjökull in Jules Verne’s 1864 novel 'Journey to the Center of the Earth' as the gateway to the subterranean world.",
       "Understand the geological formation of a glacier-capped stratovolcano and its eruptive history on the Snæfellsnes peninsula.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "snaefellsjokull_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/snaefellsjokull.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Sports",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["sporting_history", "structural_engineering", "urban_planning"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "sporting_history",
+      "structural_engineering",
+      "urban_planning"
+    ],
     "learning_objectives": [
       "Analyze the structural engineering and sustainable design elements of Lusail Stadium, particularly its solar-powered cooling systems.",
       "Understand the urban planning concepts behind the development of Lusail as Qatar's premier 'planned city' and sustainable hub.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "lusail_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/lusail.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Architecture & Engineering History",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Renaissance Engineering", "Gothic Architecture", "Geometry & Physics"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Renaissance Engineering",
+      "Gothic Architecture",
+      "Geometry & Physics"
+    ],
     "learning_objectives": [
       "Understand the structural engineering challenges of constructing the Florence Cathedral Dome, specifically how Brunelleschi solved the lack of centering timber.",
       "Analyze the 'herringbone' (spina pesce) brick-laying pattern and how it distributes gravity forces outward to the double-shell dome walls.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "duomo_florence_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/duomo_florence.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

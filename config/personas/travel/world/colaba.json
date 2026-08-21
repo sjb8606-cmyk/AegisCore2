@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Urban History & Pop Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Art Deco Design", "Colonial History", "Urban Regeneration"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Art Deco Design",
+      "Colonial History",
+      "Urban Regeneration"
+    ],
     "learning_objectives": [
       "Understand the history and land reclamation of Colaba (one of the original seven islands of Bombay) in the 19th century.",
       "Analyze the architectural significance of South Mumbai's Art Deco style (the second largest collection in the world after Miami), evaluating how it integrated tropical and Indian motifs.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "colaba_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/colaba.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

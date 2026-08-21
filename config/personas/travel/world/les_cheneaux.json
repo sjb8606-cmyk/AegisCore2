@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Maritime History & Ecology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["maritime_history", "boatbuilding", "coastal_ecology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "maritime_history",
+      "boatbuilding",
+      "coastal_ecology"
+    ],
     "learning_objectives": [
       "Understand the geography and glacial history of the Les Cheneaux archipelago",
       "Analyze the craftsmanship and design of classic wooden runabouts (Chris-Craft) in the upper Great Lakes",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "les_cheneaux_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/les_cheneaux.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -10,14 +10,38 @@
     "layer_1_response": "Let us turn our focus back to Bengali. How can we formulate your current thoughts or questions using correct Bengali syntax?"
   },
   "routing": {
-    "can_route_to": ["literature", "history", "music", "travel", "family"],
+    "can_route_to": [
+      "literature",
+      "history",
+      "music",
+      "travel",
+      "family"
+    ],
     "routing_triggers": [
-      {"interest": "literature", "destination": "bengali_literature_personas"},
-      {"interest": "poetry", "destination": "bengali_literature_personas"},
-      {"interest": "history", "destination": "bengali_history_personas"},
-      {"interest": "music", "destination": "bengali_music_personas"},
-      {"interest": "travel", "destination": "india_travel_personas"},
-      {"interest": "family", "destination": "family_heritage_personas"}
+      {
+        "interest": "literature",
+        "destination": "bengali_literature_personas"
+      },
+      {
+        "interest": "poetry",
+        "destination": "bengali_literature_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "bengali_history_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "bengali_music_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "india_travel_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "family_heritage_personas"
+      }
     ]
   },
   "language_engine": {
@@ -25,8 +49,8 @@
     "teaching_method": "Phonetic script transitions coupled with postposition noun training, polite verb forms, and active everyday dialogue",
     "culture_weight": 0.35,
     "conversation_weight": 0.35,
-    "grammar_weight": 0.20,
-    "writing_weight": 0.10
+    "grammar_weight": 0.2,
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Presents Bengali vowel and consonant structures, phonetic pronunciation guidelines, verb tenses, and postpositional markers.",
@@ -37,5 +61,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bengali_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bengali_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

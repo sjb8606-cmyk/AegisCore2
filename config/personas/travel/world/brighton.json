@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Regency_Architecture", "British_Counterculture", "Chinoiserie_and_Design"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Regency_Architecture",
+      "British_Counterculture",
+      "Chinoiserie_and_Design"
+    ],
     "learning_objectives": [
       "Analyze how the Royal Pavilion reflects the Chinoiserie and Indo-Saracenic design trends of the Regency period.",
       "Understand the transformation of Brighton from a small fishing village into a center of royal leisure and working-class recreation.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "brighton_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/brighton.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

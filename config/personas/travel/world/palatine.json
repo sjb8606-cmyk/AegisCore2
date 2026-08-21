@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Archaeology & Imperial History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Roman Empire History", "Stratigraphy", "Urban Evolution"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Roman Empire History",
+      "Stratigraphy",
+      "Urban Evolution"
+    ],
     "learning_objectives": [
       "Understand the mythological and historical founding of Rome on the Palatine Hill (753 BC) and its stratigraphic archaeological proof.",
       "Analyze the transition of the Palatine from a republican residential neighborhood of senators to the exclusive palace domain of the emperors.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "palatine_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/palatine.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

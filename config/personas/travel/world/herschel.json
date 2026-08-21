@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Arctic Heritage & Ecology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["arctic_history", "climate_change", "marine_mammalogy"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "arctic_history",
+      "climate_change",
+      "marine_mammalogy"
+    ],
     "learning_objectives": [
       "Understand the socio-economic and ecological impact of the 19th-century commercial whaling boom on the Arctic",
       "Analyze the effects of climate change and coastal erosion on heritage sites built on permafrost",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "herschel_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/herschel.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

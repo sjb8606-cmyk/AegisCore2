@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Geography",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["trade_history", "geopolitics", "southwestern_geography"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "trade_history",
+      "geopolitics",
+      "southwestern_geography"
+    ],
     "learning_objectives": [
       "Understand the commercial and geopolitical significance of El Camino Real de Tierra Adentro in connecting Mexico City to Santa Fe",
       "Analyze how the physical geography of the Rio Grande valley dictated the route planning and hazards of the trail",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "el_camino_real_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/el_camino_real.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

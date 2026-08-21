@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["colonial_americas", "spanish_empire", "caribbean_history"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "colonial_americas",
+      "spanish_empire",
+      "caribbean_history"
+    ],
     "learning_objectives": [
       "Understand the historical role of Santo Domingo as the primary administrative and cultural gateway for Spanish colonization in the Americas.",
       "Analyze the Gothic and Renaissance architectural elements of the First Cathedral of the Americas and their symbolic role in projecting imperial power.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "colonial_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/colonial.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

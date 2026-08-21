@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Neoclassical_Architecture", "Romanian_National_Awakening", "Acoustic_Design"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Neoclassical_Architecture",
+      "Romanian_National_Awakening",
+      "Acoustic_Design"
+    ],
     "learning_objectives": [
       "Analyze the neoclassical and eclectic architectural design of the Romanian Athenaeum as a symbol of Bucharest's late 19th-century modernization.",
       "Understand the historical significance of the 'Donate a leu for the Athenaeum' campaign as a model of early cultural crowdfunding and national unity.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "athenaeum_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/athenaeum.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

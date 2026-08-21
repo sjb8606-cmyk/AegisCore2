@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Local Culture & Urban Sociology",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Hutong Urbanism", "Siheyuan Architecture", "Socio-Cultural History"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Hutong Urbanism",
+      "Siheyuan Architecture",
+      "Socio-Cultural History"
+    ],
     "learning_objectives": [
       "Understand the historical development of the Beijing Hutongs as an organic, high-density residential and commercial network under the Yuan, Ming, and Qing dynasties.",
       "Analyze the social and spatial hierarchy of the 'Siheyuan' (quadrangle courtyard), evaluating how the placement of rooms reflected Confucian family roles.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "beijing_hutong_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/beijing_hutong.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

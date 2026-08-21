@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Art History & Maritime Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Picasso Post-War", "Vauban Fortifications", "Mediterranean Trade"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Picasso Post-War",
+      "Vauban Fortifications",
+      "Mediterranean Trade"
+    ],
     "learning_objectives": [
       "Understand Paul Picasso's 'Joie de Vivre' artistic period (1946) at the Château Grimaldi in Antibes following the trauma of WWII.",
       "Analyze Vauban's star-fort design at the Fort Carré and its strategic role in defending the border between France and Nice.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "antibes_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/antibes.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

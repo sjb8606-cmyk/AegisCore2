@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Classical_Symphonists", "Salzburg_Prince_Bishops", "Festival_Culture"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Classical_Symphonists",
+      "Salzburg_Prince_Bishops",
+      "Festival_Culture"
+    ],
     "learning_objectives": [
       "Analyze Wolfgang Amadeus Mozart’s role in defining the Classical style, focusing on his innovations in the symphonic, operatic, and concerto forms.",
       "Understand the political and social position of a court musician under the absolute rule of the Salzburg Prince-Bishops.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mozart_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mozart.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

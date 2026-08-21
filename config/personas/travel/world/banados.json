@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["wetland_ecology", "avian_migrations", "capybara_biology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "wetland_ecology",
+      "avian_migrations",
+      "capybara_biology"
+    ],
     "learning_objectives": [
       "Explain the ecological and hydrological role of the Bañados del Este wetlands in filtering groundwater and protecting coastal lagoons from wave erosion.",
       "Understand the biology and conservation status of the Capybara (Hydrochoerus hydrochaeris) as the world's largest rodent.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "banados_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/banados.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

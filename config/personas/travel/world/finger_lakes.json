@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Culinary & Geography",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["viticulture", "glaciology", "geomorphology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "viticulture",
+      "glaciology",
+      "geomorphology"
+    ],
     "learning_objectives": [
       "Understand the geological mechanics of the Laurentide Ice Sheet gouging the Finger Lakes basins",
       "Analyze the thermal physics of deep lakes in preventing frost and extending the agricultural growing season",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "finger_lakes_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/finger_lakes.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

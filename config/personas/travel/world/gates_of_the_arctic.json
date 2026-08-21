@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Nature",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["arctic_ecology", "structural_geology", "wilderness_management"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "arctic_ecology",
+      "structural_geology",
+      "wilderness_management"
+    ],
     "learning_objectives": [
       "Understand the geological formation and tectonic uplift of the Brooks Range in northern Alaska",
       "Analyze the extreme biological adaptations of flora and fauna surviving in a roadless polar desert",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "gates_of_the_arctic_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/gates_of_the_arctic.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

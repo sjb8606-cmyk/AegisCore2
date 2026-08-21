@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Medical Sociology",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["History of Medicine", "Stigma & Quarantine", "Venetian Defensive Works"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "History of Medicine",
+      "Stigma & Quarantine",
+      "Venetian Defensive Works"
+    ],
     "learning_objectives": [
       "Understand the military history of Spinalonga as an impregnable Venetian fortress that resisted Ottoman siege for thirty-three years after the fall of mainland Crete.",
       "Analyze the sociology of the Spinalonga Leper Colony (1903–1957), evaluating how a marginalized, quarantined community built their own functioning society with schools, theaters, and elections.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "spinalonga_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/spinalonga.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["norwegian_immigration", "maritime_history", "coastal_geography"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "norwegian_immigration",
+      "maritime_history",
+      "coastal_geography"
+    ],
     "learning_objectives": [
       "Understand the history of Norwegian immigration to Southeast Alaska and the founding of Petersburg by Peter Buschmann",
       "Analyze the physical geography and navigational challenges of the Wrangell Narrows",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "petersburg_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/petersburg.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

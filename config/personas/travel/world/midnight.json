@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Arts & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["astronomy", "sociology", "creative_arts"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "astronomy",
+      "sociology",
+      "creative_arts"
+    ],
     "learning_objectives": [
       "Understand the astronomical mechanics that create the phenomenon of the midnight sun",
       "Analyze the psychological and cultural effects of extreme seasonal light variations on a community",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "midnight_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/midnight.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

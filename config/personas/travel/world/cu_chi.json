@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Vietnam_War_Tactics", "Guerrilla_Warfare", "Underground_Engineering"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Vietnam_War_Tactics",
+      "Guerrilla_Warfare",
+      "Underground_Engineering"
+    ],
     "learning_objectives": [
       "Analyze the military engineering and defensive features of the Cu Chi Tunnels, focusing on how they integrated kitchens, hospitals, and command centers underground.",
       "Understand the guerrilla warfare strategies of the Viet Cong and how they countered the superior firepower and air mobility of the US military.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cu_chi_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cu_chi.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

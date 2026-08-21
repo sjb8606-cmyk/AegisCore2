@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & History",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["geomorphology", "indian_wars", "stratigraphy"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "geomorphology",
+      "indian_wars",
+      "stratigraphy"
+    ],
     "learning_objectives": [
       "Understand the geological erosion processes that carved Palo Duro Canyon, the second largest canyon in the United States",
       "Analyze the strategic and historical significance of the Battle of Palo Duro Canyon (1874) in ending the Red River War",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "palo_duro_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/palo_duro.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Baroque_Urban_Planning", "River_Confluences", "Medieval_Relics"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Baroque_Urban_Planning",
+      "River_Confluences",
+      "Medieval_Relics"
+    ],
     "learning_objectives": [
       "Explain how the confluence of the Rába, Rábca, and Danube rivers shaped the defensive strategy and commercial growth of Győr.",
       "Identify the key architectural and design elements of the Austrian Baroque style in Győr's historic center.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "gyor_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/gyor.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

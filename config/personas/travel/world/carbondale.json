@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["regional_studies", "railroad_history", "cultural_geography"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "regional_studies",
+      "railroad_history",
+      "cultural_geography"
+    ],
     "learning_objectives": [
       "Understand the historical migration and settlement of 'Little Egypt' in southern Illinois",
       "Analyze the role of Southern Illinois University in driving the modern economy and cultural identity of the region",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "carbondale_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/carbondale.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

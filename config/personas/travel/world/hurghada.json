@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Marine Biology & Tourism History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Marine Biology", "Coral Reef Ecology", "History of Tourism"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Marine Biology",
+      "Coral Reef Ecology",
+      "History of Tourism"
+    ],
     "learning_objectives": [
       "Understand the geological and oceanographic reasons why the Red Sea has become one of the premier diving sanctuaries in the world, with high coral biodiversity.",
       "Analyze the transition of Hurghada from an isolated oil-exploration and fishing village to a global capital of resort tourism in the late 20th century.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "hurghada_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/hurghada.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

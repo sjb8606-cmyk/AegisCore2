@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Tourism & Maritime Geography",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["History of Tourism", "Coastal Ecology", "Marine Reserves"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "History of Tourism",
+      "Coastal Ecology",
+      "Marine Reserves"
+    ],
     "learning_objectives": [
       "Understand the geological formation of Portofino’s peninsula (conglomerate rock cliffs) and its role in protecting the natural harbor of the Tigullio.",
       "Analyze the transition of Portofino from an isolated Roman and medieval fishing port to a global, high-end luxury tourism brand.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "portofino_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/portofino.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

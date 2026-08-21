@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Maritime History & Ecology",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["coastal_erosion", "maritime_history", "adult_education"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "coastal_erosion",
+      "maritime_history",
+      "adult_education"
+    ],
     "learning_objectives": [
       "Understand the history and structural significance of the Marblehead Lighthouse as the oldest continuously operating light on the Great Lakes",
       "Analyze the geological geomorphology of the limestone peninsula and the impact of wave erosion",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "marblehead_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/marblehead.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

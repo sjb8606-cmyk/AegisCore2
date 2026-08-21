@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Sacred Landscapes",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Byzantine Monasticism", "Karst Geomorphology", "Sacred Landscapes"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Byzantine Monasticism",
+      "Karst Geomorphology",
+      "Sacred Landscapes"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Meteora sandstone pillars, created by river delta deposition and subsequent tectonic fracturing.",
       "Analyze the role of the Meteora Monasteries as sanctuaries of the Byzantine culture and language during the Ottoman conquest of the 14th century.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "meteora_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/meteora.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

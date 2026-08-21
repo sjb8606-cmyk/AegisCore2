@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Religion",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["religious_history", "colonial_sociology", "material_culture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "religious_history",
+      "colonial_sociology",
+      "material_culture"
+    ],
     "learning_objectives": [
       "Understand the theological motivations for the founding of the Ephrata Cloister in 1732",
       "Analyze the distinct medieval German timber-frame architecture (Fachwerk) of the Cloister buildings",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ephrata_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ephrata.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

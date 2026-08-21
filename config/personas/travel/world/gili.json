@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Coral_Restoration_Biorock", "Sea_Turtle_Conservation", "Sustainable_Tourism_Islands"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Coral_Restoration_Biorock",
+      "Sea_Turtle_Conservation",
+      "Sustainable_Tourism_Islands"
+    ],
     "learning_objectives": [
       "Explain the scientific principles of 'Biorock' technology, detailing how low-voltage electrical currents accelerate coral growth and calcification.",
       "Understand the nesting and migration lifecycles of Green (Chelonia mydas) and Hawksbill (Eretmochelys imbricata) turtles in the Lombok Strait.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "gili_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/gili.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

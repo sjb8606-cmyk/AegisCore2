@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Buddhist_History_Vietnam", "Oxbow_Lakes", "Sericulture_and_Silk"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Buddhist_History_Vietnam",
+      "Oxbow_Lakes",
+      "Sericulture_and_Silk"
+    ],
     "learning_objectives": [
       "Explain the geological formation of West Lake (Hồ Tây) as a historic oxbow lake created by the changing path of the Red River.",
       "Understand the historical role of Tran Quoc Pagoda as the oldest Buddhist temple in Hanoi, dating back to the 6th-century Emperor Ly Nam De.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "west_lake_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/west_lake.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

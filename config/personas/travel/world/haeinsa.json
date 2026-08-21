@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Tripitaka_Koreana", "Janggyeong_Panjeon_Science", "Goryeo_Dynasty_Invasions"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Tripitaka_Koreana",
+      "Janggyeong_Panjeon_Science",
+      "Goryeo_Dynasty_Invasions"
+    ],
     "learning_objectives": [
       "Understand the historical and spiritual motivation behind the Goryeo dynasty's carving of the 81,258 wooden blocks of the Tripitaka Koreana during the Mongol invasions.",
       "Analyze the brilliant, natural ventilation and temperature-control design of the 15th-century Janggyeong Panjeon library halls.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "haeinsa_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/haeinsa.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

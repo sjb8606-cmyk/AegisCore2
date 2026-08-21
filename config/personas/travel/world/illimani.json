@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["alpine_orogeny", "glacier_retreat", "aymara_cosmology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "alpine_orogeny",
+      "glacier_retreat",
+      "aymara_cosmology"
+    ],
     "learning_objectives": [
       "Explain the geological and tectonic forces of the Central Andes that continue to lift the Cordillera Real and mountains like Illimani.",
       "Understand the role of glaciers in providing freshwater to the Altiplano and the environmental threats of accelerated glacier retreat.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "illimani_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/illimani.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Basaltic_Fluvial_Erosion", "Subtropical_Rainforests", "UNESCO_Natural_Heritage_Iguazu"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Basaltic_Fluvial_Erosion",
+      "Subtropical_Rainforests",
+      "UNESCO_Natural_Heritage_Iguazu"
+    ],
     "learning_objectives": [
       "Explain the geological and tectonic processes of basaltic faulting and river erosion that formed the spectacular crescent staircase of Iguazú Falls.",
       "Understand the ecological importance of the Interior Atlantic Forest (Selva Paranaense) as a highly threatened, high-biodiversity sanctuary.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "iguazu_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/iguazu.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

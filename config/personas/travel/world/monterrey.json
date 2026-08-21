@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Industrial History & Urban Planning",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["Industrial Archaeology", "Urban Park Planning", "Regional Gastronomy"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Industrial Archaeology",
+      "Urban Park Planning",
+      "Regional Gastronomy"
+    ],
     "learning_objectives": [
       "Understand the history of Monterrey’s industrialization, focusing on the role of the Fundidora Monterrey steel mill in shaping the city's growth.",
       "Analyze the post-industrial urban planning of Fundidora Park, evaluating how a massive steel mill was transformed into a public park and cultural museum.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "monterrey_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/monterrey.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

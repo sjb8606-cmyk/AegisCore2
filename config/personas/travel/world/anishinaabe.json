@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["treaty_history", "indigenous_law", "canadian_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "treaty_history",
+      "indigenous_law",
+      "canadian_history"
+    ],
     "learning_objectives": [
       "Understand the historical and legal context of the Numbered Treaties starting with Treaty 1",
       "Analyze the profound differences between Indigenous oral agreements and British contract law",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "anishinaabe_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/anishinaabe.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

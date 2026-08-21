@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["inuit_studies", "whaling_history", "arctic_ecology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "inuit_studies",
+      "whaling_history",
+      "arctic_ecology"
+    ],
     "learning_objectives": [
       "Understand the historical territory, social structure, and sea-ice life of the Inupiat Nation",
       "Analyze the cultural and nutritional significance of the seasonal bowhead whale hunt (Nalukataq)",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "utqiagvik_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/utqiagvik.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

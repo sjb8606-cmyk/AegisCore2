@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["river_hydrology", "bamboo_engineering", "agricultural_history"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "river_hydrology",
+      "bamboo_engineering",
+      "agricultural_history"
+    ],
     "learning_objectives": [
       "Explain the geological and hydrological processes that carved the deep limestone canyons of the Rio Grande River.",
       "Understand the structural engineering and buoyancy principles of traditional Jamaican bamboo rafts.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "rio_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/rio.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

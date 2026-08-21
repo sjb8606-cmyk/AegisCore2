@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Maritime",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["oceanography", "transportation_geography", "marine_navigation"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "oceanography",
+      "transportation_geography",
+      "marine_navigation"
+    ],
     "learning_objectives": [
       "Understand the strategic and ecological significance of the Strait of Belle Isle",
       "Analyze the challenges of maintaining year-round ferry transport in sea-ice conditions",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "straits_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/straits.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

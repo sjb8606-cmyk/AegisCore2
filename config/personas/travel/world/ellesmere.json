@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Conservation & Geography",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["glaciology", "polar_geography", "climate_change"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "glaciology",
+      "polar_geography",
+      "climate_change"
+    ],
     "learning_objectives": [
       "Understand the extreme climatic conditions that define a high arctic polar desert",
       "Analyze the glacial dynamics of the Ellesmere Island ice caps and ice shelves",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ellesmere_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ellesmere.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Viticulture & Local History",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Terroir Science", "History of Viticulture", "Wildlife Conservation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Terroir Science",
+      "History of Viticulture",
+      "Wildlife Conservation"
+    ],
     "learning_objectives": [
       "Understand the geological and microclimatic conditions of the Yarra Valley, explaining how the cool mountain air of the Alps protects the Pinot Noir vines.",
       "Analyze the historical role of the early 19th-century Swiss-German wine pioneers in establishing Victoria's first vineyards.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "yarra_valley_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/yarra_valley.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

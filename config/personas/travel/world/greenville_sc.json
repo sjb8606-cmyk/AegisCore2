@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Urban Design & Industry",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["urban_planning", "industrial_history", "environmental_remediation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "urban_planning",
+      "industrial_history",
+      "environmental_remediation"
+    ],
     "learning_objectives": [
       "Understand the urban design principles behind the creation of Falls Park on the Reedy",
       "Analyze the transition of the Upstate South Carolina economy from textile manufacturing to global advanced manufacturing (BMW)",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "greenville_sc_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/greenville_sc.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

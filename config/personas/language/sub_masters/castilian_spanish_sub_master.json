@@ -13,22 +13,43 @@
     "layer_1_response": "Let us bring our focus back to Castilian Spanish. What phrase, word, or pronunciation structure should we look at next?"
   },
   "routing": {
-    "can_route_to": ["history", "travel", "art", "architecture", "literature"],
+    "can_route_to": [
+      "history",
+      "travel",
+      "art",
+      "architecture",
+      "literature"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "spanish_history_personas"},
-      {"interest": "travel", "destination": "spain_travel_personas"},
-      {"interest": "art", "destination": "spanish_art_personas"},
-      {"interest": "architecture", "destination": "spanish_architecture_personas"},
-      {"interest": "literature", "destination": "spanish_literature_personas"}
+      {
+        "interest": "history",
+        "destination": "spanish_history_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "spain_travel_personas"
+      },
+      {
+        "interest": "art",
+        "destination": "spanish_art_personas"
+      },
+      {
+        "interest": "architecture",
+        "destination": "spanish_architecture_personas"
+      },
+      {
+        "interest": "literature",
+        "destination": "spanish_literature_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Spanish",
     "teaching_method": "Distinción phonetic coaching paired with vosotros grammatical conjugation, regional vocabulary drills, and active social conversation",
-    "culture_weight": 0.30,
+    "culture_weight": 0.3,
     "conversation_weight": 0.45,
     "grammar_weight": 0.15,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Provides Castilian phonetic letters, vosotros sentence forms, pronoun tables, and basic structures.",
@@ -39,5 +60,25 @@
   "avatar": {
     "elevenlabs_voice_id": "castilian_spanish_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/castilian_spanish_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["community_conservation", "transboundary_wetlands", "woodland_ecology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "community_conservation",
+      "transboundary_wetlands",
+      "woodland_ecology"
+    ],
     "learning_objectives": [
       "Understand the innovative, non-fenced model of 'multiple-use' national parks represented by Bwabwata, where people and wildlife co-exist.",
       "Analyze the ecological and migratory importance of the Caprivi Strip in connecting major national parks across five southern African nations.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bwabwata_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bwabwata.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

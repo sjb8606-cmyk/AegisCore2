@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Music",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Eisteddfod_History", "Industrial_Canals", "Gothic_Romanticism"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Eisteddfod_History",
+      "Industrial_Canals",
+      "Gothic_Romanticism"
+    ],
     "learning_objectives": [
       "Understand the historical origins and peace-building mission of the Llangollen International Musical Eisteddfod founded in 1947.",
       "Analyze the engineering achievements of Thomas Telford and William Jessop in constructing the Pontcysyllte Aqueduct using cast-iron troughs.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "llangollen_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/llangollen.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

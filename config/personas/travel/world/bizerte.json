@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["maritime_history", "canal_engineering", "naval_geopolitics"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "maritime_history",
+      "canal_engineering",
+      "naval_geopolitics"
+    ],
     "learning_objectives": [
       "Explain the strategic military role of Bizerte as the northernmost harbor of Africa, controlling key Mediterranean shipping lanes.",
       "Analyze the civil engineering and hydrological factors involved in constructing the shipping canal connecting Lake Bizerte to the Mediterranean.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bizerte_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bizerte.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

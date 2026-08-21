@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Literature",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Victorian_Literature", "Gothic_Tropes", "Female_Authorship"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Victorian_Literature",
+      "Gothic_Tropes",
+      "Female_Authorship"
+    ],
     "learning_objectives": [
       "Analyze how the physical environment of the Yorkshire moors functions as an active character and thematic mirror in Emily Brontë's Wuthering Heights.",
       "Understand the social and economic constraints faced by middle-class Victorian women that led the Brontë sisters to write under male pseudonyms.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bronte_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bronte.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

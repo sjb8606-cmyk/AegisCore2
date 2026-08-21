@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["cenote_formation", "coastal_aquifers", "marine_reef_ecosystems"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "cenote_formation",
+      "coastal_aquifers",
+      "marine_reef_ecosystems"
+    ],
     "learning_objectives": [
       "Understand the geomorphological processes of chemical dissolution that create deep, cliff-side cenotes like Hoyo Azul.",
       "Analyze the role of barrier reefs in coastal protection, detailing how they absorb wave energy and maintain sandy beach ecosystems.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bavaro_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bavaro.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

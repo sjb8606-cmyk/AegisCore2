@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Literature",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["literary_tourism_models", "buccaneer_history", "modern_drama_history"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "literary_tourism_models",
+      "buccaneer_history",
+      "modern_drama_history"
+    ],
     "learning_objectives": [
       "Understand the historical role of Jamaica as a major creative center for British and American writers (including Noel Coward and Ian Fleming) in the 20th century.",
       "Analyze the military and geographic history of Firefly as a strategic 17th-century naval lookout for the buccaneer Henry Morgan.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "firefly_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/firefly.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

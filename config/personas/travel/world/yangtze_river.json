@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & River Geography",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["River Geography", "Three Kingdoms", "Dam Engineering"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "River Geography",
+      "Three Kingdoms",
+      "Dam Engineering"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Three Gorges, analyzing how river erosion cut through the rising limestone anticlines of the Sichuan Basin.",
       "Analyze the military and political history of the Three Kingdoms period, evaluating how the topography of the Yangtze gorges shaped the battle of Yiling.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "yangtze_river_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/yangtze_river.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

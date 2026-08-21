@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Geology & Adventure Sports",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Karst Topography", "Subtropical Hydrology", "Adventure Sports Planning"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Karst Topography",
+      "Subtropical Hydrology",
+      "Adventure Sports Planning"
+    ],
     "learning_objectives": [
       "Understand the geological process of karst erosion that carved the vertical limestone walls of the Todra Gorge.",
       "Analyze the microclimatic and hydrological conditions that support the lush, irrigated palm oasis of the Todra valley below the canyon.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "todra_gorge_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/todra_gorge.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

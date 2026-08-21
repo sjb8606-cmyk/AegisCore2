@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Hungarian_Secessionism", "Urban_Reconstruction_Flood", "Food_Science_Spices"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Hungarian_Secessionism",
+      "Urban_Reconstruction_Flood",
+      "Food_Science_Spices"
+    ],
     "learning_objectives": [
       "Understand the urban planning and architectural reconstruction of Szeged following the catastrophic Great Tisza Flood of 1879.",
       "Analyze the stylistic features of Hungarian Secessionism (Art Nouveau) as practiced by Ede Magyar in the design of the Reök Palace.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "szeged_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/szeged.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

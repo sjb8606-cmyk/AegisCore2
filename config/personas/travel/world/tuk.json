@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Music",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["folk_music_history", "barbados_landship", "rhythmic_syncretism"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "folk_music_history",
+      "barbados_landship",
+      "rhythmic_syncretism"
+    ],
     "learning_objectives": [
       "Explain the musical syncretism of the Barbadian Tuk Band, detailing how British military marching tempos are fused with West African syncopation.",
       "Understand the history and social structure of the Barbados Landship, analyzing its role as a cooperative friendly society and theatrical mimicry of the British Navy.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tuk_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tuk.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

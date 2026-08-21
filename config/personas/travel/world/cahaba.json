@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Geography",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["hydrology", "planned_cities", "civil_war_prisons"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "hydrology",
+      "planned_cities",
+      "civil_war_prisons"
+    ],
     "learning_objectives": [
       "Understand the geological and hydrological factors that caused the repeated flooding of Cahaba",
       "Analyze the political decisions behind the rapid relocation of Alabama's capital from Cahaba to Tuscaloosa in 1826",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cahaba_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cahaba.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

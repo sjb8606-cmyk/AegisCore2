@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Geology",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["geomorphology", "lost_cause_myth", "indigenous_displacement"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "geomorphology",
+      "lost_cause_myth",
+      "indigenous_displacement"
+    ],
     "learning_objectives": [
       "Understand the geological formation of Stone Mountain as an quartz monzonite dome (pluton) formed by subterranean magma",
       "Analyze the creation and political motivations of the Confederate Memorial Carving, completed in 1972",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "stone_mountain_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/stone_mountain.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["forest_restoration", "golden_monkey_ecology", "ecological_corridors"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "forest_restoration",
+      "golden_monkey_ecology",
+      "ecological_corridors"
+    ],
     "learning_objectives": [
       "Understand the ecological restoration and reforestation techniques used to reclaim Gishwati-Mukura from degraded cattle ranches.",
       "Analyze the behavioral biology and habitat needs of the Golden Monkey (Cercopithecus kandti) in restored montane forests.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "gishwati_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/gishwati.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

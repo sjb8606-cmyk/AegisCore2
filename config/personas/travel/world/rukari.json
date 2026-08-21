@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["pre_colonial_statecraft", "royal_architecture", "inyambo_cattle"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "pre_colonial_statecraft",
+      "royal_architecture",
+      "inyambo_cattle"
+    ],
     "learning_objectives": [
       "Understand the political structure and social organization of the pre-colonial Rwandan Kingdom (Mwami system) centered in Nyanza.",
       "Analyze the architectural design and structural engineering of the traditional royal palace (Rukari), constructed from hand-woven reeds and thatch.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "rukari_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/rukari.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

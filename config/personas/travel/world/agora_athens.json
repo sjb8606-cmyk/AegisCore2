@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Philosophy & Civic History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Socratic Philosophy", "Athenian Democracy", "Urban Sociology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Socratic Philosophy",
+      "Athenian Democracy",
+      "Urban Sociology"
+    ],
     "learning_objectives": [
       "Understand the functional and socio-political role of the Ancient Agora as the civic, commercial, and philosophical heart of Athens.",
       "Analyze the Socratic Method (Elenchus) as a tool of philosophical inquiry designed to expose the inconsistencies of unexamined beliefs.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "agora_athens_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/agora_athens.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

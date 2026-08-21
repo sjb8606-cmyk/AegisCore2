@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["rwanda_genocide_history", "urban_regenerative_design", "reconciliation_systems"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "rwanda_genocide_history",
+      "urban_regenerative_design",
+      "reconciliation_systems"
+    ],
     "learning_objectives": [
       "Understand the historical causes, events, and global political impact of the 1994 Genocide against the Tutsi in Rwanda.",
       "Analyze the post-genocide transitional justice and reconciliation systems, specifically the Gacaca community courts.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kigali_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kigali.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

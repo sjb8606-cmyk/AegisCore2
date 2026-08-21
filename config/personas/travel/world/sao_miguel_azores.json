@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Volcanology & Local Culture",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Volcanology", "Geothermal Culinary Science", "Island Biogeography"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Volcanology",
+      "Geothermal Culinary Science",
+      "Island Biogeography"
+    ],
     "learning_objectives": [
       "Understand the geological formation of São Miguel's volcanic calderas (Sete Cidades, Furnas, Fogo) through repetitive collapse and plinian eruptions.",
       "Analyze the culinary and physical science of 'Cozido das Furnas'—a traditional stew slow-cooked entirely by geothermal heat inside the earth (90°C) for six hours.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sao_miguel_azores_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sao_miguel_azores.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

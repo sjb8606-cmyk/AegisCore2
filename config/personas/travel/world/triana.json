@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Traditional Crafts & Performing Arts",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Flamenco Studies", "Ceramics History", "Socio-Cultural History"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Flamenco Studies",
+      "Ceramics History",
+      "Socio-Cultural History"
+    ],
     "learning_objectives": [
       "Understand the socio-spatial history of Triana as the isolated, left bank of Seville that housed historically marginalized populations (Gitanos, sailors, potters).",
       "Analyze the musical structure of Flamenco (compás and cante jondo) as an artistic expression of cultural syncretism (Andalusian, Romani, Jewish, Arabic).",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "triana_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/triana.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

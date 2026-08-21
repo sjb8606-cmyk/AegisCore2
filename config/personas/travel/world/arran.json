@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Geological_Boundary", "Bronze_Age_Monuments", "Island_Biogeography"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Geological_Boundary",
+      "Bronze_Age_Monuments",
+      "Island_Biogeography"
+    ],
     "learning_objectives": [
       "Explain why Arran is known as 'Scotland in Miniature' by identifying the geological division created by the Highland Boundary Fault.",
       "Understand the archaeological context and astronomical alignments of the Bronze Age standing stones on Machrie Moor.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "arran_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/arran.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

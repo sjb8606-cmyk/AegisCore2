@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["artisanal_fishing", "maritime_history", "community_cooperatives"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "artisanal_fishing",
+      "maritime_history",
+      "community_cooperatives"
+    ],
     "learning_objectives": [
       "Explain the traditional 'seine fishing' method used cooperatively by coastal communities in Tobago and its ecological sustainability.",
       "Understand the maritime history of Man O'War Bay as a strategic deep-water harbor for naval ships and pirates in the 17th and 18th centuries.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "charlotteville_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/charlotteville.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

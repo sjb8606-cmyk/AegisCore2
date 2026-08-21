@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Science",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["paleontology", "stratigraphy", "geology_of_the_west"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "paleontology",
+      "stratigraphy",
+      "geology_of_the_west"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Morrison Formation and its preservation of late Jurassic dinosaur fossils",
       "Analyze the role of the Museum of the Rockies as a premier global center for paleontological research",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bozeman_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bozeman.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Arts & Indigenous Culture",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["contemporary_sculpture", "indigenous_studies", "public_art"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "contemporary_sculpture",
+      "indigenous_studies",
+      "public_art"
+    ],
     "learning_objectives": [
       "Understand the artistic design and monumental scale of the Crazy Horse Memorial by Korczak Ziolkowski",
       "Analyze the cultural and spiritual significance of the Black Hills (Paha Sapa) to the Lakota Sioux",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "crazy_horse_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/crazy_horse.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

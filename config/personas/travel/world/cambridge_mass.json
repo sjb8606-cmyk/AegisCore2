@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Education & Science",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["academic_history", "innovation_economics", "urban_studies"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "academic_history",
+      "innovation_economics",
+      "urban_studies"
+    ],
     "learning_objectives": [
       "Understand the historical evolution of Harvard and MIT in shaping American intellectual and technological policy",
       "Analyze the concept of 'innovation districts' like Kendall Square and their role in global technology clustering",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cambridge_mass_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cambridge_mass.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

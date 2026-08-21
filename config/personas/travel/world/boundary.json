@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Geography",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["political_geography", "international_relations", "horticulture"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "political_geography",
+      "international_relations",
+      "horticulture"
+    ],
     "learning_objectives": [
       "Understand the geopolitical history of the longest undefended border in the world",
       "Analyze the symbolic role of physical monuments in international diplomacy",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "boundary_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/boundary.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

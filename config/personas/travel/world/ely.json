@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Nature",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["predator_ecology", "boreal_forest", "wilderness_logistics"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "predator_ecology",
+      "boreal_forest",
+      "wilderness_logistics"
+    ],
     "learning_objectives": [
       "Understand the ecology and social structure of the grey wolf (Canis lupus) in the northern forests",
       "Analyze the role of Ely as a premier gateway and outfitting hub for high-density wilderness recreation",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ely_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ely.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

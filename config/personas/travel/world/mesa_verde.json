@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Archaeology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["mound_builders", "indigenous_studies", "landscape_archaeology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "mound_builders",
+      "indigenous_studies",
+      "landscape_archaeology"
+    ],
     "learning_objectives": [
       "Understand the political, economic, and social structure of the Ancestral Puebloan culture (c. 600-1300 CE)",
       "Analyze the unique architectural design and engineering of the massive cliff dwellings (e.g., Cliff Palace)",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mesa_verde_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mesa_verde.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Military Science",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["military_history", "american_civil_war", "national_memorials"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "military_history",
+      "american_civil_war",
+      "national_memorials"
+    ],
     "learning_objectives": [
       "Understand the historical connection between Arlington House (Robert E. Lee's estate) and the establishment of Arlington National Cemetery",
       "Analyze the symbolic and political purpose of burying union soldiers on the land of the confederate commander",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "arlington_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/arlington.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Sports",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["sporting_technology", "animal_physiology", "gulf_culture"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "sporting_technology",
+      "animal_physiology",
+      "gulf_culture"
+    ],
     "learning_objectives": [
       "Explain the biological adaptations of the Arabian Camel (Camelus dromedarius) that make it an elite endurance athlete in extreme heat.",
       "Understand the engineering and social history behind the transition from child jockeys to robotic jockeys in Gulf camel racing.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "camel_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/camel.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

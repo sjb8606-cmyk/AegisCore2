@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["longevity_science", "andes_agriculture", "wellness_philosophies"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "longevity_science",
+      "andes_agriculture",
+      "wellness_philosophies"
+    ],
     "learning_objectives": [
       "Understand the key environmental, dietary, and social factors that define the Vilcabamba Valley as an international center of longevity.",
       "Analyze the chemical mineral composition of the local water, specifically high magnesium and calcium levels, and its impact on cardiovascular health.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "vilcabamba_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/vilcabamba.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

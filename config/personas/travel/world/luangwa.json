@@ -18,8 +18,19 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["savanna_ecology", "oxbow_lakes", "predator_dynamics"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "savanna_ecology",
+      "oxbow_lakes",
+      "predator_dynamics"
+    ],
     "learning_objectives": [
       "Explain the geological and hydrological processes that form oxbow lakes along highly meandering river systems like the Luangwa River.",
       "Understand the predator-prey dynamics of South Luangwa, specifically the hunting strategies and habitat needs of the African Leopard.",
@@ -35,5 +46,25 @@
   "avatar": {
     "elevenlabs_voice_id": "luangwa_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/luangwa.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

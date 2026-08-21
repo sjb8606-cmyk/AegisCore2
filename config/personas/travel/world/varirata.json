@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["cloud_forest_ecology", "avian_biodiversity", "watershed_preservation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "cloud_forest_ecology",
+      "avian_biodiversity",
+      "watershed_preservation"
+    ],
     "learning_objectives": [
       "Explain the geological and climatic factors that create the high-humidity montane forests of the Sogeri Plateau.",
       "Understand the behavioral biology and spectacular mating displays of the Raggiana Bird of Paradise (Paradisaea raggiana).",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "varirata_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/varirata.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

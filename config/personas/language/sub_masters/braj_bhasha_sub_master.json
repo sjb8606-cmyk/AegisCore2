@@ -13,14 +13,38 @@
     "layer_1_response": "Let us bring our focus back to Braj Bhasha. What phrase, spelling, or pronunciation structure should we look at next?"
   },
   "routing": {
-    "can_route_to": ["literature", "art", "travel", "spirituality", "history"],
+    "can_route_to": [
+      "literature",
+      "art",
+      "travel",
+      "spirituality",
+      "history"
+    ],
     "routing_triggers": [
-      {"interest": "literature", "destination": "bhakti_literature_personas"},
-      {"interest": "poetry", "destination": "bhakti_literature_personas"},
-      {"interest": "art", "destination": "miniature_art_personas"},
-      {"interest": "travel", "destination": "mathura_travel_personas"},
-      {"interest": "spirituality", "destination": "vaisnava_philosophy_personas"},
-      {"interest": "history", "destination": "medieval_indian_history_personas"}
+      {
+        "interest": "literature",
+        "destination": "bhakti_literature_personas"
+      },
+      {
+        "interest": "poetry",
+        "destination": "bhakti_literature_personas"
+      },
+      {
+        "interest": "art",
+        "destination": "miniature_art_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "mathura_travel_personas"
+      },
+      {
+        "interest": "spirituality",
+        "destination": "vaisnava_philosophy_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "medieval_indian_history_personas"
+      }
     ]
   },
   "language_engine": {
@@ -28,8 +52,8 @@
     "teaching_method": "Phonetic voice training coupled with standard Braj Bhasha vocabulary drills, classical poetic registers, and active social conversation",
     "culture_weight": 0.35,
     "conversation_weight": 0.35,
-    "grammar_weight": 0.20,
-    "writing_weight": 0.10
+    "grammar_weight": 0.2,
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Provides Braj Bhasha spelling guidelines, sentence structures, pronoun tables, and basic phonetic rules.",
@@ -40,5 +64,25 @@
   "avatar": {
     "elevenlabs_voice_id": "braj_bhasha_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/braj_bhasha_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

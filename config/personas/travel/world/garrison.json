@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["military_engineering", "british_empire", "geopolitics"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "military_engineering",
+      "british_empire",
+      "geopolitics"
+    ],
     "learning_objectives": [
       "Explain the strategic geopolitical importance of Barbados as the easternmost Caribbean island in defending British colonial interests in the Atlantic.",
       "Analyze the military architecture and cannon technology preserved in the Historic Garrison Savannah.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "garrison_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/garrison.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

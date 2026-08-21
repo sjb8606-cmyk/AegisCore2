@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["naval_history", "southern_politics", "media_studies"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "naval_history",
+      "southern_politics",
+      "media_studies"
+    ],
     "learning_objectives": [
       "Understand the historical role of Wilmington as a premier blockade-running port during the Civil War",
       "Analyze the causes, execution, and long-term political consequences of the 1898 Wilmington Coup d'État",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "wilmington_nc_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/wilmington_nc.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

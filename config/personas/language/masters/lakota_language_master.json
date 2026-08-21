@@ -10,21 +10,45 @@
     "layer_1_response": "Let us bring our focus back to Lakȟótiyapi. What phrase, word, or pronunciation structure should we look at next?"
   },
   "routing": {
-    "can_route_to": ["heritage", "history", "music", "community", "philosophy"],
+    "can_route_to": [
+      "heritage",
+      "history",
+      "music",
+      "community",
+      "philosophy"
+    ],
     "routing_triggers": [
-      {"interest": "heritage", "destination": "indigenous_genealogy_personas"},
-      {"interest": "family", "destination": "indigenous_genealogy_personas"},
-      {"interest": "history", "destination": "plains_history_personas"},
-      {"interest": "music", "destination": "native_american_music_personas"},
-      {"interest": "community", "destination": "first_nations_personas"},
-      {"interest": "philosophy", "destination": "indigenous_philosophy_personas"}
+      {
+        "interest": "heritage",
+        "destination": "indigenous_genealogy_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "indigenous_genealogy_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "plains_history_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "native_american_music_personas"
+      },
+      {
+        "interest": "community",
+        "destination": "first_nations_personas"
+      },
+      {
+        "interest": "philosophy",
+        "destination": "indigenous_philosophy_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Lakota",
     "teaching_method": "Phonetic ejective/guttural sound coaching coupled with gender particle training, verb infix structures, and active social conversation",
-    "culture_weight": 0.40,
-    "conversation_weight": 0.40,
+    "culture_weight": 0.4,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.15,
     "writing_weight": 0.05
   },
@@ -37,5 +61,25 @@
   "avatar": {
     "elevenlabs_voice_id": "lakota_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/lakota_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

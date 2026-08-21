@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["indian_ocean_trade", "maritime_navigation", "monsoon_mechanics"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "indian_ocean_trade",
+      "maritime_navigation",
+      "monsoon_mechanics"
+    ],
     "learning_objectives": [
       "Understand the historical role of the Zanzibar Channel in facilitating trade, migration, and cultural exchange in East Africa.",
       "Analyze the mechanical and wind-propulsion principles of the traditional Swahili dhow used to navigate Indian Ocean trade winds.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "zanzibar_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/zanzibar.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

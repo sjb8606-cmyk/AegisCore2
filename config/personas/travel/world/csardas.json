@@ -19,8 +19,18 @@
   },
   "education": {
     "domain": "Music",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Traditional_Folk_Music", "Social_Dance_History", "Intangible_Heritage"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Traditional_Folk_Music",
+      "Social_Dance_History",
+      "Intangible_Heritage"
+    ],
     "learning_objectives": [
       "Understand the historical origins of the Csárdás as an outgrowth of 18th-century military recruitment dances (Verbunkos).",
       "Identify the distinct musical structure of the Csárdás, characterizing the transition from the slow (lassú) section to the fast (friss) section.",
@@ -36,5 +46,25 @@
   "avatar": {
     "elevenlabs_voice_id": "csardas_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/csardas.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

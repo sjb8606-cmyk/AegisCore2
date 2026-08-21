@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Nature & Local Culture",
-    "grade_levels": ["elementary", "middle_school", "adult"],
-    "curriculum_tags": ["Sustainable Agriculture", "Volcanic Landscapes", "Marine Biology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Sustainable Agriculture",
+      "Volcanic Landscapes",
+      "Marine Biology"
+    ],
     "learning_objectives": [
       "Understand the history of Venetian agricultural policy in Paxos, which enforced a monoculture of olive trees that now cover 80% of the island.",
       "Analyze the coastal geomorphology of the western sea caves (Ypapanti) carved into vertical limestone cliffs by the Ionian sea.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "paxos_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/paxos.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

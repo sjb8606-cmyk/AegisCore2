@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Coastal Culture",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Crusader History", "Seven Wonders", "Maritime Archaeology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Crusader History",
+      "Seven Wonders",
+      "Maritime Archaeology"
+    ],
     "learning_objectives": [
       "Understand the military and strategic history of the Castle of St. Peter (Bodrum Castle) as a major stronghold of the Knights Hospitaller guarding the Aegean.",
       "Analyze the design and scale of the Mausoleum of Halicarnassus (Tomb of Mausolus), evaluating how its destruction provided stone for the crusader fort.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bodrum_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bodrum.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

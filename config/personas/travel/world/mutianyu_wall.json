@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Military Architecture",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Great Wall History", "Military Engineering", "Sovereign Frontiers"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Great Wall History",
+      "Military Engineering",
+      "Sovereign Frontiers"
+    ],
     "learning_objectives": [
       "Understand the military engineering of the Great Wall of China during the Ming Dynasty, focusing on how watchtowers and signal fires coordinated defense.",
       "Analyze the structural materials of the Mutianyu section, evaluating why granite bases and fired bricks were used to resist weathering.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mutianyu_wall_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mutianyu_wall.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Military Science",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["civil_war", "railway_logistics", "military_fortifications"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "civil_war",
+      "railway_logistics",
+      "military_fortifications"
+    ],
     "learning_objectives": [
       "Understand the strategic significance of the Corinth railroad junction in the Western Theater of the Civil War",
       "Analyze the military engineering of the Corinth earthworks and siege lines built in 1862",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "corinth_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/corinth.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

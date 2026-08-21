@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Upland_Ecology", "Folklore_and_Literature", "Archaeology_of_Dartmoor"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Upland_Ecology",
+      "Folklore_and_Literature",
+      "Archaeology_of_Dartmoor"
+    ],
     "learning_objectives": [
       "Explain the geological formation of Dartmoor's granite tors and the process of freeze-thaw weathering.",
       "Understand the ecological importance of blanket bogs and peatland restoration in combating climate change.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "dartmoor_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/dartmoor.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

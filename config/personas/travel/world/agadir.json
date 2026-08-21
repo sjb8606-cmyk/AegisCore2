@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Local Culture & Agronomy",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Argan Agronomy", "Coastal Reclamation", "Post-Disaster Planning"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Argan Agronomy",
+      "Coastal Reclamation",
+      "Post-Disaster Planning"
+    ],
     "learning_objectives": [
       "Understand the botanical unique and ecological significance of the Argan Tree (Argania spinosa), endemic only to southwestern Morocco.",
       "Analyze the social and economic model of the Women’s Argan Cooperatives, evaluating how they extract and trade argan oil.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "agadir_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/agadir.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

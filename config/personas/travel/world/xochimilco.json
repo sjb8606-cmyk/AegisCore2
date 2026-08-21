@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Agronomy & Local History",
-    "grade_levels": ["elementary", "middle_school", "adult"],
-    "curriculum_tags": ["Aztec Agriculture", "Wetland Ecology", "Cultural Heritage"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Aztec Agriculture",
+      "Wetland Ecology",
+      "Cultural Heritage"
+    ],
     "learning_objectives": [
       "Understand the agricultural and hydraulic engineering of the 'Chinampas' (floating gardens), focusing on how layered mud and reeds create highly fertile islands.",
       "Analyze the ecological significance of the Xochimilco wetlands (UNESCO World Heritage) in supporting the endemic, critically endangered Axolotl (Ambystoma mexicanum).",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "xochimilco_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/xochimilco.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

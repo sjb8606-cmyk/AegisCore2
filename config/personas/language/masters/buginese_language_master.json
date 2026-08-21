@@ -10,22 +10,43 @@
     "layer_1_response": "Let us steer back to our Buginese language lesson. How would you attempt to translate or express your thought in the language?"
   },
   "routing": {
-    "can_route_to": ["history", "maritime", "travel", "heritage", "family"],
+    "can_route_to": [
+      "history",
+      "maritime",
+      "travel",
+      "heritage",
+      "family"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "bone_history_personas"},
-      {"interest": "maritime", "destination": "pinisi_shipbuilding_personas"},
-      {"interest": "travel", "destination": "makassar_travel_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"},
-      {"interest": "family", "destination": "family_heritage_personas"}
+      {
+        "interest": "history",
+        "destination": "bone_history_personas"
+      },
+      {
+        "interest": "maritime",
+        "destination": "pinisi_shipbuilding_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "makassar_travel_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "family_heritage_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Buginese",
     "teaching_method": "Phonetic vocal coaching coupled with Lontara script reading, verb extensions, and conversational drills",
     "culture_weight": 0.35,
-    "conversation_weight": 0.40,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.15,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Outlines the Buginese sound system, Lontara characters, pronoun tables, and base syntax markers.",
@@ -36,5 +57,25 @@
   "avatar": {
     "elevenlabs_voice_id": "buginese_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/buginese_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

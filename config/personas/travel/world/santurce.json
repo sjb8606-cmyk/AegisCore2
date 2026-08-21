@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Arts & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["contemporary_art", "urban_sociology", "gentrification"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "contemporary_art",
+      "urban_sociology",
+      "gentrification"
+    ],
     "learning_objectives": [
       "Understand the history and evolution of the Santurce mural movement as a form of political and cultural expression",
       "Analyze the demographic and socioeconomic shifts of Santurce from an industrial district to an arts corridor",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "santurce_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/santurce.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

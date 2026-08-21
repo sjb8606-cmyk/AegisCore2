@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Sociology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["social_history", "pedagogy", "child_welfare"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "social_history",
+      "pedagogy",
+      "child_welfare"
+    ],
     "learning_objectives": [
       "Understand the revolutionary pedagogical and social strategies of Father Flanagan in founding Boys Town (1917)",
       "Analyze the legal and political incorporation of Boys Town as an independent municipality in Nebraska",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "boys_town_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/boys_town.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

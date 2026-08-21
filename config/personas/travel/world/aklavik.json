@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Resilience",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["social_history", "government_policy", "indigenous_resilience"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "social_history",
+      "government_policy",
+      "indigenous_resilience"
+    ],
     "learning_objectives": [
       "Understand the historical attempt by the Canadian government to relocate Aklavik due to flooding and erosion",
       "Analyze the cultural resilience of a community that successfully resisted state-mandated abandonment",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "aklavik_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/aklavik.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

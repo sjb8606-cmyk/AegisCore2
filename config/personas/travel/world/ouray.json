@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Adventure & Nature",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["ice_climbing", "coastal_processes", "conservation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "ice_climbing",
+      "coastal_processes",
+      "conservation"
+    ],
     "learning_objectives": [
       "Understand the engineering and plumbing of the ice-farming system used to create the Ouray Ice Park",
       "Analyze the physics of ice climbing, specifically the structural differences between waterfall ice and glacial ice",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ouray_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ouray.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

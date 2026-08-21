@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Agricultural Tourism & Viticulture",
-    "grade_levels": ["elementary", "middle_school", "adult"],
-    "curriculum_tags": ["Agriculture History", "Soil Science", "Viticulture"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Agriculture History",
+      "Soil Science",
+      "Viticulture"
+    ],
     "learning_objectives": [
       "Understand why Furano transitioned from industrial lavender production (for perfume) to aesthetic agricultural tourism in the 1970s.",
       "Analyze the challenges of cold-climate grape cultivation and how volcanic soils affect Hokkaido viticulture.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "furano_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/furano.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Napoleonic_Wars", "Military_Tactics_Waterloo", "Congress_of_Vienna"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Napoleonic_Wars",
+      "Military_Tactics_Waterloo",
+      "Congress_of_Vienna"
+    ],
     "learning_objectives": [
       "Analyze the military and tactical factors, particularly the use of the infantry square and the strategic defense of Hougoumont farm, that led to the Allied victory at Waterloo.",
       "Understand the political significance of the Battle of Waterloo in ending the Napoleonic Wars and initiating the long peace of the Concert of Europe.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "waterloo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/waterloo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

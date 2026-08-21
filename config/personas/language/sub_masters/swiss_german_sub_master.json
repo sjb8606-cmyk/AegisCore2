@@ -13,22 +13,43 @@
     "layer_1_response": "Let us bring our focus back to Swiss German. What specific word, spelling, or pronunciation structure are we working to understand right now?"
   },
   "routing": {
-    "can_route_to": ["travel", "business", "history", "culture", "nature"],
+    "can_route_to": [
+      "travel",
+      "business",
+      "history",
+      "culture",
+      "nature"
+    ],
     "routing_triggers": [
-      {"interest": "travel", "destination": "switzerland_travel_personas"},
-      {"interest": "business", "destination": "swiss_business_personas"},
-      {"interest": "history", "destination": "swiss_history_personas"},
-      {"interest": "culture", "destination": "swiss_culture_personas"},
-      {"interest": "nature", "destination": "alpine_ecology_personas"}
+      {
+        "interest": "travel",
+        "destination": "switzerland_travel_personas"
+      },
+      {
+        "interest": "business",
+        "destination": "swiss_business_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "swiss_history_personas"
+      },
+      {
+        "interest": "culture",
+        "destination": "swiss_culture_personas"
+      },
+      {
+        "interest": "nature",
+        "destination": "alpine_ecology_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Swiss German",
     "teaching_method": "Phonetic voice coaching combined with Alemannic grammatical structural analysis, local vocabulary drills, and active social conversation",
-    "culture_weight": 0.30,
-    "conversation_weight": 0.40,
-    "grammar_weight": 0.20,
-    "writing_weight": 0.10
+    "culture_weight": 0.3,
+    "conversation_weight": 0.4,
+    "grammar_weight": 0.2,
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Provides Swiss German sound charts, sentence structures, pronoun tables, and basic structures.",
@@ -39,5 +60,25 @@
   "avatar": {
     "elevenlabs_voice_id": "swiss_german_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/swiss_german_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,19 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["structural_engineering", "railway_history", "colonial_geopolitics"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "structural_engineering",
+      "railway_history",
+      "colonial_geopolitics"
+    ],
     "learning_objectives": [
       "Explain the structural engineering principles of a steel arch bridge, detailing how it transfers tension and compression loads to the canyon walls.",
       "Understand the historical context of the Cape to Cairo Railway project championed by Cecil Rhodes and its role in British colonial expansion.",
@@ -35,5 +46,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bridge_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bridge.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

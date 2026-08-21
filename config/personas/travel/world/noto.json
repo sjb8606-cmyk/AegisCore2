@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Environmental Studies & Maritime Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Sustainable Agriculture", "Satoyama-Satoumi", "Local Crafts"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Sustainable Agriculture",
+      "Satoyama-Satoumi",
+      "Local Crafts"
+    ],
     "learning_objectives": [
       "Understand the 'Satoyama-Satoumi' model of sustainable integration between human agriculture and wild coastal ecosystems.",
       "Analyze the age-old 'Agehama' method of salt production using seawater, sand, and wood fire.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "noto_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/noto.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

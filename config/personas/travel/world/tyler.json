@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Horticulture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["horticulture", "agricultural_history", "local_economics"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "horticulture",
+      "agricultural_history",
+      "local_economics"
+    ],
     "learning_objectives": [
       "Understand the geological and soil conditions of the East Texas clay belt that favor rose cultivation",
       "Analyze the economic transition of Tyler from a cotton and timber town to the 'Rose Capital of America'",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tyler_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tyler.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

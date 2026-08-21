@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["adaptive_reuse", "creative_industries", "contemporary_cuban_art"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "adaptive_reuse",
+      "creative_industries",
+      "contemporary_cuban_art"
+    ],
     "learning_objectives": [
       "Understand the architectural concept of 'adaptive reuse' by analyzing how a 1910 cooking oil factory was transformed into a multi-disciplinary cultural center.",
       "Analyze the role of Fábrica de Arte Cubano in supporting contemporary, independent artists and fostering creative industries in Havana.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "fabrica_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/fabrica.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

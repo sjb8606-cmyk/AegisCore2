@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Agronomy & Local History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Oasis Agronomy", "Clay Architecture", "Trans-Saharan Trade"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Oasis Agronomy",
+      "Clay Architecture",
+      "Trans-Saharan Trade"
+    ],
     "learning_objectives": [
       "Understand the agricultural and hydraulic engineering of the 'Palmeraie' (palm oasis), focusing on how layered palm shade, fruit trees, and alfalfa create a sustainable three-tier microclimate.",
       "Analyze the role of the Draa Valley as the primary, strategic trade corridor of the trans-Saharan caravans connecting Marrakech to Timbuktu.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "draa_valley_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/draa_valley.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

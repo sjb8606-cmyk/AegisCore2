@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Local Culture",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Urban Migration", "Neoclassical Architecture", "Organic Urbanism"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Urban Migration",
+      "Neoclassical Architecture",
+      "Organic Urbanism"
+    ],
     "learning_objectives": [
       "Understand the historical migration of Cycladic stonemasons (from the island of Anafi) who constructed the Anafiotika settlement in Athens in the 1840s.",
       "Analyze the architectural features of the 19th-century Greek Neoclassical style that defined Plaka during the reign of King Otto.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "plaka_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/plaka.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

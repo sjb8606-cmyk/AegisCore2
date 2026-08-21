@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Literature",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Heian Period", "Classical Poetry", "Shinto Deification"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Heian Period",
+      "Classical Poetry",
+      "Shinto Deification"
+    ],
     "learning_objectives": [
       "Understand the political role of Dazaifu as the historical 'gateway' and defensive capital of ancient Japan.",
       "Analyze the process of deification (Goryo Shinko) where a politically wronged individual is transformed into a protective deity (Tenjin).",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "dazaifu_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/dazaifu.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

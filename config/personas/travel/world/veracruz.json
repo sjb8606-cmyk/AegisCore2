@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Local Culture & Maritime History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Afro-Mexican History", "Colonial Ports", "Traditional Music"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Afro-Mexican History",
+      "Colonial Ports",
+      "Traditional Music"
+    ],
     "learning_objectives": [
       "Understand the historical role of Veracruz (Villa Rica de la Vera Cruz) as the primary, strategic gateway of the Spanish Empire in Mexico.",
       "Analyze the musical structure of 'Son Jarocho' (harp, jarana, requinto) as an artistic expression of cultural syncretism (Andalusian, African, Indigenous).",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "veracruz_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/veracruz.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Architecture",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Socialist_Realism", "Cold_War_Architecture", "Urban_Symbolism"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Socialist_Realism",
+      "Cold_War_Architecture",
+      "Urban_Symbolism"
+    ],
     "learning_objectives": [
       "Analyze the architectural style of Socialist Realism (Stalinist Gothic) and how it was used to project Soviet political dominance over Eastern Europe.",
       "Understand the complex public debate in post-1989 Poland regarding whether to demolish the Palace of Culture as a symbol of oppression or preserve it as historic heritage.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "palace_of_culture_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/palace_of_culture.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

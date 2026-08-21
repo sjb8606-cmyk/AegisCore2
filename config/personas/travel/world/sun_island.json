@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["inca_cosmology", "terrace_engineering", "historical_ecology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "inca_cosmology",
+      "terrace_engineering",
+      "historical_ecology"
+    ],
     "learning_objectives": [
       "Understand the historical role of the Isla del Sol as the primary sacred sanctuary and creation center of the Inca Empire.",
       "Analyze the agricultural engineering and irrigation of the Inca 'andenes' (terraces) that maximize food production on steep, high-altitude slopes.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sun_island_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sun_island.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

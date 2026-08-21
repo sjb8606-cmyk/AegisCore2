@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Geography",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["transportation_history", "military_logistics", "wildlife_management"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "transportation_history",
+      "military_logistics",
+      "wildlife_management"
+    ],
     "learning_objectives": [
       "Understand the historical and economic motivations behind the rapid construction of the Alaska Highway during WWII",
       "Analyze the mechanical engineering and logistics required to build a 1,400-mile highway through subarctic wilderness",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "delta_junction_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/delta_junction.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

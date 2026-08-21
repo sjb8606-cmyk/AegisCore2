@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Landscape Design & Botanical History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Baroque Gardening", "Sub-Alpine Botany", "Feudal Dynasties"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Baroque Gardening",
+      "Sub-Alpine Botany",
+      "Feudal Dynasties"
+    ],
     "learning_objectives": [
       "Understand the design principles of the Italian Baroque formal garden (Giardino all'italiana) as physically represented on Isola Bella.",
       "Analyze the microclimatic conditions of Lake Maggiore that allow the cultivation of tropical and sub-alpine flora (camellias, citrus) in northern Italy.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "maggiore_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/maggiore.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

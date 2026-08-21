@@ -10,23 +10,47 @@
     "layer_1_response": "Let us turn our focus back to Gujarati. How can we express that concept or phrase using authentic Gujarati patterns?"
   },
   "routing": {
-    "can_route_to": ["trade", "history", "business", "heritage", "travel"],
+    "can_route_to": [
+      "trade",
+      "history",
+      "business",
+      "heritage",
+      "travel"
+    ],
     "routing_triggers": [
-      {"interest": "trade", "destination": "gujarat_trade_personas"},
-      {"interest": "history", "destination": "gujarat_history_personas"},
-      {"interest": "business", "destination": "gujarati_business_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"},
-      {"interest": "family", "destination": "family_heritage_personas"},
-      {"interest": "travel", "destination": "gujarat_travel_personas"}
+      {
+        "interest": "trade",
+        "destination": "gujarat_trade_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "gujarat_history_personas"
+      },
+      {
+        "interest": "business",
+        "destination": "gujarati_business_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "gujarat_travel_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Gujarati",
     "teaching_method": "Phonetic voice coaching combined with commercial market vocabulary, grammatical particles, and active daily conversation",
     "culture_weight": 0.35,
-    "conversation_weight": 0.40,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.15,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Presents Gujarati sound structures, basic sentence frameworks, pronoun tables, and syntax.",
@@ -37,5 +61,25 @@
   "avatar": {
     "elevenlabs_voice_id": "gujarati_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/gujarati_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

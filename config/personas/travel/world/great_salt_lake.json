@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["limnology", "endorheic_basins", "salinity_ecology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "limnology",
+      "endorheic_basins",
+      "salinity_ecology"
+    ],
     "learning_objectives": [
       "Understand the geological history of Lake Bonneville and the formation of the Great Salt Lake as an endorheic basin",
       "Analyze the unique ecology and biological adaptations of species (brine shrimp, brine flies) thriving in hypersaline waters",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "great_salt_lake_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/great_salt_lake.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

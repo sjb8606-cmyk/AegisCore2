@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Urban Culture",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["French Revolution", "Urban Engineering", "Socio-Political History"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "French Revolution",
+      "Urban Engineering",
+      "Socio-Political History"
+    ],
     "learning_objectives": [
       "Understand the symbolic and physical dismantling of the Bastille prison as the catalyst of the French Revolution.",
       "Analyze the engineering of the Canal Saint-Martin and its historical role in transporting coal and clean water into industrial Paris.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bastille_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bastille.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

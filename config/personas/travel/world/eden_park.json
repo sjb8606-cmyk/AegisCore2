@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Art & Urban Design",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["urban_planning", "landscape_architecture", "art_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "urban_planning",
+      "landscape_architecture",
+      "art_history"
+    ],
     "learning_objectives": [
       "Understand the historical role of Eden Park in protecting Cincinnati's early drinking water reservoirs",
       "Analyze the architectural and landscaping design of the park as a model for public Gilded Age recreation",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "eden_park_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/eden_park.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

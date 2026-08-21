@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Philosophy",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Walloon_Linguistics", "Minority_Language_Preservation", "Southern_Belgian_Heritage"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Walloon_Linguistics",
+      "Minority_Language_Preservation",
+      "Southern_Belgian_Heritage"
+    ],
     "learning_objectives": [
       "Understand the historical development of the Walloon language (Walon) as a distinct Romance language separate from standard French.",
       "Analyze the cultural and literary significance of the 19th-century Walloon literary revival, focusing on poetry and theater.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "walloon_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/walloon.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

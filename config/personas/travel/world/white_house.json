@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Politics",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["presidential_history", "political_science", "architectural_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "presidential_history",
+      "political_science",
+      "architectural_history"
+    ],
     "learning_objectives": [
       "Understand the architectural design and symbolic evolution of the White House as the executive seat",
       "Analyze the role of enslaved labor in the construction and early operation of the presidential mansion",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "white_house_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/white_house.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

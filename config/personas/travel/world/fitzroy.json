@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Urban Sociology & Pop Culture",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Urban Sociology", "History of Migration", "Gentrification Studies"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Urban Sociology",
+      "History of Migration",
+      "Gentrification Studies"
+    ],
     "learning_objectives": [
       "Understand the historical development of Fitzroy as Melbourne’s first suburb, tracing its transition from an industrial working-class enclave to a bohemian hub.",
       "Analyze the role of Victorian terrace house architecture in creating a high-density, collaborative urban environment suitable for alternative communities.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "fitzroy_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/fitzroy.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

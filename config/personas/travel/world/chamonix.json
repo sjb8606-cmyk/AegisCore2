@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Alpine Mountaineering & Earth Science",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Alpine Geomorphology", "Glaciology", "Climate Change Studies"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Alpine Geomorphology",
+      "Glaciology",
+      "Climate Change Studies"
+    ],
     "learning_objectives": [
       "Understand the tectonic collision between the Eurasian and African plates that formed the granite massifs of the Western Alps.",
       "Analyze the physical mechanics of glacier flow and the rapid retreat of the Mer de Glace as an indicator of global climate change.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "chamonix_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/chamonix.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

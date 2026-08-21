@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Engineering & Cultural History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Industrial Revolution", "Civil Engineering", "World's Fairs"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Industrial Revolution",
+      "Civil Engineering",
+      "World's Fairs"
+    ],
     "learning_objectives": [
       "Understand the structural engineering of the Eiffel Tower, specifically how its wind-resistant curved design utilizes puddled iron.",
       "Analyze the socio-political impact of the 1889 Exposition Universelle in showcasing French industrial recovery after the Franco-Prussian War.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "eiffel_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/eiffel.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

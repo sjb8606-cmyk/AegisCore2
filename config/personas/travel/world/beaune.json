@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Viticulture Terroir",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Medieval Medicine", "Agricultural Economics", "Climats of Burgundy"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Medieval Medicine",
+      "Agricultural Economics",
+      "Climats of Burgundy"
+    ],
     "learning_objectives": [
       "Understand the foundation and social role of the Hospices de Beaune (Hôtel-Dieu) as a charity hospital funded by agricultural assets (vineyards).",
       "Analyze the concept of 'Climats'—the precisely delimited micro-terroirs of Burgundy registered as UNESCO World Heritage.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "beaune_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/beaune.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culinary",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["viticulture", "early_canadian_history", "agricultural_economics"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "viticulture",
+      "early_canadian_history",
+      "agricultural_economics"
+    ],
     "learning_objectives": [
       "Understand the geopolitical impact of the United Empire Loyalists migrating to Upper Canada",
       "Analyze how limestone-rich soil (terroir) and lake microclimates create ideal viticulture conditions",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "loyalist_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/loyalist.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

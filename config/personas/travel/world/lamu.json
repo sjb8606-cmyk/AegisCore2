@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["swahili_civilization", "island_urbanization", "maritime_trade"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "swahili_civilization",
+      "island_urbanization",
+      "maritime_trade"
+    ],
     "learning_objectives": [
       "Understand the historical role of Lamu Old Town as a major center for Swahili culture, Islamic scholarship, and maritime trade.",
       "Analyze the distinct architectural and artistic features of Lamu's coral-stone townhouses, focusing on their indoor courtyards and carved doors.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "lamu_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/lamu.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

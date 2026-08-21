@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Archaeology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["colonial_history", "archaeological_methods", "religious_freedom"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "colonial_history",
+      "archaeological_methods",
+      "religious_freedom"
+    ],
     "learning_objectives": [
       "Understand the founding of Maryland as a proprietary colony for Catholic refuge under the Calverts",
       "Analyze the significance and limitations of the Maryland Toleration Act of 1649 in early American religious history",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "st_marys_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/st_marys.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

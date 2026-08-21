@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Coastal_Erosion", "Columnar_Basalt_Geology", "Oceanic_Hazards"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Coastal_Erosion",
+      "Columnar_Basalt_Geology",
+      "Oceanic_Hazards"
+    ],
     "learning_objectives": [
       "Explain the geological cooling processes that created the spectacular hexagonal basalt columns (columnar jointing) at Reynisfjara.",
       "Understand the coastal hydrodynamics of 'sneaker waves'—disproportionately large coastal waves that run dangerously far up the beach without warning.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "vik_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/vik.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Engineering",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["civil_engineering", "new_deal_history", "maritime_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "civil_engineering",
+      "new_deal_history",
+      "maritime_history"
+    ],
     "learning_objectives": [
       "Understand the structural engineering and wind-tunnel physics of the Golden Gate Bridge (completed 1937)",
       "Analyze the role of the federal government in supporting massive infrastructure projects during the Great Depression",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "golden_gate_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/golden_gate.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

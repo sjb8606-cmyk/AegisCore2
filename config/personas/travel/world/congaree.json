@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["forest_ecology", "wetland_hydrology", "conservation"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "forest_ecology",
+      "wetland_hydrology",
+      "conservation"
+    ],
     "learning_objectives": [
       "Understand the ecological difference between a bottomland hardwood forest and a permanent swamp",
       "Analyze the role of seasonal flooding in depositing nutrients that support the growth of champion trees",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "congaree_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/congaree.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

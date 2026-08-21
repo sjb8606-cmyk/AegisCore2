@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Marine_Biodiversity_Hotspots", "Coral_Biology", "Marine_Sanctuary_Management"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Marine_Biodiversity_Hotspots",
+      "Coral_Biology",
+      "Marine_Sanctuary_Management"
+    ],
     "learning_objectives": [
       "Explain the tectonic and oceanographic factors, particularly the Indonesian Throughflow current, that make Raja Ampat the global epicenter of marine biodiversity.",
       "Understand the biology of coral reefs and the symbiotic relationship between hard coral polyps and zooxanthellae algae.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "raja_ampat_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/raja_ampat.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

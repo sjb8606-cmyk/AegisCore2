@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["savanna_ecology", "species_reintroduction", "wetland_restoration"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "savanna_ecology",
+      "species_reintroduction",
+      "wetland_restoration"
+    ],
     "learning_objectives": [
       "Explain the ecological and historical steps required to successfully reintroduce the 'Big Five' (lions, rhinos, elephants, leopards, buffaloes) to a degraded savanna ecosystem.",
       "Understand the hydrological importance of the Akagera River and its network of lakes in providing a permanent water source to the eastern border.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "akagera_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/akagera.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

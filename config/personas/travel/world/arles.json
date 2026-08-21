@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Art History & Archaeology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Roman Archaeology", "Post-Impressionism", "Van Gogh studies"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Roman Archaeology",
+      "Post-Impressionism",
+      "Van Gogh studies"
+    ],
     "learning_objectives": [
       "Understand the urban engineering and social purpose of the Arles Roman Amphitheatre (Les Arènes) in the Roman Empire.",
       "Analyze the dramatic stylistic transition of Vincent van Gogh during his 444 days in Arles (1888-1889), focusing on color theory.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "arles_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/arles.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

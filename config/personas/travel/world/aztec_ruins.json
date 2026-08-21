@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Archaeology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["mound_builders", "indigenous_studies", "kiva_reconstruction"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "mound_builders",
+      "indigenous_studies",
+      "kiva_reconstruction"
+    ],
     "learning_objectives": [
       "Understand the historical role of the Aztec Ruins as a major 12th-century Chacoan outpost",
       "Analyze the architectural and social engineering of the Great Kiva reconstruction",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "aztec_ruins_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/aztec_ruins.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

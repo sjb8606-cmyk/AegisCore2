@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Sacred Landscapes",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Classical Archaeology", "Naval Warfare", "Romantic Literature"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Classical Archaeology",
+      "Naval Warfare",
+      "Romantic Literature"
+    ],
     "learning_objectives": [
       "Understand the strategic and naval history of Cape Sounion as a fortified outpost guarding the maritime trade route to Athens and the silver mines of Laurium.",
       "Analyze the Doric architectural style of the Temple of Poseidon (built 440 BC), focusing on how its columns are designed to resist coastal erosion and wind.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sounion_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sounion.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

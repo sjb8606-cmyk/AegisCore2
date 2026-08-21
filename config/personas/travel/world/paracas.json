@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Ecology & Coastal Geography",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Coastal Geomorphology", "Humboldt Current", "Avian Conservation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Coastal Geomorphology",
+      "Humboldt Current",
+      "Avian Conservation"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Paracas Peninsula (Old Red Sandstone) and its resistance to Pacific wave erosion.",
       "Analyze the role of the cold Humboldt Current (Peru Current) in driving upwelling nutrients that support massive populations of seabirds (guano birds).",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "paracas_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/paracas.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

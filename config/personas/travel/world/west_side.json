@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Culinary & Culture",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["urban_history", "food_systems", "immigration_studies"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "urban_history",
+      "food_systems",
+      "immigration_studies"
+    ],
     "learning_objectives": [
       "Understand the historical development of municipal markets as public health and retail infrastructure in early 20th-century cities",
       "Analyze the architectural design of the West Side Market's Guastavino tile vaulting",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "west_side_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/west_side.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

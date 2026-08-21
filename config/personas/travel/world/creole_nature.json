@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["wetland_ecology", "ornithology", "coastal_processes"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "wetland_ecology",
+      "ornithology",
+      "coastal_processes"
+    ],
     "learning_objectives": [
       "Understand the ecological significance of the Sabine Wildlife Refuge along the Mississippi Flyway",
       "Analyze the role of salt marshes in protecting coastal mainland from hurricane storm surges",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "creole_nature_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/creole_nature.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["world_war_ii_refugees", "jewish_diaspora_history", "agricultural_cooperatives"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "world_war_ii_refugees",
+      "jewish_diaspora_history",
+      "agricultural_cooperatives"
+    ],
     "learning_objectives": [
       "Analyze the historical significance of the 1938 Évian Conference and why the Dominican Republic was one of the few nations to offer visas to Jewish refugees.",
       "Understand the challenges faced by European urban refugees in adapting to tropical agriculture in the Sosuá colony starting in 1940.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sosua_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sosua.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

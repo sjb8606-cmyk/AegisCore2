@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Finnish_Modernism", "Organic_Architecture", "Acoustic_Engineering"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Finnish_Modernism",
+      "Organic_Architecture",
+      "Acoustic_Engineering"
+    ],
     "learning_objectives": [
       "Analyze the innovative design of Timo and Tuomo Suomalainen in utilizing natural bedrock to construct the walls of Temppeliaukio Church.",
       "Understand the acoustic properties of raw, unpolished granite and how they enhance musical performances within the church.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "temppeliaukio_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/temppeliaukio.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

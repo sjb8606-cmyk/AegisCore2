@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geology & History",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["speleology", "geomorphology", "frontier_history"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "speleology",
+      "geomorphology",
+      "frontier_history"
+    ],
     "learning_objectives": [
       "Understand the chemical and physical processes of speleogenesis that carve limestone caverns in the Ozarks",
       "Analyze the historical role of caves as defensive shelters for outlaws during the post-Civil War era",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "meramec_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/meramec.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

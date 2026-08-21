@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["guerrilla_warfare", "karst_landscapes", "maroon_treaties"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "guerrilla_warfare",
+      "karst_landscapes",
+      "maroon_treaties"
+    ],
     "learning_objectives": [
       "Understand the military strategy and guerrilla tactics of the Leeward Maroons in the Cockpit Country.",
       "Analyze the geomorphology of the Cockpit Country and how its limestone karst topography aided the Maroon defense.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "maroon_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/maroon.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

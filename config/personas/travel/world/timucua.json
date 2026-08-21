@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage & Archaeology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["archaeology", "colonial_rivalries", "indigenous_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "archaeology",
+      "colonial_rivalries",
+      "indigenous_history"
+    ],
     "learning_objectives": [
       "Understand the complex social structure and territory of the Timucua people at the time of European contact",
       "Analyze the archaeological evidence of shell middens (middens) as historical records of resource use",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "timucua_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/timucua.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

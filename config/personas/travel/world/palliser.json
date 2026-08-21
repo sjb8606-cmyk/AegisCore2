@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Agriculture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["environmental_history", "agronomy", "climate_adaptation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "environmental_history",
+      "agronomy",
+      "climate_adaptation"
+    ],
     "learning_objectives": [
       "Understand the geological and climatic reasons for the Palliser Triangle's aridity",
       "Analyze the catastrophic agricultural failures of the 1930s",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "palliser_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/palliser.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

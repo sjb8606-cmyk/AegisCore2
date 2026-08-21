@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["polynesian_navigation", "first_settlements", "ahu_restorations"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "polynesian_navigation",
+      "first_settlements",
+      "ahu_restorations"
+    ],
     "learning_objectives": [
       "Understand the historical events and legend of King Hotu Matu'a landing at Anakena around 800-1200 CE to settle Rapa Nui.",
       "Analyze the distinct architectural and artistic features of Ahu Nau Nau, focusing on the red volcanic scoria topknots (pukao).",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "anakena_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/anakena.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

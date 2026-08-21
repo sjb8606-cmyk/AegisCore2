@@ -10,20 +10,40 @@
     "layer_1_response": "Let us bring our focus back to Pirahã. What specific sound, tone pitch, or empirical phrase are we working to analyze right now?"
   },
   "routing": {
-    "can_route_to": ["linguistics", "ecology", "travel", "philosophy"],
+    "can_route_to": [
+      "linguistics",
+      "ecology",
+      "travel",
+      "philosophy"
+    ],
     "routing_triggers": [
-      {"interest": "linguistics", "destination": "linguistic_typology_personas"},
-      {"interest": "everett", "destination": "linguistic_typology_personas"},
-      {"interest": "ecology", "destination": "forest_ecology_personas"},
-      {"interest": "travel", "destination": "maici_travel_personas"},
-      {"interest": "philosophy", "destination": "empirical_philosophy_personas"}
+      {
+        "interest": "linguistics",
+        "destination": "linguistic_typology_personas"
+      },
+      {
+        "interest": "everett",
+        "destination": "linguistic_typology_personas"
+      },
+      {
+        "interest": "ecology",
+        "destination": "forest_ecology_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "maici_travel_personas"
+      },
+      {
+        "interest": "philosophy",
+        "destination": "empirical_philosophy_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Indonesian",
     "teaching_method": "Phonetic voice coaching combined with tone pitch drills, simplified grammar structures, and active social conversation based on immediate environment",
-    "culture_weight": 0.40,
-    "conversation_weight": 0.40,
+    "culture_weight": 0.4,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.15,
     "writing_weight": 0.05
   },
@@ -36,5 +56,25 @@
   "avatar": {
     "elevenlabs_voice_id": "piraha_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/piraha_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

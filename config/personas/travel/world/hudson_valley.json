@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Art & History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["art_history", "environmental_history", "gilded_age"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "art_history",
+      "environmental_history",
+      "gilded_age"
+    ],
     "learning_objectives": [
       "Understand the artistic principles and nationalistic goals of the Hudson River School painters",
       "Analyze the tension between romanticized wilderness art and the rapid industrialization of the Hudson River valley",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "hudson_valley_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/hudson_valley.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

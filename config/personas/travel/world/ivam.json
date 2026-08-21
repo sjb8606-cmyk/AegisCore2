@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Art",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Late Gothic Architecture", "Modern Sculpture", "Maritime Commerce"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Late Gothic Architecture",
+      "Modern Sculpture",
+      "Maritime Commerce"
+    ],
     "learning_objectives": [
       "Understand the architectural design of the Lonja de la Seda (Silk Exchange) as a masterpiece of secular Late Gothic architecture representing civic mercantile power.",
       "Analyze the artistic contribution of Julio González (at the IVAM) in pioneering welded iron sculpture and abstract forms in modern art.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ivam_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ivam.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

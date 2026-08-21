@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Military Architecture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Inca Warfare", "Ashlar Masonry", "Urban Planning History"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Inca Warfare",
+      "Ashlar Masonry",
+      "Urban Planning History"
+    ],
     "learning_objectives": [
       "Understand the military and defensive architecture of the Ollantaytambo Fortress, analyzing how its terraces were flooded to repel Spanish cavalry.",
       "Analyze the logistics of quarrying and transporting fifty-ton granite blocks (monoliths) across a rapid river (Urubamba) without draft animals.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ollantaytambo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ollantaytambo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

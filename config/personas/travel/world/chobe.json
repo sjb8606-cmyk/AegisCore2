@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["riverine_forest_ecology", "elephant_carrying_capacity", "transboundary_corridors"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "riverine_forest_ecology",
+      "elephant_carrying_capacity",
+      "transboundary_corridors"
+    ],
     "learning_objectives": [
       "Understand the ecological impact of high-density elephant populations on riverine forests and woody vegetation during the dry season in Chobe.",
       "Explain the hydrological relationship between the Chobe River and the seasonal wetlands of the northern border.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "chobe_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/chobe.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

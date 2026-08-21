@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Governance",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["political_science", "urban_geography", "wisconsin_idea"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "political_science",
+      "urban_geography",
+      "wisconsin_idea"
+    ],
     "learning_objectives": [
       "Understand the geographic significance of Madison's isthmus location and why it was selected as the capital in 1836",
       "Analyze the 'Wisconsin Idea' (the principle that university research should improve the lives of all citizens in the state)",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "madison_wi_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/madison_wi.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

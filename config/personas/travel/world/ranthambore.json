@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Ecology & Wildlife Biology",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Rainforest Ecology", "Top Predator Conservation", "Military Architecture"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Rainforest Ecology",
+      "Top Predator Conservation",
+      "Military Architecture"
+    ],
     "learning_objectives": [
       "Understand the ecological dynamics of a dry deciduous forest (Ranthambore) and how seasonal droughts shape animal behavior.",
       "Analyze the adaptation of the Bengal Tiger (Panthera tigris) to hunting inside the dry scrub and ruined stone architecture of the fort.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ranthambore_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ranthambore.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

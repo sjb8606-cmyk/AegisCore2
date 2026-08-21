@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Literature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["pablo_neruda_poetry", "avant_garde_architecture", "chilean_history"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "pablo_neruda_poetry",
+      "avant_garde_architecture",
+      "chilean_history"
+    ],
     "learning_objectives": [
       "Analyze the core themes of love, maritime passion, and political resistance in Pablo Neruda's poetry, specifically focusing on his Canto General.",
       "Understand the architectural concept of organic, maritime-inspired design represented in Neruda's Santiago home, La Chascona.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bellavista_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bellavista.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

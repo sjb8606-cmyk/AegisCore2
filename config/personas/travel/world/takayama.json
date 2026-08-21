@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Local History & Traditional Commerce",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Carpentry History", "Edo Trade", "Festival Heritage"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Carpentry History",
+      "Edo Trade",
+      "Festival Heritage"
+    ],
     "learning_objectives": [
       "Understand why the Hida region developed world-class carpenters (Hida no Takumi) due to its abundance of timber and lack of arable land.",
       "Analyze the layout of an Edo-period merchant town and how the black lacquer wooden facades reflect merchant-class wealth.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "takayama_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/takayama.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

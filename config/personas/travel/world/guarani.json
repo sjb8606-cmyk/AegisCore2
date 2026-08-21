@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Guaraní_Linguistics", "Yerba_Mate_History", "Yvy_Maraey_Philosophy"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Guaraní_Linguistics",
+      "Yerba_Mate_History",
+      "Yvy_Maraey_Philosophy"
+    ],
     "learning_objectives": [
       "Understand the linguistic significance of the Guaraní language as one of the few indigenous languages of the Americas that remained widely spoken by non-indigenous populations.",
       "Analyze the botanical characteristics, traditional harvesting, and cultural social codes of Yerba Mate (Ilex paraguariensis) consumption.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "guarani_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/guarani.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

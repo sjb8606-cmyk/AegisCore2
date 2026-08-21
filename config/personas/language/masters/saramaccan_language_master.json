@@ -10,21 +10,45 @@
     "layer_1_response": "Let us bring our focus back to Saramaccan. What specific word, phrase, or pronunciation structure are we working to analyze right now?"
   },
   "routing": {
-    "can_route_to": ["history", "travel", "linguistics", "heritage", "music"],
+    "can_route_to": [
+      "history",
+      "travel",
+      "linguistics",
+      "heritage",
+      "music"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "maroon_history_personas"},
-      {"interest": "travel", "destination": "suriname_travel_personas"},
-      {"interest": "linguistics", "destination": "creole_linguistics_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"},
-      {"interest": "family", "destination": "family_heritage_personas"},
-      {"interest": "music", "destination": "maroon_music_personas"}
+      {
+        "interest": "history",
+        "destination": "maroon_history_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "suriname_travel_personas"
+      },
+      {
+        "interest": "linguistics",
+        "destination": "creole_linguistics_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "maroon_music_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Indonesian",
     "teaching_method": "Phonetic voice coaching combined with creole grammatical analysis, West African lexical drills, and active social conversation",
-    "culture_weight": 0.30,
-    "conversation_weight": 0.50,
+    "culture_weight": 0.3,
+    "conversation_weight": 0.5,
     "grammar_weight": 0.15,
     "writing_weight": 0.05
   },
@@ -37,5 +61,25 @@
   "avatar": {
     "elevenlabs_voice_id": "saramaccan_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/saramaccan_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

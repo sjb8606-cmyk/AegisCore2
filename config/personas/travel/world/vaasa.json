@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Post_Glacial_Land_Uplift", "De_Geer_Moraines", "UNESCO_Natural_Heritage"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Post_Glacial_Land_Uplift",
+      "De_Geer_Moraines",
+      "UNESCO_Natural_Heritage"
+    ],
     "learning_objectives": [
       "Explain the geological process of post-glacial land uplift (isostatic rebound) that is lifting the Kvarken Archipelago at a rate of 8mm per year.",
       "Understand how the rising land creates unique 'De Geer moraines'—distinctive parallel ridges deposited by the retreating ice sheet.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "vaasa_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/vaasa.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

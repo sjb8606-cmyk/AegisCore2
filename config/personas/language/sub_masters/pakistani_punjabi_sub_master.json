@@ -13,15 +13,42 @@
     "layer_1_response": "Let us return our attention to Pakistani Punjabi. What specific word, phrase, or pronunciation structure should we look at next?"
   },
   "routing": {
-    "can_route_to": ["poetry", "history", "travel", "heritage", "music"],
+    "can_route_to": [
+      "poetry",
+      "history",
+      "travel",
+      "heritage",
+      "music"
+    ],
     "routing_triggers": [
-      {"interest": "poetry", "destination": "sufi_poetry_personas"},
-      {"interest": "literature", "destination": "sufi_poetry_personas"},
-      {"interest": "history", "destination": "punjab_history_personas"},
-      {"interest": "travel", "destination": "pakistan_travel_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"},
-      {"interest": "family", "destination": "family_heritage_personas"},
-      {"interest": "music", "destination": "qawwali_music_personas"}
+      {
+        "interest": "poetry",
+        "destination": "sufi_poetry_personas"
+      },
+      {
+        "interest": "literature",
+        "destination": "sufi_poetry_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "punjab_history_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "pakistan_travel_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "qawwali_music_personas"
+      }
     ]
   },
   "language_engine": {
@@ -41,5 +68,25 @@
   "avatar": {
     "elevenlabs_voice_id": "pakistani_punjabi_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/pakistani_punjabi_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

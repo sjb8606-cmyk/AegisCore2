@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Literature & Spiritual Ascent",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Haiku Literature", "Tendai Buddhism", "Physical Topography"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Haiku Literature",
+      "Tendai Buddhism",
+      "Physical Topography"
+    ],
     "learning_objectives": [
       "Understand the mechanics and philosophy of Haiku through Matsuo Basho's famous poem written at Yamadera.",
       "Analyze the psychological integration of physical exhaustion (climbing 1,000 stairs) with spiritual purification in Tendai Buddhism.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "yamadera_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/yamadera.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

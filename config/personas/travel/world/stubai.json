@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Glaciology", "Alpine_Safety", "Climate_Impact_Alps"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Glaciology",
+      "Alpine_Safety",
+      "Climate_Impact_Alps"
+    ],
     "learning_objectives": [
       "Explain the geological and climate processes that form and sustain temperate glaciers in the European Alps.",
       "Understand the direct impacts of rising global temperatures on glacial retreat and the stability of alpine permafrost.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "stubai_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/stubai.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

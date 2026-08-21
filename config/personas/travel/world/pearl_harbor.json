@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Military Science",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["world_war_ii", "naval_history", "pacific_campaign"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "world_war_ii",
+      "naval_history",
+      "pacific_campaign"
+    ],
     "learning_objectives": [
       "Understand the strategic and geopolitical reasons why Japan targeted the US Pacific Fleet at Pearl Harbor",
       "Analyze the military logistics and execution of the December 7, 1941 surprise attack",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "pearl_harbor_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/pearl_harbor.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

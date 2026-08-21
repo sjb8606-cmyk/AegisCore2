@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["estuary_ecology_salt_pans", "avian_breeding_biology", "community_conservation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "estuary_ecology_salt_pans",
+      "avian_breeding_biology",
+      "community_conservation"
+    ],
     "learning_objectives": [
       "Explain the ecological and chemical processes that occur when freshwater rivers (like the Nata) flow into highly saline, landlocked salt pans.",
       "Understand the breeding and nesting adaptations of the Lesser Flamingo (Phoeniconaias minor) and Greater Flamingo in hyper-saline wetlands.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "nata_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/nata.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

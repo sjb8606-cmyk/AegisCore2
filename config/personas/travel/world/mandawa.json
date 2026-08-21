@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Art History",
-    "grade_levels": ["elementary", "middle_school", "adult"],
-    "curriculum_tags": ["Marwari Merchants", "Fresco Painting", "Vernacular Architecture"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Marwari Merchants",
+      "Fresco Painting",
+      "Vernacular Architecture"
+    ],
     "learning_objectives": [
       "Understand the historical role of the Marwari merchants in the 19th century as a global trading diaspora who used their wealth to fund the havelis.",
       "Analyze the design of the 'Haveli' (traditional merchant mansion), evaluating how its double-courtyard structure regulates heat and isolates social life.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mandawa_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mandawa.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

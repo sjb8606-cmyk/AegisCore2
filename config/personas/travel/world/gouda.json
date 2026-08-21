@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Culinary",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Food_Chemistry_Fermentation", "Medieval_Trade_Markets", "Agricultural_Heritage"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Food_Chemistry_Fermentation",
+      "Medieval_Trade_Markets",
+      "Agricultural_Heritage"
+    ],
     "learning_objectives": [
       "Explain the chemical processes of curding, pressing, and brine-washing that transform polder milk into Gouda cheese.",
       "Understand the historical role of the Waag (Weigh House) as a central civic institution of quality control and taxation in early modern trade.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "gouda_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/gouda.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

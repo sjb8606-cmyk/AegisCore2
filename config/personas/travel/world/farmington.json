@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Industry",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["resource_extraction", "geology", "urban_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "resource_extraction",
+      "geology",
+      "urban_history"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the San Juan Basin and its global economic importance",
       "Analyze the role of the San Juan River in driving the early agricultural and municipal development of Farmington",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "farmington_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/farmington.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

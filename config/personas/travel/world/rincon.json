@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Culture & Recreation",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["oceanography", "surfing_physics", "cultural_studies"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "oceanography",
+      "surfing_physics",
+      "cultural_studies"
+    ],
     "learning_objectives": [
       "Understand the geological and oceanographic forces that create the powerful waves of the Mona Passage reef breaks",
       "Analyze the historical development of surfing from a counter-cultural movement to a major driver of the West Coast's economy",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "rincon_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/rincon.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

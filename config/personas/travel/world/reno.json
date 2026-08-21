@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["urban_history", "cultural_geography", "regional_branding"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "urban_history",
+      "cultural_geography",
+      "regional_branding"
+    ],
     "learning_objectives": [
       "Understand the historical role of Reno as a major railway and transcontinental gateway in early Nevada",
       "Analyze the socioeconomic and legal history of the 'quickie divorce' industry in establishing Reno's early tourism",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "reno_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/reno.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Victorian_Highlandism", "Baronial_Architecture", "Forestry_Management"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Victorian_Highlandism",
+      "Baronial_Architecture",
+      "Forestry_Management"
+    ],
     "learning_objectives": [
       "Analyze how Queen Victoria and Prince Albert's love for Balmoral popularised 'Highlandism' and transformed Scottish cultural identity.",
       "Identify the key characteristics of Scottish Baronial architecture in Balmoral Castle.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "balmoral_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/balmoral.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

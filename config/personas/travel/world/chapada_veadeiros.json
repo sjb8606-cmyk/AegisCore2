@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Alpine Geography",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Sandstone Geomorphology", "Mineral Mining", "Alpine Ecology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Sandstone Geomorphology",
+      "Mineral Mining",
+      "Alpine Ecology"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Chapada dos Veadeiros (ancient quartz plateau) and its karst cave erosion features.",
       "Analyze the role of the Cerrado (the biodiverse savannah of Brazil) as a major water sponge for the country's rivers.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "chapada_veadeiros_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/chapada_veadeiros.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

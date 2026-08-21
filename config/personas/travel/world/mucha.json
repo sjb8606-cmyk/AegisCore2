@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Art_Nouveau", "Slav_Epic", "Lithographic_Printmaking"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Art_Nouveau",
+      "Slav_Epic",
+      "Lithographic_Printmaking"
+    ],
     "learning_objectives": [
       "Understand the stylistic characteristics of the 'Mucha Style' and its core role in the international Art Nouveau movement.",
       "Analyze the political and cultural motivations behind Mucha's creation of the 'Slav Epic' (Slovanská epopej) as a gift to the city of Prague.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mucha_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mucha.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Culinary",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["viticulture_science", "french_clones", "alluvial_soils"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "viticulture_science",
+      "french_clones",
+      "alluvial_soils"
+    ],
     "learning_objectives": [
       "Explain the agricultural and soil chemistry factors that allow the Cabernet Sauvignon grape to thrive and mature in the gravelly alluvial soils of Maipo.",
       "Understand the historical role of French immigrants in introducing noble Bordeaux clones to Chile in the 1850s, creating the modern wine industry.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "maipo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/maipo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

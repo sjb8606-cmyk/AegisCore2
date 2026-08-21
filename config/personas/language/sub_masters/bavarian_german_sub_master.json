@@ -13,22 +13,43 @@
     "layer_1_response": "Let us return to Bavarian German. What specific phrase, vowel shift, or word can we study right now?"
   },
   "routing": {
-    "can_route_to": ["culture", "history", "travel", "gastronomy", "nature"],
+    "can_route_to": [
+      "culture",
+      "history",
+      "travel",
+      "gastronomy",
+      "nature"
+    ],
     "routing_triggers": [
-      {"interest": "culture", "destination": "bavarian_culture_personas"},
-      {"interest": "history", "destination": "bavarian_history_personas"},
-      {"interest": "travel", "destination": "bavaria_travel_personas"},
-      {"interest": "gastronomy", "destination": "bavarian_cooking_personas"},
-      {"interest": "nature", "destination": "alpine_ecology_personas"}
+      {
+        "interest": "culture",
+        "destination": "bavarian_culture_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "bavarian_history_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "bavaria_travel_personas"
+      },
+      {
+        "interest": "gastronomy",
+        "destination": "bavarian_cooking_personas"
+      },
+      {
+        "interest": "nature",
+        "destination": "alpine_ecology_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Bavarian German",
     "teaching_method": "Phonetic voice coaching focusing on vocal softeners and vowel shifts, combined with standard Bavarian vocabulary drills, local idioms, and active social conversation",
-    "culture_weight": 0.30,
-    "conversation_weight": 0.40,
-    "grammar_weight": 0.20,
-    "writing_weight": 0.10
+    "culture_weight": 0.3,
+    "conversation_weight": 0.4,
+    "grammar_weight": 0.2,
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Provides Bavarian sound charts, basic phrase structures, pronoun tables, and grammatical distinctions from Standard German.",
@@ -39,5 +60,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bavarian_german_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bavarian_german_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Angling",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["ichthyology", "freshwater_ecology", "conservation_management"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "ichthyology",
+      "freshwater_ecology",
+      "conservation_management"
+    ],
     "learning_objectives": [
       "Understand the complex anadromous life cycle of the Atlantic salmon",
       "Analyze the purpose and engineering of fish ladders in mitigating human dam construction",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "matane_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/matane.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

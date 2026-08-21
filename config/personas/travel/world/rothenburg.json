@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Medieval_Defenses", "Thirty_Years_War", "Historic_Preservation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Medieval_Defenses",
+      "Thirty_Years_War",
+      "Historic_Preservation"
+    ],
     "learning_objectives": [
       "Identify the key architectural features of Rothenburg's medieval defense systems, including towers, gates, and covered ramparts.",
       "Analyze the social and political impact of the Thirty Years' War on small, independent imperial cities in Germany.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "rothenburg_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/rothenburg.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

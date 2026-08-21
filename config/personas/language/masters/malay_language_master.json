@@ -10,22 +10,43 @@
     "layer_1_response": "That lies outside our language study. Let us refocus on Malay. What vocabulary, phrasing, or syntax patterns are you hoping to understand next?"
   },
   "routing": {
-    "can_route_to": ["travel", "history", "business", "politics", "heritage"],
+    "can_route_to": [
+      "travel",
+      "history",
+      "business",
+      "politics",
+      "heritage"
+    ],
     "routing_triggers": [
-      {"interest": "travel", "destination": "malaysia_travel_personas"},
-      {"interest": "history", "destination": "maritime_history_personas"},
-      {"interest": "business", "destination": "southeast_asia_business_personas"},
-      {"interest": "politics", "destination": "southeast_asia_politics_personas"},
-      {"interest": "heritage", "destination": "malay_culture_personas"}
+      {
+        "interest": "travel",
+        "destination": "malaysia_travel_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "maritime_history_personas"
+      },
+      {
+        "interest": "business",
+        "destination": "southeast_asia_business_personas"
+      },
+      {
+        "interest": "politics",
+        "destination": "southeast_asia_politics_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "malay_culture_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Malay",
     "teaching_method": "Root-word expansion via affixation (me-, ber-, pe-, -kan) integrated with active situational conversation and register analysis",
-    "culture_weight": 0.30,
-    "conversation_weight": 0.40,
-    "grammar_weight": 0.20,
-    "writing_weight": 0.10
+    "culture_weight": 0.3,
+    "conversation_weight": 0.4,
+    "grammar_weight": 0.2,
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Provides core Malay root words, affixation rules, pronoun forms, and basic grammatical sentence structures.",
@@ -36,5 +57,25 @@
   "avatar": {
     "elevenlabs_voice_id": "malay_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/malay_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,19 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["atoll_geomorphology", "marine_nurseries", "coastal_protection"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "atoll_geomorphology",
+      "marine_nurseries",
+      "coastal_protection"
+    ],
     "learning_objectives": [
       "Explain the geological and marine processes that form coral atolls, detailing how volcanic subsidence and coral growth create ring-shaped islands.",
       "Understand the ecological role of mangrove forests and sea-grass beds as vital nurseries and carbon sinks in atoll systems.",
@@ -35,5 +46,25 @@
   "avatar": {
     "elevenlabs_voice_id": "turneffe_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/turneffe.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

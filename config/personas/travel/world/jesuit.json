@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["colonial_baroque_music", "indigenous_artisanry", "jesuit_missions"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "colonial_baroque_music",
+      "indigenous_artisanry",
+      "jesuit_missions"
+    ],
     "learning_objectives": [
       "Understand the historical creation of the Jesuit Missions of Chiquitos and how they survived the 1767 expulsion of the Jesuits.",
       "Analyze the unique, hand-crafted wooden architecture and painting techniques of the Chiquitania baroque churches.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "jesuit_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/jesuit.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

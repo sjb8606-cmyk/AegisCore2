@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Marine_Biodiversity", "Glacial_Drumlins", "Early_Monastic_Engineering"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Marine_Biodiversity",
+      "Glacial_Drumlins",
+      "Early_Monastic_Engineering"
+    ],
     "learning_objectives": [
       "Understand the geological formation of Strangford Lough’s 'drowned drumlin' landscape during the last ice age.",
       "Analyze the ecological importance of the lough's mudflats as a critical international wintering site for pale-bellied brent geese.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "strangford_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/strangford.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

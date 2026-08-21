@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Baroque_Architecture", "Counter_Reformation", "Urban_Horticulture"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Baroque_Architecture",
+      "Counter_Reformation",
+      "Urban_Horticulture"
+    ],
     "learning_objectives": [
       "Analyze how the architectural transition of Malá Strana into a Baroque stronghold reflected the political defeat of the Bohemian Protestant estates in 1620.",
       "Identify the key theatrical and structural design features of Dientzenhofer's Saint Nicholas Church.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mala_strana_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mala_strana.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

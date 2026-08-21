@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Recreation",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["recreational_history", "cable_engineering", "mountain_ecology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "recreational_history",
+      "cable_engineering",
+      "mountain_ecology"
+    ],
     "learning_objectives": [
       "Understand the history and economic vision of Chet Huntley in founding Big Sky Resort in 1973",
       "Analyze the engineering and logistics of constructing the Lone Peak Tram (completed 1995)",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "big_sky_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/big_sky.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

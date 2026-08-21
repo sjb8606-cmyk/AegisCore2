@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["forest_ecology", "marine_estuaries", "conservation_history"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "forest_ecology",
+      "marine_estuaries",
+      "conservation_history"
+    ],
     "learning_objectives": [
       "Identify the unique characteristics of the Afrotemperate forests and coastal fynbos biomes of the Garden Route.",
       "Understand the ecological and geological processes that formed the Knysna Estuary and its fragile marine ecosystem.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "garden_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/garden.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

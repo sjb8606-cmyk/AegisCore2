@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Religion",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["mormon_history", "frontier_history", "religious_studies"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "mormon_history",
+      "frontier_history",
+      "religious_studies"
+    ],
     "learning_objectives": [
       "Understand the historical events that led the Latter-day Saints to establish their capital at Salt Lake City in 1847",
       "Analyze the socioeconomic and political friction between the rapidly growing Mormon community and the federal government (the Utah War)",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "temple_square_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/temple_square.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

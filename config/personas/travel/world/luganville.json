@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["wwii_pacific_history", "million_dollar_point", "coastal_trade_fiji"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "wwii_pacific_history",
+      "million_dollar_point",
+      "coastal_trade_fiji"
+    ],
     "learning_objectives": [
       "Understand the historical role of Luganville as a major US military base and naval staging ground during the 1942 Pacific Campaign.",
       "Analyze the environmental and social history of the creation of 'Million Dollar Point' where millions of dollars of military equipment were dumped in 1945.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "luganville_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/luganville.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

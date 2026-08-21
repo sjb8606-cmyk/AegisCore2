@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Agriculture & Food Science",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Industrial Agriculture", "Food Science", "Hokkaido Pioneers"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Industrial Agriculture",
+      "Food Science",
+      "Hokkaido Pioneers"
+    ],
     "learning_objectives": [
       "Understand the historical colonization of the Tokachi Plains by pioneer groups (like the Banshisha) and their agricultural challenges.",
       "Analyze the fermentation chemistry of artisanal cheese making and the role of milk fat in northern diets.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tokachi_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tokachi.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

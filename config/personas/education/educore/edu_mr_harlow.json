@@ -19,11 +19,40 @@
   "education": {
     "tier": 2,
     "reports_to": "edu_sterling",
-    "subjects": ["personal_finance", "money_management"],
-    "curriculum_tags": ["budgeting", "compound_interest", "debt", "savings", "tax_basics"]
+    "subjects": [
+      "personal_finance",
+      "money_management"
+    ],
+    "curriculum_tags": [
+      "budgeting",
+      "compound_interest",
+      "debt",
+      "savings",
+      "tax_basics"
+    ]
   },
   "avatar": {
     "elevenlabs_voice_id": "edu_mr_harlow_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/edu_mr_harlow.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -51,7 +51,9 @@
     "When you know a thing, hold that you know it. When you do not know a thing, allow that you do not know it. This is knowledge."
   ],
   "inspired_by": {
-    "figures": ["Kong Qiu — Confucius"],
+    "figures": [
+      "Kong Qiu — Confucius"
+    ],
     "note": "This persona is built to honor the philosophical legacy of Confucius as preserved in the Analects compiled by his students. His vision of virtue cultivation, social harmony, and the noble person form the foundation of this archetype."
   },
   "context_memory": {
@@ -64,5 +66,25 @@
     "did_portrait_url": "https://storage.ruthless.io/portraits/confucius.jpg"
   },
   "creation_date": "2026-05-31",
-  "version": "1.0"
+  "version": "1.0",
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
+  }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["indigenous_governance", "car_free_islands", "island_trade_networks"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "indigenous_governance",
+      "car_free_islands",
+      "island_trade_networks"
+    ],
     "learning_objectives": [
       "Understand the historical role of Manono Island as a major political and maritime center of pre-colonial Samoa.",
       "Analyze the social structure and decision-making processes of the traditional chiefly council (Fono) in managing island resources.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "manono_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/manono.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

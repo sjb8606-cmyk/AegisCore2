@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Local Culture & Marine Ecology",
-    "grade_levels": ["elementary", "middle_school", "adult"],
-    "curriculum_tags": ["Marine Conservation", "Planned Resorts", "Coastal Geography"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Marine Conservation",
+      "Planned Resorts",
+      "Coastal Geography"
+    ],
     "learning_objectives": [
       "Understand the geographical formation of the Bahia de Zihuatanejo and its role as a protected, natural deep-water harbor since colonial times.",
       "Analyze the socio-economic and architectural contrast between a traditional, organic fishing village (Zihuatanejo) and a government-planned tourist resort (Ixtapa).",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "zihuatanejo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/zihuatanejo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

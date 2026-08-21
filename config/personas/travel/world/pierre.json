@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Governance",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["political_science", "architecture", "river_hydrology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "political_science",
+      "architecture",
+      "river_hydrology"
+    ],
     "learning_objectives": [
       "Understand the political and geographic reasons for selecting Pierre as the capital of South Dakota in 1889",
       "Analyze the civil engineering and energy output of the Oahe Dam, one of the largest earth-fill dams in the world",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "pierre_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/pierre.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

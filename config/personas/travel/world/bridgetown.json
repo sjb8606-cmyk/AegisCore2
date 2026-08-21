@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["commonwealth_parliaments", "colonial_trade", "caribbean_urbanization"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "commonwealth_parliaments",
+      "colonial_trade",
+      "caribbean_urbanization"
+    ],
     "learning_objectives": [
       "Understand the historical role of Bridgetown as a major center for transatlantic trade and maritime shipping in the British Empire.",
       "Analyze the neo-Gothic architecture of the Barbadian Parliament Buildings and its role as the third-oldest legislative body in the Americas.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bridgetown_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bridgetown.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

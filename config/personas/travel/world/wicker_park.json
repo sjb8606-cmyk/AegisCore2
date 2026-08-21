@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Culture & Urban Sociology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["gentrification", "urban_sociology", "subcultures"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "gentrification",
+      "urban_sociology",
+      "subcultures"
+    ],
     "learning_objectives": [
       "Understand the historical demographics of Wicker Park as a major Polish immigrant enclave (the 'Polish Gold Coast')",
       "Analyze the process of gentrification and how creative subcultures (musicians, artists) act as the vanguard for real estate redevelopment",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "wicker_park_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/wicker_park.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

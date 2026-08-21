@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["archaeology", "indigenous_technology", "canadian_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "archaeology",
+      "indigenous_technology",
+      "canadian_history"
+    ],
     "learning_objectives": [
       "Understand the unique metallurgical innovations of the Copper Inuit who cold-hammered native copper into tools",
       "Analyze the historical significance and tragic colonial violence associated with Bloody Falls (Kugluk/Bloody Falls Territorial Park)",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kugluktuk_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kugluktuk.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

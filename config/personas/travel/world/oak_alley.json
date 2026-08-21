@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Landscape Design",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["antebellum_history", "landscape_architecture", "slavery_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "antebellum_history",
+      "landscape_architecture",
+      "slavery_history"
+    ],
     "learning_objectives": [
       "Understand the economic operation of a 19th-century sugar cane plantation on the Mississippi River",
       "Analyze the architectural and landscaping principles of Oak Alley, specifically the iconic live oak avenue",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "oak_alley_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/oak_alley.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

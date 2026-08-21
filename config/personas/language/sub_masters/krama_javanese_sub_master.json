@@ -13,22 +13,43 @@
     "layer_1_response": "Let us turn our focus back to Krama Javanese. How can we express that concept or phrase using polite Krama registers?"
   },
   "routing": {
-    "can_route_to": ["history", "literature", "diplomacy", "travel", "culture"],
+    "can_route_to": [
+      "history",
+      "literature",
+      "diplomacy",
+      "travel",
+      "culture"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "mataram_history_personas"},
-      {"interest": "literature", "destination": "classical_literature_personas"},
-      {"interest": "diplomacy", "destination": "formal_protocol_personas"},
-      {"interest": "travel", "destination": "yogyakarta_travel_personas"},
-      {"interest": "culture", "destination": "javanese_culture_personas"}
+      {
+        "interest": "history",
+        "destination": "mataram_history_personas"
+      },
+      {
+        "interest": "literature",
+        "destination": "classical_literature_personas"
+      },
+      {
+        "interest": "diplomacy",
+        "destination": "formal_protocol_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "yogyakarta_travel_personas"
+      },
+      {
+        "interest": "culture",
+        "destination": "javanese_culture_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Javanese",
     "teaching_method": "Phonetic voice coaching combined with formal Krama vocabulary drills, respectful particles, and interactive situational dialogue",
-    "culture_weight": 0.30,
+    "culture_weight": 0.3,
     "conversation_weight": 0.45,
     "grammar_weight": 0.15,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Presents Krama Javanese sound structures, basic sentence frameworks, pronoun tables, and syntax.",
@@ -39,5 +60,25 @@
   "avatar": {
     "elevenlabs_voice_id": "krama_javanese_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/krama_javanese_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

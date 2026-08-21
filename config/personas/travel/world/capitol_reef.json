@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Nature",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["monocline_geology", "pioneer_history", "horticulture"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "monocline_geology",
+      "pioneer_history",
+      "horticulture"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Waterpocket Fold, a classic nearly 100-mile monocline (wrinkle in the earth's crust)",
       "Analyze the history of the Mormon pioneer settlement of Fruita and their sustainable irrigation techniques",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "capitol_reef_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/capitol_reef.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

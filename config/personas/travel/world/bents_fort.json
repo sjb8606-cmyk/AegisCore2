@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Geography",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["frontier_history", "trade_networks", "colonial_encounters"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "frontier_history",
+      "trade_networks",
+      "colonial_encounters"
+    ],
     "learning_objectives": [
       "Understand the historical role of Bent's Old Fort as a major economic and cultural crossroads on the Santa Fe Trail",
       "Analyze the diplomatic and business strategies of William Bent in maintaining peace with the Southern Cheyenne and Arapaho",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bents_fort_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bents_fort.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Business Operations",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Seafood_Industry_Economics", "Regulatory_Compliance", "Cold_Chain_Logistics"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Seafood_Industry_Economics",
+      "Regulatory_Compliance",
+      "Cold_Chain_Logistics"
+    ],
     "learning_objectives": [
       "Understand how quota systems work and how landed weight tracking determines whether an operation remains within legal limits.",
       "Analyze why cold chain integrity is both a food safety requirement and an economic necessity for seafood operators.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "biz_op_seafood_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/biz_op_seafood.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

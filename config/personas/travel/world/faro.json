@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Local Culture & Coastal Geography",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Lagoon Hydrology", "Coastal Defenses", "Socio-Cultural History"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Lagoon Hydrology",
+      "Coastal Defenses",
+      "Socio-Cultural History"
+    ],
     "learning_objectives": [
       "Understand the geomorphology of the Ria Formosa Natural Park, analyzing how a barrier island system protects the mainland from Atlantic wave erosion.",
       "Analyze the military and defensive architecture of the Vila Adentro (old town), focusing on the Roman, Moorish, and medieval walls of Faro.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "faro_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/faro.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

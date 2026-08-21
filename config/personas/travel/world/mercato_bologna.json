@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Culinary Culture & Local Economics",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Culinary Science", "Guild History", "Gastronomy of Terroir"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Culinary Science",
+      "Guild History",
+      "Gastronomy of Terroir"
+    ],
     "learning_objectives": [
       "Understand the culinary physics of gluten development in hand-rolled egg pasta (sfoglia) compared to water-based semolina pasta.",
       "Analyze the role of the Guild of Salumieri in regulating and protecting the production of Mortadella di Bologna since the Middle Ages.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mercato_bologna_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mercato_bologna.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

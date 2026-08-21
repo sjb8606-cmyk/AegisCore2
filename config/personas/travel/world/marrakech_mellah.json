@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Cultural Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Moroccan Jewish History", "Sephardic Diaspora", "Urban Segregation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Moroccan Jewish History",
+      "Sephardic Diaspora",
+      "Urban Segregation"
+    ],
     "learning_objectives": [
       "Understand the historical role of the 'Mellah' as a walled Jewish quarter established under Saadian rule (1557) to protect and tax the Jewish mercantile class.",
       "Analyze the architectural differences between the Jewish Mellah (featuring street-facing windows and balconies) and the traditional Muslim Medina (which emphasizes internal courtyards).",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "marrakech_mellah_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/marrakech_mellah.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

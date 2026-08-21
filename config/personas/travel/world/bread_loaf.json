@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Literature & History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["american_poetry", "literary_geography", "creative_writing"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "american_poetry",
+      "literary_geography",
+      "creative_writing"
+    ],
     "learning_objectives": [
       "Understand the history and impact of the Bread Loaf Writers' Conference on 20th-century American literature",
       "Analyze the role of the New England landscape as a primary thematic element in the poetry of Robert Frost",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bread_loaf_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bread_loaf.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

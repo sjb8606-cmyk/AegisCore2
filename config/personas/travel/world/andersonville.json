@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Military Science",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["civil_war", "military_prisons", "history_of_humanitarian_law"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "civil_war",
+      "military_prisons",
+      "history_of_humanitarian_law"
+    ],
     "learning_objectives": [
       "Understand the logistical and political failures that led to the horrific conditions at Camp Sumter (Andersonville)",
       "Analyze the post-war trial and execution of Captain Henry Wirz as a landmark event in the history of military accountability",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "andersonville_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/andersonville.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

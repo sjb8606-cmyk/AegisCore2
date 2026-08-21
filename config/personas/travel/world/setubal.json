@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Viticulture & Marine Biology",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Coastal Geomorphology", "Marine Conservation", "Terroir Studies"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Coastal Geomorphology",
+      "Marine Conservation",
+      "Terroir Studies"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Arrábida Natural Park (limestone cliffs) and its role as a microclimatic shield for the Sado estuary.",
       "Analyze the unique winemaking process of 'Moscatel de Setúbal' (DOC), specifically the prolonged skin contact with grape must during aging.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "setubal_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/setubal.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

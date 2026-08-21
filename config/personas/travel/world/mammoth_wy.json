@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["national_parks_history", "military_administration", "conservation_policy"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "national_parks_history",
+      "military_administration",
+      "conservation_policy"
+    ],
     "learning_objectives": [
       "Understand the historical role of the US Army in administering Yellowstone National Park from 1886 to 1918",
       "Analyze the military architecture of Fort Yellowstone (built 1891) using local sandstone",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mammoth_wy_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mammoth_wy.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

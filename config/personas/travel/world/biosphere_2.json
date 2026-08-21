@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Science & Technology",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["systems_ecology", "climate_science", "controlled_environments"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "systems_ecology",
+      "climate_science",
+      "controlled_environments"
+    ],
     "learning_objectives": [
       "Understand the concept of a closed ecological system and the scientific challenges of the original Biosphere 2 missions",
       "Analyze the mechanical engineering and thermodynamics required to maintain stable biomes under glass",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "biosphere_2_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/biosphere_2.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

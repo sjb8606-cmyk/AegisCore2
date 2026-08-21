@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["savanna_ecology", "elephant_conservation", "volcanic_geomorphology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "savanna_ecology",
+      "elephant_conservation",
+      "volcanic_geomorphology"
+    ],
     "learning_objectives": [
       "Explain why Tsavo's elephants display a unique red coloration, focusing on the mineral composition of the park's volcanic soils.",
       "Understand the geological formation of the Yatta Plateau as the world's longest ancient lava flow.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tsavo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tsavo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["volcanology_fiji_and_solomons", "lava_flow_types", "environmental_adaptation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "volcanology_fiji_and_solomons",
+      "lava_flow_types",
+      "environmental_adaptation"
+    ],
     "learning_objectives": [
       "Understand the volcanic and tectonic mechanisms of the Pacific Ring of Fire that generate Savai'i's active shield-volcano structure.",
       "Analyze the process of secondary ecological succession on historical basaltic lava flows, studying how plants reclaim sterile volcanic terrain.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "savaii_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/savaii.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

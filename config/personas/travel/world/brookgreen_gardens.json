@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Art & History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["figurative_sculpture", "landscape_design", "plantation_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "figurative_sculpture",
+      "landscape_design",
+      "plantation_history"
+    ],
     "learning_objectives": [
       "Understand the history and design of Brookgreen Gardens as the first public sculpture garden in America (founded 1931)",
       "Analyze how figurative American sculpture is integrated with the geomorphology and flora of the lowcountry",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "brookgreen_gardens_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/brookgreen_gardens.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

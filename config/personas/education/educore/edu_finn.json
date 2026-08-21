@@ -19,13 +19,43 @@
   "education": {
     "grade_band": "wonder",
     "grades": "1–3",
-    "subjects": ["history", "geography", "oral_communication"],
+    "subjects": [
+      "history",
+      "geography",
+      "oral_communication"
+    ],
     "tier": 1,
     "persona_style": "adventurous, world traveller, oral storyteller",
-    "curriculum_tags": ["world_cultures", "maps", "geography_basics", "storytelling", "history_introduction"]
+    "curriculum_tags": [
+      "world_cultures",
+      "maps",
+      "geography_basics",
+      "storytelling",
+      "history_introduction"
+    ]
   },
   "avatar": {
     "elevenlabs_voice_id": "edu_finn_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/edu_finn.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

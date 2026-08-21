@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Tertiary_Basalt_Geology", "Waterfall_Cascade_Mechanics", "Remote_Wilderness_Conservation"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Tertiary_Basalt_Geology",
+      "Waterfall_Cascade_Mechanics",
+      "Remote_Wilderness_Conservation"
+    ],
     "learning_objectives": [
       "Explain the geological formation of the Westfjords as the oldest part of Iceland, built from layers of Tertiary basalt lava flows 14 to 16 million years ago.",
       "Understand the hydrological and erosional mechanics of a 'cascade' waterfall, detailing how the water spreads out over the terraced rock layers of Dynjandi.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "dynjandi_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/dynjandi.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

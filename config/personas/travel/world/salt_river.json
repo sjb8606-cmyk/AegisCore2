@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Culture & Recreation",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["river_hydrology", "recreation_management", "riparian_ecology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "river_hydrology",
+      "recreation_management",
+      "riparian_ecology"
+    ],
     "learning_objectives": [
       "Understand the mechanics of dam-controlled river systems and the hydrology of the Salt River Project",
       "Analyze the ecological importance of riparian zones in supporting wildlife within arid desert biomes",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "salt_river_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/salt_river.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

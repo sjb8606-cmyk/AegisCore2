@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Nature & Maritime History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Coastal Geomorphology", "Oceanography", "History of Telecommunications"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Coastal Geomorphology",
+      "Oceanography",
+      "History of Telecommunications"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Mizen Head peninsula (Old Red Sandstone) and its resistance to Atlantic wave erosion.",
       "Analyze the maritime history of Fastnet Rock (the 'Teardrop of Ireland') as the last landmark seen by Irish emigrants sailing to America.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mizen_head_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mizen_head.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

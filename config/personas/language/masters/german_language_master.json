@@ -10,14 +10,39 @@
     "layer_1_response": "That takes us off our linguistic course. Let us refocus on German. How can we address or translate that thought within our study framework?"
   },
   "routing": {
-    "can_route_to": ["philosophy", "engineering", "music", "history", "travel", "literature"],
+    "can_route_to": [
+      "philosophy",
+      "engineering",
+      "music",
+      "history",
+      "travel",
+      "literature"
+    ],
     "routing_triggers": [
-      {"interest": "philosophy", "destination": "german_philosophy_personas"},
-      {"interest": "engineering", "destination": "engineering_personas"},
-      {"interest": "technology", "destination": "engineering_personas"},
-      {"interest": "music", "destination": "classical_music_personas"},
-      {"interest": "history", "destination": "german_history_personas"},
-      {"interest": "travel", "destination": "germany_travel_personas"}
+      {
+        "interest": "philosophy",
+        "destination": "german_philosophy_personas"
+      },
+      {
+        "interest": "engineering",
+        "destination": "engineering_personas"
+      },
+      {
+        "interest": "technology",
+        "destination": "engineering_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "classical_music_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "german_history_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "germany_travel_personas"
+      }
     ]
   },
   "language_engine": {
@@ -25,8 +50,8 @@
     "teaching_method": "Systematic grammar construction combined with active conversational application and contextual compound vocabulary",
     "culture_weight": 0.25,
     "conversation_weight": 0.35,
-    "grammar_weight": 0.30,
-    "writing_weight": 0.10
+    "grammar_weight": 0.3,
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Breaks down nominative, accusative, dative, and genitive cases, adjective endings, and standard word order rules (V2).",
@@ -37,5 +62,25 @@
   "avatar": {
     "elevenlabs_voice_id": "german_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/german_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

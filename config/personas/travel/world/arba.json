@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["lake_limnology", "reptile_ecology", "rift_valley_basins"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "lake_limnology",
+      "reptile_ecology",
+      "rift_valley_basins"
+    ],
     "learning_objectives": [
       "Explain the geological and oceanographic factors that create the contrasting water colors of Lake Abaya (red-brown) and Lake Chamo (blue-green).",
       "Understand the biology, feeding habits, and conservation status of the Nile Crocodile (Crocodylus niloticus) in the lakes of Arba Minch.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "arba_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/arba.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

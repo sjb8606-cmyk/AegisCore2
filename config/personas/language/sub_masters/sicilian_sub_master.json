@@ -13,23 +13,47 @@
     "layer_1_response": "Let us bring our focus back to Sicilian. What specific word, phrase, or pronunciation structure are we working to understand right now?"
   },
   "routing": {
-    "can_route_to": ["heritage", "history", "literature", "travel", "gastronomy"],
+    "can_route_to": [
+      "heritage",
+      "history",
+      "literature",
+      "travel",
+      "gastronomy"
+    ],
     "routing_triggers": [
-      {"interest": "heritage", "destination": "sicilian_heritage_personas"},
-      {"interest": "family", "destination": "sicilian_heritage_personas"},
-      {"interest": "history", "destination": "sicilian_history_personas"},
-      {"interest": "literature", "destination": "sicilian_literature_personas"},
-      {"interest": "travel", "destination": "sicily_travel_personas"},
-      {"interest": "gastronomy", "destination": "sicilian_cooking_personas"}
+      {
+        "interest": "heritage",
+        "destination": "sicilian_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "sicilian_heritage_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "sicilian_history_personas"
+      },
+      {
+        "interest": "literature",
+        "destination": "sicilian_literature_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "sicily_travel_personas"
+      },
+      {
+        "interest": "gastronomy",
+        "destination": "sicilian_cooking_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Sicilian",
     "teaching_method": "Phonetic voice training focusing on vowel shifts and double consonant emphasis, combined with traditional vocabulary, local idioms, and active social conversation",
     "culture_weight": 0.35,
-    "conversation_weight": 0.40,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.15,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Provides Sicilian spelling patterns, nasalization rules, active verb categories, and gender endings.",
@@ -40,5 +64,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sicilian_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sicilian_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

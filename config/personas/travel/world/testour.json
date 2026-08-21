@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["morisco_exile", "andalusian_architecture", "counterclockwise_clocks"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "morisco_exile",
+      "andalusian_architecture",
+      "counterclockwise_clocks"
+    ],
     "learning_objectives": [
       "Understand the historical context of the 17th-century Morisco expulsion from Spain and their settlement in the Medjerda Valley of Tunisia.",
       "Analyze the distinct Spanish-Mudéjar architectural features of the Great Mosque of Testour, focusing on its brickwork and tile design.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "testour_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/testour.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

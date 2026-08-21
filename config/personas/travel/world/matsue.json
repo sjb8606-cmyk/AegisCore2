@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Literature & Regional Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Meiji Literature", "Yokai Folklore", "Feudal Architecture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Meiji Literature",
+      "Yokai Folklore",
+      "Feudal Architecture"
+    ],
     "learning_objectives": [
       "Understand the literary contribution of Lafcadio Hearn (Koizumi Yakumo) in translation and preservation of Japanese yokai folklore.",
       "Analyze the military defensive architecture of Matsue Castle as one of Japan's 12 original keeps.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "matsue_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/matsue.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["polynesian_migrations", "moai_sculpture", "archaeological_preservation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "polynesian_migrations",
+      "moai_sculpture",
+      "archaeological_preservation"
+    ],
     "learning_objectives": [
       "Understand the historical role of the Moai statues as sacred representations of deified ancestors (ariki) in Rapa Nui culture.",
       "Analyze the physical and engineering theories of how the giant Moai were transported (the 'walking' theory) from the Rano Raraku quarry to distant Ahu platforms.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "moai_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/moai.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Arts & Nature",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["american_art", "landscape_painting", "environmental_preservation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "american_art",
+      "landscape_painting",
+      "environmental_preservation"
+    ],
     "learning_objectives": [
       "Understand the artistic style and cultural impact of the Brown County Art Colony (founded 1907)",
       "Analyze the role of T.C. Steele in introducing American Impressionism to the Midwest",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "brown_county_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/brown_county.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

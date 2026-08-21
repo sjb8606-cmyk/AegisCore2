@@ -19,14 +19,44 @@
   "education": {
     "grade_band": "cross_platform",
     "grades": "7–12",
-    "subjects": ["career_pathing", "self_awareness", "future_planning"],
+    "subjects": [
+      "career_pathing",
+      "self_awareness",
+      "future_planning"
+    ],
     "tier": 1,
     "activates_at": "grade_7",
     "persona_style": "patient, curious, values-driven",
-    "curriculum_tags": ["career_exploration", "interest_mapping", "aptitude", "educational_pathways", "labour_market"]
+    "curriculum_tags": [
+      "career_exploration",
+      "interest_mapping",
+      "aptitude",
+      "educational_pathways",
+      "labour_market"
+    ]
   },
   "avatar": {
     "elevenlabs_voice_id": "edu_compass_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/edu_compass.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

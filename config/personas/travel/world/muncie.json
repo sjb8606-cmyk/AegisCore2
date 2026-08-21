@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Sociology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["sociology", "urban_history", "industrial_decline"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "sociology",
+      "urban_history",
+      "industrial_decline"
+    ],
     "learning_objectives": [
       "Understand the historical significance of the 'Middletown' studies (Robert and Helen Lynd, 1929) in pioneering American sociology",
       "Analyze the transition of Muncie from a natural-gas industrial boomtown (the Ball Brothers) to an educational center",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "muncie_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/muncie.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

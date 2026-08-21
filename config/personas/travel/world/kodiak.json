@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Indigenous Culture",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["mammalogy", "alutiiq_history", "island_ecology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "mammalogy",
+      "alutiiq_history",
+      "island_ecology"
+    ],
     "learning_objectives": [
       "Understand the evolutionary biology and life cycle of the Kodiak Brown Bear (Ursus arctos middendorffi)",
       "Analyze the history and maritime adaptation of the Alutiiq (Sugpiaq) people of southwest Alaska",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kodiak_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kodiak.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

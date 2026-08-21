@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Local Culture & Maritime History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Maritime History", "Gold Craftsmanship", "Urban Sociology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Maritime History",
+      "Gold Craftsmanship",
+      "Urban Sociology"
+    ],
     "learning_objectives": [
       "Understand the historical role of the Claddagh (an ancient fishing village outside Galway's walls) as an independent, Gaelic-speaking community.",
       "Analyze the design and cultural symbolism of the Claddagh Ring, tracing its origins to 17th-century goldsmiths and its role as a marriage token.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "salthill_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/salthill.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

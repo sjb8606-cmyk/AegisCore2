@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["indigenous_sovereignty", "dinétah_history", "treaty_rights"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "indigenous_sovereignty",
+      "dinétah_history",
+      "treaty_rights"
+    ],
     "learning_objectives": [
       "Understand the political structure and spiritual geography of the Navajo (Diné) Nation",
       "Analyze the Treaty of 1868 (the only treaty where the US permitted an Indigenous nation to return to their homeland)",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "navajo_az_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/navajo_az.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

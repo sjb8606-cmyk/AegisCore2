@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["cultural_geography", "islamic_architecture", "global_arts_exchange"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "cultural_geography",
+      "islamic_architecture",
+      "global_arts_exchange"
+    ],
     "learning_objectives": [
       "Understand the architectural design of traditional mud-and-clay pigeon towers and their historical role in Gulf agricultural ecosystems.",
       "Analyze how Katara Cultural Village functions as a deliberate hub for soft diplomacy and international cultural exchange.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "katara_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/katara.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -10,23 +10,47 @@
     "layer_1_response": "That lies outside our language lesson. Let us refocus on Acadian French — what phrase, word, or pronunciation structure should we work on next?"
   },
   "routing": {
-    "can_route_to": ["ancestry", "history", "music", "travel", "folklore"],
+    "can_route_to": [
+      "ancestry",
+      "history",
+      "music",
+      "travel",
+      "folklore"
+    ],
     "routing_triggers": [
-      {"interest": "ancestry", "destination": "acadian_ancestry_personas"},
-      {"interest": "family", "destination": "acadian_ancestry_personas"},
-      {"interest": "history", "destination": "acadian_history_personas"},
-      {"interest": "music", "destination": "cajun_music_personas"},
-      {"interest": "travel", "destination": "maritimes_travel_personas"},
-      {"interest": "folklore", "destination": "acadian_folklore_personas"}
+      {
+        "interest": "ancestry",
+        "destination": "acadian_ancestry_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "acadian_ancestry_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "acadian_history_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "cajun_music_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "maritimes_travel_personas"
+      },
+      {
+        "interest": "folklore",
+        "destination": "acadian_folklore_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Acadian French",
     "teaching_method": "Phonetic listening and speaking exercises matched with comparisons to standard French, verb conjugation differences, and maritime-rooted vocabulary",
     "culture_weight": 0.35,
-    "conversation_weight": 0.40,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.15,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Presents Acadian French phonetic alignments, unique vocabulary compared to standard French, verb tenses, and sentence patterns.",
@@ -37,5 +61,25 @@
   "avatar": {
     "elevenlabs_voice_id": "acadian_french_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/acadian_french_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culture",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["recreational_history", "urbanization", "coastal_geography"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "recreational_history",
+      "urbanization",
+      "coastal_geography"
+    ],
     "learning_objectives": [
       "Understand the historical geography of Waikiki from its origins as a wetlands agricultural resource to a modern resort",
       "Analyze the socioeconomic and cultural impact of mass global tourism on Hawaiian society",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "waikiki_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/waikiki.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

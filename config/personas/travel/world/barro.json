@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Science",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["tropical_ecology", "canopy_research", "long_term_ecological_studies"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "tropical_ecology",
+      "canopy_research",
+      "long_term_ecological_studies"
+    ],
     "learning_objectives": [
       "Explain the ecological history of Barro Colorado Island, detailing how its isolation in 1913 created a natural lab for studying island biogeography.",
       "Understand the significance of long-term ecological research datasets in mapping forest dynamics, species interactions, and carbon cycles.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "barro_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/barro.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

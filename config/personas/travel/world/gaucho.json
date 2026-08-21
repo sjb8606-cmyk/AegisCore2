@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Pampas_Social_History", "Gaucho_Folklore_Martin_Fierro", "Estancia_Agriculture"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Pampas_Social_History",
+      "Gaucho_Folklore_Martin_Fierro",
+      "Estancia_Agriculture"
+    ],
     "learning_objectives": [
       "Understand the historical development of the Gaucho as a distinct social class of nomadic horsemen in the Argentine Pampas and their role in the war of independence.",
       "Analyze the literary and political significance of José Hernández’s epic poem 'Martín Fierro' in constructing the national mythology of the Gaucho.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "gaucho_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/gaucho.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

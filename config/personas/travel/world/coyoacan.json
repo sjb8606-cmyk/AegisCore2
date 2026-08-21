@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Art History & Political History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Frida Kahlo", "Russian Exile History", "Colonial Architecture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Frida Kahlo",
+      "Russian Exile History",
+      "Colonial Architecture"
+    ],
     "learning_objectives": [
       "Understand the artistic and personal legacy of Frida Kahlo, evaluating how her physical disability and political convictions shaped her surrealist self-portraits.",
       "Analyze the political exile and assassination of León Trotsky in Coyoacán, tracing the global tensions of the Cold War precursor.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "coyoacan_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/coyoacan.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

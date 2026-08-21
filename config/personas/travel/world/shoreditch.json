@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Contemporary_Art", "Urban_Studies", "Visual_Literacy"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Contemporary_Art",
+      "Urban_Studies",
+      "Visual_Literacy"
+    ],
     "learning_objectives": [
       "Distinguish between graffiti, street art, and public art installations within the context of Shoreditch's history.",
       "Analyze the social and political messages embedded in contemporary street murals.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "shoreditch_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/shoreditch.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

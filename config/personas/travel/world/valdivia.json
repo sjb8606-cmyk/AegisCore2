@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["seismology_1960", "german_immigration", "riverine_economies"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "seismology_1960",
+      "german_immigration",
+      "riverine_economies"
+    ],
     "learning_objectives": [
       "Understand the geological causes and massive environmental impacts of the 9.5 magnitude Valdivia earthquake of May 22, 1960, the strongest ever recorded.",
       "Analyze the historical impact of German immigration in the mid-19th century on the industrial development, brewing, and architecture of southern Chile.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "valdivia_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/valdivia.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

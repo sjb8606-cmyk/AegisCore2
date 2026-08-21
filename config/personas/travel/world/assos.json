@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Philosophy & Local Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Classical Philosophy", "Doric Architecture", "Olive Agronomy"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Classical Philosophy",
+      "Doric Architecture",
+      "Olive Agronomy"
+    ],
     "learning_objectives": [
       "Understand the historical role of Aristotle’s Academy in Assos (348–345 BC) as the cradle of early observational biology and empirical philosophy.",
       "Analyze the unique Doric architecture of the Temple of Athena, the only archaic Doric temple built of local volcanic andesite stone in Asia Minor.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "assos_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/assos.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

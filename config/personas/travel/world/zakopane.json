@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Zakopane_Style_Architecture", "Alpine_Tourism_History", "Górale_Ethnology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Zakopane_Style_Architecture",
+      "Alpine_Tourism_History",
+      "Górale_Ethnology"
+    ],
     "learning_objectives": [
       "Understand the development of the 'Zakopane Style' of architecture created by Stanisław Witkiewicz as a deliberate attempt to build a Polish national architectural identity based on highland folk art.",
       "Analyze the geological features of the Tatra Mountains (the highest range in the Carpathians) and their impact on local climate and biodiversity.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "zakopane_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/zakopane.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

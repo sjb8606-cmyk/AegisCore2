@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Agriculture & History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["agronomy", "labor_history", "agricultural_economics"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "agronomy",
+      "labor_history",
+      "agricultural_economics"
+    ],
     "learning_objectives": [
       "Understand the specific geological and climatic conditions of the Connecticut River Valley that allow for premium tobacco cultivation",
       "Analyze the labor history of the tobacco valley, including the use of Caribbean migrants and domestic youth labor",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "connecticut_tobacco_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/connecticut_tobacco.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

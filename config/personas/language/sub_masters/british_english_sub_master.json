@@ -13,22 +13,43 @@
     "layer_1_response": "Let us bring our focus back to British English. What phrase, spelling, or pronunciation structure should we look at next?"
   },
   "routing": {
-    "can_route_to": ["academia", "literature", "travel", "career", "history"],
+    "can_route_to": [
+      "academia",
+      "literature",
+      "travel",
+      "career",
+      "history"
+    ],
     "routing_triggers": [
-      {"interest": "academia", "destination": "oxford_academic_personas"},
-      {"interest": "literature", "destination": "british_literature_personas"},
-      {"interest": "travel", "destination": "uk_travel_personas"},
-      {"interest": "career", "destination": "british_business_personas"},
-      {"interest": "history", "destination": "british_history_personas"}
+      {
+        "interest": "academia",
+        "destination": "oxford_academic_personas"
+      },
+      {
+        "interest": "literature",
+        "destination": "british_literature_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "uk_travel_personas"
+      },
+      {
+        "interest": "career",
+        "destination": "british_business_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "british_history_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "English",
     "teaching_method": "Non-rhotic phonetic coaching paired with standard British spelling rules, regional vocabulary drills, and active social conversation",
-    "culture_weight": 0.30,
-    "conversation_weight": 0.40,
-    "grammar_weight": 0.20,
-    "writing_weight": 0.10
+    "culture_weight": 0.3,
+    "conversation_weight": 0.4,
+    "grammar_weight": 0.2,
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Provides British spelling guidelines, sentence structures, pronoun tables, and basic phonetic rules.",
@@ -39,5 +60,25 @@
   "avatar": {
     "elevenlabs_voice_id": "british_english_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/british_english_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

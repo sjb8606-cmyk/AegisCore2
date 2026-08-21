@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["wetland_ecology", "island_biogeography", "classic_maya_ports"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "wetland_ecology",
+      "island_biogeography",
+      "classic_maya_ports"
+    ],
     "learning_objectives": [
       "Explain the geological and hydrological processes that form the karst lagoon systems of the Petén rainforest.",
       "Understand the historical role of Yaxhá as a major Classic Maya lake-port and its strategic connection to regional trade routes.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "yaxha_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/yaxha.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

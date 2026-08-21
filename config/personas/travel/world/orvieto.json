@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Speleology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Volcanic Urbanism", "Medieval Engineering", "Etruscan Studies"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Volcanic Urbanism",
+      "Medieval Engineering",
+      "Etruscan Studies"
+    ],
     "learning_objectives": [
       "Understand the volcanic geomorphology of the Orvieto tufa plateau and its strategic role as an impregnable hill fort since Etruscan times.",
       "Analyze the military and hydraulic engineering of St. Patrick’s Well (Pozzo di San Patrizio), focusing on how the double-helix ramp allowed one-way mule traffic.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "orvieto_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/orvieto.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

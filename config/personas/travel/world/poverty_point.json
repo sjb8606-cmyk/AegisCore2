@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Archaeology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["mound_builders", "indigenous_studies", "underwater_archaeology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "mound_builders",
+      "indigenous_studies",
+      "underwater_archaeology"
+    ],
     "learning_objectives": [
       "Understand the political and economic structure of the Poverty Point culture as a major hunter-gatherer settlement",
       "Analyze the unique geometric design and construction of the massive concentric earthwork ridges",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "poverty_point_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/poverty_point.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

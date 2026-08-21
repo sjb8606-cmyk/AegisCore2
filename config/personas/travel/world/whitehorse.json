@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Tourism",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["urban_history", "political_science", "northern_development"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "urban_history",
+      "political_science",
+      "northern_development"
+    ],
     "learning_objectives": [
       "Understand the historical shift of the capital from Dawson City to Whitehorse",
       "Analyze the impact of the Alaska Highway construction on the city's urban development",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "whitehorse_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/whitehorse.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

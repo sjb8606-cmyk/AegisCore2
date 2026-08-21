@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Nature & Maritime Geography",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Geomorphology", "Oceanography", "Maritime Engineering"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Geomorphology",
+      "Oceanography",
+      "Maritime Engineering"
+    ],
     "learning_objectives": [
       "Understand the geomorphology of the Armorican Massif (granite cliffs) and its resistance to Atlantic wave erosion.",
       "Analyze the heroic engineering and construction of 'high sea' lighthouses (like Ar-Men) on submerged rocks in extreme tidal currents.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "finistere_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/finistere.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

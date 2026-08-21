@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Maritime History & Local Culture",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Ottoman Campaigns", "Forestry & Honey", "Coastal Geography"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Ottoman Campaigns",
+      "Forestry & Honey",
+      "Coastal Geography"
+    ],
     "learning_objectives": [
       "Understand the strategic and military history of the Marmaris Castle, constructed by Suleiman the Magnificent as his naval base for the 1522 Siege of Rhodes.",
       "Analyze the ecological unique of the local pine forests (Pinus halepensis) and how they support the production of rare, high-quality pine honey.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "marmaris_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/marmaris.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

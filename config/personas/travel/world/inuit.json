@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Knowledge",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["epistemology", "indigenous_science", "environmental_ethics"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "epistemology",
+      "indigenous_science",
+      "environmental_ethics"
+    ],
     "learning_objectives": [
       "Understand the holistic framework of Inuit Qaujimajatuqangit (IQ) as a valid and rigorous scientific methodology",
       "Analyze the core Inuit societal values, such as Piliriqatigiinniq (working together for a common cause)",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "inuit_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/inuit.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Wetland_Ecology", "Peat_Extraction_History", "Marine_Conservation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Wetland_Ecology",
+      "Peat_Extraction_History",
+      "Marine_Conservation"
+    ],
     "learning_objectives": [
       "Explain how the medieval peat-cutting industry inadvertently created the unique wetland landscape of the Norfolk Broads.",
       "Identify key indicator species of British wetland health, such as the bittern, swallowtail butterfly, and otter.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "norfolk_broads_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/norfolk_broads.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

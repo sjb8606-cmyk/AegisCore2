@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Culinary",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["culinary_heritage", "maroon_preservation", "agricultural_science"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "culinary_heritage",
+      "maroon_preservation",
+      "agricultural_science"
+    ],
     "learning_objectives": [
       "Understand the historical roots of the 'Jerk' cooking method, tracing its origin from 17th-century Maroon escape strategies in Portland.",
       "Identify the unique, chemical properties of Pimento Wood (Pimenta dioica) and how its essential oils define the flavor of authentic Jamaican jerk.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "jerk_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/jerk.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

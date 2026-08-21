@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Viticulture & Marine Biology",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Heroic Viticulture", "Marine Biology", "Volcanic Landscapes"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Heroic Viticulture",
+      "Marine Biology",
+      "Volcanic Landscapes"
+    ],
     "learning_objectives": [
       "Understand the geological origin of Pico Island (basaltic shield volcano) and how its black lava fields (lajidos) were transformed for agriculture.",
       "Analyze the engineering and microclimatic role of the 'Currais' (concentric, dry-stone lava walls) in protecting Verdelho grapevines from Atlantic winds and salt spray.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "pico_island_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/pico_island.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

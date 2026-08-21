@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["pottery_economies", "traditional_trade", "river_preservation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "pottery_economies",
+      "traditional_trade",
+      "river_preservation"
+    ],
     "learning_objectives": [
       "Understand the economic dynamics of transboundary informal markets, focusing on the historic 'pot-for-fish' trade between Sawos and Yatmul.",
       "Analyze the design and engineering of traditional stilt houses (palafitos-like) in managing seasonal floods on the Lower Sepik.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "angoram_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/angoram.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["king_philips_war", "indigenous_studies", "interior_geography"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "king_philips_war",
+      "indigenous_studies",
+      "interior_geography"
+    ],
     "learning_objectives": [
       "Understand the geographic significance of the Nipmuc as the freshwater people of the Massachusetts interior",
       "Analyze the impact of King Philip's War (1675-1676) and the 'Praying Indian' system on Nipmuc society",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "nipmuc_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/nipmuc.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

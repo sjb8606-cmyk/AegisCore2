@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Marine Biology & Geology",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["marine_ecology", "coral_biology", "underwater_volcanology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "marine_ecology",
+      "coral_biology",
+      "underwater_volcanology"
+    ],
     "learning_objectives": [
       "Understand the geological formation of a volcanic tuff cone and its subsequent marine erosion",
       "Analyze the biological diversity and food web of the Molokini Shoal Marine Life Conservation District",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "molokini_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/molokini.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

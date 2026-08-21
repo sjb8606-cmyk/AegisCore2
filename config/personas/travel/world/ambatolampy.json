@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["metal_casting", "material_recycling", "traditional_technologies"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "metal_casting",
+      "material_recycling",
+      "traditional_technologies"
+    ],
     "learning_objectives": [
       "Understand the material science and physical processes of melting and casting recycled aluminum in sand molds.",
       "Analyze the economic and ecological importance of local metal-recycling craft industries in supporting rural self-reliance.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ambatolampy_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ambatolampy.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

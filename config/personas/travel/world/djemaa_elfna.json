@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Local Culture & Performing Arts",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Oral Traditions", "UNESCO Intangible Heritage", "Almohad Dynasty"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Oral Traditions",
+      "UNESCO Intangible Heritage",
+      "Almohad Dynasty"
+    ],
     "learning_objectives": [
       "Understand the historical development of Djemaa el-Fna (UNESCO Intangible Heritage) as a space of continuous oral storytelling and performance since the 11th century.",
       "Analyze the role of the 'Halqa' (storytelling circle) as a democratic, public medium for transmitting folklore, news, and moral philosophy in Morocco.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "djemaa_elfna_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/djemaa_elfna.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

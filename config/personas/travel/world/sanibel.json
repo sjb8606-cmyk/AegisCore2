@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["malacology", "coastal_morphology", "wildlife_refuges"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "malacology",
+      "coastal_morphology",
+      "wildlife_refuges"
+    ],
     "learning_objectives": [
       "Understand why Sanibel Island's unique east-west orientation makes it a natural trap for global shell deposits",
       "Analyze the ecological role of the mangrove estuary in the J.N. 'Ding' Darling National Wildlife Refuge",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sanibel_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sanibel.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["immigration_history", "labor_movements", "cuban_independence"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "immigration_history",
+      "labor_movements",
+      "cuban_independence"
+    ],
     "learning_objectives": [
       "Understand the economic development of Ybor City as the 'Cigar Capital of the World' in the late 19th century",
       "Analyze the role of Ybor's immigrant workers in funding Jose Marti and the Cuban War of Independence",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ybor_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ybor.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

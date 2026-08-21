@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Marine Biology & Conservation",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Marine Biology", "Coral Reef Ecology", "Ecotourism"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Marine Biology",
+      "Coral Reef Ecology",
+      "Ecotourism"
+    ],
     "learning_objectives": [
       "Understand the symbiosis between coral polyps and algae and why coral bleaching occurs due to temperature spikes.",
       "Analyze why tropical ocean waters are incredibly clear despite supporting massive biological communities.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kerama_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kerama.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

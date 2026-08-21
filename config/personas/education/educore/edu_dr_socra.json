@@ -19,11 +19,40 @@
   "education": {
     "tier": 2,
     "reports_to": "edu_axiom",
-    "subjects": ["socratic_method", "classical_philosophy"],
-    "curriculum_tags": ["socratic_dialogue", "epistemology", "ethics", "metaphysics", "classical_philosophy"]
+    "subjects": [
+      "socratic_method",
+      "classical_philosophy"
+    ],
+    "curriculum_tags": [
+      "socratic_dialogue",
+      "epistemology",
+      "ethics",
+      "metaphysics",
+      "classical_philosophy"
+    ]
   },
   "avatar": {
     "elevenlabs_voice_id": "edu_dr_socra_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/edu_dr_socra.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

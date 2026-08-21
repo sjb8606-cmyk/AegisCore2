@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Maritime History",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Gold Route", "Masonic Architecture", "Cachaça Distillation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Gold Route",
+      "Masonic Architecture",
+      "Cachaça Distillation"
+    ],
     "learning_objectives": [
       "Understand the historical role of Paraty as the primary, high-security gold port of the Portuguese Empire during the 17th and 18th centuries.",
       "Analyze the urban planning of the historic center, evaluating how the streets were designed to be flooded by the high tide (tidal wash) for hygiene.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "paraty_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/paraty.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

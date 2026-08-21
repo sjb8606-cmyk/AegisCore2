@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Philosophy",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Weimar_Classicism", "Bauhaus_Design", "Weimar_Republic_History"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Weimar_Classicism",
+      "Bauhaus_Design",
+      "Weimar_Republic_History"
+    ],
     "learning_objectives": [
       "Analyze the core ideas of Weimar Classicism as a literary and cultural movement seeking a new synthesis of Romanticism and Enlightenment humanism.",
       "Understand the revolutionary design principles of the Bauhaus founded by Walter Gropius in 1919, focusing on the unity of art and craft.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "weimar_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/weimar.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

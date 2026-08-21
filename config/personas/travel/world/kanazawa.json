@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Traditional Crafts & Landscaping",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Lanscape Architecture", "Art History", "Feudal Dynasties"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Lanscape Architecture",
+      "Art History",
+      "Feudal Dynasties"
+    ],
     "learning_objectives": [
       "Understand the six ideal attributes of a landscape garden (spaciousness, seclusion, artifice, antiquity, watercourses, panoramas) as defined in Kenroku-en.",
       "Analyze the metallurgical technique of beating gold down to 1/10,000th of a millimeter to create gold leaf (kanazawa-haku).",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kanazawa_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kanazawa.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

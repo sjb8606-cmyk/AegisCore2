@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["classic_maya_civilization", "agricultural_terraces", "military_victory"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "classic_maya_civilization",
+      "agricultural_terraces",
+      "military_victory"
+    ],
     "learning_objectives": [
       "Understand the historical role and scale of the Classic Maya capital of Caracol, highlighting its 562 CE military victory over Tikal.",
       "Analyze the agricultural engineering and irrigation of the massive Caracol terrace systems that maximized food production on steep slopes.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "caracol_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/caracol.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

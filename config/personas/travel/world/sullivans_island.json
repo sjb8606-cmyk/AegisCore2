@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Literature",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["american_revolution", "american_literature", "maritime_defense"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "american_revolution",
+      "american_literature",
+      "maritime_defense"
+    ],
     "learning_objectives": [
       "Understand the structural physics of palmetto logs in absorbing naval artillery fire during the Battle of Sullivan's Island (1776)",
       "Analyze the influence of Sullivan's Island geography on Edgar Allan Poe's gothic literature (specifically 'The Gold-Bug')",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sullivans_island_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sullivans_island.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

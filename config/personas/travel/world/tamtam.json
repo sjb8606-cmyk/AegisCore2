@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["maritime_art", "woodcarving_technological_crafts", "indigenous_symbolism_solomons"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "maritime_art",
+      "woodcarving_technological_crafts",
+      "indigenous_symbolism_solomons"
+    ],
     "learning_objectives": [
       "Explain the acoustic engineering and carving techniques used to hollow out giant breadfruit logs to construct traditional Tamtam slit drums.",
       "Understand the historical role of the Tamtam as a vital, non-written mass communication system across isolated mountain villages.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tamtam_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tamtam.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

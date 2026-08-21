@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Arts & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["indigenous_art", "cultural_economics", "art_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "indigenous_art",
+      "cultural_economics",
+      "art_history"
+    ],
     "learning_objectives": [
       "Understand the post-war development of Inuit printmaking cooperatives as an economic survival strategy",
       "Analyze how traditional oral storytelling is translated and preserved through the medium of print and tapestry",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "pangnirtung_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/pangnirtung.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

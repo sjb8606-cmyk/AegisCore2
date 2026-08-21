@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["maritime_archaeology", "shipwreck_ecology", "wwii_pacific_campaigns"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "maritime_archaeology",
+      "shipwreck_ecology",
+      "wwii_pacific_campaigns"
+    ],
     "learning_objectives": [
       "Explain the history and strategic naval role of the SS President Coolidge as a troop carrier during the 1942 Allied defensive in the Pacific.",
       "Analyze how sunken military warships and liners function as artificial reefs, providing structural habitats and accelerating local marine biodiversity.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "coolidge_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/coolidge.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

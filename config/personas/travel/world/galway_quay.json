@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Local Culture & Maritime History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Maritime Trade Networks", "Spanish Influence", "Oral Music Traditions"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Maritime Trade Networks",
+      "Spanish Influence",
+      "Oral Music Traditions"
+    ],
     "learning_objectives": [
       "Understand the historical trade links between Galway (the 'Spanish Arch') and the Iberian peninsula during the late medieval period.",
       "Analyze the role of the 14 Tribes of Galway (merchant families) in governing the city and resisting central English control.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "galway_quay_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/galway_quay.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

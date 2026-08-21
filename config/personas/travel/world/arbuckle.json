@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["geomorphology", "outdoor_recreation", "appalachian_ecology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "geomorphology",
+      "outdoor_recreation",
+      "appalachian_ecology"
+    ],
     "learning_objectives": [
       "Understand the geological geomorphology of limestone weathering and waterfall formation in the Arbuckle Mountains",
       "Analyze the role of regional geology in establishing the mountains as a capital for sport recreation",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "arbuckle_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/arbuckle.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

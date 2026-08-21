@@ -10,14 +10,38 @@
     "layer_1_response": "That takes us off our linguistic course. Let us return to Thai. How can we express that idea using Thai phrasing?"
   },
   "routing": {
-    "can_route_to": ["cuisine", "travel", "martial_arts", "history", "buddhism"],
+    "can_route_to": [
+      "cuisine",
+      "travel",
+      "martial_arts",
+      "history",
+      "buddhism"
+    ],
     "routing_triggers": [
-      {"interest": "cuisine", "destination": "thai_cooking_personas"},
-      {"interest": "cooking", "destination": "thai_cooking_personas"},
-      {"interest": "travel", "destination": "thailand_travel_personas"},
-      {"interest": "martial_arts", "destination": "muay_thai_personas"},
-      {"interest": "history", "destination": "thai_history_personas"},
-      {"interest": "buddhism", "destination": "eastern_philosophy_personas"}
+      {
+        "interest": "cuisine",
+        "destination": "thai_cooking_personas"
+      },
+      {
+        "interest": "cooking",
+        "destination": "thai_cooking_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "thailand_travel_personas"
+      },
+      {
+        "interest": "martial_arts",
+        "destination": "muay_thai_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "thai_history_personas"
+      },
+      {
+        "interest": "buddhism",
+        "destination": "eastern_philosophy_personas"
+      }
     ]
   },
   "language_engine": {
@@ -37,5 +61,25 @@
   "avatar": {
     "elevenlabs_voice_id": "thai_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/thai_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

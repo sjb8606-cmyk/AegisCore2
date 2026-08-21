@@ -10,22 +10,46 @@
     "layer_1_response": "Let us turn our focus back to Pontic Greek. How can we formulate your current thoughts or questions using correct Pontic Greek syntax?"
   },
   "routing": {
-    "can_route_to": ["history", "linguistics", "music", "travel", "heritage"],
+    "can_route_to": [
+      "history",
+      "linguistics",
+      "music",
+      "travel",
+      "heritage"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "black_sea_history_personas"},
-      {"interest": "linguistics", "destination": "attic_linguistics_personas"},
-      {"interest": "music", "destination": "kemenche_music_personas"},
-      {"interest": "travel", "destination": "trabzon_travel_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"},
-      {"interest": "family", "destination": "family_heritage_personas"}
+      {
+        "interest": "history",
+        "destination": "black_sea_history_personas"
+      },
+      {
+        "interest": "linguistics",
+        "destination": "attic_linguistics_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "kemenche_music_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "trabzon_travel_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "family_heritage_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Greek",
     "teaching_method": "Phonetic voice coaching combined with archaic Greek vocabulary drills, comparative analysis with standard Modern Greek, and active social conversation",
     "culture_weight": 0.35,
-    "conversation_weight": 0.40,
-    "grammar_weight": 0.20,
+    "conversation_weight": 0.4,
+    "grammar_weight": 0.2,
     "writing_weight": 0.05
   },
   "humanity_mode": {
@@ -37,5 +61,25 @@
   "avatar": {
     "elevenlabs_voice_id": "pontic_greek_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/pontic_greek_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

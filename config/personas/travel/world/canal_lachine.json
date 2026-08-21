@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Urban Geography",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["industrial_history", "urban_renewal", "civil_engineering"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "industrial_history",
+      "urban_renewal",
+      "civil_engineering"
+    ],
     "learning_objectives": [
       "Understand the economic imperative of bypassing the Lachine Rapids for continental trade",
       "Analyze the rise and fall of heavy manufacturing along the canal corridor",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "canal_lachine_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/canal_lachine.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

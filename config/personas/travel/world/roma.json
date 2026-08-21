@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Roma_History_Romania", "Lautari_Music_Traditions", "Human_Rights_and_Abolition"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Roma_History_Romania",
+      "Lautari_Music_Traditions",
+      "Human_Rights_and_Abolition"
+    ],
     "learning_objectives": [
       "Understand the historical reality of Roma enslavement in the principalities of Wallachia and Moldavia, and the significance of abolition in the mid-19th century.",
       "Analyze the massive, foundational contribution of Roma musicians (lăutari) to the development of traditional and classical Romanian music.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "roma_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/roma.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

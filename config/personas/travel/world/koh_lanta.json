@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Local Culture & Marine Ecology",
-    "grade_levels": ["elementary", "middle_school", "adult"],
-    "curriculum_tags": ["Marine Conservation", "Ecotourism Studies", "Coastal Geomorphology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Marine Conservation",
+      "Ecotourism Studies",
+      "Coastal Geomorphology"
+    ],
     "learning_objectives": [
       "Understand the geological formation of Koh Lanta's southern peninsula and how mangroves and salt-marshes create unique coastal habitats.",
       "Analyze the social structure and nomadic history of the Urak Lawoi (Sea Gypsies) who settled on the island's east coast.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "koh_lanta_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/koh_lanta.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

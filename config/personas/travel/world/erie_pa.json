@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Maritime History & Ecology",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["naval_history", "coastal_morphology", "great_lakes"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "naval_history",
+      "coastal_morphology",
+      "great_lakes"
+    ],
     "learning_objectives": [
       "Understand the strategic significance of the Battle of Lake Erie (1813) in the War of 1812",
       "Analyze the coastal geomorphology of Presque Isle as a migrating recurved sand spit",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "erie_pa_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/erie_pa.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Colonial Architecture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Swan River Colony", "Convict Architecture", "Urban Parklands"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Swan River Colony",
+      "Convict Architecture",
+      "Urban Parklands"
+    ],
     "learning_objectives": [
       "Understand the historical role of Perth as a systematically planned free-settler colony (founded 1829) and its subsequent transition to a convict depot.",
       "Analyze the architectural and social design of the Fremantle Prison (UNESCO), the largest and most complete convict-built monument in Western Australia.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "perth_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/perth.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

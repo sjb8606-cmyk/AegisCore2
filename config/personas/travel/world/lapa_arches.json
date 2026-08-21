@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Urban Sociology & Pop Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Samba History", "Urban Regeneration", "Immigrant Art"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Samba History",
+      "Urban Regeneration",
+      "Immigrant Art"
+    ],
     "learning_objectives": [
       "Understand the historical development of Lapa from a colonial aqueduct (Arcos da Lapa) to the bohemian and musical center of Rio.",
       "Analyze the artistic and sociological project of the Escadaria Selarón, evaluating how a single artist used global donated tiles to transform a neglected alley.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "lapa_arches_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/lapa_arches.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

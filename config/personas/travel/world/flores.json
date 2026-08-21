@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["colonial_conquest_histories", "lake_limnology", "island_urbanization"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "colonial_conquest_histories",
+      "lake_limnology",
+      "island_urbanization"
+    ],
     "learning_objectives": [
       "Understand the historical role of Flores (Nojpetén) as the final independent Maya capital of the Itzá people, which fell to Spanish conquest in 1697.",
       "Analyze the distinct hydrological and limnological features of Lake Petén Itzá as an endorheic basin with high water clarity.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "flores_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/flores.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

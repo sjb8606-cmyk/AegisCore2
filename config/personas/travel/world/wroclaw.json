@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Post_WWII_Border_Shifts", "Subversive_Political_Art", "Gothic_Urbanism"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Post_WWII_Border_Shifts",
+      "Subversive_Political_Art",
+      "Gothic_Urbanism"
+    ],
     "learning_objectives": [
       "Understand the complex geopolitical history of Wrocław (formerly Breslau), focusing on its transition from a German to a Polish city after World War II.",
       "Analyze the role of the 'Orange Alternative' movement in using surrealism and absurdity (painting gnomes) as a peaceful protest tactic against the Communist regime in the 1980s.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "wroclaw_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/wroclaw.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Philosophy",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["baroque_literature", "feminist_philosophy", "theology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "baroque_literature",
+      "feminist_philosophy",
+      "theology"
+    ],
     "learning_objectives": [
       "Understand the intersection of intellectual pursuit and religious devotion in 17th-century New Spain.",
       "Analyze how literary devices like the 'redondilla' are used to critique systemic gender biases.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sor_juana_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sor_juana.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

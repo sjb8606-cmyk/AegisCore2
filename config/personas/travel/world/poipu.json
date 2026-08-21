@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["coastal_morphology", "marine_biology", "conservation_ecology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "coastal_morphology",
+      "marine_biology",
+      "conservation_ecology"
+    ],
     "learning_objectives": [
       "Understand the geological formation of blowholes (like Spouting Horn) in coastal basalt lava tubes",
       "Analyze the role of coral reefs in protecting southern Kauai's sandy beaches from high-energy winter waves",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "poipu_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/poipu.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

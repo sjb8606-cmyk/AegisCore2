@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Nature",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["glaciology", "hydroelectric_power", "environmental_conservation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "glaciology",
+      "hydroelectric_power",
+      "environmental_conservation"
+    ],
     "learning_objectives": [
       "Understand the geological forces of glaciation and tectonic uplift that created the rugged peaks of the North Cascades",
       "Analyze the engineering and history of the Skagit River Hydroelectric Project (Diablo Dam) within a wilderness corridor",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "north_cascades_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/north_cascades.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

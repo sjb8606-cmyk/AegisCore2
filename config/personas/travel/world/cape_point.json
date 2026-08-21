@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["maritime_navigation", "coastal_ecosystems", "ocean_currents"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "maritime_navigation",
+      "coastal_ecosystems",
+      "ocean_currents"
+    ],
     "learning_objectives": [
       "Understand the scientific phenomenon of ocean current interaction at the southern tip of the African continent.",
       "Identify the unique adaptive mechanisms of coastal fynbos and local fauna, such as the Cape Peninsula chacma baboons.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cape_point_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cape_point.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

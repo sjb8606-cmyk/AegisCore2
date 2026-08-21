@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culture",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["transportation_history", "modern_art", "pop_culture"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "transportation_history",
+      "modern_art",
+      "pop_culture"
+    ],
     "learning_objectives": [
       "Understand the historical role of Amarillo as a major trade and travel hub along Route 66",
       "Analyze the artistic concept of Cadillac Ranch by the Ant Farm collective as a critique of American consumerism",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "amarillo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/amarillo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

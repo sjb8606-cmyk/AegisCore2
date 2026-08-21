@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Maritime History & Ecology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["orcas_ecology", "colonial_history", "lime_manufacturing"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "orcas_ecology",
+      "colonial_history",
+      "lime_manufacturing"
+    ],
     "learning_objectives": [
       "Understand the social and biological behavior of Southern Resident Orca populations in the Salish Sea",
       "Analyze the strategic and historical significance of the 1859 'Pig War' boundary dispute between the US and Great Britain",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "san_juan_island_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/san_juan_island.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

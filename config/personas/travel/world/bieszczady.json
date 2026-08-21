@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Rewilding_Ecology", "Carpathian_Biodiversity", "Post_Conflict_Landscapes"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Rewilding_Ecology",
+      "Carpathian_Biodiversity",
+      "Post_Conflict_Landscapes"
+    ],
     "learning_objectives": [
       "Understand the ecological phenomenon of 'rewilding' as observed in the Bieszczady Mountains following the forced human depopulation of the region in 1947.",
       "Analyze the biodiversity of the Eastern Carpathians, focusing on the preservation of apex predators like the Eurasian wolf, brown bear, and Eurasian lynx.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bieszczady_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bieszczady.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

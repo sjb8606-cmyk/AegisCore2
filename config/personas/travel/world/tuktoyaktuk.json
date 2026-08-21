@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Climate",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["geomorphology", "climate_change", "arctic_infrastructure"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "geomorphology",
+      "climate_change",
+      "arctic_infrastructure"
+    ],
     "learning_objectives": [
       "Understand the geological formation of pingos (ice-cored hills) unique to permafrost environments",
       "Analyze the severe impact of sea-level rise and permafrost thaw on Arctic coastal communities",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tuktoyaktuk_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tuktoyaktuk.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Maritime Geography",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["mormon_history", "immigration_history", "island_sociology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "mormon_history",
+      "immigration_history",
+      "island_sociology"
+    ],
     "learning_objectives": [
       "Understand the historical rise and fall of the Mormon Kingdom of James Strang on Beaver Island (1850-1856)",
       "Analyze the subsequent settlement and cultural heritage of Irish immigrant fishermen from Arranmore",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "beaver_island_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/beaver_island.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

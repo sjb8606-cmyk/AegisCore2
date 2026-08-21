@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Architecture",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Totalitarian_Architecture", "Urban_Destruction", "Romanian_Revolution"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Totalitarian_Architecture",
+      "Urban_Destruction",
+      "Romanian_Revolution"
+    ],
     "learning_objectives": [
       "Analyze the political and psychological intent behind totalitarian monumental architecture, specifically Ceaușescu's 'Centrul Civic'.",
       "Understand the massive socio-economic and cultural cost of demolishing one-sixth of historic Bucharest to construct the Palace.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "palace_of_parliament_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/palace_of_parliament.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

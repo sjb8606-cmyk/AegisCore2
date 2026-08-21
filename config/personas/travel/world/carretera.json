@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["limestone_karst", "glacial_lake_chemistry", "wilderness_infrastructure"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "limestone_karst",
+      "glacial_lake_chemistry",
+      "wilderness_infrastructure"
+    ],
     "learning_objectives": [
       "Explain the geological and chemical processes of water erosion that carved the Marble Caves (Capillas de Mármol) into solid calcium carbonate cliffs.",
       "Understand why Lake General Carrera's water displays an intense turquoise color, focusing on suspended glacial silt and mineral sediments.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "carretera_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/carretera.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ancient History & Archaeology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Commagene Kingdom", "Megalithic Sculpture", "Archaeoastronomy"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Commagene Kingdom",
+      "Megalithic Sculpture",
+      "Archaeoastronomy"
+    ],
     "learning_objectives": [
       "Understand the historical and geopolitical position of the Commagene Kingdom (1st century BC) as a buffer state between Rome and Parthia.",
       "Analyze the architectural and engineering scale of the Mount Nemrut Tumulus (UNESCO), focusing on how the gravel mound prevents illegal excavation.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "nemrut_dag_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/nemrut_dag.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

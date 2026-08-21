@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["indigenous_sovereignty", "water_rights", "treaty_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "indigenous_sovereignty",
+      "water_rights",
+      "treaty_history"
+    ],
     "learning_objectives": [
       "Understand the historical territory, social structure, and lake-based life of the Washoe (Wašišiw) Nation",
       "Analyze the environmental and territorial impact of the Comstock logging boom on the Washoe homeland",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "washoe_tribe_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/washoe_tribe.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

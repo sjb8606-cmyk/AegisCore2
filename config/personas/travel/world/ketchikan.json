@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["indigenous_art", "frontier_history", "coastal_economics"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "indigenous_art",
+      "frontier_history",
+      "coastal_economics"
+    ],
     "learning_objectives": [
       "Understand the historical role of Ketchikan as a major 19th-century salmon-canning and timber port",
       "Analyze the artistic design, symbolism, and carving of traditional Tlingit and Haida totem poles",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ketchikan_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ketchikan.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

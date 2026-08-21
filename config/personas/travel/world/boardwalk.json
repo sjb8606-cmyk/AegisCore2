@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Culture & History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["recreational_history", "urban_decay", "economic_geography"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "recreational_history",
+      "urban_decay",
+      "economic_geography"
+    ],
     "learning_objectives": [
       "Understand the rise, fall, and redevelopment of Atlantic City as America's first major coastal resort",
       "Analyze the economic and social impacts of using casino gaming as a tool for urban revitalization",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "boardwalk_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/boardwalk.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

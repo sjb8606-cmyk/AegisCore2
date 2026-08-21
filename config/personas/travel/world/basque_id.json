@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["immigration_history", "basque_heritage", "cultural_preservation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "immigration_history",
+      "basque_heritage",
+      "cultural_preservation"
+    ],
     "learning_objectives": [
       "Understand the historical and economic factors that drove Basque immigration to the Pacific Northwest in the late 19th and early 20th centuries",
       "Analyze the role of boarding houses (ostatuak) as social safety nets and cultural incubators for Basque immigrants",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "basque_id_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/basque_id.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

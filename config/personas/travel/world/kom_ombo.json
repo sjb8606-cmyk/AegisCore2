@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Religious Studies",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Ptolemaic Egypt", "Dravidian Engineering? No, Nilometer", "Subtropical Agriculture"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Ptolemaic Egypt",
+      "Dravidian Engineering? No, Nilometer",
+      "Subtropical Agriculture"
+    ],
     "learning_objectives": [
       "Understand the unique architectural symmetry of Kom Ombo, explaining why it was designed as a dual temple for two rival deities (Horus and Sobek).",
       "Analyze the mechanics of the 'Nilometer' (the stone water well), explaining how it was used to measure Nile floods and determine taxation.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kom_ombo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kom_ombo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

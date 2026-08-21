@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Stratovolcanology", "Volcanic_Soil_Agriculture", "Balinese_Cosmology_Mountains"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Stratovolcanology",
+      "Volcanic_Soil_Agriculture",
+      "Balinese_Cosmology_Mountains"
+    ],
     "learning_objectives": [
       "Explain the geological formation and eruptive behavior of Mount Agung as an active subduction-zone stratovolcano.",
       "Understand the spiritual role of Mount Agung as the sacred center of the universe (Kaja) and how it dictates the architectural layout of all Balinese temples.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "besakih_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/besakih.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

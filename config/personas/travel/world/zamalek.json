@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Urban Sociology & Pop Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Modernist Architecture", "Post-Colonial Urbanism", "Egyptian Modern Art"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Modernist Architecture",
+      "Post-Colonial Urbanism",
+      "Egyptian Modern Art"
+    ],
     "learning_objectives": [
       "Understand the urban development of Gezira Island (Zamalek), analyzing how its low-density, garden-palace layout differed from the historic, crowded center.",
       "Analyze the architectural significance of the Cairo Tower, evaluating how its open lattice concrete work represented the modernization of post-revolutionary Egypt.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "zamalek_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/zamalek.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

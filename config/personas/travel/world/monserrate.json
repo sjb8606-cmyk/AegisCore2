@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["mountain_geology", "pilgrimage_traditions", "highland_meteorology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "mountain_geology",
+      "pilgrimage_traditions",
+      "highland_meteorology"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Eastern Cordillera of the Colombian Andes, specifically focusing on the hills of Monserrate and Guadalupe.",
       "Analyze the social and religious significance of the pilgrimage to the Monserrate Sanctuary as a unifying cultural symbol in Colombia.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "monserrate_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/monserrate.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

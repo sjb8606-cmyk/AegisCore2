@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Technology",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["aerospace_history", "radio_astronomy", "karst_geology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "aerospace_history",
+      "radio_astronomy",
+      "karst_geology"
+    ],
     "learning_objectives": [
       "Understand the geological reasons why the karst sinkhole terrain of northern Puerto Rico was ideal for constructing a massive radio telescope",
       "Analyze the scientific achievements of the Arecibo Observatory in radar mapping planets and searching for extraterrestrial intelligence",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "arecibo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/arecibo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

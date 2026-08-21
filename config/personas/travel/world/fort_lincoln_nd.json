@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Military Science",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["indian_wars", "military_logistics", "frontier_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "indian_wars",
+      "military_logistics",
+      "frontier_history"
+    ],
     "learning_objectives": [
       "Understand the strategic and military role of Fort Abraham Lincoln in securing the northern plains for the railway",
       "Analyze the causes and logistics of the 1876 Black Hills Expedition led by George Armstrong Custer",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "fort_lincoln_nd_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/fort_lincoln_nd.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

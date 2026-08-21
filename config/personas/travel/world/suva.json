@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["pacific_navigation", "drua_engineering", "colonial_history_fiji"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "pacific_navigation",
+      "drua_engineering",
+      "colonial_history_fiji"
+    ],
     "learning_objectives": [
       "Explain the advanced engineering, aerodynamics, and navigation techniques of the traditional Fijian double-hulled voyaging canoe (Drua).",
       "Understand the historical significance of the 1874 Deed of Cession in transferring Fiji's sovereignty to the British Crown under Chief Cakobau.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "suva_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/suva.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Monastic_Fortifications", "Byzantine_Iconography", "Moldavian_History"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Monastic_Fortifications",
+      "Byzantine_Iconography",
+      "Moldavian_History"
+    ],
     "learning_objectives": [
       "Understand the dual function of Sucevița as both a masterpiece of religious art and a heavily fortified defensive stronghold for the Movilești dynasty.",
       "Analyze the theological and visual composition of the 'Ladder of Virtues' (Ladder of Divine Ascent) fresco, detailing its moral messaging to the illiterate peasantry.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sucevita_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sucevita.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

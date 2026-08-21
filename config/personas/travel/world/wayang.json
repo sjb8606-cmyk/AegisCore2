@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Shadow_Puppetry_Wayang", "Gamelan_Polyrhythms", "Intangible_Heritage_Java"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Shadow_Puppetry_Wayang",
+      "Gamelan_Polyrhythms",
+      "Intangible_Heritage_Java"
+    ],
     "learning_objectives": [
       "Understand the artistic structure and philosophical role of 'Wayang Kulit' shadow puppetry as a medium of moral education and Javanese spiritual life.",
       "Analyze the musical mechanics and polyrhythmic structures of Javanese Gamelan, focusing on the Slendro and Pelog tuning scales.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "wayang_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/wayang.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

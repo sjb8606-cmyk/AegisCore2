@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Culture & Leisure",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["recreational_history", "lake_ecology", "sociology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "recreational_history",
+      "lake_ecology",
+      "sociology"
+    ],
     "learning_objectives": [
       "Understand the transformation of Lake Winnipesaukee from an industrial shipping artery to a major recreational destination",
       "Analyze the socioeconomic stratification of the lake's shorelines, from working-class public beaches to elite private islands",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "winnipesaukee_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/winnipesaukee.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

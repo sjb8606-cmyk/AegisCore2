@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Art History & Coastal Geography",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Surrealism", "Coastal Geomorphology", "Medieval Architecture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Surrealism",
+      "Coastal Geomorphology",
+      "Medieval Architecture"
+    ],
     "learning_objectives": [
       "Understand Salvador Dalí’s artistic philosophy, specifically how the bizarre, weathered granite shapes of Cap de Creus inspired his surrealist imagery.",
       "Analyze the geomorphological structure of the Costa Brava (wild coast), evaluating how the Pyrenees mountains drop into the Mediterranean.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "costa_brava_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/costa_brava.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

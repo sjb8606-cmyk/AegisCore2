@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["indigenous_art", "canadian_history", "linguistics"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "indigenous_art",
+      "canadian_history",
+      "linguistics"
+    ],
     "learning_objectives": [
       "Understand the historical migration and refuge of the Abenaki at Odanak during colonial wars",
       "Analyze the material science and cultural importance of black ash basketry",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "abenaki_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/abenaki.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

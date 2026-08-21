@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Maritime History & Engineering",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Naval Engineering", "World War II", "Marine Biology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Naval Engineering",
+      "World War II",
+      "Marine Biology"
+    ],
     "learning_objectives": [
       "Understand why Cardinal Richelieu and Jean-Baptiste Colbert selected Brest as the primary Atlantic military port of the French Royal Navy.",
       "Analyze the construction and strategic role of the concrete German U-boat pens (sub-bases) during the Battle of the Atlantic in WWII.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "brest_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/brest.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

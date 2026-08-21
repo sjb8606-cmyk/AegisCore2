@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Nature",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["tectonics", "geomorphology", "desert_ecology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "tectonics",
+      "geomorphology",
+      "desert_ecology"
+    ],
     "learning_objectives": [
       "Understand the geological forces of fault-block mountain building that created Steens Mountain",
       "Analyze the ecological transition of vegetation zones from the Alvord Desert floor to the subalpine plateau",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "steens_mountain_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/steens_mountain.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

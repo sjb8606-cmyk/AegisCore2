@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Maritime History & Ecology",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["maritime_history", "coastal_processes", "conservation"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "maritime_history",
+      "coastal_processes",
+      "conservation"
+    ],
     "learning_objectives": [
       "Understand the history and structural evolution of the Tybee Island Lighthouse since 1736",
       "Analyze the geological and engineering challenges of maintaining the shipping channel at the mouth of the Savannah River",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tybee_island_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tybee_island.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

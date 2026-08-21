@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["colonial_fortifications", "maritime_piracy", "riverine_ecology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "colonial_fortifications",
+      "maritime_piracy",
+      "riverine_ecology"
+    ],
     "learning_objectives": [
       "Analyze the military engineering and strategic placement of the Castillo de San Felipe de Lara in defending the entrance of Lake Izabal from English pirates.",
       "Understand the historical role of Río Dulce as the primary maritime trade corridor connecting the Guatemalan interior with the Caribbean Sea.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "rio_dulce_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/rio_dulce.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

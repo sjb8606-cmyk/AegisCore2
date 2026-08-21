@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Prussian_Enlightenment", "Baroque_Architecture", "Hohenzollern_Dynasty"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Prussian_Enlightenment",
+      "Baroque_Architecture",
+      "Hohenzollern_Dynasty"
+    ],
     "learning_objectives": [
       "Analyze the role of Queen Sophie Charlotte as a patron of science, philosophy, and the arts during the Prussian Enlightenment.",
       "Identify the key architectural and design elements of French Baroque style in Charlottenburg Palace and its gardens.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "charlottenburg_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/charlottenburg.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

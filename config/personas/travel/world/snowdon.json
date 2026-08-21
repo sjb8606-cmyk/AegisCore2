@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Glacial_Geomorphology", "Steam_Heritage", "Mountain_Ecology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Glacial_Geomorphology",
+      "Steam_Heritage",
+      "Mountain_Ecology"
+    ],
     "learning_objectives": [
       "Explain the geological formation of Snowdonia's volcanic rocks and the subsequent glacial carving of its classic u-shaped valleys and cwms.",
       "Analyze the engineering achievements of the Ffestiniog and Welsh Highland Railways in transporting slate and passengers through mountainous terrain.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "snowdon_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/snowdon.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

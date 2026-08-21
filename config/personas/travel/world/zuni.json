@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["dry_farming", "pueblo_history", "material_culture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "dry_farming",
+      "pueblo_history",
+      "material_culture"
+    ],
     "learning_objectives": [
       "Understand the agricultural and spiritual techniques of Zuni waffle gardening and dry farming in the arid Southwest",
       "Analyze the history and continuous occupation of Halona Idiwan'a (Zuni Pueblo)",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "zuni_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/zuni.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

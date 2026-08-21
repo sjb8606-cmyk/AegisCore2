@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Technology",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["aerospace_engineering", "industrial_history", "history_of_aviation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "aerospace_engineering",
+      "industrial_history",
+      "history_of_aviation"
+    ],
     "learning_objectives": [
       "Understand the mechanical engineering and structural physics of modern commercial jetliners (e.g., Boeing 747)",
       "Analyze the industrial logistics and scale of the Everett assembly plant, the largest building by volume in the world",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "boeing_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/boeing.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

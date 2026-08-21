@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["reconciliation_villages", "genocide_memorials", "transitional_justice"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "reconciliation_villages",
+      "genocide_memorials",
+      "transitional_justice"
+    ],
     "learning_objectives": [
       "Understand the specific events of the 1994 Genocide against the Tutsi at Nyamata Church and the surrounding Bugesera region.",
       "Analyze the sociological concept and operational success of Rwanda's 'Reconciliation Villages' where survivors and perpetrators live side-by-side.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "nyamata_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/nyamata.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

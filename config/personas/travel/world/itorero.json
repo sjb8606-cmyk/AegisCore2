@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["civic_education", "post_conflict_cohesion", "indigenous_governance_revolutions"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "civic_education",
+      "post_conflict_cohesion",
+      "indigenous_governance_revolutions"
+    ],
     "learning_objectives": [
       "Understand the historical roots of the 'Itorero' civic academy as a traditional pre-colonial institution for leadership and social values.",
       "Analyze the role of modern solidarity camps (Ingando) in reintegrating soldiers, refugees, and youth into post-genocide Rwandan society.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "itorero_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/itorero.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["frontier_justice", "penal_history", "colorado_river"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "frontier_justice",
+      "penal_history",
+      "colorado_river"
+    ],
     "learning_objectives": [
       "Understand the historical role of the Yuma Territorial Prison in establishing federal law in the Arizona Territory",
       "Analyze the architectural design and structural use of local granite and iron in constructing the cell blocks",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "yuma_prison_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/yuma_prison.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

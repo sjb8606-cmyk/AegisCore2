@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["geomorphology", "mineralogy", "coastal_processes"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "geomorphology",
+      "mineralogy",
+      "coastal_processes"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Munising sandstone and the mineral staining that colors Pictured Rocks",
       "Analyze the coastal geomorphology of wave-cut platforms, arches, and caves formed by Lake Superior's high-energy waves",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "pictured_rocks_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/pictured_rocks.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

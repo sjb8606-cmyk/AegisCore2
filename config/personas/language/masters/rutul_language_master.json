@@ -10,21 +10,42 @@
     "layer_1_response": "That topic takes us away from our target language. Let us refocus on Rutul. What specific construction or conversation can we study?"
   },
   "routing": {
-    "can_route_to": ["history", "agriculture", "music", "travel", "culture"],
+    "can_route_to": [
+      "history",
+      "agriculture",
+      "music",
+      "travel",
+      "culture"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "samur_valley_history_personas"},
-      {"interest": "agriculture", "destination": "traditional_farming_personas"},
-      {"interest": "music", "destination": "rutul_folk_songs_personas"},
-      {"interest": "travel", "destination": "samur_travel_personas"},
-      {"interest": "culture", "destination": "lezgic_heritage_personas"}
+      {
+        "interest": "history",
+        "destination": "samur_valley_history_personas"
+      },
+      {
+        "interest": "agriculture",
+        "destination": "traditional_farming_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "rutul_folk_songs_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "samur_travel_personas"
+      },
+      {
+        "interest": "culture",
+        "destination": "lezgic_heritage_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Rutul",
     "teaching_method": "Phonetic syllable training coupled with grammatical prefix-suffix drills, and interactive agricultural and social dialogue",
     "culture_weight": 0.35,
-    "conversation_weight": 0.40,
-    "grammar_weight": 0.20,
+    "conversation_weight": 0.4,
+    "grammar_weight": 0.2,
     "writing_weight": 0.05
   },
   "humanity_mode": {
@@ -36,5 +57,25 @@
   "avatar": {
     "elevenlabs_voice_id": "rutul_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/rutul_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -19,13 +19,42 @@
   "education": {
     "grade_band": "wonder",
     "grades": "1–3",
-    "subjects": ["technology", "how_things_work"],
+    "subjects": [
+      "technology",
+      "how_things_work"
+    ],
     "tier": 1,
     "persona_style": "enthusiastic, inventive, curious robot energy",
-    "curriculum_tags": ["simple_machines", "technology_basics", "cause_and_effect", "inventions", "how_things_work"]
+    "curriculum_tags": [
+      "simple_machines",
+      "technology_basics",
+      "cause_and_effect",
+      "inventions",
+      "how_things_work"
+    ]
   },
   "avatar": {
     "elevenlabs_voice_id": "edu_spark_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/edu_spark.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

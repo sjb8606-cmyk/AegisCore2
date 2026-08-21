@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Urban Sociology & Pop Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Urban Sociology", "Subcultural Movements", "Gentrification Studies"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Urban Sociology",
+      "Subcultural Movements",
+      "Gentrification Studies"
+    ],
     "learning_objectives": [
       "Understand the historical development of the Inner West (specifically Newtown) from an industrial working-class suburb to the alternative cultural capital of Sydney.",
       "Analyze the role of public art and political murals along King Street as democratic, public archives of community identity, protest, and alternative culture.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "newtown_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/newtown.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

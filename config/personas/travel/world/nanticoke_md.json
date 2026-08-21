@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["indigenous_history", "wetland_ecology", "colonial_dispossession"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "indigenous_history",
+      "wetland_ecology",
+      "colonial_dispossession"
+    ],
     "learning_objectives": [
       "Understand the historical geography and fish-weir technology of the Nanticoke on the Eastern Shore",
       "Analyze the impact of colonial Maryland's reservation policies (Choptank and Broad Creek) on Nanticoke sovereignty",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "nanticoke_md_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/nanticoke_md.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

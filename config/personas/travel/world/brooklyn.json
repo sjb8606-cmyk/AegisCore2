@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Culture & Urban Sociology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["urban_sociology", "industrial_history", "gentrification"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "urban_sociology",
+      "industrial_history",
+      "gentrification"
+    ],
     "learning_objectives": [
       "Understand the structural engineering innovations of the Brooklyn Bridge, particularly the pneumatic caissons",
       "Analyze the social and economic forces of gentrification in post-industrial urban neighborhoods",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "brooklyn_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/brooklyn.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

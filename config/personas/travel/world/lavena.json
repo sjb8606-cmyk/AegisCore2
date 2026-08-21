@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["coastal_ecology", "community_eco_tourism", "sustainable_development_fiji"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "coastal_ecology",
+      "community_eco_tourism",
+      "sustainable_development_fiji"
+    ],
     "learning_objectives": [
       "Understand the socio-economic history of the Lavena Coastal Walk as a pioneer model for community-owned, indigenous-run ecotourism in Fiji.",
       "Analyze the ecological integration of primary coastal forests, rocky beaches, and freshwater river mouths.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "lavena_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/lavena.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

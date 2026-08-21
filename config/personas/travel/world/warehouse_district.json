@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culture",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["military_history", "industrial_design", "urban_renewal"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "military_history",
+      "industrial_design",
+      "urban_renewal"
+    ],
     "learning_objectives": [
       "Understand the critical engineering and military role of the Higgins boat (LCVP) designed and built in New Orleans during WWII",
       "Analyze the urban redevelopment of the Warehouse District from a 19th-century industrial zone into a modern arts corridor",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "warehouse_district_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/warehouse_district.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

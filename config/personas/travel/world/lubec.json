@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Heritage",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["geography", "maritime_history", "regional_economics"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "geography",
+      "maritime_history",
+      "regional_economics"
+    ],
     "learning_objectives": [
       "Understand the significance of West Quoddy Head as a geographic extreme of the United States",
       "Analyze the rise and collapse of the smoked herring and sardine canning industries in Downeast Maine",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "lubec_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/lubec.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

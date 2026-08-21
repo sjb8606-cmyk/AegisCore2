@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Heritage & Ecology",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["traditional_ecology", "cultural_economics", "zoology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "traditional_ecology",
+      "cultural_economics",
+      "zoology"
+    ],
     "learning_objectives": [
       "Understand the ecological role of the muskrat in the Mackenzie Delta ecosystem",
       "Analyze the historical and modern economic importance of the fur trade to northern Indigenous communities",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "delta_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/delta.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

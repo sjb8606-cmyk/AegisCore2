@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Holocaust_History", "Nazi_Propaganda", "Artistic_Resistance"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Holocaust_History",
+      "Nazi_Propaganda",
+      "Artistic_Resistance"
+    ],
     "learning_objectives": [
       "Understand the unique and deceptive role of Terezín as a 'model ghetto' and transit station utilized for Nazi foreign propaganda.",
       "Analyze how Jewish artists, musicians, and writers inside Terezín used intellectual and creative production as a form of spiritual resistance.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "terezin_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/terezin.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

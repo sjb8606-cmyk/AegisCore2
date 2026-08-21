@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Local Culture",
-    "grade_levels": ["elementary", "middle_school", "adult"],
-    "curriculum_tags": ["Coastal Geomorphology", "Ecotourism Planning", "Wildlife Conservation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Coastal Geomorphology",
+      "Ecotourism Planning",
+      "Wildlife Conservation"
+    ],
     "learning_objectives": [
       "Understand the geological formation of Noosa's headlands (sandstone and granite) and how they protect the pristine beaches from Pacific swells.",
       "Analyze the ecological role of the Noosa National Park in protecting endangered species (like the koala and glossy black cockatoo) in an urban interface.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "noosa_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/noosa.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

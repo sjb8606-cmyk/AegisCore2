@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Recreation",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["recreational_history", "glaciology", "railroad_history"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "recreational_history",
+      "glaciology",
+      "railroad_history"
+    ],
     "learning_objectives": [
       "Understand the geological formation of Flathead Lake as a deep glacial lake carved by the Flathead Lobe",
       "Analyze the historical role of Whitefish as a major railroad and timber hub in northern Montana",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "whitefish_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/whitefish.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

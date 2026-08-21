@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Medicine & Ancient History",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["History of Medicine", "Ancient Greece", "Clinical Spas"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "History of Medicine",
+      "Ancient Greece",
+      "Clinical Spas"
+    ],
     "learning_objectives": [
       "Understand the shift from temple-based, supernatural healing (Asklepiads) to observational, clinical medicine pioneered by Hippocrates in Kos.",
       "Analyze the layout of the Asklepion of Kos as a terraced, healing sanctuary utilizing mountain air, spring water, and sacred isolation.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kos_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kos.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

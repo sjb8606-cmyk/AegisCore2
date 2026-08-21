@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Viticulture & Fermentation Chemistry",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Terroir Science", "Wood Chemistry", "DOCG Classifications"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Terroir Science",
+      "Wood Chemistry",
+      "DOCG Classifications"
+    ],
     "learning_objectives": [
       "Understand the chemical and geological composition of La Rioja’s soils (clay-limestone and alluvial) and their impact on Tempranillo grape viticulture.",
       "Analyze the chemical reaction of oak aging (specifically how wood lactones, vanillin, and tannins transfer to wine during oxygen micro-exposure).",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "rioja_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/rioja.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

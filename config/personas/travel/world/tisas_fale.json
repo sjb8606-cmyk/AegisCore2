@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["vernacular_architecture", "eco_tourism", "faasamoa"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "vernacular_architecture",
+      "eco_tourism",
+      "faasamoa"
+    ],
     "learning_objectives": [
       "Understand the architectural design and structural physics of the traditional Samoan fale (fale tele)",
       "Analyze the socioeconomic and cultural impact of sustainable, community-led eco-tourism on island communities",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tisas_fale_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tisas_fale.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

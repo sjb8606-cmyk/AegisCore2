@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Marine Biology & Conservation",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Marine Biology", "Coral Reef Ecology", "Ecotourism Planning"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Marine Biology",
+      "Coral Reef Ecology",
+      "Ecotourism Planning"
+    ],
     "learning_objectives": [
       "Understand the biology of coral reefs (Scleractinia) and why sea temperature spikes lead to coral bleaching and habitat loss.",
       "Analyze the oceanographic reasons why Koh Tao has become the primary global capital for scuba diving certification (PADI/SSI).",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "koh_tao_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/koh_tao.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["seismic_engineering", "urban_renewal", "disaster_resilience"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "seismic_engineering",
+      "urban_renewal",
+      "disaster_resilience"
+    ],
     "learning_objectives": [
       "Understand the geological causes of the 2010 and 2011 Canterbury earthquakes, focusing on tectonic plate friction and liquefaction.",
       "Analyze the structural engineering innovations, such as seismic base isolation and Shigeru Ban's cardboard architecture, used in the city's rebuild.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "christchurch_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/christchurch.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

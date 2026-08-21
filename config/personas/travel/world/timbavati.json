@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["genetics_and_mutation", "indigenous_zoology", "ecosystem_restoration"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "genetics_and_mutation",
+      "indigenous_zoology",
+      "ecosystem_restoration"
+    ],
     "learning_objectives": [
       "Explain the genetic difference between leucism (as seen in the Timbavati white lions) and albinism, highlighting the inheritance patterns of recessive genes.",
       "Analyze the role of Shangaan oral history and spiritual beliefs in early efforts to protect the white lions from trophy hunting.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "timbavati_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/timbavati.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

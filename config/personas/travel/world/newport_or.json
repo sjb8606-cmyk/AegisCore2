@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Ecology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["coastal_ecology", "maritime_history", "marine_conservation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "coastal_ecology",
+      "maritime_history",
+      "marine_conservation"
+    ],
     "learning_objectives": [
       "Understand the historical and structural engineering of the Yaquina Head Lighthouse (built 1872)",
       "Analyze the ecological role of the Yaquina Bay estuary and the offshore marine habitats of the Oregon coast",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "newport_or_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/newport_or.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

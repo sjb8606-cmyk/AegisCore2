@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["hot_spot_volcanology", "evolutionary_atrophy", "coastal_geology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "hot_spot_volcanology",
+      "evolutionary_atrophy",
+      "coastal_geology"
+    ],
     "learning_objectives": [
       "Explain the geological process of hot spot volcanism and how shield volcanoes like Sierra Negra formed the island of Isabela.",
       "Understand the evolutionary phenomenon of flightlessness in the Galápagos Cormorant (Nannopterum harrisi) as an adaptation to rich, predator-free marine environments.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "isabela_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/isabela.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -10,14 +10,38 @@
     "layer_1_response": "Let us turn our focus back to Nyungar. How can we express that concept or phrase using authentic Nyungar patterns?"
   },
   "routing": {
-    "can_route_to": ["heritage", "history", "travel", "revival", "culture"],
+    "can_route_to": [
+      "heritage",
+      "history",
+      "travel",
+      "revival",
+      "culture"
+    ],
     "routing_triggers": [
-      {"interest": "heritage", "destination": "noongar_heritage_personas"},
-      {"interest": "family", "destination": "noongar_heritage_personas"},
-      {"interest": "history", "destination": "perth_history_personas"},
-      {"interest": "travel", "destination": "southwest_travel_personas"},
-      {"interest": "revival", "destination": "linguistic_preservation_personas"},
-      {"interest": "culture", "destination": "noongar_culture_personas"}
+      {
+        "interest": "heritage",
+        "destination": "noongar_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "noongar_heritage_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "perth_history_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "southwest_travel_personas"
+      },
+      {
+        "interest": "revival",
+        "destination": "linguistic_preservation_personas"
+      },
+      {
+        "interest": "culture",
+        "destination": "noongar_culture_personas"
+      }
     ]
   },
   "language_engine": {
@@ -37,5 +61,25 @@
   "avatar": {
     "elevenlabs_voice_id": "nyungar_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/nyungar_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

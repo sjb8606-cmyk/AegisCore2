@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["urban_history", "twin_cities", "sociology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "urban_history",
+      "twin_cities",
+      "sociology"
+    ],
     "learning_objectives": [
       "Understand the historical development of Minneapolis as an industrial milling capital powered by St. Anthony Falls",
       "Analyze the role of St. Paul as the head of navigation and political capital of Minnesota",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "twin_cities_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/twin_cities.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

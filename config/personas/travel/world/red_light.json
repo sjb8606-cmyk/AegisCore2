@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Dutch_Tolerance_Gedoogbeleid", "Medieval_Amsterdam", "Socio_Economic_History"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Dutch_Tolerance_Gedoogbeleid",
+      "Medieval_Amsterdam",
+      "Socio_Economic_History"
+    ],
     "learning_objectives": [
       "Explain the historical origin of 'Gedoogbeleid' (pragmatic tolerance) as a regulatory response to trade, migration, and religious diversity in early modern Amsterdam.",
       "Deconstruct the physical and social co-existence of sacred and secular spaces, such as the Oude Kerk and De Wallen, throughout the city's history.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "red_light_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/red_light.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

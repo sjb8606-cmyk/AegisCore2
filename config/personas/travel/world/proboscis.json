@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Proboscis_Physiology", "Mangrove_Ecosystems", "Riparian_Forest_Conservation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Proboscis_Physiology",
+      "Mangrove_Ecosystems",
+      "Riparian_Forest_Conservation"
+    ],
     "learning_objectives": [
       "Explain the unique physiological adaptations of the Proboscis Monkey (Nasalis larvatus), focusing on its complex chambered stomach and enlarged nose.",
       "Understand the ecological importance of riparian and mangrove forests as critical biodiversity corridors and coastal protection zones.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "proboscis_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/proboscis.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

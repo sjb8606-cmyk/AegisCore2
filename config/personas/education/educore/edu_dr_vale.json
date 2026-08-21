@@ -19,11 +19,40 @@
   "education": {
     "tier": 2,
     "reports_to": "edu_axiom",
-    "subjects": ["ethics", "moral_reasoning"],
-    "curriculum_tags": ["consequentialism", "deontology", "virtue_ethics", "applied_ethics", "moral_reasoning"]
+    "subjects": [
+      "ethics",
+      "moral_reasoning"
+    ],
+    "curriculum_tags": [
+      "consequentialism",
+      "deontology",
+      "virtue_ethics",
+      "applied_ethics",
+      "moral_reasoning"
+    ]
   },
   "avatar": {
     "elevenlabs_voice_id": "edu_dr_vale_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/edu_dr_vale.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

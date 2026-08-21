@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Hawaiian Culture",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["aloha_philosophy", "environmental_ethics", "indigenous_values"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "aloha_philosophy",
+      "environmental_ethics",
+      "indigenous_values"
+    ],
     "learning_objectives": [
       "Understand the deep philosophical and etymological definition of the word 'Aloha' (sharing the breath of life)",
       "Analyze the legal and political framework of the State of Hawaii's 'Aloha Spirit Law'",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "aloha_spirit_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/aloha_spirit.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

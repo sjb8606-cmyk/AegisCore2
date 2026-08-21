@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Culinary",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["folk_art", "siapo_geometry", "informal_economies"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "folk_art",
+      "siapo_geometry",
+      "informal_economies"
+    ],
     "learning_objectives": [
       "Understand the historical origin of traditional Siapo art, tracing its development from paper mulberry bark and natural clay dyes.",
       "Analyze the unique materials and the layering process used to construct traditional relief paintings on bark cloth.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "fugalei_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/fugalei.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

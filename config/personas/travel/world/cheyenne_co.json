@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Civil Rights",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["indian_wars", "treaty_violations", "human_rights"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "indian_wars",
+      "treaty_violations",
+      "human_rights"
+    ],
     "learning_objectives": [
       "Understand the historical events and military strategy of the Sand Creek Massacre (1864)",
       "Analyze the systemic violation of the Treaty of Fort Wise (1861) by federal and territorial military forces",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cheyenne_co_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cheyenne_co.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

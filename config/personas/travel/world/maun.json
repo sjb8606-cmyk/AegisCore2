@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["tourism_economics", "river_geography", "cultural_transitions"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "tourism_economics",
+      "river_geography",
+      "cultural_transitions"
+    ],
     "learning_objectives": [
       "Understand the economic development history of Maun and its transition from an isolated colonial cattle-herding post to a global safari capital.",
       "Analyze the role of the Thamalakane River in draining the Okavango Delta and providing a vital, seasonal water source to the Kalahari margins.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "maun_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/maun.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

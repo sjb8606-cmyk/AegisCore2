@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["forestry_ecology", "maritime_history", "wilderness_logistics"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "forestry_ecology",
+      "maritime_history",
+      "wilderness_logistics"
+    ],
     "learning_objectives": [
       "Understand the geological formation of Moosehead Lake and Mount Kineo's rare flint-like rhyolite",
       "Analyze the history of the timber industry in northern Maine and its reliance on river and lake transport",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "moosehead_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/moosehead.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

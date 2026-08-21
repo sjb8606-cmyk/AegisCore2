@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Colonial Australia", "Convict Labor", "Urban Preservation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Colonial Australia",
+      "Convict Labor",
+      "Urban Preservation"
+    ],
     "learning_objectives": [
       "Understand the historical role of the Rocks as the primary, strategic landing site of the First Fleet in 1788.",
       "Analyze the architectural and social role of the 'convict-built' sandstone warehouses, evaluating how they supported early Pacific trade.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "the_rocks_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/the_rocks.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

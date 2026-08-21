@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Religion",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["religious_movements", "material_culture", "utopian_societies"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "religious_movements",
+      "material_culture",
+      "utopian_societies"
+    ],
     "learning_objectives": [
       "Understand the theology and social structure of the United Society of Believers (Shakers)",
       "Analyze the design principles of Shaker furniture as a physical manifestation of their religious beliefs",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "shaker_ky_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/shaker_ky.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

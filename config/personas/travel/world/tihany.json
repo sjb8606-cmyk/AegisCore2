@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Volcanic_Landforms", "Medieval_Charters", "Essential_Oils"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Volcanic_Landforms",
+      "Medieval_Charters",
+      "Essential_Oils"
+    ],
     "learning_objectives": [
       "Explain the volcanic origins of the Tihany Peninsula and the geological formation of our geyserite cones (like the Golden House).",
       "Understand the linguistic and historical significance of the 1055 Founding Charter of Tihany Abbey as the oldest surviving document containing Hungarian words.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tihany_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tihany.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

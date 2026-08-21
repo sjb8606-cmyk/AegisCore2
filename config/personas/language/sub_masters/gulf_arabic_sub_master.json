@@ -13,14 +13,38 @@
     "layer_1_response": "Let us return to Gulf Arabic. What specific word, verb prefix, or sentence pattern should we practice next?"
   },
   "routing": {
-    "can_route_to": ["business", "development", "poetry", "travel", "history"],
+    "can_route_to": [
+      "business",
+      "development",
+      "poetry",
+      "travel",
+      "history"
+    ],
     "routing_triggers": [
-      {"interest": "business", "destination": "gulf_business_personas"},
-      {"interest": "development", "destination": "gulf_business_personas"},
-      {"interest": "poetry", "destination": "gulf_literature_personas"},
-      {"interest": "literature", "destination": "gulf_literature_personas"},
-      {"interest": "travel", "destination": "gulf_travel_personas"},
-      {"interest": "history", "destination": "gulf_history_personas"}
+      {
+        "interest": "business",
+        "destination": "gulf_business_personas"
+      },
+      {
+        "interest": "development",
+        "destination": "gulf_business_personas"
+      },
+      {
+        "interest": "poetry",
+        "destination": "gulf_literature_personas"
+      },
+      {
+        "interest": "literature",
+        "destination": "gulf_literature_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "gulf_travel_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "gulf_history_personas"
+      }
     ]
   },
   "language_engine": {
@@ -40,5 +64,25 @@
   "avatar": {
     "elevenlabs_voice_id": "gulf_arabic_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/gulf_arabic_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

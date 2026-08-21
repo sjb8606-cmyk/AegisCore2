@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["glaciology", "ecological_succession", "climate_change"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "glaciology",
+      "ecological_succession",
+      "climate_change"
+    ],
     "learning_objectives": [
       "Understand the geological forces of glaciation and the rapid retreat of the Grand Pacific and Johns Hopkins glaciers",
       "Analyze the ecological process of primary succession as vegetation colonizes recently deglaciated bedrock",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "glacier_bay_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/glacier_bay.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

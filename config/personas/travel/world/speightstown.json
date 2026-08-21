@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["colonial_trade_networks", "arlington_house", "maritime_defenses"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "colonial_trade_networks",
+      "arlington_house",
+      "maritime_defenses"
+    ],
     "learning_objectives": [
       "Understand the historical role of Speightstown as a major Caribbean sugar port and its direct trade connections with Bristol, England.",
       "Analyze the architectural design of three-story colonial merchant houses preserved in Speightstown, focusing on their dual residential-commercial use.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "speightstown_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/speightstown.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

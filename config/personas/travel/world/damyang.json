@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Bamboo_Physiology", "Cittaslow_Philosophy", "Eco_Friendly_Material_Science"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Bamboo_Physiology",
+      "Cittaslow_Philosophy",
+      "Eco_Friendly_Material_Science"
+    ],
     "learning_objectives": [
       "Explain the rapid growth physiology and root system (rhizomes) of bamboo, detailing how it prevents soil erosion and absorbs carbon.",
       "Understand the philosophy of the 'Cittaslow' (Slow City) movement as implemented in Damyang to preserve traditional agriculture and lifestyle.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "damyang_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/damyang.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

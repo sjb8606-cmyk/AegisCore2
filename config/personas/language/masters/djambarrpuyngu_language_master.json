@@ -10,13 +10,34 @@
     "layer_1_response": "Let us return to Djambarrpuyŋu. What specific phrase, moiety agreement, or pronunciation pattern can we study right now?"
   },
   "routing": {
-    "can_route_to": ["history", "music", "conservation", "travel", "art"],
+    "can_route_to": [
+      "history",
+      "music",
+      "conservation",
+      "travel",
+      "art"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "elcho_island_history_personas"},
-      {"interest": "music", "destination": "arnhem_land_music_personas"},
-      {"interest": "conservation", "destination": "marine_conservation_personas"},
-      {"interest": "travel", "destination": "elcho_travel_personas"},
-      {"interest": "art", "destination": "bark_painting_personas"}
+      {
+        "interest": "history",
+        "destination": "elcho_island_history_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "arnhem_land_music_personas"
+      },
+      {
+        "interest": "conservation",
+        "destination": "marine_conservation_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "elcho_travel_personas"
+      },
+      {
+        "interest": "art",
+        "destination": "bark_painting_personas"
+      }
     ]
   },
   "language_engine": {
@@ -36,5 +57,25 @@
   "avatar": {
     "elevenlabs_voice_id": "djambarrpuyngu_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/djambarrpuyngu_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

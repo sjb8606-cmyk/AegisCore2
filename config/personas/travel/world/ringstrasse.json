@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Viennese_Historicism", "Urban_Planning_19th_Century", "Imperial_Museums"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Viennese_Historicism",
+      "Urban_Planning_19th_Century",
+      "Imperial_Museums"
+    ],
     "learning_objectives": [
       "Analyze the political and social motivations behind Emperor Franz Joseph's 1857 decision to demolish Vienna's medieval city walls and construct the Ringstrasse.",
       "Identify the key architectural styles of Historicism (such as Neo-Gothic, Neo-Renaissance, and Neo-Classical) represented on the boulevard.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ringstrasse_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ringstrasse.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

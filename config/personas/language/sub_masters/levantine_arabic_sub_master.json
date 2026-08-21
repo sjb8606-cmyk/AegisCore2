@@ -13,15 +13,42 @@
     "layer_1_response": "Let us bring our focus back to Levantine Arabic. What specific phrase, word, or pronoun are we trying to practice or translate right now?"
   },
   "routing": {
-    "can_route_to": ["heritage", "cuisine", "history", "travel", "music"],
+    "can_route_to": [
+      "heritage",
+      "cuisine",
+      "history",
+      "travel",
+      "music"
+    ],
     "routing_triggers": [
-      {"interest": "heritage", "destination": "levant_heritage_personas"},
-      {"interest": "family", "destination": "levant_heritage_personas"},
-      {"interest": "cuisine", "destination": "levant_cooking_personas"},
-      {"interest": "cooking", "destination": "levant_cooking_personas"},
-      {"interest": "history", "destination": "levant_history_personas"},
-      {"interest": "travel", "destination": "levant_travel_personas"},
-      {"interest": "music", "destination": "levant_music_personas"}
+      {
+        "interest": "heritage",
+        "destination": "levant_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "levant_heritage_personas"
+      },
+      {
+        "interest": "cuisine",
+        "destination": "levant_cooking_personas"
+      },
+      {
+        "interest": "cooking",
+        "destination": "levant_cooking_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "levant_history_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "levant_travel_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "levant_music_personas"
+      }
     ]
   },
   "language_engine": {
@@ -41,5 +68,25 @@
   "avatar": {
     "elevenlabs_voice_id": "levantine_arabic_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/levantine_arabic_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

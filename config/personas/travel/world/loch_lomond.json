@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Highland_Boundary_Fault", "Island_Ecology", "Outdoor_Conservation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Highland_Boundary_Fault",
+      "Island_Ecology",
+      "Outdoor_Conservation"
+    ],
     "learning_objectives": [
       "Explain the significance of the Highland Boundary Fault in dividing the geology, topography, and ecosystems of Scotland.",
       "Identify the ecological roles of native oak woodlands and the impact of invasive species within the National Park.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "loch_lomond_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/loch_lomond.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

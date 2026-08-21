@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Military Science",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["naval_history", "pacific_campaign", "military_fortifications"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "naval_history",
+      "pacific_campaign",
+      "military_fortifications"
+    ],
     "learning_objectives": [
       "Understand the strategic and geopolitical reasons why Guam was a critical hub in the Pacific Theater of WWII",
       "Analyze the military engineering of the Japanese coastal defenses and the American landing operations at Asan and Agat",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "war_in_the_pacific_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/war_in_the_pacific.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

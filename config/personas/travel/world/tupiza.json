@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["frontier_history", "sandstone_erosion", "gulf_trade_links"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "frontier_history",
+      "sandstone_erosion",
+      "gulf_trade_links"
+    ],
     "learning_objectives": [
       "Explain the geological and wind erosion processes that form the vertical, red sandstone needle formations (Finas) of Tupiza.",
       "Analyze the historical events of November 1908 in southern Bolivia that led to the final shootout and deaths of Butch Cassidy and the Sundance Kid.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tupiza_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tupiza.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

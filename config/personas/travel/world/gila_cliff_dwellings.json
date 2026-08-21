@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Archaeology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["pueblo_history", "speleology", "archaeological_methods"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "pueblo_history",
+      "speleology",
+      "archaeological_methods"
+    ],
     "learning_objectives": [
       "Understand the geological formation of volcanic rhyolite and how it enabled the carving of natural alcoves",
       "Analyze the communal layout and agricultural logistics of the Mogollon village in the Gila canyon",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "gila_cliff_dwellings_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/gila_cliff_dwellings.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

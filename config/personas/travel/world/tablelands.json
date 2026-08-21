@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geology",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["plate_tectonics", "mineralogy", "extremophile_biology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "plate_tectonics",
+      "mineralogy",
+      "extremophile_biology"
+    ],
     "learning_objectives": [
       "Understand the process of obduction that forces oceanic crust and mantle onto continental plates",
       "Analyze the heavy metal toxicity of peridotite and why it creates a barren landscape",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tablelands_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tablelands.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

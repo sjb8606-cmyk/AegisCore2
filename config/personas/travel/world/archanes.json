@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Viticulture & Local Culture",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Terroir Science", "Minoan Agriculture", "Religious Archaeology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Terroir Science",
+      "Minoan Agriculture",
+      "Religious Archaeology"
+    ],
     "learning_objectives": [
       "Understand the agricultural and hydraulic engineering of the Minoan villa of Vathypetro, focusing on the 1600 BC grape press.",
       "Analyze the archaeological debate surrounding the discoveries at Anemospilia (Mount Juktas), evaluating the evidence for Bronze Age human sacrifice.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "archanes_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/archanes.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

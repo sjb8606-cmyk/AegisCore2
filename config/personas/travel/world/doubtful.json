@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["fiord_oceanography", "marine_mammal_ecology", "hydroelectric_engineering"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "fiord_oceanography",
+      "marine_mammal_ecology",
+      "hydroelectric_engineering"
+    ],
     "learning_objectives": [
       "Explain the complex marine layering of Doubtful Sound, where high rainfall creates a thick, tannin-stained freshwater layer floating on top of salt water.",
       "Analyze the social structures and unique survival adaptations of the southernmost resident population of Bottlenose Dolphins in the fiord.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "doubtful_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/doubtful.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

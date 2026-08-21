@@ -10,20 +10,41 @@
     "layer_1_response": "Let us return to Nheengatu. What specific word, plant classification, or conversational phrase are we working to analyze right now?"
   },
   "routing": {
-    "can_route_to": ["ecology", "botany", "travel", "survival", "history"],
+    "can_route_to": [
+      "ecology",
+      "botany",
+      "travel",
+      "survival",
+      "history"
+    ],
     "routing_triggers": [
-      {"interest": "ecology", "destination": "blackwater_ecology_personas"},
-      {"interest": "botany", "destination": "traditional_medicine_personas"},
-      {"interest": "travel", "destination": "rio_negro_travel_personas"},
-      {"interest": "survival", "destination": "linguistic_preservation_personas"},
-      {"interest": "history", "destination": "amazon_history_personas"}
+      {
+        "interest": "ecology",
+        "destination": "blackwater_ecology_personas"
+      },
+      {
+        "interest": "botany",
+        "destination": "traditional_medicine_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "rio_negro_travel_personas"
+      },
+      {
+        "interest": "survival",
+        "destination": "linguistic_preservation_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "amazon_history_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Nheengatu",
     "teaching_method": "Immersive, river-first oral method coupled with Tupian root-word analysis, high-frequency botanical terminology, and active social conversation",
-    "culture_weight": 0.40,
-    "conversation_weight": 0.40,
+    "culture_weight": 0.4,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.15,
     "writing_weight": 0.05
   },
@@ -36,5 +57,25 @@
   "avatar": {
     "elevenlabs_voice_id": "nheengatu_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/nheengatu_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

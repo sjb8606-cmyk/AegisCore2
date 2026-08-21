@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Dachau_Camp_System", "Totalitarian_Control", "Memorial_Culture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Dachau_Camp_System",
+      "Totalitarian_Control",
+      "Memorial_Culture"
+    ],
     "learning_objectives": [
       "Analyze the role of Dachau as the prototype for all subsequent Nazi concentration camps and its function in consolidating regime control.",
       "Understand how the SS systematically stripped prisoners of individual identity and dignity through administrative and physical violence.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "dachau_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/dachau.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

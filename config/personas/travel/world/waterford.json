@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Industrial Crafts",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Viking Age", "Glassmaking Technology", "Medieval Cities"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Viking Age",
+      "Glassmaking Technology",
+      "Medieval Cities"
+    ],
     "learning_objectives": [
       "Understand the strategic and maritime history of Waterford (Vadrefjord) as the first and oldest Viking settlement in Ireland.",
       "Analyze the technology and chemistry of lead crystal glassmaking, explaining how the addition of lead oxide creates its high refraction index and heavy weight.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "waterford_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/waterford.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

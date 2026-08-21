@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Paleontology & Marine Biology",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["paleontology", "stratigraphy", "marine_ecology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "paleontology",
+      "stratigraphy",
+      "marine_ecology"
+    ],
     "learning_objectives": [
       "Understand the geological conditions of the Miocene epoch that allowed for the preservation of fossils in the Calvert Cliffs",
       "Identify the dental morphology and biology of prehistoric marine predators like the Megalodon",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "solomons_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/solomons.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

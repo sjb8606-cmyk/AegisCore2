@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Science & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["ecology", "conservation_biology", "botany"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "ecology",
+      "conservation_biology",
+      "botany"
+    ],
     "learning_objectives": [
       "Understand the keystone role of species like the black-tailed prairie dog",
       "Identify the adaptations of flora in extreme temperature and low-moisture environments",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sage_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sage.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

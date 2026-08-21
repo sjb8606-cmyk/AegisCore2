@@ -18,8 +18,19 @@
   },
   "education": {
     "domain": "Science",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["human_evolution", "palaeoanthropology", "alkaline_lakes"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "human_evolution",
+      "palaeoanthropology",
+      "alkaline_lakes"
+    ],
     "learning_objectives": [
       "Explain the geological and hydrological factors that sustain Lake Turkana as the world's largest permanent desert lake and alkaline basin.",
       "Understand the key physical and behavioral adaptations of early hominins (such as Australopithecus and Homo erectus) discovered in the Turkana basin.",
@@ -35,5 +46,25 @@
   "avatar": {
     "elevenlabs_voice_id": "turkana_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/turkana.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Philosophy",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Anthropology_of_Death", "Naive_Folk_Art", "Cultural_Resilience"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Anthropology_of_Death",
+      "Naive_Folk_Art",
+      "Cultural_Resilience"
+    ],
     "learning_objectives": [
       "Understand the philosophical and anthropological roots of the Merry Cemetery (Cimitirul Vesel), tracing its joyous view of death back to alleged Dacian/Zalmoxian beliefs.",
       "Analyze the artistic techniques of Stan Ioan Pătraș, focusing on 'Săpânța Blue,' naive wood carving, and the composition of the biographical poems.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "merry_cemetery_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/merry_cemetery.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

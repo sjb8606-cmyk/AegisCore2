@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Commerce",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["canadian_history", "urban_development", "political_history"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "canadian_history",
+      "urban_development",
+      "political_history"
+    ],
     "learning_objectives": [
       "Understand Ottawa's strategic origins as a military defense and lumber hub",
       "Analyze why Queen Victoria selected a rough frontier town to be the capital of Canada",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bytown_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bytown.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

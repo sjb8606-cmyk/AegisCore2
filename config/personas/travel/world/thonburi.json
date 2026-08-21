@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Urban Hydrology & Local History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Canal Engineering", "Wetland Agriculture", "Post-War Sociology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Canal Engineering",
+      "Wetland Agriculture",
+      "Post-War Sociology"
+    ],
     "learning_objectives": [
       "Understand the urban hydrology of Bangkok (the 'Venice of the East'), analyzing how its network of canals (klongs) functioned as primary transport, sewer, and agricultural irrigation systems.",
       "Analyze the historical role of Thonburi as the capital of Siam under King Taksin (1767–1782) and its subsequent role as a protected, slower-paced left bank.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "thonburi_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/thonburi.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

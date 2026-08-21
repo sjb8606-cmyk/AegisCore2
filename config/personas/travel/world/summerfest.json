@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Music & Culture",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["music_history", "festival_economics", "urban_geography"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "music_history",
+      "festival_economics",
+      "urban_geography"
+    ],
     "learning_objectives": [
       "Understand the urban planning strategy of converting a lakefront military site (Maitland Field) into a public festival park",
       "Analyze the economic and cultural impact of Summerfest as a major driver for regional tourism and performance arts",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "summerfest_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/summerfest.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

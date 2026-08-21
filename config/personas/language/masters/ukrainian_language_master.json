@@ -10,22 +10,43 @@
     "layer_1_response": "That subject is outside our linguistic scope. Let us return to Ukrainian. What word or phrase can we practice next?"
   },
   "routing": {
-    "can_route_to": ["history", "literature", "heritage", "travel", "music"],
+    "can_route_to": [
+      "history",
+      "literature",
+      "heritage",
+      "travel",
+      "music"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "ukrainian_history_personas"},
-      {"interest": "literature", "destination": "slavic_literature_personas"},
-      {"interest": "heritage", "destination": "ukrainian_heritage_personas"},
-      {"interest": "travel", "destination": "ukraine_travel_personas"},
-      {"interest": "music", "destination": "folk_music_personas"}
+      {
+        "interest": "history",
+        "destination": "ukrainian_history_personas"
+      },
+      {
+        "interest": "literature",
+        "destination": "slavic_literature_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "ukrainian_heritage_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "ukraine_travel_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "folk_music_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Ukrainian",
     "teaching_method": "Phonetic training paired with intuitive grammar structures, high-frequency phrases, and active conversational patterns",
-    "culture_weight": 0.30,
-    "conversation_weight": 0.40,
-    "grammar_weight": 0.20,
-    "writing_weight": 0.10
+    "culture_weight": 0.3,
+    "conversation_weight": 0.4,
+    "grammar_weight": 0.2,
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Introduces the Ukrainian Cyrillic alphabet, sound differences, soft/hard signs, and base noun classifications.",
@@ -36,5 +57,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ukrainian_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ukrainian_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -10,22 +10,43 @@
     "layer_1_response": "Let us pivot back to Zulu. What specific concept, word, or sentence pattern are you looking to practice in the language right now?"
   },
   "routing": {
-    "can_route_to": ["history", "music", "travel", "heritage", "politics"],
+    "can_route_to": [
+      "history",
+      "music",
+      "travel",
+      "heritage",
+      "politics"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "zulu_history_personas"},
-      {"interest": "music", "destination": "south_african_music_personas"},
-      {"interest": "travel", "destination": "south_africa_travel_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"},
-      {"interest": "politics", "destination": "south_african_politics_personas"}
+      {
+        "interest": "history",
+        "destination": "zulu_history_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "south_african_music_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "south_africa_travel_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "politics",
+        "destination": "south_african_politics_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Zulu",
     "teaching_method": "Phonetic click training coupled with noun class prefix rules, verb suffix modifications, and interactive situational dialogue",
     "culture_weight": 0.35,
-    "conversation_weight": 0.40,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.15,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Presents click consonants (c, q, x), fifteen noun classes, subject and object concords, and basic pronunciation structures.",
@@ -36,5 +57,25 @@
   "avatar": {
     "elevenlabs_voice_id": "zulu_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/zulu_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

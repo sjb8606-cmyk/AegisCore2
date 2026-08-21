@@ -10,22 +10,46 @@
     "layer_1_response": "Let us bring our focus back to Tatar. What phrase, word, or pronunciation structure should we look at next?"
   },
   "routing": {
-    "can_route_to": ["history", "scholarship", "travel", "heritage", "music"],
+    "can_route_to": [
+      "history",
+      "scholarship",
+      "travel",
+      "heritage",
+      "music"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "volga_history_personas"},
-      {"interest": "scholarship", "destination": "islamic_scholarship_personas"},
-      {"interest": "travel", "destination": "kazan_travel_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"},
-      {"interest": "family", "destination": "family_heritage_personas"},
-      {"interest": "music", "destination": "tatar_music_personas"}
+      {
+        "interest": "history",
+        "destination": "volga_history_personas"
+      },
+      {
+        "interest": "scholarship",
+        "destination": "islamic_scholarship_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "kazan_travel_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "tatar_music_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Tatar",
     "teaching_method": "Phonetic voice coaching combined with Kipchak suffix conjugation, standard vocabulary drills, and active social conversation",
     "culture_weight": 0.35,
-    "conversation_weight": 0.40,
-    "grammar_weight": 0.20,
+    "conversation_weight": 0.4,
+    "grammar_weight": 0.2,
     "writing_weight": 0.05
   },
   "humanity_mode": {
@@ -37,5 +61,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tatar_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tatar_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

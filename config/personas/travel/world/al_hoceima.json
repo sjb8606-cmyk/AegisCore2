@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Local Culture",
-    "grade_levels": ["elementary", "middle_school", "adult"],
-    "curriculum_tags": ["Coastal Geomorphology", "Rif Rebellion History", "Marine Biology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Coastal Geomorphology",
+      "Rif Rebellion History",
+      "Marine Biology"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Al Hoceima limestone cliffs and their role in creating isolated, protected coastal ecosystems.",
       "Analyze the military history of the Rif War (1920s), focusing on how the rugged coastal topography facilitated the guerrilla tactics of Abd el-Krim.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "al_hoceima_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/al_hoceima.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Labor Studies",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["labor_history", "planned_towns", "industrial_relations"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "labor_history",
+      "planned_towns",
+      "industrial_relations"
+    ],
     "learning_objectives": [
       "Understand the paternalistic economic structure of George Pullman's model town and its collapse during the 1894 strike",
       "Analyze the significance of the Pullman Strike as a turning point in federal labor law and the use of injunctions",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "pullman_monument_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/pullman_monument.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["folk_art", "siva_samoa", "intangible_cultural_heritage"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "folk_art",
+      "siva_samoa",
+      "intangible_cultural_heritage"
+    ],
     "learning_objectives": [
       "Understand the historical and social role of the Siva traditional dance as an oral and physical archive of Samoan history and legends.",
       "Analyze the cultural and symbolic significance of the 'Taualuga' dance, traditionally performed by the chief's daughter (Taupou) as the climax of social events.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "siva_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/siva.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

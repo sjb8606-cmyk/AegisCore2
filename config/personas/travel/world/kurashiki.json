@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Traditional Crafts & Urban History",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Edo Distribution Networks", "Mingei (Folk Art)", "Historic Preservation"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Edo Distribution Networks",
+      "Mingei (Folk Art)",
+      "Historic Preservation"
+    ],
     "learning_objectives": [
       "Understand the role of Kurashiki as a 'Tenryo' (shogunate-controlled trade territory) for distributing regional rice tax.",
       "Analyze the architectural design of 'kura' (granary/storehouse) structures, specifically the white fireproof walls and black tiles (namako-kabe).",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kurashiki_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kurashiki.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["volcanic_incubation", "megapode_biology", "geothermal_forces_fiji_and_solomons"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "volcanic_incubation",
+      "megapode_biology",
+      "geothermal_forces_fiji_and_solomons"
+    ],
     "learning_objectives": [
       "Explain the unique, evolutionary biology and volcanic incubation habits of the Melanesian Megapode (Megapodius eremita).",
       "Understand the geothermal and volcanic processes of the Savo volcano that generate warm, mineral-rich nesting sands.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "megapode_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/megapode.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

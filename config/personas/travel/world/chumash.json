@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["indigenous_sovereignty", "maritime_history", "material_culture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "indigenous_sovereignty",
+      "maritime_history",
+      "material_culture"
+    ],
     "learning_objectives": [
       "Understand the advanced maritime engineering of the Chumash tomol (plank canoe)",
       "Analyze the impact of the Spanish mission system on the demographic and cultural survival of the Chumash",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "chumash_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/chumash.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

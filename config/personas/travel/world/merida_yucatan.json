@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Cultural Identity",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Yucatecan History", "Caste War", "Colonial Architecture"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Yucatecan History",
+      "Caste War",
+      "Colonial Architecture"
+    ],
     "learning_objectives": [
       "Understand the colonial foundation of Mérida on the ruins of the Maya city of T'hó, analyzing the spatial and social restructuring of the region.",
       "Analyze the economic boom of 'Green Gold' (Henequen agave fiber) in the 19th century, evaluating how it funded the French-style mansions of Paseo de Montejo.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "merida_yucatan_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/merida_yucatan.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

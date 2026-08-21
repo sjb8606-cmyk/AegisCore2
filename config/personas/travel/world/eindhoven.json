@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Technology",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Industrial_Lighting", "Dutch_Design", "Post_Industrial_Regeneration"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Industrial_Lighting",
+      "Dutch_Design",
+      "Post_Industrial_Regeneration"
+    ],
     "learning_objectives": [
       "Understand the historical role of the Philips Company in transforming Eindhoven from a small agricultural village into the high-tech 'City of Light.'",
       "Analyze the principles of 'Dutch Design'—characterized by minimalism, humor, and functional innovation—associated with the Eindhoven Design Academy.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "eindhoven_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/eindhoven.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

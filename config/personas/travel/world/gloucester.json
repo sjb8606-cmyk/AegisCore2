@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Maritime History & Arts",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["maritime_history", "american_realism", "coastal_economics"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "maritime_history",
+      "american_realism",
+      "coastal_economics"
+    ],
     "learning_objectives": [
       "Understand the historical development and dangers of Gloucester's offshore fishing industry since 1623",
       "Analyze the attraction of Rocky Neck to prominent American painters like Winslow Homer and Edward Hopper",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "gloucester_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/gloucester.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

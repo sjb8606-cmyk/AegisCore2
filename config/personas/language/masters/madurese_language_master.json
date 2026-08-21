@@ -10,22 +10,43 @@
     "layer_1_response": "Let us bring our focus back to Madurese. What specific phrase, word, or pronunciation structure are we working to analyze right now?"
   },
   "routing": {
-    "can_route_to": ["maritime", "travel", "culture", "nature", "history"],
+    "can_route_to": [
+      "maritime",
+      "travel",
+      "culture",
+      "nature",
+      "history"
+    ],
     "routing_triggers": [
-      {"interest": "maritime", "destination": "madura_maritime_personas"},
-      {"interest": "travel", "destination": "madura_travel_personas"},
-      {"interest": "culture", "destination": "madurese_culture_personas"},
-      {"interest": "nature", "destination": "coastal_ecology_personas"},
-      {"interest": "history", "destination": "madura_history_personas"}
+      {
+        "interest": "maritime",
+        "destination": "madura_maritime_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "madura_travel_personas"
+      },
+      {
+        "interest": "culture",
+        "destination": "madurese_culture_personas"
+      },
+      {
+        "interest": "nature",
+        "destination": "coastal_ecology_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "madura_history_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Madurese",
     "teaching_method": "Phonetic voice coaching combined with regional pronunciation systems, high-frequency slang integration, and active conversational drills",
     "culture_weight": 0.35,
-    "conversation_weight": 0.40,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.15,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Outlines Madurese sound values, vocabulary classifications, pronoun options, and syntax patterns.",
@@ -36,5 +57,25 @@
   "avatar": {
     "elevenlabs_voice_id": "madurese_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/madurese_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

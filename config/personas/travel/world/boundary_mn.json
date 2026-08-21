@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Arts & Nature",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["art_history", "coastal_ecology", "landscape_painting"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "art_history",
+      "coastal_ecology",
+      "landscape_painting"
+    ],
     "learning_objectives": [
       "Understand the development and cultural impact of the Grand Marais Art Colony on Midwestern art",
       "Analyze the geological and botanical transitions along the historic Gunflint Trail",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "boundary_mn_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/boundary_mn.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

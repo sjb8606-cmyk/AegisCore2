@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Korean_War_Refugees", "Urban_Regeneration_Slums", "Maritime_Trade_Busan"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Korean_War_Refugees",
+      "Urban_Regeneration_Slums",
+      "Maritime_Trade_Busan"
+    ],
     "learning_objectives": [
       "Understand the historical role of Busan as the temporary capital and refugee sanctuary of South Korea during the Korean War (1950-1953).",
       "Analyze the urban planning and artistic regeneration of the Gamcheon Culture Village from a high-density refugee slum to a premier creative district.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "busan_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/busan.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

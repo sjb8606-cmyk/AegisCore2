@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["first_colonial_settlement", "agricultural_transitions", "sacred_architecture"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "first_colonial_settlement",
+      "agricultural_transitions",
+      "sacred_architecture"
+    ],
     "learning_objectives": [
       "Understand the historical events of 1625 and 1627 that led to the English colonization of Barbados at Holetown.",
       "Analyze the transition of early Barbadian agriculture from small-scale tobacco and cotton farming to massive, labor-intensive sugar plantations.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "holetown_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/holetown.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

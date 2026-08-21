@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Marine Ecology",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["military_engineering", "coral_ecology", "maritime_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "military_engineering",
+      "coral_ecology",
+      "maritime_history"
+    ],
     "learning_objectives": [
       "Understand the military strategy behind the construction of Fort Jefferson on a remote island in the Gulf of Mexico",
       "Analyze the logistics and engineering challenges of building a massive masonry structure on a unstable sand key",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "dry_tortugas_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/dry_tortugas.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

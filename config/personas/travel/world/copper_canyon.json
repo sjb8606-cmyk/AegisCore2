@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Alpine Geography",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Volcanic Geomorphology", "Indigenous Endurance", "Railway History"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Volcanic Geomorphology",
+      "Indigenous Endurance",
+      "Railway History"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Barrancas del Cobre (six interconnected volcanic canyons) and their erosion by alpine rivers.",
       "Analyze the physiological and anatomical endurance of the Rarámuri (Tarahumara) runners, focusing on their barefoot running mechanics.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "copper_canyon_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/copper_canyon.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

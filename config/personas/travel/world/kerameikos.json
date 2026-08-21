@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Archaeology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Classical Archaeology", "Greek Ceramics", "Funerary Customs"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Classical Archaeology",
+      "Greek Ceramics",
+      "Funerary Customs"
+    ],
     "learning_objectives": [
       "Understand the dual role of the Kerameikos as both the potters' quarter (birthplace of Attic ceramics) and the state cemetery of Athens.",
       "Analyze the political and rhetoric significance of Pericles’ Funeral Oration delivered at the public grave (Demosion Sema) in 431 BC.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kerameikos_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kerameikos.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

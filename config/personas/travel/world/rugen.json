@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Coastal_Erosion", "Sublime_Art", "Primeval_Forests"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Coastal_Erosion",
+      "Sublime_Art",
+      "Primeval_Forests"
+    ],
     "learning_objectives": [
       "Explain the geological formation of Rügen's white chalk cliffs from the fossilized remains of Cretaceous marine microorganisms.",
       "Understand how Caspar David Friedrich used the landscape of Rügen to define the concept of the 'sublime' in German Romantic painting.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "rugen_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/rugen.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

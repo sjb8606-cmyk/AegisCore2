@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["indigenous_studies", "piedmont_history", "cultural_preservation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "indigenous_studies",
+      "piedmont_history",
+      "cultural_preservation"
+    ],
     "learning_objectives": [
       "Understand the historical consolidation of the Saponi and other Siouan-speaking tribes in the Piedmont",
       "Analyze the creation of the Haliwa-Saponi tribal school as an act of educational sovereignty in the 1950s",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "haliwa_saponi_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/haliwa_saponi.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

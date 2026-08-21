@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Religion & Sacred Landscapes",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Shinto Sacred Spaces", "Heian History", "Coastal Conservation"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Shinto Sacred Spaces",
+      "Heian History",
+      "Coastal Conservation"
+    ],
     "learning_objectives": [
       "Understand why Itsukushima Shrine was constructed on the tidal flats of Miyajima due to sacred land taboos.",
       "Analyze the military and artistic patronage of the Taira clan in establishing the shrine's Heian-period architecture.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "miyajima_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/miyajima.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

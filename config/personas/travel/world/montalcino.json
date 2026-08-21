@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Viticulture & Military History",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Terroir Science", "Medieval Siege Warfare", "Siena Republic"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Terroir Science",
+      "Medieval Siege Warfare",
+      "Siena Republic"
+    ],
     "learning_objectives": [
       "Understand the geological profile of Montalcino's soils (Galestro and Alberese) and how they support the deep-rooting Sangiovese Grosso clone.",
       "Analyze the military significance of the Fortezza di Montalcino as the last refuge of the democratic Republic of Siena in 1555.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "montalcino_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/montalcino.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

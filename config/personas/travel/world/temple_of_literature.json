@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Confucian_Education", "Imperial_Civil_Service_Exams", "Ly_and_Tran_Dynasties"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Confucian_Education",
+      "Imperial_Civil_Service_Exams",
+      "Ly_and_Tran_Dynasties"
+    ],
     "learning_objectives": [
       "Understand the historical role of the Temple of Literature (Van Mieu) as the first national university of Vietnam founded in 1076.",
       "Analyze the social and political significance of the 'Doctor's Stelae' (Bia Tien Si) in honoring intellectual meritocracy over aristocratic birth.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "temple_of_literature_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/temple_of_literature.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

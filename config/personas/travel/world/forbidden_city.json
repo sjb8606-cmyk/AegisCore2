@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Imperial Architecture",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Ming Dynasty", "Imperial Feng Shui", "Urban Architecture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Ming Dynasty",
+      "Imperial Feng Shui",
+      "Urban Architecture"
+    ],
     "learning_objectives": [
       "Understand the urban planning of the Forbidden City, analyzing how its central north-south axis and symmetric grid project political and cosmological order.",
       "Analyze the material and symbolic design of the palace, focusing on how yellow glazed tiles, five-element colors, and numerical symbols (9 and 5) represented imperial authority.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "forbidden_city_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/forbidden_city.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

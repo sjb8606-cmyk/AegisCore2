@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["carnival_history", "emancipation_rituals", "intangible_cultural_heritage"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "carnival_history",
+      "emancipation_rituals",
+      "intangible_cultural_heritage"
+    ],
     "learning_objectives": [
       "Understand the historical roots of Trinidad Carnival, tracing its evolution from French planter masquerades to the Afro-Trinidadian celebrations of Emancipation (1838).",
       "Analyze the causes and cultural outcomes of the 1881 Canboulay Riots in protecting traditional street rituals from British colonial suppression.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "carnival_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/carnival.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

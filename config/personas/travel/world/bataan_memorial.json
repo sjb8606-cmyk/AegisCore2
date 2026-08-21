@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Military Science",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["military_history", "world_war_ii", "pow_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "military_history",
+      "world_war_ii",
+      "pow_history"
+    ],
     "learning_objectives": [
       "Understand the mobilization and role of the 200th Coast Artillery (New Mexico National Guard) in the defense of the Philippines",
       "Analyze the logistical failures, surrender, and human rights violations of the Bataan Death March (1942)",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bataan_memorial_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bataan_memorial.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Art History & Dynastic History",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Renaissance Art History", "Neoplatonism", "Medici Patronage"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Renaissance Art History",
+      "Neoplatonism",
+      "Medici Patronage"
+    ],
     "learning_objectives": [
       "Understand the original administrative purpose of the Uffizi building ('offices') and how it functioned under the Grand Duchy of Tuscany.",
       "Analyze the Neoplatonic philosophy and classical mythology that inspired Sandro Botticelli's 'The Birth of Venus' and 'Primavera'.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "uffizi_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/uffizi.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

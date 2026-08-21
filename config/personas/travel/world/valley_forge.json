@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Military Science",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["military_logistics", "american_revolution", "drill_tactics"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "military_logistics",
+      "american_revolution",
+      "drill_tactics"
+    ],
     "learning_objectives": [
       "Understand the strategic geographic reasons why Washington selected Valley Forge for the winter of 1777-1778",
       "Analyze the role of Baron von Steuben in standardizing military drill and hygiene to professionalize the Continental Army",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "valley_forge_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/valley_forge.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

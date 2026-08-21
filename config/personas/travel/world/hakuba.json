@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Adventure Sports & Alpine Nature",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Geology", "Sports Tourism", "Environmental Science"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Geology",
+      "Sports Tourism",
+      "Environmental Science"
+    ],
     "learning_objectives": [
       "Understand the 'ocean effect' weather patterns that dump massive amounts of extremely dry snow (Japow) on the Hakuba valley.",
       "Analyze the economic and infrastructural legacy left on rural towns by hosting mega-events like the Winter Olympics.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "hakuba_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/hakuba.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Nature & History",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["hydroelectric_power", "geomorphology", "history_of_technology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "hydroelectric_power",
+      "geomorphology",
+      "history_of_technology"
+    ],
     "learning_objectives": [
       "Understand the geological erosion and retreat of the Niagara Escarpment since the last glaciation",
       "Analyze the physics and history of Nikola Tesla's development of alternating current (AC) hydroelectric power at the falls",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "niagara_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/niagara.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

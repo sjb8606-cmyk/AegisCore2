@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Wildlife Management",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["conservation_biology", "ecology", "park_management"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "conservation_biology",
+      "ecology",
+      "park_management"
+    ],
     "learning_objectives": [
       "Understand the bottleneck genetics of the plains bison recovery efforts",
       "Analyze the ecological impact of a keystone species contained within a managed park",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "riding_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/riding.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

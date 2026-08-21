@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Culinary",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["agricultural_history", "culinary_science", "monumental_architecture"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "agricultural_history",
+      "culinary_science",
+      "monumental_architecture"
+    ],
     "learning_objectives": [
       "Understand the historical role of the Cochabamba valley as the primary agricultural center and 'granary' supporting high-altitude colonial mining centers like Potosí.",
       "Analyze the nutritional and botanical diversity of native Andean maize varieties and their role in local gastronomy (chicha and humitas).",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cochabamba_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cochabamba.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

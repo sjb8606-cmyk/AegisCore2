@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["coastal_morphology", "local_fishing_economies", "sustainable_tourism"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "coastal_morphology",
+      "local_fishing_economies",
+      "sustainable_tourism"
+    ],
     "learning_objectives": [
       "Explain the geological and meteorological processes of hurricanes, specifically analyzing how Hurricane Hattie physically split Caye Caulker in 1961.",
       "Understand the economic structure and seasonal regulations of the local lobster-fishing industry in supporting island self-reliance.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "caye_caulker_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/caye_caulker.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

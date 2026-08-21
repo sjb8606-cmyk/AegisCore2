@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Culinary",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Windrush_Generation", "Caribbean_Diaspora", "British_Social_History"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Windrush_Generation",
+      "Caribbean_Diaspora",
+      "British_Social_History"
+    ],
     "learning_objectives": [
       "Understand the socio-political origins of the Notting Hill Carnival as a response to racial tension in the late 1950s.",
       "Identify the key musical genres and culinary traditions brought to London by the Windrush Generation.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "notting_hill_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/notting_hill.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

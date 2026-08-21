@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["human_geography", "rural_sociology", "climatology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "human_geography",
+      "rural_sociology",
+      "climatology"
+    ],
     "learning_objectives": [
       "Understand the geographic isolation and boundaries of the Northeast Kingdom (NEK) of Vermont",
       "Analyze the economic challenges of a region dependent on dairy, timber, and seasonal tourism",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kingdom_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kingdom.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

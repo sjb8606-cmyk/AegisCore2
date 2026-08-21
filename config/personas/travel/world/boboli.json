@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Landscape Design & Court History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Mannerist Art", "Landscape Architecture", "Medici Dynastic History"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Mannerist Art",
+      "Landscape Architecture",
+      "Medici Dynastic History"
+    ],
     "learning_objectives": [
       "Understand the transition from early Renaissance humanistic gardens to the grand, theatrical Mannerist 'Boboli' style.",
       "Analyze the artistic and chemical design of the Buontalenti Grotto, focusing on its use of artificial stalactites, pumice stone, and classical statues.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "boboli_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/boboli.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

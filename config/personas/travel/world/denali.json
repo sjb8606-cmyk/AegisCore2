@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["mountain_geography", "subarctic_ecology", "plate_tectonics"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "mountain_geography",
+      "subarctic_ecology",
+      "plate_tectonics"
+    ],
     "learning_objectives": [
       "Understand the geological forces of active faulting and tectonic uplift that created Denali",
       "Analyze the ecological adaptations of subarctic flora and fauna in the tundra and boreal forest",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "denali_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/denali.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

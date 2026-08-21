@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Cultural Heritage",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Cretan Renaissance", "Fortress Engineering", "Ottoman Architecture"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Cretan Renaissance",
+      "Fortress Engineering",
+      "Ottoman Architecture"
+    ],
     "learning_objectives": [
       "Understand the historical role of Rethymno as a center of the Cretan Renaissance (16th–17th centuries), where local literature and painting flourished under Venetian peace.",
       "Analyze the military engineering of the Fortezza of Rethymno, focusing on how its star-bastion layout (designed by Pallavicini) adapted to early gunpowder warfare.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "rethymno_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/rethymno.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

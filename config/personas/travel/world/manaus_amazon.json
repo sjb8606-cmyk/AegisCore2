@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Rainforest Geography",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Rubber Boom History", "Amazon Hydrology", "Colonial Architecture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Rubber Boom History",
+      "Amazon Hydrology",
+      "Colonial Architecture"
+    ],
     "learning_objectives": [
       "Understand the historical geography of Manaus as the largest city in the Amazon basin, relying entirely on the river network for international connectivity.",
       "Analyze the economic and social impact of the late 19th-century Rubber Boom, evaluating how it funded the import of European marble and iron palaces.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "manaus_amazon_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/manaus_amazon.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

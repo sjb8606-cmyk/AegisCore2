@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Wildlife Conservation",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Island Biogeography", "Conservation Biology", "Subtropical Forestry"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Island Biogeography",
+      "Conservation Biology",
+      "Subtropical Forestry"
+    ],
     "learning_objectives": [
       "Understand the theory of island biogeography and why isolation leads to high rates of endemism (species found nowhere else).",
       "Analyze the ecological threat of introduced predators (like mongooses and feral cats) to flightless island species.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "yanbaru_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/yanbaru.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

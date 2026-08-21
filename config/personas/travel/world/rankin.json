@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Culture & Economics",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["ceramic_arts", "economic_history", "indigenous_adaptation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "ceramic_arts",
+      "economic_history",
+      "indigenous_adaptation"
+    ],
     "learning_objectives": [
       "Understand the unique historical origins of Inuit ceramics following the closure of the Rankin Inlet mine in 1962",
       "Analyze the process of adopting and mastering a completely foreign artistic medium (clay) to express traditional cultural themes",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "rankin_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/rankin.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

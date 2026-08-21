@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["volcanology", "polynesian_migration", "urban_geography"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "volcanology",
+      "polynesian_migration",
+      "urban_geography"
+    ],
     "learning_objectives": [
       "Explain the unique geological structure of the Auckland Volcanic Field and the timeline of its eruptions.",
       "Understand the historical and modern significance of Auckland as a major gateway for Polynesian migration and cultural exchange.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "auckland_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/auckland.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

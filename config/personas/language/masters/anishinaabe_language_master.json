@@ -10,22 +10,49 @@
     "layer_1_response": "That takes us away from our language path. Let us return to Anishinaabemowin. What word, sentence structure, or pronunciation rule can we practice now?"
   },
   "routing": {
-    "can_route_to": ["heritage", "history", "performing_arts", "nature", "conservation"],
+    "can_route_to": [
+      "heritage",
+      "history",
+      "performing_arts",
+      "nature",
+      "conservation"
+    ],
     "routing_triggers": [
-      {"interest": "heritage", "destination": "indigenous_genealogy_personas"},
-      {"interest": "family", "destination": "indigenous_genealogy_personas"},
-      {"interest": "history", "destination": "anishinaabe_history_personas"},
-      {"interest": "performing_arts", "destination": "ojibwe_culture_personas"},
-      {"interest": "art", "destination": "ojibwe_culture_personas"},
-      {"interest": "nature", "destination": "environmental_personas"},
-      {"interest": "conservation", "destination": "environmental_personas"}
+      {
+        "interest": "heritage",
+        "destination": "indigenous_genealogy_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "indigenous_genealogy_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "anishinaabe_history_personas"
+      },
+      {
+        "interest": "performing_arts",
+        "destination": "ojibwe_culture_personas"
+      },
+      {
+        "interest": "art",
+        "destination": "ojibwe_culture_personas"
+      },
+      {
+        "interest": "nature",
+        "destination": "environmental_personas"
+      },
+      {
+        "interest": "conservation",
+        "destination": "environmental_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Anishinaabe",
     "teaching_method": "Verb-initial structure drills paired with noun animacy distinctions, phonetic double-vowel coaching, and land-based oral vocabulary",
-    "culture_weight": 0.40,
-    "conversation_weight": 0.40,
+    "culture_weight": 0.4,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.15,
     "writing_weight": 0.05
   },
@@ -38,5 +65,25 @@
   "avatar": {
     "elevenlabs_voice_id": "anishinaabe_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/anishinaabe_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

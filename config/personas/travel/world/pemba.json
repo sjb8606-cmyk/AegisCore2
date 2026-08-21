@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["clove_agriculture", "island_geography", "traditional_healers"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "clove_agriculture",
+      "island_geography",
+      "traditional_healers"
+    ],
     "learning_objectives": [
       "Understand the historical process and economic impact of the 19th-century clove boom that established Zanzibar and Pemba as global agricultural centers.",
       "Analyze the biological and soil conditions that allow the Clove Tree (Syzygium aromaticum) to thrive in the fertile, hilly terrain of Pemba.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "pemba_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/pemba.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Early Christian Studies",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Roman Infrastructure", "Early Christianity", "Socio-Cultural History"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Roman Infrastructure",
+      "Early Christianity",
+      "Socio-Cultural History"
+    ],
     "learning_objectives": [
       "Understand the structural engineering of Roman military roads (Appian Way), focusing on the use of layered foundations and fitted basalt blocks (basoli).",
       "Analyze the Roman legal separation of the sacred and secular space (pomerium), which forced all burials and catacombs outside the city walls.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "appian_way_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/appian_way.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

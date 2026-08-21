@@ -18,8 +18,19 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["pre_classic_civilizations", "monumental_architecture", "ecological_collapse"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "pre_classic_civilizations",
+      "monumental_architecture",
+      "ecological_collapse"
+    ],
     "learning_objectives": [
       "Understand the historical role and scale of the pre-classic Maya capital of El Mirador (600 BCE – 150 CE) as the world's first industrial-scale state in the Americas.",
       "Analyze the structural engineering and colossal volume of the La Danta temple, comparing its scale with other ancient global pyramids.",
@@ -35,5 +46,25 @@
   "avatar": {
     "elevenlabs_voice_id": "el_mirador_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/el_mirador.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

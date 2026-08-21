@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Art History & Local Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Renaissance Art", "Napoleonic History", "Socio-Cultural History"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Renaissance Art",
+      "Napoleonic History",
+      "Socio-Cultural History"
+    ],
     "learning_objectives": [
       "Understand the Napoleonic origin of the Pinacoteca di Brera as a state museum filled with looted religious art from suppressed monasteries.",
       "Analyze the use of perspective and geometric symmetry in Raphael’s 'The Marriage of the Virgin' as a key text of the High Renaissance.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "brera_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/brera.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

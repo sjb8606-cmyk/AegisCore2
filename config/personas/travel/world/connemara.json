@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Ecology & Local History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Wetland Ecology", "Marine Biology", "Conservation Planning"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Wetland Ecology",
+      "Marine Biology",
+      "Conservation Planning"
+    ],
     "learning_objectives": [
       "Understand the geological formation of 'Blanket Bogs' in western Ireland and why high rainfall and slow decay create massive peat deposits.",
       "Analyze the adaptation of the endemic Connemara Pony to survival in nutrient-poor mountain and bog environments.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "connemara_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/connemara.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

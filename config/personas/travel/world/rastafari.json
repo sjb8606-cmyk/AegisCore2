@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Philosophy",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["pan_africanism", "rastafari_theology", "ital_living"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "pan_africanism",
+      "rastafari_theology",
+      "ital_living"
+    ],
     "learning_objectives": [
       "Understand the historical origins of Rastafari in 1930s Jamaica, highlighting the influence of Marcus Garvey's Pan-Africanism.",
       "Analyze the dietary philosophy of 'Ital' (saltless, plant-based food) and its connection to ecological harmony and physical purity.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "rastafari_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/rastafari.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

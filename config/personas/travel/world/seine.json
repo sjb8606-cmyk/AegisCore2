@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Literature & History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Urban History", "French Literature", "Geography of Commerce"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Urban History",
+      "French Literature",
+      "Geography of Commerce"
+    ],
     "learning_objectives": [
       "Understand the geographical development of Paris starting from its river crossing islands (Île de la Cité).",
       "Analyze the role of the 'Bouquinistes' (booksellers) as a protected UNESCO cultural institution unique to the Seine.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "seine_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/seine.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

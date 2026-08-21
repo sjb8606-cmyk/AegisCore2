@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Architecture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["neoclassical_architecture", "slavery_history", "jeffersonian_ideals"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "neoclassical_architecture",
+      "slavery_history",
+      "jeffersonian_ideals"
+    ],
     "learning_objectives": [
       "Understand the architectural principles of Jeffersonian Neoclassicism and its reliance on Palladio and Roman models",
       "Analyze the profound contradictions between Jefferson's political writings on liberty and his life as a major slaveholder",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "monticello_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/monticello.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

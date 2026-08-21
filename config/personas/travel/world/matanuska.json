@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["new_deal_history", "glaciology", "subarctic_agriculture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "new_deal_history",
+      "glaciology",
+      "subarctic_agriculture"
+    ],
     "learning_objectives": [
       "Understand the history and socioeconomic motivations behind the New Deal's Matanuska Valley Colony project",
       "Analyze the geological formation and flow dynamics of the Matanuska Glacier, an active valley glacier",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "matanuska_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/matanuska.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

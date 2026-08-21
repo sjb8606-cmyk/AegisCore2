@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Limnology",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Soda Limnology", "Armenian Architecture", "Urartu Kingdom"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Soda Limnology",
+      "Armenian Architecture",
+      "Urartu Kingdom"
+    ],
     "learning_objectives": [
       "Understand the limnology and high-salinity chemistry of Lake Van (the largest soda lake in the world) and its endemic species (the Pearl Mullet).",
       "Analyze the artistic and iconographic significance of the Cathedral of the Holy Cross on Akdamar Island (completed 921 AD), focusing on its stone reliefs.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "van_lake_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/van_lake.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

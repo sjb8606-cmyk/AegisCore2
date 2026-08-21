@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Volcanology & Astrophysics",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Volcanology", "Observational Astronomy", "Island Ecology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Volcanology",
+      "Observational Astronomy",
+      "Island Ecology"
+    ],
     "learning_objectives": [
       "Understand the geological formation of Mount Teide as a stratovolcano situated on a massive caldera collapse (Las Cañadas).",
       "Analyze the meteorological phenomenon of 'temperature inversion' that creates a stable layer of clouds below the peak, protecting the high-altitude atmosphere for stargazing.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "teide_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/teide.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

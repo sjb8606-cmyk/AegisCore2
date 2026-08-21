@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Steppe_Ecology", "Pastoral_Agriculture", "Atmospheric_Mirages"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Steppe_Ecology",
+      "Pastoral_Agriculture",
+      "Atmospheric_Mirages"
+    ],
     "learning_objectives": [
       "Explain the ecological and geological processes that created the alkaline grasslands and saline soils of the Hortobágy Puszta.",
       "Understand the historical role of the Hungarian Grey Cattle and Nonius horses in the traditional pastoral agriculture of the Great Plain.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "hortobagy_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/hortobagy.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

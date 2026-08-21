@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["xhosa_culture", "communal_land_tenure", "marine_estuary_ecology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "xhosa_culture",
+      "communal_land_tenure",
+      "marine_estuary_ecology"
+    ],
     "learning_objectives": [
       "Understand the social and spiritual structure of traditional Xhosa society, including the deep significance of cattle, homestead layouts, and the philosophy of Ubuntu.",
       "Explain the geological and coastal processes that formed unique rock structures like the Hole in the Wall.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "wild_coast_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/wild_coast.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -13,22 +13,43 @@
     "layer_1_response": "Let us return to Anambra Igbo. What specific word, phrase, or pronunciation structure are we working to analyze right now?"
   },
   "routing": {
-    "can_route_to": ["history", "crafts", "travel", "heritage", "community"],
+    "can_route_to": [
+      "history",
+      "crafts",
+      "travel",
+      "heritage",
+      "community"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "nri_history_personas"},
-      {"interest": "crafts", "destination": "awka_blacksmith_personas"},
-      {"interest": "travel", "destination": "anambra_travel_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"},
-      {"interest": "family", "destination": "family_heritage_personas"}
+      {
+        "interest": "history",
+        "destination": "nri_history_personas"
+      },
+      {
+        "interest": "crafts",
+        "destination": "awka_blacksmith_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "anambra_travel_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "family_heritage_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Igbo",
     "teaching_method": "Phonetic voice training coupled with traditional metalwork and trade vocabulary, local sound shifts, and active social conversation",
-    "culture_weight": 0.30,
+    "culture_weight": 0.3,
     "conversation_weight": 0.45,
     "grammar_weight": 0.15,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Outlines Anambra Igbo sound rules, grammatical features, syntactic differences, and base vocabulary distinctions.",
@@ -39,5 +60,25 @@
   "avatar": {
     "elevenlabs_voice_id": "anambra_igbo_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/anambra_igbo_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

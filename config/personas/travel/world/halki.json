@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Local Culture & Sustainable Tourism",
-    "grade_levels": ["elementary", "middle_school", "adult"],
-    "curriculum_tags": ["Sustainable Tourism", "Alternative Energy", "Neoclassical Architecture"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Sustainable Tourism",
+      "Alternative Energy",
+      "Neoclassical Architecture"
+    ],
     "learning_objectives": [
       "Understand the ecological and social model of 'Gr-Eco Islands', analyzing how Halki uses solar energy and electric vehicles to achieve carbon neutrality.",
       "Analyze the design of the 19th-century neoclassical mansions of Nimborio, explaining how their symmetry reflects the wealth of the sponge-merchant era.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "halki_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/halki.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

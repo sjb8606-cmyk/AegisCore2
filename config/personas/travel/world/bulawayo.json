@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["ndebele_kingdom", "matabele_wars", "natural_history_collections"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "ndebele_kingdom",
+      "matabele_wars",
+      "natural_history_collections"
+    ],
     "learning_objectives": [
       "Understand the historical role of Bulawayo (GuBulawayo) as the primary royal capital of the Ndebele Kingdom founded by King Lobengula.",
       "Analyze the political and military causes of the 1893 First Matabele War against the British South Africa Company.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bulawayo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bulawayo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

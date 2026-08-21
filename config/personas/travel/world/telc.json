@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Renaissance_Architecture", "Sgraffito_Design", "Water_Defense_Systems"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Renaissance_Architecture",
+      "Sgraffito_Design",
+      "Water_Defense_Systems"
+    ],
     "learning_objectives": [
       "Understand how Zachariáš of Hradec utilized Italian Renaissance architects to transform Telč from a wooden Gothic stronghold into a stone town of uniform symmetry.",
       "Analyze the artistic technique of 'sgraffito' used to decorate the facades of Telč’s castle and townhouses.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "telc_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/telc.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

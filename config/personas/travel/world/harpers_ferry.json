@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Military Science",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["american_civil_war", "abolition_movement", "geopolitics"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "american_civil_war",
+      "abolition_movement",
+      "geopolitics"
+    ],
     "learning_objectives": [
       "Understand the strategic geographic reasons why Harpers Ferry was selected as the site of both a federal armory and John Brown's raid",
       "Analyze the political and ideological impact of John Brown's 1859 raid on the polarization of the United States prior to the Civil War",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "harpers_ferry_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/harpers_ferry.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

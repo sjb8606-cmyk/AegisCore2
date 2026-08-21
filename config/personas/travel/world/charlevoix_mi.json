@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Architecture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["architecture", "organic_design", "recreational_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "architecture",
+      "organic_design",
+      "recreational_history"
+    ],
     "learning_objectives": [
       "Understand the architectural principles of Earl Young's organic 'Mushroom Houses' in using local glacial boulders",
       "Analyze the history of northern Michigan's transition from a shipping and timber port to an elite summer resort",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "charlevoix_mi_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/charlevoix_mi.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

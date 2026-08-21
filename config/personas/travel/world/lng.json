@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Business",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["resource_extraction", "pipeline_logistics", "economic_diversification"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "resource_extraction",
+      "pipeline_logistics",
+      "economic_diversification"
+    ],
     "learning_objectives": [
       "Understand the scale and economic dynamics of the PNG LNG Project as a major global source of liquefied natural gas (LNG).",
       "Analyze the engineering and logistics challenges of constructing and operating high-pressure pipelines across rugged highland and swamp terrains.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "lng_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/lng.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

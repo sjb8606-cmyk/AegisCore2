@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Wildlife & Conservation",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["arctic_ecology", "climate_change", "wildlife_management"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "arctic_ecology",
+      "climate_change",
+      "wildlife_management"
+    ],
     "learning_objectives": [
       "Understand the polar bear's absolute reliance on sea ice for hunting seals",
       "Analyze the cascading effects of global warming on the Hudson Bay ecosystem",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "hudson_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/hudson.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Archaeology",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Minoan Civilization", "Bronze Age Art", "Archaeological Restoration Theory"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Minoan Civilization",
+      "Bronze Age Art",
+      "Archaeological Restoration Theory"
+    ],
     "learning_objectives": [
       "Understand the structural engineering and advanced plumbing (flushing toilets, lightwells) of the Minoan Palace of Knossos.",
       "Analyze the mythological cycles of the Minotaur, Daedalus, and Ariadne’s thread as cultural memories of Minoan palace bureaucracy.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "knossos_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/knossos.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

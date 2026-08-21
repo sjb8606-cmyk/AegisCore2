@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Urban Sociology & Contemporary Art",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Urban Sociology", "Gentrification Studies", "Contemporary Art curated spaces"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Urban Sociology",
+      "Gentrification Studies",
+      "Contemporary Art curated spaces"
+    ],
     "learning_objectives": [
       "Understand the historical development of the Raval from a medieval walled boundary containing hospitals and monasteries to the high-density industrial center of the 19th century.",
       "Analyze the role of 'urban acupuncture' (using massive public cultural buildings like Richard Meier’s MACBA) to trigger gentrification and social restructuring in low-income districts.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "raval_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/raval.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

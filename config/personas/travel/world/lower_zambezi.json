@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["riverine_ecology", "tiger_fish_biology", "floodplain_dynamics"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "riverine_ecology",
+      "tiger_fish_biology",
+      "floodplain_dynamics"
+    ],
     "learning_objectives": [
       "Explain the ecological integration of winter-thorn forests, floodplains, and river channels in the Lower Zambezi National Park.",
       "Understand the anatomical and predatory adaptations of the Tiger Fish (Hydrocynus vittatus) in high-energy river currents.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "lower_zambezi_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/lower_zambezi.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

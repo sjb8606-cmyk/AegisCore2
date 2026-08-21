@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["indigenous_sovereignty", "nez_perce_flight", "treaty_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "indigenous_sovereignty",
+      "nez_perce_flight",
+      "treaty_history"
+    ],
     "learning_objectives": [
       "Understand the historical connection of the Nez Perce (Nimiipuu) to the Wallowa Valley",
       "Analyze the causes and legacy of the Nez Perce War of 1877 from an Indigenous perspective",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "nez_perce_or_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/nez_perce_or.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

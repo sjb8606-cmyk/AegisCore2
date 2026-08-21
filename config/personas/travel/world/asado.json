@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Culinary",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["asado_history", "culinary_chemistry", "pastoral_economics"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "asado_history",
+      "culinary_chemistry",
+      "pastoral_economics"
+    ],
     "learning_objectives": [
       "Understand the historical roots of the Uruguayan 'Asado', tracing its origin from 18th-century Gaucho open-range cooking methods (asado con cuero).",
       "Identify the unique, chemical properties of local woods (such as espinillo and coronilla) and how their smoke phenols define the flavor of authentic asado.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "asado_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/asado.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

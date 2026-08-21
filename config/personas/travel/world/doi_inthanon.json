@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Ecology & Local History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Himalayan Foothills", "Cloud Forest Ecology", "Hill Tribe Culture"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Himalayan Foothills",
+      "Cloud Forest Ecology",
+      "Hill Tribe Culture"
+    ],
     "learning_objectives": [
       "Understand the geological formation of Doi Inthanon (the southern tail of the Himalayas) and its role as the highest watershed of Thailand.",
       "Analyze the ecology of the 'Cloud Forest' (sphagnum bog), explaining why its high-humidity, low-temperature microclimate supports endemic flora.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "doi_inthanon_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/doi_inthanon.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Maritime Geography & Ecology",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["coastal_erosion", "maritime_history", "marine_biology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "coastal_erosion",
+      "maritime_history",
+      "marine_biology"
+    ],
     "learning_objectives": [
       "Understand the geological forces of longshore drift that create and shift coastal inlets",
       "Analyze George Meade's engineering of the Barnegat Lighthouse to withstand extreme coastal winds and tides",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "barnegat_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/barnegat.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

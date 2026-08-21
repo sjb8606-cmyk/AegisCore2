@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["barrier_reefs", "island_biogeography", "marine_conservation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "barrier_reefs",
+      "island_biogeography",
+      "marine_conservation"
+    ],
     "learning_objectives": [
       "Explain the ecological structure of the Belize Barrier Reef, detailing how coral polyps and zooxanthellae algae exist in a symbiotic relationship.",
       "Understand the geological history of Ambergris Caye as a limestone island shaped by Holocene sea-level rises.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ambergris_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ambergris.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

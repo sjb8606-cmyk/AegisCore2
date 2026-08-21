@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["colonial_history", "masonry", "agricultural_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "colonial_history",
+      "masonry",
+      "agricultural_history"
+    ],
     "learning_objectives": [
       "Understand the historical role of Lewistown as a major trading and ranching center in central Montana",
       "Analyze the unique stone craftsmanship of Croatian masons who constructed the city's historic buildings",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "lewistown_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/lewistown.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Viticulture & Local Culture",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Terroir Science", "Distillation Chemistry", "UNESCO Landscapes"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Terroir Science",
+      "Distillation Chemistry",
+      "UNESCO Landscapes"
+    ],
     "learning_objectives": [
       "Understand the geological composition of the Tequila volcanic soils (basalt and iron-rich clays) and how they support the deep-rooting blue agave.",
       "Analyze the biochemistry of tequila fermentation, focusing on how fructose chains (inulin) in the agave heart are converted to fermentable sugars through slow steam baking.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tequila_town_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tequila_town.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

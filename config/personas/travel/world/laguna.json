@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["wetland_ecology", "architectural_philosophy", "avian_migrations"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "wetland_ecology",
+      "architectural_philosophy",
+      "avian_migrations"
+    ],
     "learning_objectives": [
       "Understand the biological and ecological importance of coastal lagoons as freshwater-saltwater interfaces that support diverse fish nurseries.",
       "Analyze the architectural and social philosophy behind Rafael Viñoly's circular bridge design, explaining how it slows traffic to protect nature.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "laguna_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/laguna.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

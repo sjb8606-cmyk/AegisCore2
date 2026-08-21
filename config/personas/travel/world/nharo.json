@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["hunter_gatherer_survival", "ethnobotany_kalahari", "indigenous_linguistics"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "hunter_gatherer_survival",
+      "ethnobotany_kalahari",
+      "indigenous_linguistics"
+    ],
     "learning_objectives": [
       "Understand the advanced tracking science of the Nharo San, explaining how they read and interpret animal tracks, behavior, and wind directions.",
       "Identify key ethnobotanical plants utilized by the Nharo for hydration, nutrition, and medicine in the hyper-arid Kalahari.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "nharo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/nharo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Civic Design",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["urban_planning", "colonial_history", "civil_war_occupation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "urban_planning",
+      "colonial_history",
+      "civil_war_occupation"
+    ],
     "learning_objectives": [
       "Understand the innovative, democratic design of the Oglethorpe Plan (1733) based on ward units and public squares",
       "Analyze the military and political circumstances of Savannah's surrender to General Sherman in December 1864",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "savannah_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/savannah.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

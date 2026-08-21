@@ -10,20 +10,41 @@
     "layer_1_response": "Let us return to Reo Tahiti. What specific phrase, word, or pronunciation structure should we look at next?"
   },
   "routing": {
-    "can_route_to": ["history", "ecology", "dance", "travel", "culture"],
+    "can_route_to": [
+      "history",
+      "ecology",
+      "dance",
+      "travel",
+      "culture"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "tahitian_history_personas"},
-      {"interest": "ecology", "destination": "marine_ecology_personas"},
-      {"interest": "dance", "destination": "traditional_dance_personas"},
-      {"interest": "travel", "destination": "tahiti_travel_personas"},
-      {"interest": "culture", "destination": "society_islands_culture_personas"}
+      {
+        "interest": "history",
+        "destination": "tahitian_history_personas"
+      },
+      {
+        "interest": "ecology",
+        "destination": "marine_ecology_personas"
+      },
+      {
+        "interest": "dance",
+        "destination": "traditional_dance_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "tahiti_travel_personas"
+      },
+      {
+        "interest": "culture",
+        "destination": "society_islands_culture_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Tahitian",
     "teaching_method": "Vowel pronunciation coaching paired with grammatical particle drills, verb-initial sentence structures, and active social conversation",
-    "culture_weight": 0.40,
-    "conversation_weight": 0.40,
+    "culture_weight": 0.4,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.15,
     "writing_weight": 0.05
   },
@@ -36,5 +57,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tahitian_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tahitian_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

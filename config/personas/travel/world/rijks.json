@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Dutch_Golden_Age", "Chiaroscuro", "Art_Conservation"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Dutch_Golden_Age",
+      "Chiaroscuro",
+      "Art_Conservation"
+    ],
     "learning_objectives": [
       "Analyze how the rise of a merchant republic in the 17th-century Netherlands shifted art patronage from the Church to the middle class.",
       "Identify the optical and chemical characteristics of Vermeer’s use of light and rare pigments like natural ultramarine.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "rijks_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/rijks.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

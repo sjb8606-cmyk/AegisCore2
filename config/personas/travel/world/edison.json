@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Technology",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["history_of_technology", "innovation_economics", "physics_of_electricity"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "history_of_technology",
+      "innovation_economics",
+      "physics_of_electricity"
+    ],
     "learning_objectives": [
       "Understand the transition of technological invention from individual hobbyists to organized corporate research and development (Menlo Park)",
       "Analyze the mechanical and electrical principles of the incandescent light bulb and the phonograph",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "edison_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/edison.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

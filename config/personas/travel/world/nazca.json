@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Ancient History & Archaeology",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Pre-Columbian Geoglyphs", "Archaeoastronomy", "Arid Hydrology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Pre-Columbian Geoglyphs",
+      "Archaeoastronomy",
+      "Arid Hydrology"
+    ],
     "learning_objectives": [
       "Understand the geological process of 'desert varnish' (iron-oxide rocks) and how the Nazca culture utilized it to create stable geoglyphs.",
       "Analyze the primary theories regarding the function of the Nazca Lines, comparing the astronomical calendar theory (Reiche) with the water-pathway theory (Aveni).",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "nazca_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/nazca.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

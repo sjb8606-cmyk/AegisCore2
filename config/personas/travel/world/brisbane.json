@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Local Culture",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Subtropical Urbanism", "Bridge Engineering", "World Expos"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Subtropical Urbanism",
+      "Bridge Engineering",
+      "World Expos"
+    ],
     "learning_objectives": [
       "Understand the historical role of Brisbane (Meanjin) as a penal colony and its strategic development as the capital of Queensland.",
       "Analyze the civil engineering of the Story Bridge, constructed during the Great Depression as a major public works project.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "brisbane_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/brisbane.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

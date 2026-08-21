@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Culinary & Ceramic History",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Baroque Architecture", "Majolica Ceramics", "Culinary Chemistry"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Baroque Architecture",
+      "Majolica Ceramics",
+      "Culinary Chemistry"
+    ],
     "learning_objectives": [
       "Understand the historical role of Puebla as a planned Spanish city (Puebla de los Ángeles) designed to connect Veracruz to Mexico City.",
       "Analyze the technology and chemistry of Talavera pottery, explaining how the lead-glazed majolica technique was imported from Spain and protected under strict DO rules.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "puebla_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/puebla.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

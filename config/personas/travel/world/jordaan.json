@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Urban_Social_History", "Gezelligheid_Concept", "Community_Preservation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Urban_Social_History",
+      "Gezelligheid_Concept",
+      "Community_Preservation"
+    ],
     "learning_objectives": [
       "Understand the socio-economic origins of the Jordaan as an early industrial suburb for working-class craftspeople and Huguenot refugees.",
       "Define the unique Dutch cultural concept of 'Gezelligheid' and how it is physically expressed in the architecture of 'Bruine Cafés.'",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "jordaan_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/jordaan.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

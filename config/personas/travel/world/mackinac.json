@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Heritage",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["colonial_history", "fur_trade", "tourism_economics"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "colonial_history",
+      "fur_trade",
+      "tourism_economics"
+    ],
     "learning_objectives": [
       "Understand the strategic military importance of Mackinac Island in controlling the fur trade of the upper Great Lakes",
       "Analyze the municipal policy and environmental benefits of the 1898 ban on automobiles",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mackinac_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mackinac.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

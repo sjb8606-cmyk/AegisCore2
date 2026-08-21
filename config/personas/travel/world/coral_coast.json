@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["dune_dynamics", "lapita_archaeology", "coastal_protection_fiji"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "dune_dynamics",
+      "lapita_archaeology",
+      "coastal_protection_fiji"
+    ],
     "learning_objectives": [
       "Explain the geological and geomorphological processes of wind-transported sand that formed the Sigatoka Sand Dunes, Fiji's first national park.",
       "Analyze the archaeological significance of the Lapita culture pottery shards discovered in the dunes, dating back over 2,500 years.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "coral_coast_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/coral_coast.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

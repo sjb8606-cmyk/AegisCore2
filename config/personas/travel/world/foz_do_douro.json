@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Nature & Maritime Lifestyle",
-    "grade_levels": ["elementary", "middle_school", "adult"],
-    "curriculum_tags": ["Estuary Geomorphology", "Oceanography & Swells", "Local Food Systems"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Estuary Geomorphology",
+      "Oceanography & Swells",
+      "Local Food Systems"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Douro Estuary (Foz) and how river sediment and Atlantic wave currents form sandbars.",
       "Analyze the ecological role of the cold Canary Current in driving upwelling nutrients that support massive populations of sardines off the Porto coast.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "foz_do_douro_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/foz_do_douro.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

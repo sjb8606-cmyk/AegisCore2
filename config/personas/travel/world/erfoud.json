@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Palaeontology & Local History",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Devonian Palaeontology", "Sedimentary Geology", "Oasis Agriculture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Devonian Palaeontology",
+      "Sedimentary Geology",
+      "Oasis Agriculture"
+    ],
     "learning_objectives": [
       "Understand the geological history of the Sahara, analyzing how marine sedimentation during the Devonian period formed fossil-rich limestone.",
       "Analyze the process of extracting, cutting, and polishing fossilized stone (goniatites, orthoceras) as a major local industry in Erfoud.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "erfoud_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/erfoud.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

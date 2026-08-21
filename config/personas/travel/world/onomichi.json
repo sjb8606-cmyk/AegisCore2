@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Cultural History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Geomorphology", "Cinematic History", "Bicycle Infrastructure"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Geomorphology",
+      "Cinematic History",
+      "Bicycle Infrastructure"
+    ],
     "learning_objectives": [
       "Understand the unique geographical setting of Onomichi as a hillside town crammed between mountains and a narrow sea channel.",
       "Analyze why Onomichi became the default setting for post-war Japanese filmmakers (like Yasujiro Ozu's 'Tokyo Story') representing national nostalgia.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "onomichi_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/onomichi.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

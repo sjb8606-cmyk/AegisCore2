@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Tibetan Studies",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Tibetan Buddhism", "Lhasa History", "Sacred Architecture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Tibetan Buddhism",
+      "Lhasa History",
+      "Sacred Architecture"
+    ],
     "learning_objectives": [
       "Understand the historical role of Lhasa (the 'Place of the Gods') as the political, spiritual, and administrative capital of Tibet.",
       "Analyze the architectural and engineering design of the Potala Palace, focusing on how its massive, sloping stone walls (built without metal nails) resist earthquakes.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "lhasa_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/lhasa.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

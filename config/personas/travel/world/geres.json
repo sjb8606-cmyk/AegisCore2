@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Forestry",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Alpine Ecology", "Roman Infrastructure", "Endemic Wildlife"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Alpine Ecology",
+      "Roman Infrastructure",
+      "Endemic Wildlife"
+    ],
     "learning_objectives": [
       "Understand the geological structure of the Peneda-Gerês National Park (granite massifs) and its role as the only National Park in Portugal.",
       "Analyze the history and engineering of the 'Geira' (Roman Road), focusing on its stone pavement and preserved milestones.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "geres_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/geres.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

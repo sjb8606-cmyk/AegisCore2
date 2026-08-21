@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Architecture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["gilded_age_economics", "architecture", "social_stratification"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "gilded_age_economics",
+      "architecture",
+      "social_stratification"
+    ],
     "learning_objectives": [
       "Understand the Gilded Age railway boom led by Henry Flagler that established Palm Beach as an elite resort",
       "Analyze the Mediterranean Revival and Spanish Colonial Revival architectural styles of Addison Mizner in Florida",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "palm_beach_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/palm_beach.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

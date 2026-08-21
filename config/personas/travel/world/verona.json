@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Literature & Archaeology",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Roman Engineering", "Shakespearean Studies", "Urban Mythology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Roman Engineering",
+      "Shakespearean Studies",
+      "Urban Mythology"
+    ],
     "learning_objectives": [
       "Understand the structural engineering and preservation of the Verona Arena (built in 30 AD) as a functional venue for ancient spectacles and modern opera.",
       "Analyze the historical feuds of northern Italy (Guelphs and Ghibellines, Montecchi and Capuleti) that inspired the myth of Romeo and Juliet.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "verona_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/verona.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

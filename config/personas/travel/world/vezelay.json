@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Sacred Landscapes",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Romanesque Architecture", "Crusades History", "Medieval Pilgrimages"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Romanesque Architecture",
+      "Crusades History",
+      "Medieval Pilgrimages"
+    ],
     "learning_objectives": [
       "Understand the role of Vézelay as a primary gathering point and departure gateway for medieval pilgrims walking the Camino de Santiago.",
       "Analyze the astronomical and geometric design of the Romanesque basilica, focusing on the solar solstice alignment.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "vezelay_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/vezelay.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

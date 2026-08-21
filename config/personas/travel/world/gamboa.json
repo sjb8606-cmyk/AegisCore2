@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["watershed_conservation", "avian_biodiversity", "secondary_forests"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "watershed_conservation",
+      "avian_biodiversity",
+      "secondary_forests"
+    ],
     "learning_objectives": [
       "Explain the ecological and hydrological role of the Gamboa rainforest in regulating and filtering the water supply of the Panama Canal.",
       "Understand the world-class avian biodiversity of the Pipeline Road, identifying key native and migratory bird species.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "gamboa_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/gamboa.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

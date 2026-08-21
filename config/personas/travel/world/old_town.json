@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Urban_Reconstruction", "World_War_II_Destruction", "UNESCO_Heritage_Criteria"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Urban_Reconstruction",
+      "World_War_II_Destruction",
+      "UNESCO_Heritage_Criteria"
+    ],
     "learning_objectives": [
       "Analyze the unprecedented effort to rebuild Warsaw's Old Town after WWII, evaluating why UNESCO recognized a reconstructed site as World Heritage.",
       "Understand the systematic, punitive destruction of Warsaw by Nazi forces following the 1944 Uprising.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "old_town_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/old_town.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

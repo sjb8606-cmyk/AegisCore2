@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Recreation & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["cooperative_business", "recreation_history", "environmental_preservation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "cooperative_business",
+      "recreation_history",
+      "environmental_preservation"
+    ],
     "learning_objectives": [
       "Understand the cooperative business model used by Mad River Glen, the only co-op owned ski mountain in the US",
       "Analyze the cultural division between 'purist' skiing and modern commercial snowboarding and snowmaking",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mad_river_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mad_river.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

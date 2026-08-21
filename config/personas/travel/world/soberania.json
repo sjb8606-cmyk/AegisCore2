@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["avian_biodiversity", "canopy_ecology", "rainforest_conservation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "avian_biodiversity",
+      "canopy_ecology",
+      "rainforest_conservation"
+    ],
     "learning_objectives": [
       "Understand the world-class avian biodiversity of Soberanía National Park, identifying key native and migratory bird species along the Pipeline Road.",
       "Explain the ecological and hydrological role of the park in protecting the freshwater basin of the Panama Canal.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "soberania_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/soberania.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

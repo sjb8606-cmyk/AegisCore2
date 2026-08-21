@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Maritime Geography",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Coastal Geomorphology", "Sailing Physics", "Wetland Conservation"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Coastal Geomorphology",
+      "Sailing Physics",
+      "Wetland Conservation"
+    ],
     "learning_objectives": [
       "Understand the geological formation of Lefkada's white cliffs (Porto Katsiki, Cape Lefkatas) and how limestone erosion creates turquoise water refractions.",
       "Analyze the physics of sailing, focusing on how wind currents (like the Maestral) are utilized by modern yachts in the Ionian channels.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "lefkada_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/lefkada.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Archaeology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["mound_builders", "archaeoastronomy", "masonry_engineering"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "mound_builders",
+      "archaeoastronomy",
+      "masonry_engineering"
+    ],
     "learning_objectives": [
       "Understand the political, economic, and social structure of the Chacoan culture as a major regional center (c. 850-1250 CE)",
       "Analyze the complex astronomical alignments (solstices, equinoxes, and lunar standstills) engineered into the Great Houses",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "chaco_canyon_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/chaco_canyon.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

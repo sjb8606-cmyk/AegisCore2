@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Literature & History",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Insular Art", "History of Libraries", "Georgian Dublin"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Insular Art",
+      "History of Libraries",
+      "Georgian Dublin"
+    ],
     "learning_objectives": [
       "Understand the artistic and technical production of the Book of Kells (circa 800 AD) as a masterpiece of Insular illumination on calfskin vellum.",
       "Analyze the architectural design and structural engineering of the Long Room Library, evaluating how its 19th-century barrel vault expansion solved book capacity crises.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "trinity_college_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/trinity_college.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Art History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Baroque Architecture", "Sacred Music History", "Mexican Independence"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Baroque Architecture",
+      "Sacred Music History",
+      "Mexican Independence"
+    ],
     "learning_objectives": [
       "Understand the urban planning of Morelia (ancient Valladolid) as a planned Spanish renaissance city designed to project colonial authority over the Purépecha lands.",
       "Analyze the baroque architectural style of the Morelia Cathedral, focusing on its use of pink cantera (volcanic stone) and its unified, twin-spired facade.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "morelia_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/morelia.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

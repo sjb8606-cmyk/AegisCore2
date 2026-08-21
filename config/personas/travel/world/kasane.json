@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["borderland_geopolitics", "bridge_engineering", "confluence_hydrology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "borderland_geopolitics",
+      "bridge_engineering",
+      "confluence_hydrology"
+    ],
     "learning_objectives": [
       "Understand the unique geopolitical structure of the Kasane-Kazungula region where four national borders converge in a single, narrow geographical point.",
       "Analyze the structural engineering and design innovations of the Kazungula Bridge, detailing how its curved structure avoids entering neighboring territories.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kasane_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kasane.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

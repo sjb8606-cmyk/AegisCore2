@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["sustainable_urbanism", "gulf_social_history", "green_architecture"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "sustainable_urbanism",
+      "gulf_social_history",
+      "green_architecture"
+    ],
     "learning_objectives": [
       "Explain the passive design principles of traditional Qatari courtyard houses, including wind towers (barjeel) and shaded alleyways.",
       "Understand the social history of the Gulf through the exhibits of Msheireb Museums, focusing on the history of slavery at Bin Jelmood House.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "msheireb_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/msheireb.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

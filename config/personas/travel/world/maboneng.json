@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["urban_regeneration", "african_creative_economies", "city_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "urban_regeneration",
+      "african_creative_economies",
+      "city_history"
+    ],
     "learning_objectives": [
       "Evaluate the Maboneng Precinct as a case study for urban renewal, private property investment, and gentrification in a developing nation context.",
       "Understand the historical rise, decline, and resurgence of Johannesburg's Central Business District (CBD) from 1886 to the present.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "maboneng_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/maboneng.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

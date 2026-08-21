@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Local Culture & Maritime History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["WWII History", "Cyclone Tracy", "Multiculturalism"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "WWII History",
+      "Cyclone Tracy",
+      "Multiculturalism"
+    ],
     "learning_objectives": [
       "Understand the historical role of Darwin as the primary northern military gateway of Australia during WWII and the target of the 1942 Japanese air raids.",
       "Analyze the total destruction and subsequent reconstruction of Darwin following Cyclone Tracy on Christmas Eve 1974, evaluating its impact on building codes.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "darwin_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/darwin.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Paleontology_Resin", "Ancient_Trade_Networks", "Gemological_Craftsmanship"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Paleontology_Resin",
+      "Ancient_Trade_Networks",
+      "Gemological_Craftsmanship"
+    ],
     "learning_objectives": [
       "Explain the geological and chemical process of fossilization that turns ancient tree resin into Baltic amber (succinite) over millions of years.",
       "Understand the historical significance of the Amber Road, which connected the Baltic Sea coast with the Mediterranean and the Roman Empire.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "amber_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/amber.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

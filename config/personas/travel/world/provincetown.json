@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Culture & Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["lgbtq_history", "art_colonies", "coastal_sociology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "lgbtq_history",
+      "art_colonies",
+      "coastal_sociology"
+    ],
     "learning_objectives": [
       "Understand why geographic extremes (like the tip of Cape Cod) frequently foster counter-cultural movements",
       "Analyze the role of Provincetown in the development of American modernism and theater",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "provincetown_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/provincetown.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

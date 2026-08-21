@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Political History & Modern Sociology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Chinese Revolution", "Long March History", "Loess Architecture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Chinese Revolution",
+      "Long March History",
+      "Loess Architecture"
+    ],
     "learning_objectives": [
       "Understand the historical role of Yan'an as the primary revolutionary base of the Chinese Communist Party (CCP) from 1935 to 1948.",
       "Analyze the material and social design of the 'Yaodong' (traditional cave-house), evaluating how it provided natural thermal insulation and military shelter.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "yanan_base_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/yanan_base.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

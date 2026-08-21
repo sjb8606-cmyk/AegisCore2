@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Philosophy",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["sufism_mysticism", "oasis_hydrology", "sacred_architecture_domes"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "sufism_mysticism",
+      "oasis_hydrology",
+      "sacred_architecture_domes"
+    ],
     "learning_objectives": [
       "Understand the historical role of Nefta as a major center for Sufism (specifically the Qadiriyya and Shadhiliyya orders) in North Africa.",
       "Analyze the geological and hydrological factors of 'La Corbeille', the deep, natural bowl oasis that feeds Nefta's palm forests.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "nefta_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/nefta.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

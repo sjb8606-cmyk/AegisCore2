@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Science",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["speleology", "hydrology", "limestone_geology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "speleology",
+      "hydrology",
+      "limestone_geology"
+    ],
     "learning_objectives": [
       "Explain the chemical process of calcium carbonate dissolution and deposition that forms stalactites, stalagmites, and crystal columns.",
       "Understand the hydrology of Barbados's limestone aquifer system and how underground streams feed the island's freshwater supply.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "harrison_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/harrison.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["caste_war_history", "sugar_industry", "borderland_cultures"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "caste_war_history",
+      "sugar_industry",
+      "borderland_cultures"
+    ],
     "learning_objectives": [
       "Understand the historical context of the Caste War of Yucatán (1847-1901) and why thousands of Yucatec Maya and Mestizo refugees migrated to northern Belize.",
       "Analyze the economic and agricultural impact of the Mestizo refugees in introducing commercial sugarcane farming to Belize.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mestizo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mestizo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

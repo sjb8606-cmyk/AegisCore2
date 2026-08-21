@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Architecture",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Vernacular_Timber_Architecture", "UNESCO_Wooden_Churches", "Sustainable_Carpentry"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Vernacular_Timber_Architecture",
+      "UNESCO_Wooden_Churches",
+      "Sustainable_Carpentry"
+    ],
     "learning_objectives": [
       "Analyze the structural engineering of the Maramureș wooden churches, detailing how master carpenters built towering, slender spires and high-pitched roofs without metal nails.",
       "Understand the historical and geographical isolation of Maramureș that allowed this unique, traditional wood culture to survive the modernization of Europe.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "maramures_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/maramures.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

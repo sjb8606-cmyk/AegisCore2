@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["sepik_woodcarving", "crocodile_initiation", "haus_tambaran_architecture"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "sepik_woodcarving",
+      "crocodile_initiation",
+      "haus_tambaran_architecture"
+    ],
     "learning_objectives": [
       "Understand the social and political structure of the Sepik River societies, explaining the traditional authority and role of the Haus Tambaran.",
       "Analyze the cultural and artistic significance of traditional woodcarving, focusing on ancestral masks and crocodile totems.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sepik_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sepik.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

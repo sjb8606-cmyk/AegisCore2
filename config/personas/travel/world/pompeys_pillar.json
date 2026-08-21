@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Geography",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["lewis_clark", "geomorphology", "indigenous_studies"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "lewis_clark",
+      "geomorphology",
+      "indigenous_studies"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Pompeys Pillar sandstone monolith along the Yellowstone River",
       "Analyze the historical significance of William Clark's 1806 signature as the only remaining physical footprint of the expedition",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "pompeys_pillar_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/pompeys_pillar.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

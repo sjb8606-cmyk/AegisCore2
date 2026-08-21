@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Local Culture & Geomorphology",
-    "grade_levels": ["elementary", "middle_school", "adult"],
-    "curriculum_tags": ["Desert Geomorphology", "Distillation Chemistry", "Oasis Ecology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Desert Geomorphology",
+      "Distillation Chemistry",
+      "Oasis Ecology"
+    ],
     "learning_objectives": [
       "Understand the geomorphological formation of 'longitudinal dunes' (seifs) in the Ica desert and how groundwater tables create natural oases.",
       "Analyze the traditional distillation of Pisco (grape brandy), focusing on the use of falca copper stills and the terroir of the Ica valley.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "huacachina_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/huacachina.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

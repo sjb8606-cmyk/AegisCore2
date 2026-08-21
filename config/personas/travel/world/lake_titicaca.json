@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Culture & Limnology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Limnology", "Indigenous Sociology", "Traditional Technology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Limnology",
+      "Indigenous Sociology",
+      "Traditional Technology"
+    ],
     "learning_objectives": [
       "Understand the limnology and high-altitude microclimates of Lake Titicaca, the highest navigable lake in the world (3,812m).",
       "Analyze the technology and life-cycle of 'Totora Reed' island and boat construction as practiced by the Uros people.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "lake_titicaca_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/lake_titicaca.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

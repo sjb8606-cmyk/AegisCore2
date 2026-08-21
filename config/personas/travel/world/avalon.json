@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Wildlife",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["ungulate_biology", "habitat_conservation", "botany"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "ungulate_biology",
+      "habitat_conservation",
+      "botany"
+    ],
     "learning_objectives": [
       "Understand the specialized diet and lichen dependency of the woodland caribou",
       "Analyze the threats of habitat fragmentation and climate change on southerly arctic species",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "avalon_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/avalon.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

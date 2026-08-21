@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Volcanology & Maritime Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Volcanology", "Neolithic Trade", "Island Biogeography"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Volcanology",
+      "Neolithic Trade",
+      "Island Biogeography"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Aeolian Islands as a volcanic island arc created by the subduction of the African plate under the Eurasian plate.",
       "Analyze the role of obsidian (volcanic glass) harvested on Lipari as the most valuable trading commodity of the Neolithic Mediterranean.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "aeolian_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/aeolian.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

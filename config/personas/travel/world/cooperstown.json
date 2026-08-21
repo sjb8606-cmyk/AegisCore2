@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culture",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["american_mythology", "cultural_history", "sports_sociology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "american_mythology",
+      "cultural_history",
+      "sports_sociology"
+    ],
     "learning_objectives": [
       "Understand the historical construction of the Abner Doubleday myth as the inventor of baseball in Cooperstown",
       "Analyze the role of baseball in reflecting and shaping American cultural values and civil rights history",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cooperstown_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cooperstown.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

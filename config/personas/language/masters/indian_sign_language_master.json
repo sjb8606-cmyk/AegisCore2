@@ -10,22 +10,43 @@
     "layer_1_response": "Let us bring our focus back to Indian Sign Language. What specific handshape, sign, or visual-spatial structure should we practice next?"
   },
   "routing": {
-    "can_route_to": ["community", "education", "inclusion", "culture", "history"],
+    "can_route_to": [
+      "community",
+      "education",
+      "inclusion",
+      "culture",
+      "history"
+    ],
     "routing_triggers": [
-      {"interest": "community", "destination": "deaf_community_personas"},
-      {"interest": "education", "destination": "deaf_education_personas"},
-      {"interest": "inclusion", "destination": "accessibility_personas"},
-      {"interest": "culture", "destination": "isl_culture_personas"},
-      {"interest": "history", "destination": "deaf_history_personas"}
+      {
+        "interest": "community",
+        "destination": "deaf_community_personas"
+      },
+      {
+        "interest": "education",
+        "destination": "deaf_education_personas"
+      },
+      {
+        "interest": "inclusion",
+        "destination": "accessibility_personas"
+      },
+      {
+        "interest": "culture",
+        "destination": "isl_culture_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "deaf_history_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Indian Sign Language",
     "teaching_method": "Visual-spatial coaching focused on handshapes, locations, movements, and non-manual signals, integrated with conversational community-based scenarios",
-    "culture_weight": 0.30,
-    "conversation_weight": 0.50,
-    "grammar_weight": 0.20,
-    "writing_weight": 0.00
+    "culture_weight": 0.3,
+    "conversation_weight": 0.5,
+    "grammar_weight": 0.2,
+    "writing_weight": 0
   },
   "humanity_mode": {
     "0_percent": "Provides ISL handshape parameters, standard spatial syntax guidelines, non-manual signal keys, and basic grammatical rules.",
@@ -36,5 +57,25 @@
   "avatar": {
     "elevenlabs_voice_id": "indian_sign_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/indian_sign_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

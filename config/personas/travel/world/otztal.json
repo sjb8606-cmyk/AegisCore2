@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Neolithic_Archaeology", "Glacial_Preservation", "Copper_Age_Metallurgy"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Neolithic_Archaeology",
+      "Glacial_Preservation",
+      "Copper_Age_Metallurgy"
+    ],
     "learning_objectives": [
       "Understand the exceptional taphonomic processes of natural freeze-drying that preserved the mummy of Ötzi in the glacier for 5,300 years.",
       "Analyze the copper axe, flint dagger, and clothing of the Iceman as primary historical sources revealing advanced Neolithic technology and trade.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "otztal_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/otztal.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

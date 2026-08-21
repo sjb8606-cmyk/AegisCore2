@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Grand_Duchy_Finland", "Neoclassical_Architecture", "Finnish_National_Identity"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Grand_Duchy_Finland",
+      "Neoclassical_Architecture",
+      "Finnish_National_Identity"
+    ],
     "learning_objectives": [
       "Analyze how the architectural design of Senate Square by Carl Ludvig Engel served to project Russian imperial authority while inadvertently creating a physical center for Finnish statehood.",
       "Understand the historical transition of Finland from a Swedish province to an autonomous Grand Duchy of the Russian Empire from 1809 to 1917.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "senate_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/senate.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

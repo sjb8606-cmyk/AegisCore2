@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["colonial_trade_routes", "defensive_architecture", "piracy_history"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "colonial_trade_routes",
+      "defensive_architecture",
+      "piracy_history"
+    ],
     "learning_objectives": [
       "Understand the historical significance of Panamá Viejo as the first European settlement founded on the Pacific coast of the Americas (1519).",
       "Analyze the role of the city as a critical transit hub for Peruvian silver along the Camino de Cruces (transisthmian trail).",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "panama_viejo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/panama_viejo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

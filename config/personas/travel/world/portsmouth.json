@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Heritage",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["colonial_history", "architectural_preservation", "social_history"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "colonial_history",
+      "architectural_preservation",
+      "social_history"
+    ],
     "learning_objectives": [
       "Understand the economic importance of the Piscataqua River mast trade to the British Royal Navy",
       "Analyze the architectural evolution of domestic New England homes from the late 17th to the mid-20th century",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "portsmouth_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/portsmouth.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

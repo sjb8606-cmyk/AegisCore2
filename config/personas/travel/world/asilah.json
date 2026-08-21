@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Art & History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Coastal Fortifications", "Public Art Festivals", "Portuguese Colonization"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Coastal Fortifications",
+      "Public Art Festivals",
+      "Portuguese Colonization"
+    ],
     "learning_objectives": [
       "Understand the military and strategic history of Asilah as a fortified Portuguese stronghold (Arzila) in the 15th and 16th centuries.",
       "Analyze the role of the 'Cultural Moussem of Asilah' (founded 1978) in transforming a neglected, crumbling medina into an open-air public art gallery.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "asilah_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/asilah.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

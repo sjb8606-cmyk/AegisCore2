@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Nature",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["karst_geology", "forest_ecology", "appalachian_studies"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "karst_geology",
+      "forest_ecology",
+      "appalachian_studies"
+    ],
     "learning_objectives": [
       "Understand the geomorphological difference between a dissected plateau (the Ozarks) and a true mountain range",
       "Analyze the hydrology of karst limestone systems, including caves, springs, and sinking creeks",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ozark_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ozark.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["mountain_orogeny", "endemic_botany", "eastern_arc_history"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "mountain_orogeny",
+      "endemic_botany",
+      "eastern_arc_history"
+    ],
     "learning_objectives": [
       "Explain the geological and metamorphic history of the Eastern Arc Mountains as ancient, crystalline formations isolated for millions of years.",
       "Identify the unique, endemic flora and fauna of the Usambaras, focusing on the biology and conservation of the African Violet (Saintpaulia).",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "usambara_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/usambara.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Agronomy & Sacred Drama",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Oasis Agronomy", "Medieval Liturgical Drama", "Iberian Archaeology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Oasis Agronomy",
+      "Medieval Liturgical Drama",
+      "Iberian Archaeology"
+    ],
     "learning_objectives": [
       "Understand the agricultural and hydraulic engineering of the Palmeral of Elche (UNESCO World Heritage), created by Moorish farmers in the 10th century.",
       "Analyze the staging and vocal structure of the 'Misteri d'Elx' (Mystery Play of Elche), the only medieval liturgical drama to have been performed continuously since the Middle Ages due to a papal bull.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "elche_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/elche.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

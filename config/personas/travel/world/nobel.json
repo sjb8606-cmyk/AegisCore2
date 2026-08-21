@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Science",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Alfred_Nobel_Legacy", "Scientific_Breakthroughs", "Nobel_Prize_History"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Alfred_Nobel_Legacy",
+      "Scientific_Breakthroughs",
+      "Nobel_Prize_History"
+    ],
     "learning_objectives": [
       "Understand the biographical and industrial history of Alfred Nobel, detailing how his invention of dynamite and subsequent will established the Nobel Prizes.",
       "Analyze the rigorous peer-review and selection processes used by Swedish academic institutions to award prizes in Physics, Chemistry, Medicine, and Literature.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "nobel_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/nobel.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Literature",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Scots_Language", "Romantic_Poetry", "Agrarian_Social_History"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Scots_Language",
+      "Romantic_Poetry",
+      "Agrarian_Social_History"
+    ],
     "learning_objectives": [
       "Analyze the use of Scots dialect and standard English in Robert Burns' poetry, understanding how he targeted different audiences.",
       "Evaluate Burns' role as a radical democrat and collector of traditional Scottish folk music during the Age of Revolution.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "burns_country_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/burns_country.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

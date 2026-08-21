@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Culture & Leisure",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["recreational_history", "rural_gentrification", "moonshine_culture"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "recreational_history",
+      "rural_gentrification",
+      "moonshine_culture"
+    ],
     "learning_objectives": [
       "Understand the economic transition of mountain gateway towns from resource extraction (logging) to intensive tourism",
       "Analyze the history and cultural mythology of Appalachian moonshine and its modern commercialization",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "gatlinburg_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/gatlinburg.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

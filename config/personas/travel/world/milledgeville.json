@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Literature",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["antebellum_history", "southern_gothic", "history_of_institutions"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "antebellum_history",
+      "southern_gothic",
+      "history_of_institutions"
+    ],
     "learning_objectives": [
       "Understand the historical role of Milledgeville as Georgia's planned capital during the cotton boom and Civil War",
       "Analyze the Southern Gothic literary style of Flannery O'Connor and its relationship with the local landscape",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "milledgeville_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/milledgeville.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

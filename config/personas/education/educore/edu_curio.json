@@ -21,10 +21,36 @@
     "grades": "1–6",
     "type": "wonderling",
     "pillar": "Curiosity",
-    "curriculum_tags": ["curiosity", "wonder", "questions", "discovery", "engagement"]
+    "curriculum_tags": [
+      "curiosity",
+      "wonder",
+      "questions",
+      "discovery",
+      "engagement"
+    ]
   },
   "avatar": {
     "elevenlabs_voice_id": "edu_curio_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/edu_curio.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

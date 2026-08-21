@@ -19,11 +19,40 @@
   "education": {
     "tier": 2,
     "reports_to": "edu_sterling",
-    "subjects": ["entrepreneurship", "business_systems"],
-    "curriculum_tags": ["problem_validation", "business_model", "unit_economics", "go_to_market", "systems_thinking"]
+    "subjects": [
+      "entrepreneurship",
+      "business_systems"
+    ],
+    "curriculum_tags": [
+      "problem_validation",
+      "business_model",
+      "unit_economics",
+      "go_to_market",
+      "systems_thinking"
+    ]
   },
   "avatar": {
     "elevenlabs_voice_id": "edu_professor_kwame_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/edu_professor_kwame.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Culinary & Ecology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["viticulture", "marine_biology", "agricultural_economics"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "viticulture",
+      "marine_biology",
+      "agricultural_economics"
+    ],
     "learning_objectives": [
       "Understand the geological and soil diversity (weathered volcanic basalt) that defines the Kona coffee belt",
       "Analyze the biological adaptations and cooperative feeding behavior of Reef Manta Rays (Mobula alfredi) at night",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kona_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kona.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

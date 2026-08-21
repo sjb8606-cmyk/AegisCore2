@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["coastal_meteorology", "aerodynamics_of_kitesurfing", "adventure_economies"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "coastal_meteorology",
+      "aerodynamics_of_kitesurfing",
+      "adventure_economies"
+    ],
     "learning_objectives": [
       "Explain the meteorological phenomenon of 'thermal wind' and why Cabarete's specific geography creates reliable, daily offshore wind conditions.",
       "Analyze the physical principles of lift, drag, and tension involved in aerodynamic sports like kitesurfing and windsurfing.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cabarete_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cabarete.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,19 @@
   },
   "education": {
     "domain": "Science",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["taxonomic_classification", "caribbean_paleontology", "indigenous_artifacts"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "taxonomic_classification",
+      "caribbean_paleontology",
+      "indigenous_artifacts"
+    ],
     "learning_objectives": [
       "Understand the historical role of the Institute of Jamaica in spearheading Caribbean scientific research, taxonomy, and archaeological conservation since 1879.",
       "Analyze the unique, endemic flora and fauna of Jamaica, explaining how island biogeography drove their evolutionary development.",
@@ -35,5 +46,25 @@
   "avatar": {
     "elevenlabs_voice_id": "institute_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/institute.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

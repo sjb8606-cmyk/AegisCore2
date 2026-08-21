@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Medicine",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["history_of_medicine", "scientific_innovation", "philanthropy"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "history_of_medicine",
+      "scientific_innovation",
+      "philanthropy"
+    ],
     "learning_objectives": [
       "Understand the historical founding of the Mayo Clinic following the devastating 1883 Rochester tornado",
       "Analyze the innovative 'group practice' model of medicine pioneered by William and Charles Mayo",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "rochester_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/rochester.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

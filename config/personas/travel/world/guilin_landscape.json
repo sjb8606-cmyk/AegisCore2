@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Ecology & Landscape Art",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Karst Geomorphology", "Shan Shui Painting", "River Ecology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Karst Geomorphology",
+      "Shan Shui Painting",
+      "River Ecology"
+    ],
     "learning_objectives": [
       "Understand the geological formation of 'Tower Karst' (limestone peaks) through tropical weathering and river erosion.",
       "Analyze the principles of 'Shan Shui' (mountain and water) classical Chinese painting, evaluating how it uses negative space and ink density.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "guilin_landscape_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/guilin_landscape.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

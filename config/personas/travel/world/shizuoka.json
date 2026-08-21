@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Agriculture & History",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Agriculture", "Edo History", "Culinary Chemistry"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Agriculture",
+      "Edo History",
+      "Culinary Chemistry"
+    ],
     "learning_objectives": [
       "Understand the chemical and agricultural processes that differentiate Japanese green tea (steaming, shading) from other world teas.",
       "Analyze the historical importance of the Tokaido Highway in connecting Edo to Kyoto and fostering regional economies.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "shizuoka_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/shizuoka.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

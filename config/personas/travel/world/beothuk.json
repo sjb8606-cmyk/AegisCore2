@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Archaeology & History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["archaeology", "extinction", "colonial_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "archaeology",
+      "extinction",
+      "colonial_history"
+    ],
     "learning_objectives": [
       "Understand the archaeological evidence of Beothuk life and their adaptation to the interior of Newfoundland",
       "Analyze the cascading effects of European settlement that led to the extinction of the Beothuk people",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "beothuk_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/beothuk.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

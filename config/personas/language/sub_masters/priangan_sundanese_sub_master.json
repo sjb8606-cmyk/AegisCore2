@@ -13,23 +13,47 @@
     "layer_1_response": "Let us bring our focus back to Priangan Sundanese. What specific word, phrase, or pronunciation structure are we working to analyze right now?"
   },
   "routing": {
-    "can_route_to": ["history", "music", "travel", "heritage", "education"],
+    "can_route_to": [
+      "history",
+      "music",
+      "travel",
+      "heritage",
+      "education"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "bandung_history_personas"},
-      {"interest": "music", "destination": "kacapi_suling_music_personas"},
-      {"interest": "travel", "destination": "bandung_travel_personas"},
-      {"interest": "heritage", "destination": "sundanese_heritage_personas"},
-      {"interest": "family", "destination": "sundanese_heritage_personas"},
-      {"interest": "education", "destination": "sundanese_education_personas"}
+      {
+        "interest": "history",
+        "destination": "bandung_history_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "kacapi_suling_music_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "bandung_travel_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "sundanese_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "sundanese_heritage_personas"
+      },
+      {
+        "interest": "education",
+        "destination": "sundanese_education_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Sundanese",
     "teaching_method": "Phonetic voice coaching combined with Priangan Sundanese vocabulary drills, grammatical registers, and active social conversation",
-    "culture_weight": 0.30,
+    "culture_weight": 0.3,
     "conversation_weight": 0.45,
     "grammar_weight": 0.15,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Provides Priangan Sundanese sound structures, basic sentence frameworks, pronoun tables, and syntax.",
@@ -40,5 +64,25 @@
   "avatar": {
     "elevenlabs_voice_id": "priangan_sundanese_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/priangan_sundanese_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

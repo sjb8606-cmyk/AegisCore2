@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["palaeolake_shorelines", "baobab_biology", "indigenous_monuments"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "palaeolake_shorelines",
+      "baobab_biology",
+      "indigenous_monuments"
+    ],
     "learning_objectives": [
       "Explain the geological and sedimentological evidence on Kubu Island (such as fossilized guano and wave-worn pebbles) proving its history as an ancient lake island.",
       "Understand the ecological adaptations of the Baobab Tree (Adansonia digitata) to grow on solid granite outcrops surrounded by saline salt pans.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kubu_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kubu.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

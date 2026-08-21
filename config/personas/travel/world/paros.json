@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Traditional Crafts & Local Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Classical Sculpture", "Megalithic Quarries", "Byzantine Architecture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Classical Sculpture",
+      "Megalithic Quarries",
+      "Byzantine Architecture"
+    ],
     "learning_objectives": [
       "Understand the geological and physical properties of 'Parian Marble' (lychnites), focusing on its high translucency (allowing light to penetrate up to 3.5cm) and its value in classical Greek sculpture.",
       "Analyze the architectural history of the Panagia Ekatontapyliani (Church of 100 Doors) in Paros as one of the most preserved early Byzantine monuments in Greece.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "paros_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/paros.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

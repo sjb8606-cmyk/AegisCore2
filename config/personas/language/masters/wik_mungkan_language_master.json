@@ -10,13 +10,34 @@
     "layer_1_response": "Let us bring our focus back to Wik Mungkan. What specific word, land rights concept, or pronunciation structure are we practicing right now?"
   },
   "routing": {
-    "can_route_to": ["history", "ecology", "carving", "travel", "community"],
+    "can_route_to": [
+      "history",
+      "ecology",
+      "carving",
+      "travel",
+      "community"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "wik_native_title_history_personas"},
-      {"interest": "ecology", "destination": "wetland_ecology_personas"},
-      {"interest": "carving", "destination": "wik_woodcarving_personas"},
-      {"interest": "travel", "destination": "aurukun_travel_personas"},
-      {"interest": "community", "destination": "wik_culture_personas"}
+      {
+        "interest": "history",
+        "destination": "wik_native_title_history_personas"
+      },
+      {
+        "interest": "ecology",
+        "destination": "wetland_ecology_personas"
+      },
+      {
+        "interest": "carving",
+        "destination": "wik_woodcarving_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "aurukun_travel_personas"
+      },
+      {
+        "interest": "community",
+        "destination": "wik_culture_personas"
+      }
     ]
   },
   "language_engine": {
@@ -36,5 +57,25 @@
   "avatar": {
     "elevenlabs_voice_id": "wik_mungkan_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/wik_mungkan_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

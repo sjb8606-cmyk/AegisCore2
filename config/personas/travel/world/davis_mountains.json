@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Science & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["astronomy", "dark_sky_preservation", "atmospheric_science"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "astronomy",
+      "dark_sky_preservation",
+      "atmospheric_science"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Davis Mountains through ancient volcanic activity",
       "Analyze why high-altitude, low-humidity environments (like Mount Locke) are ideal for optical astronomy",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "davis_mountains_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/davis_mountains.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

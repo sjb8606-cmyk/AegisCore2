@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Ecology & Local Culture",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Delta Geomorphology", "Mangrove Conservation", "Traditional Shellfish Harvesting"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Delta Geomorphology",
+      "Mangrove Conservation",
+      "Traditional Shellfish Harvesting"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Sine-Saloum Delta (UNESCO World Heritage) as a reverse estuary where sea-water penetration exceeds river flow.",
       "Analyze the ecological role of the mangrove forests in filtering water, preventing coastal erosion, and serving as a nursery for marine species.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sine_saloum_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sine_saloum.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -19,13 +19,43 @@
   "education": {
     "grade_band": "discovery",
     "grades": "4–6",
-    "subjects": ["world_history", "civilizations", "earth_science"],
+    "subjects": [
+      "world_history",
+      "civilizations",
+      "earth_science"
+    ],
     "tier": 1,
     "persona_style": "seasoned explorer, measured authority",
-    "curriculum_tags": ["ancient_civilizations", "world_history", "earth_science", "geography", "archaeology"]
+    "curriculum_tags": [
+      "ancient_civilizations",
+      "world_history",
+      "earth_science",
+      "geography",
+      "archaeology"
+    ]
   },
   "avatar": {
     "elevenlabs_voice_id": "edu_atlas_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/edu_atlas.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

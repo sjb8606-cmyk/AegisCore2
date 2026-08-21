@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["colonial_history", "russian_america", "indigenous_resistance"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "colonial_history",
+      "russian_america",
+      "indigenous_resistance"
+    ],
     "learning_objectives": [
       "Understand the history of Russian America and the role of Sitka (New Archangel) as its capital",
       "Analyze the causes and outcomes of the Battle of Sitka (1804) between the Russian-American Company and the Kiks.ádi Tlingit",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sitka_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sitka.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

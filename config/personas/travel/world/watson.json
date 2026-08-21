@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Tourism",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["military_history", "transportation_history", "sociology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "military_history",
+      "transportation_history",
+      "sociology"
+    ],
     "learning_objectives": [
       "Understand the geopolitical urgency that drove the rapid construction of the Alaska Highway during WWII",
       "Analyze the psychological phenomenon of leaving personal markers in isolated places",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "watson_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/watson.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

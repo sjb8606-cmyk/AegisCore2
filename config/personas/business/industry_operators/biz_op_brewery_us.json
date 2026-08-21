@@ -6,7 +6,12 @@
     "tax_context": "Federal excise tax on alcohol production (rate varies by beverage type and production volume, with reduced rates for small brewers), plus state excise taxes that vary significantly by state.",
     "labor_regulation": "Federal and state minimum wage applies to bar staff; tip credit rules for bartenders/servers vary by state, similar to restaurants.",
     "licensing_bodies": "TTB (Alcohol and Tobacco Tax and Trade Bureau) federal permit, state liquor control board/authority, local business and health permits. Three-tier distribution system applies in most states.",
-    "key_compliance_terms": ["TTB Brewer's Notice", "state ABC (Alcoholic Beverage Control) licensing", "federal excise tax filing (TTB Form 5000.24)", "three-tier distribution compliance"]
+    "key_compliance_terms": [
+      "TTB Brewer's Notice",
+      "state ABC (Alcoholic Beverage Control) licensing",
+      "federal excise tax filing (TTB Form 5000.24)",
+      "three-tier distribution compliance"
+    ]
   },
   "humanity_mode_regional_addendum": {
     "0_percent": "Federal TTB excise tax tiers based on annual production volume, state-level excise tax stacking, three-tier distribution licensing requirements."
@@ -16,5 +21,25 @@
       "Understand how federal TTB excise tax rates scale with annual production volume for small brewers.",
       "Analyze how the three-tier distribution system shapes which licenses a brewery needs depending on how it sells (taproom vs. wholesale)."
     ]
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

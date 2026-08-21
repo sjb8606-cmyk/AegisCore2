@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Culinary & History",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Sengoku Period", "Culinary History", "Medieval Art History"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Sengoku Period",
+      "Culinary History",
+      "Medieval Art History"
+    ],
     "learning_objectives": [
       "Understand the rise of the Valois Dukes of Burgundy as major geopolitical actors who dominated northern Europe in the 14th and 15th centuries.",
       "Analyze the chemical difference of authentic Dijon mustard, specifically how the use of green grape juice (verjuice) rather than vinegar preserves seed aroma.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "dijon_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/dijon.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

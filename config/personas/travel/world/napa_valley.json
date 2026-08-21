@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Culinary & Geography",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["viticulture", "climatology", "agricultural_economics"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "viticulture",
+      "climatology",
+      "agricultural_economics"
+    ],
     "learning_objectives": [
       "Understand the geological and soil diversity (volcanic and alluvial) that defines the Napa Valley AVA",
       "Analyze the thermal physics of the valley's diurnal temperature swing and fog patterns in grape ripening",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "napa_valley_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/napa_valley.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

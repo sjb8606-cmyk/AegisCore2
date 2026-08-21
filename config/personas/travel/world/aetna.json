@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Business & Economics",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["economic_history", "actuarial_science", "urban_development"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "economic_history",
+      "actuarial_science",
+      "urban_development"
+    ],
     "learning_objectives": [
       "Understand the historical events (like major fires and shipwrecks) that necessitated the creation of massive insurance pools",
       "Analyze the impact of the insurance industry on the urban development and economy of Hartford",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "aetna_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/aetna.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

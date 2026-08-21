@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Culinary",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["maritime_viticulture", "clay_soils", "island_biosecurity"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "maritime_viticulture",
+      "clay_soils",
+      "island_biosecurity"
+    ],
     "learning_objectives": [
       "Understand how the Hauraki Gulf's maritime microclimate directly influences the ripening and characteristics of Waiheke wine varietals.",
       "Analyze the ecological challenges of maintaining island biosecurity in a highly visited tourist destination.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "waiheke_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/waiheke.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

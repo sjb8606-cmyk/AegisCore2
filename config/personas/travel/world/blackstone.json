@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Geography",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["environmental_history", "industrial_geography", "regional_planning"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "environmental_history",
+      "industrial_geography",
+      "regional_planning"
+    ],
     "learning_objectives": [
       "Understand why the Blackstone River was uniquely suited for heavy industrialization due to its steep drop rate",
       "Analyze the construction of the Blackstone Canal and its role in connecting Worcester to the Atlantic",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "blackstone_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/blackstone.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

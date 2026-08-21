@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Music & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["american_music_history", "african_american_studies", "urban_geography"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "american_music_history",
+      "african_american_studies",
+      "urban_geography"
+    ],
     "learning_objectives": [
       "Understand the historical role of Beale Street as a sanctuary for Black culture and commerce during segregation",
       "Analyze the musical innovations of the Memphis blues and its influence on rock-and-roll",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "beale_street_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/beale_street.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

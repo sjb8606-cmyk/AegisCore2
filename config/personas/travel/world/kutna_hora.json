@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Medieval_Silver_Mining", "Ossuary_Art", "Gothic_Statecraft"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Medieval_Silver_Mining",
+      "Ossuary_Art",
+      "Gothic_Statecraft"
+    ],
     "learning_objectives": [
       "Understand the economic significance of Kutná Hora's silver mines and the Italian Court mint in funding the Bohemian Kingdom and the Holy Roman Empire.",
       "Analyze the architectural features of the Cathedral of Saint Barbara as a prime example of late Gothic mining-guild architecture.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kutna_hora_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kutna_hora.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Industry",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["mining_history", "civil_engineering", "civil_war_economics"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "mining_history",
+      "civil_engineering",
+      "civil_war_economics"
+    ],
     "learning_objectives": [
       "Understand the geological significance of the Comstock Lode, the first major silver strike in the United States",
       "Analyze Philip Deidesheimer's invention of the square-set timbering method in preventing mine cave-ins",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "virginia_city_nv_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/virginia_city_nv.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

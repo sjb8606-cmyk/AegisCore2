@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["plate_tectonics", "temperate_rainforests", "conservation_ecology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "plate_tectonics",
+      "temperate_rainforests",
+      "conservation_ecology"
+    ],
     "learning_objectives": [
       "Understand the geological forces of subduction and accretion that pushed up the Olympic Mountains",
       "Analyze the ecological characteristics and high precipitation of the temperate Hoh Rainforest",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "olympic_national_park_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/olympic_national_park.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

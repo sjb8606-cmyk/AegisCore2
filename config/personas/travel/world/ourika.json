@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Ecology & Local Culture",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Saffron Agronomy", "Water Management", "Cooperative Economics"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Saffron Agronomy",
+      "Water Management",
+      "Cooperative Economics"
+    ],
     "learning_objectives": [
       "Understand the agricultural and chemical science of Crocus sativus (Saffron), focusing on why the red-clay, high-altitude soil of Ourika produces premium quality.",
       "Analyze the traditional 'Seguia' (irrigation canal) system used to distribute mountain snowmelt across the agricultural terraces.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ourika_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ourika.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

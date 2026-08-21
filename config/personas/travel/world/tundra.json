@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Conservation",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["mammalogy", "conservation_ethics", "arctic_geography"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "mammalogy",
+      "conservation_ethics",
+      "arctic_geography"
+    ],
     "learning_objectives": [
       "Understand the extreme physiological adaptations required for polar bear denning",
       "Analyze the role of peat bogs and permafrost in constructing viable maternal dens",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tundra_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tundra.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Art & History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["baroque_art", "circus_history", "gilded_age"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "baroque_art",
+      "circus_history",
+      "gilded_age"
+    ],
     "learning_objectives": [
       "Understand the Gilded Age history of John Ringling and the economics of the Ringling Bros. Circus",
       "Analyze the Venetian Gothic architecture of Cà d'Zan as a symbol of early 20th-century luxury in Florida",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sarasota_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sarasota.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

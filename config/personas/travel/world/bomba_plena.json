@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Music & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["african_american_music", "plantation_history", "oral_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "african_american_music",
+      "plantation_history",
+      "oral_history"
+    ],
     "learning_objectives": [
       "Understand the historical origins of Bomba as a form of communication and spiritual resistance among enslaved Afro-Puerto Ricans",
       "Analyze the unique musical structure of Bomba, specifically the improvisational dialogue between the dancer and the subidor drum",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bomba_plena_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bomba_plena.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

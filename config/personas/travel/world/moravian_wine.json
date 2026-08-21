@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Culinary",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Viticultural_Science", "Roman_Agriculture", "Sensory_Analysis"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Viticultural_Science",
+      "Roman_Agriculture",
+      "Sensory_Analysis"
+    ],
     "learning_objectives": [
       "Explain how the microclimate of the Pálava Hills and the limestone-rich soils influence the mineral profile and acidity of Moravian wines.",
       "Understand the historical origins of viticulture in Moravia, starting from the Roman legionaries of the 10th Legion at Pasohlávky.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "moravian_wine_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/moravian_wine.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

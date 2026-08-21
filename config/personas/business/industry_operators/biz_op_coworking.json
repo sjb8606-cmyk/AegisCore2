@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Business Operations",
-    "grade_levels": ["university", "adult", "professional"],
-    "curriculum_tags": ["Shared_Space_Economics", "Membership_Based_Business", "Small_Business_Finance"],
+    "grade_levels": [
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Shared_Space_Economics",
+      "Membership_Based_Business",
+      "Small_Business_Finance"
+    ],
     "learning_objectives": [
       "Understand revenue per available desk as the core capacity metric for a coworking business.",
       "Analyze why flexible hot-desk memberships require deliberate overbooking strategy similar to other capacity-constrained industries.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "biz_op_coworking_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/biz_op_coworking.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

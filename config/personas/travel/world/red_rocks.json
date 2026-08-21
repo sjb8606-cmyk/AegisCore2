@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Arts & Geomorphology",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["geomorphology", "acoustic_engineering", "ccc_history"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "geomorphology",
+      "acoustic_engineering",
+      "ccc_history"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Fountain Formation sandstone and the tectonic forces that tilted the monoliths",
       "Analyze the acoustic properties of natural amphitheaters and how human design integrates with rock geology",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "red_rocks_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/red_rocks.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

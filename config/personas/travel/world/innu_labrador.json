@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["indigenous_history", "sociology", "colonial_impacts"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "indigenous_history",
+      "sociology",
+      "colonial_impacts"
+    ],
     "learning_objectives": [
       "Understand the devastating social impact of forced settlement on the traditionally nomadic Innu",
       "Analyze the cultural significance of the caribou hunt and life in 'Nutshimit' (the country)",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "innu_labrador_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/innu_labrador.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["mountain_orogeny_fiji", "sacred_peaks", "indigenous_history_fiji"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "mountain_orogeny_fiji",
+      "sacred_peaks",
+      "indigenous_history_fiji"
+    ],
     "learning_objectives": [
       "Explain the geological and volcanic processes that formed the rugged, dramatic peaks of Waya Island.",
       "Understand the historical and spiritual significance of the mountain peaks as sacred ancestral lookouts and ceremonial sites.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "waya_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/waya.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

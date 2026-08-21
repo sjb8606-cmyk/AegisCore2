@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Viticulture & Landscape Ecology",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Heroic Viticulture", "Terraced Landscapes", "Soil Geology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Heroic Viticulture",
+      "Terraced Landscapes",
+      "Soil Geology"
+    ],
     "learning_objectives": [
       "Understand the geological composition of 'Schist' (flaky metamorphic rock) in the Douro Valley and why its ability to hold heat and fracture is ideal for deep vine roots.",
       "Analyze the history and economic strategy of the 1756 demarcation of the Douro, the first legally defined wine appellation in the world.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "douro_valley_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/douro_valley.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Music & History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["african_american_history", "music_history", "harlem_renaissance"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "african_american_history",
+      "music_history",
+      "harlem_renaissance"
+    ],
     "learning_objectives": [
       "Understand the push and pull factors of the Great Migration that led to the demographic creation of Harlem",
       "Analyze the cultural, literary, and musical innovations of the Harlem Renaissance",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "harlem_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/harlem.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

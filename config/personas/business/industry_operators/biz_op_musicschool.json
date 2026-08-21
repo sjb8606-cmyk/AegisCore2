@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Business Operations",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Education_Business_Economics", "Service_Business_Operations", "Small_Business_Finance"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Education_Business_Economics",
+      "Service_Business_Operations",
+      "Small_Business_Finance"
+    ],
     "learning_objectives": [
       "Understand the instructor pay-to-billing ratio and explain how it determines per-lesson profit margin.",
       "Analyze how seasonal enrollment tied to the school calendar affects a music school's cash flow.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "biz_op_musicschool_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/biz_op_musicschool.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Culture & Geography",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["rural_geography", "american_communities", "preservation"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "rural_geography",
+      "american_communities",
+      "preservation"
+    ],
     "learning_objectives": [
       "Understand the geographic layout of Delaware's historic and scenic byways",
       "Analyze the social and agricultural practices of the Amish communities in central Delaware",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "byways_de_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/byways_de.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

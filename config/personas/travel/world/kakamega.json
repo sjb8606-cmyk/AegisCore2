@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["rainforest_ecology", "butterfly_biodiversity", "conservation_history"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "rainforest_ecology",
+      "butterfly_biodiversity",
+      "conservation_history"
+    ],
     "learning_objectives": [
       "Explain the ecological and historical significance of the Kakamega Forest as the easternmost relic of the ancient Guineo-Congolian rainforest.",
       "Understand the exceptional biodiversity of butterflies and bird species in Kakamega, analyzing their ecological roles in forest pollination.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kakamega_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kakamega.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

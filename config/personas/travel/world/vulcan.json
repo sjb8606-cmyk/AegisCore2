@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Industry",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["industrial_history", "metallurgy", "urbanization"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "industrial_history",
+      "metallurgy",
+      "urbanization"
+    ],
     "learning_objectives": [
       "Understand the geological factors (ore, coal, limestone) that made Birmingham the unique capital of Southern iron production",
       "Analyze the artistic and industrial creation of the Vulcan statue by Giuseppe Moretti for the 1904 St. Louis Exposition",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "vulcan_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/vulcan.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -6,7 +6,12 @@
     "tax_context": "Standard federal and state income/payroll tax; some states offer childcare-specific tax credits or subsidies for providers serving low-income families.",
     "labor_regulation": "Child-to-staff ratios are set at the state level and vary significantly — no single federal standard, meaning compliance requirements differ depending on state of operation.",
     "licensing_bodies": "State department of health and human services (or equivalent) issues childcare licenses; requirements for background checks, facility inspections, and staff certifications vary by state.",
-    "key_compliance_terms": ["state childcare licensing division", "CPR/First Aid certification requirements", "CACFP (Child and Adult Care Food Program) if participating", "state-specific ratio and group size regulations"]
+    "key_compliance_terms": [
+      "state childcare licensing division",
+      "CPR/First Aid certification requirements",
+      "CACFP (Child and Adult Care Food Program) if participating",
+      "state-specific ratio and group size regulations"
+    ]
   },
   "humanity_mode_regional_addendum": {
     "0_percent": "State-by-state variation in mandated child-to-staff ratios, state licensing renewal and inspection cycles, CACFP reimbursement eligibility for meal programs."
@@ -16,5 +21,25 @@
       "Understand why child-to-staff ratio requirements vary significantly from state to state in the US, with no single federal standard.",
       "Analyze how participation in food assistance programs like CACFP affects a daycare's revenue and compliance obligations."
     ]
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

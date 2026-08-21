@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Norse_Migration", "Textile_Crafts", "Island_Biogeography"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Norse_Migration",
+      "Textile_Crafts",
+      "Island_Biogeography"
+    ],
     "learning_objectives": [
       "Trace the historical and linguistic impact of Norse colonization on Shetland's culture and geography.",
       "Understand the physical adaptations of the Shetland Pony that allow it to thrive in nutrient-poor, cold maritime conditions.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "shetland_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/shetland.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

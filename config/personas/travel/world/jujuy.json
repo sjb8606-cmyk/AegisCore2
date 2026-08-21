@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Andean_Pre_Inca_Archaeology", "High_Altitude_Agriculture", "UNESCO_Cultural_Landscapes"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Andean_Pre_Inca_Archaeology",
+      "High_Altitude_Agriculture",
+      "UNESCO_Cultural_Landscapes"
+    ],
     "learning_objectives": [
       "Understand the geological processes of mineral deposition and tectonic uplift that created the spectacular 'Hill of Seven Colors' (Cerro de los Siete Colores).",
       "Analyze the social and military design of the 'Pucará de Tilcara' as a pre-Inca defensive settlement of the Omaguaca culture.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "jujuy_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/jujuy.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

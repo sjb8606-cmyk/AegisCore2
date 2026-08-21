@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Volcanology & Speleology",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Volcanic Geology", "Lava Tube Hydrology", "Savannah Ecology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Volcanic Geology",
+      "Lava Tube Hydrology",
+      "Savannah Ecology"
+    ],
     "learning_objectives": [
       "Understand the geological formation of 'Lava Tubes' (pyroclastic conduits), explaining how a flowing river of basalt lava cools and solidifies on the surface while draining inside.",
       "Analyze the sheer scale of the Undara eruption (190,000 years ago), which produced the longest continuous lava flow from a single volcano on earth.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "undara_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/undara.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

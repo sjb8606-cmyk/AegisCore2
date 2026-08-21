@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Technology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["urban_history", "underground_cities", "railroad_logistics"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "urban_history",
+      "underground_cities",
+      "railroad_logistics"
+    ],
     "learning_objectives": [
       "Understand the historical role of the Great Northern Railway in establishing the towns of the Montana Hi-Line",
       "Analyze the socioeconomic and environmental factors that drove the construction of 'Havre Beneath the Streets' after the 1904 fire",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "havre_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/havre.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

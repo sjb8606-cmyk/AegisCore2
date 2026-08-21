@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["prairie_ecology", "geology", "conservation_ecology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "prairie_ecology",
+      "geology",
+      "conservation_ecology"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Flint Hills and why their chert (flint) deposits prevented agricultural plowing",
       "Analyze the biological structure of the tallgrass prairie, specifically the massive root systems of big bluestem",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tallgrass_ks_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tallgrass_ks.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

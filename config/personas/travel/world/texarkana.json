@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Geography",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["political_geography", "railway_history", "civic_administration"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "political_geography",
+      "railway_history",
+      "civic_administration"
+    ],
     "learning_objectives": [
       "Understand the geopolitical decisions that created the state line dividing Texarkana, Arkansas and Texarkana, Texas",
       "Analyze the administrative challenges and cooperation required to run a single city across two different state legal systems",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "texarkana_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/texarkana.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["coastal_morphology", "dune_hydrology", "conservation_ecology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "coastal_morphology",
+      "dune_hydrology",
+      "conservation_ecology"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Great Sand Dunes through wind-blown deposits trapped by the mountains",
       "Analyze the unique hydrology of Medano Creek and its role in recycling sand back into the dune field",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "great_sand_dunes_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/great_sand_dunes.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

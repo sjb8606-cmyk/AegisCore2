@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Local Culture & Landscape Ecology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Mughal Gardens", "Wetland Ecology", "Colonial History"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Mughal Gardens",
+      "Wetland Ecology",
+      "Colonial History"
+    ],
     "learning_objectives": [
       "Understand the geological and limnological formation of Dal Lake as a high-altitude, urban lake basin in the Himalayas.",
       "Analyze the design of the Mughal Gardens (Shalimar Bagh, Nishat Bagh), evaluating how their stepped, geometric terraces use gravity-fed water channels.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "dal_lake_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/dal_lake.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Culinary Culture & Urban Geography",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Vertical Urbanism", "Culinary Chemistry", "Wartime Capitals"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Vertical Urbanism",
+      "Culinary Chemistry",
+      "Wartime Capitals"
+    ],
     "learning_objectives": [
       "Understand the architectural and urban design of the 'Diaojiaolou' (stilted houses) and how they adapt to extreme, vertical river cliffs.",
       "Analyze the chemistry and sensory science of Chongqing Hotpot, focusing on how capsaicin (chili) and hydroxy-alpha-sanshool (Sichuan pepper) create the 'Mala' (numbing-hot) sensation.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "chongqing_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/chongqing.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

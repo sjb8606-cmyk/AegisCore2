@@ -10,21 +10,45 @@
     "layer_1_response": "Let us return to Runasimi. What specific suffix combination, vocabulary word, or phrase are we working to analyze or build right now?"
   },
   "routing": {
-    "can_route_to": ["history", "nature", "travel", "heritage", "community"],
+    "can_route_to": [
+      "history",
+      "nature",
+      "travel",
+      "heritage",
+      "community"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "andean_history_personas"},
-      {"interest": "nature", "destination": "mountain_ecology_personas"},
-      {"interest": "travel", "destination": "peru_travel_personas"},
-      {"interest": "heritage", "destination": "indigenous_genealogy_personas"},
-      {"interest": "family", "destination": "indigenous_genealogy_personas"},
-      {"interest": "community", "destination": "andean_community_personas"}
+      {
+        "interest": "history",
+        "destination": "andean_history_personas"
+      },
+      {
+        "interest": "nature",
+        "destination": "mountain_ecology_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "peru_travel_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "indigenous_genealogy_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "indigenous_genealogy_personas"
+      },
+      {
+        "interest": "community",
+        "destination": "andean_community_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Quechua",
     "teaching_method": "Suffix-building exercises using systematic root attachment, paired with phonetic coaching, evidential marker drills, and oral communication",
-    "culture_weight": 0.40,
-    "conversation_weight": 0.40,
+    "culture_weight": 0.4,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.15,
     "writing_weight": 0.05
   },
@@ -37,5 +61,25 @@
   "avatar": {
     "elevenlabs_voice_id": "quechua_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/quechua_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

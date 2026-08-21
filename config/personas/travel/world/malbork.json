@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Teutonic_Knights_History", "Brick_Gothic_Architecture", "Medieval_Military_Engineering"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Teutonic_Knights_History",
+      "Brick_Gothic_Architecture",
+      "Medieval_Military_Engineering"
+    ],
     "learning_objectives": [
       "Analyze the military and architectural design of Malbork (Marienburg) as the ultimate expression of the Northern European Brick Gothic style.",
       "Understand the historical role of the Teutonic Knights in the Northern Crusades, establishing a monastic state in Prussia.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "malbork_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/malbork.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

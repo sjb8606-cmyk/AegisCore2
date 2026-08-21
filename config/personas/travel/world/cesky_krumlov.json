@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Renaissance_Towns", "Baroque_Theater", "UNESCO_Preservation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Renaissance_Towns",
+      "Baroque_Theater",
+      "UNESCO_Preservation"
+    ],
     "learning_objectives": [
       "Explain how the natural loop geography of the Vltava River dictated the strategic defense and urban growth of Český Krumlov.",
       "Analyze the historical significance of the Český Krumlov Castle Baroque Theater as one of only two fully preserved 18th-century theaters in the world.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cesky_krumlov_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cesky_krumlov.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

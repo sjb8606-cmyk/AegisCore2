@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["coastal_ecology", "granite_geology", "historical_navigation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "coastal_ecology",
+      "granite_geology",
+      "historical_navigation"
+    ],
     "learning_objectives": [
       "Understand the geomorphology of Separation Point Granite and how its mineral composition creates the famous golden sands of the park.",
       "Analyze the ecological impact of marine reserves (like Tonga Island Marine Reserve) on restoring local fish and fur seal populations.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "abel_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/abel.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Archaeology",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Roman Engineering", "Classical Architecture", "Urban Hydrology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Roman Engineering",
+      "Classical Architecture",
+      "Urban Hydrology"
+    ],
     "learning_objectives": [
       "Understand the structural engineering of Perge's colonnaded street, focusing on how the central water channel regulated temperature and provided clean water.",
       "Analyze the design and social function of the Roman Stadium of Perge, one of the most preserved in the ancient world.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "perge_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/perge.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

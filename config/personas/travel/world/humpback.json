@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["marine_mammal_biology", "migration_routes", "coastal_ecosystems_fiji"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "marine_mammal_biology",
+      "migration_routes",
+      "coastal_ecosystems_fiji"
+    ],
     "learning_objectives": [
       "Explain the reproductive and migratory lifecycle of the Humpback Whale (Megaptera novaeangliae) and why the Tongan bays are ideal breeding grounds.",
       "Understand the historical shift in Tonga from a whale-hunting nation to a global leader in non-invasive whale-watching and conservation.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "humpback_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/humpback.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

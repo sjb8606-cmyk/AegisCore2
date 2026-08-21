@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Civil Rights",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["colonial_resistance", "slavery_history", "rebellion"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "colonial_resistance",
+      "slavery_history",
+      "rebellion"
+    ],
     "learning_objectives": [
       "Understand the causes, organization, and scale of the 1811 German Coast Uprising, the largest slave revolt in US history",
       "Analyze the role of Destrehan Plantation as the trial site for the captured leaders of the rebellion",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "destrehan_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/destrehan.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

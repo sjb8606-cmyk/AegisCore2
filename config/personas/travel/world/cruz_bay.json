@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["coastal_history", "island_sociology", "tourism_economics"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "coastal_history",
+      "island_sociology",
+      "tourism_economics"
+    ],
     "learning_objectives": [
       "Understand the historical development of Cruz Bay as the commercial and administrative center of St. John",
       "Analyze the social dynamics and logistical challenges of living in a year-round, ferry-dependent island community",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cruz_bay_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cruz_bay.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

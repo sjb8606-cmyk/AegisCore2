@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Maritime History & Ecology",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["maritime_history", "marine_ecology", "gentrification"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "maritime_history",
+      "marine_ecology",
+      "gentrification"
+    ],
     "learning_objectives": [
       "Understand the historical significance of the Montauk Lighthouse as the first public works project of the United States",
       "Analyze the ecological biodiversity of the offshore shelf and the migration of pelagic fish",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "montauk_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/montauk.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage & Nature",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["archaeology", "indigenous_studies", "geology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "archaeology",
+      "indigenous_studies",
+      "geology"
+    ],
     "learning_objectives": [
       "Understand the spiritual and astronomical significance of the Whiteshell petroforms",
       "Analyze the intersection of Canadian Shield geology with Indigenous sacred sites",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "whiteshell_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/whiteshell.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

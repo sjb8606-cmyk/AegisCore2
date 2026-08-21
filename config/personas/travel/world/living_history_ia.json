@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Heritage",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["pioneer_history", "agricultural_education", "material_culture"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "pioneer_history",
+      "agricultural_education",
+      "material_culture"
+    ],
     "learning_objectives": [
       "Understand the historical timeline of agricultural technology in Iowa from the Ioway Nation to the 1900 horse-powered farm",
       "Analyze the material culture and vernacular architecture of 19th-century Midwestern pioneer homesteads",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "living_history_ia_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/living_history_ia.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

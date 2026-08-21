@@ -18,8 +18,19 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["coastal_erosion_dunes", "marine_mammal_colonies", "shipwreck_histories"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "coastal_erosion_dunes",
+      "marine_mammal_colonies",
+      "shipwreck_histories"
+    ],
     "learning_objectives": [
       "Explain the geological and oceanographic factors (the cold Benguela Current and the vaguada costera fog) that create the desolate, hyper-arid climate of the Skeleton Coast.",
       "Understand the biological adaptations and conservation status of the Cape Fur Seal (Arctocephalus pusillus) colonies at Cape Cross.",
@@ -35,5 +46,25 @@
   "avatar": {
     "elevenlabs_voice_id": "skeleton_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/skeleton.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

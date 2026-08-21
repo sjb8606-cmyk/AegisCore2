@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Political Sociology & Religious Studies",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Tibetan Diaspora", "Buddhist Philosophy", "History of Exile"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Tibetan Diaspora",
+      "Buddhist Philosophy",
+      "History of Exile"
+    ],
     "learning_objectives": [
       "Understand the historical events of the 1959 Tibetan uprising and the subsequent establishment of the Tibetan Government-in-Exile in Dharamsala.",
       "Analyze the core philosophical principles of Tibetan Buddhism, focusing on compassion (karuna) and mindfulness as taught by the Dalai Lama.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "dharamsala_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/dharamsala.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

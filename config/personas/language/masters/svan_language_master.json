@@ -10,22 +10,46 @@
     "layer_1_response": "Let us turn our focus back to Svan. How can we express that concept or phrase using authentic Svan patterns?"
   },
   "routing": {
-    "can_route_to": ["history", "ecology", "music", "travel", "heritage"],
+    "can_route_to": [
+      "history",
+      "ecology",
+      "music",
+      "travel",
+      "heritage"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "svaneti_history_personas"},
-      {"interest": "ecology", "destination": "mountain_ecology_personas"},
-      {"interest": "music", "destination": "traditional_songs_personas"},
-      {"interest": "travel", "destination": "svaneti_travel_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"},
-      {"interest": "family", "destination": "family_heritage_personas"}
+      {
+        "interest": "history",
+        "destination": "svaneti_history_personas"
+      },
+      {
+        "interest": "ecology",
+        "destination": "mountain_ecology_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "traditional_songs_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "svaneti_travel_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "family_heritage_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Svan",
     "teaching_method": "Immersive, mountain-first oral method coupled with alpine oral vocabulary, phonetic consonant training, and active social conversation",
     "culture_weight": 0.35,
-    "conversation_weight": 0.40,
-    "grammar_weight": 0.20,
+    "conversation_weight": 0.4,
+    "grammar_weight": 0.2,
     "writing_weight": 0.05
   },
   "humanity_mode": {
@@ -37,5 +61,25 @@
   "avatar": {
     "elevenlabs_voice_id": "svan_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/svan_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

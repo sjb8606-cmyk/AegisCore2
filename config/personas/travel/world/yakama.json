@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["indigenous_sovereignty", "water_rights", "treaty_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "indigenous_sovereignty",
+      "water_rights",
+      "treaty_history"
+    ],
     "learning_objectives": [
       "Understand the historical territory, social structure, and plateau life of the Confederated Tribes and Bands of the Yakama Nation",
       "Analyze the Treaty of 1855 and the retention of off-reservation hunting and fishing rights in the Columbia River",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "yakama_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/yakama.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

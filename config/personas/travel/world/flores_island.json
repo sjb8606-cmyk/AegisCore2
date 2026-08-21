@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Coastal Geography",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Plate Tectonics", "Island Biogeography", "Coastal Erosion"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Plate Tectonics",
+      "Island Biogeography",
+      "Coastal Erosion"
+    ],
     "learning_objectives": [
       "Understand the tectonic position of Flores Island, which sits on the North American Plate, explaining why it is moving away from mainland Europe.",
       "Analyze the formation of 'hanging valleys' and waterfalls (like Poço da Alagoinha) through rapid volcanic uplift and marine erosion.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "flores_island_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/flores_island.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

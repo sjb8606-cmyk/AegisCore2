@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Maritime Geography",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["urban_planning", "landscape_architecture", "border_studies"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "urban_planning",
+      "landscape_architecture",
+      "border_studies"
+    ],
     "learning_objectives": [
       "Understand the landscape design principles of Frederick Law Olmsted in creating Belle Isle Park",
       "Analyze the strategic and economic importance of the Detroit River as an international maritime border",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "belle_isle_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/belle_isle.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

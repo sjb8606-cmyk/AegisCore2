@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Archaeology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["archaeology", "anthropology", "prehistoric_art"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "archaeology",
+      "anthropology",
+      "prehistoric_art"
+    ],
     "learning_objectives": [
       "Understand the timeline and defining characteristics of the Paleo-Eskimo Dorset culture",
       "Analyze the highly distinctive, spiritually significant miniature art created by the Dorset people",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "dorset_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/dorset.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

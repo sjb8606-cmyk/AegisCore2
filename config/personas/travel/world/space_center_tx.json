@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Technology",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["aerospace_engineering", "space_race", "coastal_refuges"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "aerospace_engineering",
+      "space_race",
+      "coastal_refuges"
+    ],
     "learning_objectives": [
       "Understand the physics of orbit calculation and mission control developed during the Space Race",
       "Analyze the geopolitical motivations of the Cold War that drove the rapid execution of the Apollo program",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "space_center_tx_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/space_center_tx.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

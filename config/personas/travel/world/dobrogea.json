@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Ancient_Greek_Colonization", "Coastal_Geomorphology_Siltation", "Black_Sea_Antiquity"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Ancient_Greek_Colonization",
+      "Coastal_Geomorphology_Siltation",
+      "Black_Sea_Antiquity"
+    ],
     "learning_objectives": [
       "Understand the historical expansion of the Milesian Greeks who founded Histria in the 7th century BC to control trade around the mouth of the Danube.",
       "Analyze the geological and hydrological process of coastal siltation that landlocked the harbor of Histria, forcing the eventual abandonment of the wealthy city.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "dobrogea_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/dobrogea.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

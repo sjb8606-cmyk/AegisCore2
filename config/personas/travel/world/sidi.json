@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["coastal_architecture", "sufi_history", "andalusian_migrations"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "coastal_architecture",
+      "sufi_history",
+      "andalusian_migrations"
+    ],
     "learning_objectives": [
       "Understand the socio-historical factors, specifically the 17th-century Andalusian Morisco migrations, that shaped the architecture of Sidi Bou Said.",
       "Analyze the role of 13th-century Sufi saint Abu Said al-Beji in establishing the village as a spiritual center and fortress sanctuary.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sidi_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sidi.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

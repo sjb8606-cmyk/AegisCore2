@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Literature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Romanticism", "Environmental_Conservation", "Childrens_Literature"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Romanticism",
+      "Environmental_Conservation",
+      "Childrens_Literature"
+    ],
     "learning_objectives": [
       "Analyze how the physical landscape of the Lake District inspired the Romantic poets to shift from Enlightenment rationality to nature-focused spirituality.",
       "Understand the environmental and agricultural legacy of Beatrix Potter in preserving the Herdwick sheep and donating vast acreage to the National Trust.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "lake_district_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/lake_district.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Law",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["military_history", "civil_war_end", "peace_negotiations"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "military_history",
+      "civil_war_end",
+      "peace_negotiations"
+    ],
     "learning_objectives": [
       "Understand the tactical events of the Appomattox Campaign leading to the encirclement of Lee's army",
       "Analyze the legal and political terms of surrender drafted by Ulysses S. Grant that prevented partisan warfare",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "appomattox_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/appomattox.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

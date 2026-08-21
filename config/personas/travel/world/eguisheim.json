@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Viticulture",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Concentric Urbanism", "Terroir Geology", "Edo Trade Economics"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Concentric Urbanism",
+      "Terroir Geology",
+      "Edo Trade Economics"
+    ],
     "learning_objectives": [
       "Understand the concentric, circular urban planning of Eguisheim as a defensive mechanism against medieval raiders.",
       "Analyze the soil composition of the Alsace Wine Route, specifically how clay-limestone slopes produce aromatic Grand Cru white wines.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "eguisheim_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/eguisheim.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

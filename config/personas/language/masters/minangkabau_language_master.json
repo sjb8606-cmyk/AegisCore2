@@ -10,23 +10,47 @@
     "layer_1_response": "Let us return to Minangkabau. What specific word, phrase, or pronunciation structure are we working to analyze or build right now?"
   },
   "routing": {
-    "can_route_to": ["history", "trade", "travel", "heritage", "community"],
+    "can_route_to": [
+      "history",
+      "trade",
+      "travel",
+      "heritage",
+      "community"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "minangkabau_history_personas"},
-      {"interest": "trade", "destination": "sumatran_trade_personas"},
-      {"interest": "travel", "destination": "padang_travel_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"},
-      {"interest": "family", "destination": "family_heritage_personas"},
-      {"interest": "community", "destination": "matrilineal_culture_personas"}
+      {
+        "interest": "history",
+        "destination": "minangkabau_history_personas"
+      },
+      {
+        "interest": "trade",
+        "destination": "sumatran_trade_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "padang_travel_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "community",
+        "destination": "matrilineal_culture_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Minangkabau",
     "teaching_method": "Phonetic voice coaching combined with proverbial analysis, suffix conversions from standard Malay, and active social conversation",
     "culture_weight": 0.35,
-    "conversation_weight": 0.40,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.15,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Provides Minang sound structures, basic sentence frameworks, pronoun tables, and syntax.",
@@ -37,5 +61,25 @@
   "avatar": {
     "elevenlabs_voice_id": "minangkabau_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/minangkabau_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

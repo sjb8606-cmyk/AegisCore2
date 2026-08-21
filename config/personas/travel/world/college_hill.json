@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Architecture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["colonial_architecture", "historic_preservation", "economic_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "colonial_architecture",
+      "historic_preservation",
+      "economic_history"
+    ],
     "learning_objectives": [
       "Identify the defining characteristics of Colonial, Georgian, and Federal architecture on Benefit Street",
       "Analyze the role of maritime commerce and the slave trade in funding the early development of Brown University and College Hill",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "college_hill_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/college_hill.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

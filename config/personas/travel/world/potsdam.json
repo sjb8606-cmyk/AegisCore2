@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Prussian_History", "Rococo_Architecture", "Potsdam_Conference"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Prussian_History",
+      "Rococo_Architecture",
+      "Potsdam_Conference"
+    ],
     "learning_objectives": [
       "Understand the political and philosophical concept of 'Enlightened Despotism' as practiced by Frederick the Great at Sanssouci.",
       "Analyze the stylistic transition from Baroque heavy symmetry to the delicate playfulness of Prussian Rococo in Potsdam's palaces.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "potsdam_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/potsdam.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

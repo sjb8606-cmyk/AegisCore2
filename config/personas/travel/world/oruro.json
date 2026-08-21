@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["carnival_history", "religious_syncretism", "indigenous_theater"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "carnival_history",
+      "religious_syncretism",
+      "indigenous_theater"
+    ],
     "learning_objectives": [
       "Understand the historical roots of the Oruro Carnival, tracing its origin from the pre-colonial Uru festival of Ito to its modern syncretism.",
       "Analyze the cultural and spiritual significance of the 'Diablada' (Dance of the Devils) as a visual representation of mining struggle and cosmic balance.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "oruro_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/oruro.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["glaciology", "climate_change", "plate_tectonics"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "glaciology",
+      "climate_change",
+      "plate_tectonics"
+    ],
     "learning_objectives": [
       "Explain the unique geographic and climatic factors that allow Franz Josef Glacier to descend into a temperate rainforest at low altitude.",
       "Analyze the geological mechanics of plate tectonics along the Alpine Fault that lift the Southern Alps and sustain glacier formation.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "franz_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/franz.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

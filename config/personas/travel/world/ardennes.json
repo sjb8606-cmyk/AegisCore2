@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Boreal_Forest_Ecology", "Battle_of_the_Bulge_History", "Conservation_High_Fens"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Boreal_Forest_Ecology",
+      "Battle_of_the_Bulge_History",
+      "Conservation_High_Fens"
+    ],
     "learning_objectives": [
       "Explain the ecological structure of the Ardennes’ temperate coniferous and deciduous forests and their adaptation to cold, upland climates.",
       "Understand the historical and tactical military significance of the Ardennes Forest in World War II, focusing on the 1944-1945 Ardennes Counteroffensive (Battle of the Bulge).",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ardennes_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ardennes.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

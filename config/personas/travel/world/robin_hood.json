@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Medieval_Ballads", "Forest_Laws", "Social_Banditry"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Medieval_Ballads",
+      "Forest_Laws",
+      "Social_Banditry"
+    ],
     "learning_objectives": [
       "Understand the legal definition and harsh penalties of 'Forest Law' in Norman and Plantagenet England.",
       "Trace the historical evolution of the Robin Hood legend from early violent ballads to the modern gentrified protector of the poor.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "robin_hood_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/robin_hood.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

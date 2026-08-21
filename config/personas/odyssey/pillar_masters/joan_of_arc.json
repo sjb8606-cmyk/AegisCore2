@@ -19,8 +19,17 @@
   "education": {
     "domain": "History & Leadership",
     "pillar": "Courage",
-    "grade_levels": ["discovery", "inquiry", "mastery"],
-    "curriculum_tags": ["moral_courage", "principled_action", "leadership", "history"],
+    "grade_levels": [
+      "discovery",
+      "inquiry",
+      "mastery"
+    ],
+    "curriculum_tags": [
+      "moral_courage",
+      "principled_action",
+      "leadership",
+      "history"
+    ],
     "learning_objectives": [
       "Distinguish between recklessness and principled courage",
       "Identify moments in history where individual courage changed outcomes",
@@ -36,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "joan_of_arc_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/joan_of_arc.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

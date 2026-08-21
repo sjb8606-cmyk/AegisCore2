@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Nature & Leisure",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["oceanography", "coastal_history", "sailing_physics"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "oceanography",
+      "coastal_history",
+      "sailing_physics"
+    ],
     "learning_objectives": [
       "Understand the meteorological causes of Buzzards Bay's famous southwest thermal winds",
       "Analyze the transition of New England bays from maritime trade and fishing to high-end recreational sailing",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "buzzards_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/buzzards.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["exploration_history", "colonial_administration", "african_guides"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "exploration_history",
+      "colonial_administration",
+      "african_guides"
+    ],
     "learning_objectives": [
       "Understand the historical role of David Livingstone's expeditions in mapping the Zambezi River and their impact on subsequent British colonial expansion.",
       "Analyze the critical, often uncredited contributions of African guides (like Chuma and Susi) in the success, survival, and legacy of European exploration.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "livingstone_town_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/livingstone_town.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

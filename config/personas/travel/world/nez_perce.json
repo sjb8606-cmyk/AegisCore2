@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["indigenous_sovereignty", "nez_perce_flight", "treaty_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "indigenous_sovereignty",
+      "nez_perce_flight",
+      "treaty_history"
+    ],
     "learning_objectives": [
       "Understand the military and political brilliance of the Nez Perce Flight of 1877 under Chief Joseph and Chief Looking Glass",
       "Analyze the legal fraud of the 1863 Treaty that reduced the Nez Perce reservation by 90 percent after the discovery of gold",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "nez_perce_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/nez_perce.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

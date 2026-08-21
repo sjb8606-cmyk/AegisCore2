@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["paleontology_mylodon", "karst_caves", "indigenous_canoe_nomads"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "paleontology_mylodon",
+      "karst_caves",
+      "indigenous_canoe_nomads"
+    ],
     "learning_objectives": [
       "Understand the paleontological significance of the Mylodon Cave, explaining how its dry, stable environment preserved 13,000-year-old remains of the Mylodon darwini.",
       "Analyze the geological processes of water and wind erosion that formed the massive limestone cave system of Última Esperanza.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "puerto_natales_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/puerto_natales.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

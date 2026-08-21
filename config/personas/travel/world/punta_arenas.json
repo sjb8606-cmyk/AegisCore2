@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["historical_navigation", "pastoral_economics_sheep", "subantarctic_ecology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "historical_navigation",
+      "pastoral_economics_sheep",
+      "subantarctic_ecology"
+    ],
     "learning_objectives": [
       "Understand the historical significance of the Strait of Magellan as the primary global maritime passage between the Atlantic and Pacific Oceans before 1914.",
       "Analyze the socioeconomic impact of the 19th-century wool and sheep-farming boom on the development and architecture of Punta Arenas.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "punta_arenas_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/punta_arenas.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

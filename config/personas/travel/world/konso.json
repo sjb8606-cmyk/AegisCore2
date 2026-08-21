@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["terrace_engineering", "indigenous_governance_revolutions", "traditional_crafts"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "terrace_engineering",
+      "indigenous_governance_revolutions",
+      "traditional_crafts"
+    ],
     "learning_objectives": [
       "Understand the social and political structure of the Konso chiefdom, explaining the traditional authority and clan council system.",
       "Analyze the engineering and hydrological principles of traditional stone terracing that prevent soil erosion on steep, high-altitude slopes.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "konso_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/konso.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

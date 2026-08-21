@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Science & History",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["astronomy", "urban_history", "public_spaces"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "astronomy",
+      "urban_history",
+      "public_spaces"
+    ],
     "learning_objectives": [
       "Understand the astronomical and civic mission of the Griffith Observatory (opened 1935)",
       "Analyze the architectural design and neoclassical symbolism of the Art Deco monument",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "griffith_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/griffith.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

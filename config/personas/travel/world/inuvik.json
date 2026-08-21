@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Urban Geography & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["urban_planning", "permafrost_engineering", "social_geography"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "urban_planning",
+      "permafrost_engineering",
+      "social_geography"
+    ],
     "learning_objectives": [
       "Understand the engineering concept of utilidors and why subterranean infrastructure fails in the Arctic",
       "Analyze the historical reasons for the Canadian government actively creating a planned town in the deep north",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "inuvik_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/inuvik.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

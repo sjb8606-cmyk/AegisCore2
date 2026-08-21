@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["geology", "geomorphology", "plains_geography"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "geology",
+      "geomorphology",
+      "plains_geography"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Llano Estacado through sedimentary deposition and caliche capping",
       "Analyze why the caliche caprock protected the underlying sandstone from erosion, creating the massive flat plateau",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "llano_estacado_nm_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/llano_estacado_nm.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

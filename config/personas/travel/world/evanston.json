@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Education & History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["higher_education", "temperance_movement", "suburbanization"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "higher_education",
+      "temperance_movement",
+      "suburbanization"
+    ],
     "learning_objectives": [
       "Understand the historical founding of Northwestern University and its role in early Midwestern higher education",
       "Analyze the social history and political impact of the Women's Christian Temperance Union (WCTU) based in Evanston",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "evanston_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/evanston.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

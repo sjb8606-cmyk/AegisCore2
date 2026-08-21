@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["marine_biology", "boreal_ecology", "geomorphology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "marine_biology",
+      "boreal_ecology",
+      "geomorphology"
+    ],
     "learning_objectives": [
       "Understand how extreme tidal ranges create unique nutrient-rich marine ecosystems",
       "Analyze the geological composition and glacial history of West Quoddy Head",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cobscook_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cobscook.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

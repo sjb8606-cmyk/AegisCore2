@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Nature",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["structural_geology", "forest_ecology", "public_land_management"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "structural_geology",
+      "forest_ecology",
+      "public_land_management"
+    ],
     "learning_objectives": [
       "Understand the geological processes of plate collision that created the east-west folding of the Ouachita Mountains",
       "Analyze the ecological impact of the mountain range's orientation on the distribution of flora and fauna",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ouachita_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ouachita.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

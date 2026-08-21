@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culture",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["transportation_history", "migrant_studies", "pop_culture"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "transportation_history",
+      "migrant_studies",
+      "pop_culture"
+    ],
     "learning_objectives": [
       "Understand the geopolitical and economic reasons for establishing Route 66 as the primary highway connecting Chicago to LA",
       "Analyze the role of the highway as a vital corridor of survival for displaced Oklahoma families during the Dust Bowl",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "route_66_ok_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/route_66_ok.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

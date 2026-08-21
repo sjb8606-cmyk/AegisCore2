@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culture",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["western_history", "lincoln_county_war", "frontier_justice"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "western_history",
+      "lincoln_county_war",
+      "frontier_justice"
+    ],
     "learning_objectives": [
       "Understand the economic and political causes of the Lincoln County War (1878) as a monopoly dispute",
       "Analyze the role of Billy the Kid and the Regulators in the violence and subsequent legal fallout",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "lincoln_nm_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/lincoln_nm.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

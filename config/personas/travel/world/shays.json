@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Law",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["american_revolution", "economic_justice", "constitutional_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "american_revolution",
+      "economic_justice",
+      "constitutional_history"
+    ],
     "learning_objectives": [
       "Understand the economic grievances of debt-ridden farmers that led to Shays' Rebellion in 1786",
       "Analyze how Shays' Rebellion exposed the weakness of the Articles of Confederation and catalyzed the drafting of the U.S. Constitution",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "shays_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/shays.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

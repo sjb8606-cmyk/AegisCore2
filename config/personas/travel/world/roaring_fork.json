@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["hydrology", "pioneer_technology", "appalachian_ecology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "hydrology",
+      "pioneer_technology",
+      "appalachian_ecology"
+    ],
     "learning_objectives": [
       "Understand the hydrology and erosion dynamics of high-gradient mountain streams like the Roaring Fork",
       "Analyze the mechanics of the historic tub mills used by mountain settlers to grind corn using water power",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "roaring_fork_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/roaring_fork.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

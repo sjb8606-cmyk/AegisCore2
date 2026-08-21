@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Religion",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["utopian_societies", "colonial_history", "german_emigration"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "utopian_societies",
+      "colonial_history",
+      "german_emigration"
+    ],
     "learning_objectives": [
       "Understand the theological and social motivations of the Society of Separatists of Zoar (founded 1817)",
       "Analyze the communal economic system and the use of the central garden as an allegorical religious space",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "zoar_village_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/zoar_village.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

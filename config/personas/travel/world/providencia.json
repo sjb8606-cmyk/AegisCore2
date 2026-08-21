@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["marine_biodiversity", "raizal_creole", "island_ecology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "marine_biodiversity",
+      "raizal_creole",
+      "island_ecology"
+    ],
     "learning_objectives": [
       "Understand the ecological and geological importance of the McBean Lagoon Marine National Park and its coral reef barrier.",
       "Analyze the distinct history and linguistic preservation of the Raizal people of Old Providence, highlighting their Anglophone puritan heritage.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "providencia_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/providencia.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

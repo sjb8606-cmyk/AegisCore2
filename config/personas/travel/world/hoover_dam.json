@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Engineering",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["civil_engineering", "new_deal_history", "river_hydrology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "civil_engineering",
+      "new_deal_history",
+      "river_hydrology"
+    ],
     "learning_objectives": [
       "Understand the civil engineering and hydraulic principles of constructing an arch-gravity dam",
       "Analyze the role of the federal government in providing relief employment during the Great Depression through mega-infrastructure projects",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "hoover_dam_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/hoover_dam.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Primate_Conservation", "Rainforest_Ecosystems", "Wildlife_Rehabilitation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Primate_Conservation",
+      "Rainforest_Ecosystems",
+      "Wildlife_Rehabilitation"
+    ],
     "learning_objectives": [
       "Understand the biology, behavioral adaptations, and endangered status of the Sumatran Orangutan (Pongo abelii).",
       "Analyze the ecological role of tropical rainforests in supporting biodiversity, oxygen production, and global carbon storage.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "orangutan_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/orangutan.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

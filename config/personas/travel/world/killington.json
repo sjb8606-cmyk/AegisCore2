@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Recreation & Geography",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["snowmaking_engineering", "climatology", "recreation_management"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "snowmaking_engineering",
+      "climatology",
+      "recreation_management"
+    ],
     "learning_objectives": [
       "Understand the mechanical engineering and thermodynamics required for large-scale artificial snowmaking",
       "Analyze the historical creation of the Long Trail, the oldest continuous long-distance hiking trail in the US",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "killington_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/killington.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

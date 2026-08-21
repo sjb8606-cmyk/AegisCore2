@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Architecture & Art History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Sicilian Baroque", "Disaster Recovery", "Urban Sociology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Sicilian Baroque",
+      "Disaster Recovery",
+      "Urban Sociology"
+    ],
     "learning_objectives": [
       "Understand the urban reconstruction of the Val di Noto following the catastrophic 1693 earthquake, focusing on the rise of the 'Sicilian Baroque' style.",
       "Analyze the socio-spatial division of Ragusa into two rival cities (Ragusa Ibla for the old aristocracy, Ragusa Superiore for the new middle class).",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ragusa_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ragusa.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

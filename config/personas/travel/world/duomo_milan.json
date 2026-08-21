@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Architecture & Fashion History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Lombard Gothic", "Fashion Sociology", "Urban Architecture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Lombard Gothic",
+      "Fashion Sociology",
+      "Urban Architecture"
+    ],
     "learning_objectives": [
       "Understand the architectural and logistical history of the Duomo di Milano, focusing on the use of pink Candoglia marble and its six-century timeline.",
       "Analyze the transition of Milan from an industrial post-war city to the global capital of pret-a-porter (ready-to-wear) fashion in the 1970s.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "duomo_milan_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/duomo_milan.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Dutch_East_India_Company", "Maritime_Pinisi_Ships", "Modern_Indonesian_Statehood"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Dutch_East_India_Company",
+      "Maritime_Pinisi_Ships",
+      "Modern_Indonesian_Statehood"
+    ],
     "learning_objectives": [
       "Understand the historical role of Sunda Kelapa and Batavia as the premier trading capital of the Dutch East India Company (VOC) in the spice trade.",
       "Analyze the structural and maritime engineering of the traditional Bugis 'Pinisi' schooners that have operated out of Jakarta for centuries.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "jakarta_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/jakarta.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

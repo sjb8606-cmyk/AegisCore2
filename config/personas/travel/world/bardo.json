@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["roman_mosaics", "ancient_mythology", "cultural_preservation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "roman_mosaics",
+      "ancient_mythology",
+      "cultural_preservation"
+    ],
     "learning_objectives": [
       "Understand the artistic techniques and physical materials (tesserae of marble, limestone, and glass) used to construct Roman mosaics.",
       "Analyze the social and economic history of Roman North Africa represented in mosaic scenes of agriculture, hunting, and mythology.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bardo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bardo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

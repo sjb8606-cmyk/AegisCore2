@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["seismology_and_tectonics", "geothermal_energy", "secondary_succession"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "seismology_and_tectonics",
+      "geothermal_energy",
+      "secondary_succession"
+    ],
     "learning_objectives": [
       "Understand the volcanic and tectonic mechanisms of the Central American Volcanic Arc that generate Arenal's stratovolcano structure.",
       "Analyze the process of secondary ecological succession on historical lava flows, studying how plants reclaim sterile volcanic terrain.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "arenal_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/arenal.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Industrial History & Culinary Culture",
-    "grade_levels": ["middle_school", "high_school", "adult", "professional"],
-    "curriculum_tags": ["Industrial Archaeology", "Urban Sociology", "Fermentation Chemistry"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Industrial Archaeology",
+      "Urban Sociology",
+      "Fermentation Chemistry"
+    ],
     "learning_objectives": [
       "Understand the historical development of the Liberties as an independent, industrial suburb outside the jurisdiction of medieval Dublin.",
       "Analyze the industrial scale and social impact of the Guinness Brewery (St. James's Gate) on the economy and working-class housing of Dublin.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "the_liberties_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/the_liberties.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

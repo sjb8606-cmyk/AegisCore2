@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Vernacular_Architecture", "Rural_Sociology", "Open_Air_Museums"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Vernacular_Architecture",
+      "Rural_Sociology",
+      "Open_Air_Museums"
+    ],
     "learning_objectives": [
       "Understand the vision of sociologist Dimitrie Gusti in establishing the Village Museum in 1936 to document and preserve traditional Romanian rural life.",
       "Analyze the distinct regional variations in Romanian vernacular architecture, from the fortified 'cula' houses to steep-roofed timber churches.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "herastrau_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/herastrau.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

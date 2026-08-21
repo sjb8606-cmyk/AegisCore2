@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Botany & Local History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Rose Agronomy", "Clay Architecture", "Subtropical Hydrology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Rose Agronomy",
+      "Clay Architecture",
+      "Subtropical Hydrology"
+    ],
     "learning_objectives": [
       "Understand the agricultural and chemical science of Rosa damascena (Damask Rose), focusing on why the red-clay, high-altitude soil of Dades produces premium rose oil.",
       "Analyze the traditional 'Seguia' (irrigation canal) system used to distribute mountain snowmelt across the agricultural terraces.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "dades_valley_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/dades_valley.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

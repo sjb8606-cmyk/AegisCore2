@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Archaeology",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Minoan Civilization", "Bronze Age Art", "Volcanic Preservation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Minoan Civilization",
+      "Bronze Age Art",
+      "Volcanic Preservation"
+    ],
     "learning_objectives": [
       "Understand the geological and historical sequence of the Late Bronze Age Thera eruption (Minoan eruption) and its impact on Mediterranean history.",
       "Analyze the urban planning of Akrotiri, focusing on its multi-story houses, indoor plumbing, and paved streets as indicators of an advanced society.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "akrotiri_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/akrotiri.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

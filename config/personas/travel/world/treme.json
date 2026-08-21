@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Civil Rights",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["civil_rights", "jazz_history", "urban_renewal"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "civil_rights",
+      "jazz_history",
+      "urban_renewal"
+    ],
     "learning_objectives": [
       "Understand the historical significance of Tremé as the oldest neighborhood of free people of color in the United States",
       "Analyze the role of Congo Square as the cultural incubator for African music, dance, and the birth of jazz",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "treme_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/treme.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

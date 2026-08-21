@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Maritime Geography",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["maritime_history", "barrier_islands", "coastal_transit"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "maritime_history",
+      "barrier_islands",
+      "coastal_transit"
+    ],
     "learning_objectives": [
       "Understand the historical role of St. Marys as one of the oldest colonial ports of entry on the southern coast",
       "Analyze the logistics and environmental protection strategies of the Cumberland Island National Seashore",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cumberland_gateway_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cumberland_gateway.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["tin_can_mail", "volcanic_calderas_tonga", "emergency_evacuation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "tin_can_mail",
+      "volcanic_calderas_tonga",
+      "emergency_evacuation"
+    ],
     "learning_objectives": [
       "Understand the historical role and development of the 'Tin Can Mail' system of Niuafo'ou during the 19th and 20th centuries.",
       "Analyze the geological and volcanic mechanisms of the massive shield-volcano caldera of Lake Vai Lahi.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "niuafoou_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/niuafoou.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

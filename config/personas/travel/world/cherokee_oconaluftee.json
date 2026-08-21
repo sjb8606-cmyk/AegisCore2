@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["indigenous_studies", "language_preservation", "cultural_tourism"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "indigenous_studies",
+      "language_preservation",
+      "cultural_tourism"
+    ],
     "learning_objectives": [
       "Understand the historical sovereignty and land tenure of the Eastern Band of Cherokee Indians",
       "Analyze the role of living history museums (like the Oconaluftee Indian Village) in cultural preservation and education",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cherokee_oconaluftee_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cherokee_oconaluftee.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

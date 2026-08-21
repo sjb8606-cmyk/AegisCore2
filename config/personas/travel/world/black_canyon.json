@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Nature",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["geomorphology", "precambrian_geology", "river_hydrology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "geomorphology",
+      "precambrian_geology",
+      "river_hydrology"
+    ],
     "learning_objectives": [
       "Understand the geological forces of uplift and fluvial erosion that carved the Black Canyon of the Gunnison",
       "Analyze the mineral composition and formation of the ancient Precambrian metamorphic and igneous rocks",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "black_canyon_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/black_canyon.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

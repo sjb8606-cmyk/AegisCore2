@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Local Culture & Maritime History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Maritime Commerce", "Industrial Iron Architecture", "Regional Gastronomy"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Maritime Commerce",
+      "Industrial Iron Architecture",
+      "Regional Gastronomy"
+    ],
     "learning_objectives": [
       "Understand the historical role of the Ribeira (UNESCO World Heritage) as the primary commercial and naval gateway of the Kingdom of Portugal.",
       "Analyze the structural engineering of the Dom Luís I Bridge, built by Téophile Seyrig (a disciple of Gustave Eiffel) to span the Douro river with a single iron arch.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ribeira_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ribeira.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

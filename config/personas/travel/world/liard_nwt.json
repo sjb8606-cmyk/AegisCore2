@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Geography",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["fur_trade_history", "hydrology", "cultural_geography"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "fur_trade_history",
+      "hydrology",
+      "cultural_geography"
+    ],
     "learning_objectives": [
       "Understand the geographic necessity of Fort Simpson as the central hub of the northern fur trade",
       "Analyze the hydrological phenomenon of two massive rivers meeting and maintaining separate currents before mixing",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "liard_nwt_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/liard_nwt.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

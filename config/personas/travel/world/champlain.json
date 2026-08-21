@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Maritime History & Ecology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["maritime_history", "underwater_archaeology", "lacustrine_ecology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "maritime_history",
+      "underwater_archaeology",
+      "lacustrine_ecology"
+    ],
     "learning_objectives": [
       "Understand the strategic military importance of Lake Champlain in the Revolutionary War and the War of 1812",
       "Analyze why cold, fresh water preserves wooden shipwrecks (like the Spitfire) in near-pristine condition",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "champlain_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/champlain.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

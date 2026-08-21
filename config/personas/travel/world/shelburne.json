@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Agriculture & Art",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["landscape_architecture", "folk_art", "sustainable_farming"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "landscape_architecture",
+      "folk_art",
+      "sustainable_farming"
+    ],
     "learning_objectives": [
       "Understand the landscape design principles of Frederick Law Olmsted at Shelburne Farms",
       "Analyze the preservation of American folk art and historic buildings at the Shelburne Museum",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "shelburne_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/shelburne.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

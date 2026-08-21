@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Wildlife Biology",
-    "grade_levels": ["elementary", "middle_school", "adult"],
-    "curriculum_tags": ["Island Biogeography", "Coastal Geomorphology", "Wildlife Conservation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Island Biogeography",
+      "Coastal Geomorphology",
+      "Wildlife Conservation"
+    ],
     "learning_objectives": [
       "Understand the biogeography of Kangaroo Island, analyzing how its isolation from the mainland (10,000 years ago) protected its unique endemic subspecies.",
       "Analyze the geomorphology of the 'Remarkable Rocks' (granite tor formations), explaining how wind, rain, and salt spray sculpt solid stone.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kangaroo_island_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kangaroo_island.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

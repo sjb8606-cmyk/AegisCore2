@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["sam_sharpe_rebellion", "georgian_great_houses", "resort_economics"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "sam_sharpe_rebellion",
+      "georgian_great_houses",
+      "resort_economics"
+    ],
     "learning_objectives": [
       "Understand the historical significance of the 1831 Christmas Rebellion (Baptist War) led by Samuel Sharpe and its role in accelerating the abolition of slavery.",
       "Analyze the architectural design and colonial social structure represented by the Jamaican Georgian-style Great Houses like Rose Hall.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "montego_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/montego.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

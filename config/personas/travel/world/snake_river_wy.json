@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["river_hydrology", "riparian_ecology", "mountain_geography"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "river_hydrology",
+      "riparian_ecology",
+      "mountain_geography"
+    ],
     "learning_objectives": [
       "Understand the hydrology and source waters of the upper Snake River in the Greater Yellowstone Ecosystem",
       "Analyze the ecological importance of riparian zones in supporting nesting birds of prey and large mammals",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "snake_river_wy_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/snake_river_wy.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

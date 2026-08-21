@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["kastom_law", "trade_networks_solomons", "regional_identity_solomons"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "kastom_law",
+      "trade_networks_solomons",
+      "regional_identity_solomons"
+    ],
     "learning_objectives": [
       "Understand the historical role of Auki as the primary regional administrative and commercial capital of Malaita.",
       "Analyze the cultural and political significance of 'Kastom' (traditional law) and how it governs social relations in Malaita.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "auki_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/auki.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

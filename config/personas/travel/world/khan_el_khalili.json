@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Local Culture & Economic History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Mamluk History", "Islamic Commerce", "Urban Geography"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Mamluk History",
+      "Islamic Commerce",
+      "Urban Geography"
+    ],
     "learning_objectives": [
       "Understand the historical development of the Khan el-Khalili from its 14th-century foundation under Sultan Barquq as a major trade node on the spice route.",
       "Analyze the role of the 'Foundouk' (caravanserai) as a high-security, vaulted merchant lodging designed to facilitate international trade.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "khan_el_khalili_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/khan_el_khalili.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

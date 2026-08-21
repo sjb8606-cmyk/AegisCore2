@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage & Archaeology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["mound_builders", "indigenous_studies", "french_colonialism"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "mound_builders",
+      "indigenous_studies",
+      "french_colonialism"
+    ],
     "learning_objectives": [
       "Understand the complex social structure and direct-line solar monarchy (the Great Sun) of the Natchez Nation",
       "Analyze the archaeological and structural significance of the Grand Village of the Natchez mounds",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "natchez_nation_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/natchez_nation.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

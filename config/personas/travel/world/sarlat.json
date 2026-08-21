@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Gastronomy",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Medieval Trade", "Culinary Science", "Historic Preservation"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Medieval Trade",
+      "Culinary Science",
+      "Historic Preservation"
+    ],
     "learning_objectives": [
       "Understand the urban planning of Sarlat as a medieval monastic market town that preserved its golden-stone architecture due to 19th-century economic isolation.",
       "Analyze the organic biology and symbiosis of the Tuber melanosporum (Périgord black truffle) with the roots of oak trees.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sarlat_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sarlat.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

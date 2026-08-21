@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["lewis_clark", "river_hydrology", "frontier_logistics"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "lewis_clark",
+      "river_hydrology",
+      "frontier_logistics"
+    ],
     "learning_objectives": [
       "Understand the strategic geographic importance of the Great Falls of the Missouri for early continental exploration",
       "Analyze the logistics and physical challenges of the 1805 portage led by Lewis and Clark",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "great_falls_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/great_falls.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

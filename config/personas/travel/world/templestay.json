@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Philosophy",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Korean_Buddhism_Seon", "Monastic_Etiquette", "Mindfulness_Science"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Korean_Buddhism_Seon",
+      "Monastic_Etiquette",
+      "Mindfulness_Science"
+    ],
     "learning_objectives": [
       "Understand the core philosophical tenets of Seon (Zen) Buddhism, focusing on mindfulness, non-attachment, and the concept of non-duality (Bul-i).",
       "Analyze the structure and ethical purpose of 'Baru Gongyang' (traditional monastic formal dining) in minimizing waste and practicing gratitude.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "templestay_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/templestay.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

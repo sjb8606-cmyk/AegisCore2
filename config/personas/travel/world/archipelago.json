@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Island_Uplift", "Baltic_Marine_Ecology", "Archipelago_Biodiversity"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Island_Uplift",
+      "Baltic_Marine_Ecology",
+      "Archipelago_Biodiversity"
+    ],
     "learning_objectives": [
       "Explain the geological process of post-glacial land uplift (isostatic rebound) that is creating new islands in the Archipelago Sea.",
       "Understand the ecological importance of the Archipelago Sea National Park as a unique biosphere reserve of marine and terrestrial life.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "archipelago_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/archipelago.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Ecology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["estuary_ecology", "indigenous_history", "colonial_rivalries"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "estuary_ecology",
+      "indigenous_history",
+      "colonial_rivalries"
+    ],
     "learning_objectives": [
       "Understand the ecological significance of the Timucuan Ecological and Historic Preserve",
       "Analyze the archaeological evidence of Timucua shell middens and their role as historical archives",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "jacksonville_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/jacksonville.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

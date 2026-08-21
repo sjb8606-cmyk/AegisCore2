@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Culinary Culture & Local Economics",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Culinary Science", "Food Systems History", "Immigration Studies"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Culinary Science",
+      "Food Systems History",
+      "Immigration Studies"
+    ],
     "learning_objectives": [
       "Understand the chemical process of 'acid curing' (denaturation of proteins) that defines traditional Peruvian Ceviche.",
       "Analyze the role of Japanese immigration (Nikkei culture) in transforming the preparation of Ceviche from a long, overnight marinade to an instant, fresh-fish cure.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "surquillo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/surquillo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["montane_forests", "primate_acoustics", "watershed_ecology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "montane_forests",
+      "primate_acoustics",
+      "watershed_ecology"
+    ],
     "learning_objectives": [
       "Explain the ecological and geological history of Nyungwe as a Pleistocene refuge forest that survived global glaciation cycles.",
       "Understand the chimpanzee (Pan troglodytes) social and tool-use behaviors observed in high-altitude rainforests.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "nyungwe_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/nyungwe.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

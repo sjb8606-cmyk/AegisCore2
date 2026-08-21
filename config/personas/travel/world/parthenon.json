@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Architecture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["neoclassical_architecture", "world_expositions", "cultural_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "neoclassical_architecture",
+      "world_expositions",
+      "cultural_history"
+    ],
     "learning_objectives": [
       "Understand the architectural principles of classical Greek design modeled in the Parthenon replica",
       "Analyze the role of the Tennessee Centennial Exposition (1897) in establishing Nashville's public parks system",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "parthenon_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/parthenon.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Museum_Island", "Classical_Neoclassicism", "Prussian_Enlightenment"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Museum_Island",
+      "Classical_Neoclassicism",
+      "Prussian_Enlightenment"
+    ],
     "learning_objectives": [
       "Explain the urban planning and philosophical concepts behind the creation of Museum Island as a public sanctuary for art and science.",
       "Identify the key neoclassic architectural characteristics of Karl Friedrich Schinkel's designs on the island.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "spree_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/spree.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

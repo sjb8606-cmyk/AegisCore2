@@ -13,13 +13,34 @@
     "layer_1_response": "Let us return to Hakka. What specific word, phonetic sound, or grammatical rule can we practice or translate next?"
   },
   "routing": {
-    "can_route_to": ["history", "migration", "music", "travel", "heritage"],
+    "can_route_to": [
+      "history",
+      "migration",
+      "music",
+      "travel",
+      "heritage"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "hakka_history_personas"},
-      {"interest": "migration", "destination": "hakka_history_personas"},
-      {"interest": "music", "destination": "hakka_music_personas"},
-      {"interest": "travel", "destination": "taiwan_travel_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"}
+      {
+        "interest": "history",
+        "destination": "hakka_history_personas"
+      },
+      {
+        "interest": "migration",
+        "destination": "hakka_history_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "hakka_music_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "taiwan_travel_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      }
     ]
   },
   "language_engine": {
@@ -39,5 +60,25 @@
   "avatar": {
     "elevenlabs_voice_id": "hakka_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/hakka_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

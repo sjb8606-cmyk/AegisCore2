@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["folk_art", "agricultural_history", "traditional_crafts"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "folk_art",
+      "agricultural_history",
+      "traditional_crafts"
+    ],
     "learning_objectives": [
       "Understand the historical role of the oxcart (carreta) as the critical transport vehicle during the 19th-century Costa Rican coffee boom.",
       "Analyze the geometric and floral design techniques of traditional Sarchí oxcart painting, recognized by UNESCO as intangible cultural heritage.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sarchi_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sarchi.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

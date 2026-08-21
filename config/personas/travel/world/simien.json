@@ -18,8 +18,19 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["alpine_geomorphology", "primate_evolution", "endemic_conservation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "alpine_geomorphology",
+      "primate_evolution",
+      "endemic_conservation"
+    ],
     "learning_objectives": [
       "Explain the geological and volcanic forces of the Oligocene epoch that deposited the massive basalt layers of the Simien Mountains.",
       "Understand the unique biological and dietary adaptations of the Gelada Baboon (Theropithecus gelada) as the world's only grass-eating primate.",
@@ -35,5 +46,25 @@
   "avatar": {
     "elevenlabs_voice_id": "simien_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/simien.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

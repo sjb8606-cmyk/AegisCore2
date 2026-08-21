@@ -19,13 +19,44 @@
   "education": {
     "grade_band": "discovery",
     "grades": "4–6",
-    "subjects": ["mathematics", "reasoning", "technology"],
+    "subjects": [
+      "mathematics",
+      "reasoning",
+      "technology"
+    ],
     "tier": 1,
     "persona_style": "puzzle-codebreaker, precise, structured",
-    "curriculum_tags": ["fractions", "decimals", "geometry", "pre_algebra", "logical_reasoning", "technology_basics"]
+    "curriculum_tags": [
+      "fractions",
+      "decimals",
+      "geometry",
+      "pre_algebra",
+      "logical_reasoning",
+      "technology_basics"
+    ]
   },
   "avatar": {
     "elevenlabs_voice_id": "edu_cipher_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/edu_cipher.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["marine_mammalogy", "avian_ecology", "fjord_oceanography"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "marine_mammalogy",
+      "avian_ecology",
+      "fjord_oceanography"
+    ],
     "learning_objectives": [
       "Explain the unique geological and oceanographic characteristics of Golfo Dulce as one of the world's few tropical fjords (inner basins).",
       "Understand the breeding and nesting behaviors of the Scarlet Macaw (Ara macao) and why the Osa Peninsula is their primary Costa Rican sanctuary.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "osa_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/osa.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["volcanology", "limnology", "geomorphology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "volcanology",
+      "limnology",
+      "geomorphology"
+    ],
     "learning_objectives": [
       "Understand the geological eruption and collapse of Mount Mazama that created the caldera of Crater Lake",
       "Analyze the unique limnology and water clarity of a lake with no river inlets or outlets, fed entirely by rain and snow",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "crater_lake_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/crater_lake.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

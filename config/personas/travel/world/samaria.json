@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Alpine Geomorphology & Wilderness Ecology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Karst Geomorphology", "Island Biogeography", "Alpine Conservation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Karst Geomorphology",
+      "Island Biogeography",
+      "Alpine Conservation"
+    ],
     "learning_objectives": [
       "Understand the geological process of tectonic uplift and water erosion that carved the massive limestone walls of the Samaria Gorge.",
       "Analyze the adaptation of the endemic Cretan Wild Goat (Kri-Kri, Capra aegagrus cretica) to survival in isolated limestone cliffs.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "samaria_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/samaria.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

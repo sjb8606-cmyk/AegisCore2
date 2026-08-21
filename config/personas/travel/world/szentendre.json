@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Serbian_Migration", "Baroque_Orthodox_Art", "Artists_Colonies"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Serbian_Migration",
+      "Baroque_Orthodox_Art",
+      "Artists_Colonies"
+    ],
     "learning_objectives": [
       "Understand the historical context of the 1690 Great Serb Migration and how it directly shaped the Mediterranean-Baroque architecture of Szentendre.",
       "Analyze the artistic significance of the Szentendre Artists' Colony (Szentendrei Művésztelep) in the development of 20th-century Hungarian modernism.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "szentendre_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/szentendre.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Ecology & Oceanography",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Coastal Geomorphology", "Coral Reef Ecology", "Ecotourism Planning"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Coastal Geomorphology",
+      "Coral Reef Ecology",
+      "Ecotourism Planning"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Whitsunday Islands as drowned granite peaks of the mainland mountain range, submerged by rising sea levels.",
       "Analyze the chemical composition of Whitehaven’s sand, explaining why its 98% pure silica content prevents it from retaining heat under the tropical sun.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "whitsundays_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/whitsundays.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["industrial_heritage", "labor_movements", "nitrate_boom"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "industrial_heritage",
+      "labor_movements",
+      "nitrate_boom"
+    ],
     "learning_objectives": [
       "Understand the historical significance of the late 19th-century 'saltpeter boom' (nitrate extraction) in shaping the economy and borders of northern Chile.",
       "Analyze the social and economic conditions of the Humberstone and Santa Laura ghost towns as prime examples of company-town urban layouts.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "iquique_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/iquique.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["river_hydrology", "coastal_rainforests_fiji", "soil_preservation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "river_hydrology",
+      "coastal_rainforests_fiji",
+      "soil_preservation"
+    ],
     "learning_objectives": [
       "Explain the geological and hydrological processes that form the freshwater river systems of volcanic islands like Efate.",
       "Understand the ecological role of riverine forest corridors in filtering water and preventing coastal estuary silting.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "rentapao_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/rentapao.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

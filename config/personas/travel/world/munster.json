@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Culinary & Mountain Geography",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["High-Altitude Agronomy", "Microbiology of Fermentation", "Mountain Geography"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "High-Altitude Agronomy",
+      "Microbiology of Fermentation",
+      "Mountain Geography"
+    ],
     "learning_objectives": [
       "Understand the geographic model of transhumance (moving dairy herds to high pastures in summer) in the Vosges mountains.",
       "Analyze the microbiology of washed-rind cheeses, specifically how Brevibacterium linens bacteria creates the orange rind and intense aroma of Munster.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "munster_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/munster.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

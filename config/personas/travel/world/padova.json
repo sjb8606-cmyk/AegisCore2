@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Art History & Science History",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Proto-Renaissance Art", "History of Medicine", "Scientific Revolution"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Proto-Renaissance Art",
+      "History of Medicine",
+      "Scientific Revolution"
+    ],
     "learning_objectives": [
       "Understand Giotto’s revolutionary use of spatial depth, three-dimensionality, and human emotion in the Scrovegni Chapel (1305).",
       "Analyze the role of the University of Padua (founded 1222) as a center of early modern science, focusing on Galileo’s physics and Vesalius's anatomy.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "padova_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/padova.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

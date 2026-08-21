@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Science & History",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["climate_science", "maritime_history", "arctic_sovereignty"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "climate_science",
+      "maritime_history",
+      "arctic_sovereignty"
+    ],
     "learning_objectives": [
       "Understand the global climatological impact of the opening of the Northwest Passage due to sea ice loss",
       "Analyze the geopolitical implications of newly accessible shipping routes for Canadian Arctic sovereignty",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cambridge_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cambridge.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Nature",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["volcanology", "geomorphology", "planetary_analogues"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "volcanology",
+      "geomorphology",
+      "planetary_analogues"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Great Rift and the basalt lava flows of Craters of the Moon",
       "Analyze the role of the monument as a planetary analogue for Mars and lunar geologic research",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "craters_of_the_moon_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/craters_of_the_moon.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["geothermal_science", "maori_weaving_and_carving", "cultural_tourism_history"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "geothermal_science",
+      "maori_weaving_and_carving",
+      "cultural_tourism_history"
+    ],
     "learning_objectives": [
       "Explain the volcanic and tectonic mechanisms of the Taupō Volcanic Zone that generate Rotorua's geothermal phenomena.",
       "Understand how the Te Arawa people historically integrated geothermal heat into their daily cooking (hāngī), bathing, and home construction.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "rotorua_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/rotorua.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

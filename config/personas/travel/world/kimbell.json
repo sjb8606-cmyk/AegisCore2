@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Art & Architecture",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["modern_architecture", "museum_design", "art_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "modern_architecture",
+      "museum_design",
+      "art_history"
+    ],
     "learning_objectives": [
       "Understand the architectural principles of Louis Kahn in using cycloidal concrete vaults to filter natural light",
       "Analyze the role of the Kimbell Art Museum in pioneering modern gallery design and conservation",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kimbell_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kimbell.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

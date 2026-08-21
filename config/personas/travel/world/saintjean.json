@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Sacred Landscapes",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Pilgrimage Studies", "Basque Architecture", "Medieval Borderlands"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Pilgrimage Studies",
+      "Basque Architecture",
+      "Medieval Borderlands"
+    ],
     "learning_objectives": [
       "Understand the historical role of Saint-Jean-Pied-de-Port as the primary assembly and defensive gateway for the Camino de Santiago.",
       "Analyze the military and defensive architecture of the citadel as designed by Vauban to guard the border between France and Spain.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "saint_jean_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/saint_jean.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

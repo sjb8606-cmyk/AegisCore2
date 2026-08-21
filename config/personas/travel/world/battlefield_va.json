@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Military Science",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["military_history", "civil_war", "total_warfare"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "military_history",
+      "civil_war",
+      "total_warfare"
+    ],
     "learning_objectives": [
       "Understand the strategic geographic importance of the Shenandoah Valley as a military corridor and agricultural source",
       "Analyze the tactics of Sheridan's 'The Burning' in 1864 as a pioneer execution of total war",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "battlefield_va_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/battlefield_va.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

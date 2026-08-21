@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Culture & Recreation",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["appalachian_studies", "folklore", "recreation_economics"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "appalachian_studies",
+      "folklore",
+      "recreation_economics"
+    ],
     "learning_objectives": [
       "Understand the historical transition of the Brainerd Lakes region from a logging and railway hub to a major resort destination",
       "Analyze the role of Paul Bunyan folklore in constructing the identity of the lumber industry",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "brainerd_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/brainerd.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

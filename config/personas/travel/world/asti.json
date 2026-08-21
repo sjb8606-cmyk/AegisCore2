@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Viticulture",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Medieval Communes", "Low-Alcohol Fermentation", "Monferrato Terroir"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Medieval Communes",
+      "Low-Alcohol Fermentation",
+      "Monferrato Terroir"
+    ],
     "learning_objectives": [
       "Understand the rise of the independent commune of Asti in the Middle Ages and the historical significance of the Palio (the oldest continuously run race in Italy).",
       "Analyze the cold-fermentation chemistry (Asti method) used to produce Moscato d'Asti, explaining how stopping fermentation early preserves natural grape sugars and low alcohol.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "asti_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/asti.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

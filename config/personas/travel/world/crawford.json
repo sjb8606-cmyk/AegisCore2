@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Adventure",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["geomorphology", "pioneer_history", "wilderness_safety"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "geomorphology",
+      "pioneer_history",
+      "wilderness_safety"
+    ],
     "learning_objectives": [
       "Understand the glacial forces that carved the dramatic U-shaped valley of Crawford Notch",
       "Analyze the tragic Willey Landslide of 1826 and its role in sparking early American landscape tourism",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "crawford_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/crawford.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

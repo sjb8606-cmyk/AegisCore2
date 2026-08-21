@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Nature & Travel",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["geothermal_geology", "botany", "tourism_geography"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "geothermal_geology",
+      "botany",
+      "tourism_geography"
+    ],
     "learning_objectives": [
       "Understand the geological processes that heat the groundwater to create a geothermal spring",
       "Analyze how a localized heat source creates a microclimate supporting unique flora in the subarctic",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "liard_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/liard.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

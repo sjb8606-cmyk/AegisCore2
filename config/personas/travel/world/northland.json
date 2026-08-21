@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["maori_cosmology", "forest_ecology", "first_voyages"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "maori_cosmology",
+      "forest_ecology",
+      "first_voyages"
+    ],
     "learning_objectives": [
       "Interpret the spiritual significance of Te Rerenga Wairua (Cape Reinga) in Māori cosmology as the leaping-off point for spirits returning to Hawaiki.",
       "Explain the ecological and cultural importance of the ancient Kauri forests, specifically identifying threats like Kauri Dieback disease.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "northland_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/northland.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

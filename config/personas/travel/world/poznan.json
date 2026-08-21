@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Culinary",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Foundation_of_Poland_Piast", "Culinary_Heritage_EU_PGI", "Renaissance_Civic_Architecture"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Foundation_of_Poland_Piast",
+      "Culinary_Heritage_EU_PGI",
+      "Renaissance_Civic_Architecture"
+    ],
     "learning_objectives": [
       "Explain the historical significance of Ostrów Tumski (Cathedral Island) in Poznań as the seat of the first Polish rulers and the site of the Baptism of Poland in 966 AD.",
       "Understand the culinary science and legal protections of the St. Martin's Croissant (Rogal świętomarciński), certified by the EU's Protected Geographical Indication.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "poznan_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/poznan.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

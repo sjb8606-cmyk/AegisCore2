@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Arts & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["public_art", "rural_revitalization", "cultural_geography"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "public_art",
+      "rural_revitalization",
+      "cultural_geography"
+    ],
     "learning_objectives": [
       "Understand the socio-economic factors that led to the decline of family farms and small towns in western North Dakota",
       "Analyze the role of Gary Greff's 'Enchanted Highway' as a model for grassroots, arts-led rural economic development",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "enchanted_highway_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/enchanted_highway.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

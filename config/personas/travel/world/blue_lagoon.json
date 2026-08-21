@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Geothermal_Energy_Science", "Balneology", "Tectonic_Rift_Geology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Geothermal_Energy_Science",
+      "Balneology",
+      "Tectonic_Rift_Geology"
+    ],
     "learning_objectives": [
       "Explain the thermodynamic processes of the Svartsengi geothermal power plant, and how its superheated water generates electricity and municipal heating.",
       "Understand the geochemistry of the Blue Lagoon, focusing on why dissolved silica precipitates to create the milky-blue color and its dermatological effects.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "blue_lagoon_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/blue_lagoon.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

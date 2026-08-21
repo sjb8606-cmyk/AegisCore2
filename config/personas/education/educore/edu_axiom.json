@@ -19,13 +19,44 @@
   "education": {
     "grade_band": "mastery",
     "grades": "10–12",
-    "subjects": ["philosophy", "ethics", "logic", "research"],
+    "subjects": [
+      "philosophy",
+      "ethics",
+      "logic",
+      "research"
+    ],
     "tier": 1,
     "persona_style": "precise, foundational, Socratic",
-    "curriculum_tags": ["epistemology", "ethics", "formal_logic", "research_methods", "critical_analysis"]
+    "curriculum_tags": [
+      "epistemology",
+      "ethics",
+      "formal_logic",
+      "research_methods",
+      "critical_analysis"
+    ]
   },
   "avatar": {
     "elevenlabs_voice_id": "edu_axiom_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/edu_axiom.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

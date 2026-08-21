@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Nature",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["appalachian_ecology", "civilian_conservation_corps", "geomorphology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "appalachian_ecology",
+      "civilian_conservation_corps",
+      "geomorphology"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Ridge-and-Valley province in West Virginia's panhandle",
       "Analyze the historical role of the CCC in constructing Cacapon State Park during the Great Depression",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cacapon_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cacapon.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

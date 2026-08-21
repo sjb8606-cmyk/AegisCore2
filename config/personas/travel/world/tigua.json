@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["indigenous_sovereignty", "pueblo_revolt", "colonial_treaties"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "indigenous_sovereignty",
+      "pueblo_revolt",
+      "colonial_treaties"
+    ],
     "learning_objectives": [
       "Understand the historical events of the Pueblo Revolt of 1680 and the displacement of the Tigua",
       "Analyze the legal and political establishment of Ysleta del Sur Pueblo as a sovereign nation in Texas",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tigua_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tigua.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

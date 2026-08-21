@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Business Operations",
-    "grade_levels": ["university", "adult", "professional"],
-    "curriculum_tags": ["Veterinary_Business_Economics", "Healthcare_Adjacent_Business", "Small_Business_Finance"],
+    "grade_levels": [
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Veterinary_Business_Economics",
+      "Healthcare_Adjacent_Business",
+      "Small_Business_Finance"
+    ],
     "learning_objectives": [
       "Understand revenue per exam room hour as a core capacity metric for a veterinary clinic.",
       "Analyze how equipment depreciation must be weighed against actual diagnostic usage volume to determine if an investment was justified.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "biz_op_veterinary_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/biz_op_veterinary.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Archaeology",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Roman Mauretania", "Classical Architecture", "Urban Archaeology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Roman Mauretania",
+      "Classical Architecture",
+      "Urban Archaeology"
+    ],
     "learning_objectives": [
       "Understand the historical role of Volubilis (Tanger-Mediterranean) as the primary administrative capital of Roman Mauretania Tingitana.",
       "Analyze the architectural design of the basilica, forum, and triumphal arches as tools of Roman imperial administration on the African frontier.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "volubilis_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/volubilis.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

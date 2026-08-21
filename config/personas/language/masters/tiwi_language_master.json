@@ -10,14 +10,38 @@
     "layer_1_response": "Let us bring our focus back to Tiwi. What specific phrase, spelling, or pronunciation structure are we working to analyze right now?"
   },
   "routing": {
-    "can_route_to": ["history", "art", "travel", "heritage", "football"],
+    "can_route_to": [
+      "history",
+      "art",
+      "travel",
+      "heritage",
+      "football"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "tiwi_islands_history_personas"},
-      {"interest": "art", "destination": "tiwi_art_personas"},
-      {"interest": "travel", "destination": "bathurst_travel_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"},
-      {"interest": "family", "destination": "family_heritage_personas"},
-      {"interest": "football", "destination": "football_personas"}
+      {
+        "interest": "history",
+        "destination": "tiwi_islands_history_personas"
+      },
+      {
+        "interest": "art",
+        "destination": "tiwi_art_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "bathurst_travel_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "football",
+        "destination": "football_personas"
+      }
     ]
   },
   "language_engine": {
@@ -37,5 +61,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tiwi_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tiwi_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

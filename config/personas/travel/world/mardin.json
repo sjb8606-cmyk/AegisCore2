@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Cultural Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Syriac Christianity", "Artuqid Architecture", "Mesopotamian Geography"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Syriac Christianity",
+      "Artuqid Architecture",
+      "Mesopotamian Geography"
+    ],
     "learning_objectives": [
       "Understand the historical role of Mardin as a multi-ethnic, multi-religious mountain fortress-city guarding the northern edge of the Mesopotamian plains.",
       "Analyze the history and liturgy of the Syriac Orthodox Church, focusing on the Deyrulzafaran (Saffron) Monastery as an active center of Aramaic-speaking Christianity.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mardin_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mardin.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

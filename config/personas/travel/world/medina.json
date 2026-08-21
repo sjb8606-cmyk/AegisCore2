@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["islamic_architecture", "hafsid_dynasty", "medina_urbanization"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "islamic_architecture",
+      "hafsid_dynasty",
+      "medina_urbanization"
+    ],
     "learning_objectives": [
       "Understand the historical role of the Al-Zitouna Mosque as one of the oldest centers of Islamic education and commerce in North Africa.",
       "Analyze the architectural and urban planning features of a traditional Islamic Medina, focusing on its cellular, pedestrian-centric design.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "medina_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/medina.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Culinary Culture & Local Sociology",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Culinary History", "Urban Sociology", "Regional Gastronomy"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Culinary History",
+      "Urban Sociology",
+      "Regional Gastronomy"
+    ],
     "learning_objectives": [
       "Understand the historical development of Wangfujing as a primary commercial street of Beijing, tracing its origin from the Ming Dynasty princes' wells.",
       "Analyze the social structure of the 'Night Market' and how it functions as a space of democratic, shared public dining in a high-density capital.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "wangfujing_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/wangfujing.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

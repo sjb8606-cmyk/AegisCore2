@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Architecture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["urban_planning", "monumental_architecture", "civic_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "urban_planning",
+      "monumental_architecture",
+      "civic_history"
+    ],
     "learning_objectives": [
       "Understand the history and design of the Soldiers and Sailors Monument on Monument Circle (completed 1901)",
       "Analyze Alexander Ralston's 1821 urban plan for Indianapolis modeled on Washington DC",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "monument_circle_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/monument_circle.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

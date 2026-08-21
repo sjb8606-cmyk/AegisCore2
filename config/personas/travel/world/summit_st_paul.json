@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Architecture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["architectural_history", "gilded_age", "social_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "architectural_history",
+      "gilded_age",
+      "social_history"
+    ],
     "learning_objectives": [
       "Understand the architectural styles (Queen Anne, Richardsonian Romanesque) represented on Summit Avenue",
       "Analyze the role of the railroad barons (James J. Hill) in funding the early development of St. Paul",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "summit_st_paul_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/summit_st_paul.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

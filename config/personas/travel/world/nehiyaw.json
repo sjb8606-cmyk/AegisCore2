@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["treaty_law", "canadian_history", "indigenous_rights"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "treaty_law",
+      "canadian_history",
+      "indigenous_rights"
+    ],
     "learning_objectives": [
       "Understand the difference between the spirit and intent of treaties versus their written English text",
       "Analyze the historical context of Treaty 4 negotiations at Fort Qu'Appelle",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "nehiyaw_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/nehiyaw.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

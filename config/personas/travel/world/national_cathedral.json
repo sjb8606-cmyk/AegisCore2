@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Architecture & Religion",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["gothic_architecture", "american_religion", "stonecarving"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "gothic_architecture",
+      "american_religion",
+      "stonecarving"
+    ],
     "learning_objectives": [
       "Identify the defining characteristics of Neo-Gothic architecture used in the construction of the National Cathedral",
       "Analyze the role of the cathedral as a non-denominational civic space for national mourning and celebration",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "national_cathedral_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/national_cathedral.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

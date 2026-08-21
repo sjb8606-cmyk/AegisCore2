@@ -10,13 +10,34 @@
     "layer_1_response": "That topic is outside our language focus. Let us return to Amharic. What word, script character, or sentence form shall we practice next?"
   },
   "routing": {
-    "can_route_to": ["history", "music", "travel", "archaeology", "heritage"],
+    "can_route_to": [
+      "history",
+      "music",
+      "travel",
+      "archaeology",
+      "heritage"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "ethiopian_history_personas"},
-      {"interest": "music", "destination": "ethio_jazz_personas"},
-      {"interest": "travel", "destination": "ethiopia_travel_personas"},
-      {"interest": "archaeology", "destination": "horn_of_africa_archaeology_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"}
+      {
+        "interest": "history",
+        "destination": "ethiopian_history_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "ethio_jazz_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "ethiopia_travel_personas"
+      },
+      {
+        "interest": "archaeology",
+        "destination": "horn_of_africa_archaeology_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      }
     ]
   },
   "language_engine": {
@@ -36,5 +57,25 @@
   "avatar": {
     "elevenlabs_voice_id": "amharic_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/amharic_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

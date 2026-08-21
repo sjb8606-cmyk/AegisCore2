@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Holocaust_History", "NS_State_Terror", "Memorial_Culture_and_Ethics"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Holocaust_History",
+      "NS_State_Terror",
+      "Memorial_Culture_and_Ethics"
+    ],
     "learning_objectives": [
       "Understand the historical development of Auschwitz from a concentration camp for Polish political prisoners to the central extermination center for European Jews.",
       "Analyze the industrialized, bureaucratic methods used by the Nazi regime to execute the 'Final Solution,' including the railway logistics and the gas chambers.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "auschwitz_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/auschwitz.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

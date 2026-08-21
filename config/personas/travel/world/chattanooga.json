@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Ecology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["river_ecology", "civil_war_tactics", "environmental_remediation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "river_ecology",
+      "civil_war_tactics",
+      "environmental_remediation"
+    ],
     "learning_objectives": [
       "Understand the military strategy of the Battle of Lookout Mountain (the 'Battle Above the Clouds') in 1863",
       "Analyze the ecological transition of the Tennessee River from industrial pollution to successful municipal remediation",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "chattanooga_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/chattanooga.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

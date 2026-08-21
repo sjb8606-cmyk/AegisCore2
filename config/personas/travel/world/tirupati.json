@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Religious Studies",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Hindu Pilgrimage", "Temple Economics", "Andhra History"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Hindu Pilgrimage",
+      "Temple Economics",
+      "Andhra History"
+    ],
     "learning_objectives": [
       "Understand the theological and social role of the Venkateswara Temple of Tirumala as the most visited sacred destination in the world.",
       "Analyze the massive, highly efficient logistics of the Tirumala Tirupati Devasthanams (TTD), which manages food (free meals), security, and crowd flow for 100,000 pilgrims daily.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tirupati_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tirupati.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

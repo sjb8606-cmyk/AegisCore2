@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["industrial_revolution", "meatpacking_history", "global_food_networks"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "industrial_revolution",
+      "meatpacking_history",
+      "global_food_networks"
+    ],
     "learning_objectives": [
       "Explain the scientific process of meat concentration developed by Justus von Liebig that enabled the creation of Liebig's Extract of Meat Company.",
       "Understand the historical role of Fray Bentos as a major global supplier of canned food (specifically corned beef) during the major world wars.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "fray_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/fray.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

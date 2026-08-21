@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Exploration",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["lewis_clark", "river_hydrology", "frontier_logistics"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "lewis_clark",
+      "river_hydrology",
+      "frontier_logistics"
+    ],
     "learning_objectives": [
       "Understand the strategic geographic importance of the upper Missouri River for early continental exploration",
       "Analyze the role of the Mandan and Hidatsa agricultural villages in the survival of the Lewis and Clark Expedition during the winter of 1804-1805",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "missouri_river_nd_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/missouri_river_nd.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

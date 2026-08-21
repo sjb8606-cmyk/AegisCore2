@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Coastal Culture",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Nubian History", "First Cataract", "Nile Trade"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Nubian History",
+      "First Cataract",
+      "Nile Trade"
+    ],
     "learning_objectives": [
       "Understand the historical role of Aswan (Swenet) as the southern border and military gateway of ancient Egypt and its trade port.",
       "Analyze the geological significance of the First Cataract, explaining how granite sills naturally blocked boat navigation and protected the state.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "aswan_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/aswan.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

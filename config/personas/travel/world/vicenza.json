@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Architecture & Classical Design",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Palladianism", "Classical Architecture", "Veneto History"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Palladianism",
+      "Classical Architecture",
+      "Veneto History"
+    ],
     "learning_objectives": [
       "Understand the architectural principles of Andrea Palladio, focusing on symmetry, proportion, and his revival of Vitruvian Roman rules.",
       "Analyze the design and agricultural function of the 'Villa Veneta' (like Villa Rotonda and Villa Barbaro) as self-sufficient economic centers.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "vicenza_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/vicenza.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

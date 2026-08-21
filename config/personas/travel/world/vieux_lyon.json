@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Architecture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Urban Geography", "Renaissance Architecture", "Resistance History"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Urban Geography",
+      "Renaissance Architecture",
+      "Resistance History"
+    ],
     "learning_objectives": [
       "Understand the architectural design and logistical purpose of 'Traboules' (hidden urban passageways) in Vieux Lyon.",
       "Analyze the Italian Renaissance influence on Lyon's architecture due to the trade fairs and migration of Florentine bankers.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "vieux_lyon_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/vieux_lyon.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

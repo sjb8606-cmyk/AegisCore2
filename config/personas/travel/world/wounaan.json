@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["tagua_carving", "indigenous_linguistics", "rainforest_craft_economies"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "tagua_carving",
+      "indigenous_linguistics",
+      "rainforest_craft_economies"
+    ],
     "learning_objectives": [
       "Understand the material properties and sustainable harvesting of the Tagua Nut (vegetable ivory) from the tagua palm.",
       "Analyze the high-level carving techniques used by Wounaan artists to create highly detailed, realistic sculptures of rainforest fauna.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "wounaan_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/wounaan.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

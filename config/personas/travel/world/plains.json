@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Agriculture",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["presidential_history", "rural_sociology", "agronomy"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "presidential_history",
+      "rural_sociology",
+      "agronomy"
+    ],
     "learning_objectives": [
       "Understand the political and historic significance of Jimmy Carter's 1976 presidential campaign based in Plains",
       "Analyze the socioeconomic and agricultural realities of peanut farming in the South Georgia clay belt",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "plains_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/plains.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

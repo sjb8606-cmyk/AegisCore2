@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["savanna_ecology", "elephant_behavior", "mountain_aquifers"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "savanna_ecology",
+      "elephant_behavior",
+      "mountain_aquifers"
+    ],
     "learning_objectives": [
       "Understand the geological history of the ancient Amboseli Pleistocene lakebed and how its drying formed the modern dust pans.",
       "Explain the hydrological relationship between the glaciers of Mount Kilimanjaro and the permanent, spring-fed swamps (Enkongo Narok) of the park.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "amboseli_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/amboseli.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

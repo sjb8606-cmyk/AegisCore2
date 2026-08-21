@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Technology",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["nuclear_history", "manhattan_project", "physics_of_fission"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "nuclear_history",
+      "manhattan_project",
+      "physics_of_fission"
+    ],
     "learning_objectives": [
       "Understand the strategic and geological reasons why Hanford was selected as a secret site for plutonium production during WWII",
       "Analyze the mechanical and physical principles of the world's first full-scale nuclear reactor (B Reactor)",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "hanford_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/hanford.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

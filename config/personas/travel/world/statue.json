@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Law",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["immigration_history", "human_rights", "national_symbols"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "immigration_history",
+      "human_rights",
+      "national_symbols"
+    ],
     "learning_objectives": [
       "Understand the historical process of immigrant inspection and processing at Ellis Island (1892-1954)",
       "Analyze the political and diplomatic origins of the Statue of Liberty as a gift from France",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "statue_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/statue.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

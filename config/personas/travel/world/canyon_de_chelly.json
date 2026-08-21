@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["indigenous_sovereignty", "canyon_agriculture", "treaty_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "indigenous_sovereignty",
+      "canyon_agriculture",
+      "treaty_history"
+    ],
     "learning_objectives": [
       "Understand the historical continuity of agricultural and domestic life in Canyon de Chelly",
       "Analyze the military campaign led by Kit Carson (1864) to starve and relocate the Navajo (the Long Walk)",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "canyon_de_chelly_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/canyon_de_chelly.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

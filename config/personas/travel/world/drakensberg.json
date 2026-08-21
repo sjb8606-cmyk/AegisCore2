@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["orogeny_and_erosion", "san_cosmology", "alpine_ecosystems"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "orogeny_and_erosion",
+      "san_cosmology",
+      "alpine_ecosystems"
+    ],
     "learning_objectives": [
       "Explain the geological processes of volcanic basalt deposition and subsequent water erosion that formed the Drakensberg Escarpment.",
       "Interpret the symbolic and spiritual meaning of San rock art found in the uKhahlamba-Drakensberg World Heritage Site.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "drakensberg_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/drakensberg.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

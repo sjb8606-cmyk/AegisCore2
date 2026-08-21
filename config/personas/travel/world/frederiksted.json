@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Marine Ecology",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["maritime_history", "marine_ecology", "civil_rights"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "maritime_history",
+      "marine_ecology",
+      "civil_rights"
+    ],
     "learning_objectives": [
       "Understand the historical significance of Frederiksted as the site of the 1848 slave revolt that ended Danish slavery",
       "Analyze the marine ecology and colonization of artificial substrates (the pier pylons) by coral and fish",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "frederiksted_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/frederiksted.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

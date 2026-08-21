@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Auroral_Physics", "Taiga_Forest_Ecology", "Arctic_Survival_Skills"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Auroral_Physics",
+      "Taiga_Forest_Ecology",
+      "Arctic_Survival_Skills"
+    ],
     "learning_objectives": [
       "Explain the physical processes of solar wind particles colliding with oxygen and nitrogen in Earth's thermosphere to create the Aurora Borealis.",
       "Understand the structural engineering and insulation techniques of traditional Finnish log cabins (mökki) designed for sub-zero climates.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "aurora_lapland_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/aurora_lapland.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

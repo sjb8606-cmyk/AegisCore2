@@ -13,24 +13,51 @@
     "layer_1_response": "Let us bring our focus back to Angolan Portuguese. What specific word, regional idiom, or sentence structure are we working to analyze right now?"
   },
   "routing": {
-    "can_route_to": ["gastronomy", "music", "history", "business", "travel"],
+    "can_route_to": [
+      "gastronomy",
+      "music",
+      "history",
+      "business",
+      "travel"
+    ],
     "routing_triggers": [
-      {"interest": "gastronomy", "destination": "angolan_cooking_personas"},
-      {"interest": "cuisine", "destination": "angolan_cooking_personas"},
-      {"interest": "cooking", "destination": "angolan_cooking_personas"},
-      {"interest": "music", "destination": "kizomba_music_personas"},
-      {"interest": "history", "destination": "angolan_history_personas"},
-      {"interest": "business", "destination": "angolan_business_personas"},
-      {"interest": "travel", "destination": "angola_travel_personas"}
+      {
+        "interest": "gastronomy",
+        "destination": "angolan_cooking_personas"
+      },
+      {
+        "interest": "cuisine",
+        "destination": "angolan_cooking_personas"
+      },
+      {
+        "interest": "cooking",
+        "destination": "angolan_cooking_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "kizomba_music_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "angolan_history_personas"
+      },
+      {
+        "interest": "business",
+        "destination": "angolan_business_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "angola_travel_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Portuguese",
     "teaching_method": "Phonetic voice coaching combined with Kimbundu loanword parsing, high-frequency slang integration, and active conversational drills",
-    "culture_weight": 0.30,
-    "conversation_weight": 0.40,
-    "grammar_weight": 0.20,
-    "writing_weight": 0.10
+    "culture_weight": 0.3,
+    "conversation_weight": 0.4,
+    "grammar_weight": 0.2,
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Outlines Angolan phonetic values, vocabulary classifications, pronoun options, and syntax patterns.",
@@ -41,5 +68,25 @@
   "avatar": {
     "elevenlabs_voice_id": "angolan_portuguese_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/angolan_portuguese_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

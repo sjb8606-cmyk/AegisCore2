@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["marine_biology_sharks", "barrier_reefs", "eco_tourism_evolution"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "marine_biology_sharks",
+      "barrier_reefs",
+      "eco_tourism_evolution"
+    ],
     "learning_objectives": [
       "Explain the ecological and hydrological role of natural reef channels (like Hol Chan) in facilitating water exchange and marine species migration.",
       "Understand the non-aggressive behavior and biological adaptations of the Nurse Shark (Ginglymostoma cirratum) in shallow marine habitats.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "hol_chan_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/hol_chan.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

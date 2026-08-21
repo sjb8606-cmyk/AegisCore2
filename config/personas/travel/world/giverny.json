@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Art & Botany",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Impressionist Art", "Botany", "Horticultural Design"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Impressionist Art",
+      "Botany",
+      "Horticultural Design"
+    ],
     "learning_objectives": [
       "Understand the core principles of Impressionism, specifically the focus on 'en plein air' painting and the capture of light's transience.",
       "Analyze the horticultural engineering required by Monet to construct the Giverny pond (diverting water, species selection).",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "giverny_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/giverny.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

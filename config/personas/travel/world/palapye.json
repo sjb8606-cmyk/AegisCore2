@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["archaeology_phalatswe", "tswana_migrations", "industrial_transition"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "archaeology_phalatswe",
+      "tswana_migrations",
+      "industrial_transition"
+    ],
     "learning_objectives": [
       "Understand the historical migration and settlement of the Bangwato capital to Phalatswe (Old Palapye) in 1889 under King Khama III.",
       "Analyze the architectural design and structural engineering of the 1891 London Missionary Society church ruins at Phalatswe.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "palapye_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/palapye.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

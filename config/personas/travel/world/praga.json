@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Urban_Gentrification", "Street_Art_Muralism", "Post_Industrial_Regeneration"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Urban_Gentrification",
+      "Street_Art_Muralism",
+      "Post_Industrial_Regeneration"
+    ],
     "learning_objectives": [
       "Understand why the Praga district survived the World War II destruction of Warsaw largely intact, preserving its 19th-century industrial and residential architecture.",
       "Analyze the role of street art and large-scale murals in transforming economically depressed districts into vibrant, cultural destinations.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "praga_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/praga.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

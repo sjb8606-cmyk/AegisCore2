@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Jazz_Festival_History", "Dune_Conservation", "Industrial_Heritage_Pori"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Jazz_Festival_History",
+      "Dune_Conservation",
+      "Industrial_Heritage_Pori"
+    ],
     "learning_objectives": [
       "Understand the historical development of the Pori Jazz Festival (founded in 1966) as one of Europe's oldest and most culturally significant music events.",
       "Analyze the ecological importance and geomorphology of the Yyteri sand dunes as the longest sand beach system in the Nordic countries.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "pori_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/pori.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -19,11 +19,40 @@
   "education": {
     "tier": 2,
     "reports_to": "edu_zara",
-    "subjects": ["media_literacy", "bias_detection"],
-    "curriculum_tags": ["source_analysis", "framing", "confirmation_bias", "misinformation", "fact_checking"]
+    "subjects": [
+      "media_literacy",
+      "bias_detection"
+    ],
+    "curriculum_tags": [
+      "source_analysis",
+      "framing",
+      "confirmation_bias",
+      "misinformation",
+      "fact_checking"
+    ]
   },
   "avatar": {
     "elevenlabs_voice_id": "edu_coach_brennan_media_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/edu_coach_brennan_media.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

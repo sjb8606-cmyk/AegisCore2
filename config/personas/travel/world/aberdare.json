@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["mountain_orogeny", "mau_mau_history", "bamboo_ecology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "mountain_orogeny",
+      "mau_mau_history",
+      "bamboo_ecology"
+    ],
     "learning_objectives": [
       "Understand the geological and tectonic forces of the East African Rift that continue to lift the volcanic range of the Aberdares.",
       "Analyze the military and geographic history of the Aberdares as a strategic sanctuary for the Mau Mau rebellion under Dedan Kimathi.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "aberdare_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/aberdare.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Curatorial Studies",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Mummification Science", "New Kingdom History", "Museum Curation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Mummification Science",
+      "New Kingdom History",
+      "Museum Curation"
+    ],
     "learning_objectives": [
       "Understand the chemical and biological process of ancient Egyptian mummification, focusing on the use of natron salt, resin, and linen wrapping.",
       "Analyze the artistic and historical significance of the Tutankhamun Gold Mask, explaining how its gold-leaf and lapis lazuli projected royal divinity.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "egyptian_museum_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/egyptian_museum.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

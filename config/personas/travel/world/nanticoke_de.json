@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["coastal_ecology", "indigenous_history", "material_culture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "coastal_ecology",
+      "indigenous_history",
+      "material_culture"
+    ],
     "learning_objectives": [
       "Understand the historical geography of the Nanticoke along the Eastern Shore and Delaware Bay",
       "Analyze the traditional use of marine resources (shellfish, cedar, waterfowl) in Nanticoke material culture",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "nanticoke_de_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/nanticoke_de.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

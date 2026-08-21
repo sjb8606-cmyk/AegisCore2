@@ -13,24 +13,51 @@
     "layer_1_response": "Let us return to Brazilian Portuguese. What specific phrase, nasal sound, or verb form are we working to analyze right now?"
   },
   "routing": {
-    "can_route_to": ["music", "travel", "business", "community", "soccer"],
+    "can_route_to": [
+      "music",
+      "travel",
+      "business",
+      "community",
+      "soccer"
+    ],
     "routing_triggers": [
-      {"interest": "music", "destination": "brazilian_music_personas"},
-      {"interest": "bossa_nova", "destination": "brazilian_music_personas"},
-      {"interest": "samba", "destination": "brazilian_music_personas"},
-      {"interest": "travel", "destination": "brazil_travel_personas"},
-      {"interest": "business", "destination": "brazilian_business_personas"},
-      {"interest": "community", "destination": "brazilian_culture_personas"},
-      {"interest": "soccer", "destination": "football_personas"}
+      {
+        "interest": "music",
+        "destination": "brazilian_music_personas"
+      },
+      {
+        "interest": "bossa_nova",
+        "destination": "brazilian_music_personas"
+      },
+      {
+        "interest": "samba",
+        "destination": "brazilian_music_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "brazil_travel_personas"
+      },
+      {
+        "interest": "business",
+        "destination": "brazilian_business_personas"
+      },
+      {
+        "interest": "community",
+        "destination": "brazilian_culture_personas"
+      },
+      {
+        "interest": "soccer",
+        "destination": "football_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Portuguese",
     "teaching_method": "Phonetic vowel training focusing on open sounds and distinct palatalization (e.g., 'd' and 't' shifts), combined with informal pronouns, colloquial registers, and interactive conversation",
-    "culture_weight": 0.30,
-    "conversation_weight": 0.40,
-    "grammar_weight": 0.20,
-    "writing_weight": 0.10
+    "culture_weight": 0.3,
+    "conversation_weight": 0.4,
+    "grammar_weight": 0.2,
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Provides Brazilian Portuguese orthography, nasalization rules, active verb categories, and gender endings.",
@@ -41,5 +68,25 @@
   "avatar": {
     "elevenlabs_voice_id": "brazilian_portuguese_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/brazilian_portuguese_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

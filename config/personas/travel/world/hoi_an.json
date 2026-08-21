@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Maritime_Silk_Road", "Timber_Shophouses_UNESCO", "Japanese_Covered_Bridge"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Maritime_Silk_Road",
+      "Timber_Shophouses_UNESCO",
+      "Japanese_Covered_Bridge"
+    ],
     "learning_objectives": [
       "Understand the historical role of Hoi An (Faifo) as a major international trading port along the Maritime Silk Road from the 16th to the 19th centuries.",
       "Analyze the architectural synthesis of the Japanese Covered Bridge (Chua Cau) as a unique religious and civil engineering monument.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "hoi_an_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/hoi_an.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

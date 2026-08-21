@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Architecture",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["westward_expansion", "modern_architecture", "exploration_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "westward_expansion",
+      "modern_architecture",
+      "exploration_history"
+    ],
     "learning_objectives": [
       "Understand the political and economic significance of St. Louis as the 'Gateway to the West' during 19th-century expansion",
       "Analyze Eero Saarinen's mid-century modern design and the mathematical catenary curve of the Gateway Arch",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "gateway_arch_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/gateway_arch.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

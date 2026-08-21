@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["sea_caves", "intertidal_biology", "coastal_erosion"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "sea_caves",
+      "intertidal_biology",
+      "coastal_erosion"
+    ],
     "learning_objectives": [
       "Explain the geological erosion process of hydraulic action and abrasion that carves out deep sea caves in coral limestone cliffs.",
       "Understand the biological structure and feeding mechanisms of the Sea Anemone (Actiniaria), explaining why they are locally termed 'animal flowers'.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "animal_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/animal.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

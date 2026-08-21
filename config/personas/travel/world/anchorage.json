@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Urban Geography & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["urban_planning", "seismology", "subarctic_ecology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "urban_planning",
+      "seismology",
+      "subarctic_ecology"
+    ],
     "learning_objectives": [
       "Understand the urban design strategies required to manage a high-density city directly adjacent to active wilderness",
       "Analyze the geological impact and structural lessons of the 1964 Good Friday Earthquake on Anchorage",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "anchorage_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/anchorage.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

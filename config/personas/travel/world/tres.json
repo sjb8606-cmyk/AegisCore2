@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["karst_geology", "cave_ecosystems", "taino_archaeology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "karst_geology",
+      "cave_ecosystems",
+      "taino_archaeology"
+    ],
     "learning_objectives": [
       "Explain the geological processes of acid rain dissolution and water erosion that formed the karst limestone caves and sinkholes of Los Tres Ojos.",
       "Analyze the ecological adaptations of plants and animals (such as freshwater turtles, bats, and blind cave shrimp) in low-light limestone environments.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tres_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tres.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

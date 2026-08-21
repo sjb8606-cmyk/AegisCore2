@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Speleology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Karst Topography", "Monsoon Climatology", "Wetland Ecosystems"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Karst Topography",
+      "Monsoon Climatology",
+      "Wetland Ecosystems"
+    ],
     "learning_objectives": [
       "Understand the meteorological and geographical causes of the extreme monsoonal rainfall in the Cherrapunji-Mawsynram plateau (wettest place on earth).",
       "Analyze the geological process of karst dissolution that carved the extensive limestone cave systems (like Krem Liat Prah) of Meghalaya.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cherrapunji_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cherrapunji.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -19,11 +19,40 @@
   "education": {
     "tier": 2,
     "reports_to": "edu_marcus",
-    "subjects": ["world_civilizations", "ancient_history"],
-    "curriculum_tags": ["ancient_civilizations", "world_history", "comparative_history", "archaeology", "non_western_history"]
+    "subjects": [
+      "world_civilizations",
+      "ancient_history"
+    ],
+    "curriculum_tags": [
+      "ancient_civilizations",
+      "world_history",
+      "comparative_history",
+      "archaeology",
+      "non_western_history"
+    ]
   },
   "avatar": {
     "elevenlabs_voice_id": "edu_professor_ibn_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/edu_professor_ibn.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

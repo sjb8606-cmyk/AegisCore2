@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Local History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Alpine Biogeography", "Naga Tribal History", "Cultural Festivals"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Alpine Biogeography",
+      "Naga Tribal History",
+      "Cultural Festivals"
+    ],
     "learning_objectives": [
       "Understand the biogeography of the Dzükou Valley, a high-altitude (2,452m) ecological transition zone between temperate and sub-tropical climates.",
       "Analyze the cultural history of the Naga people, evaluating how the sixteen distinct tribes unified under the 'Hornbill Festival' to preserve their heritage.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "dzukou_valley_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/dzukou_valley.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

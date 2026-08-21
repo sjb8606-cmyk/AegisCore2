@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Education & History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["higher_education", "colonial_history", "civic_design"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "higher_education",
+      "colonial_history",
+      "civic_design"
+    ],
     "learning_objectives": [
       "Understand the historical founding of the University of North Carolina as the nation's first public university",
       "Analyze the role of early public higher education in training the leadership of the southern states",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "chapel_hill_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/chapel_hill.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

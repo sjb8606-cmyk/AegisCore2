@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Medieval_Gothic", "Urban_Hydrology", "1674_Tornado"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Medieval_Gothic",
+      "Urban_Hydrology",
+      "1674_Tornado"
+    ],
     "learning_objectives": [
       "Understand the architectural design of the Dom Tower and how its construction influenced Gothic style across the Low Countries.",
       "Analyze the meteorological events of the 1674 storm (tornado) that permanently separated the Dom Tower from the cathedral nave.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "dom_tower_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/dom_tower.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

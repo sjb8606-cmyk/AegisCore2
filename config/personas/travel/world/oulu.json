@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Technology",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Wireless_Technology", "Pine_Tar_Trade", "Subarctic_Infrastructure"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Wireless_Technology",
+      "Pine_Tar_Trade",
+      "Subarctic_Infrastructure"
+    ],
     "learning_objectives": [
       "Understand the historical role of Oulu as a global leader in the 19th-century pine-tar trade (terva) and its impact on wooden ship preservation.",
       "Analyze the scientific and engineering developments that made Oulu a pioneer in wireless technology, including the creation of early 1G and 5G networks.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "oulu_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/oulu.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

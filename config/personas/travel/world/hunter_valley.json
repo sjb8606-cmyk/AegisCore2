@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Viticulture & Economic History",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Terroir Science", "History of Viticulture", "Industrial Coal Mining"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Terroir Science",
+      "History of Viticulture",
+      "Industrial Coal Mining"
+    ],
     "learning_objectives": [
       "Understand the chemical and geological composition of the Hunter Valley’s soils (volcanic red clay and sandy alluvial) and their impact on viticulture.",
       "Analyze the historical role of James Busby’s 1830s collection in importing and establishing European grape varieties (like Shiraz and Semillon) in Australia.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "hunter_valley_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/hunter_valley.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

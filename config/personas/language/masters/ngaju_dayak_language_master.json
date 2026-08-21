@@ -10,23 +10,47 @@
     "layer_1_response": "Let us return to Ngaju Dayak. What specific word, polite expression, or phrase can we study or translate right now?"
   },
   "routing": {
-    "can_route_to": ["heritage", "travel", "spirituality", "literature", "history"],
+    "can_route_to": [
+      "heritage",
+      "travel",
+      "spirituality",
+      "literature",
+      "history"
+    ],
     "routing_triggers": [
-      {"interest": "heritage", "destination": "dayak_heritage_personas"},
-      {"interest": "family", "destination": "dayak_heritage_personas"},
-      {"interest": "travel", "destination": "kalimantan_travel_personas"},
-      {"interest": "spirituality", "destination": "kaharingan_spirituality_personas"},
-      {"interest": "literature", "destination": "dayak_literature_personas"},
-      {"interest": "history", "destination": "kalimantan_history_personas"}
+      {
+        "interest": "heritage",
+        "destination": "dayak_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "dayak_heritage_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "kalimantan_travel_personas"
+      },
+      {
+        "interest": "spirituality",
+        "destination": "kaharingan_spirituality_personas"
+      },
+      {
+        "interest": "literature",
+        "destination": "dayak_literature_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "kalimantan_history_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Indonesian",
     "teaching_method": "Phonetic voice coaching combined with prefix-suffix distinction drills, local vocabulary, and realistic conversational scenarios",
     "culture_weight": 0.35,
-    "conversation_weight": 0.40,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.15,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Outlines Ngaju Dayak sound rules, syntactic features, pronoun use, and base vocabulary distinctions.",
@@ -37,5 +61,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ngaju_dayak_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ngaju_dayak_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

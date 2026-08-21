@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["timber_architecture", "maritime_mythology", "island_isolation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "timber_architecture",
+      "maritime_mythology",
+      "island_isolation"
+    ],
     "learning_objectives": [
       "Analyze the unique, mortarless timber joinery and shipbuilding techniques used by 18th-century Jesuit and Chilote carpenters to construct our UNESCO churches.",
       "Understand the environmental and historical reasons for the construction of 'palafitos' (stilt houses) along the intertidal zones of Chiloé.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "chiloe_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/chiloe.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

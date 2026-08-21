@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Art",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["industrial_history", "glassblowing", "urban_renewal"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "industrial_history",
+      "glassblowing",
+      "urban_renewal"
+    ],
     "learning_objectives": [
       "Understand the historical role of Tacoma as a major 19th-century timber and shipping port",
       "Analyze the artistic development of contemporary studio glass art in the Pacific Northwest",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tacoma_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tacoma.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Islamic Learning",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Medieval Medina", "Tannery Engineering", "Islamic Education"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Medieval Medina",
+      "Tannery Engineering",
+      "Islamic Education"
+    ],
     "learning_objectives": [
       "Understand the urban planning of Fes el-Bali, analyzing how its nine thousand narrow streets functioned as an organic, car-free defensive labyrinth.",
       "Analyze the biochemical process of traditional leather-tanning at Chouara, focusing on how pigeon droppings (rich in ammonia) soften raw hides.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "fes_el_bali_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/fes_el_bali.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

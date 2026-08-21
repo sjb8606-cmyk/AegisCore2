@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["barrier_islands", "marine_conservation", "coastal_ecology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "barrier_islands",
+      "marine_conservation",
+      "coastal_ecology"
+    ],
     "learning_objectives": [
       "Understand the geological formation and migration of barrier peninsulas in the Gulf of Mexico",
       "Analyze the ecological importance of Bolivar Flats as a critical landfall for migratory birds along the Mississippi Flyway",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bolivar_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bolivar.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

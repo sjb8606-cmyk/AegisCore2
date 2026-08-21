@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Art & History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Modern Art History", "French History", "Urban Sociology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Modern Art History",
+      "French History",
+      "Urban Sociology"
+    ],
     "learning_objectives": [
       "Understand why Montmartre became the global incubator for modern art movements (Cubism, Impressionism) due to its tax-free status and isolation.",
       "Analyze the political and religious symbolism behind the construction of the Sacré-Cœur Basilica following the Paris Commune.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "montmartre_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/montmartre.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

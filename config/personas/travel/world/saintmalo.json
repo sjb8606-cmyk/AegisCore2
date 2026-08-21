@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Maritime History & Warfare",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Age of Sail", "Fortification Engineering", "Privateering Economics"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Age of Sail",
+      "Fortification Engineering",
+      "Privateering Economics"
+    ],
     "learning_objectives": [
       "Understand the legal and economic distinction between a privateer/corsair (operating with a royal Letter of Marque) and a pirate.",
       "Analyze Vauban’s fortification of Saint-Malo and its island forts (Fort National) to resist English naval bombardment.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "saint_malo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/saint_malo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

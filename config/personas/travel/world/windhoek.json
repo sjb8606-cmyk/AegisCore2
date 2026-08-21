@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["namibian_independence", "colonial_history", "urban_history"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "namibian_independence",
+      "colonial_history",
+      "urban_history"
+    ],
     "learning_objectives": [
       "Understand the historical timeline of Namibia's liberation struggle leading to independence from South African administration in 1990.",
       "Analyze the architectural and political contrast between German colonial monuments like the Christuskirche and the post-independence Independence Memorial Museum.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "windhoek_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/windhoek.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

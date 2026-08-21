@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Urban Design & History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["urban_sociology", "adaptive_reuse", "immigration_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "urban_sociology",
+      "adaptive_reuse",
+      "immigration_history"
+    ],
     "learning_objectives": [
       "Understand the historical demographics of Corktown as Detroit's oldest neighborhood founded by Irish immigrants",
       "Analyze the adaptive reuse of the Michigan Central Station as a modern technology and innovation hub",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "corktown_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/corktown.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

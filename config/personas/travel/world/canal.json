@@ -18,8 +18,19 @@
   },
   "education": {
     "domain": "Technology",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["civil_engineering", "hydrology", "global_trade_routes"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "civil_engineering",
+      "hydrology",
+      "global_trade_routes"
+    ],
     "learning_objectives": [
       "Explain the physical and mechanical principles of the Panama Canal lock system, focusing on gravity-fed water transfer.",
       "Understand the historical differences between the failed French sea-level canal attempt and the successful US lock-design project.",
@@ -35,5 +46,25 @@
   "avatar": {
     "elevenlabs_voice_id": "canal_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/canal.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

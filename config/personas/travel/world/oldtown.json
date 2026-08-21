@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Culture & History",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["urban_sociology", "alternative_living", "northern_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "urban_sociology",
+      "alternative_living",
+      "northern_history"
+    ],
     "learning_objectives": [
       "Understand the historical origins of Yellowknife's Old Town as a gold rush squatter settlement",
       "Analyze the legal and logistical complexities of floating, off-grid communities within city limits",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "oldtown_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/oldtown.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

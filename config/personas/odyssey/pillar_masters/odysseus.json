@@ -19,8 +19,16 @@
   "education": {
     "domain": "Literature & Strategy",
     "pillar": "Boundaries",
-    "grade_levels": ["inquiry", "mastery"],
-    "curriculum_tags": ["boundaries", "manipulation_detection", "self_protection", "strategic_empathy"],
+    "grade_levels": [
+      "inquiry",
+      "mastery"
+    ],
+    "curriculum_tags": [
+      "boundaries",
+      "manipulation_detection",
+      "self_protection",
+      "strategic_empathy"
+    ],
     "learning_objectives": [
       "Distinguish healthy compassion from self-destructive compliance",
       "Identify common manipulation patterns and persuasion tactics",
@@ -36,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "odysseus_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/odysseus.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["urban_planning", "counter_culture", "mountain_geography"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "urban_planning",
+      "counter_culture",
+      "mountain_geography"
+    ],
     "learning_objectives": [
       "Understand the urban design principles behind the creation of the Pearl Street Pedestrian Mall (1977)",
       "Analyze the geological formation of the Fountain Formation sandstone that created the tilted Flatirons",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "boulder_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/boulder.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

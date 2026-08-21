@@ -10,21 +10,45 @@
     "layer_1_response": "Let us bring our focus back to Kadiwéu. What specific phrase, spelling, or pronunciation structure are we working to analyze right now?"
   },
   "routing": {
-    "can_route_to": ["history", "art", "travel", "heritage", "culture"],
+    "can_route_to": [
+      "history",
+      "art",
+      "travel",
+      "heritage",
+      "culture"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "guaicuru_history_personas"},
-      {"interest": "art", "destination": "kadiweu_graphic_art_personas"},
-      {"interest": "travel", "destination": "pantanal_travel_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"},
-      {"interest": "family", "destination": "family_heritage_personas"},
-      {"interest": "culture", "destination": "kadiweu_culture_personas"}
+      {
+        "interest": "history",
+        "destination": "guaicuru_history_personas"
+      },
+      {
+        "interest": "art",
+        "destination": "kadiweu_graphic_art_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "pantanal_travel_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "culture",
+        "destination": "kadiweu_culture_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Kadiwéu",
     "teaching_method": "Phonetic voice training coupled with standard grammatical prefix drills, local idioms, and active social conversation",
-    "culture_weight": 0.40,
-    "conversation_weight": 0.40,
+    "culture_weight": 0.4,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.15,
     "writing_weight": 0.05
   },
@@ -37,5 +61,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kadiweu_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kadiweu_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

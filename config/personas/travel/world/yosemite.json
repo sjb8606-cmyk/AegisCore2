@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["geomorphology", "glaciology", "conservation_policy"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "geomorphology",
+      "glaciology",
+      "conservation_policy"
+    ],
     "learning_objectives": [
       "Understand the geological forces of glaciation and tectonic uplift that carved the Yosemite Valley",
       "Analyze the historic role of John Muir and Abraham Lincoln's 1864 grant in founding the park",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "yosemite_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/yosemite.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

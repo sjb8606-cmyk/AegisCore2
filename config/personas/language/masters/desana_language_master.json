@@ -10,21 +10,45 @@
     "layer_1_response": "Let us turn our focus back to Desana. How can we express that concept or phrase using authentic Desana patterns?"
   },
   "routing": {
-    "can_route_to": ["history", "cosmology", "medicine", "travel", "heritage"],
+    "can_route_to": [
+      "history",
+      "cosmology",
+      "medicine",
+      "travel",
+      "heritage"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "vaupes_history_personas"},
-      {"interest": "cosmology", "destination": "desana_cosmology_personas"},
-      {"interest": "medicine", "destination": "traditional_medicine_personas"},
-      {"interest": "travel", "destination": "colombian_amazon_travel_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"},
-      {"interest": "family", "destination": "family_heritage_personas"}
+      {
+        "interest": "history",
+        "destination": "vaupes_history_personas"
+      },
+      {
+        "interest": "cosmology",
+        "destination": "desana_cosmology_personas"
+      },
+      {
+        "interest": "medicine",
+        "destination": "traditional_medicine_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "colombian_amazon_travel_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "family_heritage_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Desana",
     "teaching_method": "Phonetic voice coaching combined with nominal/verbal prefix-suffix drills, cosmological terminology, and interactive situational dialogue",
-    "culture_weight": 0.40,
-    "conversation_weight": 0.40,
+    "culture_weight": 0.4,
+    "conversation_weight": 0.4,
     "grammar_weight": 0.15,
     "writing_weight": 0.05
   },
@@ -37,5 +61,25 @@
   "avatar": {
     "elevenlabs_voice_id": "desana_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/desana_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

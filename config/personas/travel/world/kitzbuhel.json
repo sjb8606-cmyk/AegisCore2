@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Sports",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Ski_Race_Physics", "Winter_Sports_History", "Alpine_Tourism_Economics"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Ski_Race_Physics",
+      "Winter_Sports_History",
+      "Alpine_Tourism_Economics"
+    ],
     "learning_objectives": [
       "Understand the physical forces (gravity, centripetal acceleration, friction) acting on a downhill ski racer on the legendary 'Streif' course.",
       "Analyze the historical evolution of skiing from a functional winter transport method in Scandinavia to a highly commercialized global sport in Tyrol.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kitzbuhel_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kitzbuhel.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

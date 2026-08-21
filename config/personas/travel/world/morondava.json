@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["baobab_biology", "deforestation_history", "dry_forest_preservation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "baobab_biology",
+      "deforestation_history",
+      "dry_forest_preservation"
+    ],
     "learning_objectives": [
       "Explain the unique biological adaptations and water-storage mechanics of Grandidier's Baobab (Adansonia grandidieri) in arid, dry deciduous biomes.",
       "Understand the historical process of deforestation on Madagascar's west coast that left the Avenue of the Baobabs as an isolated, relic landscape.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "morondava_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/morondava.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

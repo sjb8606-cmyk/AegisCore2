@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Shinto Mythology & Geography",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Shinto Mythology", "Columnar Jointing", "Sacred Drama"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Shinto Mythology",
+      "Columnar Jointing",
+      "Sacred Drama"
+    ],
     "learning_objectives": [
       "Understand the geological formation of Takachiho Gorge through rapid cooling of Aso's ancient pyroclastic flows.",
       "Analyze the mythic cycle of Amaterasu and the Amano Iwato cave as a metaphor for solar eclipses and winter solstice.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "takachiho_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/takachiho.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

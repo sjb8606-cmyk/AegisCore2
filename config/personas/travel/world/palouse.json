@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["geomorphology", "loess_hills", "dryland_farming"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "geomorphology",
+      "loess_hills",
+      "dryland_farming"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Palouse Hills through wind-blown eolian deposits during the last ice age",
       "Analyze the techniques and challenges of dryland wheat farming on extremely steep slopes",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "palouse_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/palouse.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

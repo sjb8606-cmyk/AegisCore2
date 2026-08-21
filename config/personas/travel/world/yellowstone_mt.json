@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Nature",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["river_hydrology", "valley_geomorphology", "conservation"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "river_hydrology",
+      "valley_geomorphology",
+      "conservation"
+    ],
     "learning_objectives": [
       "Understand the geomorphology of the Paradise Valley and the flow of the undammed Yellowstone River",
       "Analyze the history and architectural symbolism of the Roosevelt Arch (completed 1903) at the northern entrance",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "yellowstone_mt_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/yellowstone_mt.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

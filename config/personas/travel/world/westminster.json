@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Constitutional_History", "Gothic_Architecture", "British_Monarchy"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Constitutional_History",
+      "Gothic_Architecture",
+      "British_Monarchy"
+    ],
     "learning_objectives": [
       "Trace the shift of power from absolute monarchy to parliamentary democracy through key events at Westminster.",
       "Identify the architectural characteristics of Gothic and Gothic Revival styles in the Abbey and Parliament.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "westminster_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/westminster.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

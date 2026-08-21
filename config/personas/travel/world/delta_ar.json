@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Music & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["american_music_history", "delta_studies", "african_american_culture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "american_music_history",
+      "delta_studies",
+      "african_american_culture"
+    ],
     "learning_objectives": [
       "Understand the historical connection between the sharecropping system and the development of the Blues in the Arkansas Delta",
       "Analyze the role of early radio broadcasts (specifically King Biscuit Time) in nationalizing the Blues",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "delta_ar_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/delta_ar.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

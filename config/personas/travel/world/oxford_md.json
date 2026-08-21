@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Leisure",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["coastal_geography", "maritime_history", "local_economics"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "coastal_geography",
+      "maritime_history",
+      "local_economics"
+    ],
     "learning_objectives": [
       "Understand the history of Oxford as one of Maryland's oldest ports of entry under the Crown",
       "Analyze the unique design and construction of the traditional Chesapeake log canoe",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "oxford_md_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/oxford_md.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

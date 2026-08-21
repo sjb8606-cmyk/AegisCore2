@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Ecology & Wildlife Biology",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Monsoon Forest Ecology", "Elephant Conservation", "Anti-Poaching Tech"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Monsoon Forest Ecology",
+      "Elephant Conservation",
+      "Anti-Poaching Tech"
+    ],
     "learning_objectives": [
       "Understand the ecological dynamics of a tropical seasonal forest (Khao Yai) and how the monsoon rains maintain its biodiversity.",
       "Analyze the biology and conservation history of the endangered Asian Elephant, which faces habitat fragmentation in modern Thailand.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "khao_yal_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/khao_yal.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

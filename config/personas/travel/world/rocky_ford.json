@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Agriculture & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["agronomy", "water_rights", "food_systems"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "agronomy",
+      "water_rights",
+      "food_systems"
+    ],
     "learning_objectives": [
       "Understand the geological and soil conditions of the Arkansas River Valley that favor melon cultivation",
       "Analyze the economic and legal history of western water rights and irrigation canals in Colorado",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "rocky_ford_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/rocky_ford.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

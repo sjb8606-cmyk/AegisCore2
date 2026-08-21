@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["palaeobotany", "temperate_rainforests", "marine_conservation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "palaeobotany",
+      "temperate_rainforests",
+      "marine_conservation"
+    ],
     "learning_objectives": [
       "Explain the geological process of petrification that preserved the 170-million-year-old Jurassic forest at Curio Bay.",
       "Understand the ecological characteristics of the southern temperate rainforest and its key native canopy species.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "catlins_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/catlins.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

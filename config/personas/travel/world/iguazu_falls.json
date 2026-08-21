@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Ecology & Speleology",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Limestone Geology", "Prehistoric Art", "River Ecology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Limestone Geology",
+      "Prehistoric Art",
+      "River Ecology"
+    ],
     "learning_objectives": [
       "Understand the geological formation of natural stone bridges (Devil's Throat) through karst river erosion.",
       "Analyze the artistic and historical significance of the Iguazu Falls, containing the world's oldest and most preserved limestone cave drawings.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "iguazu_falls_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/iguazu_falls.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

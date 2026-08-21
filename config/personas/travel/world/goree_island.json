@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Modern History & Peace Studies",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Transatlantic Slave Trade", "UNESCO World Heritage", "Human Rights Studies"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Transatlantic Slave Trade",
+      "UNESCO World Heritage",
+      "Human Rights Studies"
+    ],
     "learning_objectives": [
       "Understand the historical role of Gorée Island as a primary trading post and embarkation point for the Transatlantic Slave Trade.",
       "Analyze the architectural and social design of the Maison des Esclaves (Slave House), evaluating the spatial segregation of captives.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "goree_island_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/goree_island.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

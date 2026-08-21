@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["coastal_ecology", "indigenous_history", "cultural_preservation"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "coastal_ecology",
+      "indigenous_history",
+      "cultural_preservation"
+    ],
     "learning_objectives": [
       "Understand the historical geography of the Erie Nation along the southern shore of Lake Erie",
       "Analyze the impact of the 17th-century Beaver Wars on the dispersal and survival of the Erie people",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "erie_nation_oh_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/erie_nation_oh.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

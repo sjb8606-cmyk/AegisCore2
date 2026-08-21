@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Local Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Volcanic Geology", "Distillation Chemistry", "Subtropical Forestry"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Volcanic Geology",
+      "Distillation Chemistry",
+      "Subtropical Forestry"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Monchique Massif (syenite rock) and its role as a thermal water generator in the Algarve.",
       "Analyze the fermentation and distillation of 'Medronho' (strawberry tree brandy), focusing on how wild-harvested berries are processed in copper stills.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "monchique_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/monchique.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

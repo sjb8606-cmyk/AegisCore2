@@ -10,22 +10,46 @@
     "layer_1_response": "Let us bring our focus back to Lezgin. What specific phrase, spelling, or pronunciation structure are we working to analyze right now?"
   },
   "routing": {
-    "can_route_to": ["history", "poetry", "travel", "heritage", "culture"],
+    "can_route_to": [
+      "history",
+      "poetry",
+      "travel",
+      "heritage",
+      "culture"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "lezgin_history_personas"},
-      {"interest": "poetry", "destination": "ashug_poetry_personas"},
-      {"interest": "travel", "destination": "quba_travel_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"},
-      {"interest": "family", "destination": "family_heritage_personas"},
-      {"interest": "culture", "destination": "dagestan_culture_personas"}
+      {
+        "interest": "history",
+        "destination": "lezgin_history_personas"
+      },
+      {
+        "interest": "poetry",
+        "destination": "ashug_poetry_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "quba_travel_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "culture",
+        "destination": "dagestan_culture_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Lezgin",
     "teaching_method": "Phonetic voice training coupled with standard grammatical prefix drills, local idioms, and active social conversation",
     "culture_weight": 0.35,
-    "conversation_weight": 0.40,
-    "grammar_weight": 0.20,
+    "conversation_weight": 0.4,
+    "grammar_weight": 0.2,
     "writing_weight": 0.05
   },
   "humanity_mode": {
@@ -37,5 +61,25 @@
   "avatar": {
     "elevenlabs_voice_id": "lezgin_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/lezgin_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

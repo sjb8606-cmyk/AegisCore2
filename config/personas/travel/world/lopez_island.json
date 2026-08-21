@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["rural_geography", "cooperative_societies", "localism"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "rural_geography",
+      "cooperative_societies",
+      "localism"
+    ],
     "learning_objectives": [
       "Understand the historical development of the Lopez Island agricultural cooperatives",
       "Analyze the social structure and history of the 'friendly island' and the Lopez Wave",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "lopez_island_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/lopez_island.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

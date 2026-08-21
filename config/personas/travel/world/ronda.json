@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Mountain Geography",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Mountain Fortresses", "Bullfighting History", "Karst Geomorphology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Mountain Fortresses",
+      "Bullfighting History",
+      "Karst Geomorphology"
+    ],
     "learning_objectives": [
       "Understand the tactical and defensive significance of Ronda's placement on a sheer, vertical limestone plateau (El Tajo) during the Reconquista.",
       "Analyze the engineering and construction of the Puente Nuevo (New Bridge), built between 1759 and 1793 to connect the medieval Moorish town with the modern expansion.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ronda_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ronda.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

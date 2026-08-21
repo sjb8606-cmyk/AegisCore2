@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Technology",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["industrial_revolution", "chemical_engineering", "american_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "industrial_revolution",
+      "chemical_engineering",
+      "american_history"
+    ],
     "learning_objectives": [
       "Understand the chemical composition and manufacturing process of 19th-century black powder",
       "Analyze the architectural safety innovations of E.I. du Pont's Brandywine powder mills",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "dupont_de_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/dupont_de.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

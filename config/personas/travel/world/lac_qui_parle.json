@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["wetland_ecology", "avian_migration", "conservation"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "wetland_ecology",
+      "avian_migration",
+      "conservation"
+    ],
     "learning_objectives": [
       "Understand the ecological significance of the Lac qui Parle reservoir along the Mississippi Flyway",
       "Analyze how the physical geography of the Minnesota River valley creates a natural migratory corridor",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "lac_qui_parle_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/lac_qui_parle.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

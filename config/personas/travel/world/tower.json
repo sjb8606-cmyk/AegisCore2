@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Norman_Conquest", "Tudor_England", "Monarchy_and_Power"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Norman_Conquest",
+      "Tudor_England",
+      "Monarchy_and_Power"
+    ],
     "learning_objectives": [
       "Analyze how the Tower's shifting roles reflected changes in royal authority from 1066 to the Victorian era.",
       "Understand the economic and symbolic significance of the Crown Jewels within the British Empire.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tower_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tower.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Saxon_Baroque", "Reconstruction_Engineering", "WWII_Aftermath"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Saxon_Baroque",
+      "Reconstruction_Engineering",
+      "WWII_Aftermath"
+    ],
     "learning_objectives": [
       "Understand the architectural and engineering achievements of George Bähr’s original Frauenkirche stone dome (the 'Stone Bell').",
       "Analyze the complex methodology of 'archeological reconstruction' used to rebuild the Frauenkirche after its destruction in World War II.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "dresden_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/dresden.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

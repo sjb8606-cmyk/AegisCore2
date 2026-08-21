@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["volcanic_geomorphology", "immigrant_settlements", "glacial_lakes"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "volcanic_geomorphology",
+      "immigrant_settlements",
+      "glacial_lakes"
+    ],
     "learning_objectives": [
       "Understand the volcanic and tectonic mechanisms of the Southern Andes that generate Osorno's active stratovolcano structure.",
       "Analyze the historical impact of 19th-century German settlers on the agriculture, architecture, and cultural landscapes of Lake Llanquihue.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "osorno_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/osorno.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

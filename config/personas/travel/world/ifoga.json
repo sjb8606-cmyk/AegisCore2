@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["indigenous_governance", "kastom_law-like", "traditional_social_structures-like"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "indigenous_governance",
+      "kastom_law-like",
+      "traditional_social_structures-like"
+    ],
     "learning_objectives": [
       "Understand the social and political structure of traditional Samoan chiefly councils, explaining the role of the 'Ifoga' reconciliation ceremony.",
       "Analyze the legal and moral principles of customary land tenure and how it prevents the sale of ancestral lands to non-indigenous buyers.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ifoga_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ifoga.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

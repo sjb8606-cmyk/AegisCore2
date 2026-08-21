@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Industrial Heritage",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Industrial Archaeology", "Ottoman History", "Maritime Commerce"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Industrial Archaeology",
+      "Ottoman History",
+      "Maritime Commerce"
+    ],
     "learning_objectives": [
       "Understand the historical role of Kavala as a primary strategic port and the center of the Macedonian tobacco trade (basma tobacco) in the 19th century.",
       "Analyze the civil engineering of the Kamares Aqueduct, constructed by Suleiman the Magnificent to secure the city's water supply.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kavala_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kavala.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

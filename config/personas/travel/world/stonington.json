@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Culture & Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["marine_economics", "coastal_history", "sociology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "marine_economics",
+      "coastal_history",
+      "sociology"
+    ],
     "learning_objectives": [
       "Understand the historical transition of New England coastal towns from commercial fishing to tourism",
       "Analyze the economic and social tensions between a working waterfront and wealthy seasonal residents",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "stonington_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/stonington.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

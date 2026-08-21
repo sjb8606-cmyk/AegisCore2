@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Highland_Feudalism", "Tartan_History", "Social_Structures"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Highland_Feudalism",
+      "Tartan_History",
+      "Social_Structures"
+    ],
     "learning_objectives": [
       "Distinguish between 'dùthchas' (communal land rights based on heritage) and 'oighreachd' (feudal land charters granted by the Crown).",
       "Explain the devastating impact of the Disarming Act of 1746 and the subsequent Highland Clearances on the traditional clan system.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "clan_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/clan.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Industry",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["agricultural_history", "industrial_engineering", "fluvial_commerce"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "agricultural_history",
+      "industrial_engineering",
+      "fluvial_commerce"
+    ],
     "learning_objectives": [
       "Understand the economic significance of the Quad Cities as a major shipping and manufacturing center on the upper Mississippi",
       "Analyze the mechanical engineering and historic impact of John Deere's self-scouring steel plow (1837)",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "quad_cities_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/quad_cities.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

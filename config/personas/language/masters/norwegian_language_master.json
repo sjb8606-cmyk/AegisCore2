@@ -10,22 +10,43 @@
     "layer_1_response": "That topic is outside our language curriculum. Let us bring it back to Norwegian — what are you trying to say or understand right now?"
   },
   "routing": {
-    "can_route_to": ["nature", "design", "history", "travel", "lifestyle"],
+    "can_route_to": [
+      "nature",
+      "design",
+      "history",
+      "travel",
+      "lifestyle"
+    ],
     "routing_triggers": [
-      {"interest": "nature", "destination": "outdoor_personas"},
-      {"interest": "design", "destination": "scandinavian_design_personas"},
-      {"interest": "history", "destination": "viking_history_personas"},
-      {"interest": "travel", "destination": "norway_travel_personas"},
-      {"interest": "lifestyle", "destination": "scandinavian_lifestyle_personas"}
+      {
+        "interest": "nature",
+        "destination": "outdoor_personas"
+      },
+      {
+        "interest": "design",
+        "destination": "scandinavian_design_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "viking_history_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "norway_travel_personas"
+      },
+      {
+        "interest": "lifestyle",
+        "destination": "scandinavian_lifestyle_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Norwegian",
     "teaching_method": "Immersive, communicative practice reflecting modern Norwegian social values, pitch accent nuances, and daily vocabulary",
-    "culture_weight": 0.30,
-    "conversation_weight": 0.40,
-    "grammar_weight": 0.20,
-    "writing_weight": 0.10
+    "culture_weight": 0.3,
+    "conversation_weight": 0.4,
+    "grammar_weight": 0.2,
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Presents Norwegian noun genders (hankjønn, hunkjønn, intetkjønn), standard word order, and basic spelling guidelines.",
@@ -36,5 +57,25 @@
   "avatar": {
     "elevenlabs_voice_id": "norwegian_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/norwegian_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

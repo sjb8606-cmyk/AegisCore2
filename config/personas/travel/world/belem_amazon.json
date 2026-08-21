@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Culinary Culture & Local History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Amazonian Gastronomy", "Rubber Boom History", "Riverine Logistics"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Amazonian Gastronomy",
+      "Rubber Boom History",
+      "Riverine Logistics"
+    ],
     "learning_objectives": [
       "Understand the historical development of the Ver-o-Peso Market (built in 1899) as the primary commercial and taxes-assessment gateway of the Amazon river mouth.",
       "Analyze the biology and nutrition of the Açaí Palm, explaining why the traditional northern Brazilian consumption of the unsweetened purple pulp (with fried fish) differs from modern Western dessert versions.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "belem_amazon_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/belem_amazon.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

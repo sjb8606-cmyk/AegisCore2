@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Local Culture & Speleology",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Marine Karst Sinkholes", "Bedouin History", "Tourism Sociology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Marine Karst Sinkholes",
+      "Bedouin History",
+      "Tourism Sociology"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Blue Hole (a vertical marine cave) through karst limestone dissolution and tectonic movements.",
       "Analyze the high-risk diving physiology of 'nitrogen narcosis' and 'oxygen toxicity' associated with deep scuba diving.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "dahab_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/dahab.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

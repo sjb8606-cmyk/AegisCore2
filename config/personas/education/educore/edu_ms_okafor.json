@@ -19,11 +19,40 @@
   "education": {
     "tier": 2,
     "reports_to": "edu_marcus",
-    "subjects": ["african_history", "developing_world_history"],
-    "curriculum_tags": ["african_civilizations", "colonialism", "independence_movements", "world_history", "decolonized_curriculum"]
+    "subjects": [
+      "african_history",
+      "developing_world_history"
+    ],
+    "curriculum_tags": [
+      "african_civilizations",
+      "colonialism",
+      "independence_movements",
+      "world_history",
+      "decolonized_curriculum"
+    ]
   },
   "avatar": {
     "elevenlabs_voice_id": "edu_ms_okafor_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/edu_ms_okafor.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Maritime History & Coastal Geography",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Coastal Geomorphology", "Age of Discovery", "History of Navigation"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Coastal Geomorphology",
+      "Age of Discovery",
+      "History of Navigation"
+    ],
     "learning_objectives": [
       "Understand the geological and oceanographic formation of Porto Santo’s golden sand beach, focusing on its calcite and marine-sediment composition.",
       "Analyze the role of Christopher Columbus on Porto Santo (where he lived in the 1480s), evaluating how his study of Atlantic drift-woods and winds prepared him for his voyage.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "porto_santo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/porto_santo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

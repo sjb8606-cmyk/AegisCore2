@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Music",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["intangible_cultural_heritage", "musicology", "caribbean_syncretism"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "intangible_cultural_heritage",
+      "musicology",
+      "caribbean_syncretism"
+    ],
     "learning_objectives": [
       "Identify the three foundational instruments of traditional Merengue (accordion, tambora, güira) and explain how they represent European, African, and Taíno cultural fusion.",
       "Understand the political manipulation of Merengue by dictator Rafael Trujillo as a tool to consolidate national populist support and erase elite class biases.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "merengue_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/merengue.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

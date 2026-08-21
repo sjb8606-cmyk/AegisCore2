@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Recreation",
-    "grade_levels": ["middle_school", "high_school", "adult"],
-    "curriculum_tags": ["trail_recreation", "rail_to_trail", "rural_economics"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "trail_recreation",
+      "rail_to_trail",
+      "rural_economics"
+    ],
     "learning_objectives": [
       "Understand the development and logistics of the Appalachian Trail in Virginia",
       "Analyze the transition of the Virginia Creeper from a rugged mountain railroad to a premier recreational rail-to-trail",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "appalachian_damascus_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/appalachian_damascus.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

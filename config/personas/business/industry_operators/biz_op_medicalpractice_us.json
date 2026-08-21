@@ -6,7 +6,12 @@
     "tax_context": "Standard federal and state income/payroll tax; many practices structure as S-corps or PLLCs for tax treatment of owner compensation.",
     "labor_regulation": "Standard federal/state employment law; HIPAA compliance applies to all patient data handling and is a major operational/compliance cost.",
     "licensing_bodies": "State medical/dental board licensure for providers, DEA registration if prescribing controlled substances, CLIA certification if performing lab testing in-office.",
-    "key_compliance_terms": ["HIPAA Privacy and Security Rule", "state medical/dental board licensing", "NPI (National Provider Identifier)", "insurance credentialing per payer"]
+    "key_compliance_terms": [
+      "HIPAA Privacy and Security Rule",
+      "state medical/dental board licensing",
+      "NPI (National Provider Identifier)",
+      "insurance credentialing per payer"
+    ]
   },
   "humanity_mode_regional_addendum": {
     "0_percent": "HIPAA compliance cost as a fixed overhead, state-by-state insurance credentialing timelines, multi-payer reimbursement rate variance."
@@ -16,5 +21,25 @@
       "Understand HIPAA compliance as a significant, ongoing operational cost rather than a one-time setup task.",
       "Analyze how the US multi-payer insurance system creates reimbursement rate variance that a single-payer system would not."
     ]
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

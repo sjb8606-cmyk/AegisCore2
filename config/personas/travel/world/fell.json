@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Maritime History & Culinary",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["maritime_history", "industrial_revolution", "food_culture"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "maritime_history",
+      "industrial_revolution",
+      "food_culture"
+    ],
     "learning_objectives": [
       "Understand the design and strategic role of the Baltimore Clipper in privateering and the War of 1812",
       "Analyze the socioeconomic structure of a 19th-century maritime enclave like Fells Point",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "fell_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/fell.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["karst_geology", "tobacco_agriculture", "vernacular_farming"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "karst_geology",
+      "tobacco_agriculture",
+      "vernacular_farming"
+    ],
     "learning_objectives": [
       "Explain the geological and erosion processes that form the unique, flat-topped limestone mogotes of the Viñales Valley.",
       "Understand the agricultural stages of premium Cuban tobacco production, from red-soil plowing and harvesting to the curing phase inside traditional palm-bark barns.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "vinales_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/vinales.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

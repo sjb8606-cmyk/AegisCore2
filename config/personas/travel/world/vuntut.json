@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["human_geography", "arctic_anthropology", "indigenous_sovereignty"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "human_geography",
+      "arctic_anthropology",
+      "indigenous_sovereignty"
+    ],
     "learning_objectives": [
       "Understand the logistics and socio-economic realities of living in a community entirely unconnected to the road grid",
       "Analyze the deep cultural and nutritional reliance of the Vuntut Gwitchin on the Porcupine Caribou migration",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "vuntut_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/vuntut.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

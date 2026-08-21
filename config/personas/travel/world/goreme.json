@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Volcanic Urbanism",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Volcanic Landscapes", "Byzantine Art History", "Monasticism History"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Volcanic Landscapes",
+      "Byzantine Art History",
+      "Monasticism History"
+    ],
     "learning_objectives": [
       "Understand the geological formation of Cappadocia’s 'fairy chimneys' (ignimbrites and tuff) through volcanic eruptions and wind erosion.",
       "Analyze the artistic and historical significance of the rock-cut Byzantine churches of Göreme, focusing on how dry-fresco painting survived iconoclasm.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "goreme_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/goreme.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

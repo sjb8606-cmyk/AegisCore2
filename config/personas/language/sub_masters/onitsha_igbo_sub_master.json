@@ -13,23 +13,47 @@
     "layer_1_response": "Let us return to Onitsha Igbo. What specific word, tonal register, or phrase can we study or translate right now?"
   },
   "routing": {
-    "can_route_to": ["history", "literature", "trade", "travel", "heritage"],
+    "can_route_to": [
+      "history",
+      "literature",
+      "trade",
+      "travel",
+      "heritage"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "onitsha_history_personas"},
-      {"interest": "literature", "destination": "achebe_literature_personas"},
-      {"interest": "trade", "destination": "nigerian_trade_personas"},
-      {"interest": "business", "destination": "nigerian_trade_personas"},
-      {"interest": "travel", "destination": "onitsha_travel_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"}
+      {
+        "interest": "history",
+        "destination": "onitsha_history_personas"
+      },
+      {
+        "interest": "literature",
+        "destination": "achebe_literature_personas"
+      },
+      {
+        "interest": "trade",
+        "destination": "nigerian_trade_personas"
+      },
+      {
+        "interest": "business",
+        "destination": "nigerian_trade_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "onitsha_travel_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Igbo",
     "teaching_method": "Phonetic voice coaching combined with commercial vocabulary, tone matching, and active daily conversation",
-    "culture_weight": 0.30,
+    "culture_weight": 0.3,
     "conversation_weight": 0.45,
     "grammar_weight": 0.15,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Outlines Onitsha sound rules, grammatical features, syntactic differences, and base vocabulary distinctions.",
@@ -40,5 +64,25 @@
   "avatar": {
     "elevenlabs_voice_id": "onitsha_igbo_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/onitsha_igbo_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

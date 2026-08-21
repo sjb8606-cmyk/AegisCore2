@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Literature",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["resort_history", "gothic_literature", "steam_technology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "resort_history",
+      "gothic_literature",
+      "steam_technology"
+    ],
     "learning_objectives": [
       "Understand the historical role of F.O. Stanley and his steam-powered cars in developing early tourism in Estes Park",
       "Analyze how the physical architecture of the Stanley Hotel inspired the gothic setting of Stephen King's 'The Shining'",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "estes_park_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/estes_park.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

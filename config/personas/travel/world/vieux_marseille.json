@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Local Culture & Maritime History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Mediterranean Archaeology", "Urban Sociology", "Culinary History"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Mediterranean Archaeology",
+      "Urban Sociology",
+      "Culinary History"
+    ],
     "learning_objectives": [
       "Understand the Greek founding of Massalia (Marseille) in 600 BC and its role as the oldest city in France.",
       "Analyze the strict culinary taxonomy and cultural significance of Bouillabaisse as a working-class fisherman's soup turned high gastronomy.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "vieux_marseille_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/vieux_marseille.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

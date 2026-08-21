@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Renaissance Art",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Renaissance Humanism", "Ducal Patronage", "Perspective Geometry"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Renaissance Humanism",
+      "Ducal Patronage",
+      "Perspective Geometry"
+    ],
     "learning_objectives": [
       "Understand the architectural design of the Palazzo Ducale in Urbino, analyzing how Luciano Laurana integrated defensive towers with a classical, open palace courtyard.",
       "Analyze the role of Federico da Montefeltro as a mercenary general (condottiere) who used his military earnings to fund one of the most advanced humanist courts in Europe.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "urbino_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/urbino.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

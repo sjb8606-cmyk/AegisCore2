@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Nature & History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Geology", "Royal History", "Outdoor Education"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Geology",
+      "Royal History",
+      "Outdoor Education"
+    ],
     "learning_objectives": [
       "Understand the geological formation of Fontainebleau's unique sandstone boulders from a Miocene-era marine transgression.",
       "Analyze the architectural evolution of the Château de Fontainebleau as a continuous record of French royal tastes from medieval to imperial eras.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "fontainebleau_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/fontainebleau.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

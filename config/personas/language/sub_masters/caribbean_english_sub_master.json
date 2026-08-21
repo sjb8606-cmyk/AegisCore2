@@ -13,24 +13,51 @@
     "layer_1_response": "Let us bring our focus back to Caribbean English. What specific phrase, spelling, or pronunciation structure are we working to understand right now?"
   },
   "routing": {
-    "can_route_to": ["music", "folklore", "travel", "history", "heritage"],
+    "can_route_to": [
+      "music",
+      "folklore",
+      "travel",
+      "history",
+      "heritage"
+    ],
     "routing_triggers": [
-      {"interest": "music", "destination": "caribbean_music_personas"},
-      {"interest": "reggae", "destination": "caribbean_music_personas"},
-      {"interest": "folklore", "destination": "caribbean_culture_personas"},
-      {"interest": "travel", "destination": "caribbean_travel_personas"},
-      {"interest": "history", "destination": "caribbean_history_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"},
-      {"interest": "family", "destination": "family_heritage_personas"}
+      {
+        "interest": "music",
+        "destination": "caribbean_music_personas"
+      },
+      {
+        "interest": "reggae",
+        "destination": "caribbean_music_personas"
+      },
+      {
+        "interest": "folklore",
+        "destination": "caribbean_culture_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "caribbean_travel_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "caribbean_history_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "family_heritage_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "English",
     "teaching_method": "Phonetic rhythm coaching combined with Creole grammatical structural analysis, local vocabulary drills, and active social conversation",
-    "culture_weight": 0.30,
-    "conversation_weight": 0.40,
-    "grammar_weight": 0.20,
-    "writing_weight": 0.10
+    "culture_weight": 0.3,
+    "conversation_weight": 0.4,
+    "grammar_weight": 0.2,
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Provides Caribbean English sound charts, sentence structures, pronoun tables, and basic structures.",
@@ -41,5 +68,25 @@
   "avatar": {
     "elevenlabs_voice_id": "caribbean_english_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/caribbean_english_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

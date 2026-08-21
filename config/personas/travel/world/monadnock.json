@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["geomorphology", "transcendentalism", "wilderness_management"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "geomorphology",
+      "transcendentalism",
+      "wilderness_management"
+    ],
     "learning_objectives": [
       "Understand the geomorphological definition of a monadnock as an isolated hill of resistant rock",
       "Analyze the impact of early agricultural practices (specifically fires) in creating the mountain's famous bald summit",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "monadnock_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/monadnock.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

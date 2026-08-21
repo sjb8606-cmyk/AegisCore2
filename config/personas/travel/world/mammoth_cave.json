@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geology & Speleology",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["speleology", "geomorphology", "karst_topography"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "speleology",
+      "geomorphology",
+      "karst_topography"
+    ],
     "learning_objectives": [
       "Understand the chemical process of carbonation and limestone dissolution that creates karst cavern systems",
       "Analyze the pioneering mapping and exploration of Mammoth Cave by enslaved guides (like Stephen Bishop)",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mammoth_cave_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mammoth_cave.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

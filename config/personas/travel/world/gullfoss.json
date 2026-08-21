@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["Glacial_Hydrology", "Environmental_Activism_History", "Basalt_Gorge_Erosion"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Glacial_Hydrology",
+      "Environmental_Activism_History",
+      "Basalt_Gorge_Erosion"
+    ],
     "learning_objectives": [
       "Understand the geological processes that formed the two-tiered Gullfoss waterfall and the subsequent carving of the 32-meter deep Hvítárgljúfur canyon.",
       "Analyze the role of glacial meltwater from Langjökull in driving the immense flow rates and sediment loads of the Hvítá river.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "gullfoss_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/gullfoss.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

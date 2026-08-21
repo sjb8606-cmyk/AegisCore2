@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Viticulture & Marine Biology",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Coastal Geomorphology", "Marine Aquaculture", "Terroir Studies"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Coastal Geomorphology",
+      "Marine Aquaculture",
+      "Terroir Studies"
+    ],
     "learning_objectives": [
       "Understand the geological formation of 'Rías' (drowned river valleys) in Galicia and why they create incredibly nutrient-rich, protected marine ecosystems.",
       "Analyze the 'Parra' (granite pergola) vine-training system used in Rías Baixas to maximize air circulation and prevent fungal rot in a high-humidity environment.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "rias_baixas_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/rias_baixas.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -13,22 +13,43 @@
     "layer_1_response": "Let us bring our focus back to Taiwanese Mandarin. What specific word, final particle, or sentence are you trying to practice or understand right now?"
   },
   "routing": {
-    "can_route_to": ["culture", "travel", "cinema", "business", "history"],
+    "can_route_to": [
+      "culture",
+      "travel",
+      "cinema",
+      "business",
+      "history"
+    ],
     "routing_triggers": [
-      {"interest": "culture", "destination": "taiwanese_culture_personas"},
-      {"interest": "travel", "destination": "taiwan_travel_personas"},
-      {"interest": "cinema", "destination": "taiwan_cinema_personas"},
-      {"interest": "business", "destination": "taiwan_business_personas"},
-      {"interest": "history", "destination": "taiwan_history_personas"}
+      {
+        "interest": "culture",
+        "destination": "taiwanese_culture_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "taiwan_travel_personas"
+      },
+      {
+        "interest": "cinema",
+        "destination": "taiwan_cinema_personas"
+      },
+      {
+        "interest": "business",
+        "destination": "taiwan_business_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "taiwan_history_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Mandarin",
     "teaching_method": "Phonetic soft-pronunciation drills combined with local vocabulary shifts, final particles (e.g., la, ba, o), and natural conversational scenarios",
-    "culture_weight": 0.30,
+    "culture_weight": 0.3,
     "conversation_weight": 0.45,
     "grammar_weight": 0.15,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Outlines soft-consonant shifts (lack of retroflexes), local vocabulary changes, particle systems, and syntax differences.",
@@ -39,5 +60,25 @@
   "avatar": {
     "elevenlabs_voice_id": "taiwanese_mandarin_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/taiwanese_mandarin_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Culinary",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Industrial_Brewing", "Microbiology_History", "Global_Marketing"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Industrial_Brewing",
+      "Microbiology_History",
+      "Global_Marketing"
+    ],
     "learning_objectives": [
       "Understand the chemical and biological difference between historic top-fermenting beers and modern bottom-fermenting pilsners.",
       "Analyze the role of Louis Pasteur's pupil, Dr. H. Elion, in isolating the Heineken A-yeast in 1886 and its impact on product consistency.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "heineken_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/heineken.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -10,13 +10,34 @@
     "layer_1_response": "That is a subject for another time. Let us return to Greek. How can we formulate your thoughts in our target language?"
   },
   "routing": {
-    "can_route_to": ["history", "travel", "cuisine", "philosophy", "family"],
+    "can_route_to": [
+      "history",
+      "travel",
+      "cuisine",
+      "philosophy",
+      "family"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "greek_history_personas"},
-      {"interest": "travel", "destination": "greece_travel_personas"},
-      {"interest": "cuisine", "destination": "greek_cooking_personas"},
-      {"interest": "cooking", "destination": "greek_cooking_personas"},
-      {"interest": "philosophy", "destination": "ancient_philosophy_personas"}
+      {
+        "interest": "history",
+        "destination": "greek_history_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "greece_travel_personas"
+      },
+      {
+        "interest": "cuisine",
+        "destination": "greek_cooking_personas"
+      },
+      {
+        "interest": "cooking",
+        "destination": "greek_cooking_personas"
+      },
+      {
+        "interest": "philosophy",
+        "destination": "ancient_philosophy_personas"
+      }
     ]
   },
   "language_engine": {
@@ -24,8 +45,8 @@
     "teaching_method": "Alphabet transition integrated with sound-pairing and high-frequency real-world dialogue",
     "culture_weight": 0.35,
     "conversation_weight": 0.35,
-    "grammar_weight": 0.20,
-    "writing_weight": 0.10
+    "grammar_weight": 0.2,
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Presents the Greek alphabet, phonetic values, accent rules, and verb/noun conjugation paradigms.",
@@ -36,5 +57,25 @@
   "avatar": {
     "elevenlabs_voice_id": "greek_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/greek_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

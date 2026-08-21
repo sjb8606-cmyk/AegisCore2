@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Literature",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["shakespearean_theater", "cultural_tourism", "performing_arts"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "shakespearean_theater",
+      "cultural_tourism",
+      "performing_arts"
+    ],
     "learning_objectives": [
       "Understand the history and global impact of the Oregon Shakespeare Festival (founded 1935) on American theater",
       "Analyze the architectural design of the outdoor Elizabethan Stage modeled on London's historic Fortune Theatre",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "ashland_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/ashland.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

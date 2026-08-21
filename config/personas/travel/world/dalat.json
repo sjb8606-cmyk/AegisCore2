@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Tourism",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["French_Colonial_Architecture", "Highland_Floriculture", "Urban_Sanatorium_History"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "French_Colonial_Architecture",
+      "Highland_Floriculture",
+      "Urban_Sanatorium_History"
+    ],
     "learning_objectives": [
       "Understand the historical role of French scientist Alexandre Yersin in establishing Dalat as a high-altitude sanatorium and colonial hill station in 1893.",
       "Analyze the architectural design and historical preservation of Dalat’s 1930s Art Deco and French provincial villas.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "dalat_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/dalat.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["indigenous_sovereignty", "mha_history", "environmental_displacement"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "indigenous_sovereignty",
+      "mha_history",
+      "environmental_displacement"
+    ],
     "learning_objectives": [
       "Understand the agricultural and trading dominance of the Mandan, Hidatsa, and Arikara nations along the Missouri River",
       "Analyze the socioeconomic and physical impact of the Garrison Dam construction (1947-1953) on the Fort Berthold reservation",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "mandan_nation_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/mandan_nation.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

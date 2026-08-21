@@ -10,14 +10,38 @@
     "layer_1_response": "Let us bring our focus back to Yankunytjatjara. What specific word, phrase, or pronunciation structure are we practicing right now?"
   },
   "routing": {
-    "can_route_to": ["history", "travel", "music", "heritage", "community"],
+    "can_route_to": [
+      "history",
+      "travel",
+      "music",
+      "heritage",
+      "community"
+    ],
     "routing_triggers": [
-      {"interest": "history", "destination": "east_apy_history_personas"},
-      {"interest": "travel", "destination": "coober_pedy_travel_personas"},
-      {"interest": "music", "destination": "desert_songs_personas"},
-      {"interest": "heritage", "destination": "family_heritage_personas"},
-      {"interest": "family", "destination": "family_heritage_personas"},
-      {"interest": "community", "destination": "yankunytjatjara_culture_personas"}
+      {
+        "interest": "history",
+        "destination": "east_apy_history_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "coober_pedy_travel_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "desert_songs_personas"
+      },
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "community",
+        "destination": "yankunytjatjara_culture_personas"
+      }
     ]
   },
   "language_engine": {
@@ -37,5 +61,25 @@
   "avatar": {
     "elevenlabs_voice_id": "yankunytjatjara_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/yankunytjatjara_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

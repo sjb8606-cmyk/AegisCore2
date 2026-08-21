@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Horticulture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["horticulture", "slavery_history", "landscape_design"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "horticulture",
+      "slavery_history",
+      "landscape_design"
+    ],
     "learning_objectives": [
       "Understand the development and design principles of the romantic garden style in early America",
       "Analyze the role of enslaved labor in the clearing of swamps for Carolina Gold rice cultivation",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "magnolia_gardens_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/magnolia_gardens.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

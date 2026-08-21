@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["avian_biodiversity", "canopy_ecology", "indigenous_symbolism_png"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "avian_biodiversity",
+      "canopy_ecology",
+      "indigenous_symbolism_png"
+    ],
     "learning_objectives": [
       "Understand the biological and nesting adaptations of the Raggiana Bird of Paradise (Paradisaea raggiana) in our high-altitude cloud forests.",
       "Explain the cultural and symbolic significance of the bird's plumage in traditional 'bilas' (body ornamentation) and ceremonial headdresses.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "bird_of_paradise_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/bird_of_paradise.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

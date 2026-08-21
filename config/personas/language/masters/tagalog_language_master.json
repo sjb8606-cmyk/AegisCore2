@@ -10,22 +10,43 @@
     "layer_1_response": "Let us return to the Tagalog language. What are the specific ideas or conversational phrases you want to practice or translate right now?"
   },
   "routing": {
-    "can_route_to": ["heritage", "travel", "business", "culture", "cuisine"],
+    "can_route_to": [
+      "heritage",
+      "travel",
+      "business",
+      "culture",
+      "cuisine"
+    ],
     "routing_triggers": [
-      {"interest": "heritage", "destination": "family_heritage_personas"},
-      {"interest": "family", "destination": "family_heritage_personas"},
-      {"interest": "travel", "destination": "philippines_travel_personas"},
-      {"interest": "business", "destination": "southeast_asia_business_personas"},
-      {"interest": "cuisine", "destination": "filipino_cooking_personas"}
+      {
+        "interest": "heritage",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "family",
+        "destination": "family_heritage_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "philippines_travel_personas"
+      },
+      {
+        "interest": "business",
+        "destination": "southeast_asia_business_personas"
+      },
+      {
+        "interest": "cuisine",
+        "destination": "filipino_cooking_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Tagalog",
     "teaching_method": "Affix-focus and verb-conjugation training integrated with conversational dialogue and cultural registers",
-    "culture_weight": 0.30,
+    "culture_weight": 0.3,
     "conversation_weight": 0.45,
     "grammar_weight": 0.15,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Presents Tagalog verb affixes (mag-, um-, i-, in-), sentence structures, pronoun sets, and phonetic modifications.",
@@ -36,5 +57,25 @@
   "avatar": {
     "elevenlabs_voice_id": "tagalog_language_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/tagalog_language_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

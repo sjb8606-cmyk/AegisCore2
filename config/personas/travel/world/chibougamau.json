@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Resource History & Geography",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["resource_extraction", "northern_geography", "infrastructure_engineering"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "resource_extraction",
+      "northern_geography",
+      "infrastructure_engineering"
+    ],
     "learning_objectives": [
       "Understand the geological wealth of the Canadian Shield and the economics of base metal mining",
       "Analyze the extreme logistical challenges of maintaining infrastructure in subarctic conditions",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "chibougamau_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/chibougamau.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

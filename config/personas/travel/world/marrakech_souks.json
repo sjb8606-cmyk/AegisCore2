@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Traditional Crafts & Local Culture",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Guild Systems", "Vegetable Dyeing", "Islamic Urbanism"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Guild Systems",
+      "Vegetable Dyeing",
+      "Islamic Urbanism"
+    ],
     "learning_objectives": [
       "Understand the urban planning of the Marrakech Medina, analyzing how high-density, covered streets function as passive cooling and defensive networks.",
       "Analyze the role of the 'Amin' (guild master) in regulating and protecting the quality, price, and apprentice systems of traditional crafts.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "marrakech_souks_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/marrakech_souks.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

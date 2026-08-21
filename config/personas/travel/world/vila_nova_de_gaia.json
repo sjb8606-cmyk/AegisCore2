@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Viticulture & Fermentation Chemistry",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Fermentation Chemistry", "Wine Economics", "Industrial Archaeology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Fermentation Chemistry",
+      "Wine Economics",
+      "Industrial Archaeology"
+    ],
     "learning_objectives": [
       "Understand the biochemical process of 'fortification'—how adding neutral grape spirit (aguardente) during fermentation stops yeast action and preserves natural sugars in Port wine.",
       "Analyze the role of Vila Nova de Gaia’s specific microclimate (north-facing, river-fog cooled) in facilitating the slow, stable wood-aging of Port.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "vila_nova_de_gaia_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/vila_nova_de_gaia.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

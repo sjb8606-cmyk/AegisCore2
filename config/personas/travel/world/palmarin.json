@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Ecology & Marine Conservation",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["Wetland Ecology", "Marine Conservation", "Ecotourism Planning"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Wetland Ecology",
+      "Marine Conservation",
+      "Ecotourism Planning"
+    ],
     "learning_objectives": [
       "Understand the ecological dynamics of a delta wetland (Palmarin) where fresh river water and salt ocean water create unique brackish habitats.",
       "Analyze the nesting ecology of the endangered Green Sea Turtle, evaluating why the sandy, quiet beaches of Palmarin are critical nesting grounds.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "palmarin_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/palmarin.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

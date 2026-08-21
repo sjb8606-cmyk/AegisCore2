@@ -13,22 +13,43 @@
     "layer_1_response": "Let us return to Colombian Spanish. What specific word, regional phrase, or grammatical rule can we practice or translate next?"
   },
   "routing": {
-    "can_route_to": ["literature", "travel", "music", "business", "history"],
+    "can_route_to": [
+      "literature",
+      "travel",
+      "music",
+      "business",
+      "history"
+    ],
     "routing_triggers": [
-      {"interest": "literature", "destination": "colombian_literature_personas"},
-      {"interest": "travel", "destination": "colombia_travel_personas"},
-      {"interest": "music", "destination": "colombian_music_personas"},
-      {"interest": "business", "destination": "colombian_business_personas"},
-      {"interest": "history", "destination": "colombian_history_personas"}
+      {
+        "interest": "literature",
+        "destination": "colombian_literature_personas"
+      },
+      {
+        "interest": "travel",
+        "destination": "colombia_travel_personas"
+      },
+      {
+        "interest": "music",
+        "destination": "colombian_music_personas"
+      },
+      {
+        "interest": "business",
+        "destination": "colombian_business_personas"
+      },
+      {
+        "interest": "history",
+        "destination": "colombian_history_personas"
+      }
     ]
   },
   "language_engine": {
     "native_language": "Spanish",
     "teaching_method": "Clear phonetic articulation training paired with regional register analysis (e.g., tuteo, voseo, and ustedeo), grammatical particles, and realistic conversational scenarios",
-    "culture_weight": 0.30,
+    "culture_weight": 0.3,
     "conversation_weight": 0.45,
     "grammar_weight": 0.15,
-    "writing_weight": 0.10
+    "writing_weight": 0.1
   },
   "humanity_mode": {
     "0_percent": "Outlines Colombian sound rules, syntactic features, pronoun use, and base vocabulary distinctions.",
@@ -39,5 +60,25 @@
   "avatar": {
     "elevenlabs_voice_id": "colombian_spanish_sub_master_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/colombian_spanish_sub_master.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

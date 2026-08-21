@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["granite_weathering", "san_rock_art", "religious_syncretism_andean_and_african"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "granite_weathering",
+      "san_rock_art",
+      "religious_syncretism_andean_and_african"
+    ],
     "learning_objectives": [
       "Explain the geological and wind-abrasion processes of spheroidal weathering that create the iconic granite balancing rocks (kopjes) of Matobo.",
       "Interpret the symbolic and spiritual meaning of San (Bushman) rock art paintings found in the caves of the Matobo Hills.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "matobo_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/matobo.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

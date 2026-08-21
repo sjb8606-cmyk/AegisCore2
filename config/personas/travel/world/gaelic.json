@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Philosophy",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Minority_Language_Revival", "Linguistic_Ecology", "Oral_Traditions"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Minority_Language_Revival",
+      "Linguistic_Ecology",
+      "Oral_Traditions"
+    ],
     "learning_objectives": [
       "Understand the historical factors, including the Highland Clearances and the Education Act of 1872, that led to the decline of Scottish Gaelic.",
       "Analyze the structure of Gaelic place names and how they describe specific geological and ecological features of the Scottish landscape.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "gaelic_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/gaelic.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Ecology & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["desert_ecology", "mountain_geography", "biodiversity"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "desert_ecology",
+      "mountain_geography",
+      "biodiversity"
+    ],
     "learning_objectives": [
       "Understand the geological formation of the Rincon Mountains and their impact on the desert microclimate",
       "Analyze the transition of ecological zones from the Sonoran desert floor to the high-elevation woodlands",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "saguaro_east_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/saguaro_east.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Coastal Geography",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Age of Discovery", "Coastal Geomorphology", "Navigation History"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Age of Discovery",
+      "Coastal Geomorphology",
+      "Navigation History"
+    ],
     "learning_objectives": [
       "Understand the historical role of the Sagres Peninsula (Promontorium Sacrum) as the spiritual and technical nursery of early Portuguese maritime exploration.",
       "Analyze the geomorphology of the limestone cliffs of Cape Saint Vincent and how they withstand Atlantic wave erosion.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "sagres_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/sagres.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

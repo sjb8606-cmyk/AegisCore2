@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Local Culture",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["Oracle of Amun", "Kershef Architecture", "Berber Linguistics"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "Oracle of Amun",
+      "Kershef Architecture",
+      "Berber Linguistics"
+    ],
     "learning_objectives": [
       "Understand the historical role of the Temple of the Oracle of Amun in Siwa as the primary spiritual arbiter of the ancient Mediterranean.",
       "Analyze the architectural technology of 'Kershef' (traditional salt-clay brick-building), evaluating how it regulates heat and weathers in arid climates.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "siwa_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/siwa.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

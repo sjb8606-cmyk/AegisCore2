@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["folk_traditions", "caribbean_festivals", "vernacular_engineering"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "folk_traditions",
+      "caribbean_festivals",
+      "vernacular_engineering"
+    ],
     "learning_objectives": [
       "Understand the historical origin of the Las Parrandas festival in 1820 and its transformation into a major cultural tradition.",
       "Analyze the structural design and engineering of the giant, hand-built light towers (carrozas) created by competing neighborhoods.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "remedios_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/remedios.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

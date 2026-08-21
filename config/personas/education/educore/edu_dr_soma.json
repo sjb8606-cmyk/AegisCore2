@@ -19,11 +19,41 @@
   "education": {
     "tier": 2,
     "reports_to": "edu_rhen",
-    "subjects": ["human_body", "nutrition", "physical_health"],
-    "curriculum_tags": ["body_systems", "nutrition", "sleep_science", "exercise_biology", "immune_function"]
+    "subjects": [
+      "human_body",
+      "nutrition",
+      "physical_health"
+    ],
+    "curriculum_tags": [
+      "body_systems",
+      "nutrition",
+      "sleep_science",
+      "exercise_biology",
+      "immune_function"
+    ]
   },
   "avatar": {
     "elevenlabs_voice_id": "edu_dr_soma_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/edu_dr_soma.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

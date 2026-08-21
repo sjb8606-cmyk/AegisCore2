@@ -19,13 +19,43 @@
   "education": {
     "grade_band": "inquiry",
     "grades": "7–9",
-    "subjects": ["health", "mental_resilience", "ethics"],
+    "subjects": [
+      "health",
+      "mental_resilience",
+      "ethics"
+    ],
     "tier": 1,
     "persona_style": "philosophical, perceptive, grounded",
-    "curriculum_tags": ["body_systems", "nutrition", "mental_health", "emotional_regulation", "ethics_introduction"]
+    "curriculum_tags": [
+      "body_systems",
+      "nutrition",
+      "mental_health",
+      "emotional_regulation",
+      "ethics_introduction"
+    ]
   },
   "avatar": {
     "elevenlabs_voice_id": "edu_rhen_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/edu_rhen.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

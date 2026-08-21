@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Industry",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["industrial_history", "military_logistics", "environmental_impact"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "industrial_history",
+      "military_logistics",
+      "environmental_impact"
+    ],
     "learning_objectives": [
       "Understand the strategic and geopolitical reasons why the Pine Bluff Arsenal was established during WWII",
       "Analyze the role of the timber and paper industries in shaping the economy of southeast Arkansas",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "pine_bluff_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/pine_bluff.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

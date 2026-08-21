@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["volcanology", "mineralogy", "geomorphology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "volcanology",
+      "mineralogy",
+      "geomorphology"
+    ],
     "learning_objectives": [
       "Understand the geological formation of lamproite pipes and how diamonds are brought to the surface by volcanic eruptions",
       "Analyze why the Murfreesboro diamond pipe is the only active, public diamond-mining site in the world",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "crater_diamonds_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/crater_diamonds.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

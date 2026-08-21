@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Geography & Nature",
-    "grade_levels": ["middle_school", "high_school", "university"],
-    "curriculum_tags": ["geomorphology", "structural_geology", "appalachian_ecology"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university"
+    ],
+    "curriculum_tags": [
+      "geomorphology",
+      "structural_geology",
+      "appalachian_ecology"
+    ],
     "learning_objectives": [
       "Understand the geological formation of Black Hand Sandstone and the erosion that carved the Hocking Hills gorges",
       "Analyze the role of glaciers in creating the deep, shaded microclimates of the hollows",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "hocking_hills_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/hocking_hills.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "History & Heritage",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["colonial_history", "fortification_engineering", "spanish_empire"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "colonial_history",
+      "fortification_engineering",
+      "spanish_empire"
+    ],
     "learning_objectives": [
       "Understand the strategic geographic role of St. Augustine as the northern outpost of the Spanish Empire",
       "Analyze the unique structural properties of coquina stone in absorbing cannonball kinetic energy",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "st_augustine_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/st_augustine.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

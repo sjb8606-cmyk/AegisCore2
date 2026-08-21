@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "History",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["volcanic_geomorphology", "wwii_pacific_tunnels", "seismic_monitoring"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "volcanic_geomorphology",
+      "wwii_pacific_tunnels",
+      "seismic_monitoring"
+    ],
     "learning_objectives": [
       "Explain the geological and tectonic processes of volcanic collapse that formed the giant caldera of Simpson Harbour.",
       "Understand the military and strategic significance of Rabaul as the primary Japanese naval headquarters in the South Pacific during WWII.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "rabaul_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/rabaul.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

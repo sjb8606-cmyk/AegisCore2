@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Tourism & Fashion Sociology",
-    "grade_levels": ["high_school", "university", "adult"],
-    "curriculum_tags": ["History of Fashion", "Socio-Economics of Tourism", "Modern Cinema"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "History of Fashion",
+      "Socio-Economics of Tourism",
+      "Modern Cinema"
+    ],
     "learning_objectives": [
       "Understand the transformation of Saint-Tropez from an isolated fishing village to a global luxury hub through the lens of media and cinema.",
       "Analyze Brigitte Bardot’s role in popularizing casual, liberating fashion (bohemian style, bikinis) during the 1950s.",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "saint_tropez_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/saint_tropez.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

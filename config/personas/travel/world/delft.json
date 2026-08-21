@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Art",
-    "grade_levels": ["middle_school", "high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Earthenware_Technology", "Global_Trade_Art", "Vermeer_Composition"],
+    "grade_levels": [
+      "middle_school",
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Earthenware_Technology",
+      "Global_Trade_Art",
+      "Vermeer_Composition"
+    ],
     "learning_objectives": [
       "Explain how the Dutch East India Company's imports of Chinese Kraak porcelain inspired the technological development of Delftware.",
       "Identify the unique chemical process of tin-glazing that allows earthenware to mimic the white, glossy appearance of true porcelain.",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "delft_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/delft.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

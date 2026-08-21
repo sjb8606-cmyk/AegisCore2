@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "Local Culture & Limnology",
-    "grade_levels": ["elementary", "middle_school", "high_school", "adult"],
-    "curriculum_tags": ["River Confluences", "Tapajó Pottery", "Ecotourism Studies"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "River Confluences",
+      "Tapajó Pottery",
+      "Ecotourism Studies"
+    ],
     "learning_objectives": [
       "Understand the physical and chemical principles (water density, temperature, velocity) that prevent the blue Tapajós and brown Amazon rivers from mixing at Santarém.",
       "Analyze the artistic and historical uniqueness of the Tapajó Culture (specifically their 'caryatid' and 'sacred vessel' ceramics) as one of the oldest in the Amazon.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "santarem_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/santarem.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

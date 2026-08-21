@@ -18,8 +18,17 @@
   },
   "education": {
     "domain": "History & Landscape Art",
-    "grade_levels": ["high_school", "university", "adult", "professional"],
-    "curriculum_tags": ["Art Deco Design", "Structural Engineering", "Tijuca Forest Ecology"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "adult",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "Art Deco Design",
+      "Structural Engineering",
+      "Tijuca Forest Ecology"
+    ],
     "learning_objectives": [
       "Understand the structural engineering and Art Deco design of the Cristo Redentor statue, focusing on the use of reinforced concrete and soapstone mosaics.",
       "Analyze the role of the Tijuca Forest (the world's largest urban forest) in regulating Rio’s microclimate and water-table.",
@@ -35,5 +44,25 @@
   "avatar": {
     "elevenlabs_voice_id": "cristo_redentor_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/cristo_redentor.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

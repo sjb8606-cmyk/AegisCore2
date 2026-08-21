@@ -18,8 +18,18 @@
   },
   "education": {
     "domain": "Nature",
-    "grade_levels": ["elementary", "middle_school", "high_school", "university", "adult"],
-    "curriculum_tags": ["savanna_ecosystems", "wildlife_reintroduction", "canid_ecology"],
+    "grade_levels": [
+      "elementary",
+      "middle_school",
+      "high_school",
+      "university",
+      "adult"
+    ],
+    "curriculum_tags": [
+      "savanna_ecosystems",
+      "wildlife_reintroduction",
+      "canid_ecology"
+    ],
     "learning_objectives": [
       "Understand the ecological diversity of Kafue National Park, contrasting its dry miombo woodlands with its seasonal wet dambos.",
       "Analyze the complex, cooperative social structures and hunting strategies of the endangered African Wild Dog (Lycaon pictus).",
@@ -35,5 +45,25 @@
   "avatar": {
     "elevenlabs_voice_id": "kafue_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/kafue.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }

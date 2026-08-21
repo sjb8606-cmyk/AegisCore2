@@ -18,8 +18,16 @@
   },
   "education": {
     "domain": "Indigenous Heritage",
-    "grade_levels": ["high_school", "university", "professional"],
-    "curriculum_tags": ["indigenous_sovereignty", "water_rights", "treaty_history"],
+    "grade_levels": [
+      "high_school",
+      "university",
+      "professional"
+    ],
+    "curriculum_tags": [
+      "indigenous_sovereignty",
+      "water_rights",
+      "treaty_history"
+    ],
     "learning_objectives": [
       "Understand the historical territory, social structure, and lake-based life of the Coeur d'Alene (Schitsu'umsh) Nation",
       "Analyze the landmark Supreme Court case Idaho v. United States (2001) that confirmed tribal ownership of the lake bed",
@@ -35,5 +43,25 @@
   "avatar": {
     "elevenlabs_voice_id": "coeur_dalene_tribe_v1",
     "did_portrait_url": "https://storage.ruthless.io/portraits/coeur_dalene_tribe.jpg"
+  },
+  "capabilities": {
+    "chatbot": {
+      "enabled": true
+    },
+    "bot": {
+      "enabled": false,
+      "triggerConditions": [],
+      "permissionScope": [
+        "read:filesystem"
+      ]
+    },
+    "agent": {
+      "enabled": false,
+      "permissionScope": [],
+      "hardStops": [
+        "Never takes real-world action without HITL approval",
+        "Never modifies data outside declared permissionScope"
+      ]
+    }
   }
 }
