@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS nocode_apps (
+  id UUID PRIMARY KEY,
+  tenant_id UUID NOT NULL,
+  name TEXT NOT NULL,
+  definition JSONB NOT NULL DEFAULT '{}',
+  file_tree JSONB NOT NULL DEFAULT '{}',
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
+);

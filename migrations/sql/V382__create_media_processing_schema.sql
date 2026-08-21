@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS media_jobs (
+  id UUID PRIMARY KEY,
+  tenant_id UUID NOT NULL,
+  op TEXT NOT NULL,
+  input_url TEXT NOT NULL,
+  output_url TEXT NOT NULL,
+  params JSONB NOT NULL DEFAULT '{}',
+  created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
+);

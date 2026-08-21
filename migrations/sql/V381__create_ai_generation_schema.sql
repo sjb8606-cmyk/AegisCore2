@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS ai_generations (
+  id UUID PRIMARY KEY,
+  tenant_id UUID NOT NULL,
+  kind TEXT NOT NULL,
+  prompt TEXT NOT NULL,
+  url TEXT NOT NULL,
+  provider TEXT NOT NULL,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
