@@ -24,11 +24,11 @@ export async function createAgentDefinition(tenantId: string, data: any) {
 
   const definitionId = crypto.randomUUID();
   const insertQuery = `
-    INSERT INTO agent_definitions (id, tenant_id, name, description, system_prompt)
-    VALUES ($1, $2, $3, $4, $5) RETURNING *;
+    INSERT INTO agent_definitions (id, tenant_id, name, description, system_prompt, persona_id)
+    VALUES ($1, $2, $3, $4, $5, $6) RETURNING *;
   `;
   const res = await withTenantQuery(insertQuery, [
-    definitionId, tenantId, data.name, data.description || null, data.system_prompt || null
+    definitionId, tenantId, data.name, data.description || null, data.system_prompt || null, data.persona_id || null
   ], tenantId);
 
   return res[0];
@@ -47,18 +47,6 @@ export async function initiateRun(tenantId: string, agentId: string, input: stri
     runId, tenantId, agentId, input, cleanUserId
   ], tenantId);
 
-  // Generate the mock approval ticket required to unlock the sequence
-  const approvalId = crypto.randomUUID();
-  const actionPayload = {
-    action: "execute_payout",
-    amount_usd: 1250,
-    target_wallet: "0x742d35Cc6634C0532925a3b844Bc454e4438f44e"
-  };
-
-  await withTenantQuery(`
-    INSERT INTO agent_approvals (id, tenant_id, run_id, step_number, action_payload)
-    VALUES ($1, $2, $3, 1, $4);
-  `, [approvalId, tenantId, runId, JSON.stringify(actionPayload)], tenantId);
 
   return result[0];
 }
