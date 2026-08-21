@@ -1,0 +1,43 @@
+{
+  "enabled": true,
+  "missionTypes": {
+    "standard": {
+      "phases": [
+        {
+          "name": "Recon",
+          "allowedTools": ["web_search", "read_calendar", "noop"],
+          "completionCriteria": "context_gathered"
+        },
+        {
+          "name": "Position",
+          "allowedTools": ["web_search", "draft_email", "run_code", "noop"],
+          "completionCriteria": "plan_ready"
+        },
+        {
+          "name": "Execute",
+          "allowedTools": ["send_email", "add_calendar_event", "call_api", "place_order", "noop"],
+          "completionCriteria": "actions_done"
+        },
+        {
+          "name": "Consolidate",
+          "allowedTools": ["noop", "draft_email"],
+          "completionCriteria": "summary_written"
+        }
+      ]
+    },
+    "research": {
+      "phases": [
+        {
+          "name": "Recon",
+          "allowedTools": ["web_search", "noop"],
+          "completionCriteria": "sources_collected"
+        },
+        {
+          "name": "Synthesize",
+          "allowedTools": ["run_code", "noop"],
+          "completionCriteria": "report_drafted"
+        }
+      ]
+    }
+  }
+}
