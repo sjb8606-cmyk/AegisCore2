@@ -24,7 +24,7 @@
 import { z } from 'zod';
 import { withTenant, withTenantQuery } from '@platform/tenancy';
 import { LotTraceabilityService } from '@platform/lot-traceability';
-import { SpeciesRegistryService } from '@platform/species-registry';
+import { SpeciesRegistryService } from '../../species-registry/src/index';
 import { AppError, ErrorCode, parseUserId } from '@platform/utils';
 export { AppError, ErrorCode };
 
