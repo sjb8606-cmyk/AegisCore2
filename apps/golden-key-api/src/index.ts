@@ -1,44 +1,56 @@
 /**
- * apps/golden-key-api — thin entrypoint
+ * apps/golden-key-api — thin entrypoint.
+ *
+ * The dev-auth-header shim that used to sit here (GOLDEN_KEY_DEV_AUTH=1
+ * injecting a fake req.auth, no real token check) is removed — same
+ * category of gap platform/auth/src/oidc.ts's own header comment already
+ * describes having removed once (the static-secret "side door" bypass).
+ * Local/dev testing should use a real (even short-lived, test-issued)
+ * OIDC token against requireAuth(), same as tidelock-api and example-api.
+ *
+ * Also converted from a hand-mounted single custody router to the real
+ * config-driven mountApp() convention — config/apps/golden-key.json now
+ * actually governs what's mounted, and drift (declared-but-missing,
+ * present-but-undeclared) is reported instead of invisible.
+ *
+ * NOTE: this changes golden-key's real URLs — routes now live under
+ * /api/custody-vault/... and /api/custody-receipt/... instead of the old
+ * flat /api/vaults, /api/assets, /api/receipts paths. No live customer on
+ * golden-key yet, so this is safe now; would NOT be safe to do silently
+ * on tidelock-api.
  */
 
 import express from 'express';
-import { getLogger } from '@platform/observability';
-import custodyRouter from './routes/custody';
+import path from 'path';
+const { json } = require('body-parser');
+import { requireAuth } from '../../../platform/auth/src/index';
+import { tenantResolver } from '../../../platform/tenancy/src/index';
+import { globalErrorHandler } from '../../../platform/utils/src/index';
+import { mountApp } from '../../../platform/app-loader/src/index';
+import { getLogger } from '../../../platform/observability/src/index';
+import { healthRouter } from './health';
 
 const logger = getLogger('golden-key-api');
 const app = express();
-app.use(express.json({ limit: '10mb' }));
+app.use(json({ limit: '10mb' }));
+app.use(healthRouter);
 
-// Auth + tenant middleware should be mounted by app-loader in production.
-// For local smoke tests, inject test headers via a small middleware:
-app.use((req: any, _res, next) => {
-  if (!req.auth && process.env.GOLDEN_KEY_DEV_AUTH === '1') {
-    req.auth = {
-      sub: process.env.GOLDEN_KEY_DEV_ACTOR || 'dev-actor',
-      tenantId: process.env.GOLDEN_KEY_DEV_TENANT || '00000000-0000-4000-8000-0000000000gk',
-    };
-    req.tenantId = req.auth.tenantId;
-  }
-  next();
+const mountReport = mountApp(app, {
+  appId: 'golden-key',
+  routesDir: path.join(__dirname, 'routes'),
+  requireAuth,
+  tenantResolver,
 });
 
-app.use('/api', custodyRouter);
+logger.info({ mounted: mountReport.mounted }, '[golden-key-api] mounted cores');
+if (mountReport.missingRouteFile.length > 0) {
+  logger.warn({ missing: mountReport.missingRouteFile }, '[golden-key-api] declared in config but missing route file');
+}
+if (mountReport.unlistedInConfig.length > 0) {
+  logger.warn({ unlisted: mountReport.unlistedInConfig }, '[golden-key-api] route file exists but not declared in config');
+}
 
-app.get('/health', (_req, res) => {
-  res.json({ ok: true, app: 'golden-key', version: '0.1.0' });
-});
-
-// Error handler
-app.use((err: any, _req: any, res: any, _next: any) => {
-  const status = err.status || err.statusCode || 500;
-  const code = err.code || err.error || 'INTERNAL';
-  logger.error({ err }, 'Request failed');
-  res.status(status).json({
-    error: code,
-    message: err.message || 'Internal error',
-  });
-});
+app.use(globalErrorHandler);
 
 const PORT = Number(process.env.PORT || 3040);
 
@@ -49,3 +61,4 @@ if (require.main === module) {
 }
 
 export default app;
+export { app };
