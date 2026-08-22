@@ -1,0 +1,19 @@
+{
+  "enabled": true,
+  "defaultStatus": "draft",
+  "jobTypes": [
+    {
+      "type": "service",
+      "requiredFields": ["description"],
+      "allowedTransitions": [
+        { "from": "draft", "to": "open" },
+        { "from": "open", "to": "assigned" },
+        { "from": "assigned", "to": "in_progress" },
+        { "from": "in_progress", "to": "completed" },
+        { "from": "open", "to": "cancelled" },
+        { "from": "assigned", "to": "cancelled" },
+        { "from": "draft", "to": "cancelled" }
+      ]
+    }
+  ]
+}
