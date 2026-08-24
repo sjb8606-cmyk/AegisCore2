@@ -72,7 +72,7 @@ CREATE TABLE IF NOT EXISTS custody_assets (
   CONSTRAINT custody_assets_state_check
     CHECK (state IN ('open', 'sealed', 'released', 'destroyed')),
   CONSTRAINT custody_assets_hash_format
-    CHECK (content_hash \~ '^[0-9a-f]{64}$')
+    CHECK (content_hash ~ '^[0-9a-f]{64}$')
 );
 
 CREATE INDEX IF NOT EXISTS idx_custody_assets_tenant_vault
@@ -120,9 +120,9 @@ CREATE TABLE IF NOT EXISTS custody_events (
   CONSTRAINT custody_events_actor_type_check
     CHECK (actor_type IN ('user', 'service', 'system')),
   CONSTRAINT custody_events_prev_hash_format
-    CHECK (previous_hash \~ '^[0-9a-f]{64}$'),
+    CHECK (previous_hash ~ '^[0-9a-f]{64}$'),
   CONSTRAINT custody_events_event_hash_format
-    CHECK (event_hash \~ '^[0-9a-f]{64}$')
+    CHECK (event_hash ~ '^[0-9a-f]{64}$')
 );
 
 CREATE INDEX IF NOT EXISTS idx_custody_events_scope_created

@@ -15,7 +15,7 @@ CREATE INDEX IF NOT EXISTS idx_worm_audit_entity
   ON worm_audit_log(tenant_id, entity_type, entity_id, timestamp);
 
 -- WORM enforcement (Postgres): block UPDATE/DELETE
-DO \[ BEGIN
+DO $$ BEGIN
   IF NOT EXISTS (
     SELECT 1 FROM pg_rules WHERE rulename = 'worm_audit_no_update'
   ) THEN
@@ -26,4 +26,4 @@ DO \[ BEGIN
   ) THEN
     CREATE RULE worm_audit_no_delete AS ON DELETE TO worm_audit_log DO INSTEAD NOTHING;
   END IF;
-END \];
+END $$;
