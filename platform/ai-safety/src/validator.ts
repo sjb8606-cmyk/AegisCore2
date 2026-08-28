@@ -67,6 +67,15 @@ export async function validateLlmOutput<T>(
   let parsed: any = sanitized;
   try { parsed = JSON.parse(sanitized); } catch (e) {}
 
+  if (schema) {
+    const parseResult = schema.safeParse(parsed);
+    if (!parseResult.success) {
+      violations.push({ type: 'schema_invalid', severity: 'high' });
+    } else {
+      parsed = parseResult.data;
+    }
+  }
+
   const hasHighSeverity = violations.some(v => v.severity === 'high' || v.severity === 'critical');
   return { valid: !hasHighSeverity, data: parsed, violations, filtered };
 }

@@ -80,10 +80,13 @@ function sanitizeJti(jti: string): string {
   if (!jti || typeof jti !== 'string') {
     throw new Error('Invalid jti: must be a non-empty string');
   }
-  // Allow alphanumeric, hyphens, underscores, dots only
-  const sanitized = jti.replace(/[^a-zA-Z0-9\-_.]/g, '');
-  if (sanitized.length < 8) {
-    throw new Error('Invalid jti: too short after sanitization');
+  // Reject (not strip) any disallowed character - stripping would let
+  // malicious input like '../../etc/passwd' slip through as '......etcpasswd'
+  if (!/^[a-zA-Z0-9\-_.]+$/.test(jti)) {
+    throw new Error('Invalid jti: contains disallowed characters');
   }
-  return sanitized;
+  if (jti.length < 8) {
+    throw new Error('Invalid jti: too short');
+  }
+  return jti;
 }

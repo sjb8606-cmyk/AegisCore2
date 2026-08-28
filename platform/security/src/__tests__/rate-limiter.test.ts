@@ -14,17 +14,16 @@ const redisCounts = new Map<string, number>();
 const blocked = new Set<string>();
 
 vi.mock('ioredis', () => {
-  return { default: (() => {
-  return vi.fn().mockImplementation(() => ({
+  return { default: vi.fn().mockImplementation(() => ({
     pipeline: () => {
       let countKey = '';
       const ops: any[] = [];
       return {
         zremrangebyscore: (k: string) => { countKey = k; ops.push('zremrange'); return ops; },
-        zadd:             () => { ops.push('zadd'); return ops; },
-        zcard:            () => { ops.push('zcard'); return ops; },
-        pexpire:          () => { ops.push('pexpire'); return ops; },
-        exec:             async () => {
+        zadd: () => { ops.push('zadd'); return ops; },
+        zcard: () => { ops.push('zcard'); return ops; },
+        pexpire: () => { ops.push('pexpire'); return ops; },
+        exec: async () => {
           const key = countKey.replace('platform:rl:', '');
           const count = (redisCounts.get(key) || 0) + 1;
           redisCounts.set(key, count);
@@ -33,9 +32,9 @@ vi.mock('ioredis', () => {
       };
     },
     exists: vi.fn(async (key: string) => blocked.has(key) ? 1 : 0),
-    set:    vi.fn(async (key: string) => { blocked.add(key); return 'OK'; }),
-    on:     vi.fn(),
-  }));
+    set: vi.fn(async (key: string) => { blocked.add(key); return 'OK'; }),
+    on: vi.fn(),
+  })) };
 });
 
 vi.mock('@platform/observability', () => ({

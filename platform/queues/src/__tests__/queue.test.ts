@@ -37,7 +37,7 @@ describe('exponential backoff retry', () => {
       jitter:      false,
     });
     // Advance timers for retry delays
-    vi.runAllTimers();
+    await vi.runAllTimersAsync();
     const result = await resultPromise;
     expect(result).toBe('recovered');
     expect(fn).toHaveBeenCalledTimes(3);
@@ -51,7 +51,7 @@ describe('exponential backoff retry', () => {
       baseDelayMs: 1,
       jitter:      false,
     });
-    vi.runAllTimers();
+    await vi.runAllTimersAsync();
     await expect(promise).rejects.toMatchObject({ code: 'ECONNRESET' });
     expect(fn).toHaveBeenCalledTimes(3);
   });
@@ -79,7 +79,7 @@ describe('exponential backoff retry', () => {
       jitter:       false,
       shouldRetry:  (err: any) => err?.status === 429,
     });
-    vi.runAllTimers();
+    await vi.runAllTimersAsync();
     const result = await resultPromise;
     expect(result).toBe('done');
     expect(fn).toHaveBeenCalledTimes(2);

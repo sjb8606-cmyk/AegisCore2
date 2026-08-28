@@ -29,10 +29,14 @@ vi.mock('@platform/observability', () => ({
 }));
 
 // Mock utils
-vi.mock('@platform/utils', () => ({
-  AppError: class extends Error { constructor(msg: string, public code: string) { super(msg); } },
-  ErrorCode: { INTERNAL: 'INTERNAL' },
-}));
+vi.mock('@platform/utils', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@platform/utils')>();
+  return {
+    ...actual,
+    AppError: class extends Error { constructor(msg: string, public code: string) { super(msg); } },
+    ErrorCode: { INTERNAL: 'INTERNAL' },
+  };
+});
 
 // ─────────────────────────────────────────────────────────────
 // PII FILTER TESTS
