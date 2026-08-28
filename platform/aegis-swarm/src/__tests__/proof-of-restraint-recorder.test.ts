@@ -1,6 +1,6 @@
-jest.mock('../lib/restraint-store', () => ({
-  recordRefusal: jest.fn(),
-  listRefusals: jest.fn(),
+vi.mock('../lib/restraint-store', () => ({
+  recordRefusal: vi.fn(),
+  listRefusals: vi.fn(),
 }));
 
 import { swarmSignalBus } from '@platform/bot-runtime';
@@ -35,8 +35,8 @@ const SAMPLE_RECORD = {
 };
 
 describe('ProofOfRestraintRecorderBot', () => {
-  const mockRecordRefusal = recordRefusal as jest.Mock;
-  const mockListRefusals = listRefusals as jest.Mock;
+  const mockRecordRefusal = recordRefusal as vi.Mock;
+  const mockListRefusals = listRefusals as vi.Mock;
 
   beforeEach(() => {
     mockRecordRefusal.mockReset();

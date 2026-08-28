@@ -1,6 +1,9 @@
 import { describe, expect, it, beforeEach, vi } from 'vitest';
 
-vi.mock('@platform/utils', () => ({
+vi.mock('@platform/utils', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@platform/utils')>();
+  return {
+    ...actual,
   loadConfig: vi.fn(() => ({
     enabled: true,
     max_words_per_day: 10000,
@@ -11,8 +14,9 @@ vi.mock('@platform/utils', () => ({
       'technical',
       'marketing'
     ]
-  }))
-}));
+    }))
+  };
+});
 
 vi.mock('@platform/observability', () => ({
   getLogger: vi.fn(() => ({

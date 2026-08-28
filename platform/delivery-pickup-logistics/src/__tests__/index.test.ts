@@ -1,9 +1,34 @@
-import { beforeEach, describe, expect, it } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
+
+vi.mock('@platform/audit', () => ({
+  emit: vi.fn().mockResolvedValue(undefined),
+}));
+
+vi.mock('@platform/metering', () => ({
+  recordUsage: vi.fn().mockResolvedValue(undefined),
+}));
+
+vi.mock('@platform/utils', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@platform/utils')>();
+  return {
+    ...actual,
+    loadConfig: vi.fn().mockReturnValue({
+      enabled: true,
+      limits: { apiCallsPerMonth: 10000 },
+      features: {
+        deliveryScheduling: true,
+        pickupScheduling: true,
+        transportFeeCalculation: true,
+      },
+    }),
+  };
+});
+
 import {
   scheduleDelivery,
   schedulePickup,
   calculateTransportFee,
-  __resetDeliveryPickupLogisticsStore
+  __resetDeliveryPickupLogisticsStore,
 } from '../index';
 
 describe('delivery-pickup-logistics', () => {
@@ -18,14 +43,14 @@ describe('delivery-pickup-logistics', () => {
       'reservation-1',
       '123 Main Street',
       '2026-09-01',
-      75
+      75,
     );
 
     const updated = await schedulePickup(
       'tenant-1',
       'actor-1',
       'reservation-1',
-      '2026-09-05'
+      '2026-09-05',
     );
 
     expect(delivery.status).toBe('scheduled');
@@ -39,7 +64,7 @@ describe('delivery-pickup-logistics', () => {
       'actor-1',
       'reservation-1',
       '123 Main Street',
-      '2026-09-05'
+      '2026-09-05',
     );
 
     await expect(
@@ -47,8 +72,8 @@ describe('delivery-pickup-logistics', () => {
         'tenant-1',
         'actor-1',
         'reservation-1',
-        '2026-09-01'
-      )
+        '2026-09-01',
+      ),
     ).rejects.toThrow('pickupDate cannot be before deliveryDate');
   });
 
@@ -57,7 +82,7 @@ describe('delivery-pickup-logistics', () => {
       'tenant-1',
       'actor-1',
       25,
-      3.5
+      3.5,
     );
 
     expect(fee).toBe(87.5);

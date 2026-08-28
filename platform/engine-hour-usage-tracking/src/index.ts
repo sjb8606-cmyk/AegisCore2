@@ -1,8 +1,9 @@
 import * as crypto from 'crypto';
+import { z } from 'zod';
 import {
   runCrudOperation,
   AppError,
-  ErrorCode
+  ErrorCode,
 } from '@platform/crud-kernel';
 
 export type EngineHourRecord = {
@@ -19,40 +20,41 @@ export type EngineHourRecord = {
 
 const records = new Map<string, EngineHourRecord>();
 
-const ConfigSchema = {
-  safeParse(value: unknown) {
-    if (!value || typeof value !== 'object') {
-      return {
-        success: false,
-        error: new Error('Invalid configuration')
-      };
-    }
-
-    return {
-      success: true,
-      data: value
-    };
-  }
-};
-
-const makeId = () => crypto.randomUUID();
+export const ConfigSchema = z.object({
+  enabled: z.boolean().default(true),
+  limits: z
+    .object({
+      apiCallsPerMonth: z.number().default(10000),
+    })
+    .default({ apiCallsPerMonth: 10000 }),
+  features: z
+    .object({
+      overageTracking: z.boolean().default(true),
+      maintenanceAlerts: z.boolean().default(true),
+    })
+    .default({
+      overageTracking: true,
+      maintenanceAlerts: true,
+    }),
+});
 
 function assertNonNegativeNumber(value: number, field: string): void {
   if (!Number.isFinite(value) || value < 0) {
     throw new AppError(
+      `${field} must be a non-negative number`,
       ErrorCode.BAD_REQUEST,
-      field + ' must be a non-negative number'
     );
   }
 }
 
-function getByReservation(reservationId: string): EngineHourRecord | undefined {
+function getByReservation(
+  reservationId: string,
+): EngineHourRecord | undefined {
   for (const record of records.values()) {
     if (record.reservationId === reservationId) {
       return record;
     }
   }
-
   return undefined;
 }
 
@@ -65,7 +67,7 @@ export async function logHours(
   hoursAtReturn: number,
   includedHours: number,
   overageRatePerHour: number,
-  maintenanceDueAtHours: number
+  maintenanceDueAtHours: number,
 ): Promise<EngineHourRecord> {
   assertNonNegativeNumber(hoursAtPickup, 'hoursAtPickup');
   assertNonNegativeNumber(hoursAtReturn, 'hoursAtReturn');
@@ -75,8 +77,8 @@ export async function logHours(
 
   if (hoursAtReturn < hoursAtPickup) {
     throw new AppError(
+      'hoursAtReturn cannot be less than hoursAtPickup',
       ErrorCode.BAD_REQUEST,
-      'hoursAtReturn cannot be less than hoursAtPickup'
     );
   }
 
@@ -91,96 +93,84 @@ export async function logHours(
     overageRatePerHour,
     maintenanceDueAtHours,
     createdAt: existing?.createdAt ?? new Date().toISOString(),
-    updatedAt: new Date().toISOString()
+    updatedAt: new Date().toISOString(),
   };
 
-  const result = await runCrudOperation({
+  return runCrudOperation({
     configName: 'engine-hour-usage-tracking',
     configSchema: ConfigSchema,
     tenantId,
     actorId,
-    action: existing ? 'update' : 'create',
     auditAction: existing ? 'data.updated' : 'data.created',
     auditResource: 'engine-hour-usage-tracking',
     meterEventType: 'api_call',
-    actionFn: async () => {
+    action: async () => {
       records.set(reservationId, record);
       return record;
-    }
+    },
   });
-
-  return result;
 }
 
 export async function calculateOverage(
   tenantId: string,
   actorId: string,
-  reservationId: string
+  reservationId: string,
 ): Promise<number> {
   const record = getByReservation(reservationId);
 
   if (!record) {
     throw new AppError(
+      'Engine-hour record not found',
       ErrorCode.NOT_FOUND,
-      'Engine-hour record not found'
     );
   }
 
-  const result = await runCrudOperation({
+  return runCrudOperation({
     configName: 'engine-hour-usage-tracking',
     configSchema: ConfigSchema,
     tenantId,
     actorId,
-    action: 'read',
     auditAction: 'data.read',
     auditResource: 'engine-hour-usage-tracking',
     meterEventType: 'api_call',
-    actionFn: async () => {
+    action: async () => {
       const returned = record.hoursAtReturn ?? record.hoursAtPickup;
       const usedHours = Math.max(0, returned - record.hoursAtPickup);
       const overageHours = Math.max(0, usedHours - record.includedHours);
-
       return overageHours * record.overageRatePerHour;
-    }
+    },
   });
-
-  return result;
 }
 
 export async function flagMaintenanceDue(
   tenantId: string,
   actorId: string,
-  assetId: string
+  assetId: string,
 ): Promise<boolean> {
   const record = Array.from(records.values()).find(
-    (item) => item.assetId === assetId
+    (item) => item.assetId === assetId,
   );
 
   if (!record) {
     throw new AppError(
+      'Engine-hour record not found',
       ErrorCode.NOT_FOUND,
-      'Engine-hour record not found'
     );
   }
 
-  const result = await runCrudOperation({
+  return runCrudOperation({
     configName: 'engine-hour-usage-tracking',
     configSchema: ConfigSchema,
     tenantId,
     actorId,
-    action: 'read',
     auditAction: 'data.read',
     auditResource: 'engine-hour-usage-tracking',
     meterEventType: 'api_call',
-    actionFn: async () => {
-      const currentHours =
-        record.hoursAtReturn ?? record.hoursAtPickup;
-
+    action: async () => {
+      const currentHours = record.hoursAtReturn ?? record.hoursAtPickup;
       return currentHours >= record.maintenanceDueAtHours;
-    }
+    },
   });
-
-  return result;
 }
 
 export function __resetEngineHourUsageStore(): void {

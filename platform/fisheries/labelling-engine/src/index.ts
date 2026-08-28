@@ -1,30 +1,15 @@
 /**
  * platform/fisheries/labelling-engine/src/index.ts
  *
- * From the original gap analysis: "Labelling Engine — zero coverage.
- * Bilingual field validation, rules differ by market (domestic/US/EU)."
- *
- * Two deliberate, honest boundaries in this design:
- *
- * 1. Required-field rules per market are TENANT-CONFIGURABLE, not
- *    hardcoded as if this system knows CFIA/USDA/EU labelling law
- *    authoritatively. A compliance officer sets the real required fields
- *    for their situation; the engine enforces them deterministically once
- *    set, and is honest — not silently "valid" — when no rules exist yet
- *    for a market.
- *
- * 2. species-registry (checked directly) has no French name field — only
- *    commonName in English. So bilingual validation does NOT fabricate a
- *    French species name from a lookup that doesn't exist. It requires
- *    the caller to supply speciesNameFr as real input when generating a
- *    label for a market that requires it, and flags it as missing
- *    otherwise, same as any other missing required field.
+ * Required-field rules per market are TENANT-CONFIGURABLE.
+ * species-registry has no French name field — bilingual validation
+ * never fabricates speciesNameFr; the caller must supply it.
  */
 
 import { z } from 'zod';
 import { withTenant, withTenantQuery } from '@platform/tenancy';
 import { LotTraceabilityService } from '@platform/lot-traceability';
-import { SpeciesRegistryService } from '../../species-registry/src/index';
+import { SpeciesRegistryService } from '@platform/species-registry';
 import { AppError, ErrorCode, parseUserId } from '@platform/utils';
 export { AppError, ErrorCode };
 
@@ -42,6 +27,23 @@ export const GenerateLabelInputSchema = z.object({
   additionalFields: z.record(z.string()).optional(),
 });
 
+function parseRequiredFields(raw: unknown): string[] {
+  if (Array.isArray(raw)) {
+    return raw.filter((f): f is string => typeof f === 'string' && f.length > 0);
+  }
+  if (typeof raw === 'string') {
+    try {
+      const parsed = JSON.parse(raw);
+      return Array.isArray(parsed)
+        ? parsed.filter((f): f is string => typeof f === 'string' && f.length > 0)
+        : [];
+    } catch {
+      return [];
+    }
+  }
+  return [];
+}
+
 export class LabellingEngineService {
   static async setMarketRules(tenantId: string, userId: string, data: any) {
     const cleanUserId = parseUserId(userId);
@@ -52,7 +54,13 @@ export class LabellingEngineService {
         `INSERT INTO label_market_rules (tenant_id, market, required_fields, bilingual_required, created_by)
          VALUES ($1, $2, $3, $4, $5)
          RETURNING *`,
-        [tenantId, input.market, JSON.stringify(input.requiredFields), input.bilingualRequired, cleanUserId],
+        [
+          tenantId,
+          input.market,
+          JSON.stringify(input.requiredFields),
+          input.bilingualRequired,
+          cleanUserId,
+        ],
       );
       return res.rows[0];
     });
@@ -67,7 +75,12 @@ export class LabellingEngineService {
     return res[0] ?? null;
   }
 
-  static async generateLabel(tenantId: string, userId: string, lotId: string, data: any) {
+  static async generateLabel(
+    tenantId: string,
+    userId: string,
+    lotId: string,
+    data: any,
+  ) {
     const cleanUserId = parseUserId(userId);
     const input = GenerateLabelInputSchema.parse(data);
 
@@ -77,11 +90,15 @@ export class LabellingEngineService {
     let speciesNameEn: string | null = null;
     let scientificName: string | null = null;
     if (speciesId) {
-      const species = await SpeciesRegistryService.getSpecies(tenantId, speciesId);
-      speciesNameEn = species.common_name;
-      scientificName = species.scientific_name;
+      const species = await SpeciesRegistryService.getSpecies(
+        tenantId,
+        speciesId,
+      );
+      speciesNameEn = species?.common_name ?? null;
+      scientificName = species?.scientific_name ?? null;
     }
 
+    // Never invent French name from registry — only caller-supplied input.
     const labelData: Record<string, any> = {
       lotCode: lot.lot_code,
       speciesNameEn,
@@ -97,15 +114,29 @@ export class LabellingEngineService {
 
     const missingFields: string[] = [];
     if (rulesConfigured) {
-      const requiredFields: string[] =
-        typeof rules.required_fields === 'string' ? JSON.parse(rules.required_fields) : rules.required_fields;
+      const requiredFields = parseRequiredFields(
+        rules.required_fields ?? rules.requiredFields,
+      );
 
       for (const field of requiredFields) {
-        if (labelData[field] === undefined || labelData[field] === null || labelData[field] === '') {
+        if (
+          labelData[field] === undefined ||
+          labelData[field] === null ||
+          labelData[field] === ''
+        ) {
           missingFields.push(field);
         }
       }
-      if (rules.bilingual_required && !labelData.speciesNameFr && !missingFields.includes('speciesNameFr')) {
+
+      const bilingualRequired =
+        rules.bilingual_required === true ||
+        rules.bilingualRequired === true;
+
+      if (
+        bilingualRequired &&
+        !labelData.speciesNameFr &&
+        !missingFields.includes('speciesNameFr')
+      ) {
         missingFields.push('speciesNameFr');
       }
     }

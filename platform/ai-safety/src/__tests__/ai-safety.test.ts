@@ -1,3 +1,4 @@
+import { describe, it, expect, vi, beforeEach, afterEach, beforeAll, afterAll, test } from 'vitest';
 /**
  * platform/ai-safety/src/__tests__/ai-safety.test.ts
  *
@@ -21,14 +22,14 @@ beforeAll(() => {
 });
 
 // Mock observability
-jest.mock('@platform/observability', () => ({
-  getLogger:               () => ({ debug: jest.fn(), info: jest.fn(), warn: jest.fn(), error: jest.fn() }),
-  aiSafetyViolations:      { add: jest.fn() },
-  aiResponseValidations:   { add: jest.fn() },
+vi.mock('@platform/observability', () => ({
+  getLogger:               () => ({ debug: vi.fn(), info: vi.fn(), warn: vi.fn(), error: vi.fn() }),
+  aiSafetyViolations:      { add: vi.fn() },
+  aiResponseValidations:   { add: vi.fn() },
 }));
 
 // Mock utils
-jest.mock('@platform/utils', () => ({
+vi.mock('@platform/utils', () => ({
   AppError: class extends Error { constructor(msg: string, public code: string) { super(msg); } },
   ErrorCode: { INTERNAL: 'INTERNAL' },
 }));

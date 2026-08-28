@@ -42,7 +42,9 @@ export async function resolveAppIdForTenant(tenantId: string): Promise<string> {
     tenantId,
   );
 
-  if (rows.length === 0) {
+  // Guard undefined/null as well as empty array — callers/mocks must not
+  // crash with TypeError on .length when there is no assignment row.
+  if (!Array.isArray(rows) || rows.length === 0) {
     logger.warn(`[tenant-router] no app assignment found for tenant ${tenantId}`);
     throw new AppError(
       `No app assignment found for tenant ${tenantId}`,

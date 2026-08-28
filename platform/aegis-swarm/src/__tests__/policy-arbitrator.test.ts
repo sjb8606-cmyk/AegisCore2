@@ -1,8 +1,8 @@
-jest.mock('../../../bot-runtime/src/decision-store', () => ({
-  saveDecision: jest.fn().mockResolvedValue(undefined),
-  getDecision: jest.fn(),
-  updateDecisionStatus: jest.fn(),
-  listDecisionsByRulesHash: jest.fn(),
+vi.mock('../../../bot-runtime/src/decision-store', () => ({
+  saveDecision: vi.fn().mockResolvedValue(undefined),
+  getDecision: vi.fn(),
+  updateDecisionStatus: vi.fn(),
+  listDecisionsByRulesHash: vi.fn(),
 }));
 
 import { swarmSignalBus } from '@platform/bot-runtime';
@@ -30,9 +30,9 @@ function makeSpec(overrides: Partial<BotSpecification> = {}): BotSpecification {
 }
 
 describe('PolicyArbitratorBot', () => {
-  const mockGetDecision = getDecision as jest.Mock;
-  const mockUpdateDecisionStatus = updateDecisionStatus as jest.Mock;
-  const mockListDecisionsByRulesHash = listDecisionsByRulesHash as jest.Mock;
+  const mockGetDecision = getDecision as vi.Mock;
+  const mockUpdateDecisionStatus = updateDecisionStatus as vi.Mock;
+  const mockListDecisionsByRulesHash = listDecisionsByRulesHash as vi.Mock;
 
   beforeEach(() => {
     mockGetDecision.mockReset();

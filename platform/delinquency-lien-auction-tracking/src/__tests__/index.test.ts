@@ -6,11 +6,15 @@ import {
   vi
 } from 'vitest';
 
-vi.mock('@platform/utils', () => ({
+vi.mock('@platform/utils', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@platform/utils')>();
+  return {
+    ...actual,
   loadConfig: vi.fn(() => ({
     enabled: true
-  }))
-}));
+    }))
+  };
+});
 
 vi.mock('@platform/observability', () => ({
   getLogger: vi.fn(() => ({

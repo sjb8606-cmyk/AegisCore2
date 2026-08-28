@@ -31,6 +31,7 @@ import {
   linkApplicationToHarvest,
   traceInputUpstream,
   traceInputDownstream,
+  getInputLot,
   __resetAgInputTraceStore,
 } from '../index';
 
@@ -51,18 +52,18 @@ describe('ag-input-trace', () => {
       quantity: 100,
       unit: 'kg',
     });
+
     const app = await applyInputToField(tenantId, actorId, {
       inputLotId: lot.id,
       fieldId: 'field-1',
       cropCycleId: 'cycle-1',
       quantityUsed: 25,
     });
-    expect(lot.quantityRemaining - 25).toBe(
-      (await import('../index')).getInputLot
-        ? (await (await import('../index')).getInputLot(tenantId, lot.id))!
-            .quantityRemaining
-        : 75,
-    );
+
+    // Same object is mutated on apply — remaining should be 75
+    expect(lot.quantityRemaining).toBe(75);
+    const refreshed = await getInputLot(tenantId, lot.id);
+    expect(refreshed?.quantityRemaining).toBe(75);
 
     const harvestLotId = 'harvest-lot-1';
     await linkApplicationToHarvest(

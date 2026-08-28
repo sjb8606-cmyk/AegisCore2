@@ -1,10 +1,34 @@
-import { beforeEach, describe, expect, it } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
+
+vi.mock('@platform/audit', () => ({
+  emit: vi.fn().mockResolvedValue(undefined),
+}));
+
+vi.mock('@platform/metering', () => ({
+  recordUsage: vi.fn().mockResolvedValue(undefined),
+}));
+
+vi.mock('@platform/utils', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@platform/utils')>();
+  return {
+    ...actual,
+    loadConfig: vi.fn().mockReturnValue({
+      enabled: true,
+      limits: { apiCallsPerMonth: 10000 },
+      features: {
+        vendorTracking: true,
+        deadlineTracking: true,
+      },
+    }),
+  };
+});
+
 import {
   createEvent,
   addVendor,
   updateVendorStatus,
   getUpcomingDeadlines,
-  __resetEventProjectTimelineStore
+  __resetEventProjectTimelineStore,
 } from '../index';
 
 describe('event-project-timeline', () => {
@@ -17,7 +41,7 @@ describe('event-project-timeline', () => {
       'tenant-1',
       'actor-1',
       'client-1',
-      '2026-10-15'
+      '2026-10-15',
     );
 
     const updated = await addVendor(
@@ -28,8 +52,8 @@ describe('event-project-timeline', () => {
         vendorName: 'Main Catering',
         vendorRole: 'Caterer',
         deadline: '2026-10-01',
-        status: 'pending'
-      }
+        status: 'pending',
+      },
     );
 
     expect(updated.vendors).toHaveLength(1);
@@ -41,30 +65,20 @@ describe('event-project-timeline', () => {
       'tenant-1',
       'actor-1',
       'client-1',
-      '2026-10-15'
+      '2026-10-15',
     );
 
     const vendor = {
       vendorName: 'Main Catering',
       vendorRole: 'Caterer',
       deadline: '2026-10-01',
-      status: 'pending' as const
+      status: 'pending' as const,
     };
 
-    await addVendor(
-      'tenant-1',
-      'actor-1',
-      event.eventId,
-      vendor
-    );
+    await addVendor('tenant-1', 'actor-1', event.eventId, vendor);
 
     await expect(
-      addVendor(
-        'tenant-1',
-        'actor-1',
-        event.eventId,
-        vendor
-      )
+      addVendor('tenant-1', 'actor-1', event.eventId, vendor),
     ).rejects.toThrow('Vendor already exists');
   });
 
@@ -73,45 +87,35 @@ describe('event-project-timeline', () => {
       'tenant-1',
       'actor-1',
       'client-1',
-      '2026-10-15'
+      '2026-10-15',
     );
 
-    await addVendor(
-      'tenant-1',
-      'actor-1',
-      event.eventId,
-      {
-        vendorName: 'Florist',
-        vendorRole: 'Florist',
-        deadline: '2026-10-05',
-        status: 'pending'
-      }
-    );
+    await addVendor('tenant-1', 'actor-1', event.eventId, {
+      vendorName: 'Florist',
+      vendorRole: 'Florist',
+      deadline: '2026-10-05',
+      status: 'pending',
+    });
 
-    await addVendor(
-      'tenant-1',
-      'actor-1',
-      event.eventId,
-      {
-        vendorName: 'Caterer',
-        vendorRole: 'Caterer',
-        deadline: '2026-10-01',
-        status: 'pending'
-      }
-    );
+    await addVendor('tenant-1', 'actor-1', event.eventId, {
+      vendorName: 'Caterer',
+      vendorRole: 'Caterer',
+      deadline: '2026-10-01',
+      status: 'pending',
+    });
 
     await updateVendorStatus(
       'tenant-1',
       'actor-1',
       event.eventId,
       'Caterer',
-      'confirmed'
+      'confirmed',
     );
 
     const deadlines = await getUpcomingDeadlines(
       'tenant-1',
       'actor-1',
-      event.eventId
+      event.eventId,
     );
 
     expect(deadlines[0].vendorName).toBe('Caterer');

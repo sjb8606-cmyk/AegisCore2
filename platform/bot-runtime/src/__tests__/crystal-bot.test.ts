@@ -1,6 +1,7 @@
-jest.mock('../decision-store', () => ({
-  saveDecision: jest.fn().mockResolvedValue(undefined),
-  getDecision: jest.fn(),
+import { describe, it, expect, vi, beforeEach, afterEach, beforeAll, afterAll } from 'vitest';
+vi.mock('../decision-store', () => ({
+  saveDecision: vi.fn().mockResolvedValue(undefined),
+  getDecision: vi.fn(),
 }));
 
 import { CrystalBot, swarmSignalBus } from '../crystal-bot';
@@ -142,7 +143,7 @@ describe('CrystalBot', () => {
   });
 
   describe('explainDecision', () => {
-    const mockGetDecision = getDecision as jest.Mock;
+    const mockGetDecision = getDecision as vi.Mock;
 
     beforeEach(() => {
       mockGetDecision.mockReset();

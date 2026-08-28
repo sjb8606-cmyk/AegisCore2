@@ -13,6 +13,10 @@ vi.mock('../../../tenancy/src/rls', () => ({
   getPool: vi.fn(() => mockPool),
 }));
 
+vi.mock('../../../app-loader/src/config', () => ({
+  listDeclaredApps: vi.fn(() => ['tidelock']),
+}));
+
 import { TenantOnboardingService, ErrorCode } from '../index';
 
 const OIDC_SUB = 'auth0|abc123';
@@ -24,26 +28,50 @@ beforeEach(() => {
 
 describe('TenantOnboardingService.createTenant', () => {
   it('creates a real tenant and admin membership within a real transaction', async () => {
+    // BEGIN → existing check → INSERT tenants → INSERT members → INSERT tenant_apps → COMMIT
     mockClient.query
       .mockResolvedValueOnce(undefined)
       .mockResolvedValueOnce({ rows: [] })
-      .mockResolvedValueOnce({ rows: [{ id: TENANT_ID, name: 'Cap-Acadie Fish Co', preferred_language: 'fr' }] })
+      .mockResolvedValueOnce({
+        rows: [
+          {
+            id: TENANT_ID,
+            name: 'Cap-Acadie Fish Co',
+            preferred_language: 'fr',
+          },
+        ],
+      })
+      .mockResolvedValueOnce(undefined)
       .mockResolvedValueOnce(undefined)
       .mockResolvedValueOnce(undefined);
 
     const tenant = await TenantOnboardingService.createTenant(OIDC_SUB, {
       name: 'Cap-Acadie Fish Co',
       preferredLanguage: 'fr',
+      app_id: 'tidelock',
     });
 
     expect(tenant.name).toBe('Cap-Acadie Fish Co');
     expect(mockClient.query).toHaveBeenCalledWith('BEGIN');
     expect(mockClient.query).toHaveBeenCalledWith('COMMIT');
 
-    const membershipInsert = mockClient.query.mock.calls.find((call: any[]) =>
-      typeof call[0] === 'string' && call[0].includes('INSERT INTO tenant_members')
+    const membershipInsert = mockClient.query.mock.calls.find(
+      (call: unknown[]) =>
+        typeof call[0] === 'string' &&
+        (call[0] as string).includes('INSERT INTO tenant_members'),
     );
-    expect(membershipInsert[1]).toEqual([TENANT_ID, OIDC_SUB, 'tenant_admin']);
+    expect(membershipInsert?.[1]).toEqual([
+      TENANT_ID,
+      OIDC_SUB,
+      'tenant_admin',
+    ]);
+
+    const appInsert = mockClient.query.mock.calls.find(
+      (call: unknown[]) =>
+        typeof call[0] === 'string' &&
+        (call[0] as string).includes('INSERT INTO tenant_apps'),
+    );
+    expect(appInsert?.[1]).toEqual([TENANT_ID, 'tidelock']);
   });
 
   it('throws CONFLICT and rolls back when the user already belongs to a tenant', async () => {
@@ -52,7 +80,10 @@ describe('TenantOnboardingService.createTenant', () => {
       .mockResolvedValueOnce({ rows: [{ tenant_id: 'existing-tenant' }] });
 
     await expect(
-      TenantOnboardingService.createTenant(OIDC_SUB, { name: 'x' })
+      TenantOnboardingService.createTenant(OIDC_SUB, {
+        name: 'x',
+        app_id: 'tidelock',
+      }),
     ).rejects.toMatchObject({ code: ErrorCode.CONFLICT });
 
     expect(mockClient.query).toHaveBeenCalledWith('ROLLBACK');
@@ -64,7 +95,10 @@ describe('TenantOnboardingService.createTenant', () => {
       .mockRejectedValueOnce(new Error('db exploded'));
 
     await expect(
-      TenantOnboardingService.createTenant(OIDC_SUB, { name: 'x' })
+      TenantOnboardingService.createTenant(OIDC_SUB, {
+        name: 'x',
+        app_id: 'tidelock',
+      }),
     ).rejects.toThrow('db exploded');
 
     expect(mockClient.query).toHaveBeenCalledWith('ROLLBACK');
@@ -73,7 +107,10 @@ describe('TenantOnboardingService.createTenant', () => {
 
   it('throws UNAUTHORIZED when no oidcSub is provided', async () => {
     await expect(
-      TenantOnboardingService.createTenant('', { name: 'x' })
+      TenantOnboardingService.createTenant('', {
+        name: 'x',
+        app_id: 'tidelock',
+      }),
     ).rejects.toMatchObject({ code: ErrorCode.UNAUTHORIZED });
 
     expect(mockPool.connect).not.toHaveBeenCalled();

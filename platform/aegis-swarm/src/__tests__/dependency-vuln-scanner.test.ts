@@ -1,13 +1,13 @@
-jest.mock('../../../bot-runtime/src/decision-store', () => ({
-  saveDecision: jest.fn().mockResolvedValue(undefined),
-  getDecision: jest.fn(),
+vi.mock('../../../bot-runtime/src/decision-store', () => ({
+  saveDecision: vi.fn().mockResolvedValue(undefined),
+  getDecision: vi.fn(),
 }));
 
 import { swarmSignalBus } from '@platform/bot-runtime';
 import { BotSpecification } from '@platform/bot-registry';
 import { getDecision } from '../../../bot-runtime/src/decision-store';
 
-jest.mock('child_process', () => ({ exec: jest.fn() }));
+vi.mock('child_process', () => ({ exec: vi.fn() }));
 import { exec } from 'child_process';
 import { DependencyVulnScannerBot } from '../bots/dependency-vuln-scanner';
 
@@ -47,7 +47,7 @@ const SAMPLE_AUDIT_REPORT = {
 
 describe('DependencyVulnScannerBot', () => {
   beforeEach(() => {
-    (getDecision as jest.Mock).mockReset();
+    (getDecision as vi.Mock).mockReset();
   });
 
   it('parses an npm audit report into Findings with correct severity mapping', () => {
@@ -81,7 +81,7 @@ describe('DependencyVulnScannerBot', () => {
   });
 
   it('runs a full scan, records a decision, and signals the swarm on critical/high findings', async () => {
-    (exec as unknown as jest.Mock).mockImplementation(
+    (exec as unknown as vi.Mock).mockImplementation(
       (_cmd: string, _opts: unknown, callback: (err: any, stdout: string, stderr: string) => void) => {
         callback(null, JSON.stringify(SAMPLE_AUDIT_REPORT), '');
       },
@@ -108,7 +108,7 @@ describe('DependencyVulnScannerBot', () => {
       rulesHash: 'npm-audit-v1',
       timestamp: new Date().toISOString(),
     };
-    (getDecision as jest.Mock).mockResolvedValue(stored);
+    (getDecision as vi.Mock).mockResolvedValue(stored);
 
     const bot = new DependencyVulnScannerBot(
       makeSpec({ persona: { name: 'Auditor', voice: 'plainspoken', tone: 'calm' } }),

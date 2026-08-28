@@ -1,9 +1,33 @@
-import { beforeEach, describe, expect, it } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
+
+vi.mock('@platform/audit', () => ({
+  emit: vi.fn().mockResolvedValue(undefined),
+}));
+
+vi.mock('@platform/metering', () => ({
+  recordUsage: vi.fn().mockResolvedValue(undefined),
+}));
+
+vi.mock('@platform/utils', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@platform/utils')>();
+  return {
+    ...actual,
+    loadConfig: vi.fn().mockReturnValue({
+      enabled: true,
+      limits: { apiCallsPerMonth: 10000 },
+      features: {
+        overageTracking: true,
+        maintenanceAlerts: true,
+      },
+    }),
+  };
+});
+
 import {
   calculateOverage,
   flagMaintenanceDue,
   logHours,
-  __resetEngineHourUsageStore
+  __resetEngineHourUsageStore,
 } from '../index';
 
 describe('engine-hour-usage-tracking', () => {
@@ -21,13 +45,13 @@ describe('engine-hour-usage-tracking', () => {
       115,
       10,
       25,
-      150
+      150,
     );
 
     const overage = await calculateOverage(
       'tenant-1',
       'actor-1',
-      'reservation-1'
+      'reservation-1',
     );
 
     expect(overage).toBe(125);
@@ -44,8 +68,8 @@ describe('engine-hour-usage-tracking', () => {
         90,
         10,
         25,
-        150
-      )
+        150,
+      ),
     ).rejects.toThrow('hoursAtReturn cannot be less than hoursAtPickup');
   });
 
@@ -59,13 +83,13 @@ describe('engine-hour-usage-tracking', () => {
       150,
       10,
       25,
-      150
+      150,
     );
 
     const due = await flagMaintenanceDue(
       'tenant-1',
       'actor-1',
-      'asset-1'
+      'asset-1',
     );
 
     expect(due).toBe(true);

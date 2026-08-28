@@ -37,10 +37,13 @@ describe('resolveAppIdForTenant', () => {
   });
 
   it('throws AppError NOT_FOUND when the tenant has no app assignment', async () => {
-    withTenantQueryMock.mockResolvedValueOnce([]);
+    // Persistent mock: this test calls resolveAppIdForTenant twice
+    withTenantQueryMock.mockResolvedValue([]);
 
     await expect(resolveAppIdForTenant(TENANT_A)).rejects.toThrow(AppError);
-    await expect(resolveAppIdForTenant(TENANT_A)).rejects.toMatchObject({ code: 'NOT_FOUND' });
+    await expect(resolveAppIdForTenant(TENANT_A)).rejects.toMatchObject({
+      code: 'NOT_FOUND',
+    });
   });
 
   it('caches the result -- a second call within the TTL does not hit the DB again', async () => {

@@ -1,8 +1,8 @@
-jest.mock('../lib/purge-store', () => ({
-  requestPurge: jest.fn(),
-  cancelPurge: jest.fn(),
-  executePurge: jest.fn(),
-  getPurge: jest.fn(),
+vi.mock('../lib/purge-store', () => ({
+  requestPurge: vi.fn(),
+  cancelPurge: vi.fn(),
+  executePurge: vi.fn(),
+  getPurge: vi.fn(),
 }));
 
 import { swarmSignalBus } from '@platform/bot-runtime';
@@ -38,10 +38,10 @@ const SAMPLE_PURGE = {
 };
 
 describe('ForensicJanitorBot', () => {
-  const mockRequestPurge = requestPurge as jest.Mock;
-  const mockCancelPurge = cancelPurge as jest.Mock;
-  const mockExecutePurge = executePurge as jest.Mock;
-  const mockGetPurge = getPurge as jest.Mock;
+  const mockRequestPurge = requestPurge as vi.Mock;
+  const mockCancelPurge = cancelPurge as vi.Mock;
+  const mockExecutePurge = executePurge as vi.Mock;
+  const mockGetPurge = getPurge as vi.Mock;
 
   beforeEach(() => {
     mockRequestPurge.mockReset();

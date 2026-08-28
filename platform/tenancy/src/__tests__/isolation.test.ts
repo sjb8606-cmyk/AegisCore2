@@ -1,3 +1,4 @@
+import { describe, it, test, expect, vi, beforeEach, afterEach, beforeAll, afterAll } from 'vitest';
 /**
  * platform/tenancy/src/__tests__/isolation.test.ts
  *
@@ -17,7 +18,7 @@ import { AppError, ErrorCode } from '@platform/utils';
 function makeMockClient() {
   const queries: { sql: string; params: unknown[] }[] = [];
   const client = {
-    query: jest.fn(async (sql: string, params?: unknown[]) => {
+    query: vi.fn(async (sql: string, params?: unknown[]) => {
       queries.push({ sql, params: params ?? [] });
       return { rows: [], rowCount: 0 };
     }),

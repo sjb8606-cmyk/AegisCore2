@@ -1,3 +1,4 @@
+import { describe, it, expect, vi, beforeEach, afterEach, beforeAll, afterAll } from 'vitest';
 /**
  * platform/security/src/__tests__/rate-limiter.test.ts
  *
@@ -12,8 +13,9 @@
 const redisCounts = new Map<string, number>();
 const blocked = new Set<string>();
 
-jest.mock('ioredis', () => {
-  return jest.fn().mockImplementation(() => ({
+vi.mock('ioredis', () => {
+  return { default: (() => {
+  return vi.fn().mockImplementation(() => ({
     pipeline: () => {
       let countKey = '';
       const ops: any[] = [];
@@ -30,15 +32,15 @@ jest.mock('ioredis', () => {
         },
       };
     },
-    exists: jest.fn(async (key: string) => blocked.has(key) ? 1 : 0),
-    set:    jest.fn(async (key: string) => { blocked.add(key); return 'OK'; }),
-    on:     jest.fn(),
+    exists: vi.fn(async (key: string) => blocked.has(key) ? 1 : 0),
+    set:    vi.fn(async (key: string) => { blocked.add(key); return 'OK'; }),
+    on:     vi.fn(),
   }));
 });
 
-jest.mock('@platform/observability', () => ({
-  getLogger:    () => ({ debug: jest.fn(), info: jest.fn(), warn: jest.fn(), error: jest.fn() }),
-  rateLimitHits: { add: jest.fn() },
+vi.mock('@platform/observability', () => ({
+  getLogger:    () => ({ debug: vi.fn(), info: vi.fn(), warn: vi.fn(), error: vi.fn() }),
+  rateLimitHits: { add: vi.fn() },
 }));
 
 import { rateLimiter } from '../rate-limiter';
@@ -60,9 +62,9 @@ function makeRes(): any {
   return {
     headers,
     statusCode,
-    setHeader: jest.fn((k: string, v: string) => { headers[k] = v; }),
-    status:    jest.fn().mockImplementation((code: number) => { statusCode = code; return { json: jest.fn() }; }),
-    json:      jest.fn(),
+    setHeader: vi.fn((k: string, v: string) => { headers[k] = v; }),
+    status:    vi.fn().mockImplementation((code: number) => { statusCode = code; return { json: vi.fn() }; }),
+    json:      vi.fn(),
   };
 }
 
@@ -76,7 +78,7 @@ describe('rate limiter', () => {
     const middleware = rateLimiter({ max: 10 });
     const req  = makeReq('1.2.3.4');
     const res  = makeRes();
-    const next = jest.fn();
+    const next = vi.fn();
 
     await middleware(req, res, next);
     expect(next).toHaveBeenCalled();
@@ -90,7 +92,7 @@ describe('rate limiter', () => {
     const middleware = rateLimiter({ max: 100 });
     const req  = makeReq('1.2.3.5');
     const res  = makeRes();
-    const next = jest.fn();
+    const next = vi.fn();
 
     await middleware(req, res, next);
     expect(next).not.toHaveBeenCalled();
@@ -101,7 +103,7 @@ describe('rate limiter', () => {
     const middleware = rateLimiter({ max: 100 });
     const req  = makeReq('1.2.3.6');
     const res  = makeRes();
-    const next = jest.fn();
+    const next = vi.fn();
 
     await middleware(req, res, next);
     expect(res.setHeader).toHaveBeenCalledWith('X-RateLimit-Limit', '100');
@@ -113,7 +115,7 @@ describe('rate limiter', () => {
     const middleware = rateLimiter({ max: 100 });
     const req  = makeReq('1.2.3.7');
     const res  = makeRes();
-    const next = jest.fn();
+    const next = vi.fn();
 
     await middleware(req, res, next);
     expect(res.setHeader).toHaveBeenCalledWith('Retry-After', expect.any(String));
@@ -126,7 +128,7 @@ describe('rate limiter', () => {
     });
     const req  = makeReq('1.2.3.8');
     const res  = makeRes();
-    const next = jest.fn();
+    const next = vi.fn();
 
     await middleware(req, res, next);
     expect(next).toHaveBeenCalled();
@@ -137,7 +139,7 @@ describe('rate limiter', () => {
     const middleware = rateLimiter({ max: 1000 });
     const req  = makeReq('1.2.3.9');
     const res  = makeRes();
-    const next = jest.fn();
+    const next = vi.fn();
 
     await middleware(req, res, next);
     expect(next).not.toHaveBeenCalled();

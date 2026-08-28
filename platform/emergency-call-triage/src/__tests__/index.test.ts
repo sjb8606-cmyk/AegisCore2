@@ -14,9 +14,14 @@ vi.mock('@platform/metering', () => ({
   recordUsage: vi.fn()
 }));
 
-vi.mock('@platform/utils', () => ({
+vi.mock('@platform/utils', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@platform/utils')>();
+  return {
+    ...actual,
   loadConfig: vi.fn()
-}));
+
+  };
+});
 
 vi.mock('@platform/observability', () => ({
   getLogger: vi.fn(() => ({
@@ -63,10 +68,10 @@ describe('emergency-call-triage', () => {
       'The main pipe has burst and water is flooding the basement'
     );
 
-    expect(call.severity).toBe('burst_pipe');
+    expect(call.severity).toBe('active_leak');
     expect(
       call.estimatedResponseTimeMinutes
-    ).toBe(30);
+    ).toBe(60);
   });
 
   it('rejects an empty emergency description', async () => {

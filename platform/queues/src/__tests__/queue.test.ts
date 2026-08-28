@@ -1,3 +1,4 @@
+import { describe, it, expect, vi, beforeEach, afterEach, beforeAll, afterAll, test } from 'vitest';
 /**
  * platform/queues/src/__tests__/queue.test.ts
  *
@@ -14,18 +15,18 @@ import { withExponentialBackoff } from '../retry';
 // ─────────────────────────────────────────────────────────────
 
 describe('exponential backoff retry', () => {
-  beforeEach(() => jest.useFakeTimers());
-  afterEach(() => jest.useRealTimers());
+  beforeEach(() => vi.useFakeTimers());
+  afterEach(() => vi.useRealTimers());
 
   test('succeeds on first attempt — no retry needed', async () => {
-    const fn = jest.fn().mockResolvedValue('ok');
+    const fn = vi.fn().mockResolvedValue('ok');
     const result = await withExponentialBackoff(fn, { maxAttempts: 3 });
     expect(result).toBe('ok');
     expect(fn).toHaveBeenCalledTimes(1);
   });
 
   test('retries on transient error and succeeds', async () => {
-    const fn = jest.fn()
+    const fn = vi.fn()
       .mockRejectedValueOnce({ code: 'ECONNRESET' })
       .mockRejectedValueOnce({ code: 'ECONNRESET' })
       .mockResolvedValue('recovered');
@@ -36,27 +37,27 @@ describe('exponential backoff retry', () => {
       jitter:      false,
     });
     // Advance timers for retry delays
-    jest.runAllTimers();
+    vi.runAllTimers();
     const result = await resultPromise;
     expect(result).toBe('recovered');
     expect(fn).toHaveBeenCalledTimes(3);
   });
 
   test('throws after maxAttempts exhausted', async () => {
-    const fn = jest.fn().mockRejectedValue({ code: 'ECONNRESET' });
+    const fn = vi.fn().mockRejectedValue({ code: 'ECONNRESET' });
 
     const promise = withExponentialBackoff(fn, {
       maxAttempts: 3,
       baseDelayMs: 1,
       jitter:      false,
     });
-    jest.runAllTimers();
+    vi.runAllTimers();
     await expect(promise).rejects.toMatchObject({ code: 'ECONNRESET' });
     expect(fn).toHaveBeenCalledTimes(3);
   });
 
   test('does not retry on non-retryable error', async () => {
-    const fn = jest.fn().mockRejectedValue(new Error('Validation failed'));
+    const fn = vi.fn().mockRejectedValue(new Error('Validation failed'));
 
     await expect(
       withExponentialBackoff(fn, {
@@ -68,7 +69,7 @@ describe('exponential backoff retry', () => {
   });
 
   test('custom shouldRetry predicate is respected', async () => {
-    const fn = jest.fn()
+    const fn = vi.fn()
       .mockRejectedValueOnce({ status: 429 })
       .mockResolvedValue('done');
 
@@ -78,7 +79,7 @@ describe('exponential backoff retry', () => {
       jitter:       false,
       shouldRetry:  (err: any) => err?.status === 429,
     });
-    jest.runAllTimers();
+    vi.runAllTimers();
     const result = await resultPromise;
     expect(result).toBe('done');
     expect(fn).toHaveBeenCalledTimes(2);
@@ -90,8 +91,8 @@ describe('exponential backoff retry', () => {
 // ─────────────────────────────────────────────────────────────
 
 describe('success-only delete pattern', () => {
-  const mockDelete = jest.fn().mockResolvedValue({});
-  const mockSend   = jest.fn();
+  const mockDelete = vi.fn().mockResolvedValue({});
+  const mockSend   = vi.fn();
 
   const message = {
     MessageId:     'msg-123',
@@ -101,7 +102,7 @@ describe('success-only delete pattern', () => {
   };
 
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   test('message is deleted after successful handler', async () => {

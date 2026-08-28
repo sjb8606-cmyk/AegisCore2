@@ -1,14 +1,14 @@
 import express from 'express';
 import request from 'supertest';
 
-jest.mock('../../../../../platform/tenancy/src/index', () => ({
-  withTenantQuery: jest.fn(),
+vi.mock('../../../../../platform/tenancy/src/index', () => ({
+  withTenantQuery: vi.fn(),
 }));
-jest.mock('../../../../../platform/audit/src/index', () => ({
-  emit: jest.fn().mockResolvedValue(undefined),
+vi.mock('../../../../../platform/audit/src/index', () => ({
+  emit: vi.fn().mockResolvedValue(undefined),
 }));
-jest.mock('../../../../../platform/metering/src/index', () => ({
-  recordUsage: jest.fn().mockResolvedValue(undefined),
+vi.mock('../../../../../platform/metering/src/index', () => ({
+  recordUsage: vi.fn().mockResolvedValue(undefined),
 }));
 
 import { withTenantQuery } from '../../../../../platform/tenancy/src/index';
@@ -35,7 +35,7 @@ function buildApp() {
 }
 
 describe('bundles routes', () => {
-  beforeEach(() => jest.clearAllMocks());
+  beforeEach(() => vi.clearAllMocks());
 
   it('POST /items creates a bundle with 2+ products and wraps response in data envelope', async () => {
     (withTenantQuery as any).mockResolvedValueOnce([

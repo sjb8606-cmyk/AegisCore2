@@ -1,17 +1,17 @@
 import express from 'express';
 import request from 'supertest';
 
-jest.mock('../../../../../platform/tenancy/src/index', () => ({
-  withTenantQuery: jest.fn(),
+vi.mock('../../../../../platform/tenancy/src/index', () => ({
+  withTenantQuery: vi.fn(),
 }));
-jest.mock('../../../../../platform/audit/src/index', () => ({
-  emit: jest.fn().mockResolvedValue(undefined),
+vi.mock('../../../../../platform/audit/src/index', () => ({
+  emit: vi.fn().mockResolvedValue(undefined),
 }));
-jest.mock('../../../../../platform/metering/src/index', () => ({
-  recordUsage: jest.fn().mockResolvedValue(undefined),
+vi.mock('../../../../../platform/metering/src/index', () => ({
+  recordUsage: vi.fn().mockResolvedValue(undefined),
 }));
-jest.mock('../../../../../platform/security/src/index', () => ({
-  encryptField: jest.fn(),
+vi.mock('../../../../../platform/security/src/index', () => ({
+  encryptField: vi.fn(),
 }));
 
 import { withTenantQuery } from '../../../../../platform/tenancy/src/index';
@@ -37,7 +37,7 @@ function buildApp() {
 }
 
 describe('vault routes', () => {
-  beforeEach(() => jest.clearAllMocks());
+  beforeEach(() => vi.clearAllMocks());
 
   it('POST /items calls the real encryptField and never echoes plaintext or ciphertext back', async () => {
     (encryptField as any).mockResolvedValueOnce('kms-envelope-ciphertext-blob');

@@ -1,3 +1,4 @@
+import { describe, it, expect, vi, beforeEach, afterEach, beforeAll, afterAll, test } from 'vitest';
 /**
  * platform/auth/src/__tests__/auth.test.ts
  *
@@ -14,19 +15,19 @@ import { hasRole, meetsMinimumRole, hasPermission, ROLES } from '../rbac';
 
 const redisMock = new Map<string, string>();
 
-jest.mock('../redis-client', () => ({
+vi.mock('../redis-client', () => ({
   getRedis: () => ({
-    set: jest.fn(async (key: string, val: string, ...args: any[]) => {
+    set: vi.fn(async (key: string, val: string, ...args: any[]) => {
       const nxIndex = args.indexOf('NX');
       if (nxIndex !== -1 && redisMock.has(key)) return null; // simulate NX
       redisMock.set(key, val);
       return 'OK';
     }),
-    del: jest.fn(async (key: string) => {
+    del: vi.fn(async (key: string) => {
       redisMock.delete(key);
       return 1;
     }),
-    exists: jest.fn(async (key: string) => (redisMock.has(key) ? 1 : 0)),
+    exists: vi.fn(async (key: string) => (redisMock.has(key) ? 1 : 0)),
   }),
 }));
 

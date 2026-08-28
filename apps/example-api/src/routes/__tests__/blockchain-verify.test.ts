@@ -2,14 +2,14 @@ import express from 'express';
 import request from 'supertest';
 import { createHash } from 'crypto';
 
-jest.mock('../../../../../platform/tenancy/src/index', () => ({
-  withTenantQuery: jest.fn(),
+vi.mock('../../../../../platform/tenancy/src/index', () => ({
+  withTenantQuery: vi.fn(),
 }));
-jest.mock('../../../../../platform/audit/src/index', () => ({
-  emit: jest.fn().mockResolvedValue(undefined),
+vi.mock('../../../../../platform/audit/src/index', () => ({
+  emit: vi.fn().mockResolvedValue(undefined),
 }));
-jest.mock('../../../../../platform/metering/src/index', () => ({
-  recordUsage: jest.fn().mockResolvedValue(undefined),
+vi.mock('../../../../../platform/metering/src/index', () => ({
+  recordUsage: vi.fn().mockResolvedValue(undefined),
 }));
 
 import { withTenantQuery } from '../../../../../platform/tenancy/src/index';
@@ -34,7 +34,7 @@ function buildApp() {
 }
 
 describe('blockchain-verify routes', () => {
-  beforeEach(() => jest.clearAllMocks());
+  beforeEach(() => vi.clearAllMocks());
 
   it('POST /items computes a real server-side SHA-256 hash of the content, ignoring any client-supplied hash', async () => {
     const content = 'this is the exact content being verified';

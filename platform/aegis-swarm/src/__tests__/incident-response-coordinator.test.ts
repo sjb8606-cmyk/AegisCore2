@@ -1,8 +1,8 @@
-jest.mock('../lib/incident-store', () => ({
-  openIncident: jest.fn(),
-  appendTimelineEvent: jest.fn(),
-  updateIncidentStatus: jest.fn(),
-  getIncident: jest.fn(),
+vi.mock('../lib/incident-store', () => ({
+  openIncident: vi.fn(),
+  appendTimelineEvent: vi.fn(),
+  updateIncidentStatus: vi.fn(),
+  getIncident: vi.fn(),
 }));
 
 import { swarmSignalBus } from '@platform/bot-runtime';
@@ -42,10 +42,10 @@ const SAMPLE_INCIDENT = {
 };
 
 describe('IncidentResponseCoordinatorBot', () => {
-  const mockOpenIncident = openIncident as jest.Mock;
-  const mockAppendTimelineEvent = appendTimelineEvent as jest.Mock;
-  const mockUpdateIncidentStatus = updateIncidentStatus as jest.Mock;
-  const mockGetIncident = getIncident as jest.Mock;
+  const mockOpenIncident = openIncident as vi.Mock;
+  const mockAppendTimelineEvent = appendTimelineEvent as vi.Mock;
+  const mockUpdateIncidentStatus = updateIncidentStatus as vi.Mock;
+  const mockGetIncident = getIncident as vi.Mock;
 
   beforeEach(() => {
     mockOpenIncident.mockReset();

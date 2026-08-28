@@ -1,10 +1,34 @@
-import { describe, expect, it, beforeEach } from 'vitest';
+import { describe, expect, it, beforeEach, vi } from 'vitest';
+
+vi.mock('@platform/audit', () => ({
+  emit: vi.fn().mockResolvedValue(undefined),
+}));
+
+vi.mock('@platform/metering', () => ({
+  recordUsage: vi.fn().mockResolvedValue(undefined),
+}));
+
+vi.mock('@platform/utils', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@platform/utils')>();
+  return {
+    ...actual,
+    loadConfig: vi.fn().mockReturnValue({
+      enabled: true,
+      limits: { max_deposit_amount: 100000 },
+      features: {
+        damage_assessment: true,
+        partial_refunds: true,
+        forfeiture: true,
+      },
+    }),
+  };
+});
+
 import {
   holdDeposit,
   assessReturnCondition,
-  calculateRefund,
   getDeposit,
-  __resetDamageDepositStore
+  __resetDamageDepositStore,
 } from '../index';
 
 describe('damage-deposit-tracking', () => {
@@ -18,7 +42,7 @@ describe('damage-deposit-tracking', () => {
       'actor-a',
       'reservation-1',
       250,
-      'Good condition'
+      'Good condition',
     );
 
     expect(deposit.reservation_id).toBe('reservation-1');
@@ -32,7 +56,7 @@ describe('damage-deposit-tracking', () => {
       'actor-a',
       'reservation-2',
       250,
-      'Good condition'
+      'Good condition',
     );
 
     const assessed = await assessReturnCondition(
@@ -40,7 +64,7 @@ describe('damage-deposit-tracking', () => {
       'actor-a',
       deposit.deposit_id,
       'Severely damaged',
-      400
+      400,
     );
 
     expect(assessed.damage_cost).toBe(250);
@@ -53,11 +77,11 @@ describe('damage-deposit-tracking', () => {
       'actor-a',
       'reservation-3',
       100,
-      'Good condition'
+      'Good condition',
     );
 
     await expect(
-      getDeposit('tenant-b', 'actor-b', deposit.deposit_id)
+      getDeposit('tenant-b', 'actor-b', deposit.deposit_id),
     ).rejects.toThrow('Damage deposit not found');
   });
 });

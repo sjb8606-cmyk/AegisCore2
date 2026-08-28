@@ -1,8 +1,9 @@
 import * as crypto from 'crypto';
+import { z } from 'zod';
 import {
   runCrudOperation,
   AppError,
-  ErrorCode
+  ErrorCode,
 } from '@platform/crud-kernel';
 
 export type VendorStatus = 'pending' | 'confirmed' | 'completed';
@@ -32,41 +33,41 @@ export type EventTimeline = {
 
 const store = new Map<string, EventTimeline>();
 
-const ConfigSchema = {
-  safeParse(value: unknown) {
-    if (!value || typeof value !== 'object') {
-      return {
-        success: false,
-        error: new Error('Invalid configuration')
-      };
-    }
-
-    return {
-      success: true,
-      data: value
-    };
-  }
-};
+export const ConfigSchema = z.object({
+  enabled: z.boolean().default(true),
+  limits: z
+    .object({
+      apiCallsPerMonth: z.number().default(10000),
+    })
+    .default({ apiCallsPerMonth: 10000 }),
+  features: z
+    .object({
+      vendorTracking: z.boolean().default(true),
+      deadlineTracking: z.boolean().default(true),
+    })
+    .default({
+      vendorTracking: true,
+      deadlineTracking: true,
+    }),
+});
 
 function validateDate(value: string, field: string): void {
   if (Number.isNaN(Date.parse(value))) {
     throw new AppError(
+      `${field} must be a valid date`,
       ErrorCode.BAD_REQUEST,
-      field + ' must be a valid date'
     );
   }
 }
 
 function getEvent(eventId: string): EventTimeline {
   const event = store.get(eventId);
-
   if (!event) {
     throw new AppError(
+      'Event timeline not found',
       ErrorCode.NOT_FOUND,
-      'Event timeline not found'
     );
   }
-
   return event;
 }
 
@@ -74,15 +75,11 @@ export async function createEvent(
   tenantId: string,
   actorId: string,
   clientId: string,
-  eventDate: string
+  eventDate: string,
 ): Promise<EventTimeline> {
   if (!clientId.trim()) {
-    throw new AppError(
-      ErrorCode.BAD_REQUEST,
-      'clientId is required'
-    );
+    throw new AppError('clientId is required', ErrorCode.BAD_REQUEST);
   }
-
   validateDate(eventDate, 'eventDate');
 
   const event: EventTimeline = {
@@ -92,7 +89,7 @@ export async function createEvent(
     vendors: [],
     overallStatus: 'planning',
     createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString()
+    updatedAt: new Date().toISOString(),
   };
 
   return runCrudOperation({
@@ -100,14 +97,13 @@ export async function createEvent(
     configSchema: ConfigSchema,
     tenantId,
     actorId,
-    action: 'create',
     auditAction: 'data.created',
     auditResource: 'event-project-timeline',
     meterEventType: 'api_call',
-    actionFn: async () => {
+    action: async () => {
       store.set(event.eventId, event);
       return event;
-    }
+    },
   });
 }
 
@@ -115,41 +111,29 @@ export async function addVendor(
   tenantId: string,
   actorId: string,
   eventId: string,
-  vendorData: Vendor
+  vendorData: Vendor,
 ): Promise<EventTimeline> {
   if (!vendorData.vendorName.trim()) {
-    throw new AppError(
-      ErrorCode.BAD_REQUEST,
-      'vendorName is required'
-    );
+    throw new AppError('vendorName is required', ErrorCode.BAD_REQUEST);
   }
-
   if (!vendorData.vendorRole.trim()) {
-    throw new AppError(
-      ErrorCode.BAD_REQUEST,
-      'vendorRole is required'
-    );
+    throw new AppError('vendorRole is required', ErrorCode.BAD_REQUEST);
   }
-
   validateDate(vendorData.deadline, 'deadline');
 
   const event = getEvent(eventId);
 
-  if (
-    event.vendors.some(
-      (vendor) => vendor.vendorName === vendorData.vendorName
-    )
-  ) {
+  if (event.vendors.some((v) => v.vendorName === vendorData.vendorName)) {
     throw new AppError(
+      'Vendor already exists for this event',
       ErrorCode.CONFLICT,
-      'Vendor already exists for this event'
     );
   }
 
   const updated: EventTimeline = {
     ...event,
     vendors: [...event.vendors, vendorData],
-    updatedAt: new Date().toISOString()
+    updatedAt: new Date().toISOString(),
   };
 
   return runCrudOperation({
@@ -157,14 +141,13 @@ export async function addVendor(
     configSchema: ConfigSchema,
     tenantId,
     actorId,
-    action: 'update',
     auditAction: 'data.updated',
     auditResource: 'event-project-timeline',
     meterEventType: 'api_call',
-    actionFn: async () => {
+    action: async () => {
       store.set(eventId, updated);
       return updated;
-    }
+    },
   });
 }
 
@@ -173,29 +156,20 @@ export async function updateVendorStatus(
   actorId: string,
   eventId: string,
   vendorName: string,
-  status: VendorStatus
+  status: VendorStatus,
 ): Promise<EventTimeline> {
   const event = getEvent(eventId);
 
-  const found = event.vendors.some(
-    (vendor) => vendor.vendorName === vendorName
-  );
-
-  if (!found) {
-    throw new AppError(
-      ErrorCode.NOT_FOUND,
-      'Vendor not found'
-    );
+  if (!event.vendors.some((v) => v.vendorName === vendorName)) {
+    throw new AppError('Vendor not found', ErrorCode.NOT_FOUND);
   }
 
   const updated: EventTimeline = {
     ...event,
-    vendors: event.vendors.map((vendor) =>
-      vendor.vendorName === vendorName
-        ? { ...vendor, status }
-        : vendor
+    vendors: event.vendors.map((v) =>
+      v.vendorName === vendorName ? { ...v, status } : v,
     ),
-    updatedAt: new Date().toISOString()
+    updatedAt: new Date().toISOString(),
   };
 
   return runCrudOperation({
@@ -203,21 +177,20 @@ export async function updateVendorStatus(
     configSchema: ConfigSchema,
     tenantId,
     actorId,
-    action: 'update',
     auditAction: 'data.updated',
     auditResource: 'event-project-timeline',
     meterEventType: 'api_call',
-    actionFn: async () => {
+    action: async () => {
       store.set(eventId, updated);
       return updated;
-    }
+    },
   });
 }
 
 export async function getUpcomingDeadlines(
   tenantId: string,
   actorId: string,
-  eventId: string
+  eventId: string,
 ): Promise<Vendor[]> {
   const event = getEvent(eventId);
   const now = Date.now();
@@ -227,17 +200,15 @@ export async function getUpcomingDeadlines(
     configSchema: ConfigSchema,
     tenantId,
     actorId,
-    action: 'read',
     auditAction: 'data.read',
     auditResource: 'event-project-timeline',
     meterEventType: 'api_call',
-    actionFn: async () =>
+    action: async () =>
       event.vendors
-        .filter((vendor) => Date.parse(vendor.deadline) >= now)
+        .filter((v) => Date.parse(v.deadline) >= now)
         .sort(
-          (a, b) =>
-            Date.parse(a.deadline) - Date.parse(b.deadline)
-        )
+          (a, b) => Date.parse(a.deadline) - Date.parse(b.deadline),
+        ),
   });
 }
 

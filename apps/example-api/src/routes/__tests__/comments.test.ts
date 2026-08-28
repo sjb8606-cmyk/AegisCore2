@@ -1,14 +1,14 @@
 import express from 'express';
 import request from 'supertest';
 
-jest.mock('../../../../../platform/tenancy/src/index', () => ({
-  withTenantQuery: jest.fn(),
+vi.mock('../../../../../platform/tenancy/src/index', () => ({
+  withTenantQuery: vi.fn(),
 }));
-jest.mock('../../../../../platform/audit/src/index', () => ({
-  emit: jest.fn(),
+vi.mock('../../../../../platform/audit/src/index', () => ({
+  emit: vi.fn(),
 }));
-jest.mock('../../../../../platform/metering/src/index', () => ({
-  recordUsage: jest.fn(),
+vi.mock('../../../../../platform/metering/src/index', () => ({
+  recordUsage: vi.fn(),
 }));
 
 import { commentsRouter } from '../comments';
@@ -36,7 +36,7 @@ function buildTestApp(userId: string = USER_ID, roles: string[] = ['viewer']) {
 }
 
 beforeEach(() => {
-  jest.clearAllMocks();
+  vi.clearAllMocks();
 });
 
 describe('GET /comments/items', () => {

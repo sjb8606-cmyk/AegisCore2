@@ -23,12 +23,12 @@ function makeSignal(fromBotId: string, type = 'test.finding') {
 
 describe('SentinelPrimeBot', () => {
   beforeEach(() => {
-    jest.useFakeTimers();
-    jest.setSystemTime(1_000_000);
+    vi.useFakeTimers();
+    vi.setSystemTime(1_000_000);
   });
 
   afterEach(() => {
-    jest.useRealTimers();
+    vi.useRealTimers();
   });
 
   describe('ingest / correlation logic (direct calls, no bus)', () => {
@@ -48,7 +48,7 @@ describe('SentinelPrimeBot', () => {
     it('fires a correlated incident when 2 distinct bots signal within the window', async () => {
       const bot = new SentinelPrimeBot(makeSpec());
       await bot.ingest(makeSignal('D-06', 'dependency.vulnerabilities_found'));
-      jest.advanceTimersByTime(1000);
+      vi.advanceTimersByTime(1000);
       const result = await bot.ingest(makeSignal('D-16', 'secrets.exposure_found'));
 
       expect(result).not.toBeNull();
@@ -60,11 +60,11 @@ describe('SentinelPrimeBot', () => {
     it('does not re-fire a second incident within the same cooldown window', async () => {
       const bot = new SentinelPrimeBot(makeSpec());
       await bot.ingest(makeSignal('D-06'));
-      jest.advanceTimersByTime(1000);
+      vi.advanceTimersByTime(1000);
       const first = await bot.ingest(makeSignal('D-16'));
       expect(first).not.toBeNull();
 
-      jest.advanceTimersByTime(1000);
+      vi.advanceTimersByTime(1000);
       const second = await bot.ingest(makeSignal('D-17'));
       expect(second).toBeNull();
     });
@@ -72,10 +72,10 @@ describe('SentinelPrimeBot', () => {
     it('prunes stale signals even on a direct checkCorrelation() call with no fresh ingest', async () => {
       const bot = new SentinelPrimeBot(makeSpec());
       await bot.ingest(makeSignal('D-06'));
-      jest.advanceTimersByTime(1000);
+      vi.advanceTimersByTime(1000);
       await bot.ingest(makeSignal('D-16'));
 
-      jest.advanceTimersByTime(61_000);
+      vi.advanceTimersByTime(61_000);
       const result = await bot.checkCorrelation();
 
       expect(result).toBeNull();
@@ -85,13 +85,13 @@ describe('SentinelPrimeBot', () => {
     it('fires a fresh incident once the window and cooldown have both passed', async () => {
       const bot = new SentinelPrimeBot(makeSpec());
       await bot.ingest(makeSignal('D-06'));
-      jest.advanceTimersByTime(1000);
+      vi.advanceTimersByTime(1000);
       await bot.ingest(makeSignal('D-16'));
 
-      jest.advanceTimersByTime(61_000);
+      vi.advanceTimersByTime(61_000);
 
       await bot.ingest(makeSignal('D-20'));
-      jest.advanceTimersByTime(1000);
+      vi.advanceTimersByTime(1000);
       const result = await bot.ingest(makeSignal('D-25'));
 
       expect(result).not.toBeNull();
@@ -114,10 +114,10 @@ describe('SentinelPrimeBot', () => {
       const unsubscribe = await bot.activate();
 
       swarmSignalBus.publish(makeSignal('D-06', 'dependency.vulnerabilities_found'));
-      await jest.advanceTimersByTimeAsync(1000);
+      await vi.advanceTimersByTimeAsync(1000);
       swarmSignalBus.publish(makeSignal('D-16', 'secrets.exposure_found'));
 
-      await jest.advanceTimersByTimeAsync(0);
+      await vi.advanceTimersByTimeAsync(0);
 
       expect(bot.getRecentSignals().length).toBeGreaterThanOrEqual(2);
       unsubscribe();
@@ -134,7 +134,7 @@ describe('SentinelPrimeBot', () => {
       unsubscribe();
 
       swarmSignalBus.publish(makeSignal('D-06'));
-      await jest.advanceTimersByTimeAsync(0);
+      await vi.advanceTimersByTimeAsync(0);
 
       expect(bot.getRecentSignals()).toHaveLength(0);
     });

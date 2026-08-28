@@ -1,8 +1,9 @@
 import * as crypto from 'crypto';
+import { z } from 'zod';
 import {
   runCrudOperation,
   AppError,
-  ErrorCode
+  ErrorCode,
 } from '@platform/crud-kernel';
 
 export type DepositStatus =
@@ -29,18 +30,25 @@ export interface DamageDeposit {
 
 const store = new Map<string, DamageDeposit>();
 
-const ConfigSchema = {
-  safeParse(value: unknown) {
-    if (!value || typeof value !== 'object') {
-      return {
-        success: false,
-        error: new Error('Invalid configuration')
-      };
-    }
-
-    return { success: true, data: value };
-  }
-};
+export const ConfigSchema = z.object({
+  enabled: z.boolean().default(true),
+  limits: z
+    .object({
+      max_deposit_amount: z.number().default(100000),
+    })
+    .default({ max_deposit_amount: 100000 }),
+  features: z
+    .object({
+      damage_assessment: z.boolean().default(true),
+      partial_refunds: z.boolean().default(true),
+      forfeiture: z.boolean().default(true),
+    })
+    .default({
+      damage_assessment: true,
+      partial_refunds: true,
+      forfeiture: true,
+    }),
+});
 
 function now(): string {
   return new Date().toISOString();
@@ -49,8 +57,8 @@ function now(): string {
 function assertMoney(value: number, field: string): void {
   if (!Number.isFinite(value) || value < 0) {
     throw new AppError(
+      `${field} must be a non-negative number`,
       ErrorCode.BAD_REQUEST,
-      field + ' must be a non-negative number'
     );
   }
 }
@@ -60,42 +68,40 @@ export async function holdDeposit(
   actorId: string,
   reservationId: string,
   amount: number,
-  conditionAtPickup: string
+  conditionAtPickup: string,
 ): Promise<DamageDeposit> {
   return runCrudOperation({
     configName: 'damage-deposit-tracking',
     configSchema: ConfigSchema,
     tenantId,
     actorId,
-    action: 'create',
     auditAction: 'data.created',
     auditResource: 'damage_deposit',
     meterEventType: 'api_call',
-    actionFn: async () => {
+    action: async () => {
       assertMoney(amount, 'amount');
 
       if (!reservationId || !conditionAtPickup) {
         throw new AppError(
+          'reservationId and conditionAtPickup are required',
           ErrorCode.BAD_REQUEST,
-          'reservationId and conditionAtPickup are required'
         );
       }
 
-      for (const deposit of store.values()) {
+      for (const existing of store.values()) {
         if (
-          deposit.tenant_id === tenantId &&
-          deposit.reservation_id === reservationId &&
-          deposit.status === 'held'
+          existing.tenant_id === tenantId &&
+          existing.reservation_id === reservationId &&
+          existing.status === 'held'
         ) {
           throw new AppError(
+            'An active deposit already exists for this reservation',
             ErrorCode.CONFLICT,
-            'An active deposit already exists for this reservation'
           );
         }
       }
 
       const timestamp = now();
-
       const deposit: DamageDeposit = {
         deposit_id: crypto.randomUUID(),
         reservation_id: reservationId,
@@ -108,12 +114,12 @@ export async function holdDeposit(
         tenant_id: tenantId,
         created_by: actorId,
         created_at: timestamp,
-        updated_at: timestamp
+        updated_at: timestamp,
       };
 
       store.set(deposit.deposit_id, deposit);
       return deposit;
-    }
+    },
   });
 }
 
@@ -122,40 +128,39 @@ export async function assessReturnCondition(
   actorId: string,
   depositId: string,
   conditionAtReturn: string,
-  damageCost: number = 0
+  damageCost: number = 0,
 ): Promise<DamageDeposit> {
   return runCrudOperation({
     configName: 'damage-deposit-tracking',
     configSchema: ConfigSchema,
     tenantId,
     actorId,
-    action: 'update',
     auditAction: 'data.updated',
     auditResource: 'damage_deposit',
     meterEventType: 'api_call',
-    actionFn: async () => {
+    action: async () => {
       assertMoney(damageCost, 'damageCost');
 
       const deposit = store.get(depositId);
 
       if (!deposit || deposit.tenant_id !== tenantId) {
         throw new AppError(
+          'Damage deposit not found',
           ErrorCode.NOT_FOUND,
-          'Damage deposit not found'
         );
       }
 
       if (!conditionAtReturn) {
         throw new AppError(
+          'conditionAtReturn is required',
           ErrorCode.BAD_REQUEST,
-          'conditionAtReturn is required'
         );
       }
 
       if (deposit.status !== 'held') {
         throw new AppError(
+          'Only held deposits can be assessed',
           ErrorCode.CONFLICT,
-          'Only held deposits can be assessed'
         );
       }
 
@@ -165,44 +170,43 @@ export async function assessReturnCondition(
       deposit.updated_at = now();
 
       return deposit;
-    }
+    },
   });
 }
 
 export async function calculateRefund(
   tenantId: string,
   actorId: string,
-  depositId: string
+  depositId: string,
 ): Promise<DamageDeposit> {
   return runCrudOperation({
     configName: 'damage-deposit-tracking',
     configSchema: ConfigSchema,
     tenantId,
     actorId,
-    action: 'update',
     auditAction: 'data.updated',
     auditResource: 'damage_deposit',
     meterEventType: 'api_call',
-    actionFn: async () => {
+    action: async () => {
       const deposit = store.get(depositId);
 
       if (!deposit || deposit.tenant_id !== tenantId) {
         throw new AppError(
+          'Damage deposit not found',
           ErrorCode.NOT_FOUND,
-          'Damage deposit not found'
         );
       }
 
       if (!deposit.damage_assessed) {
         throw new AppError(
+          'Return condition must be assessed before calculating refund',
           ErrorCode.BAD_REQUEST,
-          'Return condition must be assessed before calculating refund'
         );
       }
 
       const refund = Math.max(
         0,
-        deposit.deposit_amount - deposit.damage_cost
+        deposit.deposit_amount - deposit.damage_cost,
       );
 
       deposit.refund_amount = refund;
@@ -216,36 +220,35 @@ export async function calculateRefund(
       deposit.updated_at = now();
 
       return deposit;
-    }
+    },
   });
 }
 
 export async function getDeposit(
   tenantId: string,
   actorId: string,
-  depositId: string
+  depositId: string,
 ): Promise<DamageDeposit> {
   return runCrudOperation({
     configName: 'damage-deposit-tracking',
     configSchema: ConfigSchema,
     tenantId,
     actorId,
-    action: 'read',
     auditAction: 'data.read',
     auditResource: 'damage_deposit',
     meterEventType: 'api_call',
-    actionFn: async () => {
+    action: async () => {
       const deposit = store.get(depositId);
 
       if (!deposit || deposit.tenant_id !== tenantId) {
         throw new AppError(
+          'Damage deposit not found',
           ErrorCode.NOT_FOUND,
-          'Damage deposit not found'
         );
       }
 
       return deposit;
-    }
+    },
   });
 }
 
