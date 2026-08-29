@@ -63,7 +63,7 @@ app.use(globalErrorHandler);
 // place of them yet. Cut over (retire the three standalone servers, move
 // this to the real port) only after real requests against this gateway
 // have been verified end to end.
-const PORT = parseInt(process.env.GATEWAY_PORT || '3999', 10);
+const PORT = parseInt(process.env.PORT || process.env.GATEWAY_PORT || '3999', 10);
 app.listen(PORT, () => {
   console.log(`[gateway] Listening on port ${PORT}`);
 });
