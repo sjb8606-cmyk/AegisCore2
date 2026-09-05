@@ -2,8 +2,7 @@ import { parseUserId } from '@platform/utils';
 import * as fs from 'fs';
 import * as path from 'path';
 import { z } from 'zod';
-import { withTenantQuery } from '../../tenancy/src/index';
-import { getPool } from '../../tenancy/src/rls';
+import { withTenantQuery, getPool } from '../../tenancy/src/index';
 import { AppError, ErrorCode } from '../../utils/src/index';
 export { AppError, ErrorCode };
 
