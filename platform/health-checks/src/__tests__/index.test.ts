@@ -35,12 +35,11 @@ describe('health-checks', () => {
     vi.resetAllMocks();
   });
 
-  it('runLivenessCheck returns ok/alive status', async () => {
+  it('runLivenessCheck returns healthy status', async () => {
     const result = await runLivenessCheck();
     expect(result).toBeDefined();
-    // typical shape: { status: 'ok' } or { alive: true }
-    const status = (result as any).status || ((result as any).alive ? 'ok' : undefined);
-    expect(status === 'ok' || (result as any).alive === true || (result as any).status === 'alive').toBe(true);
+    // Real contract (platform/health-checks/src/index.ts): { status: 'healthy', ... }
+    expect(result.status).toBe('healthy');
   });
 
   it('runReadinessCheck probes dependency and returns ready/not ready', async () => {
@@ -50,10 +49,10 @@ describe('health-checks', () => {
   });
 
   it('registerHealthCheck inserts definition', async () => {
-    const row = { id: DEF, name: 'db-ping', type: 'sql' };
+    const row = { id: DEF, service_name: 'db-ping', check_type: 'dependency' };
     mockWithTenantQuery.mockResolvedValueOnce([row]);
     const result = await registerHealthCheck(TENANT, {
-      name: 'db-ping', type: 'sql', target: 'SELECT 1',
+      service_name: 'db-ping', check_type: 'dependency', target: 'SELECT 1',
     });
     expect(result).toEqual(row);
   });

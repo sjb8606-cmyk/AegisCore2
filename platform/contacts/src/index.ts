@@ -84,6 +84,10 @@ export async function mergeContacts(tenantId: string, sourceId: string, targetId
     throw new AppError('Invalid ID formats (Source or Target).', 'BAD_REQUEST');
   }
 
+  if (sourceId === targetId) {
+    throw new AppError('Cannot merge a contact into itself.', 'BAD_REQUEST');
+  }
+
   // 1. Fetch Source & Target profiles
   const sourceRes = await withTenantQuery('SELECT * FROM contacts WHERE id = $1 AND tenant_id = $2;', [sourceId, tenantId], tenantId);
   const targetRes = await withTenantQuery('SELECT * FROM contacts WHERE id = $1 AND tenant_id = $2;', [targetId, tenantId], tenantId);

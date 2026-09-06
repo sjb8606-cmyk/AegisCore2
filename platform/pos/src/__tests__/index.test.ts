@@ -68,7 +68,7 @@ describe('pos', () => {
     });
 
     it('sums line items (qty * unitPrice - discount) and inserts', async () => {
-      const tx = { id: 'bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb', total_amount_cents: 1750 };
+      const tx = { id: 'bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb', total_amount_cents: 2750 };
       mockWithTenantQuery.mockResolvedValueOnce([{ id: SESSION }]).mockResolvedValueOnce([tx]);
       const result = await createTransaction(TENANT, USER, {
         registerId: REGISTER,
@@ -79,8 +79,8 @@ describe('pos', () => {
         payments: [{ method: 'cash', amountCents: 1750 }],
       });
       expect(result).toEqual(tx);
-      // 2*1000-250 + 1*1000 = 1750
-      expect(mockWithTenantQuery.mock.calls[1][1][4]).toBe(1750);
+      // (2*1000-250) + (1*1000-0) = 1750 + 1000 = 2750
+      expect(mockWithTenantQuery.mock.calls[1][1][4]).toBe(2750);
     });
   });
 

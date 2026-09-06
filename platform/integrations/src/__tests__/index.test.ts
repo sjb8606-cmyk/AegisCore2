@@ -55,7 +55,7 @@ function mockConfig(cfg: unknown) {
 }
 
 beforeEach(() => {
-  vi.resetAllMocks();
+  vi.clearAllMocks();
 });
 
 describe('startOAuthFlow', () => {

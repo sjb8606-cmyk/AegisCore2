@@ -110,8 +110,10 @@ describe('pool-equipment-asset', () => {
         new Date('2026-01-01')
       );
 
+    // Must stay relative to "now" -- a fixed calendar date eventually
+    // lapses into the past and silently breaks this test.
     equipment.nextServiceDue =
-      new Date('2026-09-01');
+      new Date(Date.now() + 5 * 24 * 60 * 60 * 1000);
 
     const flag =
       await flagReplacementNeeded(

@@ -7,12 +7,17 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import type { Request, Response, NextFunction } from 'express';
 
-const mockChild = vi.fn();
-const mockInfo = vi.fn();
-const mockWarn = vi.fn();
-const mockError = vi.fn();
-const mockRootLogger = { child: mockChild, info: mockInfo, warn: mockWarn, error: mockError, level: 'info' };
-mockChild.mockReturnValue({ info: mockInfo, warn: mockWarn, error: mockError, child: mockChild });
+// vi.mock() factories are hoisted above the whole file, so any consts they
+// reference must be declared via vi.hoisted() to avoid a TDZ ReferenceError.
+const { mockChild, mockInfo, mockWarn, mockError, mockRootLogger } = vi.hoisted(() => {
+  const mockChild = vi.fn();
+  const mockInfo = vi.fn();
+  const mockWarn = vi.fn();
+  const mockError = vi.fn();
+  const mockRootLogger = { child: mockChild, info: mockInfo, warn: mockWarn, error: mockError, level: 'info' };
+  mockChild.mockReturnValue({ info: mockInfo, warn: mockWarn, error: mockError, child: mockChild });
+  return { mockChild, mockInfo, mockWarn, mockError, mockRootLogger };
+});
 
 vi.mock('pino', () => {
   const pinoFn = vi.fn(() => mockRootLogger);

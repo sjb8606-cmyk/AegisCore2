@@ -21,6 +21,13 @@ vi.mock('fs', () => ({
   existsSync: vi.fn().mockReturnValue(false),
   readFileSync: vi.fn(),
 }));
+// Reversible local stand-in so kmsEncrypt/kmsDecrypt round-trip without touching
+// real AWS KMS. Base64 so decryptField can gracefully handle a missing/undefined
+// value too (falls back to '{}').
+vi.mock('../../../security/src/kms', () => ({
+  encryptField: vi.fn(async (v: string) => Buffer.from(v, 'utf8').toString('base64')),
+  decryptField: vi.fn(async (e: string) => (e ? Buffer.from(e, 'base64').toString('utf8') : '{}')),
+}));
 
 import {
   kmsEncrypt, kmsDecrypt, submitServiceRequest, submitAtipRequest, getAtipRequest,
@@ -32,7 +39,7 @@ const REQ = 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa';
 
 describe('government', () => {
   beforeEach(() => {
-    vi.resetAllMocks();
+    vi.clearAllMocks();
   });
 
   it('kmsEncrypt/kmsDecrypt round-trip (LIMITATION: local stand-in)', async () => {

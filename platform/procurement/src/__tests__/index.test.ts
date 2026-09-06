@@ -52,15 +52,11 @@ describe('procurement', () => {
     });
 
     it('inserts header + items, updates total_cents, returns header', async () => {
-      // generateRequestNumber typically does a count/select then we insert
-      mockWithTenantQuery
-        .mockResolvedValueOnce([{ count: '0' }]) // or whatever generateRequestNumber hits
-        .mockResolvedValueOnce([{ id: REQ, title: 'Laptops', request_number: 'PR-0001' }]) // header
-        .mockResolvedValueOnce([]) // item 1
-        .mockResolvedValueOnce([]) // item 2
-        .mockResolvedValueOnce([]); // update total
-
-      // Make generateRequestNumber resilient: any SELECT returns count 0
+      // NOTE: only use the smart regex-based mockImplementation below --
+      // a queued mockResolvedValueOnce() chain is consumed strictly before
+      // mockImplementation ever runs, which silently shifted every value
+      // here one call too early (generateRequestNumber's own internal
+      // withTenantQuery call wasn't accounted for).
       mockWithTenantQuery.mockImplementation(async (sql: string, params?: any[]) => {
         if (/COUNT|request_number|SELECT/i.test(sql) && !/INSERT|UPDATE/i.test(sql)) {
           return [{ count: '0', max: '0' }];
@@ -94,10 +90,15 @@ describe('procurement', () => {
 
   describe('submitPurchaseRequest', () => {
     it('updates status to submitted', async () => {
-      mockWithTenantQuery.mockResolvedValueOnce([]);
-      const result = await submitPurchaseRequest(TENANT, REQ);
+      // First call is the draft-status SELECT ... FOR UPDATE check; it needs
+      // a real draft row or the function correctly throws NOT_FOUND. The
+      // signature also takes a userId as its 3rd argument.
+      mockWithTenantQuery
+        .mockResolvedValueOnce([{ status: 'draft' }])
+        .mockResolvedValueOnce([]);
+      const result = await submitPurchaseRequest(TENANT, REQ, USER);
       expect(result).toEqual({ success: true, status: 'submitted' });
-      expect(mockWithTenantQuery.mock.calls[0][0]).toMatch(/status = 'submitted'/i);
+      expect(mockWithTenantQuery.mock.calls[1][0]).toMatch(/status = 'submitted'/i);
     });
   });
 

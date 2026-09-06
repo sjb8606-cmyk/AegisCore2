@@ -70,10 +70,16 @@ describe('education', () => {
 
   it('enrollStudent inserts enrollment and increments student_count', async () => {
     const row = { id: ENROLL, course_id: COURSE, student_id: USER };
-    mockWithTenantQuery.mockResolvedValueOnce([row]).mockResolvedValueOnce([]);
+    // enrollStudent's first DB call is the student-count check, THEN the
+    // insert, THEN the UPDATE -- the count-check mock was missing, which
+    // shifted every later mocked value one call too early.
+    mockWithTenantQuery
+      .mockResolvedValueOnce([{ count: '0' }])
+      .mockResolvedValueOnce([row])
+      .mockResolvedValueOnce([]);
     const result = await enrollStudent(TENANT, COURSE, USER);
     expect(result).toEqual(row);
-    expect(mockWithTenantQuery.mock.calls[1][0]).toMatch(/student_count = student_count \+ 1/i);
+    expect(mockWithTenantQuery.mock.calls[2][0]).toMatch(/student_count = student_count \+ 1/i);
   });
 
   it('completeLesson sets progress_percent=100 always (DEFECT)', async () => {

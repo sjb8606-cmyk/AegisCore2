@@ -24,18 +24,18 @@ export const CommissionsConfigSchema = z.object({
     bulkImports: z.boolean().default(false),
     auditTrail: z.boolean().default(false),
     realtimeComputation: z.boolean().default(false),
-  }),
+  }).default({}),
   limits: z.object({
     commissionPlans: z.number().default(10000),
     transactionsPerMonth: z.number().default(500000),
     payoutBatches: z.number().default(10000),
     commissionRulesPerPlan: z.number().default(200),
-  }),
+  }).default({}),
   thresholds: z.object({
     managerApprovalPayout: z.number().default(5000),
     directorApprovalPayout: z.number().default(50000),
     clawbackWindowDays: z.number().default(90),
-  }),
+  }).default({}),
 });
 
 export type CommissionsConfig = z.infer<typeof CommissionsConfigSchema>;

@@ -104,8 +104,11 @@ describe('generateReport', () => {
 
     await generateReport(TENANT_ID, USER_ID, { templateId: TEMPLATE_ID, format: 'pdf', inputData: {} });
 
+    // The real code generates its own crypto.randomUUID() for the run id and
+    // uses THAT (not the mocked DB row's id) to build the file path, so this
+    // can't assert against the fixed RUN_ID constant -- assert the shape.
     const updateParams = (withTenantQuery as any).mock.calls[3][1];
-    expect(updateParams[1]).toBe(`exports/${RUN_ID}.pdf`);
+    expect(updateParams[1]).toMatch(/^exports\/[0-9a-f-]{36}\.pdf$/);
   });
 });
 
