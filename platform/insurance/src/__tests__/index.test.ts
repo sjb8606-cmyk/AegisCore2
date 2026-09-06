@@ -32,7 +32,7 @@ const POLICY = 'bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb';
 
 describe('insurance', () => {
   beforeEach(() => {
-    vi.clearAllMocks();
+    vi.resetAllMocks();
   });
 
   it('createHolder inserts policyholder', async () => {

@@ -22,7 +22,7 @@ function mockConfig(cfg: any) {
 }
 
 beforeEach(() => {
-  vi.clearAllMocks();
+  vi.resetAllMocks();
 });
 
 describe('createApiKey', () => {

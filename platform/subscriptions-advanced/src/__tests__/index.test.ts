@@ -35,7 +35,7 @@ const SUB = 'bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb';
 
 describe('subscriptions-advanced', () => {
   beforeEach(() => {
-    vi.clearAllMocks();
+    vi.resetAllMocks();
   });
 
   it('createPlan FORBIDDEN when disabled', async () => {

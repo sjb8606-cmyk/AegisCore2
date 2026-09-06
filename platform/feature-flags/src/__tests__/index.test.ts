@@ -30,7 +30,7 @@ const FLAG = 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa';
 
 describe('feature-flags', () => {
   beforeEach(() => {
-    vi.clearAllMocks();
+    vi.resetAllMocks();
   });
 
   it('createFlag FORBIDDEN when disabled', async () => {

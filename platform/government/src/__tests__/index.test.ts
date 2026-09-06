@@ -32,7 +32,7 @@ const REQ = 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa';
 
 describe('government', () => {
   beforeEach(() => {
-    vi.clearAllMocks();
+    vi.resetAllMocks();
   });
 
   it('kmsEncrypt/kmsDecrypt round-trip (LIMITATION: local stand-in)', async () => {

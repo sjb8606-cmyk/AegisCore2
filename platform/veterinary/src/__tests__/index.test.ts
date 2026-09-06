@@ -33,7 +33,7 @@ const PATIENT = 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa';
 
 describe('veterinary', () => {
   beforeEach(() => {
-    vi.clearAllMocks();
+    vi.resetAllMocks();
   });
 
   it('registerAnimalPatient FORBIDDEN when disabled', async () => {

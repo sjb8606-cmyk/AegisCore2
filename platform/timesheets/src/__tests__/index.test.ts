@@ -31,7 +31,7 @@ const EVENT = 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa';
 
 describe('timesheets', () => {
   beforeEach(() => {
-    vi.clearAllMocks();
+    vi.resetAllMocks();
   });
 
   it('clockIn FORBIDDEN when disabled', async () => {

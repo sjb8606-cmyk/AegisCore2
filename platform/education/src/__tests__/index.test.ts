@@ -34,7 +34,7 @@ const ENROLL = 'cccccccc-cccc-cccc-cccc-cccccccccccc';
 
 describe('education', () => {
   beforeEach(() => {
-    vi.clearAllMocks();
+    vi.resetAllMocks();
   });
 
   it('createCourse FORBIDDEN when disabled or at limit', async () => {

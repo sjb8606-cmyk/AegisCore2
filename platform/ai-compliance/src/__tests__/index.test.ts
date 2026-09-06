@@ -23,7 +23,7 @@ async function freshService() {
 }
 
 beforeEach(() => {
-  vi.clearAllMocks();
+  vi.resetAllMocks();
 });
 
 describe('runComplianceCheck', () => {

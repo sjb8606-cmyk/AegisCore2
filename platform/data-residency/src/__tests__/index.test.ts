@@ -31,7 +31,7 @@ const USER = '22222222-2222-2222-2222-222222222222';
 
 describe('data-residency', () => {
   beforeEach(() => {
-    vi.clearAllMocks();
+    vi.resetAllMocks();
   });
 
   it('createRegion upserts region row', async () => {

@@ -37,7 +37,7 @@ const FLOW = '33333333-3333-3333-3333-333333333333';
 
 describe('onboarding', () => {
   beforeEach(() => {
-    vi.clearAllMocks();
+    vi.resetAllMocks();
     mockExistsSync.mockReturnValue(false);
   });
 

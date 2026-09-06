@@ -32,7 +32,7 @@ const WARRANTY = 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa';
 
 describe('warranties', () => {
   beforeEach(() => {
-    vi.clearAllMocks();
+    vi.resetAllMocks();
   });
 
   it('registerWarranty FORBIDDEN when disabled', async () => {

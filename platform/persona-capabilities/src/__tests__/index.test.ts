@@ -73,7 +73,7 @@ describe('persona-capabilities / resolve', () => {
 
 describe('persona-capabilities / dispatchPersona', () => {
   beforeEach(() => {
-    vi.clearAllMocks();
+    vi.resetAllMocks();
     mockReaddirSync.mockReturnValue([
       { name: `${PERSONA}.json`, isDirectory: () => false },
     ]);

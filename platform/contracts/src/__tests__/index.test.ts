@@ -63,7 +63,7 @@ async function freshConfig(cfg?: any) {
 }
 
 beforeEach(() => {
-  vi.clearAllMocks();
+  vi.resetAllMocks();
   __setTestPool(null);
 });
 

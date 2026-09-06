@@ -36,7 +36,7 @@ const TASK_B = 'cccccccc-cccc-cccc-cccc-cccccccccccc';
 
 describe('projects', () => {
   beforeEach(() => {
-    vi.clearAllMocks();
+    vi.resetAllMocks();
     mockExistsSync.mockReturnValue(false);
   });
 

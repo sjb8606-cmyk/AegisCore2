@@ -25,7 +25,7 @@ async function freshAiCoachService() {
 }
 
 beforeEach(() => {
-  vi.clearAllMocks();
+  vi.resetAllMocks();
 });
 
 describe('analyzeUserPerformance', () => {

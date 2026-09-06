@@ -26,7 +26,7 @@ const USER = '22222222-2222-2222-2222-222222222222';
 
 describe('zero-trust', () => {
   beforeEach(() => {
-    vi.clearAllMocks();
+    vi.resetAllMocks();
     vi.resetModules();
   });
 

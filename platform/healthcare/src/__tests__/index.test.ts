@@ -31,7 +31,7 @@ const PATIENT = 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa';
 
 describe('healthcare', () => {
   beforeEach(() => {
-    vi.clearAllMocks();
+    vi.resetAllMocks();
   });
 
   it('kmsEncrypt/kmsDecrypt round-trip', async () => {

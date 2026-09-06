@@ -41,7 +41,7 @@ function mockConfig(cfg: unknown) {
 }
 
 beforeEach(() => {
-  vi.clearAllMocks();
+  vi.resetAllMocks();
 });
 
 describe('function signatures (GAP documentation)', () => {

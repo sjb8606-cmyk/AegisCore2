@@ -29,7 +29,7 @@ const USER = '22222222-2222-2222-2222-222222222222';
 
 describe('developer-portal', () => {
   beforeEach(() => {
-    vi.clearAllMocks();
+    vi.resetAllMocks();
   });
 
   it('publishApiSpec FORBIDDEN when disabled or tier off', async () => {

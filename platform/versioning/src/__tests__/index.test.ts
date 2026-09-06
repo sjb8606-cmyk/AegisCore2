@@ -33,7 +33,7 @@ const VER = 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa';
 
 describe('versioning', () => {
   beforeEach(() => {
-    vi.clearAllMocks();
+    vi.resetAllMocks();
   });
 
   it('extractVersionFromPath matches /vN prefix', () => {

@@ -26,7 +26,7 @@ async function freshService(cfg?: any) {
 }
 
 beforeEach(() => {
-  vi.clearAllMocks();
+  vi.resetAllMocks();
 });
 
 describe('classifyDataAsset', () => {

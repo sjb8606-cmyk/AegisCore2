@@ -32,7 +32,7 @@ const RULE = 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa';
 
 describe('deprecation-manager', () => {
   beforeEach(() => {
-    vi.clearAllMocks();
+    vi.resetAllMocks();
   });
 
   it('createDeprecationRule FORBIDDEN when disabled', async () => {

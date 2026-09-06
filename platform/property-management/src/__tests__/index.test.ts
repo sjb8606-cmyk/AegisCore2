@@ -41,7 +41,7 @@ const LEASE = 'dddddddd-dddd-dddd-dddd-dddddddddddd';
 
 describe('property-management', () => {
   beforeEach(() => {
-    vi.clearAllMocks();
+    vi.resetAllMocks();
     mockExistsSync.mockReturnValue(false);
   });
 

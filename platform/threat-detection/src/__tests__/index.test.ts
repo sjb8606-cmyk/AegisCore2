@@ -24,7 +24,7 @@ const TENANT = '11111111-1111-1111-1111-111111111111';
 
 describe('threat-detection', () => {
   beforeEach(() => {
-    vi.clearAllMocks();
+    vi.resetAllMocks();
     vi.resetModules();
   });
 

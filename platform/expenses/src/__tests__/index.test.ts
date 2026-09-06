@@ -33,7 +33,7 @@ const REPORT = 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa';
 
 describe('expenses', () => {
   beforeEach(() => {
-    vi.clearAllMocks();
+    vi.resetAllMocks();
   });
 
   it('createExpenseReport FORBIDDEN when disabled', async () => {

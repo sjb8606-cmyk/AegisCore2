@@ -23,7 +23,7 @@ function mockConfig(cfg: any) {
 }
 
 beforeEach(() => {
-  vi.clearAllMocks();
+  vi.resetAllMocks();
 });
 
 const validConfig = {

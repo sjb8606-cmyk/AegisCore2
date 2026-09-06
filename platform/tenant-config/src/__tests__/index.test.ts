@@ -33,7 +33,7 @@ const CFG = 'bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb';
 
 describe('tenant-config', () => {
   beforeEach(() => {
-    vi.clearAllMocks();
+    vi.resetAllMocks();
   });
 
   it('createNamespace FORBIDDEN when disabled', async () => {

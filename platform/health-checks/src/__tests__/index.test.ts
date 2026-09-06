@@ -32,7 +32,7 @@ const DEF = 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa';
 
 describe('health-checks', () => {
   beforeEach(() => {
-    vi.clearAllMocks();
+    vi.resetAllMocks();
   });
 
   it('runLivenessCheck returns ok/alive status', async () => {
