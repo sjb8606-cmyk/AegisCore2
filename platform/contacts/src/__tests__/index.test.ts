@@ -108,26 +108,14 @@ describe('mergeContacts', () => {
     );
   });
 
-  // BUG — documented, not hidden. There is no check anywhere in this function
-  // that sourceId !== targetId. Both pass isValidUuid, both resolve to the
-  // same row, and the function proceeds to set that contact's own
-  // status='merged' with merged_into_id pointing at itself — silently
-  // corrupting the contact instead of rejecting a nonsensical self-merge.
-  it('BUG: does not reject merging a contact into itself (sourceId === targetId)', async () => {
+  // FIXED — mergeContacts now guards against sourceId === targetId before any
+  // queries run, rejecting the nonsensical self-merge instead of silently
+  // corrupting the contact with status='merged' pointing at itself.
+  it('rejects merging a contact into itself (sourceId === targetId)', async () => {
     mockConfig({ enabled: true, tiers: { contactMerging: true } });
-    const selfContact = { id: CONTACT_ID, status: 'active', first_name: 'Sam', last_name: 'X' };
-    (withTenantQuery as any)
-      .mockResolvedValueOnce([selfContact])
-      .mockResolvedValueOnce([selfContact])
-      .mockResolvedValueOnce([])
-      .mockResolvedValueOnce([{ ...selfContact, status: 'merged', merged_into_id: CONTACT_ID }])
-      .mockResolvedValueOnce([]);
-
-    const result = await mergeContacts(TENANT_ID, CONTACT_ID, CONTACT_ID, USER_ID);
-
-    expect(result.mergedInto).toBe(CONTACT_ID);
-    expect(result.source.merged_into_id).toBe(CONTACT_ID);
-    // TODO(contacts bug): add `if (sourceId === targetId) throw new AppError(...)` before any queries run.
+    await expect(mergeContacts(TENANT_ID, CONTACT_ID, CONTACT_ID, USER_ID)).rejects.toThrow(
+      'Cannot merge a contact into itself.',
+    );
   });
 
   it('merges tags and marks the source as merged on a valid pair', async () => {
