@@ -100,6 +100,9 @@ export async function createJournalEntry(tenantId: string, userId: string, data:
 }
 
 export async function voidJournalEntry(tenantId: string, entryId: string, reason: string, userId: string) {
+  const cfg = loadConfig();
+  if (!cfg.enabled) throw new AppError('Fintech vertical disabled', ErrorCode.FORBIDDEN);
+
   const cleanUserId = parseUserId(userId);
 
   // 1. Get original posted entry
@@ -138,5 +141,7 @@ export async function voidJournalEntry(tenantId: string, entryId: string, reason
 
 export async function getLedgerAccount(tenantId: string, accountId: string) {
   const res = await withTenantQuery('SELECT * FROM ledger_accounts WHERE id = $1 AND tenant_id = $2', [accountId, tenantId], tenantId);
-  return res[0];
+  const acct = res[0];
+  if (!acct) throw new AppError('Ledger account not found', ErrorCode.NOT_FOUND);
+  return acct;
 }
