@@ -60,7 +60,10 @@ describe('government', () => {
 
   it('submitAtipRequest inserts FOI/ATIP request', async () => {
     const row = { id: REQ, status: 'received' };
-    mockWithTenantQuery.mockResolvedValueOnce([row]);
+    // First call is generateAtipNumber's COUNT(*) check, then the INSERT.
+    mockWithTenantQuery
+      .mockResolvedValueOnce([{ seq: '0' }])
+      .mockResolvedValueOnce([row]);
     const result = await submitAtipRequest(TENANT, {
       requester_name: 'Jane', subject: 'Records about X',
     });
