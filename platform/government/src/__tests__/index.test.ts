@@ -51,7 +51,10 @@ describe('government', () => {
 
   it('submitServiceRequest inserts request', async () => {
     const row = { id: REQ, type: 'pothole', status: 'open' };
-    mockWithTenantQuery.mockResolvedValueOnce([row]);
+    // First call is generateServiceRequestNumber's COUNT(*) check, then the INSERT.
+    mockWithTenantQuery
+      .mockResolvedValueOnce([{ seq: '0' }])
+      .mockResolvedValueOnce([row]);
     const result = await submitServiceRequest(TENANT, {
       type: 'pothole', description: 'Main St', location: '45.5,-73.5',
     });
