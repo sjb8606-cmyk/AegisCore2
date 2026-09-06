@@ -71,8 +71,14 @@ describe('government', () => {
     mockWithTenantQuery.mockResolvedValueOnce([]);
     await expect(getAtipRequest(TENANT, REQ)).rejects.toMatchObject({ code: expect.any(String) });
 
+    // Production code always masks encrypted_data in the response
+    // (platform/government/src/index.ts) -- this is intentional security
+    // behavior, not a bug, so the expectation reflects the masked shape.
     const row = { id: REQ, subject: 'Records about X' };
     mockWithTenantQuery.mockResolvedValueOnce([row]);
-    expect(await getAtipRequest(TENANT, REQ)).toEqual(row);
+    expect(await getAtipRequest(TENANT, REQ)).toEqual({
+      ...row,
+      encrypted_data: '[SECURED_COMPLIANT_VALUE]',
+    });
   });
 });

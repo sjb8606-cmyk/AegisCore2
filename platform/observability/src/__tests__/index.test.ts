@@ -66,7 +66,7 @@ const SUB = '22222222-2222-2222-2222-222222222222';
 
 describe('observability / logger', () => {
   beforeEach(() => {
-    vi.resetAllMocks();
+    vi.clearAllMocks();
     mockChild.mockReturnValue({ info: mockInfo, warn: mockWarn, error: mockError, child: mockChild });
   });
 
@@ -113,7 +113,7 @@ describe('observability / middleware', () => {
   }
 
   beforeEach(() => {
-    vi.resetAllMocks();
+    vi.clearAllMocks();
     (httpRequestDuration as any).record = vi.fn();
     (httpRequestsTotal as any).add = vi.fn();
     (httpErrorsTotal as any).add = vi.fn();
