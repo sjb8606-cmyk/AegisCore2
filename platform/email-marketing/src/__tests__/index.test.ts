@@ -6,10 +6,10 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 
 const mockWithTenantQuery = vi.fn();
-vi.mock('../../tenancy/src/index', () => ({
+vi.mock('../../../tenancy/src/index', () => ({
   withTenantQuery: (...a: unknown[]) => mockWithTenantQuery(...a),
 }));
-vi.mock('../../utils/src/index', () => ({
+vi.mock('../../../utils/src/index', () => ({
   AppError: class AppError extends Error {
     constructor(message: string, public code: string) { super(message); this.name = 'AppError'; }
   },

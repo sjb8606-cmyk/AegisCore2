@@ -10,13 +10,13 @@ const mockWithTenantQuery = vi.fn();
 const mockRecordUsage = vi.fn().mockResolvedValue(undefined);
 const mockLoadConfig = vi.fn();
 
-vi.mock('../../utils/src/index', () => ({
+vi.mock('../../../utils/src/index', () => ({
   loadConfig: (...a: unknown[]) => mockLoadConfig(...a),
 }));
-vi.mock('../../tenancy/src/index', () => ({
+vi.mock('../../../tenancy/src/index', () => ({
   withTenantQuery: (...a: unknown[]) => mockWithTenantQuery(...a),
 }));
-vi.mock('../../metering/src/index', () => ({
+vi.mock('../../../metering/src/index', () => ({
   recordUsage: (...a: unknown[]) => mockRecordUsage(...a),
 }));
 
@@ -27,7 +27,7 @@ const WF = 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa';
 
 describe('workflows', () => {
   beforeEach(() => {
-    vi.clearAllMocks();
+    vi.resetAllMocks();
     mockLoadConfig.mockReturnValue({
       enabled: true,
       limits: { workflowCount: 10, stepsPerWorkflow: 5 },

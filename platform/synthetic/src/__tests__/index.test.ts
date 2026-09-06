@@ -8,17 +8,17 @@ const mockWithTenantQuery = vi.fn().mockResolvedValue([]);
 const mockRecordUsage = vi.fn().mockResolvedValue(undefined);
 const mockLoadConfig = vi.fn();
 
-vi.mock('../../utils/src/index', () => ({
+vi.mock('../../../utils/src/index', () => ({
   loadConfig: (...a: unknown[]) => mockLoadConfig(...a),
   AppError: class AppError extends Error {
     constructor(message: string, public code: string) { super(message); this.name = 'AppError'; }
   },
   ErrorCode: { FORBIDDEN: 'FORBIDDEN', BAD_REQUEST: 'BAD_REQUEST' },
 }));
-vi.mock('../../tenancy/src/index', () => ({
+vi.mock('../../../tenancy/src/index', () => ({
   withTenantQuery: (...a: unknown[]) => mockWithTenantQuery(...a),
 }));
-vi.mock('../../metering/src/index', () => ({
+vi.mock('../../../metering/src/index', () => ({
   recordUsage: (...a: unknown[]) => mockRecordUsage(...a),
 }));
 
@@ -28,7 +28,7 @@ const TENANT = '11111111-1111-1111-1111-111111111111';
 
 describe('synthetic', () => {
   beforeEach(() => {
-    vi.clearAllMocks();
+    vi.resetAllMocks();
     mockLoadConfig.mockReturnValue({
       enabled: true,
       allowedTypes: ['user', 'transaction'],

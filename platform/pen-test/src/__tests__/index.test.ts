@@ -15,10 +15,10 @@ vi.mock('fs', () => ({
 }));
 
 // Relative imports used by the source — mock by package-style aliases that resolve in monorepo
-vi.mock('../../tenancy/src/index', () => ({
+vi.mock('../../../tenancy/src/index', () => ({
   withTenantQuery: (...args: unknown[]) => mockWithTenantQuery(...args),
 }));
-vi.mock('../../utils/src/index', () => ({
+vi.mock('../../../utils/src/index', () => ({
   AppError: class AppError extends Error {
     constructor(message: string, public code: string) { super(message); this.name = 'AppError'; }
   },
@@ -27,12 +27,12 @@ vi.mock('../../utils/src/index', () => ({
     INTERNAL: 'INTERNAL', NOT_IMPLEMENTED: 'NOT_IMPLEMENTED',
   },
 }));
-vi.mock('../../aegis-swarm/src/bots/dependency-vuln-scanner', () => ({
+vi.mock('../../../aegis-swarm/src/bots/dependency-vuln-scanner', () => ({
   DependencyVulnScannerBot: vi.fn().mockImplementation(() => ({
     scanDirectory: (...args: unknown[]) => mockScanDirectory(...args),
   })),
 }));
-vi.mock('../../bot-runtime/src/types', () => ({}));
+vi.mock('../../../bot-runtime/src/types', () => ({}));
 
 const TENANT = '11111111-1111-1111-1111-111111111111';
 

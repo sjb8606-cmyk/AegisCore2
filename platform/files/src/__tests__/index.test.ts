@@ -7,7 +7,7 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 const mockWithTenantQuery = vi.fn();
 const mockLoadConfig = vi.fn();
 
-vi.mock('../../utils/src/index', () => ({
+vi.mock('../../../utils/src/index', () => ({
   loadConfig: (...a: unknown[]) => mockLoadConfig(...a),
   AppError: class AppError extends Error {
     constructor(message: string, public code: string) { super(message); this.name = 'AppError'; }
@@ -21,7 +21,7 @@ vi.mock('@platform/utils', () => ({
   ErrorCode: { FORBIDDEN: 'FORBIDDEN', BAD_REQUEST: 'BAD_REQUEST' },
   parseUserId: (id: string) => id,
 }));
-vi.mock('../../tenancy/src/index', () => ({
+vi.mock('../../../tenancy/src/index', () => ({
   withTenantQuery: (...a: unknown[]) => mockWithTenantQuery(...a),
 }));
 vi.mock('@platform/tenancy', () => ({
@@ -35,7 +35,7 @@ const USER = '22222222-2222-2222-2222-222222222222';
 
 describe('files', () => {
   beforeEach(() => {
-    vi.clearAllMocks();
+    vi.resetAllMocks();
     mockLoadConfig.mockReturnValue({
       enabled: true,
       limits: { maxFileSizeBytes: 5_000_000, maxFilesPerTenant: 1000 },

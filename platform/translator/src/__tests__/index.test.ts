@@ -10,20 +10,20 @@ const mockRecordUsage = vi.fn().mockResolvedValue(undefined);
 const mockLoadConfig = vi.fn();
 const mockFilterPii = vi.fn((text: string) => ({ sanitized: text.replace(/\d{3}-\d{2}-\d{4}/g, '[REDACTED]') }));
 
-vi.mock('../../utils/src/index', () => ({
+vi.mock('../../../utils/src/index', () => ({
   loadConfig: (...a: unknown[]) => mockLoadConfig(...a),
   AppError: class AppError extends Error {
     constructor(message: string, public code: string) { super(message); this.name = 'AppError'; }
   },
   ErrorCode: { FORBIDDEN: 'FORBIDDEN' },
 }));
-vi.mock('../../tenancy/src/index', () => ({
+vi.mock('../../../tenancy/src/index', () => ({
   withTenantQuery: (...a: unknown[]) => mockWithTenantQuery(...a),
 }));
-vi.mock('../../ai-safety/src/index', () => ({
+vi.mock('../../../ai-safety/src/index', () => ({
   filterPii: (...a: unknown[]) => mockFilterPii(...a),
 }));
-vi.mock('../../metering/src/index', () => ({
+vi.mock('../../../metering/src/index', () => ({
   recordUsage: (...a: unknown[]) => mockRecordUsage(...a),
 }));
 
@@ -33,7 +33,7 @@ const TENANT = '11111111-1111-1111-1111-111111111111';
 
 describe('translator', () => {
   beforeEach(() => {
-    vi.clearAllMocks();
+    vi.resetAllMocks();
     mockLoadConfig.mockReturnValue({
       enabled: true,
       piiScrubbingMandatory: true,

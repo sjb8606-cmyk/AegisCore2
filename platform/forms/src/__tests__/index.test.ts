@@ -11,19 +11,19 @@ const mockEncrypt = vi.fn(async (p: string) => ({ ciphertext: 'enc:' + p, keyId:
 const mockAuditEmit = vi.fn().mockResolvedValue(undefined);
 const mockRecordUsage = vi.fn().mockResolvedValue(undefined);
 
-vi.mock('../../utils/src/index', () => ({
+vi.mock('../../../utils/src/index', () => ({
   loadConfig: (...a: unknown[]) => mockLoadConfig(...a),
 }));
-vi.mock('../../tenancy/src/index', () => ({
+vi.mock('../../../tenancy/src/index', () => ({
   withTenantQuery: (...a: unknown[]) => mockWithTenantQuery(...a),
 }));
-vi.mock('../../audit/src/index', () => ({
+vi.mock('../../../audit/src/index', () => ({
   emit: (...a: unknown[]) => mockAuditEmit(...a),
 }));
-vi.mock('../../metering/src/index', () => ({
+vi.mock('../../../metering/src/index', () => ({
   recordUsage: (...a: unknown[]) => mockRecordUsage(...a),
 }));
-vi.mock('../../security/src/index', () => ({
+vi.mock('../../../security/src/index', () => ({
   encrypt: (...a: unknown[]) => mockEncrypt(...a),
 }));
 
@@ -34,7 +34,7 @@ const FORM = 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa';
 
 describe('forms', () => {
   beforeEach(() => {
-    vi.clearAllMocks();
+    vi.resetAllMocks();
     mockLoadConfig.mockReturnValue({
       enabled: true,
       tiers: { auditTrail: true, encryptedSubmissions: false },

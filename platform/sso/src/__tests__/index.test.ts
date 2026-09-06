@@ -10,10 +10,10 @@ const mockWithTenantQuery = vi.fn();
 const mockJwtVerify = vi.fn();
 const mockCreateRemoteJWKSet = vi.fn(() => ({}));
 
-vi.mock('../../tenancy/src/index', () => ({
+vi.mock('../../../tenancy/src/index', () => ({
   withTenantQuery: (...a: unknown[]) => mockWithTenantQuery(...a),
 }));
-vi.mock('../../utils/src/index', () => ({
+vi.mock('../../../utils/src/index', () => ({
   AppError: class AppError extends Error {
     constructor(message: string, public code: string) { super(message); this.name = 'AppError'; }
   },

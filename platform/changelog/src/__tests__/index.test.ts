@@ -30,7 +30,7 @@ const enabledConfig = {
 };
 
 beforeEach(() => {
-  vi.clearAllMocks();
+  vi.resetAllMocks();
   (loadConfig as any).mockReturnValue(enabledConfig);
   (withTenantQuery as any).mockResolvedValue([]);
 });

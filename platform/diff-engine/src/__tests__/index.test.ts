@@ -7,14 +7,14 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 const mockWithTenantQuery = vi.fn();
 const mockLoadConfig = vi.fn();
 
-vi.mock('../../utils/src/index', () => ({
+vi.mock('../../../utils/src/index', () => ({
   loadConfig: (...a: unknown[]) => mockLoadConfig(...a),
   AppError: class AppError extends Error {
     constructor(message: string, public code: string) { super(message); this.name = 'AppError'; }
   },
   ErrorCode: { FORBIDDEN: 'FORBIDDEN' },
 }));
-vi.mock('../../tenancy/src/index', () => ({
+vi.mock('../../../tenancy/src/index', () => ({
   withTenantQuery: (...a: unknown[]) => mockWithTenantQuery(...a),
 }));
 
@@ -25,7 +25,7 @@ const ACTOR = '22222222-2222-2222-2222-222222222222';
 
 describe('diff-engine', () => {
   beforeEach(() => {
-    vi.clearAllMocks();
+    vi.resetAllMocks();
     mockLoadConfig.mockReturnValue({ enabled: true, limits: { maxDepth: 5 } });
   });
 
