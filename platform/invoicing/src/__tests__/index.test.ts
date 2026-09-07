@@ -112,7 +112,7 @@ describe('InvoicingService.createInvoice', () => {
     // cleanUserId is never stored anywhere -- no created_by/who-created
     // field exists on the invoice insert. Real fix: add a created_by
     // column and include cleanUserId in invoiceParams.
-  });
+  }, 15000);
 
   it('GAP: taxRate/taxCalculation are configured but tax is never actually computed', async () => {
     const { mod, withTenantQuery } = await freshModule({

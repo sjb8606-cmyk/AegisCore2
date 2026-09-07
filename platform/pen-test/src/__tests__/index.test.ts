@@ -27,9 +27,18 @@ vi.mock('../../../utils/src/index', () => ({
   },
 }));
 const mockBotConstructor = vi.fn();
-vi.mock('../../../aegis-swarm/src/bots/dependency-vuln-scanner', () => ({
-  DependencyVulnScannerBot: (...args: unknown[]) => mockBotConstructor(...args),
-}));
+vi.mock('../../../aegis-swarm/src/bots/dependency-vuln-scanner', () => {
+  // Must be a real constructor because source does `new DependencyVulnScannerBot(...)`
+  class MockBot {
+    constructor(...args: unknown[]) {
+      mockBotConstructor(...args);
+    }
+    scanDirectory(...args: unknown[]) {
+      return mockScanDirectory(...args);
+    }
+  }
+  return { DependencyVulnScannerBot: MockBot };
+});
 vi.mock('../../../bot-runtime/src/types', () => ({}));
 
 const TENANT = '11111111-1111-1111-1111-111111111111';

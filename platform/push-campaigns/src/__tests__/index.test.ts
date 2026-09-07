@@ -72,6 +72,7 @@ describe('push-campaigns', () => {
     (fs.readFileSync as any).mockReturnValue(JSON.stringify({
       enabled: false,
       tiers: { campaigns: true, basicPush: true },
+      limits: { pushPerSecond: 10, devicesPerTenant: 100, campaignsPerDay: 5 },
     }));
     const { PushCampaignsService, ErrorCode } = await load();
     await expect(PushCampaignsService.createCampaign(TENANT, {
@@ -85,6 +86,7 @@ describe('push-campaigns', () => {
     (fs.readFileSync as any).mockReturnValue(JSON.stringify({
       enabled: true,
       tiers: { campaigns: false, basicPush: true },
+      limits: { pushPerSecond: 10, devicesPerTenant: 100, campaignsPerDay: 5 },
     }));
     const { PushCampaignsService, ErrorCode } = await load();
     await expect(PushCampaignsService.createCampaign(TENANT, {
