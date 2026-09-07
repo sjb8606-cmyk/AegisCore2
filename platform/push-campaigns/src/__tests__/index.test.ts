@@ -12,17 +12,24 @@ vi.mock('fs', () => ({
   readFileSync: vi.fn(),
 }));
 
-vi.mock('@platform/tenancy', () => ({
+// Real source imports withTenantQuery and AppError/ErrorCode via relative
+// paths, NOT '@platform/tenancy' — only parseUserId genuinely comes from
+// the '@platform/utils' package alias.
+vi.mock('../../../tenancy/src/index', () => ({
   withTenantQuery: (...args: unknown[]) => mockWithTenantQuery(...args),
 }));
 
-vi.mock('@platform/utils', () => ({
+vi.mock('../../../utils/src/index', () => ({
   AppError: class AppError extends Error {
-    constructor(message: string, public code: string) { super(message); this.name = 'AppError'; }
+    code: string;
+    constructor(message: string, code: string) { super(message); this.name = 'AppError'; this.code = code; }
   },
   ErrorCode: {
     FORBIDDEN: 'FORBIDDEN', BAD_REQUEST: 'BAD_REQUEST', NOT_FOUND: 'NOT_FOUND', INTERNAL: 'INTERNAL',
   },
+}));
+
+vi.mock('@platform/utils', () => ({
   parseUserId: (id: string) => id,
 }));
 
@@ -44,7 +51,6 @@ describe('push-campaigns', () => {
     const row = { id: 'bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb', device_token: 'tok-1', platform: 'ios', is_active: true };
     mockWithTenantQuery.mockResolvedValueOnce([row]);
     const { PushCampaignsService } = await load();
-    // method name may be registerDevice / recordDevice — match source
     const svc = PushCampaignsService as any;
     const fn = svc.registerDevice || svc.recordDevice || svc.upsertDevice;
     expect(typeof fn).toBe('function');

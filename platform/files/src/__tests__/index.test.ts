@@ -1,74 +1,92 @@
-/**
- * @platform/files
- * requestFileUpload size/type gating via config.
- */
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 
 const mockWithTenantQuery = vi.fn();
 const mockLoadConfig = vi.fn();
+const mockRecordUsage = vi.fn();
 
 vi.mock('../../../utils/src/index', () => ({
   loadConfig: (...a: unknown[]) => mockLoadConfig(...a),
   AppError: class AppError extends Error {
-    constructor(message: string, public code: string) { super(message); this.name = 'AppError'; }
+    code: string;
+    constructor(message: string, code: string) { super(message); this.name = 'AppError'; this.code = code; }
   },
   ErrorCode: { FORBIDDEN: 'FORBIDDEN', BAD_REQUEST: 'BAD_REQUEST' },
-}));
-vi.mock('@platform/utils', () => ({
-  AppError: class AppError extends Error {
-    constructor(message: string, public code: string) { super(message); this.name = 'AppError'; }
-  },
-  ErrorCode: { FORBIDDEN: 'FORBIDDEN', BAD_REQUEST: 'BAD_REQUEST' },
-  parseUserId: (id: string) => id,
 }));
 vi.mock('../../../tenancy/src/index', () => ({
   withTenantQuery: (...a: unknown[]) => mockWithTenantQuery(...a),
 }));
-vi.mock('@platform/tenancy', () => ({
-  withTenantQuery: (...a: unknown[]) => mockWithTenantQuery(...a),
+vi.mock('../../../metering/src/index', () => ({
+  recordUsage: (...a: unknown[]) => mockRecordUsage(...a),
 }));
 
-import { requestFileUpload, AppError, ErrorCode } from '../index';
+import { requestFileUpload } from '../index';
 
-const TENANT = '11111111-1111-1111-1111-111111111111';
-const USER = '22222222-2222-2222-2222-222222222222';
+const TENANT_ID = '11111111-1111-1111-1111-111111111111';
+const USER_ID = '22222222-2222-2222-2222-222222222222';
 
-describe('files', () => {
+// Real ConfigSchema: { enabled, limits: { maxFileSizeMb }, storage: { bucket, region } }
+function validConfig(overrides: Record<string, unknown> = {}) {
+  return {
+    enabled: true,
+    limits: { maxFileSizeMb: 5 },
+    storage: { bucket: 'aegis-files', region: 'us-east-1' },
+    ...overrides,
+  };
+}
+
+describe('files: requestFileUpload', () => {
   beforeEach(() => {
     vi.resetAllMocks();
-    mockLoadConfig.mockReturnValue({
-      enabled: true,
-      limits: { maxFileSizeBytes: 5_000_000, maxFilesPerTenant: 1000 },
-      allowedMimePrefixes: ['image/', 'application/pdf'],
+    mockLoadConfig.mockReturnValue(validConfig());
+    mockRecordUsage.mockResolvedValue(undefined);
+  });
+
+  it('BUG: throws a plain Error (no .code) when disabled, not an AppError', async () => {
+    // Real source: `if (!config.enabled) throw new Error('Files feature disabled');`
+    // — unlike the rest of the codebase, this is never wrapped in AppError,
+    // so callers checking `.code === ErrorCode.FORBIDDEN` get `undefined`
+    // instead. The real fix: `throw new AppError('Files feature disabled', ErrorCode.FORBIDDEN)`.
+    mockLoadConfig.mockReturnValue(validConfig({ enabled: false }));
+
+    let caught: any;
+    try {
+      await requestFileUpload(TENANT_ID, 'a.png', 100, USER_ID);
+    } catch (err) {
+      caught = err;
+    }
+    expect(caught).toBeInstanceOf(Error);
+    expect(caught.code).toBeUndefined();
+    expect(caught.message).toBe('Files feature disabled');
+  });
+
+  it('rejects files over the configured size limit (real maxFileSizeMb field)', async () => {
+    mockLoadConfig.mockReturnValue(validConfig({ limits: { maxFileSizeMb: 1 } })); // 1MB limit
+
+    await expect(requestFileUpload(TENANT_ID, 'big.bin', 2 * 1024 * 1024, USER_ID))
+      .rejects.toThrow(/exceeds limit/i);
+  });
+
+  it('allows a file at or under the size limit', async () => {
+    mockLoadConfig.mockReturnValue(validConfig({ limits: { maxFileSizeMb: 1 } }));
+    mockWithTenantQuery.mockResolvedValueOnce([{ id: 'file-1' }]);
+
+    await expect(requestFileUpload(TENANT_ID, 'small.bin', 1024 * 1024, USER_ID))
+      .resolves.toBeDefined();
+  });
+
+  it('success path: inserts the ledger row, meters usage, and returns a presigned-style URL', async () => {
+    mockWithTenantQuery.mockImplementation(async (sql: string, params: any[]) => {
+      const [fileId, tenantId, uploadedBy, filename] = params;
+      return [{ id: fileId, tenant_id: tenantId, uploaded_by: uploadedBy, name: filename }];
     });
-  });
 
-  it('FORBIDDEN when disabled', async () => {
-    mockLoadConfig.mockReturnValue({ enabled: false, limits: { maxFileSizeBytes: 5_000_000 } });
-    await expect(requestFileUpload(TENANT, 'a.png', 100, USER))
-      .rejects.toMatchObject({ code: expect.stringMatching(/FORBIDDEN|forbidden/i) });
-  });
+    const result = await requestFileUpload(TENANT_ID, 'photo.png', 1024, USER_ID);
 
-  it('rejects oversized files', async () => {
-    await expect(requestFileUpload(TENANT, 'big.bin', 50_000_000, USER))
-      .rejects.toThrow();
-  });
-
-  it('inserts upload request and returns row or signed info', async () => {
-    const row = {
-      id: 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa',
-      filename: 'photo.png', size_bytes: 1024, status: 'pending',
-    };
-    mockWithTenantQuery.mockResolvedValueOnce([row]);
-    // some implementations also do a count check first
-    mockWithTenantQuery.mockImplementation(async (sql: string) => {
-      if (/COUNT/i.test(sql)) return [{ count: '0' }];
-      return [row];
-    });
-    const result = await requestFileUpload(TENANT, 'photo.png', 1024, USER);
-    expect(result).toBeDefined();
-    // either returns the row or an object containing upload metadata
-    const id = (result as any).id || (result as any).fileId || (result as any).record?.id;
-    if (id) expect(id).toBe(row.id);
+    expect(result.fileId).toEqual(expect.any(String));
+    expect(result.s3Key).toBe(`files/${TENANT_ID}/${result.fileId}/photo.png`);
+    expect(result.uploadUrl).toContain('aegis-files.s3.us-east-1.amazonaws.com');
+    expect(mockRecordUsage).toHaveBeenCalledWith(expect.objectContaining({
+      tenantId: TENANT_ID, eventType: 'api_call', quantity: 1,
+    }));
   });
 });

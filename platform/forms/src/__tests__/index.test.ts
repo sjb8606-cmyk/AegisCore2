@@ -34,7 +34,7 @@ const FORM = 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa';
 
 describe('forms', () => {
   beforeEach(() => {
-    vi.resetAllMocks();
+    vi.clearAllMocks();
     mockLoadConfig.mockReturnValue({
       enabled: true,
       tiers: { auditTrail: true, encryptedSubmissions: false },

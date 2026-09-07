@@ -1,28 +1,25 @@
-/**
- * @platform/feedback
- * cachedConfig → vi.resetModules(). Submit + vote paths.
- */
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 
 const mockWithTenantQuery = vi.fn();
 vi.mock('../../../tenancy/src/index', () => ({
   withTenantQuery: (...a: unknown[]) => mockWithTenantQuery(...a),
 }));
-vi.mock('../../../utils/src/index', () => ({
+
+// feedback/src/index.ts imports parseUserId via '@platform/utils' but
+// AppError/ErrorCode via the relative path '../../utils/src/index' — same
+// physical file, two different specifiers. Mock both so neither import
+// statement ever reaches the real module.
+const utilsMockFactory = () => ({
   AppError: class AppError extends Error {
-    constructor(message: string, public code: string) { super(message); this.name = 'AppError'; }
+    code: string;
+    constructor(message: string, code: string) { super(message); this.name = 'AppError'; this.code = code; }
   },
   ErrorCode: { FORBIDDEN: 'FORBIDDEN', NOT_FOUND: 'NOT_FOUND', INTERNAL: 'INTERNAL', BAD_REQUEST: 'BAD_REQUEST' },
   parseUserId: (id: string) => id,
-}));
-// feedback may import from @platform/utils for parseUserId — cover both
-vi.mock('@platform/utils', () => ({
-  AppError: class AppError extends Error {
-    constructor(message: string, public code: string) { super(message); this.name = 'AppError'; }
-  },
-  ErrorCode: { FORBIDDEN: 'FORBIDDEN', NOT_FOUND: 'NOT_FOUND', BAD_REQUEST: 'BAD_REQUEST' },
-  parseUserId: (id: string) => id,
-}));
+});
+vi.mock('../../../utils/src/index', utilsMockFactory);
+vi.mock('@platform/utils', utilsMockFactory);
+
 vi.mock('fs', () => ({
   existsSync: vi.fn().mockReturnValue(false),
   readFileSync: vi.fn(),
@@ -47,46 +44,92 @@ describe('feedback', () => {
     (fs.existsSync as any).mockReturnValue(true);
     (fs.readFileSync as any).mockReturnValue(JSON.stringify({
       enabled: false,
-      tiers: { ideaSubmission: true, voting: true },
-      limits: { ideasPerTenant: 1000, votesPerUserPerDay: 20 },
+      tiers: { basicFeedback: true, userVoting: true },
+      limits: { feedbackPerDay: 20 },
     }));
-    const mod = await load();
-    const svc = (mod as any).FeedbackService;
-    await expect(svc.submitFeedback(TENANT, {
-      title: 'Idea', description: 'Do X', type: 'idea',
-    }, USER)).rejects.toMatchObject({ code: 'FORBIDDEN' });
+    const { FeedbackService } = await load() as any;
+
+    // Real signature: submitFeedback(tenantId, userId, data)
+    await expect(FeedbackService.submitFeedback(TENANT, USER, {
+      type: 'bug', title: 'Crash on save', description: 'Steps to repro...',
+    })).rejects.toMatchObject({ code: 'FORBIDDEN' });
   });
 
-  it('submitFeedback inserts idea', async () => {
+  it('submitFeedback rejects an invalid type via the real FeedbackSchema', async () => {
+    const { FeedbackService } = await load() as any;
+
+    await expect(FeedbackService.submitFeedback(TENANT, USER, {
+      type: 'idea', title: 'Dark mode', description: 'Please add it',
+    })).rejects.toThrow(); // 'idea' is not in the enum ['bug','feature','ux','general']
+  });
+
+  it('submitFeedback inserts the item with the correct field order', async () => {
     const row = { id: FB, title: 'Dark mode', status: 'open' };
     mockWithTenantQuery.mockResolvedValueOnce([row]);
     const { FeedbackService } = await load() as any;
-    const result = await FeedbackService.submitFeedback(TENANT, {
-      title: 'Dark mode', description: 'Please', type: 'idea',
-    }, USER);
+
+    const result = await FeedbackService.submitFeedback(TENANT, USER, {
+      type: 'feature', title: 'Dark mode', description: 'Please add it', severity: 3,
+    });
+
     expect(result).toEqual(row);
+    const [, params] = mockWithTenantQuery.mock.calls[0];
+    expect(params).toEqual([TENANT, USER, 'feature', 'Dark mode', 'Please add it', 3]);
   });
 
-  it('castVote inserts vote row', async () => {
-    const row = { id: 'bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb', value: 1 };
+  it('submitFeedback defaults severity to 1 when not provided', async () => {
+    mockWithTenantQuery.mockResolvedValueOnce([{ id: FB }]);
+    const { FeedbackService } = await load() as any;
+
+    await FeedbackService.submitFeedback(TENANT, USER, {
+      type: 'bug', title: 'Crash', description: 'Details',
+    });
+
+    const [, params] = mockWithTenantQuery.mock.calls[0];
+    expect(params[5]).toBe(1);
+  });
+
+  it('voteFeedback inserts a vote row using the real VoteSchema shape', async () => {
+    const row = { id: 'bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb', vote: 1 };
     mockWithTenantQuery.mockResolvedValueOnce([row]);
     const { FeedbackService } = await load() as any;
-    const result = await FeedbackService.castVote(TENANT, {
-      feedback_id: FB, value: 1,
-    }, USER);
+
+    // Real VoteSchema: { feedback_id: uuid, vote: literal(1) } — not "value".
+    const result = await FeedbackService.voteFeedback(TENANT, USER, {
+      feedback_id: FB, vote: 1,
+    });
+
     expect(result).toEqual(row);
   });
 
-  it('fetchFeedback returns list', async () => {
+  it('voteFeedback returns an acknowledged/duplicate marker on a repeat vote (ON CONFLICT DO NOTHING)', async () => {
+    mockWithTenantQuery.mockResolvedValueOnce([]); // no row returned = conflict, nothing inserted
+    const { FeedbackService } = await load() as any;
+
+    const result = await FeedbackService.voteFeedback(TENANT, USER, { feedback_id: FB, vote: 1 });
+
+    expect(result).toEqual({ status: 'acknowledged', duplicate: true });
+  });
+
+  it('voteFeedback FORBIDDEN when the userVoting tier is disabled', async () => {
+    const fs = await import('fs');
+    (fs.existsSync as any).mockReturnValue(true);
+    (fs.readFileSync as any).mockReturnValue(JSON.stringify({
+      enabled: true,
+      tiers: { basicFeedback: true, userVoting: false },
+      limits: {},
+    }));
+    const { FeedbackService } = await load() as any;
+
+    await expect(FeedbackService.voteFeedback(TENANT, USER, { feedback_id: FB, vote: 1 }))
+      .rejects.toMatchObject({ code: 'FORBIDDEN' });
+  });
+
+  it('fetchFeedback returns the list for the tenant', async () => {
     const rows = [{ id: FB, title: 'Dark mode' }];
     mockWithTenantQuery.mockResolvedValueOnce(rows);
     const { FeedbackService } = await load() as any;
-    const fn = FeedbackService.fetchFeedback || FeedbackService.listFeedback || FeedbackService.fetchIdeas;
-    if (typeof fn === 'function') {
-      expect(await fn.call(FeedbackService, TENANT)).toEqual(rows);
-    } else {
-      // if only submit/vote exist, at least ensure module loaded
-      expect(FeedbackService).toBeDefined();
-    }
+
+    expect(await FeedbackService.fetchFeedback(TENANT)).toEqual(rows);
   });
 });

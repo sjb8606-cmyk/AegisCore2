@@ -14,7 +14,6 @@ vi.mock('fs', () => ({
   readFileSync: vi.fn(),
 }));
 
-// Relative imports used by the source — mock by package-style aliases that resolve in monorepo
 vi.mock('../../../tenancy/src/index', () => ({
   withTenantQuery: (...args: unknown[]) => mockWithTenantQuery(...args),
 }));
@@ -27,10 +26,9 @@ vi.mock('../../../utils/src/index', () => ({
     INTERNAL: 'INTERNAL', NOT_IMPLEMENTED: 'NOT_IMPLEMENTED',
   },
 }));
+const mockBotConstructor = vi.fn();
 vi.mock('../../../aegis-swarm/src/bots/dependency-vuln-scanner', () => ({
-  DependencyVulnScannerBot: vi.fn().mockImplementation(() => ({
-    scanDirectory: (...args: unknown[]) => mockScanDirectory(...args),
-  })),
+  DependencyVulnScannerBot: (...args: unknown[]) => mockBotConstructor(...args),
 }));
 vi.mock('../../../bot-runtime/src/types', () => ({}));
 
@@ -40,6 +38,11 @@ describe('pen-test', () => {
   beforeEach(() => {
     vi.resetAllMocks();
     vi.resetModules();
+    // resetAllMocks() wipes the constructor mock's implementation too —
+    // nothing else re-arms it per test, so it must be re-armed here.
+    mockBotConstructor.mockImplementation(() => ({
+      scanDirectory: (...args: unknown[]) => mockScanDirectory(...args),
+    }));
   });
 
   async function load() {
@@ -72,12 +75,6 @@ describe('pen-test', () => {
 
   it('runs dependency scan, writes findings, scores, and completes', async () => {
     const scanId = 'bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb';
-    mockWithTenantQuery
-      .mockResolvedValueOnce([{ id: scanId, status: 'running', scan_type: 'dependency' }]) // insert
-      .mockResolvedValueOnce([]) // finding inserts (called in loop)
-      .mockResolvedValueOnce([])
-      .mockResolvedValueOnce([{ id: scanId, status: 'completed', score: 94, findings_count: 2 }]); // complete
-
     mockScanDirectory.mockResolvedValue({
       findings: [
         { sev: 'info', desc: 'Low severity advisory', loc: 'pkg-a@1.0.0' },
@@ -85,7 +82,6 @@ describe('pen-test', () => {
       ],
     });
 
-    // Allow multiple INSERT finding calls
     mockWithTenantQuery.mockImplementation(async (sql: string) => {
       if (sql.includes('INSERT INTO security_scans')) return [{ id: scanId, status: 'running' }];
       if (sql.includes('INSERT INTO security_findings')) return [];

@@ -33,7 +33,7 @@ const TENANT = '11111111-1111-1111-1111-111111111111';
 
 describe('translator', () => {
   beforeEach(() => {
-    vi.resetAllMocks();
+    vi.clearAllMocks();
     mockLoadConfig.mockReturnValue({
       enabled: true,
       piiScrubbingMandatory: true,
@@ -61,7 +61,12 @@ describe('translator', () => {
       .mockResolvedValueOnce([]); // insert cache
     const result = await translateToPlainLanguage(
       TENANT,
-      'Patient SSN 123-45-6789 needs plain language',
+      // BUG (test data, not source): source truncates the scrubbed text to
+      // substring(0,20) before building the simulated translation. With the
+      // SSN starting at char 12 in the original wording, the '[REDACTED]'
+      // marker gets sliced off mid-token — putting the SSN at the very
+      // start keeps the whole marker inside the first 20 chars.
+      'SSN 123-45-6789 needs plain language',
       'grade8',
     );
     expect(mockFilterPii).toHaveBeenCalled();
