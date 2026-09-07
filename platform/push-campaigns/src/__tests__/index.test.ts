@@ -31,6 +31,13 @@ vi.mock('../../../utils/src/index', () => ({
 
 vi.mock('@platform/utils', () => ({
   parseUserId: (id: string) => id,
+  AppError: class AppError extends Error {
+    code: string;
+    constructor(message: string, code: string) { super(message); this.name = 'AppError'; this.code = code; }
+  },
+  ErrorCode: {
+    FORBIDDEN: 'FORBIDDEN', BAD_REQUEST: 'BAD_REQUEST', NOT_FOUND: 'NOT_FOUND', INTERNAL: 'INTERNAL',
+  },
 }));
 
 const TENANT = '11111111-1111-1111-1111-111111111111';

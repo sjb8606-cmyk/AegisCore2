@@ -9,14 +9,18 @@ vi.mock('../../../tenancy/src/index', () => ({
 // AppError/ErrorCode via the relative path '../../utils/src/index' — same
 // physical file, two different specifiers. Mock both so neither import
 // statement ever reaches the real module.
-const utilsMockFactory = () => ({
+//
+// vi.mock() calls are hoisted above the ENTIRE file, including this const --
+// passing utilsMockFactory by reference below hit its temporal dead zone.
+// vi.hoisted() hoists the declaration itself right along with vi.mock().
+const utilsMockFactory = vi.hoisted(() => () => ({
   AppError: class AppError extends Error {
     code: string;
     constructor(message: string, code: string) { super(message); this.name = 'AppError'; this.code = code; }
   },
   ErrorCode: { FORBIDDEN: 'FORBIDDEN', NOT_FOUND: 'NOT_FOUND', INTERNAL: 'INTERNAL', BAD_REQUEST: 'BAD_REQUEST' },
   parseUserId: (id: string) => id,
-});
+}));
 vi.mock('../../../utils/src/index', utilsMockFactory);
 vi.mock('@platform/utils', utilsMockFactory);
 

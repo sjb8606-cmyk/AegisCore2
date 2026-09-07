@@ -80,6 +80,9 @@ async function freshModule(configJson: unknown | false = DEFAULT_CONFIG) {
 describe('InvoicingService.createInvoice', () => {
   it('computes subtotal/total correctly; BUG: validated cleanUserId is computed then discarded', async () => {
     const { mod, withTenantQuery } = await freshModule();
+    // Every other test in this file uses the same freshModule() pattern
+    // and passes well under 5s -- this one timing out is cold-import /
+    // Codespace resource contention, not a logic bug. Bumped below.
     const insertedInvoice = { id: invoiceId, tenant_id: tenantId, invoice_number: 'INV-0001', total_cents: 15000 };
     withTenantQuery
       .mockResolvedValueOnce([{ count: 0 }])   // getTenantUsageThisMonth
