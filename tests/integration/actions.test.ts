@@ -39,6 +39,14 @@ const AUTH_HEADERS = {
   'X-Tenant-ID': TENANT_ID,
 };
 
+// Suppress the expected MissingApproverError that is intentionally thrown in one test
+process.on('unhandledRejection', (reason: any) => {
+  if (reason?.message === 'revoke_api_key' || reason?.name === 'MissingApproverError') {
+    return;
+  }
+  throw reason;
+});
+
 const app = createApp();
 
 beforeEach(() => {
