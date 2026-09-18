@@ -3,6 +3,7 @@ import { loadConfig } from '../../utils/src/index';
 import { withTenantQuery } from '../../tenancy/src/index';
 import { recordUsage } from '../../metering/src/index';
 import { randomUUID } from 'crypto';
+import { AppError } from '../../utils/src/index';
 
 const ConfigSchema = z.object({
   enabled: z.boolean(),
@@ -11,12 +12,11 @@ const ConfigSchema = z.object({
 
 export async function createPlan(tenantId: string, name: string, priceCents: number) {
   const config = loadConfig('subscriptions', ConfigSchema);
-  if (!config.enabled) throw new Error('Subscriptions disabled');
+  if (!config.enabled) throw new AppError('Subscriptions disabled', 'FORBIDDEN');
 
-  // Check plan limits
   const current = await withTenantQuery('SELECT COUNT(*)::int FROM plans', [], tenantId);
   if (current[0].count >= config.limits.planCount) {
-    throw new Error('Plan limit exceeded for this tier');
+    throw new AppError('Plan limit exceeded for this tier', 'BAD_REQUEST');
   }
 
   const result = await withTenantQuery(
@@ -29,7 +29,7 @@ export async function createPlan(tenantId: string, name: string, priceCents: num
 
 export async function createSubscription(tenantId: string, userId: string, planId: string) {
   const config = loadConfig('subscriptions', ConfigSchema);
-  if (!config.enabled) throw new Error('Subscriptions disabled');
+  if (!config.enabled) throw new AppError('Subscriptions disabled', 'FORBIDDEN');
 
   const result = await withTenantQuery(
     'INSERT INTO subscriptions (id, tenant_id, user_id, plan_id, status) VALUES ($1, $2, $3, $4, $5) RETURNING *',
@@ -37,7 +37,6 @@ export async function createSubscription(tenantId: string, userId: string, planI
     tenantId
   );
 
-  // Meter usage (Revenue)
   await recordUsage({
     tenantId,
     eventType: 'api_call',
@@ -45,9 +44,10 @@ export async function createSubscription(tenantId: string, userId: string, planI
     idempotencyKey: `sub:${result[0].id}`
   });
 
-  return {
-    subscriptionId: result[0].id,
-    checkoutUrl: `https://checkout.stripe.com/pay/mock_session_${result[0].id}`,
-    status: result[0].status
-  };
+  // Real Stripe checkout session creation is not yet implemented.
+  throw new AppError(
+    `NOT_IMPLEMENTED: createSubscription — real Stripe checkout session is not wired yet. ` +
+    `Subscription record ${result[0].id} was created but no checkoutUrl can be issued.`,
+    'NOT_IMPLEMENTED'
+  );
 }

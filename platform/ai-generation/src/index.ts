@@ -1,12 +1,13 @@
 /**
- * platform/ai-generation — image / music / video adapters (mock provider).
+ * platform/ai-generation — image / music / video adapters.
+ * Real providers are not yet wired. All generation paths throw NOT_IMPLEMENTED.
  */
-import * as crypto from 'crypto';
+
 import { z } from 'zod';
-import { runCrudOperation, AppError, ErrorCode } from '@platform/crud-kernel';
+import { AppError, ErrorCode } from '@platform/utils';
+import { runCrudOperation } from '@platform/crud-kernel';
 import { getLogger } from '@platform/observability';
 
-export { AppError, ErrorCode };
 const logger = getLogger('ai-generation');
 
 const ConfigSchema = z.object({
@@ -38,20 +39,6 @@ async function loadCfg() {
   return loadConfig('ai-generation', ConfigSchema);
 }
 
-function mockComplete(kind: GenerationResult['kind'], prompt: string, provider: string): GenerationResult {
-  const id = crypto.randomUUID();
-  const rec: GenerationResult = {
-    id,
-    kind,
-    prompt,
-    url: `https://cdn.mock/\( {kind}/ \){id.slice(0, 8)}.${kind === 'image' ? 'png' : kind === 'music' ? 'mp3' : 'mp4'}`,
-    provider,
-    createdAt: new Date().toISOString(),
-  };
-  results.set(id, rec);
-  return rec;
-}
-
 async function generate(
   tenantId: string,
   actorId: string,
@@ -69,9 +56,12 @@ async function generate(
       if (prompt.length > config.limits.maxPromptChars) {
         throw new AppError('prompt too long', ErrorCode.BAD_REQUEST);
       }
-      const rec = mockComplete(kind, prompt.trim(), config.provider);
-      logger.info({ kind, id: rec.id }, 'Generation complete');
-      return rec;
+
+      // Real provider adapters are not yet implemented.
+      throw new AppError(
+        `NOT_IMPLEMENTED: generate${kind} — real ${config.provider} provider is not wired yet.`,
+        'NOT_IMPLEMENTED'
+      );
     },
     auditAction: 'bot.decision_recorded',
     auditResource: 'ai_generation',

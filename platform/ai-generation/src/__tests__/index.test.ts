@@ -11,10 +11,22 @@ vi.mock('@platform/utils', async (importOriginal) => {
       provider: 'mock',
       limits: { maxPromptChars: 2000, generationsPerDay: 50 },
     }),
+    AppError: class AppError extends Error {
+      code: string;
+      constructor(message: string, code: string) {
+        super(message);
+        this.name = 'AppError';
+        this.code = code;
+      }
+    },
+    ErrorCode: { BAD_REQUEST: 'BAD_REQUEST', NOT_IMPLEMENTED: 'NOT_IMPLEMENTED' },
   };
 });
 vi.mock('@platform/observability', () => ({
   getLogger: () => ({ debug: vi.fn(), info: vi.fn(), warn: vi.fn(), error: vi.fn() }),
+}));
+vi.mock('@platform/crud-kernel', () => ({
+  runCrudOperation: async ({ action }: any) => action(),
 }));
 
 import {
@@ -33,20 +45,22 @@ describe('ai-generation', () => {
     vi.clearAllMocks();
   });
 
-  it('generates image', async () => {
-    const r = await generateImage(tenantId, actorId, 'a red boat');
-    expect(r.kind).toBe('image');
-    expect(r.url).toContain('.png');
+  it('throws NOT_IMPLEMENTED for image generation', async () => {
+    await expect(generateImage(tenantId, actorId, 'a red boat')).rejects.toMatchObject({
+      code: 'NOT_IMPLEMENTED',
+    });
   });
 
-  it('generates music', async () => {
-    const r = await generateMusic(tenantId, actorId, 'lofi beat');
-    expect(r.kind).toBe('music');
+  it('throws NOT_IMPLEMENTED for music generation', async () => {
+    await expect(generateMusic(tenantId, actorId, 'lofi beat')).rejects.toMatchObject({
+      code: 'NOT_IMPLEMENTED',
+    });
   });
 
-  it('generates video', async () => {
-    const r = await generateVideoFromPrompt(tenantId, actorId, 'drone shot');
-    expect(r.kind).toBe('video');
+  it('throws NOT_IMPLEMENTED for video generation', async () => {
+    await expect(generateVideoFromPrompt(tenantId, actorId, 'drone shot')).rejects.toMatchObject({
+      code: 'NOT_IMPLEMENTED',
+    });
   });
 
   it('rejects empty prompt', async () => {

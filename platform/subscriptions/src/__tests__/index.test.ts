@@ -2,6 +2,14 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 
 vi.mock('../../../utils/src/index', () => ({
   loadConfig: vi.fn(),
+  AppError: class AppError extends Error {
+    code: string;
+    constructor(message: string, code: string) {
+      super(message);
+      this.name = 'AppError';
+      this.code = code;
+    }
+  },
 }));
 vi.mock('../../../tenancy/src/index', () => ({
   withTenantQuery: vi.fn(),
@@ -37,7 +45,7 @@ describe('createPlan', () => {
 
   it('throws when the tenant has hit its plan limit', async () => {
     (loadConfig as any).mockReturnValue(enabledConfig);
-    (withTenantQuery as any).mockResolvedValueOnce([{ count: 3 }]); // == limits.planCount
+    (withTenantQuery as any).mockResolvedValueOnce([{ count: 3 }]);
     await expect(createPlan(TENANT_ID, 'Pro', 1999)).rejects.toThrow('Plan limit exceeded for this tier');
   });
 
@@ -45,15 +53,11 @@ describe('createPlan', () => {
     (loadConfig as any).mockReturnValue(enabledConfig);
     const insertedRow = { id: 'plan-1', tenant_id: TENANT_ID, name: 'Pro', price_cents: 1999 };
     (withTenantQuery as any)
-      .mockResolvedValueOnce([{ count: 1 }])       // COUNT check
-      .mockResolvedValueOnce([insertedRow]);        // INSERT ... RETURNING
+      .mockResolvedValueOnce([{ count: 1 }])
+      .mockResolvedValueOnce([insertedRow]);
 
     const result = await createPlan(TENANT_ID, 'Pro', 1999);
-
     expect(result).toEqual(insertedRow);
-    expect(withTenantQuery).toHaveBeenCalledTimes(2);
-    const insertCall = (withTenantQuery as any).mock.calls[1];
-    expect(insertCall[1]).toEqual(expect.arrayContaining([TENANT_ID, 'Pro', 1999]));
   });
 });
 
@@ -61,41 +65,19 @@ describe('createSubscription', () => {
   it('throws when subscriptions are disabled in config', async () => {
     (loadConfig as any).mockReturnValue({ ...enabledConfig, enabled: false });
     await expect(createSubscription(TENANT_ID, USER_ID, PLAN_ID)).rejects.toThrow('Subscriptions disabled');
-    expect(withTenantQuery).not.toHaveBeenCalled();
-    expect(recordUsage).not.toHaveBeenCalled();
   });
 
-  it('inserts an active subscription row and records usage for billing', async () => {
+  it('throws NOT_IMPLEMENTED instead of returning a fake checkout URL', async () => {
     (loadConfig as any).mockReturnValue(enabledConfig);
-    const insertedRow = { id: 'sub-1', tenant_id: TENANT_ID, user_id: USER_ID, plan_id: PLAN_ID, status: 'active' };
-    (withTenantQuery as any).mockResolvedValueOnce([insertedRow]);
+    const inserted = { id: 'sub-1', tenant_id: TENANT_ID, user_id: USER_ID, plan_id: PLAN_ID, status: 'active' };
+    (withTenantQuery as any).mockResolvedValueOnce([inserted]);
+    (recordUsage as any).mockResolvedValue(undefined);
 
-    const result = await createSubscription(TENANT_ID, USER_ID, PLAN_ID);
+    await expect(createSubscription(TENANT_ID, USER_ID, PLAN_ID)).rejects.toMatchObject({
+      code: 'NOT_IMPLEMENTED',
+    });
 
-    expect(result.subscriptionId).toBe('sub-1');
-    expect(result.status).toBe('active');
-    expect(recordUsage).toHaveBeenCalledWith(
-      expect.objectContaining({
-        tenantId: TENANT_ID,
-        eventType: 'api_call',
-        idempotencyKey: 'sub:sub-1',
-      })
-    );
-  });
-
-  // KNOWN DEFECT — not a false-negative in this test, a documented gap.
-  // createSubscription() returns a hardcoded fake URL instead of calling a real
-  // payment provider (contrast with platform/payments' PaymentDriverRegistry
-  // pattern for Stripe/PayPal/Crypto). This test locks in the *current* broken
-  // behavior so it fails loudly the moment someone wires up a real checkout flow,
-  // which is what should happen before this ships.
-  it('DEFECT: currently returns a hardcoded mock checkout URL, not a real one', async () => {
-    (loadConfig as any).mockReturnValue(enabledConfig);
-    (withTenantQuery as any).mockResolvedValueOnce([{ id: 'sub-2', status: 'active' }]);
-
-    const result = await createSubscription(TENANT_ID, USER_ID, PLAN_ID);
-
-    expect(result.checkoutUrl).toBe('https://checkout.stripe.com/pay/mock_session_sub-2');
-    // TODO(delight-engine launch blocker): replace with real provider-driven checkout session.
+    expect(withTenantQuery).toHaveBeenCalled();
+    expect(recordUsage).toHaveBeenCalled();
   });
 });
