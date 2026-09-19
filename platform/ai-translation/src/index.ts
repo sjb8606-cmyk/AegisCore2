@@ -34,23 +34,16 @@ function loadConfig() {
 
 // Adversarial detection now imported from @platform/ai-safety (see above).
 
+// Local fake validateLlmOutput removed.
+// Use the real one from @platform/ai-safety instead.
+
 export async function validateLlmOutput(sourceText: string, options: any): Promise<any> {
-  if (options.schema) {
-    return {
-      translated: {
-        company_name: "Yacht Club de Sarah",
-        active_berths: 14,
-        tide_cleared: true
-      }
-    };
-  }
-
-  const textLower = sourceText.toLowerCase();
-  if (textLower.includes('gold gym') || textLower.includes('heavy squats')) {
-    return "¡Gimnasio de Oro! Entrena con pesas pesadas.";
-  }
-
-  return "Hola Mundo. La traducción contextual está completada.";
+  // Real LLM translation is not yet wired.
+  // Previously this returned hardcoded canned translations.
+  throw new (await import('@platform/utils')).AppError(
+    `NOT_IMPLEMENTED: ai-translation validateLlmOutput — real LLM call + platform/ai-safety validation is not fully wired yet.`,
+    'NOT_IMPLEMENTED'
+  );
 }
 
 export async function translateText(tenantId: string, data: any) {

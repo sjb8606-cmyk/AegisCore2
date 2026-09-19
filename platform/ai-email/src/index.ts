@@ -39,32 +39,17 @@ function loadConfig() {
 // Adversarial detection now imported from @platform/ai-safety (see above) —
 // the real weighted pattern-scoring version, not a 4-keyword substring check.
 
+// Local fake validateLlmOutput removed.
+// Use the real one from @platform/ai-safety instead.
+import { validateLlmOutput as realValidateLlmOutput } from '@platform/ai-safety';
+
 export async function validateLlmOutput(sourceText: string, options: any): Promise<any> {
-  const textLower = sourceText.toLowerCase();
-
-  if (options.schema && options.schema.draft) {
-    return {
-      draft: "Hi Jenkins,\n\nWe have successfully received your support request regarding the membership billing adjustments. Our billing compliance team has flagged this for a priority review, and a technician will execute the refund corrections by Friday.\n\nBest regards,\nCustomer Support Team"
-    };
-  }
-
-  let category = "general";
-  let priority = 3;
-  let intent = "general_query";
-
-  if (textLower.includes('billing') || textLower.includes('refund') || textLower.includes('cents')) {
-    category = "billing";
-    priority = 4;
-    intent = "billing_dispute";
-  }
-
-  return {
-    category,
-    priority,
-    sentiment: "neutral",
-    intent,
-    confidence: 0.94
-  };
+  // Real LLM classification / drafting is not yet wired.
+  // Previously this returned hardcoded keyword-based results.
+  throw new (await import('@platform/utils')).AppError(
+    `NOT_IMPLEMENTED: ai-email validateLlmOutput — real LLM call + platform/ai-safety validation is not fully wired yet.`,
+    'NOT_IMPLEMENTED'
+  );
 }
 
 export async function createEmailMessage(tenantId: string, data: any) {

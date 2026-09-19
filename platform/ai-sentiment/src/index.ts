@@ -42,27 +42,16 @@ export async function detectAdversarial(sourceText: string): Promise<void> {
   }
 }
 
-// Integrated Real-Time Sentiment Mock Evaluator
+// Local fake validateLlmOutput removed.
+// Use the real one from @platform/ai-safety instead.
+
 export async function validateLlmOutput(sourceText: string, options: any): Promise<any> {
-  const textLower = sourceText.toLowerCase();
-
-  // Rules-based sentiment classification
-  let sentiment_score = 0.05;
-  let emotion = "neutral";
-
-  if (textLower.includes('love') || textLower.includes('great') || textLower.includes('amazing')) {
-    sentiment_score = 0.95;
-    emotion = "joy";
-  } else if (textLower.includes('horrible') || textLower.includes('terrible') || textLower.includes('broke')) {
-    sentiment_score = -0.85;
-    emotion = "anger";
-  }
-
-  return {
-    sentiment_score,
-    emotion,
-    confidence: 0.96
-  };
+  // Real LLM sentiment analysis is not yet wired.
+  // Previously this returned hardcoded keyword-based scores.
+  throw new (await import('@platform/utils')).AppError(
+    `NOT_IMPLEMENTED: ai-sentiment validateLlmOutput — real LLM call + platform/ai-safety validation is not fully wired yet.`,
+    'NOT_IMPLEMENTED'
+  );
 }
 
 export async function analyzeSentiment(tenantId: string, text: string, entityType: string, entityId: string) {
