@@ -1,3 +1,25 @@
+/**
+ * platform/notifications/src/index.ts
+ *
+ * NotificationService.send() — real provider integration.
+ *
+ * Previously: fabricated a fake provider ID (`sg_${random}`), wrote a
+ * notification_logs row marked status: 'sent', and never called
+ * SendGrid/Twilio/FCM. Confirmed direct consequence: TIDELOCK's
+ * abnormal-loss-alert feature depends on this — a real abnormal
+ * yield loss would never actually notify anyone while the system
+ * logged "sent".
+ *
+ * Fix: email now makes a real SendGrid v3 call. SMS/push throw
+ * NOT_IMPLEMENTED instead of faking success — Twilio/FCM aren't
+ * wired yet. This repo already has the right pattern for that
+ * (platform/sso throws NOT_IMPLEMENTED for SAML rather than
+ * silently accepting anything) — this follows it.
+ *
+ * Also fixed: the tier gate was missing entirely. A payload with
+ * channel: 'sms' would previously "succeed" even with tiers.sms
+ * false in config. Now checked before anything else runs.
+ */
 import * as fs from 'fs';
 import * as path from 'path';
 import { z } from 'zod';
@@ -61,7 +83,7 @@ export function loadConfig(): NotificationConfig {
       return cachedConfig;
     }
   } catch (err) { console.warn(`Config file at ${configPath} failed to load or parse, falling back to defaults:`, err); }
-  
+
   cachedConfig = NotificationConfigSchema.parse({
     enabled: true,
     tiers: { email: true, sms: false, push: false },
@@ -70,27 +92,102 @@ export function loadConfig(): NotificationConfig {
   return cachedConfig;
 }
 
+/** Exposed for tests only — clears the module-level config cache. */
+export function __resetConfigCache(): void {
+  cachedConfig = null;
+}
+
+// ── Real provider call ──────────────────────────────────────────
+
+async function sendViaSendGrid(config: NotificationConfig, payload: SendPayload): Promise<{ providerId: string }> {
+  const apiKey = process.env.SENDGRID_API_KEY;
+  if (!apiKey) {
+    throw new AppError('SENDGRID_API_KEY is not set — cannot send real email', ErrorCode.SERVICE_UNAVAILABLE);
+  }
+
+  const res = await fetch('https://api.sendgrid.com/v3/mail/send', {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      personalizations: [{ to: [{ email: payload.recipient }] }],
+      from: {
+        email: config.email.fromAddress ?? 'no-reply@localhost',
+        name: config.email.fromName ?? undefined,
+      },
+      subject: payload.subject ?? '(no subject)',
+      content: [{ type: 'text/plain', value: payload.body ?? '' }],
+    }),
+  });
+
+  if (!res.ok) {
+    const errBody = await res.text().catch(() => '');
+    throw new AppError(`SendGrid request failed (${res.status}): ${errBody}`, ErrorCode.SERVICE_UNAVAILABLE);
+  }
+
+  const providerId = res.headers.get('x-message-id') ?? '';
+  return { providerId };
+}
+
 export class NotificationService {
   static async send(tenantId: string, payload: SendPayload): Promise<{ success: boolean; logId?: string; error?: string }> {
     const config = loadConfig();
     if (!config.enabled) throw new AppError('Notification services globally disabled', ErrorCode.FORBIDDEN);
 
     const channel = payload.channel || 'email';
-    let providerId = `sg_${Math.random().toString(36).substring(7)}`;
 
-    const sql = `
-      INSERT INTO notification_logs (tenant_id, channel, recipient, subject, status, provider_id)
-      VALUES ($1::uuid, $2, $3, $4, $5, $6)
-      RETURNING id
-    `;
-    const params = [tenantId, channel, payload.recipient, payload.subject || null, 'sent', providerId];
-    const rows = await withTenantQuery(sql, params, tenantId);
-
-    if (!rows || rows.length === 0) {
-      throw new AppError('Failed to record notification log', ErrorCode.INTERNAL);
+    if (!config.tiers[channel]) {
+      throw new AppError(`Channel "${channel}" is not enabled for this tenant's tier`, ErrorCode.FORBIDDEN);
     }
 
-    return { success: true, logId: rows[0].id };
+    // 1. Log as queued FIRST — a failed provider call still leaves a
+    // real, honest record instead of nothing.
+    const insertSql = `
+      INSERT INTO notification_logs (tenant_id, channel, recipient, subject, status)
+      VALUES ($1::uuid, $2, $3, $4, 'queued')
+      RETURNING id
+    `;
+    const insertRows = await withTenantQuery(insertSql, [tenantId, channel, payload.recipient, payload.subject || null], tenantId);
+    if (!insertRows || insertRows.length === 0) {
+      throw new AppError('Failed to record notification log', ErrorCode.INTERNAL);
+    }
+    const logId = insertRows[0].id;
+
+    // 2. Real send. Email is wired to SendGrid; sms/push have no real
+    // integration yet — fail loudly rather than fake success. (The
+    // tier check above already blocks sms/push under default config;
+    // this is the second, defense-in-depth gate for if a tier gets
+    // flipped on before the provider is actually built.)
+    try {
+      let providerId: string;
+
+      if (channel === 'email') {
+        ({ providerId } = await sendViaSendGrid(config, payload));
+      } else {
+        throw new AppError(
+          `Channel "${channel}" has no real provider integration yet (only email/SendGrid is wired)`,
+          ErrorCode.NOT_IMPLEMENTED,
+        );
+      }
+
+      await withTenantQuery(
+        `UPDATE notification_logs SET status = 'sent', provider_id = $1, sent_at = now() WHERE id = $2::uuid`,
+        [providerId || null, logId],
+        tenantId,
+      );
+
+      return { success: true, logId };
+    } catch (err) {
+      const message = err instanceof Error ? err.message : String(err);
+      await withTenantQuery(
+        `UPDATE notification_logs SET status = 'failed', error = $1 WHERE id = $2::uuid`,
+        [message, logId],
+        tenantId,
+      );
+      throw err;
+    }
   }
 
   static async fetchLogs(tenantId: string): Promise<any[]> {
