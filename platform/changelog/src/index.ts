@@ -17,34 +17,11 @@ export async function getTimeline(tenantId: string, entityType: string, entityId
   const config = loadConfig('change-log-ui', ChangelogConfigSchema);
   if (!config.enabled) throw new AppError('Timeline disabled', ErrorCode.FORBIDDEN);
 
-  // 1. Simulate fetching Diffs (In production, this queries the Diff Engine)
-  const simulatedDiffs = [
-    { field: 'status', from: 'pending', to: 'active', actor: 'founder' },
-    { field: 'priority', from: 'low', to: 'high', actor: 'admin' }
-  ];
-
-  // 2. Format for UI
-  const timeline = simulatedDiffs.map(diff => ({
-    label: `Changed ${diff.field}`,
-    detail: config.tiers.fieldLevelHighlighting ? `From "${diff.from}" to "${diff.to}"` : 'Hidden',
-    severity: diff.field === 'status' ? 'high' : 'low',
-    timestamp: new Date().toISOString()
-  }));
-
-  // 3. Record the View (Audit)
-  await withTenantQuery(
-    'INSERT INTO change_log_views (tenant_id, entity_type, entity_id, actor_id) VALUES ($1, $2, $3, $4)',
-    [tenantId, entityType, entityId, 'founder'],
-    tenantId
+  // Real diff engine query is not yet implemented.
+  // Previously this returned hardcoded simulatedDiffs.
+  throw new AppError(
+    `NOT_IMPLEMENTED: getTimeline — real change-log / diff engine is not wired yet. ` +
+    `Cannot return a timeline for \( {entityType}/ \){entityId}.`,
+    'NOT_IMPLEMENTED'
   );
-
-  // 4. Meter usage
-  await recordUsage({
-    tenantId,
-    eventType: 'api_call',
-    quantity: 1,
-    idempotencyKey: `view-log:${entityId}:${Date.now()}`
-  });
-
-  return timeline;
 }
