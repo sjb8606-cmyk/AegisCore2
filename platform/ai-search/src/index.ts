@@ -14,13 +14,12 @@ function loadConfig() {
 
 // Deterministic 1536-Dimension Vector Simulator
 export function generateMockEmbedding(text: string, dimensions: number = 1536): number[] {
-  const vector: number[] = [];
-  const baseLen = text.length;
-  for (let i = 0; i < dimensions; i++) {
-    const charCode = text.charCodeAt(i % baseLen) || 1;
-    vector.push(parseFloat((Math.sin(charCode + i) * 0.1).toFixed(6)));
-  }
-  return vector;
+  // Real embedding model is not yet implemented.
+  // Previously this returned a deterministic sine-wave vector.
+  throw new AppError(
+    `NOT_IMPLEMENTED: generateMockEmbedding — real embedding model is not wired yet.`,
+    ErrorCode.NOT_IMPLEMENTED || 'NOT_IMPLEMENTED'
+  );
 }
 
 export async function indexDocument(tenantId: string, data: any) {

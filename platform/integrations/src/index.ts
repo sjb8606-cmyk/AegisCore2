@@ -52,9 +52,17 @@ export async function handleOAuthCallback(tenantId: string, provider: string, co
     throw new AppError('Connector connection limits reached', ErrorCode.FORBIDDEN);
   }
 
-  // Encrypt raw tokens (KMS Simulation)
-  const encryptedAccess = await kmsEncrypt(`mock_access_token_${code}`);
-  const encryptedRefresh = await kmsEncrypt(`mock_refresh_token_xyz`);
+  // Real OAuth token exchange is not yet implemented.
+  // Previously this stored hardcoded mock_access_token / mock_refresh_token.
+  throw new AppError(
+    `NOT_IMPLEMENTED: handleOAuthCallback — real OAuth token exchange with the provider is not wired yet. ` +
+    `Cannot store a real access token for provider ${provider}.`,
+    ErrorCode.NOT_IMPLEMENTED || 'NOT_IMPLEMENTED'
+  );
+
+  // Unreachable – kept only so TypeScript does not complain about unused vars
+  const encryptedAccess = await kmsEncrypt(`unreachable`);
+  const encryptedRefresh = await kmsEncrypt(`unreachable`);
 
   const connectionId = crypto.randomUUID();
   const externalId = `ext_${provider}_${crypto.randomBytes(6).toString('hex')}`;
