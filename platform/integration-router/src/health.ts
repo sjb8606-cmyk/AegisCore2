@@ -1,11 +1,48 @@
 import { getPool } from '@platform/tenancy';
-import type { ProviderHealth, ProviderHealthStore } from './types';
+import type { AtomicProviderHealthStore, ProviderHealth, ProviderHealthStore } from './types';
 
 export class InMemoryProviderHealthStore implements ProviderHealthStore {
   private readonly states = new Map<string, ProviderHealth>();
 
   async get(providerId: string): Promise<ProviderHealth | null> {
     return this.states.get(providerId) ?? null;
+  }
+
+
+  async recordSuccess(providerId: string, successThreshold: number): Promise<ProviderHealth> {
+    const rows = await getPool().query(
+      `INSERT INTO integration_provider_health
+        (provider_id, consecutive_failures, consecutive_successes, opened_until, last_success_at)
+       VALUES ($1, 0, 1, NULL, NOW())
+       ON CONFLICT (provider_id) DO UPDATE SET
+        consecutive_failures = 0,
+        consecutive_successes = LEAST(integration_provider_health.consecutive_successes + 1, $2),
+        opened_until = CASE WHEN integration_provider_health.consecutive_successes + 1 >= $2 THEN NULL ELSE integration_provider_health.opened_until END,
+        last_success_at = NOW()
+       RETURNING provider_id, consecutive_failures, consecutive_successes, opened_until, last_failure_at, last_success_at`,
+      [providerId, successThreshold]
+    );
+    return this.mapRow(rows.rows[0]);
+  }
+
+  async recordFailure(providerId: string, failureThreshold: number, openMs: number): Promise<ProviderHealth> {
+    const rows = await getPool().query(
+      `INSERT INTO integration_provider_health
+        (provider_id, consecutive_failures, consecutive_successes, opened_until, last_failure_at)
+       VALUES ($1, 1, 0, CASE WHEN 1 >= $2 THEN NOW() + ($3 * interval '1 millisecond') ELSE NULL END, NOW())
+       ON CONFLICT (provider_id) DO UPDATE SET
+        consecutive_failures = integration_provider_health.consecutive_failures + 1,
+        consecutive_successes = 0,
+        opened_until = CASE WHEN integration_provider_health.consecutive_failures + 1 >= $2 THEN NOW() + ($3 * interval '1 millisecond') ELSE integration_provider_health.opened_until END,
+        last_failure_at = NOW()
+       RETURNING provider_id, consecutive_failures, consecutive_successes, opened_until, last_failure_at, last_success_at`,
+      [providerId, failureThreshold, openMs]
+    );
+    return this.mapRow(rows.rows[0]);
+  }
+
+  private mapRow(row: any): ProviderHealth {
+    return this.mapRow(row);
   }
 
   async save(state: ProviderHealth): Promise<void> {
@@ -17,7 +54,7 @@ export class InMemoryProviderHealthStore implements ProviderHealthStore {
   }
 }
 
-export class PostgresProviderHealthStore implements ProviderHealthStore {
+export class PostgresProviderHealthStore implements AtomicProviderHealthStore {
   async get(providerId: string): Promise<ProviderHealth | null> {
     const rows = await getPool().query(
       `SELECT provider_id, consecutive_failures, consecutive_successes, opened_until, last_failure_at, last_success_at
@@ -73,6 +110,8 @@ export class CircuitBreaker {
   }
 
   async recordSuccess(providerId: string): Promise<void> {
+    const atomic = this.store as AtomicProviderHealthStore;
+    if (typeof atomic.recordSuccess === 'function') { await atomic.recordSuccess(providerId, this.successThreshold); return; }
     const current = await this.store.get(providerId);
     const state: ProviderHealth = current ?? {
       providerId,
@@ -95,6 +134,8 @@ export class CircuitBreaker {
   }
 
   async recordFailure(providerId: string): Promise<void> {
+    const atomic = this.store as AtomicProviderHealthStore;
+    if (typeof atomic.recordFailure === 'function') { await atomic.recordFailure(providerId, this.failureThreshold, this.openMs); return; }
     const current = await this.store.get(providerId);
     const state: ProviderHealth = current ?? {
       providerId,
