@@ -1,6 +1,7 @@
 import { randomUUID } from 'crypto';
 import { withTenantQuery } from '@platform/tenancy';
 import { AppError, ErrorCode } from '@platform/utils';
+import { emit as auditEmit } from '@platform/audit';
 import { BusinessProjectSchema, ProjectCreateSchema, ProjectPatchSchema, BusinessProject, BusinessStage } from './schemas';
 import { affectedStages, artifactTypesAffectedBy } from './dependencies';
 import { nextStage, canCompleteStage } from './stages';
@@ -24,6 +25,7 @@ export async function createBusinessProject(tenantId:string, actorId:string, inp
     'INSERT INTO business_projects (id,tenant_id,name,status,current_stage,founder_profile,idea) VALUES ($1,$2,$3,$4,\'IDEA\',$5,$6) RETURNING *',
     [id,tenantId,data.name,data.status,JSON.stringify(data.founderProfile),JSON.stringify(data.idea)],tenantId);
   if(!rows[0]) throw new AppError('Business project could not be created.',ErrorCode.INTERNAL);
+  await auditEmit({tenantId,actorId,actorType:'user',action:'data.created',outcome:'success',resource:'business_project',resourceId:id,description:'Created Business Architect project'});
   return mapProject(rows[0]);
 }
 
@@ -52,6 +54,7 @@ export async function updateBusinessProject(tenantId:string,actorId:string,proje
   if(!rows[0]) throw new AppError('Business project not found.',ErrorCode.NOT_FOUND);
   const stageMap:Record<string,BusinessStage>={customerProblem:'CUSTOMER_PROBLEM',market:'RESEARCH',competition:'COMPETITION',businessModel:'BUSINESS_MODEL',operations:'OPERATIONS',pricing:'PRICING',costs:'COSTS',financialModelRef:'FINANCIALS',risks:'RISKS',funding:'FUNDING',planSections:'PLAN'};
   for(const [key] of entries){const stage=stageMap[key];if(stage) await markDownstreamArtifactsStale(tenantId,projectId,stage);}
+  await auditEmit({tenantId,actorId,actorType:'user',action:'data.updated',outcome:'success',resource:'business_project',resourceId:projectId,description:'Updated Business Architect canonical project data'});
   return mapProject(rows[0]);
 }
 
@@ -72,6 +75,7 @@ export async function advanceStage(tenantId:string,actorId:string,projectId:stri
   const next=nextStage(project.currentStage); if(!next)return project;
   await withTenantQuery('UPDATE business_projects SET current_stage=$1,updated_at=now() WHERE id=$2 AND tenant_id=$3 AND deleted_at IS NULL',
     [next,projectId,tenantId],tenantId);
+  await auditEmit({tenantId,actorId,actorType:'user',action:'data.updated',outcome:'success',resource:'business_project_stage',resourceId:projectId,description:'Advanced Business Architect stage'});
   await withTenantQuery('INSERT INTO business_stage_history (id,tenant_id,project_id,from_stage,to_stage,action,completion_state,actor_id) VALUES ($1,$2,$3,$4,$5,$6,$7,$8)',
     [randomUUID(),tenantId,projectId,project.currentStage,next,'advance',JSON.stringify(state),actorId],tenantId);
   return getBusinessProject(tenantId,projectId);
