@@ -214,7 +214,7 @@ export class IntegrationRouter implements CapabilityRouter {
       if (controller.signal.aborted) {
         throw new AppError(
           context.signal?.aborted ? 'Provider invocation cancelled' : 'Provider invocation timed out',
-          context.signal?.aborted ? ErrorCode.CONFLICT : ErrorCode.TIMEOUT
+          context.signal?.aborted ? ErrorCode.TIMEOUT : ErrorCode.TIMEOUT
         );
       }
       throw error;
