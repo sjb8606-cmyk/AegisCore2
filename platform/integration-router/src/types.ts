@@ -76,6 +76,11 @@ export interface ProviderHealthStore {
   save(state: ProviderHealth): Promise<void>;
 }
 
+export interface AtomicProviderHealthStore extends ProviderHealthStore {
+  recordSuccess(providerId: string, successThreshold: number): Promise<ProviderHealth>;
+  recordFailure(providerId: string, failureThreshold: number, openMs: number): Promise<ProviderHealth>;
+}
+
 export interface IdempotencyRecord {
   tenantId: string;
   key: string;
