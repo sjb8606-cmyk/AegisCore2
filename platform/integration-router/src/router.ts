@@ -9,6 +9,7 @@ import { CapabilityRegistry, ProviderRegistry } from './registry';
 import { CircuitBreaker, InMemoryProviderHealthStore } from './health';
 import { InMemoryIdempotencyStore } from './idempotency';
 import { canonicalProviderError, isRetryableError } from './errors';
+import { loadRouterConfig } from './config';
 
 const DEFAULT_CONFIG: RouterConfig = {
   maxAttempts: 3,
@@ -34,7 +35,7 @@ export class IntegrationRouter implements CapabilityRouter {
   private readonly config: RouterConfig;
 
   constructor(options: IntegrationRouterOptions = {}) {
-    this.config = { ...DEFAULT_CONFIG, ...(options.config ?? {}) };
+    this.config = loadRouterConfig({ ...DEFAULT_CONFIG, ...(options.config ?? {}) });
     this.capabilities = options.capabilities ?? new CapabilityRegistry();
     this.providers = options.providers ?? new ProviderRegistry();
     this.circuitBreaker = new CircuitBreaker(
@@ -173,9 +174,13 @@ export class IntegrationRouter implements CapabilityRouter {
     timeoutMs: number,
   ): Promise<import('./types').ProviderResult<O>> {
     const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), Math.min(timeoutMs, context.deadlineAt ? Math.max(1, context.deadlineAt - Date.now()) : timeoutMs));
+    const timeout = Math.min(timeoutMs, context.deadlineAt ? Math.max(1, context.deadlineAt - Date.now()) : timeoutMs);
+    const timer = setTimeout(() => controller.abort(), timeout);
+    const signal = context.signal
+      ? AbortSignal.any ? AbortSignal.any([context.signal, controller.signal]) : context.signal
+      : controller.signal;
     try {
-      return await provider.adapter.invoke({ ...context, signal: context.signal ?? controller.signal }, input);
+      return await provider.adapter.invoke({ ...context, signal }, input);
     } catch (error) {
       if (controller.signal.aborted) throw new AppError('Provider invocation timed out', ErrorCode.TIMEOUT);
       throw error;
