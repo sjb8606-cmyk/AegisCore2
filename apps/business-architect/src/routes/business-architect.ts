@@ -62,10 +62,13 @@ router.post('/projects/:id/risks/red-team',useAuth,wrap(async(req:AuthenticatedR
 router.post('/projects/:id/risks/finalize',useAuth,wrap(async(req:AuthenticatedRequest,res:any)=>{const c=context(req);res.json(await finalizeRiskRegister(c.tenantId,c.actorId,{registerId:z.string().uuid().parse(req.body.registerId)}));}));
 
 router.post('/projects/:id/funding',useAuth,wrap(async(req:AuthenticatedRequest,res:any)=>{const p=projectParam.parse(req.params);res.status(201).json(await saveFundingFinding(req.auth!.tenantId,p.id,req.body));}));
+router.post('/projects/:id/funding/search',useAuth,wrap(async(req:AuthenticatedRequest,res:any)=>{const p=projectParam.parse(req.params);const query=z.string().min(1).parse(req.body.query);res.status(201).json(await BA.searchFundingOpportunities(req.auth!.tenantId,p.id,query));}));
 router.get('/projects/:id/funding',useAuth,wrap(async(req:AuthenticatedRequest,res:any)=>{const p=projectParam.parse(req.params);res.json(await listFundingFindings(req.auth!.tenantId,p.id));}));
 
 router.post('/projects/:id/artifacts/plan',useAuth,wrap(async(req:AuthenticatedRequest,res:any)=>{const p=projectParam.parse(req.params),c=context(req);res.status(201).json(await generateBusinessPlanArtifact(c.tenantId,c.actorId,p.id));}));
 router.post('/projects/:id/artifacts/executive-summary',useAuth,wrap(async(req:AuthenticatedRequest,res:any)=>{const p=projectParam.parse(req.params),c=context(req);res.status(201).json(await generateExecutiveSummaryArtifact(c.tenantId,c.actorId,p.id));}));
+router.post('/projects/:id/artifacts/funding-package',useAuth,wrap(async(req:AuthenticatedRequest,res:any)=>{const p=projectParam.parse(req.params),c=context(req);res.status(201).json(await BA.generateFundingPackageArtifact(c.tenantId,c.actorId,p.id));}));
+router.post('/projects/:id/artifacts/launch-roadmap',useAuth,wrap(async(req:AuthenticatedRequest,res:any)=>{const p=projectParam.parse(req.params),c=context(req);res.status(201).json(await BA.generateLaunchRoadmapArtifact(c.tenantId,c.actorId,p.id));}));
 router.get('/projects/:id/artifacts',useAuth,wrap(async(req:AuthenticatedRequest,res:any)=>{const p=projectParam.parse(req.params);res.json(await listArtifacts(req.auth!.tenantId,p.id));}));
 
 export { router as businessArchitectRouter };
