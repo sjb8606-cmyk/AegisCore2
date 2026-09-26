@@ -8,6 +8,8 @@ export * from './adapters';
 
 import { IntegrationRouter } from './router';
 import { CapabilityRegistry, ProviderRegistry } from './registry';
+import { PostgresProviderHealthStore } from './health';
+import { PostgresIdempotencyStore } from './idempotency';
 import { capabilityDefinitions, groqProvider, elevenLabsProvider, didProvider } from './adapters';
 
 export function createDefaultIntegrationRouter(): IntegrationRouter {
@@ -22,5 +24,5 @@ export function createDefaultIntegrationRouter(): IntegrationRouter {
   providers.register(elevenLabsProvider());
   providers.register(didProvider());
 
-  return new IntegrationRouter({ capabilities, providers });
+  return new IntegrationRouter({ capabilities, providers, healthStore: new PostgresProviderHealthStore(), idempotencyStore: new PostgresIdempotencyStore() });
 }
