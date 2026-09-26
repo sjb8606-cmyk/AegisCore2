@@ -3,7 +3,24 @@ import { withTenantQuery } from '@platform/tenancy';
 import { createSnapshot } from '@platform/snapshot';
 import { BusinessArtifact, ArtifactSchema } from './schemas';
 
+import { generateText } from '@platform/ai-gateway';
+
 export type ArtifactType='BUSINESS_PLAN'|'EXECUTIVE_SUMMARY'|'FUNDING_PACKAGE'|'LAUNCH_ROADMAP';
+
+export async function generateBusinessPlanNarrative(input:any){
+  const response=await generateText({provider:'groq',model:'llama-3.3-70b-versatile',messages:[
+    {role:'system',content:'Write a professional evidence-aware business plan narrative from the supplied structured facts. Do not invent facts, numbers, competitors, funding programs, or claims. Explicitly label assumptions and unknowns. Preserve supplied figures exactly.'},
+    {role:'user',content:JSON.stringify(input)},
+  ],maxTokens:5000,temperature:0.2});
+  return response.content;
+}
+export async function generateExecutiveSummaryNarrative(input:any){
+  const response=await generateText({provider:'groq',model:'llama-3.3-70b-versatile',messages:[
+    {role:'system',content:'Write a concise executive summary from supplied structured business data. Do not invent facts or numbers. Preserve evidence/assumption distinctions.'},
+    {role:'user',content:JSON.stringify(input)},
+  ],maxTokens:1200,temperature:0.2});
+  return response.content;
+}
 
 export function composeBusinessPlan(input:any){
   return {title:input.name,generatedAt:new Date().toISOString(),sections:{
