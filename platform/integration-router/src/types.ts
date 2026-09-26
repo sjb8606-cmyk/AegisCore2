@@ -15,6 +15,8 @@ export interface CapabilityContext {
   deadlineAt?: number;
   requestedProvider?: string;
   allowedProviders?: string[];
+  preferredProviders?: string[];
+  maxEstimatedCost?: number;
   region?: string;
   metadata?: Record<string, unknown>;
 }
