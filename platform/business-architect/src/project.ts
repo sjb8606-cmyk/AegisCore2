@@ -45,7 +45,7 @@ export async function updateBusinessProject(tenantId:string,actorId:string,proje
     researchRefs:'research_refs',assumptions:'assumptions',risks:'risks',funding:'funding',
     planSections:'plan_sections',deliverables:'deliverables',decisionLog:'decision_log'};
   const setParts:string[]=[], values:any[]=[]; let i=1;
-  for(const [key,value] of entries){const column=allowed[key];if(!column)continue;setParts.push(column+'=$'+i);values.push(typeof value==='object'?JSON.stringify(value):value);i++;}
+  for(const [key,value] of entries){const column=allowed[key];if(!column)continue;setParts.push(column+'=$'+i);values.push(value===null?null:(typeof value==='object'?JSON.stringify(value):value));i++;}
   if(!setParts.length) return current;
   setParts.push('updated_at=now()'); values.push(projectId,tenantId);
   const rows=await withTenantQuery('UPDATE business_projects SET '+setParts.join(', ')+' WHERE id=$'+i+' AND tenant_id=$'+(i+1)+' AND deleted_at IS NULL RETURNING *',values,tenantId);
@@ -55,10 +55,20 @@ export async function updateBusinessProject(tenantId:string,actorId:string,proje
   return mapProject(rows[0]);
 }
 
+export async function saveStageData(tenantId:string,projectId:string,stage:BusinessStage,payload:Record<string,unknown>){
+  const rows=await withTenantQuery('INSERT INTO business_stage_data (id,tenant_id,project_id,stage,payload,revision) VALUES ($1,$2,$3,$4,$5,1) ON CONFLICT (tenant_id,project_id,stage) DO UPDATE SET payload=EXCLUDED.payload,revision=business_stage_data.revision+1,updated_at=now() RETURNING *',[randomUUID(),tenantId,projectId,stage,JSON.stringify(payload)],tenantId);
+  return rows[0];
+}
+export async function getStageData(tenantId:string,projectId:string,stage:BusinessStage){
+  const rows=await withTenantQuery('SELECT * FROM business_stage_data WHERE tenant_id=$1 AND project_id=$2 AND stage=$3',[tenantId,projectId,stage],tenantId);
+  return rows[0]??null;
+}
+
 export async function advanceStage(tenantId:string,actorId:string,projectId:string,state:Record<string,unknown>){
   const project=await getBusinessProject(tenantId,projectId);
   if(!canCompleteStage(project.currentStage,state)) throw new AppError(
     'Current stage is not complete: structured outputs are required before advancement.',ErrorCode.BAD_REQUEST);
+  await saveStageData(tenantId,projectId,project.currentStage,state);
   const next=nextStage(project.currentStage); if(!next)return project;
   await withTenantQuery('UPDATE business_projects SET current_stage=$1,updated_at=now() WHERE id=$2 AND tenant_id=$3 AND deleted_at IS NULL',
     [next,projectId,tenantId],tenantId);
