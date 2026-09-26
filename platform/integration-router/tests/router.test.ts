@@ -76,7 +76,55 @@ describe('IntegrationRouter', () => {
     expect(result.attempts.map((a) => a.provider)).toEqual(['first', 'second']);
   });
 
-  it('enforces required idempotency', async () => {
+  it('honors deterministic provider preferences', async () => {
+    const capabilities = new CapabilityRegistry();
+    const providers = new ProviderRegistry();
+    capabilities.register({
+      id: 'test.preference', version: 'v1', description: 'Preference', idempotency: 'none',
+      riskLevel: 1, externalImpact: false, requiresConfirmation: false, defaultTimeoutMs: 1000,
+    });
+    providers.register({
+      id: 'slow-priority', displayName: 'Priority', capabilities: ['test.preference'], priority: 1,
+      adapter: { invoke: async () => ({ output: 'priority' }) },
+    });
+    providers.register({
+      id: 'preferred', displayName: 'Preferred', capabilities: ['test.preference'], priority: 50,
+      adapter: { invoke: async () => ({ output: 'preferred' }) },
+    });
+    const router = new IntegrationRouter({ capabilities, providers, config: { maxAttempts: 1 } });
+    const result = await router.invoke('test.preference', {}, {
+      tenantId: 't1', actorId: 'a1', preferredProviders: ['preferred'],
+    });
+    expect(result.provider).toBe('preferred');
+  });
+
+  it('opens a circuit after the configured failure threshold', async () => {
+    const capabilities = new CapabilityRegistry();
+    const providers = new ProviderRegistry();
+    capabilities.register({
+      id: 'test.circuit', version: 'v1', description: 'Circuit', idempotency: 'none',
+      riskLevel: 1, externalImpact: false, requiresConfirmation: false, defaultTimeoutMs: 1000,
+    });
+    let calls = 0;
+    providers.register({
+      id: 'failing', displayName: 'Failing', capabilities: ['test.circuit'], priority: 1,
+      adapter: { invoke: async () => { calls += 1; throw new AppError('down', ErrorCode.SERVICE_UNAVAILABLE); } },
+    });
+    const router = new IntegrationRouter({
+      capabilities, providers,
+      config: { maxAttempts: 1, circuitFailureThreshold: 2, circuitOpenMs: 60000 },
+    });
+    for (let i = 0; i < 2; i++) {
+      await expect(router.invoke('test.circuit', {}, { tenantId: 't1', actorId: 'a1' }))
+        .rejects.toMatchObject({ code: ErrorCode.SERVICE_UNAVAILABLE });
+    }
+    expect(calls).toBe(2);
+    await expect(router.invoke('test.circuit', {}, { tenantId: 't1', actorId: 'a1' }))
+      .rejects.toMatchObject({ code: ErrorCode.SERVICE_UNAVAILABLE });
+    expect(calls).toBe(2);
+  });
+
+  it('enforces required idempotency', async () =>
     const capabilities = new CapabilityRegistry();
     capabilities.register({
       id: 'test.mutation', version: 'v1', description: 'Mutation', idempotency: 'required',
