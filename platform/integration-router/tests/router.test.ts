@@ -138,7 +138,7 @@ describe('IntegrationRouter', () => {
     });
     const providers = new ProviderRegistry();
     providers.register({
-      id: 'mutator', displayName: 'Mutator', capabilities: ['test.mutation'], priority: 1,
+      id: 'mutator', displayName: 'Mutator', capabilities: ['test.mutation'], priority: 1, supportsIdempotency: true,
       adapter: { invoke: async () => ({ output: { id: '1' } }) },
     });
     const router = new IntegrationRouter({ capabilities, providers, auditEmitter: async () => undefined, usageRecorder: async () => undefined });
