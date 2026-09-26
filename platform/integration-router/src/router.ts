@@ -178,6 +178,9 @@ export class IntegrationRouter implements CapabilityRouter {
 
   private selectProviders(definition: CapabilityDefinition, context: CapabilityContext): ProviderDefinition[] {
     let candidates = this.providers.forCapability(definition.id);
+    if (definition.idempotency === 'required') {
+      candidates = candidates.filter((p) => p.supportsIdempotency === true);
+    }
     if (context.allowedProviders) candidates = candidates.filter((p) => context.allowedProviders!.includes(p.id));
     if (context.requestedProvider) {
       candidates = candidates.filter((p) => p.id === context.requestedProvider);
