@@ -14,3 +14,6 @@ export * from './risk';
 export * from './artifacts';
 export * from './research-provider';
 export * from './export';
+export * from './funding-search';
+export * from './launch';
+export * from './funding-package';
