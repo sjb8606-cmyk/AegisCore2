@@ -38,6 +38,8 @@ describe('IntegrationRouter', () => {
       healthStore: new InMemoryProviderHealthStore(),
       idempotencyStore: new InMemoryIdempotencyStore(),
       config: { maxAttempts: 1 },
+      auditEmitter: async () => undefined,
+      usageRecorder: async () => undefined,
     });
   }
 
@@ -69,6 +71,8 @@ describe('IntegrationRouter', () => {
     });
     const router = new IntegrationRouter({
       capabilities, providers, config: { maxAttempts: 2 },
+      auditEmitter: async () => undefined,
+      usageRecorder: async () => undefined,
     });
 
     const result = await router.invoke('test.fallback', {}, { tenantId: 't1', actorId: 'a1' });
@@ -91,7 +95,7 @@ describe('IntegrationRouter', () => {
       id: 'preferred', displayName: 'Preferred', capabilities: ['test.preference'], priority: 50,
       adapter: { invoke: async () => ({ output: 'preferred' }) },
     });
-    const router = new IntegrationRouter({ capabilities, providers, config: { maxAttempts: 1 } });
+    const router = new IntegrationRouter({ capabilities, providers, config: { maxAttempts: 1 }, auditEmitter: async () => undefined, usageRecorder: async () => undefined });
     const result = await router.invoke('test.preference', {}, {
       tenantId: 't1', actorId: 'a1', preferredProviders: ['preferred'],
     });
@@ -113,6 +117,8 @@ describe('IntegrationRouter', () => {
     const router = new IntegrationRouter({
       capabilities, providers,
       config: { maxAttempts: 1, circuitFailureThreshold: 2, circuitOpenMs: 60000 },
+      auditEmitter: async () => undefined,
+      usageRecorder: async () => undefined,
     });
     for (let i = 0; i < 2; i++) {
       await expect(router.invoke('test.circuit', {}, { tenantId: 't1', actorId: 'a1' }))
@@ -135,7 +141,7 @@ describe('IntegrationRouter', () => {
       id: 'mutator', displayName: 'Mutator', capabilities: ['test.mutation'], priority: 1,
       adapter: { invoke: async () => ({ output: { id: '1' } }) },
     });
-    const router = new IntegrationRouter({ capabilities, providers });
+    const router = new IntegrationRouter({ capabilities, providers, auditEmitter: async () => undefined, usageRecorder: async () => undefined });
     await expect(router.invoke('test.mutation', {}, { tenantId: 't1', actorId: 'a1' }))
       .rejects.toMatchObject({ code: ErrorCode.CONFLICT });
     const result = await router.invoke('test.mutation', {}, { tenantId: 't1', actorId: 'a1', idempotencyKey: 'key-1' });
