@@ -42,7 +42,7 @@ export const capabilityDefinitions = {
     id: CAPABILITIES.avatarVideo,
     version: 'v1',
     description: 'Generate an avatar video job using a configured provider.',
-    idempotency: 'required',
+    idempotency: 'optional',
     riskLevel: 3,
     externalImpact: true,
     requiresConfirmation: false,
