@@ -44,6 +44,7 @@ router.put('/projects/:id/costs',useAuth,wrap(async(req:AuthenticatedRequest,res
 router.post('/projects/:id/research',useAuth,wrap(async(req:AuthenticatedRequest,res:any)=>{const p=projectParam.parse(req.params),c=context(req);
  const input=z.object({stage:z.string(),query:z.string().min(1),rawResults:z.array(z.object({sourceUrl:z.string(),sourceTitle:z.string(),text:z.string()}))}).parse(req.body);
  res.status(201).json(await ingestResearch(c.tenantId,c.actorId,p.id,input.stage,input.query,input.rawResults));}));
+router.post('/projects/:id/research/search',useAuth,wrap(async(req:AuthenticatedRequest,res:any)=>{const p=projectParam.parse(req.params),c=context(req);const input=z.object({stage:z.string(),query:z.string().min(1)}).parse(req.body);const provider=new BA.HttpResearchProvider();const raw=await provider.search(input.query);res.status(201).json(await BA.ingestResearch(c.tenantId,c.actorId,p.id,input.stage,input.query,raw));}));
 router.get('/projects/:id/research',useAuth,wrap(async(req:AuthenticatedRequest,res:any)=>{const p=projectParam.parse(req.params);res.json(await getResearch(req.auth!.tenantId,p.id,String(req.query.stage||'RESEARCH')));}));
 router.get('/projects/:id/research/unverified',useAuth,wrap(async(req:AuthenticatedRequest,res:any)=>{const p=projectParam.parse(req.params);res.json(await getUnverifiedResearch(req.auth!.tenantId,p.id));}));
 
