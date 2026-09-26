@@ -2,6 +2,7 @@ import { Router, NextFunction } from 'express';
 import { z } from 'zod';
 import { AuthenticatedRequest, requireRole, ROLES } from '../../../../platform/auth/src/index';
 import { withTenantQuery } from '../../../../platform/tenancy/src/index';
+import * as BA from '../../../../platform/business-architect/src/index';
 import {
  createBusinessProject,listBusinessProjects,getBusinessProject,updateBusinessProject,advanceStage,revisitStage,
  addCompetitor,listCompetitors,updateCompetitor,getBusinessModel,saveBusinessModel,getOperations,saveOperations,
@@ -12,6 +13,7 @@ import {
 
 const router=Router(), useAuth=requireRole(ROLES.VIEWER);
 const projectParam=z.object({id:z.string().uuid()});
+const competitorParam=z.object({id:z.string().uuid(),competitorId:z.string().uuid()});
 const context=(req:AuthenticatedRequest)=>({tenantId:req.auth!.tenantId,actorId:req.auth!.sub});
 const wrap=(fn:any)=>(req:any,res:any,next:NextFunction)=>Promise.resolve(fn(req,res)).catch(next);
 
@@ -27,7 +29,7 @@ router.post('/projects/:id/stage/revisit',useAuth,wrap(async(req:AuthenticatedRe
 
 router.get('/projects/:id/competition',useAuth,wrap(async(req:AuthenticatedRequest,res:any)=>{const p=projectParam.parse(req.params);res.json(await listCompetitors(req.auth!.tenantId,p.id));}));
 router.post('/projects/:id/competition',useAuth,wrap(async(req:AuthenticatedRequest,res:any)=>{const p=projectParam.parse(req.params);res.status(201).json(await addCompetitor(req.auth!.tenantId,p.id,req.body));}));
-router.patch('/projects/:id/competition/:competitorId',useAuth,wrap(async(req:AuthenticatedRequest,res:any)=>{const p=projectParam.parse(req.params);res.json(await updateCompetitor(req.auth!.tenantId,p.id,p.competitorId,req.body));}));
+router.patch('/projects/:id/competition/:competitorId',useAuth,wrap(async(req:AuthenticatedRequest,res:any)=>{const p=competitorParam.parse(req.params);res.json(await updateCompetitor(req.auth!.tenantId,p.id,p.competitorId,req.body));}));
 
 router.get('/projects/:id/business-model',useAuth,wrap(async(req:AuthenticatedRequest,res:any)=>{const p=projectParam.parse(req.params);res.json(await getBusinessModel(req.auth!.tenantId,p.id));}));
 router.put('/projects/:id/business-model',useAuth,wrap(async(req:AuthenticatedRequest,res:any)=>{const p=projectParam.parse(req.params);res.json(await saveBusinessModel(req.auth!.tenantId,p.id,req.body));}));
@@ -44,7 +46,7 @@ router.put('/projects/:id/costs',useAuth,wrap(async(req:AuthenticatedRequest,res
 
 router.post('/projects/:id/research',useAuth,wrap(async(req:AuthenticatedRequest,res:any)=>{const p=projectParam.parse(req.params),c=context(req);
  const input=z.object({stage:z.string(),query:z.string().min(1),rawResults:z.array(z.object({sourceUrl:z.string(),sourceTitle:z.string(),text:z.string()}))}).parse(req.body);
- res.status(201).json(await ingestResearch(c.tenantId,c.actorId,p.id,input.stage,input.query,input.rawResults));}));
+ res.status(201).json(await ingestResearch(c.tenantId,c.actorId,p.id,input.stage,input.query,input.rawResults.map((r:any)=>({sourceUrl:String(r.sourceUrl),sourceTitle:String(r.sourceTitle),text:String(r.text)}))));}));
 router.post('/projects/:id/research/search',useAuth,wrap(async(req:AuthenticatedRequest,res:any)=>{const p=projectParam.parse(req.params),c=context(req);const input=z.object({stage:z.string(),query:z.string().min(1)}).parse(req.body);const provider=new BA.HttpResearchProvider();const raw=await provider.search(input.query);res.status(201).json(await BA.ingestResearch(c.tenantId,c.actorId,p.id,input.stage,input.query,raw));}));
 router.get('/projects/:id/research',useAuth,wrap(async(req:AuthenticatedRequest,res:any)=>{const p=projectParam.parse(req.params);res.json(await getResearch(req.auth!.tenantId,p.id,String(req.query.stage||'RESEARCH')));}));
 router.get('/projects/:id/research/unverified',useAuth,wrap(async(req:AuthenticatedRequest,res:any)=>{const p=projectParam.parse(req.params);res.json(await getUnverifiedResearch(req.auth!.tenantId,p.id));}));
