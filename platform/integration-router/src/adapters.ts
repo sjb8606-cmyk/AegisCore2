@@ -1,3 +1,4 @@
+import { z } from 'zod';
 import {
   generateText,
   generateSpeech,
@@ -24,6 +25,7 @@ export const capabilityDefinitions = {
     externalImpact: false,
     requiresConfirmation: false,
     defaultTimeoutMs: 60_000,
+    inputSchema: z.object({ model: z.string().min(1), messages: z.array(z.object({ role: z.enum(['system','user','assistant']), content: z.string() })), maxTokens: z.number().int().positive().optional(), temperature: z.number().min(0).max(2).optional() }),
   },
   speechGeneration: {
     id: CAPABILITIES.speechGeneration,
@@ -34,6 +36,7 @@ export const capabilityDefinitions = {
     externalImpact: false,
     requiresConfirmation: false,
     defaultTimeoutMs: 120_000,
+    inputSchema: z.object({ voiceId: z.string().min(1), text: z.string().min(1), modelId: z.string().optional() }),
   },
   avatarVideo: {
     id: CAPABILITIES.avatarVideo,
@@ -44,6 +47,7 @@ export const capabilityDefinitions = {
     externalImpact: true,
     requiresConfirmation: false,
     defaultTimeoutMs: 120_000,
+    inputSchema: z.object({ avatarId: z.string().min(1), text: z.string().optional(), audioUrl: z.string().url().optional() }),
   },
 } as const;
 
