@@ -146,12 +146,12 @@ describe('WorkforceModeRouter', () => {
     );
   });
 
-  it('blocks a cross-tenant workforce', () => {
+  it('denies a cross-tenant workforce without revealing tenant membership', () => {
     expect(() =>
       makeRouter().route(input({ tenant_id: 'tenant-b' }))
     ).toThrowError(
       expect.objectContaining<Partial<WorkforceRoutingError>>({
-        code: 'TENANT_MISMATCH'
+        code: 'NOT_FOUND'
       })
     );
   });
@@ -215,15 +215,15 @@ describe('WorkforceModeRouter', () => {
     expect(result.reason_code).toBe('BOT_TRIGGER');
   });
 
-  it('supports Agent objective routing', () => {
+  it('does not automatically select Agent for an arbitrary objective', () => {
     const result = makeRouter().route(
       input({
         objective: 'Investigate this record'
       })
     );
 
-    expect(result.selected_mode).toBe('AGENT');
-    expect(result.reason_code).toBe('AGENT_OBJECTIVE');
+    expect(result.selected_mode).toBe('CHAT');
+    expect(result.reason_code).toBe('CHAT_DEFAULT');
   });
 
   it('defaults to Chat for a conversational request', () => {
