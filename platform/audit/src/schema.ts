@@ -41,6 +41,8 @@ export const AuditAction = z.enum([
   'ai.prompt_submitted',
   'ai.safety_violation',
   'ai.pii_detected',
+  // Integration / Provider
+  'integration.provider.invoke',
   // Queue
   'queue.message_processed',
   'queue.dlq_received',
