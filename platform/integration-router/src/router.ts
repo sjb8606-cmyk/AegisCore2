@@ -25,6 +25,8 @@ export interface IntegrationRouterOptions {
   providers?: ProviderRegistry;
   healthStore?: import('./types').ProviderHealthStore;
   idempotencyStore?: import('./types').IdempotencyStore;
+  auditEmitter?: typeof emit;
+  usageRecorder?: typeof recordUsage;
 }
 
 export class IntegrationRouter implements CapabilityRouter {
@@ -33,6 +35,8 @@ export class IntegrationRouter implements CapabilityRouter {
   readonly circuitBreaker: CircuitBreaker;
   private readonly idempotency: import('./types').IdempotencyStore;
   private readonly config: RouterConfig;
+  private readonly auditEmitter: typeof emit;
+  private readonly usageRecorder: typeof recordUsage;
 
   constructor(options: IntegrationRouterOptions = {}) {
     this.config = loadRouterConfig({ ...DEFAULT_CONFIG, ...(options.config ?? {}) });
@@ -45,6 +49,8 @@ export class IntegrationRouter implements CapabilityRouter {
       this.config.circuitSuccessThreshold,
     );
     this.idempotency = options.idempotencyStore ?? new InMemoryIdempotencyStore();
+    this.auditEmitter = options.auditEmitter ?? emit;
+    this.usageRecorder = options.usageRecorder ?? recordUsage;
   }
 
   async invoke<I, O>(capabilityId: string, input: I, context: CapabilityContext): Promise<InvocationResult<O>> {
@@ -233,7 +239,7 @@ export class IntegrationRouter implements CapabilityRouter {
     result?: import('./types').ProviderResult,
     error?: AppError | null,
   ): Promise<void> {
-    await emit({
+    await this.auditEmitter({
       tenantId: context.tenantId,
       actorId: context.actorId,
       actorType: context.actorType ?? 'service',
@@ -261,7 +267,7 @@ export class IntegrationRouter implements CapabilityRouter {
     result: import('./types').ProviderResult,
   ): Promise<void> {
     const baseKey = context.idempotencyKey ?? `${context.tenantId}:${context.actorId}:${capabilityId}:${Date.now()}`;
-    await recordUsage({
+    await this.usageRecorder({
       tenantId: context.tenantId,
       actorId: context.actorId,
       eventType: 'provider_call',
@@ -273,7 +279,7 @@ export class IntegrationRouter implements CapabilityRouter {
 
     for (const [dimension, quantity] of Object.entries(result.usage?.dimensions ?? {})) {
       const eventType = dimension === 'inputTokens' ? 'llm_token_input' : dimension === 'outputTokens' ? 'llm_token_output' : dimension;
-      await recordUsage({
+      await this.usageRecorder({
         tenantId: context.tenantId,
         actorId: context.actorId,
         eventType,
