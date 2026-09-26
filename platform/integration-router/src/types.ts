@@ -56,6 +56,7 @@ export interface ProviderDefinition<I = unknown, O = unknown> {
   priority?: number;
   regions?: string[];
   estimatedCost?: number;
+  supportsIdempotency?: boolean;
   adapter: ProviderAdapter<I, O>;
 }
 
