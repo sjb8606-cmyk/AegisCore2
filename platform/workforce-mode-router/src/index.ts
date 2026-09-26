@@ -35,7 +35,6 @@ export const RoutingReasonSchema = z.enum([
   'EXPLICIT_MODE',
   'CURRENT_MODE_CONTINUATION',
   'BOT_TRIGGER',
-  'AGENT_OBJECTIVE',
   'CHAT_DEFAULT'
 ]);
 
@@ -69,7 +68,6 @@ export type RoutingErrorCode =
   | 'MODE_NOT_ALLOWED'
   | 'CAPABILITY_NOT_ALLOWED'
   | 'FORBIDDEN'
-  | 'TENANT_MISMATCH'
   | 'INVALID_CONTEXT'
   | 'RUNTIME_UNAVAILABLE';
 
@@ -178,13 +176,6 @@ function selectMode(input: RouterInput, definition: WorkforceDefinition): {
     };
   }
 
-  if (input.objective !== undefined && definition.modes.agent.enabled) {
-    return {
-      mode: 'AGENT',
-      reason: 'AGENT_OBJECTIVE'
-    };
-  }
-
   if (definition.modes.chat.enabled) {
     return {
       mode: 'CHAT',
@@ -288,8 +279,8 @@ export class WorkforceModeRouter {
 
     if (!isTenantAllowed(definition, input.tenant_id)) {
       fail(
-        'TENANT_MISMATCH',
-        `Workforce is not available to tenant: ${input.tenant_id}`
+        'NOT_FOUND',
+        `Workforce not found: ${input.workforce_id}`
       );
     }
 
