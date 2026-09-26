@@ -21,6 +21,7 @@ router.get('/projects/:id',useAuth,wrap(async(req:AuthenticatedRequest,res:any)=
 router.patch('/projects/:id',useAuth,wrap(async(req:AuthenticatedRequest,res:any)=>{const p=projectParam.parse(req.params),c=context(req);res.json(await updateBusinessProject(c.tenantId,c.actorId,p.id,req.body));}));
 
 router.get('/projects/:id/stage',useAuth,wrap(async(req:AuthenticatedRequest,res:any)=>{const p=projectParam.parse(req.params),x=await getBusinessProject(req.auth!.tenantId,p.id);res.json({stage:x.currentStage,status:x.status});}));
+router.get('/projects/:id/stage/data',useAuth,wrap(async(req:AuthenticatedRequest,res:any)=>{const p=projectParam.parse(req.params);const x=await BA.getBusinessProject(req.auth!.tenantId,p.id);res.json(await BA.getStageData(req.auth!.tenantId,p.id,x.currentStage));}));
 router.post('/projects/:id/stage/advance',useAuth,wrap(async(req:AuthenticatedRequest,res:any)=>{const p=projectParam.parse(req.params),c=context(req);res.json(await advanceStage(c.tenantId,c.actorId,p.id,req.body));}));
 router.post('/projects/:id/stage/revisit',useAuth,wrap(async(req:AuthenticatedRequest,res:any)=>{const p=projectParam.parse(req.params),c=context(req),stage=z.string().parse(req.body.stage);res.json(await revisitStage(c.tenantId,c.actorId,p.id,stage as any));}));
 
