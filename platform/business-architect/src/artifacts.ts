@@ -2,6 +2,8 @@ import { randomUUID } from 'crypto';
 import { withTenantQuery } from '@platform/tenancy';
 import { createSnapshot } from '@platform/snapshot';
 import { BusinessArtifact, ArtifactSchema } from './schemas';
+import { composeFundingPackage } from './funding-package';
+import { composeLaunchRoadmap } from './launch';
 
 import { generateText } from '@platform/ai-gateway';
 
@@ -68,4 +70,26 @@ export async function generateExecutiveSummaryArtifact(tenantId:string,actorId:s
     keyFacts:[project.idea,project.customer_problem,project.business_model],financials,risks:project.risks,fundingNeed:project.funding,evidenceRefs:project.research_refs};
   const content={...composeExecutiveSummary(source),narrative:await generateExecutiveSummaryNarrative(source)};
   return saveArtifact(tenantId,actorId,projectId,'EXECUTIVE_SUMMARY',content);
+}
+
+export async function generateFundingPackageArtifact(tenantId:string,actorId:string,projectId:string){
+  const project=(await withTenantQuery('SELECT * FROM business_projects WHERE id=$1 AND tenant_id=$2 AND deleted_at IS NULL',[projectId,tenantId],tenantId))[0];
+  if(!project)throw new Error('Business project not found');
+  const financials=project.financial_model_ref?(await withTenantQuery('SELECT * FROM financial_models WHERE id=$1 AND tenant_id=$2',[project.financial_model_ref,tenantId],tenantId))[0]:null;
+  const findings=await withTenantQuery('SELECT * FROM business_funding_findings WHERE project_id=$1 AND tenant_id=$2 ORDER BY created_at DESC',[projectId,tenantId],tenantId);
+  const content=composeFundingPackage({id:project.id,name:project.name,fundingNeed:project.funding,financials,risks:project.risks,evidenceRefs:project.research_refs,eligibilityFindings:findings,assumptions:project.assumptions});
+  return saveArtifact(tenantId,actorId,projectId,'FUNDING_PACKAGE',content);
+}
+export async function generateLaunchRoadmapArtifact(tenantId:string,actorId:string,projectId:string){
+  const project=(await withTenantQuery('SELECT * FROM business_projects WHERE id=$1 AND tenant_id=$2 AND deleted_at IS NULL',[projectId,tenantId],tenantId))[0];
+  if(!project)throw new Error('Business project not found');
+  const content=composeLaunchRoadmap({id:project.id,name:project.name,blockers:[],milestones:[]});
+  return saveArtifact(tenantId,actorId,projectId,'LAUNCH_ROADMAP',content);
+}
+export async function getArtifact(tenantId:string,projectId:string,artifactId:string){
+  const rows=await withTenantQuery('SELECT * FROM business_artifacts WHERE id=$1 AND project_id=$2 AND tenant_id=$3',[artifactId,projectId,tenantId],tenantId);
+  return rows[0]??null;
+}
+export async function getArtifactVersions(tenantId:string,projectId:string,type:ArtifactType){
+  return withTenantQuery('SELECT id,type,version,status,source_revision,created_at,updated_at FROM business_artifacts WHERE tenant_id=$1 AND project_id=$2 AND type=$3 ORDER BY version DESC',[tenantId,projectId,type],tenantId);
 }
