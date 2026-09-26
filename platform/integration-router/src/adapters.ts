@@ -31,7 +31,7 @@ export const capabilityDefinitions = {
     id: CAPABILITIES.speechGeneration,
     version: 'v1',
     description: 'Generate speech using a configured voice provider.',
-    idempotency: 'optional',
+    idempotency: 'none',
     riskLevel: 2,
     externalImpact: false,
     requiresConfirmation: false,
