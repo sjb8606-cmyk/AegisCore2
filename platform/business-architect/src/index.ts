@@ -12,3 +12,5 @@ export * from './research';
 export * from './financials';
 export * from './risk';
 export * from './artifacts';
+export * from './research-provider';
+export * from './export';
