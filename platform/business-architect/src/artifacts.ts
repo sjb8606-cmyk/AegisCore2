@@ -54,16 +54,18 @@ export async function generateBusinessPlanArtifact(tenantId:string,actorId:strin
   const competitors=await withTenantQuery('SELECT * FROM business_competitors WHERE project_id=$1 AND tenant_id=$2 ORDER BY created_at',[projectId,tenantId],tenantId);
   const funding=await withTenantQuery('SELECT * FROM business_funding_findings WHERE project_id=$1 AND tenant_id=$2 ORDER BY created_at DESC',[projectId,tenantId],tenantId);
   const financials=project.financial_model_ref?(await withTenantQuery('SELECT * FROM financial_models WHERE id=$1 AND tenant_id=$2',[project.financial_model_ref,tenantId],tenantId))[0]:null;
-  const content=composeBusinessPlan({...project,id:project.id,name:project.name,customerProblem:project.customer_problem,market:project.market,
+  const source={...project,id:project.id,name:project.name,customerProblem:project.customer_problem,market:project.market,
     competition:competitors,businessModel:project.business_model,operations:project.operations,pricing:project.pricing,costs:project.costs,
-    financials,funding,risks:project.risks,assumptions:project.assumptions,evidenceRefs:project.research_refs});
+    financials,funding,risks:project.risks,assumptions:project.assumptions,evidenceRefs:project.research_refs};
+  const content={...composeBusinessPlan(source),narrative:await generateBusinessPlanNarrative(source)};
   return saveArtifact(tenantId,actorId,projectId,'BUSINESS_PLAN',content);
 }
 export async function generateExecutiveSummaryArtifact(tenantId:string,actorId:string,projectId:string){
   const project=(await withTenantQuery('SELECT * FROM business_projects WHERE id=$1 AND tenant_id=$2 AND deleted_at IS NULL',[projectId,tenantId],tenantId))[0];
   if(!project)throw new Error('Business project not found');
   const financials=project.financial_model_ref?(await withTenantQuery('SELECT * FROM financial_models WHERE id=$1 AND tenant_id=$2',[project.financial_model_ref,tenantId],tenantId))[0]:null;
-  const content=composeExecutiveSummary({id:project.id,name:project.name,summary:project.plan_sections?.executiveSummary??'',
-    keyFacts:[project.idea,project.customer_problem,project.business_model],financials,risks:project.risks,fundingNeed:project.funding,evidenceRefs:project.research_refs});
+  const source={id:project.id,name:project.name,summary:project.plan_sections?.executiveSummary??'',
+    keyFacts:[project.idea,project.customer_problem,project.business_model],financials,risks:project.risks,fundingNeed:project.funding,evidenceRefs:project.research_refs};
+  const content={...composeExecutiveSummary(source),narrative:await generateExecutiveSummaryNarrative(source)};
   return saveArtifact(tenantId,actorId,projectId,'EXECUTIVE_SUMMARY',content);
 }
