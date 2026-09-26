@@ -50,6 +50,8 @@ export async function updateBusinessProject(tenantId:string,actorId:string,proje
   setParts.push('updated_at=now()'); values.push(projectId,tenantId);
   const rows=await withTenantQuery('UPDATE business_projects SET '+setParts.join(', ')+' WHERE id=$'+i+' AND tenant_id=$'+(i+1)+' AND deleted_at IS NULL RETURNING *',values,tenantId);
   if(!rows[0]) throw new AppError('Business project not found.',ErrorCode.NOT_FOUND);
+  const stageMap:Record<string,BusinessStage>={customerProblem:'CUSTOMER_PROBLEM',market:'RESEARCH',competition:'COMPETITION',businessModel:'BUSINESS_MODEL',operations:'OPERATIONS',pricing:'PRICING',costs:'COSTS',financialModelRef:'FINANCIALS',risks:'RISKS',funding:'FUNDING',planSections:'PLAN'};
+  for(const [key] of entries){const stage=stageMap[key];if(stage) await markDownstreamArtifactsStale(tenantId,projectId,stage);}
   return mapProject(rows[0]);
 }
 
