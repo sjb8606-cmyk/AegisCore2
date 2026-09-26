@@ -155,6 +155,21 @@ export class IntegrationRouter implements CapabilityRouter {
     throw lastError ?? new AppError('All providers are unavailable', ErrorCode.SERVICE_UNAVAILABLE);
   }
 
+  async checkProviderHealth(providerId: string, context: Pick<CapabilityContext, 'tenantId' | 'signal'>): Promise<boolean> {
+    const provider = this.providers.get(providerId);
+    if (!provider) throw new AppError(`Unknown provider: ${providerId}`, ErrorCode.NOT_FOUND);
+    if (!provider.adapter.healthCheck) return true;
+    try {
+      const healthy = await provider.adapter.healthCheck(context);
+      if (healthy) await this.circuitBreaker.recordSuccess(providerId);
+      else await this.circuitBreaker.recordFailure(providerId);
+      return healthy;
+    } catch {
+      await this.circuitBreaker.recordFailure(providerId);
+      return false;
+    }
+  }
+
   private selectProviders(definition: CapabilityDefinition, context: CapabilityContext): ProviderDefinition[] {
     let candidates = this.providers.forCapability(definition.id);
     if (context.allowedProviders) candidates = candidates.filter((p) => context.allowedProviders!.includes(p.id));
@@ -163,6 +178,18 @@ export class IntegrationRouter implements CapabilityRouter {
     }
     if (context.region) {
       candidates = candidates.filter((p) => !p.regions?.length || p.regions.includes(context.region!));
+    }
+    if (context.maxEstimatedCost !== undefined) {
+      candidates = candidates.filter((p) => p.estimatedCost === undefined || p.estimatedCost <= context.maxEstimatedCost!);
+    }
+    if (context.preferredProviders?.length) {
+      const preference = new Map(context.preferredProviders.map((id, index) => [id, index]));
+      candidates.sort((a, b) => {
+        const ap = preference.has(a.id) ? preference.get(a.id)! : Number.MAX_SAFE_INTEGER;
+        const bp = preference.has(b.id) ? preference.get(b.id)! : Number.MAX_SAFE_INTEGER;
+        if (ap !== bp) return ap - bp;
+        return (a.priority ?? 1000) - (b.priority ?? 1000);
+      });
     }
     return candidates;
   }
@@ -176,16 +203,24 @@ export class IntegrationRouter implements CapabilityRouter {
     const controller = new AbortController();
     const timeout = Math.min(timeoutMs, context.deadlineAt ? Math.max(1, context.deadlineAt - Date.now()) : timeoutMs);
     const timer = setTimeout(() => controller.abort(), timeout);
-    const signal = context.signal
-      ? AbortSignal.any ? AbortSignal.any([context.signal, controller.signal]) : context.signal
-      : controller.signal;
+    const onCallerAbort = () => controller.abort();
+    if (context.signal) {
+      if (context.signal.aborted) controller.abort();
+      else context.signal.addEventListener('abort', onCallerAbort, { once: true });
+    }
     try {
-      return await provider.adapter.invoke({ ...context, signal }, input);
+      return await provider.adapter.invoke({ ...context, signal: controller.signal }, input);
     } catch (error) {
-      if (controller.signal.aborted) throw new AppError('Provider invocation timed out', ErrorCode.TIMEOUT);
+      if (controller.signal.aborted) {
+        throw new AppError(
+          context.signal?.aborted ? 'Provider invocation cancelled' : 'Provider invocation timed out',
+          context.signal?.aborted ? ErrorCode.CONFLICT : ErrorCode.TIMEOUT
+        );
+      }
       throw error;
     } finally {
       clearTimeout(timer);
+      context.signal?.removeEventListener('abort', onCallerAbort);
     }
   }
 
